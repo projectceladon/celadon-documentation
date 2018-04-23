@@ -1,0 +1,8 @@
+.. |CP| replace:: Celadon Project
+
+.. |CPSIA| replace:: Celadon Project for Intel® Architecture
+
+.. |CC| replace:: Clear Containers
+
+.. |CAUTION-BACKUP-USB| replace::
+   Burning an image formats the USB drive, thus destroying all existing content.  Backup your data before proceeding.

@@ -1,8 +1,5 @@
-.. |CP| replace:: Celadon Project
-
-.. |CPSIA| replace:: Celadon Project for Intel® Architecture
-
-.. |CC| replace:: Clear Containers
-
-.. |CAUTION-BACKUP-USB| replace::
-   Burning an image formats the USB drive, thus destroying all existing content.  Backup your data before proceeding.
+.. |C|              replace:: Celadon
+.. |Movidius|       replace:: Intel Movidius
+.. |NN|             replace:: Neural Network
+.. |NUC|            replace:: Intel NUC
+.. |SoC|            replace:: Intel SoC Watch

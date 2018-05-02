@@ -52,8 +52,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Celadon Project'
-copyright = u'2018, many'
-author = u'many'
+copyright = u'2018, BSD, MIT, Apache and GPL licenses'
+author = u'Intel Open Source Technology Center (OTC)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

@@ -1,21 +1,12 @@
 .. Celadon Project documentation master file.
 
-Celadon Project - Documentation
-##################################
+|C| Project - Documentation
+###########################
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
-   get-started
-   tech-features
-   concepts
-   guides
+   getting_started/get-started
+   tutorials/guides
+   references
    faqs
-
-:ref:`get-started`
-
-License and disclaimers
-=======================
-
-.. include:: documentation_license.rst
-   :start-line: 2

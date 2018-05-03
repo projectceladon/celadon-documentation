@@ -6,7 +6,7 @@
 .. toctree::
    :maxdepth: 2
 
-   getting_started/get-started
-   tutorials/guides
+   getting_started/getting_started
+   tutorials/tutorials
    references
    faqs

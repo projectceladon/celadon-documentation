@@ -14,17 +14,17 @@ Frequently Asked Questions
     The latest Android dessert is supported as soon as Google publicly releases the dessert. Please see the :ref:`release_notes` for the latest supported desserts.
 
 :Q:
-    **Will the latest |C| work on older hardware that was previously supported?**
+    **Will the latest Celadon work on older hardware that was previously supported?**
 :A:
     Developers have the option to use an older manifest file to build an image for a previously supported hardware, but |C|'s main focus is enabling on the latest platform. As such, support on older platform may be limited.
 
 :Q:
-    **How do I quickly try out |C| to get to know what it is offering?**
+    **How do I quickly try out Celadon to get to know what it is offering?**
 :A:
     The prebuilt |C| installer image is available for downloading and installing on |NUC|. Reference :ref:`install-on-nuc` of the Getting Started Guide to run the |C| prebuilt image.
 
 :Q:
-    **How could I start adding software components to my own |C| build?**
+    **How could I start adding software components to my own Celadon build?**
 :A:
     |C| follows the same practice as Android for adding software components to the build. A tutorial :ref:`add-movidius-ncsdk` is provided as an example to add |Movidius| Hardware Abstraction Layer to |C|.
 

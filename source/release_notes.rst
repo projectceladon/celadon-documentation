@@ -65,6 +65,4 @@ SD card                        OK
 Known Issues
 ------------
 
-* Audio over USB headset and BT headset not working, but able to hear on 3.5mm Audio jack.
-* Green patch seen while playing few videos using native video player.
 * Disturbances observed during local video play

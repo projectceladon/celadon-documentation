@@ -60,14 +60,14 @@ Optionally, delete existing output of any previous build with the following comm
 
     $ make clobber
 
-Enter the following commands to initialize the build variables with the ``envsetup.sh`` script and to select the |C| build target. You can run ``lunch`` with no arguments in order to choose different build variants.
+Enter the following commands to initialize the build variables with the *envsetup.sh* script and to select the |C| build target. You can run ``lunch`` with no arguments in order to choose different build variants.
 
 .. code-block:: bash
 
     $ source build/envsetup.sh
     $ lunch celadon-userdebug
 
-Build the |C| installer image with the following command. Replace the ``$(proc)`` argument with the number of processor threads on your workstation in order to build the source code with parallel tasks. The generated image is available at **out/target/product/celadon/celadon.img** after the build. You can follow :ref:`install-on-nuc` of this guide to flash the installer image to a removable USB drive and install |C| on a |NUC|.
+Build the |C| installer image with the following command. Replace the *$(proc)* argument with the number of processor threads on your workstation in order to build the source code with parallel tasks. The generated image is available at **out/target/product/celadon/celadon.img** after the build. You can follow :ref:`install-on-nuc` of this guide to flash the installer image to a removable USB drive and install |C| on a |NUC|.
 
 .. code-block:: bash
 

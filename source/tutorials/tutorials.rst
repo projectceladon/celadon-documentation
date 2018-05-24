@@ -8,3 +8,4 @@ Guides and Tutorials
 
    add-intel-movidius-nnsdk/add-intel-movidius-nnsdk
    profiling-system-power-consumption-using-socwatch/profiling-system-power-consumption-using-socwatch
+   software-debug-tips/software-debug-tips

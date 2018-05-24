@@ -55,11 +55,11 @@ Extract the |SoC| package in the Linux development host, which pulled the source
 
 You **MUST** build the |SoC| kernel modules after completely building the |C| installer image. This is required because the |C| kernel is signed, and the |SoC| kernel modules must be signed with the same keys in order to load into the |C| kernel.
 
-Invoke the ``build_drivers.sh`` script and specify the full paths to the kernel source tree and the sign-file in order to build the kernel modules. The |SoC| kernel modules ``socwatch2_4.ko`` and ``socperf2_0.ko`` are generated in the `drivers/` directory.
+Invoke the *build_drivers.sh* script and specify the full paths to the kernel source tree and the sign-file in order to build the kernel modules. The |SoC| kernel modules *socwatch2_4.ko* and *socperf2_0.ko* are generated in the *drivers/* directory.
 
 .. code-block:: bash
 
-    $ tar zxvf socwatch_android_v2.5.0.tar
+    $ tar zxvf socwatch_android_v2.5.0.tar.gz
     ...
     $ cd socwatch_android_v2.5.0
     $ ./build_drivers.sh -l \
@@ -69,7 +69,7 @@ Invoke the ``build_drivers.sh`` script and specify the full paths to the kernel 
 Set up |SoC| Watch on Intel NUC
 -------------------------------
 
-An ``adb`` session from the Linux development host to the |NUC| is required to set up |SoC| on the |NUC| target system. |C| enables `adb over Ethernet` to communicate to |NUC| through WiFi or wired connections. Connect the |NUC| to the same network as the Linux host and enter the following commands on the Linux host to connect to the |NUC|:
+An *adb* session from the Linux development host to the |NUC| is required to set up |SoC| on the |NUC| target system. |C| enables `adb over Ethernet` to communicate to |NUC| through WiFi or wired connections. Connect the |NUC| to the same network as the Linux host and enter the following commands on the Linux host to connect to the |NUC|:
 
 .. code-block:: bash
 
@@ -79,7 +79,7 @@ An ``adb`` session from the Linux development host to the |NUC| is required to s
     * daemon started successfully *
     connected to 192.168.1.107:5555
 
-The installation of |SoC| software requires root permission. The following commands restart the ``adb`` daemon in privileged mode and re-connects to the |NUC|:
+The installation of |SoC| software requires root permission. The following commands restart the *adb* daemon in privileged mode and re-connects to the |NUC|:
 
 .. code-block:: bash
 
@@ -90,7 +90,7 @@ The installation of |SoC| software requires root permission. The following comma
     * daemon started successfully *
     connected to 192.168.1.107:5555
 
-Run the ``socwatch_android_install.sh`` script in the directory where you extracted the |SoC| package. The script will push the software to the `/data/socwatch` directory on the |NUC|.
+Run the *socwatch_android_install.sh* script in the directory where you extracted the |SoC| package. The script will push the software to the `/data/socwatch` directory on the |NUC|.
 
 .. code-block:: bash
 
@@ -137,7 +137,7 @@ Collect System Power Metrics
 Load |SoC| Kernel Modules
 -------------------------
 
-Establish an ``adb`` session to the |NUC|, enter the Android command line shell, and load the |SoC| kernel modules with the following commands. For Intel platforms powered by the Intel Atom processor family, you must load the ``socperf`` kernel module before the ``socwatch`` kernel module.
+Establish an *adb* session to the |NUC|, enter the Android command line shell, and load the |SoC| kernel modules with the following commands. For Intel platforms powered by the Intel Atom processor family, you must load the *socperf* kernel module before the *socwatch* kernel module.
 
 .. code-block:: bash
 
@@ -149,7 +149,7 @@ Establish an ``adb`` session to the |NUC|, enter the Android command line shell,
 Collect Power Metrics
 ---------------------
 
-Set up the collection environment with the ``setup_socwatch_env.sh`` script. Now, you can start collecting the power consumption data and other metrics with the ``socwatch`` command. For example, the following commands capture the CPU C-state data on |NUC| in 20 seconds. The collected data is stored as a `results.csv` file and other formats, depending on the given parameters. Reference the `Intel SoC Watch for Google Android OS and Linux OS Users Guide <https://software.intel.com/sites/default/files/managed/5a/36/socwatch_android_linux_users_guide.pdf>`_ for more information on the command line parameters, supported feature names, and examples using Intel SoC Watch for energy analysis collection.
+Set up the collection environment with the *setup_socwatch_env.sh* script. Now, you can start collecting the power consumption data and other metrics with the *socwatch* command. For example, the following commands capture the CPU C-state data on |NUC| in 20 seconds. The collected data is stored as a `results.csv` file and other formats, depending on the given parameters. Reference the `Intel SoC Watch for Google Android OS and Linux OS Users Guide <https://software.intel.com/sites/default/files/managed/5a/36/socwatch_android_linux_users_guide.pdf>`_ for more information on the command line parameters, supported feature names, and examples using Intel SoC Watch for energy analysis collection.
 
 .. code-block:: none
 

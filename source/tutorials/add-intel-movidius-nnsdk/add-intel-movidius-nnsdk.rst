@@ -24,14 +24,14 @@ Reference the :ref:`build-from-source` section in the Getting Started Guide to s
 Add |Movidius| NN HAL to the build
 ----------------------------------
 
-Google has released the NNAPI support since Android 8.1, and it is  included in the |C| source tree. To add |Movidius| NN HAL to the build, clone the following GitHub repository under the ``external`` directory in the |C| source tree:
+Google has released the NNAPI support since Android 8.1, and it is  included in the |C| source tree. To add |Movidius| NN HAL to the build, clone the following GitHub repository under the *external* directory in the |C| source tree:
 
 .. code-block:: bash
 
     $ cd <celadon_src>
     $ git clone https://github.com/intel/nn-hal.git external/nn-hal
 
-Include ``MvNCAPI.mvcmd``, ``libmvnc``, and ``ncs_test1_app`` packages into the build by adding the following lines to the device makefile ``device/intel/project-celadon/celadon/device.mk`` . These packages represent the NC firmware, NC SDK library, and the testing app respectively.
+Include **MvNCAPI.mvcmd**, **libmvnc**, and **ncs_test1_app** packages into the build by adding the following lines to the device makefile *device/intel/project-celadon/celadon/device.mk* . These packages represent the NC firmware, NC SDK library, and the testing app respectively.
 
 .. code-block:: bash
 
@@ -41,12 +41,12 @@ Include ``MvNCAPI.mvcmd``, ``libmvnc``, and ``ncs_test1_app`` packages into the 
 Communicate with |Movidius| NCS
 -------------------------------
 
-To quickly test the functionality of NCSDK, you must establish an ``adb`` session from the Ubuntu development host to the |NUC| system. This allows you to issue commands over *adb* sessions. Boot up the |NUC| system, configure the WiFi credentials with the Android *Settings* app, and get the assigned IP address from the `Settings->System->About tablet->Status page`.
+To quickly test the functionality of NCSDK, you must establish an *adb* session from the Ubuntu development host to the |NUC| system. This allows you to issue commands over *adb* sessions. Boot up the |NUC| system, configure the WiFi credentials with the Android *Settings* app, and get the assigned IP address from the `Settings->System->About tablet->Status page`.
 
 .. figure:: images/settings-status.png
     :align: center
 
-Install the Android ``adb`` tool on the Ubuntu development host if no `adb` executable is found. Enter the following commands to establish an ``adb`` session:
+Install the Android *adb* tool on the Ubuntu development host if no *adb* executable is found. Enter the following commands to establish an *adb* session:
 
 .. code-block:: bash
 
@@ -58,7 +58,7 @@ Install the Android ``adb`` tool on the Ubuntu development host if no `adb` exec
     * daemon started successfully
     connected to 192.168.1.107:5555
 
-Once the `adb` session is connected, plug in the |Movidius| Neural Compute Stick to the |NUC|. Login to the system and launch the ``ncs_test1_app`` native app with root privilege. The app should  detect the presence of the NCS as shown in following screenshot.
+Once the `adb` session is connected, plug in the |Movidius| Neural Compute Stick to the |NUC|. Login to the system and launch the *ncs_test1_app* native app with root privilege. The app should  detect the presence of the NCS as shown in following screenshot.
 
 .. code-block:: bash
 

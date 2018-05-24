@@ -27,7 +27,7 @@ Prepare a |C| installer USB flash drive
 
 Download the prebuilt |C| installer package described in the previous section, uncompress the ZIP file and burn the installer image onto a USB flash drive. The USB flash drive will be used to bootstrap the |NUC| target device, format the disk partitions on the target device, and install |C| images to the disk partitions required by Android. You can use `Rufus <https://rufus.akeo.ie/>`_ or a similar tool to create a bootable USB drive on Windows. Alternatively, use the disk-dump command ``dd`` on any Linux system to create a |C| installer USB drive.
 
-.. note::
+.. warning::
     **Caution:** *The following commands will format the USB flash drive, and destroy all its existing content. Backup your data before proceeding.*
 
 Create |C| installer USB drive in Windows
@@ -57,7 +57,7 @@ Open a terminal window and go to the directory that contains the uncompressed in
     +-sda2           8:2    0   3.8G  0 part [SWAP]
     +-sda3           8:3    0   477M  0 part /boot/efi
 
-In the previous example, ``/dev/sdb`` is assigned to the USB removable drive. This allows you to flash the installer image to the USB drive with the following commands, replacing the drive names with the actual device node observed from the previous ``lsblk`` command.
+In the previous example, **/dev/sdb** is assigned to the USB removable drive. This allows you to flash the installer image to the USB drive with the following commands, replacing the drive names with the actual device node observed from the previous ``lsblk`` command.
 
 .. code-block:: bash
 
@@ -67,10 +67,10 @@ In the previous example, ``/dev/sdb`` is assigned to the USB removable drive. Th
 Install |C| to |NUC| using installer USB drive
 ----------------------------------------------
 
-.. note::
+.. warning::
     **Caution:** *The primary hard drive of the Intel NUC will be completely wiped out. Backup your data before proceeding.*
 
-Plug the bootable USB flash drive into a |NUC| device, power on the device, and press ``F10`` to instruct the device to boot from the USB drive.
+Plug the bootable USB flash drive into a |NUC| device, power on the device, and press **F10** to instruct the device to boot from the USB drive.
 
 .. figure:: images/boot-usb-stick.jpg
     :align: center

@@ -7,5 +7,6 @@ Guides and Tutorials
    :maxdepth: 1
 
    add-intel-movidius-nnsdk/add-intel-movidius-nnsdk
+   profiling-gpu/profiling-gpu
    profiling-system-power-consumption-using-socwatch/profiling-system-power-consumption-using-socwatch
    software-debug-tips/software-debug-tips

@@ -7,19 +7,22 @@ ww201818
 ========
 
 ================================  =====
-Build ID                          celadon-userdebug 8.1.0 OPM3.171019.013 eng.build.20180502.092142 test-keys
+Build ID                          celadon-userdebug 8.1.0 O.CEL.T.WW24 eng.build.20180618.145425 test-keys
 Software Version                  Android version 8.1.0
 Mesa                              18.2.0-devel
 Kernel Flinger                    5.09
 Kernel Version / Android Version  4.14.35-project-celedon_64-g0a945a1
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201818
+Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201824
 ================================  =====
 
 Integrated Features
 -------------------
 
+In the WW24 release we have IVI also enabled 
+
 * MESA graphics - OpenGL ES 3.0 & Vulkan 1.0 support
 * Graphics Memory Allocator (Gralloc) 1.0
+* Tutorial on profiling GPU using gputop
 * HDMI display support
 * HWC 2.0 support for Display
 * USB digital audio playback support
@@ -33,6 +36,7 @@ Integrated Features
 * Open CI infrastructure for automatic build to verify and upstream patches
 * Android Grub boot support
 * Android Kernel Flinger boot support
+
 
 Important Notes and Remarks
 ---------------------------
@@ -65,4 +69,4 @@ SD card                        OK
 Known Issues
 ------------
 
-* Disturbances observed during local video play
+* Disturbances and green screen observed during local video play

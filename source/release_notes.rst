@@ -3,6 +3,10 @@
 Release Notes
 #############
 
+.. contents:: :local:
+
+----
+
 ww201818
 ========
 

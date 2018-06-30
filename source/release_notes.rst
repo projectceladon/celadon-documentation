@@ -5,7 +5,84 @@ Release Notes
 
 .. contents:: :local:
 
-----
+
+
+--------
+
+ww201826
+========
+
+================================  =====
+Build ID                          celadon-userdebug 8.1.0 OPM4.171019.021.E1 eng.build.20180629.162304 test-keys
+Software Version                  Android version 8.1.0
+Mesa                              18.2.0-devel
+Kernel Flinger                    5.09
+Kernel Version                    4.14.50
+Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201826
+================================  =====
+
+Integrated Features
+-------------------
+
+The Car UI for IVI usage has been enabled since the WW24 release.
+
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.0 support for Display
+* USB digital audio playback support
+* USB Type C support
+* Analog Audio (MP3/AAC) playback on stereo wired Headset
+* BT A2DP Audio support
+* Audio parameter framework for audio routing policy
+* H263/ H264/ HEVC/VP9/MPEG4 Video Playback using google video software codecs
+* Wi-Fi 802.11 a/b/g/n
+* Wired Ethernet support
+* Open CI infrastructure for automatic build to verify and upstream patches
+* Android Grub boot support
+* Android Kernel Flinger boot support
+
+Important Notes and Remarks
+---------------------------
+
+This |C| build has been validated on |NUC| Kit `NUC7i5BNH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5bnh.html>`_ in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK       WiFi Direct, WiFi streaming
+BT                             OK       File Transfer Protocol
+Audio over USB and BT headset  OK       MP3/AAC/MIDI/FLAC/WAV Audio playback, BT A2DP Audio Playback
+Audio over 3.5mm jack          OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
+Video                          OK       H263/ H264/ HEVC/VP9/MPEG4 Video Playback using google video software codecs
+Adb connect                    OK
+Display /Touch and Gesture     OK
+Storage/SD Card                OK
+Security                       OK
+Boot/Kernel                    OK
+USB devices over OTG           OK
+Fastboot                                Not available
+GRUB Boot                      OK
+Web browsing                   OK
+Clone Mode                     OK
+Image Display                  OK       SW JPEG Decode
+USB/ADB                        OK       Working through Type-A USB & Ethernet
+SD card                        OK
+=============================  =======  ========
+
+Known Issues
+------------
+
+* Screen overlap observed while playing local H263 video format.
+* Fail to boot OS after disable dm verity with unlock status.
+* DUT boot is failed after OTA/IOTA uptate.
+* BT and Message Notification Alert not heard during VOIP call.
+* Recorded video when played has flicker.
+* H264 HP 4k video playback screen stuck.
+* H265 4k2k video playback is not supported .
+* HFP call over Bluetooth has no Audio routed to Speakers.
+
+--------
+
 
 ww201824
 ========
@@ -21,7 +98,7 @@ Download Link                     https://github.com/projectceladon/celadon-bina
 
 Integrated Features
 -------------------
-In the WW24 release we have IVI also enabled , IVI is for Enabling CAR UI
+In the WW24 release we have IVI also enabled , IVI is for Enabling CAR UI.
 
 * MESA graphics - OpenGL ES 3.0 & Vulkan 1.0 support
 * Graphics Memory Allocator (Gralloc) 1.0

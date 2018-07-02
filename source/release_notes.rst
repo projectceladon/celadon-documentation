@@ -26,6 +26,7 @@ Integrated Features
 
 The Car UI for IVI usage has been enabled since the WW24 release
 
+* MESA graphics - OpenGL ES 3.0 & Vulkan 1.0 support
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
 * HWC 2.0 support for Display

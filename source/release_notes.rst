@@ -23,9 +23,11 @@ Download Link                     https://github.com/projectceladon/celadon-bina
 
 Integrated Features
 -------------------
-
 The Car UI for IVI usage has been enabled since the WW24 release
 
+In the WW24 release we have IVI also enabled , IVI is for Enabling CAR UI
+
+* MESA graphics - OpenGL ES 3.0 & Vulkan 1.0 support
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
 * HWC 2.0 support for Display

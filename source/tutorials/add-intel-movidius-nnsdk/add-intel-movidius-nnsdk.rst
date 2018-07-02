@@ -31,12 +31,12 @@ Google has released the NNAPI support since Android 8.1, and it is  included in 
     $ cd <celadon_src>
     $ git clone https://github.com/intel/nn-hal.git external/nn-hal
 
-Include **MvNCAPI.mvcmd**, **libmvnc**, and **ncs_test1_app** packages into the build by adding the following lines to the device makefile *device/intel/project-celadon/celadon/device.mk* . These packages represent the NC firmware, NC SDK library, and the testing app respectively.
+Include **MvNCAPI.mvcmd**, **libncsdk**, and **ncs_test1_app** packages into the build by adding the following lines to the device makefile *device/intel/project-celadon/celadon/device.mk* . These packages represent the NC firmware, NC SDK library, and the testing app respectively.
 
 .. code-block:: bash
 
     # Intel® Movidius Neural Networks HAL
-    PRODUCT_PACKAGES += MvNCAPI.mvcmd libmvnc ncs_test1_app
+    PRODUCT_PACKAGES += MvNCAPI.mvcmd libncsdk ncs_test1_app
 
 Communicate with |Movidius| NCS
 -------------------------------

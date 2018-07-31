@@ -1,3 +1,5 @@
+.. _profiling-system-power-consumption-with-socwatch:
+
 Profiling System Power Consumption on |C| using  Intel® SoC Watch
 #################################################################
 
@@ -22,6 +24,8 @@ This tutorial walks you through the process of using |SoC| to analyze the system
 
 Set up |SoC|
 ============
+
+.. _download-install-iss:
 
 Download and Install Intel® System Studio
 -----------------------------------------

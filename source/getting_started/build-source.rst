@@ -67,8 +67,16 @@ Enter the following commands to initialize the build variables with the *envsetu
     $ source build/envsetup.sh
     $ lunch celadon-userdebug
 
-Build the |C| installer image with the following command. Replace the *$(proc)* argument with the number of processor threads on your workstation in order to build the source code with parallel tasks. The generated image is available at **out/target/product/celadon/celadon.img** after the build. You can follow :ref:`install-on-nuc` of this guide to flash the installer image to a removable USB drive and install |C| on a |NUC|.
+Depending on your preferred installation mechanism, build the |C| installer files with the following commands. Replace the *$(proc)* argument with the number of processor threads on your workstation in order to build the source code with parallel tasks. The generated image (**out/target/product/celadon/celadon.img**) or the Kernel Flinger executables .ZIP file (**out/target/product/celadon/celadon.flashfiles.eng.${USER}.zip**) is available after the build. You can follow :ref:`install-on-nuc` of this guide to flash the installer image to a removable USB drive and install |C| on a |NUC|.
 
-.. code-block:: bash
+* GRUB installer image
 
-    $ make SPARSE_IMG=true project_celadon-efi -j $(nproc)
+    .. code-block:: bash
+
+        $ make SPARSE_IMG=true project_celadon-efi -j $(nproc)
+
+* Kernel Flinger executables
+
+    .. code-block:: bash
+
+        $ make SPARSE_IMG=true flashfiles -j $(nproc)

@@ -18,9 +18,7 @@ The following hardware are required to proceed with the installation.
 * A 8GB USB flash drive
 * A development PC workstation running 64-bit Ubuntu 16.04 LTS Linux
 
-Two types of prebuilt |C| installer packages are available at the following link to quickly try out |C|. If the firmware of your target system supports **UEFI Shell**, you can jump to the next section, `Install using Kernel Flinger executables`_ to automatically setup the |NUC| device with the Kernel Flinger UEFI executables. Or, proceed with the following section to install the system using interactive `GRUB <https://www.gnu.org/software/grub>`_ installer.
-
-    https://github.com/projectceladon/celadon-binary
+Two types of installer images can be built from the |C| source repositories: if the firmware of your target system supports **UEFI Shell**, you can jump to the next section, `Install using Kernel Flinger executables`_ to automatically setup the |NUC| device with the Kernel Flinger UEFI executables. Or, proceed with the following section to install the system using interactive `GRUB <https://www.gnu.org/software/grub>`_ installer.
 
 Install using GRUB installer image
 ----------------------------------
@@ -28,7 +26,7 @@ Install using GRUB installer image
 Prepare a |C| installer USB flash drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download the prebuilt |C| installer package described in the previous section, uncompress the ZIP file and burn the installer image onto a USB flash drive. The USB flash drive will be used to bootstrap the |NUC| target device, format the disk partitions on the target device, and install |C| images to the disk partitions required by Android. You can use `Rufus <https://rufus.akeo.ie/>`_ or a similar tool to create a bootable USB drive on Windows. Alternatively, use the disk-dump command ``dd`` on any Linux system to create a |C| installer USB drive.
+Once you have a |C| GRUB installer image, burn the installer image onto a USB flash drive. The USB flash drive will be used to bootstrap the |NUC| target device, format the disk partitions on the target device, and install |C| images to the disk partitions required by Android. You can use `Rufus <https://rufus.akeo.ie/>`_ or a similar tool to create a bootable USB drive on Windows. Alternatively, use the disk-dump command ``dd`` on any Linux system to create a |C| installer USB drive.
 
 .. caution::
     *The following commands will format the USB flash drive, and destroy all its existing content. Backup your data before proceeding.*
@@ -46,7 +44,7 @@ The Rufus utility is able to detect the presence of USB removable flash drives. 
 Create |C| installer USB drive in Linux
 .......................................
 
-Open a terminal window and go to the directory that contains the uncompressed installer image. Plug in a USB flash drive to the Linux workstation and identify the USB flash drive using the ``lsblk`` command. This command shows all drives attached to the Linux workstation, including the primary hard drive. Make sure the drive name is assigned to the USB removable drive, as passing an incorrect drive name to the ``dd`` command might cause the workstation to not boot up.
+Open a terminal window and go to the directory that contains the GRUB installer image. Plug in a USB flash drive to the Linux workstation and identify the USB flash drive using the ``lsblk`` command. This command shows all drives attached to the Linux workstation, including the primary hard drive. Make sure the drive name is assigned to the USB removable drive, as passing an incorrect drive name to the ``dd`` command might cause the workstation to not boot up.
 
 .. code-block:: bash
     :emphasize-lines: 3
@@ -92,7 +90,7 @@ Install using Kernel Flinger executables
 Copy Kernel Flinger executables to a USB flash drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Kernel Flinger installation approach does not require you to erase the content of the USB flash drive, but the USB flash drive needs to have at least a -2GB VFAT file system on it to store the Kernel Flinger UEFI executables. The Kernel Flinger executables are packaged in a .ZIP file. Download and unzip the content of the .ZIP file referenced in the previous section to a USB flash drive before the installation.
+The Kernel Flinger installation approach does not require you to erase the content of the USB flash drive, but the USB flash drive needs to have at least a -2GB VFAT file system on it to store the Kernel Flinger UEFI executables. The Kernel Flinger executables are packaged in a .ZIP file, unzip the content of the .ZIP file to a USB flash drive before the installation.
 
 Boot the built-in EFI Shell to bootstrap the installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

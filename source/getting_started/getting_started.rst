@@ -3,7 +3,7 @@
 Getting Started
 ###############
 
-This Getting Started Guide provides step-by-step instructions to download and get started using |C| Android images on Intel® NUC reference hardware. Additionally, it provides instructions for building your own images from the source repositories.
+This Getting Started Guide provides step-by-step instructions to build your |C| Android images from the source repositories, and get started using the generated images on Intel® NUC reference hardware.
 
 .. toctree::
    :maxdepth: 2

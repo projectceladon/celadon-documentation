@@ -19,11 +19,6 @@ Frequently Asked Questions
     Developers have the option to use an older manifest file to build an image for a previously supported hardware, but |C|'s main focus is enabling on the latest platform. As such, support on older platform may be limited.
 
 :Q:
-    **How do I quickly try out Celadon to get to know what it is offering?**
-:A:
-    The prebuilt |C| installer image is available for downloading and installing on |NUC|. Reference :ref:`install-on-nuc` of the Getting Started Guide to run the |C| prebuilt image.
-
-:Q:
     **How could I start adding software components to my own Celadon build?**
 :A:
     |C| follows the same practice as Android for adding software components to the build. A tutorial :ref:`add-movidius-ncsdk` is provided as an example to add |Movidius| Hardware Abstraction Layer to |C|.

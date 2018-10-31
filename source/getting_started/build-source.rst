@@ -86,3 +86,10 @@ Depending on your preferred installation mechanism, build the |C| installer file
     .. code-block:: bash
 
         $ make SPARSE_IMG=true flashfiles -j $(nproc)
+
+Dependancy
+----------
+* If you see the error --> FAILED: out/target/product/celadon/bootloader_policy-oemvars.txt please run--> sudo apt-get install efitools
+
+* Mako issue --> pip install mako
+

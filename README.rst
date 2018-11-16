@@ -49,7 +49,7 @@ repository to our local machine.
 Run make
 ========
 
-Finally are we ready to run :command:`make`. Be sure to :command:`cd` to the
+Finally are we ready to run ``make``. Be sure to :command:`cd` to the
 :file:`source/` directory where your ``.rst`` files are, before
 running :command:`make html`, or the doc format of your choice.
 

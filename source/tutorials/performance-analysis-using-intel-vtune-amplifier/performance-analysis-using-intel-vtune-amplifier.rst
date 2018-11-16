@@ -1,4 +1,4 @@
-Performance Analysis using Intel® VTune\ :sup:`™` Amplifier
+Performance Analysis using Intel® VTune :sup:`™` Amplifier
 ===========================================================
 
 Introduction

@@ -5,6 +5,89 @@ Release Notes
 
 .. contents:: :local:
 
+--------
+
+ww201851
+========
+
+================================  =====
+Build ID                          cel_apl-userdebug 9 PPR2.181005.003.A1 eng.build.20181227.102437 test-keys
+Software Version                  Android version 9
+Mesa                              18.2.6
+Kernel Version                    4.19
+Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201851
+================================  =====
+
+Integrated Features
+-------------------
+
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.0 support for Display
+* Adb & Fastboot supported over USB 2.0 and USB 3.0
+* Adb over WIFI and Ethernet is supported
+* USB digital audio playback support
+* DMIC support
+* Realtek ALC283 HD Audio via a stereo microphone/headphone 3.5 mm jack on the front panel is supported 
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2 
+* Wired Ethernet support
+* Android Kernelflinger boot support
+* Thermal Daemon is enabled for CELADON
+* 4K support is enabled on CELADON
+* Codec support on celadon
+  Decoder
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+  
+  Encoder
+    * AVC High profile @ level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)
+* Art-extension is enabled in CELADON
+* f2fs filesystem support enabled
+* S3 Suspend/Resume is supported
+* Audio decoders supported: MP3/AAC-LC/HEAAC/HEAAC-v2/FLAC/VORBIS/OPUS/AMRNB/AMRWB 
+* Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
+* SDHCI host controller is enabled 
+
+
+Important Notes and Remarks
+---------------------------
+
+|C| build has been validated on |NUC| Kit `NUC6CAYH  <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_ in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK       WiFi Direct, WiFi streaming
+Wi-Fi Hotspot                  OK
+BT                             OK       File Transfer Protocol
+Audio over USB and             OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
+Audio over 3.5mm jack          OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Storage/SD Card                OK
+Security                       OK
+Boot/Kernel                    OK
+USB devices over OTG           OK
+Ethernet                       OK
+Fastboot                       OK       
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG4/VP8/VP9 Video Playback
+=============================  =======  ========
+
+
+Known Issues
+------------
+
+* DUT freezes while using 4k monitor as display
+* Lets Drive screen seen on click of applications under "New User" 
+* Need to press power button twice to wake-up from S3"
+
+--------
+
 
 --------
 

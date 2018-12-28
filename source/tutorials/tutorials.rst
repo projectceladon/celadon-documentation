@@ -12,3 +12,4 @@ Guides and Tutorials
    profiling-gpu/profiling-gpu
    profiling-system-power-consumption-using-socwatch/profiling-system-power-consumption-using-socwatch
    software-debug-tips/software-debug-tips
+   trusty-hardware-binding/trusty-hardware-binding

@@ -2,4 +2,5 @@
 .. |Movidius|       replace:: Intel Movidius
 .. |NN|             replace:: Neural Network
 .. |NUC|            replace:: Intel NUC
+.. |PFT|            replace:: Intel Platform Flash Tool
 .. |SoC|            replace:: Intel SoC Watch

@@ -91,7 +91,7 @@ Install using Kernel Flinger executables
 Copy Kernel Flinger executables to a USB flash drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Kernel Flinger installation approach does not require you to erase the content of the USB flash drive, but the USB flash drive needs to have at least a -2GB VFAT file system on it to store the Kernel Flinger UEFI executables. The Kernel Flinger executables are packaged in a .ZIP file, unzip the content of the .ZIP file to a USB flash drive before the installation.
+The Kernel Flinger installation approach does not require you to erase the content of the USB flash drive, but the USB flash drive needs to have at least a 2GB VFAT file system on it to store the Kernel Flinger UEFI executables. The Kernel Flinger executables are packaged in a *flashfile* in .ZIP format, unzip the content of the .ZIP file to a USB flash drive before the installation.
 
 Boot the built-in EFI Shell to bootstrap the installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,6 +106,8 @@ Click the *Advanced* button on the *Boot Order* pane, then click the *Boot Confi
 .. figure:: images/enable_uefi_shell.jpg
     :align: center
 
+On a refresh of the 7th generation |NUC| model (i.e. `Dawson Canyon <https://ark.intel.com/products/codename/126293/Dawson-Canyon>`_), if you have ever installed |C| on the |NUC| system, you can install |C| on it with `Intel Platform Flash Tool Lite <https://01.org/node/2463>`_ using Android fastboot protocol. Proceed with the instructions on the :ref:`install-using-pft` section to install |C| using |PFT|.
+
 Save any modified configuration before rebooting the system, and press **F10** to enter the Boot Menu. Plug the USB flash drive with Kernel Flinger executables on it to any USB port, and select **UEFI: Built-in EFI Shell** to boot the NUC. After counting down, the UEFI Shell runs the ``startup.nsh`` script on the USB flash drive, and installs the Celadon images automatically.
 
 .. figure:: images/select_uefi_shell.jpg
@@ -113,6 +115,39 @@ Save any modified configuration before rebooting the system, and press **F10** t
 
 .. figure:: images/install_kernel_flinger.jpg
     :align: center
+
+.. _install-using-pft:
+
+Install |C| using |PFT| Lite
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are installing |C| on a refresh of the 7th generation |NUC| model, to take advantage of flashing and updating the |NUC| system using fastboot protocol, make sure the firmware of the system has been updated to version 0057 or later, and the **Device Mode** option is selected for the internal USB 3.0 port header on the USB category of the Devices tab.
+
+.. figure:: images/bios-main.jpg
+    :align: center
+
+.. figure:: images/bios-device-usb.jpg
+    :align: center
+
+You also need a USB dongle (e.g. `Dawson Canyon USB 3.0 female to 10-pin header cable <https://www.gorite.com/dawson-canyon-usb-3-0-female-to-10-pin-header-cable>`_) to exercise the internal USB 3.0 port header on the main board of the |NUC| system. Refer to the `Technical Product Specification <https://www.intel.com/content/dam/support/us/en/documents/mini-pcs/nuc-kits/NUC7i5DN_TechProdSpec.pdf>`_ to identify the USB 3.0 port header on the main board.
+
+.. figure:: images/NUC755DNH_USB.jpg
+    :align: center
+
+Save the modified configuration before rebooting the system, press **F10** to enter the Boot Menu. Select **UEFI: Built-in EFI Shell** to boot the NUC, press any key to stop the countdown timer and enter the UEFI Shell. Run the |C| loader in Fastboot mode with the following command in the UEFI shell:
+
+.. code-block:: console
+
+    Shell> loader -f
+
+Once the |NUC| system boots to the Fastboot console, connect the |NUC| system to your Ubuntu development workstation with a USB Type A male to Type A male cable.
+
+Download and install `Intel Platform Flash Tool lite <https://01.org/node/2463>`_ on the Ubuntu workstation if you havn’t done so. Launch the |PFT| Lite, the program should detect the presence of the connected |NUC| system through Fastboot protocol:
+
+.. figure:: images/platformflashtool-lite.jpg
+    :align: center
+
+Click the **Browse** button, enter the folder contains the content of the unzipped flashfile, open the **flash.json** configuration file, and simply press the **Start to flash** button to start the installation.
 
 Reboot to Android UI
 --------------------

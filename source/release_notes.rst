@@ -113,6 +113,7 @@ Integrated Features
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
 * HWC 2.0 support for Display
+* Adb & Fastboot supported over USB 2.0 and USB 3.0
 * Adb over WIFI and Ethernet is supported
 * USB digital audio playback support
 * DMIC support
@@ -155,6 +156,7 @@ Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
 BT                             OK       File Transfer Protocol
 Audio over 3.5mm jack          OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
+Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
 Display /Touch and Gesture     OK
@@ -181,8 +183,9 @@ Known Issues
 Status
 -------
 * APL_NUC validation is done until WW48 , the manifest is taken based on WW51 
-* BIOS public drop for APL_NUC is coming very soon , once it is available FASTBOOT and adb over USB will be supported.. STAY TUNED.
-
+* BIOS public drop for APL_NUC is available , Adb & Fastboot is supported over USB 2.0 and USB 3.0
+* BIOS Link : https://downloadcenter.intel.com/download/28478/?product=95078 
+* BIOS_Release Notes: https://downloadmirror.intel.com/28478/eng/AY_0059_ReleaseNotes.pdf 
 
 --------
 

@@ -6,6 +6,93 @@ Release Notes
 .. contents:: :local:
 ---------------
 
+ww201904_KBLNUC
+===============
+
+================================  =====
+Build ID                          cel_kbl-userdebug 9 PPR2.181005.003.A1 eng.build.20190130.145741 test-keys
+Software Version                  Android version 9
+Mesa                              18.2.6
+Kernel Version                    4.19
+Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201904
+================================  =====
+
+Integrated Features
+-------------------
+
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.0 support for Display
+* Adb & Fastboot supported over USB 2.0 and USB 3.0
+* Adb over WIFI and Ethernet is supported
+* USB digital audio playback support
+* Since no default sound card is present we should connect USB headsset for any BT or media related activities for KBL COMMERCIAL NUC hardware
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Android Kernelflinger boot support
+* Thermal Daemon is enabled for CELADON
+* 4K support is enabled on CELADON
+* Video Codec support on celadon
+
+  Decoder
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+
+  Encoder
+    * AVC High profile @ level 4.1 (1080P@30fps)
+    * HEVC Main profile @ Level 4 (1080P@30fps)
+* Art-extension is enabled in CELADON
+* f2fs filesystem support enabled
+* S3 Suspend/Resume is supported
+* Audio decoders supported: MP3/AAC-LC/HEAAC/HEAAC-v2/FLAC/VORBIS/OPUS/AMRNB/AMRWB
+* Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
+* SDHCI host controller is enabled
+* Security reference solution - TPM based h/w binding reference implementation
+* Flashing binaries via PFT – Platform Flash Tool
+
+
+Important Notes and Remarks
+---------------------------
+
+|C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK       WiFi Direct, WiFi streaming
+Wi-Fi Hotspot                  OK
+BT                             OK       File Transfer Protocol
+Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Storage/SD Card                OK
+Security                       OK
+Boot/Kernel                    OK
+USB devices over OTG           OK
+Ethernet                       OK
+Fastboot                       OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG4/VP8/VP9 Video Playback
+=============================  =======  ========
+
+
+Known Issues
+------------
+
+* UI Flicker observed in few Screens for example - Under AOSP settings .
+* Bluetooth file transfer fails in the first attempt after DUT reboot and it works fine once BT is reset
+* Lets Drive screen seen, on click of applications under "New User"
+* webM format video hangs during switch from full screen to normal 
+
+--------
+
+Status
+-------
+
+
 ww201852_KBLNUC
 ===============
 

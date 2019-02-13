@@ -4,6 +4,7 @@ Release Notes
 #############
 
 .. contents:: :local:
+
 ---------------
 
 ww201904_KBLNUC
@@ -427,6 +428,3 @@ Known Issues
 * Media is not getting paused after disconnecting USB headset 
 * Video playback works. Hangs observed on some random runs
 * ADB over USB is not enabled due to lack of device mode 
-
---------
-

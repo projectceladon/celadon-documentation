@@ -13,4 +13,4 @@ Guides and Tutorials
    profiling-system-power-consumption-using-socwatch/profiling-system-power-consumption-using-socwatch
    software-debug-tips/software-debug-tips
    trusty-hardware-binding/trusty-hardware-binding
-   thermal/thermal-daemon
+   thermal-daemon/thermal-daemon

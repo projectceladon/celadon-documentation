@@ -14,4 +14,5 @@ Guides and Tutorials
    software-debug-tips/software-debug-tips
    configure-selinux/configure-selinux
    security/trusty-hardware-binding/trusty-hardware-binding
+   security/trusty-enabling/trusty-enabling
    thermal-daemon/thermal-daemon

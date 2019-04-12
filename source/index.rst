@@ -11,3 +11,4 @@
    release_notes
    references
    faqs
+   sitemap

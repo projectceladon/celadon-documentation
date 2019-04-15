@@ -1,3 +1,8 @@
+.. _celadon-sitemap:
+
+Project |C| - Documentation Sitemap
+###################################
+
 .. toctree::
    :includehidden:
 

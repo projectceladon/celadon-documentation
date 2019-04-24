@@ -95,7 +95,6 @@ Known Issues
 * saved system time changes to default after reboot
 * Call,Alarm volume and alarm sound not audible via USB headset
 
-
 ---------------
 
 ww201904_KBLNUC
@@ -444,9 +443,7 @@ Known Issues
 * DUT freezes while using 4k monitor as display
 * Lets Drive screen seen on click of applications under "New User" 
 * Need to press power button twice to wake-up from S3"
-
---------
-
+* Basic Functionality of VGA port works like multidisplay support but there are issues with hotplug and some new Video Post Processing features (adjust Hue/Contrast/Saturation of video)
 
 Status
 -------
@@ -518,4 +515,5 @@ Known Issues
 * Backlight on/off is not working 
 * Media is not getting paused after disconnecting USB headset 
 * Video playback works. Hangs observed on some random runs
-* ADB over USB is not enabled due to lack of device mode 
+* ADB over USB is not enabled due to lack of device mode
+* Basic Functionality of VGA port works like multidisplay support but there are issues with hotplug and some new Video Post Processing features (adjust Hue/Contrast/Saturation of video)

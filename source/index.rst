@@ -12,3 +12,4 @@
    references
    faqs
    sitemap
+   dbc_blog

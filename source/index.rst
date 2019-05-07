@@ -8,8 +8,8 @@
 
    getting_started/getting_started
    tutorials/tutorials
+   blogs/blogs
    release_notes
    references
    faqs
    sitemap
-   dbc_blog

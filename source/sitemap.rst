@@ -8,6 +8,7 @@ Project |C| - Documentation Sitemap
 
    getting_started/getting_started
    tutorials/tutorials
+   blogs/blogs
    release_notes
    references
    faqs

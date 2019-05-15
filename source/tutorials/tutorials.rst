@@ -3,15 +3,26 @@
 Guides and Tutorials
 ####################
 
+Development
+-----------
+
 .. toctree::
    :maxdepth: 1
 
    add-intel-movidius-nnsdk/add-intel-movidius-nnsdk
    enabling-uac3/enabling-uac3
+   software-debug-tips/software-debug-tips
+   thermal-daemon/thermal-daemon
+
+Profiling
+---------
+
+.. toctree::
+   :maxdepth: 1
+
    performance-analysis-using-intel-vtune-amplifier/performance-analysis-using-intel-vtune-amplifier
    profiling-gpu/profiling-gpu
    profiling-system-power-consumption-using-socwatch/profiling-system-power-consumption-using-socwatch
-   software-debug-tips/software-debug-tips
 
 Security
 --------
@@ -22,7 +33,6 @@ Security
    configure-selinux/configure-selinux
    security/trusty-hardware-binding/trusty-hardware-binding
    security/trusty-enabling/trusty-enabling
-   thermal-daemon/thermal-daemon
 
 System Validation
 -----------------

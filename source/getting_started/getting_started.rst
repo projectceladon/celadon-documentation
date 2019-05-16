@@ -11,3 +11,4 @@ This Getting Started Guide provides step-by-step instructions to build your |C| 
    install-run
    build-source
    submit-patch
+   how-to

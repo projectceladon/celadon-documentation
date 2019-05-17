@@ -32,7 +32,7 @@ In addition, you are required to install the following packages on your 64-bit U
            libghc-bzlib-dev squashfs-tools pngcrush \
            schedtool dpkg-dev liblz4-tool make optipng maven \
            libssl-dev bc bsdmainutils gettext python-mako \
-           libelf-dev sbsigntool dosfstools mtools
+           libelf-dev sbsigntool dosfstools mtools efitools
 
 Download the source
 -------------------
@@ -86,10 +86,3 @@ Depending on your preferred installation mechanism, build the |C| installer file
     .. code-block:: bash
 
         $ make SPARSE_IMG=true flashfiles -j $(nproc)
-
-Dependancy
-----------
-* If you see the error --> FAILED: out/target/product/celadon/bootloader_policy-oemvars.txt please run--> sudo apt-get install efitools
-
-* Mako issue --> pip install mako
-

@@ -8,11 +8,18 @@ Prerequisites
 
 The following hardware are required to proceed with the installation.
 
-* |NUC| system - |C| has been validated on the following models:
+* |NUC| system - |C| has been validated on the following models with the listed lunch targets:
 
-    * |NUC| Kit `NUC7i5DNHE <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html>`_
-    * |NUC| Kit `NUC7i5BNH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5bnh.html>`_
-    * |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
+    .. list-table::
+        :widths: 50 50
+        :header-rows: 1
+
+        * - Model
+          - Applicable |C| lunch targets
+        * - |NUC| Kit `NUC7i5DNHE <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html>`_
+          - **celadon**, **cel_kbl**
+        * - |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
+          - **cel_apl**
 
 * A HDMI PC monitor display
 * A USB keyboard and a USB mouse
@@ -160,7 +167,7 @@ Once the installation is complete, the device re-boots automatically. However, |
 .. figure:: images/booting.jpg
     :align: center
 
-The first boot of the device takes time to prepare the built-in apps. Be patient, the Android home screen will show after the system boots up.
+The first boot of the device takes time to prepare the built-in apps. Be patient, the Android home screen will show after the system boots up. The following screenshots illustrate the traditional Android tablet UI booted from a **celadon** lunch target image.
 
 .. figure:: images/homescreen.jpg
     :align: center
@@ -168,7 +175,7 @@ The first boot of the device takes time to prepare the built-in apps. Be patient
 .. figure:: images/builtin-apps.jpg
     :align: center
 
-In addition to the traditional Android UI launcher, |C| supports the experimental automotive UI launcher introduced in Android 9.0 Pie.
+In addition to the traditional Android UI launcher, |C| supports the experimental automotive UI launcher introduced in Android 9.0 Pie. The automotive UI is enabled in the images built for **cel_kbl** and **cel_apl** lunch targets.
 
 .. figure:: images/ivi_ui_launcher.jpg
     :align: center

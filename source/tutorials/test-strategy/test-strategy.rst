@@ -1,7 +1,7 @@
 .. _system-validation-test-strategy:
 
-System Validation - Test strategy for |C|
-#########################################
+Test strategy for |C|
+#####################
 
 |C| is an open source Android software reference stack for the Android community to bring ideas to life while developing on the latest Android release and the latest Intel hardware platforms. The following |NUC| systems are used to validate regular |C| releases.
 

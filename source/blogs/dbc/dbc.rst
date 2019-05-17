@@ -1,7 +1,10 @@
 Making Android Host Debuggable - ADB for x86 Android Solutions
 ==============================================================
 
-.. contents:: Table of Contents
+Table of Contents
+#################
+
+.. contents::
     :depth: 2
     :local:
 
@@ -14,7 +17,6 @@ challenge in these Android host solutions is the lack of USB Device mode as
 most of x86 platforms are USB host systems. To address this issue, and to allow
 a DUT with Debug Host x86 platforms provide an infrastructure that offers
 a back-to-back connection using an USB Debug Class infra structure.
-
 This blog provides an overview of the *USB Debug Class* infra (DbC), followed
 by the steps to enable the feature on |C| and seamlessly run ``adb`` over a
 USB Type-A port.

@@ -15,10 +15,13 @@ Kernel drivers used by Thermal Daemon solution on |C|
 
 Thermal Daemon looks for thermal sensors and thermal cooling drivers in the Linux kernel. The following kernel drivers are used on Celadon:
 
-======================================  ===============================
-drivers/thermal/x86_pkg_temp_thermal.c  SOC package temperature driver
-drivers/powercap/intel_rapl.c           RAPL package power limit driver
-======================================  ===============================
++---------------------------------------+--------------------------------+------------------------------+
+|Thermal driver                         | Description                    | Supported Platforms          |
++=======================================+================================+==============================+
+|drivers/thermal/x86_pkg_temp_thermal.c | SOC package temperature driver |KabyLake NUC, AppoloLake NUC  | 
++---------------------------------------+--------------------------------+------------------------------+
+|drivers/powercap/intel_rapl.c          | RAPL package power limit driver|KabyLake NUC, AppoloLake NUC  |
++---------------------------------------+--------------------------------+------------------------------+
 
 Thermal Daemon source path in |C|
 ---------------------------------
@@ -28,11 +31,21 @@ Thermal Daemon source path in |C|
 *device/intel/project-celadon/common/thermal*           thermal-conf.xml configuration file
 ======================================================  ===================================
 
-Enabled Thermal Policies
-------------------------
+Platform Thermal Management
+---------------------------
 
 KabyLake NUC
 ~~~~~~~~~~~~
+
+- Platform Thermal Parameters
+
+================ =========================
+Tjmax 	         100 (degree celsisus)
+Thermal Zone     x86_pkg_temp
+Cooling device   soc power limit 1
+================ =========================
+
+- Thermal Management Policy
 
 +----------+-------------------+-----------------------------------------+
 |          | x86_pkg_temp      |                                         |
@@ -51,6 +64,16 @@ KabyLake NUC
 AppoloLake NUC
 ~~~~~~~~~~~~~~
 
+- Platform Thermal Parameters
+
+================ =========================
+Tjmax 	         105 (degree celsisus)
+Thermal Zone     x86_pkg_temp
+Cooling device   soc power limit 1
+================ =========================
+
+- Thermal Management Policy
+
 +----------+-------------------+-----------------------------------------+
 |          | x86_pkg_temp      |                                         |
 | Policy   | Temperature Limit | Action                                  |
@@ -63,4 +86,29 @@ AppoloLake NUC
 | Passive  | 100 < t < 104     | Reduce soc power limit further          |
 +----------+-------------------+-----------------------------------------+
 | Critical | t >= 104          | Shutdown the system                     |
++----------+-------------------+-----------------------------------------+
+
+Whiskey Lake
+~~~~~~~~~~~~
+
+- Platform Thermal Parameters
+
+================ =========================
+Tjmax 	         100 (degree celsisus)
+Thermal Zone     x86_pkg_temp
+Cooling device   soc power limit 1
+================ =========================
+
+- Thermal Management Policy
+
++----------+-------------------+-----------------------------------------+
+|          | x86_pkg_temp      |                                         |
+| Policy   | Temperature Limit | Action                                  |
+|          | (degree celsius)  |                                         |
++==========+===================+=========================================+
+| Passive  | t < 75            | No Action                               |
++----------+-------------------+-----------------------------------------+
+| Passive  | 75 < t < 95       | Reduce soc power limit 1                |
++----------+-------------------+-----------------------------------------+
+| Passive  | 95 < t < 99       | Reduce soc power limit further          |
 +----------+-------------------+-----------------------------------------+

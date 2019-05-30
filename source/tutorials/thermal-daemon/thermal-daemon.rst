@@ -32,7 +32,7 @@ Thermal Daemon source path in |C|
 ======================================================  ===================================
 
 Platform Thermal Management
-------------------------
+---------------------------
 
 KabyLake NUC
 ~~~~~~~~~~~~
@@ -73,6 +73,7 @@ Cooling device   soc power limit 1
 ================ =========================
 
 - Thermal Management Policy
+
 +----------+-------------------+-----------------------------------------+
 |          | x86_pkg_temp      |                                         |
 | Policy   | Temperature Limit | Action                                  |
@@ -85,4 +86,29 @@ Cooling device   soc power limit 1
 | Passive  | 100 < t < 104     | Reduce soc power limit further          |
 +----------+-------------------+-----------------------------------------+
 | Critical | t >= 104          | Shutdown the system                     |
++----------+-------------------+-----------------------------------------+
+
+Whiskey Lake
+~~~~~~~~~~~~
+
+- Platform Thermal Parameters
+
+================ =========================
+Tjmax 	         100 (degree celsisus)
+Thermal Zone     x86_pkg_temp
+Cooling device   soc power limit 1
+================ =========================
+
+- Thermal Management Policy
+
++----------+-------------------+-----------------------------------------+
+|          | x86_pkg_temp      |                                         |
+| Policy   | Temperature Limit | Action                                  |
+|          | (degree celsius)  |                                         |
++==========+===================+=========================================+
+| Passive  | t < 75            | No Action                               |
++----------+-------------------+-----------------------------------------+
+| Passive  | 75 < t < 95       | Reduce soc power limit 1                |
++----------+-------------------+-----------------------------------------+
+| Passive  | 95 < t < 99       | Reduce soc power limit further          |
 +----------+-------------------+-----------------------------------------+

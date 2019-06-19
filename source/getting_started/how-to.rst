@@ -64,23 +64,11 @@ In general, use the following steps to live-boot the |C|:
 How to dual boot |C| and Windows
 --------------------------------
 
-You may want to install Windows and |C| Anroid on one device, and select which OS to boot every time the device is powering up. To achieve the dual boot, install Windows and |C| on two storage devices seperately. There are two approaches:
+You may want to install Windows and |C| Anroid on one device, and select which OS to boot every time the device is powering up. To achieve the dual boot, install Windows and |C| on two storage devices seperately.
 
 #. Use Kernel Flinger UEFI executables:
 
     The Kernel Flinger UEFI installer does not prompt the target storage device to install. Disconnect the Windows installed storage device first, connect the storage back to the device after installing |C|, and then select which OS to boot from the BIOS boot menu.
-
-#. Install using GRUB installer image:
-
-    A GRUB installer image is created if you build the image with the following command. The GRUB installer provides an interactive prompt for you to select which storage device to install |C|.
-
-    .. code-block:: bash
-
-        $ make SPARSE_IMG=true project_celadon-efi -j $(nproc)
-
-    Substitute *$(nproc)* to the appropriate value according to the CPU cores on your build server.
-
-    After installing |C| Android and Windows, select which OS to boot from in the BIOS boot menu. Alternatively, add a boot item to the GRUB menu for Windows, and always boot into the GRUB bootloader. Then you can select which OS to boot from in the GRUB menu.
 
 How to change the partition size in |C| image
 ---------------------------------------------

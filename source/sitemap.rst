@@ -10,5 +10,5 @@ Project |C| - Documentation Sitemap
    tutorials/tutorials
    blogs/blogs
    release_notes
-   references
    faqs
+   references

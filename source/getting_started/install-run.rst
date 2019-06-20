@@ -27,20 +27,20 @@ The following hardware are required to proceed with the installation.
 * A development PC workstation running 64-bit Ubuntu 16.04 LTS Linux
 
 The firmware of your target system must support **UEFI Shell** in order to install the |C| installer images.
-Proceed with the following section to setup the |NUC| device with the Kernel Flinger UEFI executables.
+Proceed with the following section to setup the |NUC| device with the kernelflinger UEFI executables.
 
-Install using Kernel Flinger executables
+Install using kernelflinger executables
 ----------------------------------------
 
-Copy Kernel Flinger executables to a USB flash drive
+Copy kernelflinger executables to a USB flash drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Kernel Flinger installation approach does not require you to erase the content of the USB flash drive, but the USB flash drive needs to have at least a 2GB VFAT file system on it to store the Kernel Flinger UEFI executables. The Kernel Flinger executables are packaged in a *flashfile* in .ZIP format, unzip the content of the .ZIP file to a USB flash drive before the installation.
+The kernelflinger installation approach does not require you to erase the content of the USB flash drive, but the USB flash drive needs to have at least a 2GB VFAT file system on it to store the kernelflinger UEFI executables. The kernelflinger executables are packaged in a *flashfile* in .ZIP format, unzip the content of the .ZIP file to a USB flash drive before the installation.
 
 Boot the built-in EFI Shell to bootstrap the installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Kernel Flinger executables are loaded and run by the **UEFI Shell**. To enable the built-in UEFI Shell in the UEFI firmware of |NUC|, power on the device and press **F2** to enter the firmware setup menu.
+The kernelflinger executables are loaded and run by the **UEFI Shell**. To enable the built-in UEFI Shell in the UEFI firmware of |NUC|, power on the device and press **F2** to enter the firmware setup menu.
 
 .. figure:: images/splash.jpg
     :align: center
@@ -52,7 +52,7 @@ Click the *Advanced* button on the *Boot Order* pane, then click the *Boot Confi
 
 On a refresh of the 7th generation |NUC| model (i.e. `Dawson Canyon <https://ark.intel.com/products/codename/126293/Dawson-Canyon>`_), if you have ever installed |C| on the |NUC| system, you can install |C| on it with `Intel Platform Flash Tool Lite <https://01.org/node/2463>`_ using Android fastboot protocol. Proceed with the instructions on the :ref:`install-using-pft` section to install |C| using |PFT|.
 
-Save any modified configuration before rebooting the system, and press **F10** to enter the Boot Menu. Plug the USB flash drive with Kernel Flinger executables on it to any USB port, and select **UEFI: Built-in EFI Shell** to boot the NUC. After counting down, the UEFI Shell runs the ``startup.nsh`` script on the USB flash drive, and installs the Celadon images automatically.
+Save any modified configuration before rebooting the system, and press **F10** to enter the Boot Menu. Plug the USB flash drive with kernelflinger executables on it to any USB port, and select **UEFI: Built-in EFI Shell** to boot the NUC. After counting down, the UEFI Shell runs the ``startup.nsh`` script on the USB flash drive, and installs the Celadon images automatically.
 
 .. figure:: images/select_uefi_shell.jpg
     :align: center
@@ -96,7 +96,7 @@ Click the **Browse** button, enter the folder contains the content of the unzipp
 Reboot to Android UI
 --------------------
 
-Once the installation is complete, the device re-boots automatically. However, |C| implements the Android `Verified Boot <https://source.android.com/security/verifiedboot/verified-boot>`_ mechanism developed by Google. We did not enroll any keys such as other commercial Android products do, so a KernelFlinger warning screen is displayed before showing the traditional Android booting screen.
+Once the installation is complete, the device re-boots automatically. However, |C| implements the Android `Verified Boot <https://source.android.com/security/verifiedboot/verified-boot>`_ mechanism developed by Google. We did not enroll any keys such as other commercial Android products do, so a kernelflinger warning screen is displayed before showing the traditional Android booting screen.
 
 .. figure:: images/kernelflinger.jpg
     :align: center

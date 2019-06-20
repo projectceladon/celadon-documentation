@@ -18,7 +18,7 @@ In general, use the following steps to live-boot the |C|:
 
 #. Build a live boot image.
 
-    Follow the general steps to prepare for the local development, and download the source code. Append the build option '**KERNELFLINGER_SUPPORT_USB_STORAGE=true**' when you build the images. This option enables the Kernel Flinger to support loading Android from a USB disk, and is needed to support USB live boot.
+    Follow the general steps to prepare for the local development, and download the source code. Append the build option '**KERNELFLINGER_SUPPORT_USB_STORAGE=true**' when you build the images. This option enables the kernelflinger to support loading Android from a USB disk, and is needed to support USB live boot.
 
     Use the following command to build a live boot image:
 
@@ -66,9 +66,9 @@ How to dual boot |C| and Windows
 
 You may want to install Windows and |C| Anroid on one device, and select which OS to boot every time the device is powering up. To achieve the dual boot, install Windows and |C| on two storage devices seperately.
 
-#. Use Kernel Flinger UEFI executables:
+#. Use kernelflinger UEFI executables:
 
-    The Kernel Flinger UEFI installer does not prompt the target storage device to install. Disconnect the Windows installed storage device first, connect the storage back to the device after installing |C|, and then select which OS to boot from the BIOS boot menu.
+    The kernelflinger UEFI installer does not prompt the target storage device to install. Disconnect the Windows installed storage device first, connect the storage back to the device after installing |C|, and then select which OS to boot from the BIOS boot menu.
 
 How to change the partition size in |C| image
 ---------------------------------------------

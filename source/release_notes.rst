@@ -477,7 +477,7 @@ Integrated Features
 * Wi-Fi 802.11 a/b/g/n
 * Wired Ethernet support
 * Android Grub boot support
-* Android Kernel Flinger boot support
+* Android Kernelflinger boot support
 * Thermal Daemon is enabled for CELADON
 * Media sdk 4K support is enabled on CELADON
 * Art-extension is enabled in CELADON

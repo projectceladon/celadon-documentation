@@ -93,8 +93,8 @@ Get or compile the OVMF
 You can contract Fang, Peter <peter.fang@intel.com> to get the OVMF used in ACRN.
 
 
-Patch and build the Celadon
------------------------------
+Patches
+=======
 Refer to https://01.org/projectceladon/documentation/getting_started/build-source for the general guide of Cleadon to download the source code and compile it.
 
 
@@ -108,13 +108,20 @@ And apply the the following patchs:
 
   https://github.com/projectceladon/device-androidia-mixins/pull/293 # 2019-06-11 # [DO NOT MERGE] graphic/mesa: Add the support of ACRN.
 
-
-Before the Celadon support Trusty in ACRN + OVMF, need the following patch:
-
 #. # device-androidia
 
-https://github.com/projectceladon/device-androidia/pull/439 # 2019-06-06 # [DO NOT MERGE] Disable trusty and pstore.
+  https://github.com/projectceladon/device-androidia/pull/471 # 2019-06-19 # [DO-NOT-MERGE]Enable trusty for ACRN+OVMF+CELADON
 
+#. # hardware-intel-kernelflinger
+
+  https://github.com/projectceladon/hardware-intel-kernelflinger/pull/58  # 2019-06-19 # [DO-NOT-MERGE]support OVMF
+
+#. # device-androidia-mixins
+
+  https://github.com/projectceladon/device-androidia-mixins/pull/297  # 2019-06-19 # [DO-NOT-MERGE]Build tos.img for ACRN+OVMF+CELADON
+
+Build Celadon
+-------------
 Select cel_apl, cel_kbl or celadon lunch target.
 
 Use the following comamnd to build the image:
@@ -134,7 +141,15 @@ Get launch_android.sh in /usr/share/acrn/samples/nuc/.
 
 Copy the built Celadon **[lunch_target]/[lunch_target]** *_gptimage.img to your working directory, and rename it to android.img.
 
-Copy the OVMF.fd to your owrking directory.
+Get acrn-dm and ovmf.fd
+==========================================================
+
+  acrn-dm: https://github.com/YadongQi/celadon-documentation/blob/master/source/tutorials/acrn_ovmf/acrn-dm
+   Download acrn-dm and replace /usr/bin/acrn-dm in SOS
+
+  OVMF:    https://github.com/YadongQi/celadon-documentation/blob/master/source/tutorials/acrn_ovmf/OVMF.fd
+   Download OVMF.fd and replace OVMF.fd under your working directory
+
 
 Run the launch_android.sh to start the Celadon in ACRN + OVMF.
 

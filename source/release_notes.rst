@@ -20,28 +20,30 @@ Integrated Features
 -------------------
 
 * Device boots fine on M.2 & SATA based SSD's and eMMC based storage devices
-* 4K multi display are supported
+* 4K multiple displays are supported. Three 4K displays @ 60fps works fine simultaneously
 * Support OpenGL ES 3.2 ; Display port support up to maximum possible 2560x1440 Quad HD (QHD) ; Support Vulkan 1.1 ; Support clone mode (Mirroring)
 * Image / video capture and multiple USB camera enabled
 
   Model
     * logitech C922 pro stream webcam
-* Wifi / BT / Ethernet enabled and works fine on both Jefferson's Peak 2 and Thunder Peak 2 
+* Wifi / BT / Ethernet enabled and works fine on discrete module Thunder Peak [Model: 9260NGW]
 * OTA upgrade of full & incremental packages works fine
 * S3 power state implemented. Able to enter suspend(S3) by initiating power key event & able to be waked up from S3 by setting a specific RTC timer alarm
 * SD-Card enabled
 * The thermal shutdown feature have been enabled for hardware thermal protection with tuned thermal parameters. Thermal management solution doc is added in https://01.org/projectceladon/documentation/tutorials/thermal/thermal-daemon
-* Touchscreen & Touchpanel works fine
+* Touchscreen & Touchpanel works fine [Model: ViewSonic TD2230]
 * adb over dbc is enabled
 * Trusty Execution Environment / SELinux / File Based Encryption enabled
 * Audio is enabled. Supports audio over USB/3.5mm jack/HDA. Formats : MP3/AAC/MIDI/FLAC/WAV
-* Video Codec support on celadon
+* Video Codec support is enabled on celadon. Multiple-ways simultaneous decode/encode video supported. More than 16 simultaneous decode streams @ 1080p
 
   Decoder
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
+    * MPEG4 SP decode
+    * HTML 5 HW acceleration
 
   Encoder
     * AVC High profile @ level 4.1 (1080P@30fps)

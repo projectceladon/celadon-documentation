@@ -45,8 +45,6 @@ Create an empty directory that will hold the |C| source files and serve as the w
     $ cd celadon
     $ repo init -u https://github.com/projectceladon/manifest.git
 
-The master branch of |C| build is based on Google `Android 9 Pie <https://www.android.com/versions/pie-9-0/>`_ release. The previous `Android 8.1 Oreo <https://developer.android.com/about/versions/oreo/android-8.1>`_ code branch is not available until further notice.
-
 Enter the following command to pull down the |C| Android source tree to your working directory. The ``repo sync`` operation might take time depending on your Internet download speed. Reference the `Downloading the Source <https://source.android.com/setup/build/downloading>`_ section of the AOSP website for tips to download the source behind a proxy.
 
 .. code-block:: bash

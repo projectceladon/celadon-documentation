@@ -93,6 +93,9 @@ Download and install `Intel Platform Flash Tool lite <https://01.org/node/2463>`
 
 Click the **Browse** button, enter the folder contains the content of the unzipped flashfile, open the **flash.json** configuration file, and simply press the **Start to flash** button to start the installation.
 
+**Note:**
+    Some |NUC| storage size is huge(e.g. 128G, 256G ), wipe data will take a long time. In view of this situation, we add two new flash configure(Blank_without_lock, Update_without_lock) in PFT, These configures allow device flash end without lock, so that wipe data required by lock/unlock can be skipped. General developers can select Blank_without_lock to reduce flash time.
+
 Reboot to Android UI
 --------------------
 

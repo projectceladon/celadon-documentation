@@ -11,14 +11,17 @@ The following hardware are required to proceed with the installation.
 * |NUC| system - |C| has been validated on the following models with the listed lunch targets:
 
     .. list-table::
-        :widths: 50 50
+        :widths: 30 10 60
         :header-rows: 1
 
         * - Model
+          - BIOS
           - Applicable |C| lunch targets
         * - |NUC| Kit `NUC7i5DNHE <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html>`_
+          - `0065 <https://downloadcenter.intel.com/downloads/eula/28885/BIOS-Update-DNKBLi5v-86A-?httpDown=https://downloadmirror.intel.com/28885/eng/DNi50065.bio>`_
           - **celadon**, **cel_kbl**
         * - |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
+          - `0060 <https://downloadcenter.intel.com/downloads/eula/28641/BIOS-Update-AYAPLCEL-86A-?httpDown=https://downloadmirror.intel.com/28641/eng/AY0060.bio>`_
           - **cel_apl**
 
 * A HDMI PC monitor display

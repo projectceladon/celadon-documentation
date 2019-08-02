@@ -38,7 +38,7 @@ Install using kernelflinger executables
 Copy kernelflinger executables to a USB flash drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The kernelflinger installation approach does not require you to erase the content of the USB flash drive, but the USB flash drive needs to have at least a 2GB VFAT file system on it to store the kernelflinger UEFI executables. The kernelflinger executables are packaged in a *flashfile* in .ZIP format, unzip the content of the .ZIP file to a USB flash drive before the installation.
+The kernelflinger installation approach does not require you to erase the content of the USB flash drive, but the USB flash drive needs to have at least a 2GB VFAT file system on it to store the kernelflinger UEFI executables. The kernelflinger executables are packaged in a *flashfile* in .ZIP format, which is available under the *out/* folder after building the |C| source code. Unzip the content of the .ZIP file to a USB flash drive before the installation.
 
 Boot the built-in EFI Shell to bootstrap the installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

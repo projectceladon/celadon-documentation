@@ -15,6 +15,10 @@ Mesa                              18.3.6
 Kernel Version                    4.19.46
 ================================  =====
 
+Important Note
+--------------
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes. 
+
 Integrated Features
 -------------------
 
@@ -98,6 +102,7 @@ Known Issues
 * saved system time changes to default after reboot
 * Bluetooth pairing fails in first boot cycle
 * Bluetooth pairing fails if USB headset is not connected to DUT
+* Media KW errors are present in this build 
 
 ---------------
 
@@ -110,6 +115,10 @@ Software Version                  Android version 9
 Mesa                              18.3.6
 Kernel Version                    4.19.46
 ================================  =====
+
+Important Note
+--------------
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 Integrated Features
 -------------------
@@ -185,6 +194,10 @@ Software Version                  Android version 9
 Mesa                              18.3.2
 Kernel Version                    4.19.19
 ================================  =====
+
+Important Note
+--------------
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 Integrated Features
 -------------------
@@ -278,6 +291,10 @@ Kernel Version                    4.19
 Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201904
 ================================  =====
 
+Important Note
+--------------
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+
 Integrated Features
 -------------------
 
@@ -364,6 +381,10 @@ Mesa                              18.2.6
 Kernel Version                    4.19
 Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201852
 ================================  =====
+
+Important Note
+--------------
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 Integrated Features
 -------------------
@@ -453,6 +474,10 @@ Mesa                              18.2.6
 Kernel Version                    4.19
 Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201851
 ================================  =====
+
+Important Note
+--------------
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 Integrated Features
 -------------------
@@ -544,6 +569,10 @@ Kernel Version                    4.19
 Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201851
 ================================  =====
 
+Important Note
+--------------
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+
 Integrated Features
 -------------------
 
@@ -634,6 +663,10 @@ Mesa                              18.2.0-rc4
 Kernel Version                    4.14.67
 Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201840
 ================================  =====
+
+Important Note
+--------------
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 Integrated Features
 -------------------

@@ -49,7 +49,7 @@ Status
 
 You will get the output logs from the BIOS, Kernelflinger, Linux kernel, and Celadon Android stack during the Intel NUC system starting up.
 
-Enable the serial debug logs on Intel® NUC Kit with Intel® Celeron® Processors (i.e. `Arches Canyon <https://ark.intel.com/content/www/us/en/ark/products/codename/95587/arches-canyon.html>`_) 
+Enable the serial debug logs on Intel® NUC Kit with Intel® Celeron® Processors (i.e. `Arches Canyon <https://ark.intel.com/content/www/us/en/ark/products/codename/95587/arches-canyon.html>`_)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 HW connection
@@ -87,13 +87,13 @@ Status
 
 The logs from the Linux kernel, and Celadon Android stack will be captured in the *minicom* serial console on the host PC
 
-Enable the Serial debug logs on Intel Whiskey Lake CRB (Customer Reference Platform)
+Enable the Serial debug logs on Intel Whiskey Lake ERB (Engineer Reference Platform)
 ------------------------------------------------------------------------------------
 
 HW connection
 ~~~~~~~~~~~~~
 
-On Intel Whiskey Lake CRB, the UART port is accessible through an on-board 9-pin connector. Connect the cable to the host PC using the following serial-to-USB converter cable.
+On Intel Whiskey Lake ERB, the UART port is accessible through an on-board 9-pin connector. Connect the cable to the host PC using the following serial-to-USB converter cable.
 
 .. figure:: images/usb2uart_female.jpg
     :align: center

@@ -12,6 +12,8 @@ How to enable live boot
 
 The live boot feature allows you to flash a live boot image to a USB disk, and then boot from this USB disk to Android directly without installing Android to the internal storage first.
 
+The live boot feature is used only for debug purposes, and it must be built with the **eng** or **userdebug** build flavors.
+
 For |C| we build a **GPT** disk image, flash it to a USB disk (just like we install Android to the USB disk), and then boot Android from the USB disk. With this approach, |C| supports all Android features except some security features that need hardware binding.
 
 In general, use the following steps to live-boot the |C|:

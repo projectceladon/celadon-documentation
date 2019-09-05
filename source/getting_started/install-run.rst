@@ -6,6 +6,9 @@ Run |C| on Intel® NUC
 Prerequisites
 -------------
 
+.. caution::
+    |C| project delivers the Android 10 Pre-Production Early Release for evaluation and development purposes, it **MUST** not be used for production purposes.
+
 The following hardware are required to proceed with the installation.
 
 * |NUC| system - |C| has been validated on the following models with the listed lunch targets:
@@ -19,10 +22,10 @@ The following hardware are required to proceed with the installation.
           - Applicable |C| lunch targets
         * - |NUC| Kit `NUC7i5DNHE <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html>`_
           - `0065 <https://downloadcenter.intel.com/downloads/eula/28885/BIOS-Update-DNKBLi5v-86A-?httpDown=https://downloadmirror.intel.com/28885/eng/DNi50065.bio>`_
-          - **celadon**, **cel_kbl**
+          - ``celadon``, ``cel_kbl``
         * - |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
           - `0060 <https://downloadcenter.intel.com/downloads/eula/28641/BIOS-Update-AYAPLCEL-86A-?httpDown=https://downloadmirror.intel.com/28641/eng/AY0060.bio>`_
-          - **cel_apl**
+          - ``celadon_ivi``, ``cel_apl``
 
 * A HDMI PC monitor display
 * A USB keyboard and a USB mouse
@@ -31,6 +34,9 @@ The following hardware are required to proceed with the installation.
 
 The firmware of your target system must support **UEFI Shell** in order to install the |C| installer images.
 Proceed with the following section to setup the |NUC| device with the kernelflinger UEFI executables.
+
+.. note::
+    Android Q is supported on Intel Platforms, and the |NUC| system model NUC6CAYH is the leading platform for IVI configuration with the ``celadon_ivi`` lunch target.
 
 Install using kernelflinger executables
 ----------------------------------------
@@ -96,8 +102,8 @@ Download and install `Intel Platform Flash Tool lite <https://01.org/node/2463>`
 
 Click the **Browse** button, enter the folder contains the content of the unzipped flashfile, open the **flash.json** configuration file, and simply press the **Start to flash** button to start the installation.
 
-**Note:**
-    Some |NUC| storage size is huge(e.g. 128G, 256G ), wipe data will take a long time. In view of this situation, we add two new flash configure(Blank_without_lock, Update_without_lock) in PFT, These configures allow device flash end without lock, so that wipe data required by lock/unlock can be skipped. General developers can select Blank_without_lock to reduce flash time.
+.. note::
+    If your |NUC| system is installed with huge disk storage (e.g. 128G, 256G, etc.), it will take very long time to wipe the data on the disk. To mitigate the long waiting, two configurations, ``Blank_without_lock`` and ``Update_without_lock``, are added to |PFT| which leave the device in unlock state after the flash operation, so that the wipe data operation caused by lock state changed can be skipped.
 
 Reboot to Android UI
 --------------------
@@ -124,4 +130,18 @@ In addition to the traditional Android UI launcher, |C| supports the experimenta
     :align: center
 
 .. figure:: images/ivi_ui_launcher_apps.jpg
+    :align: center
+
+The following screenshots show the device running the Android 10 Pre-Production Early Release.
+
+.. figure:: images/android10_home.png
+    :align: center
+
+.. figure:: images/android10_dashboard.png
+    :align: center
+
+.. figure:: images/android10_apps1.png
+    :align: center
+
+.. figure:: images/android10_apps2.png
     :align: center

@@ -45,6 +45,12 @@ Create an empty directory that will hold the |C| source files and serve as the w
     $ cd celadon
     $ repo init -u https://github.com/projectceladon/manifest.git
 
+The master branch of |C| build is based on Google `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Early Release. Use the following command to initialize your source tree with the Google `Android 9 Pie <https://www.android.com/versions/pie-9-0/>`_ code base:
+
+.. code-block:: bash
+
+    $ repo init -u https://github.com/projectceladon/manifest -b celadon/p/mr0/master -m default.xml
+
 Enter the following command to pull down the |C| Android source tree to your working directory. The ``repo sync`` operation might take time depending on your Internet download speed. Reference the `Downloading the Source <https://source.android.com/setup/build/downloading>`_ section of the AOSP website for tips to download the source behind a proxy.
 
 .. code-block:: bash
@@ -67,7 +73,13 @@ Enter the following commands to initialize the build variables with the *envsetu
     $ source build/envsetup.sh
     $ lunch celadon-userdebug
 
-Build the |C| installer files with the following command. Replace the *$(nproc)* argument with the number of processor threads on your workstation in order to build the source code with parallel tasks. The generated kernelflinger executables .ZIP file (**out/target/product/celadon/celadon.flashfiles.eng.${USER}.zip**) is available after the build. You can follow :ref:`install-on-nuc` of this guide to flash the installer image to a removable USB drive and install |C| on a |NUC|.
+To build the Android 10 IVI image, select the **celadon_ivi-userdebug** lunch target in the previous ``lunch`` command:
+
+.. code-block:: bash
+
+    $ lunch celadon_ivi-userdebug
+
+Build the |C| installer files with the following command. The *-j $(nproc)* argument instructs the builder to compile the source code with parallel tasks. The generated kernelflinger executables .ZIP file (**out/target/product/celadon/celadon.flashfiles.eng.${USER}.zip**) is available after the build. You can follow :ref:`install-on-nuc` of this guide to flash the installer image to a removable USB drive and install |C| on a |NUC|.
 
 * Build the kernelflinger executables
 

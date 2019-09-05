@@ -11,7 +11,7 @@ Submit your patches
 |C| source code consists of multiple repositories (i.e. "**projects**"), the manifest file *.repo/manifests/default.xml* contains the information needed (i.e. "**remotes**") to fetch those repositories. It includes the following files to instruct the ``repo`` command to compose the |C| source tree:
 
 =============================  ==============================================================
-include/aosp_vanilla.xml       This is vanilla AOSP code based on refs/tags/android-9.0.0_r18
+include/aosp_vanilla.xml       This is vanilla AOSP code based on refs/tags/android-10.0.0_r1
 include/remove-android_ia.xml  The repositories to be removed from the AOSP code
 include/bsp-celadon.xml        The BSP source code customized for |C|
 =============================  ==============================================================
@@ -83,4 +83,13 @@ Patches against the AOSP project source code use a different approach. Complete 
 
       $ git format-patch HEAD~<n>
 
-#. Copy the patch files generated in the previous step to the *vendor/intel/utils/android_p/google_diff/<target_product>/* folder in the |C| source tree. Maintain the patch number in sequence and create the previous folder if it does not exist.
+#. Copy the patch files generated in the previous step to the *vendor/intel/utils/aosp_diff/* folder in the |C| source tree according to the following guidelines. Maintain the patch number in sequence and create the previous folder if it does not exist.
+
+    * If the patch file is to make changes to the following areas in the common AOSP code (i.e. applicable to all hardware and no product dependency), move the patch file to the 'vendor/intel/utils/aosp_diff/**preliminary**/' folder.
+
+        #. Patches for CTS/VTS
+        #. Patches for AOSP build
+        #. Patches for AOSP major feature enabling
+        #. Patches proposed by COE for upstream
+
+    * Otherwise, move the patch file to the 'vendor/intel/utils/aosp_diff/**<target_product>**/' folder.

@@ -4,7 +4,7 @@ Blogs
 #####
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     dbc/dbc
     uart/uart

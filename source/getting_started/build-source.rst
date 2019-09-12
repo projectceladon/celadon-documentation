@@ -32,7 +32,8 @@ In addition, you are required to install the following packages on your 64-bit U
            libghc-bzlib-dev squashfs-tools pngcrush \
            schedtool dpkg-dev liblz4-tool make optipng maven \
            libssl-dev bc bsdmainutils gettext python-mako \
-           libelf-dev sbsigntool dosfstools mtools efitools
+           libelf-dev sbsigntool dosfstools mtools efitools \
+           git-lfs python3
 
 Download the source
 -------------------

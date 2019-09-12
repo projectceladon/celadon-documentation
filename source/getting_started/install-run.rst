@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 .. caution::
-    |C| project delivers the Android 10 Pre-Production Early Release for evaluation and development purposes, it **MUST** not be used for production purposes.
+    |C| project delivers the `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Early Release for evaluation and development purposes, it **MUST** not be used for production purposes.
 
 The following hardware are required to proceed with the installation.
 
@@ -36,7 +36,7 @@ The firmware of your target system must support **UEFI Shell** in order to insta
 Proceed with the following section to setup the |NUC| device with the kernelflinger UEFI executables.
 
 .. note::
-    Android Q is supported on Intel Platforms, and the |NUC| system model NUC6CAYH is the leading platform for IVI configuration with the ``celadon_ivi`` lunch target.
+    Android Q is supported on Intel Platforms, and the |NUC| system model NUC6CAYH is the leading platform for IVI configuration with the **celadon_ivi** lunch target.
 
 Install using kernelflinger executables
 ----------------------------------------

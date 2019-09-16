@@ -11,21 +11,24 @@ Prerequisites
 
 The following hardware are required to proceed with the installation.
 
-* |NUC| system - |C| has been validated on the following models with the listed lunch targets:
+* |NUC| system - |C| has been validated on |NUC| models with the lunch targets listed in the following table:
 
     .. list-table::
-        :widths: 30 10 60
+        :widths: 30 10 30 30
         :header-rows: 1
 
         * - Model
           - BIOS
-          - Applicable |C| lunch targets
+          - Android-9
+          - Android-10
         * - |NUC| Kit `NUC7i5DNHE <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html>`_
           - `0065 <https://downloadcenter.intel.com/downloads/eula/28885/BIOS-Update-DNKBLi5v-86A-?httpDown=https://downloadmirror.intel.com/28885/eng/DNi50065.bio>`_
           - ``celadon``, ``cel_kbl``
+          -
         * - |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
           - `0060 <https://downloadcenter.intel.com/downloads/eula/28641/BIOS-Update-AYAPLCEL-86A-?httpDown=https://downloadmirror.intel.com/28641/eng/AY0060.bio>`_
-          - ``celadon_ivi``, ``cel_apl``
+          - ``cel_apl``
+          - ``celadon_ivi``
 
 * A HDMI PC monitor display
 * A USB keyboard and a USB mouse

@@ -126,7 +126,7 @@ The first boot of the device takes time to prepare the built-in apps. Be patient
 
 In addition to the traditional Android UI launcher, |C| supports the experimental automotive UI launcher introduced in Android 9.0 Pie. The automotive UI is enabled in the images built for **cel_kbl** and **cel_apl** lunch targets.
 
-.. figure:: images/ivi_ui_launcher.jpg
+.. figure:: images/ivi_ui_launcher.png
     :align: center
 
 .. figure:: images/ivi_ui_launcher_apps.jpg
@@ -134,14 +134,11 @@ In addition to the traditional Android UI launcher, |C| supports the experimenta
 
 The following screenshots show the device running the Android 10 Pre-Production Early Release.
 
-.. figure:: images/android10_home.png
+.. figure:: images/android10_home.jpg
     :align: center
 
-.. figure:: images/android10_dashboard.png
+.. figure:: images/android10_apps1.jpg
     :align: center
 
-.. figure:: images/android10_apps1.png
-    :align: center
-
-.. figure:: images/android10_apps2.png
+.. figure:: images/android10_apps2.jpg
     :align: center

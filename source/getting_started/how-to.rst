@@ -20,23 +20,35 @@ In general, use the following steps to live-boot the |C|:
 
 #. Build a live boot image.
 
-    Follow the general steps to prepare for the local development, and download the source code. Append the build option '**KERNELFLINGER_SUPPORT_USB_STORAGE=true**' when you build the images. This option enables the kernelflinger to support loading Android from a USB disk, and is needed to support USB live boot.
+    Follow the general steps to prepare for the local development, and download the source code. Make sure the kernelflinger support loading Android from a USB disk, and support USB live boot for your **[lunch_target]**. For some lunch targets such as caas, celadon_ivi and celadon_tablet these features are enabled by default. Open the mixins config file of caas *device/intel/project-celadon/caas/mixins.spec*, you can find:
+
+    .. code-block:: none
+
+        boot-arch: project_celadon(...,...,usb_storage=ture,live_boot=true)
+
+    Enable this features for your **[lunch_target]** by adding these two options to its mixins.spec like caas.
 
     Use the following command to build a live boot image:
 
     .. code-block:: bash
 
-        $ make SPARSE_IMG=true KERNELFLINGER_SUPPORT_USB_STORAGE=true gptimage -j $(nproc)
+        $ make SPARSE_IMAGE=true gptimage -j $(nproc)
+
+    Or you can enable them in make commandline instead:
+
+    .. code-block:: bash
+
+        $ make SPARSE_IMAGE=true KERNELFLINGER_SUPPORT_USB_STORAGE=true KERNELFLINGER_SUPPORT_LIVE_BOOT=true gptimage -j $(nproc)
 
     Substitute *$(nproc)* to the appropriate value according to the CPU cores on your build server.
 
-    After a successful build you get an *out/target/product/* **[lunch_target]/[lunch_target]** *_gptimage.img* image. For example, an *out/target/product/cel_kbl/cel_kbl_gptimage.img* image is generated for the *cel_kbl* launch target.
+    After a successful build you get an *out/target/product/* **[lunch_target]/[lunch_target]** *.img* image. For example, an *out/target/product/caas/caas.img* image is generated for the *caas* launch target.
 
-    This is an image of a whole GPT disk, with an image size of 14GB. To change the default image size, edit the mixins config file *device/intel/project-celadon/[luch_target]/mixins.spec* as following:
+    This is an image of a whole GPT disk, with an image size of 16GB. To change the default image size, edit the mixins config file *device/intel/project-celadon/[luch_target]/mixins.spec* as following:
 
     .. code-block:: none
 
-        gptbuild: true(size=14G,generate_craff=false)
+        gptbuild: true(size=16G,generate_craff=false)
 
 #. Flash the live boot image to a USB disk.
 
@@ -44,7 +56,7 @@ In general, use the following steps to live-boot the |C|:
 
     .. code-block:: bash
 
-        $ sudo dd if=cel_kbl_gptimage.img of=/dev/sdc bs=1M
+        $ sudo dd if=caas.img of=/dev/sdc bs=1M
 
     .. caution::
         You **MUST** change the */dev/sdc* to the real USB disk device.

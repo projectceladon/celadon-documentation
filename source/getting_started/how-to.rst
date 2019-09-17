@@ -12,7 +12,7 @@ How to enable live boot
 
 The live boot feature allows you to flash a live boot image to a USB disk, and then boot from this USB disk to Android directly without installing Android to the internal storage first.
 
-The live boot feature is used only for debug purposes, and it must be built with the **eng** or **userdebug** build flavors.
+The live boot feature is used only for debug purposes, and it must be built with **eng** or **userdebug** build flavors.
 
 For |C| we build a **GPT** disk image, flash it to a USB disk (just like we install Android to the USB disk), and then boot Android from the USB disk. With this approach, |C| supports all Android features except some security features that need hardware binding.
 
@@ -20,13 +20,13 @@ In general, use the following steps to live-boot the |C|:
 
 #. Build a live boot image.
 
-    Follow the general steps to prepare for the local development, and download the source code. Make sure the kernelflinger support loading Android from a USB disk, and support USB live boot for your **[lunch_target]**. For some lunch targets such as caas, celadon_ivi and celadon_tablet these features are enabled by default. Open the mixins config file of caas *device/intel/project-celadon/caas/mixins.spec*, you can find:
+    Follow the general steps to prepare for the local development, and download the source code. Open the mixins config file to verify the kernelflinger supports USB live boot feature for your **[lunch_target]**, as the feature is enabled by default for some of lunch targets such as *"caas", "celadon_ivi" and "celadon_tablet"*. The following example shows the mixins config file *device/intel/project-celadon/caas/mixins.spec* for the "caas" lunch target:
 
     .. code-block:: none
 
         boot-arch: project_celadon(...,...,usb_storage=ture,live_boot=true)
 
-    Enable this features for your **[lunch_target]** by adding these two options to its mixins.spec like caas.
+    Enable the live boot feature by adding the *usb_storage* and *live_boot* options in the *mixins.spec* file.
 
     Use the following command to build a live boot image:
 
@@ -34,17 +34,15 @@ In general, use the following steps to live-boot the |C|:
 
         $ make SPARSE_IMAGE=true gptimage -j $(nproc)
 
-    Or you can enable them in make commandline instead:
+    Instead, you can also pass the options in the ``make`` command line:
 
     .. code-block:: bash
 
         $ make SPARSE_IMAGE=true KERNELFLINGER_SUPPORT_USB_STORAGE=true KERNELFLINGER_SUPPORT_LIVE_BOOT=true gptimage -j $(nproc)
 
-    Substitute *$(nproc)* to the appropriate value according to the CPU cores on your build server.
-
     After a successful build you get an *out/target/product/* **[lunch_target]/[lunch_target]** *.img* image. For example, an *out/target/product/caas/caas.img* image is generated for the *caas* launch target.
 
-    This is an image of a whole GPT disk, with an image size of 16GB. To change the default image size, edit the mixins config file *device/intel/project-celadon/[luch_target]/mixins.spec* as following:
+    The previous command creates an image file of 16GB bytes that contains a whole GPT disk. To change the default image size, edit the mixins config file *device/intel/project-celadon/[luch_target]/mixins.spec* as following:
 
     .. code-block:: none
 

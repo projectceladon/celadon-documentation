@@ -7,6 +7,49 @@ How do I ...
     :depth: 1
     :local:
 
+How to support secure boot
+-----------------------
+Some PC's BIOS enable secure boot by default, and it add the BIOS vendor's key and Windows key by default. But the default setting will not include the key to verify the kernelflinger. So if the BIOS enable the secure boot, you will get the following error message:
+
+.. figure:: images/Authorization_fail.jpg
+    :align: center
+
+You can use the following way to add the key used to verify the kernelflinger to BIOS:
+
+Use Key tool:
+`Keytool <https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git>`_ is a tool which packed in efitools.
+Download the KeyTool.efi from Internet, such as from Ubuntu: Download the `DB.auth <https://github.com/yang-kaix/keytool/blob/master/key/DB.auth>`_ and `KEK.auth <https://github.com/yang-kaix/keytool/blob/master/key/KEK.auth>`_
+
+Prepare a USB disk, and format it use FAT filesystem, and put the KeyTool.efi, DB.auth and KEK.auth to an USB disk.
+Disable the device secure boot. Plug in the USB disk and reboot device, press F10 to enter the Boot Menu. Select "UEFI : Build-in EFI Shell" and then find your USB device.
+Execute `KeyTool.efi <https://github.com/yang-kaix/keytool/blob/master/KeyTool.efi>`_ and you will see the KeyTool menu. Select Edit Keys to replace the keys.
+
+.. figure:: images/keytool.jpg
+    :align: center
+
+Select (db) option and enter
+
+.. figure:: images/select_menu.jpg
+    :align: center
+
+Choose "Add New Key" to add the DB key
+
+.. figure:: images/add_db.jpg
+    :align: center
+
+Browse your USB disks to locate your keys and add them one at a time
+
+.. figure:: images/browse_db_from_usb.jpg
+    :align: center
+
+.. figure:: images/auth_key.jpg
+    :align: center
+
+Repeat the same steps and add the new key for KEK
+
+.. figure:: images/menu_kek.jpg
+    :align: center
+
 How to enable live boot
 -----------------------
 

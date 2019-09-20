@@ -8,7 +8,8 @@ How do I ...
     :local:
 
 How to support secure boot
------------------------
+--------------------------
+
 Some PC's BIOS enable secure boot by default, and it add the BIOS vendor's key and Windows key by default. But the default setting will not include the key to verify the kernelflinger. So if the BIOS enable the secure boot, you will get the following error message:
 
 .. figure:: images/Authorization_fail.jpg
@@ -90,6 +91,8 @@ In general, use the following steps to live-boot the |C|:
     .. code-block:: none
 
         gptbuild: true(size=16G,generate_craff=false)
+
+.. _usb-live-boot:
 
 #. Flash the live boot image to a USB disk.
 

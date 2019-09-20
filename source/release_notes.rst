@@ -5,6 +5,73 @@ Release Notes
 
 .. contents:: :local:
 
+20-Sept-2019
+============
+
+.. note::
+    * **CaaS** (|C| As a Service) and **CIC** (|C| In Container) Android 10 are supported on Intel Platforms running Android on various Bare Metal x86 systems, Virtual Machines (KVM/Qemu), and also Containers.
+    * This is a Pre-Production CaaS and CIC Release for evaluation and development purposes and it cannot be used for production purposes.
+
+Important Notes and Remarks
+---------------------------
+
+This |C| build has been validated on |NUC| Kit NUC7i5DNH in the following function domains. The boot up function is supported on most Intel@ X86 platforms.
+
+* Bare Metal
+
+    ======================== ======
+    Test Case                Result
+    ======================== ======
+    Image Flash               Pass
+    System Boot Up            Pass
+    WIFI WEB_BROWSING         Pass
+    Bluetooth Pair            Pass
+    Ethernet Browner          Pass
+    Media Local Playback      Pass
+    Video H264 Decode         Pass
+    Audio Playback            Pass
+    Adb over USB              pass
+    Adb over WIFI             Pass
+    Adb over Ethernet         Pass
+    USB storage               Pass
+    Touch Screen              Pass
+    Touch Screen Zoom In/Out  Pass
+    ======================== ======
+
+* VM (Qemu-KVM)
+
+    ======================== ====== =======
+    Test Case                Result Comment
+    ======================== ====== =======
+    Image Flash               Pass
+    System Boot Up            Pass
+    Ethernet Browner          Pass  in Host OS clearlinux, make sure service systemd-networkd is up:  Check: systemctl status systemd-networkd Enable: systemctl enable systemd-networkd
+    Media Local Playback      Pass  Video can be displayed but still overlay blue screen after using command : adb shell service call SurfaceFlinger 1008 i32 1
+    Audio Playback            Pass  Pass on Usb devices (audio etc.) passthrough: Add "-device usb-host,vendorid=,productid=" into startandroid_qcow2.sh.
+    Adb over Ethernet         Pass
+    USB storage               Pass  Add "-device usb-host,vendorid=,productid=" into startandroidqcow2.sh. 
+    Touch Screen              Pass
+    Touch Screen Zoom In/Out  Pass
+    ======================== ====== =======
+
+* Container (Only cover Boot Function)
+
+    ======================== =======
+    Test Case                Results
+    ======================== =======
+    Image Flash               Pass 
+    System Boot Up            Pass
+    Touch Screen              Pass
+    ======================== =======
+
+Known Issues
+------------
+
+* Only cover boot up function in early android 10 CIC image release.
+* Bluetooth function is not ready on CAAS VM release.
+* Audio 3.5 mm headphone function is not ready on CAAS VM release.
+* CAAS and CIC performance is not tuning well.
+
 05-Sept-2019
 ============
 

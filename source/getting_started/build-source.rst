@@ -33,7 +33,28 @@ In addition, you are required to install the following packages on your 64-bit U
            schedtool dpkg-dev liblz4-tool make optipng maven \
            libssl-dev bc bsdmainutils gettext python-mako \
            libelf-dev sbsigntool dosfstools mtools efitools \
-           git-lfs python3
+           python-pystache git-lfs python3
+
+|C| as a Service (**CaaS**) and |C| in Container (**CIC**) require `Docker <https://www.docker.com/>`_ to build the images. Install the following prerequisites prior the CaaS or CIC build:
+
+.. code-block:: bash
+
+    $ sudo apt-get install apt-transport-https ca-certificates curl
+
+The following commands add the Docker's official GPG key, set up the repository, and install the Docker Engine - Community from the repository:
+
+.. code-block:: bash
+
+    $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    $ sudo apt-get update
+    $ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+You may use Docker as a non-root user by adding your user ID to the **docker** group. Reference `Get Docker Engine - Community for Ubuntu <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`_ installation guide for more detailed information.
+
+.. code-block:: bash
+
+    $ sudo usermod -aG docker $USER
 
 Download the source
 -------------------
@@ -58,6 +79,8 @@ Enter the following command to pull down the |C| Android source tree to your wor
 
     $ repo sync
 
+.. _build-os-image:
+
 Build the OS image
 ------------------
 
@@ -67,23 +90,42 @@ Optionally, delete existing output of any previous build with the following comm
 
     $ make clobber
 
-Enter the following commands to initialize the build variables with the *envsetup.sh* script and to select the |C| build target. You can run ``lunch`` with no arguments in order to choose different build variants.
+Enter the following command to initialize the build variables with the *envsetup.sh* script:
 
 .. code-block:: bash
 
     $ source build/envsetup.sh
+
+Specify your |C| lunch target using the ``lunch`` command. You can run ``lunch`` with no arguments in order to choose different build variants, and select a lunch target from a list of available options. For example, the following command configures the build system for `Android 9 Pie <https://www.android.com/versions/pie-9-0/>`_ with the traditional tablet UI:
+
+.. code-block:: bash
+
     $ lunch celadon-userdebug
 
-To build the Android 10 IVI image, select the **celadon_ivi-userdebug** lunch target in the previous ``lunch`` command:
+The following command selects **celadon_ivi-userdebug** as the lunch target for building the `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Early Release image with IVI UI:
 
 .. code-block:: bash
 
     $ lunch celadon_ivi-userdebug
 
+Instead, to :ref:`run-as-service`, use either **caas-userdebug** or **cic-userdebug** lunch targets as follows:
+
+.. code-block:: bash
+
+    $ lunch caas-userdebug
+
+or
+
+.. code-block:: bash
+
+    $ lunch cic-userdebug
+
 Build the |C| installer files with the following command. The *-j $(nproc)* argument instructs the builder to compile the source code with parallel tasks. The generated kernelflinger executables .ZIP file (**out/target/product/celadon/celadon.flashfiles.eng.${USER}.zip**) is available after the build. You can follow :ref:`install-on-nuc` of this guide to flash the installer image to a removable USB drive and install |C| on a |NUC|.
 
-* Build the kernelflinger executables
+.. code-block:: bash
 
-    .. code-block:: bash
+    $ make SPARSE_IMG=true flashfiles -j $(nproc)
 
-        $ make SPARSE_IMG=true flashfiles -j $(nproc)
+.. note::
+    In case of the CIC build, the generated image is packaged at the following location:
+    **out/target/product/celadon/cic-${USER}.tar.gz**

@@ -19,11 +19,11 @@ You can use the following way to add the key used to verify the kernelflinger to
 
 Use Key tool:
 `Keytool <https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git>`_ is a tool which packed in efitools.
-Download the KeyTool.efi from Internet, such as from Ubuntu: Download the `DB.auth <https://github.com/yang-kaix/keytool/blob/master/key/DB.auth>`_ and `KEK.auth <https://github.com/yang-kaix/keytool/blob/master/key/KEK.auth>`_
+Download the KeyTool.efi from Internet, such as from Ubuntu: Download the `DB.auth <https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/DB.auth>`_ and `KEK.auth <https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/KEK.auth>`_
 
 Prepare a USB disk, and format it use FAT filesystem, and put the KeyTool.efi, DB.auth and KEK.auth to an USB disk.
 Disable the device secure boot. Plug in the USB disk and reboot device, press F10 to enter the Boot Menu. Select "UEFI : Build-in EFI Shell" and then find your USB device.
-Execute `KeyTool.efi <https://github.com/yang-kaix/keytool/blob/master/KeyTool.efi>`_ and you will see the KeyTool menu. Select Edit Keys to replace the keys.
+Execute ``KeyTool.efi`` and you will see the KeyTool menu. Select Edit Keys to replace the keys.
 
 .. figure:: images/keytool.jpg
     :align: center

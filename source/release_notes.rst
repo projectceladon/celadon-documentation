@@ -70,7 +70,7 @@ Known Issues
 * Only cover boot up function in early android 10 CIC image release.
 * Bluetooth function is not ready on CAAS VM release.
 * Audio 3.5 mm headphone function is not ready on CAAS VM release.
-* CAAS and CIC performance is not tuning well.
+* CAAS and CIC performance is under tuning.
 
 05-Sept-2019
 ============

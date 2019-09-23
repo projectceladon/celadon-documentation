@@ -34,7 +34,7 @@ Flash and Boot the Device
 The following CaaS image types are generated at the end of the build:
 
 * caas.img
-    The GPT disk image for live-booting on the traget device. Reference :ref:`Live Boot <usb-live-boot>` section to write the CaaS GPT image to a USB key, and boot the Android from that USB key. 
+    The GPT disk image for live-booting on the traget device. Reference the :ref:`Live Boot <usb-live-boot>` section to write the CaaS GPT image to a USB key, and boot the Android from that USB key.
 
 * caas-flashfiles-eng.<user>.zip
-    The compressed *flashfile* package for flashing to the target device. Reference :ref:`install-on-nuc` section to install the CaaS image to your target device using `Intel Platform Flash Tool lite <https://01.org/node/2463>`_.
+    The compressed *flashfile* package contains the kernelflinger executables. Reference :ref:`install-on-nuc` section to unzip the content of the package to a USB key, and install the CaaS images from the **UEFI Shell**.

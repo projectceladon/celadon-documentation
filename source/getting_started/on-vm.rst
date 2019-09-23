@@ -61,10 +61,74 @@ Build CaaS Image
 Reference the :ref:`build-os-image` section in the Getting Started Guide, and specify **caas** as the lunch target to build the CaaS images. The following CaaS image types are generated at the end of the build:
 
 * caas.img
-    The GPT disk image for direct booting.
+    The GPT disk image for direct booting. Skip the following section to boot the CaaS image with QEMU.
 
 * caas-flashfiles-eng.<user>.zip
-    The compressed *flashfile* package for flashing to a virtual disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format using `Intel Platform Flash Tool lite <https://01.org/node/2463>`_.
+    The compressed *flashfile* package contains the CaaS partition images. Proceed with the following section to install these images to a virtual disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
+
+Create CaaS Virtual Disk
+------------------------
+
+To create a virtual disk containing the CaaS partitions, a USB flash drive and at least 16GB free disk space are required. Go through the following instructions to create and set up CaaS partitions on a *qcow2* formatted virtual disk.
+
+#. Create a 16GB empty disk image of *qcow2* type:
+
+    .. code-block:: bash
+
+        $ qemu-img create -f qcow2 ~/caas/android.qcow2 16G
+
+#. Plug a USB flash drive to the development host, and identify the vendor ID and product ID of that USB flash drive from the output of the ``lsusb`` command:
+
+    .. code-block:: bash
+
+        $ lsusb
+        ...
+        Bus 002 Device 002: ID 0781:5591 SanDisk Corp.
+        ...
+
+    In the previous example, **0781** and **5591** are the device ID and vendor ID of the target USB flash drive respectively.
+
+#. Identify the directory the USB flash drive is mounted, or mount the USB flash drive to a temporary directory if it's not mounted. Unzip the content of the CaaS *flashfile* package to the flash drive, and unmount the USB flash drive after finish:
+
+    .. code-block:: bash
+
+        $ sudo mount /dev/sdc /mnt   ## if the USB disk is not auto-mounted
+        $ sudo unzip caas-flashfiles-eng.<user>.zip -d /mnt
+        $ umount /dev/sdc
+
+    .. note::
+        In the previous example, /dev/sdc is assigned to the USB flash drive. You may need to replace the drive names with the actual device node observed from the ``lsblk`` command.
+
+#. Download the helper script ``start_flash_usb.sh`` and edit the script with the the device ID and vendor ID for your USB flash drive observed from the previous step:
+
+    .. code-block:: bash
+
+        $ wget https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_flash_usb.sh  -O ~/aaas/start_flash_usb.sh
+
+    .. code-block:: none
+
+        #!/bin/bash
+
+        qemu-system-x86_64 \
+        ...
+        -device usb-host,bus=xhci.0,vendorid=<your-usb-vendorid>,productid=<your-usb-productid> \
+        ...
+        -bios ./OVMF.fd \
+
+#. A QEMU window will be poped up on running the ``start_flash_usb.sh``. Click the QEMU window, press the **F2** key, and select the **Boot Manager** option to enter the boot-manager menu:
+
+    .. figure:: images/qemu-bios.png
+        :align: center
+
+#. Select the **EFI Internal Shell** entry to run the built-in UEFI Shell. The virtual UEFI firmware will detect the USB flash drive and start flashing the CaaS partition images to the **android.qcow2** virtual disk.
+
+    .. figure:: images/qemu-bios-bootmanager.png
+        :align: center
+
+    .. figure:: images/qemu-bios-flashing.png
+        :align: center
+
+#. Close the QEMU window once complete, the USB flash drive now can be removed.
 
 Reboot to Android UI
 --------------------

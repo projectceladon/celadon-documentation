@@ -86,7 +86,7 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
         Bus 002 Device 002: ID 0781:5591 SanDisk Corp.
         ...
 
-    In the previous example, **0781** and **5591** are the device ID and vendor ID of the target USB flash drive respectively.
+    In the previous example, **0781** and **5591** are the vendor ID and product ID of the target USB flash drive respectively.
 
 #. Identify the directory the USB flash drive is mounted, or mount the USB flash drive to a temporary directory if it's not mounted. Unzip the content of the CaaS *flashfile* package to the flash drive, and unmount the USB flash drive after finish:
 
@@ -99,7 +99,7 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
     .. note::
         In the previous example, /dev/sdc is assigned to the USB flash drive. You may need to replace the drive names with the actual device node observed from the ``lsblk`` command.
 
-#. Download the helper script ``start_flash_usb.sh`` and edit the script with the the device ID and vendor ID for your USB flash drive observed from the previous step:
+#. Download the helper script ``start_flash_usb.sh`` and edit the script with the the vendor ID and product ID for your USB flash drive observed from the previous step:
 
     .. code-block:: bash
 

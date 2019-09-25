@@ -1,7 +1,7 @@
 .. _caas-on-bm:
 
-Run CaaS on Bare Metal
-======================
+Run |C| on Bare Metal
+=====================
 
 Hardware
 --------

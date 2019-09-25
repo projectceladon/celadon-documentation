@@ -1,7 +1,7 @@
 .. _caas-on-vm:
 
-Run CaaS on Virtual Machine
-===========================
+Run |C| on Virtual Machine
+==========================
 
 Prepare Host Environment
 ------------------------
@@ -97,13 +97,14 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
         $ umount /dev/sdc
 
     .. note::
-        In the previous example, /dev/sdc is assigned to the USB flash drive. You may need to replace the drive names with the actual device node observed from the ``lsblk`` command.
+        In the previous example, assuming /dev/sdc is assigned to the USB flash drive. You may need to replace the drive names with the actual device node observed from the ``lsblk`` command.
 
-#. Download the helper script ``start_flash_usb.sh`` and edit the script with the the vendor ID and product ID for your USB flash drive observed from the previous step:
+#. Download the helper script ``start_flash_usb.sh`` and edit the script with the the vendor ID and product ID for your USB flash drive observed in the previous step:
 
     .. code-block:: bash
 
-        $ wget https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_flash_usb.sh  -O ~/aaas/start_flash_usb.sh
+        $ wget https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_flash_usb.sh  -O ~/caas/start_flash_usb.sh
+        $ chmod +x ~/caas/start_flash_usb.sh
 
     .. code-block:: none
 
@@ -115,7 +116,12 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
         ...
         -bios ./OVMF.fd \
 
-#. A QEMU window will be poped up on running the ``start_flash_usb.sh``. Click the QEMU window, press the **F2** key, and select the **Boot Manager** option to enter the boot-manager menu:
+#. After launching the ``start_flash_usb.sh`` script, a QEMU window will be poped up. Click the QEMU window, press the **F2** key, and select the **Boot Manager** option to enter the boot-manager menu:
+
+    .. code-block:: bash
+
+        $ cd ~/caas
+        $ sudo ./start_flash_usb.sh
 
     .. figure:: images/qemu-bios.png
         :align: center
@@ -133,11 +139,12 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
 Reboot to Android UI
 --------------------
 
-A script ``start_android_qcow2.sh`` is created to faciltate the booting of CaaS images using `QEMU <https://www.qemu.org/>`_. Download the `start_android_qcow2.sh <https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_android_qcow2.sh>`_ script to the working directory with the following command:
+A script ``start_android_qcow2.sh`` is created to faciltate the booting of CaaS images using `QEMU <https://www.qemu.org/>`_. Download the `start_android_qcow2.sh <https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_android_qcow2.sh>`_ script to the working directory and allow the binary executable with the following commands:
 
 .. code-block:: bash
 
-    $ wget https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_android_qcow2.sh -O ~/aaas/start_android_qcow2.sh
+    $ wget https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_android_qcow2.sh -O ~/caas/start_android_qcow2.sh
+    $ chmod +x ~/caas/start_android_qcow2.sh
 
 Before launching the script to boot to the Android UI, edit the CaaS image filename in the script if necessary. The default image file *android.qcow2* is hard coded in the script:
 

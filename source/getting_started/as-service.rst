@@ -1,9 +1,9 @@
 .. _run-as-service:
 
-Run |C| as a Service on Intel® platforms
-========================================
+Run Project |C| on Intel® architectures
+=======================================
 
-The **CaaS (Celadon as a Service)** project aims to run |C| as a service seamlessly on Intel Bare Metal systems, Virtual Machines, and Containers based on an unified software architecture. The architecture of CaaS is designed to fully compliant with the Google Android `CDD <https://source.android.com/compatibility/cdd>`_, and allows the scalability and extensibility for flexible customizations at the same time.
+The idea of **CaaS (Celadon as a Service)** is to run |C| as a service seamlessly on Intel Bare Metal systems, Virtual Machines, and Containers based on an unified software architecture. The architecture of CaaS is designed to fully compliant with the Google Android `CDD <https://source.android.com/compatibility/cdd>`_, and allows the scalability and extensibility for flexible customizations at the same time.
 
 With CaaS, Android will be transitioned from a platform specific OS to a generic OS which provides leapfrog competition, accelerates workload consolidation, and drives high compute demands.
 

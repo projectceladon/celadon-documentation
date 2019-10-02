@@ -6,7 +6,7 @@ Run |C| on Virtual Machine
 Prepare Host Environment
 ------------------------
 
-The host device which launchs the virtual machines, require Linux kernel version 5.0.0 or above running as the host OS. Go through the following instructions to set up `Clear Linux OS <https://clearlinux.org/>`_ 30870 as the host device. Any later Clear Linux OS version should also work.
+The host device that launches the virtual machines, require Linux kernel version 5.0.0 or above running as the host OS. Go through the following instructions to set up `Clear Linux OS <https://clearlinux.org/>`_ 30870 as the host device. Any later Clear Linux OS version should also work.
 
 #. Reference the `Clear Linux installation guide <https://docs.01.org/clearlinux/latest/get-started/bare-metal-install-desktop.html>`_ to install the Clear Linux OS on the host device.
 
@@ -24,7 +24,7 @@ The host device which launchs the virtual machines, require Linux kernel version
 Build OVMF Firmware
 -------------------
 
-**OVMF** is the project to enable UEFI support for Virtual Machines, which is used by QEMU, the open source machine emulator and virtualizer, to boot the **CaaS** images on Virtual Machines. The following steps describe instructions to build the OVMF firmware from source.
+**OVMF** is the project to enable UEFI support for Virtual Machines, which QEMU uses, the open source machine emulator and virtualizer, to boot the **CaaS** images on Virtual Machines. The following steps describe instructions to build the OVMF firmware from source.
 
 #. Get the firmware source code:
 
@@ -58,7 +58,7 @@ Build OVMF Firmware
 Build CaaS Image
 ----------------
 
-Reference the :ref:`build-os-image` section in the Getting Started Guide, and specify **caas** as the lunch target to build the CaaS images. The following CaaS image types are generated at the end of the build:
+Reference the :ref:`build-os-image` section in the Getting Started Guide, and specify **caas** as the lunch target to build the CaaS images. The following CaaS image types generate at the end of the build:
 
 * caas.img
     The GPT disk image for direct booting. Skip the following section to boot the CaaS image with QEMU.
@@ -69,7 +69,7 @@ Reference the :ref:`build-os-image` section in the Getting Started Guide, and sp
 Create CaaS Virtual Disk
 ------------------------
 
-To create a virtual disk containing the CaaS partitions, a USB flash drive and at least 16GB free disk space are required. Go through the following instructions to create and set up CaaS partitions on a *qcow2* formatted virtual disk.
+To create a virtual disk containing the CaaS partitions, the requirements are a USB flash drive and at least 16GB free disk space. Go through the following instructions to create and set up CaaS partitions on a *qcow2* formatted virtual disk.
 
 #. Create a 16GB empty disk image of *qcow2* type:
 
@@ -86,9 +86,9 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
         Bus 002 Device 002: ID 0781:5591 SanDisk Corp.
         ...
 
-    In the previous example, **0781** and **5591** are the vendor ID and product ID of the target USB flash drive respectively.
+    In the previous example, **0781** and **5591** are the vendor ID and product ID of the target USB flash drive, respectively.
 
-#. Identify the directory the USB flash drive is mounted, or mount the USB flash drive to a temporary directory if it's not mounted. Unzip the content of the CaaS *flashfile* package to the flash drive, and unmount the USB flash drive after finish:
+#. 6.Identify the directory you mounted the USB flash drive on or if not mounted, mount the USB flash drive to a temporary directory. Unzip the content of the CaaS *flashfile* package to the flash drive, and unmount the USB flash drive after finish:
 
     .. code-block:: bash
 
@@ -97,9 +97,9 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
         $ umount /dev/sdc
 
     .. note::
-        In the previous example, assuming /dev/sdc is assigned to the USB flash drive. You may need to replace the drive names with the actual device node observed from the ``lsblk`` command.
+        The previous example assumes you assigned /dev/sdc to the USB flash drive. You might need to replace the drive names with the actual device node observed from the ``lsblk`` command.
 
-#. Download the helper script ``start_flash_usb.sh`` and edit the script with the the vendor ID and product ID for your USB flash drive observed in the previous step:
+#. Download the helper script ``start_flash_usb.sh`` and edit the script with the vendor ID and product ID for your USB flash drive observed in the previous step:
 
     .. code-block:: bash
 
@@ -116,7 +116,7 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
         ...
         -bios ./OVMF.fd \
 
-#. After launching the ``start_flash_usb.sh`` script, a QEMU window will be poped up. Click the QEMU window, press the **F2** key, and select the **Boot Manager** option to enter the boot-manager menu:
+#. After launching the ``start_flash_usb.sh`` script, a QEMU window will pops up. Click the QEMU window, press the **F2** key, and select the **Boot Manager** option to enter the boot-manager menu:
 
     .. code-block:: bash
 
@@ -134,12 +134,12 @@ To create a virtual disk containing the CaaS partitions, a USB flash drive and a
     .. figure:: images/qemu-bios-flashing.png
         :align: center
 
-#. Close the QEMU window once complete, the USB flash drive now can be removed.
+#. Close the QEMU window once complete. You can now remove the USB flash drive.
 
 Reboot to Android UI
 --------------------
 
-A script ``start_android_qcow2.sh`` is created to faciltate the booting of CaaS images using `QEMU <https://www.qemu.org/>`_. Download the `start_android_qcow2.sh <https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_android_qcow2.sh>`_ script to the working directory and allow the binary executable with the following commands:
+Run the script ``start_android_qcow2.sh`` to faciltate the booting of CaaS images with `QEMU <https://www.qemu.org/>`_. Download the `start_android_qcow2.sh <https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_android_qcow2.sh>`_ script to the working directory and allow the binary executable with the following commands:
 
 .. code-block:: bash
 

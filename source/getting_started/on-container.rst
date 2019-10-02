@@ -11,7 +11,7 @@ The goal of **Celadon in Container (CIC)** feature is to run the |C| Android ima
 CIC should be able to run on modern PCs with Intel® 6th generation or later processors with integrated GPU. The |NUC| model `NUC7i7BNH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i7bnh.html>`_ and model `NUC7i5BNH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5bnh.html>`_ are recommended to try out the CIC features.
 
 .. note::
-   The CIC is currently of Version 0.5, which provides a preview of the feature for pilot and development purposes. Some features such as Trusty, Verified Boot, and OTA update are not included in this preview version. Those features are planned for the upcoming releases.
+   The CIC is currently of Version 0.5, which provides a preview of the feature for pilot and development purposes. Some features such as Trusty, Verified Boot, and the OTA update do not exist in this preview version. We plan for these features in the upcoming releases.
 
 Set up Docker Engine
 --------------------
@@ -29,7 +29,7 @@ You need to install Docker on both the development host and the target device. E
 
 The last command is optional if you want to run the Docker as a non-root user. Restart your session for changes to take effect.
 
-On the target device, CIC currently requires Linux kernel version 4.14.20 or later, which is available in most Linux distributions such as Clear Linux, Rancher OS, and Ubuntu Linux, etc. The setup instructions listed above are based on Ubuntu 16.04 LTS distribution.
+On the target device, CIC currently requires Linux kernel version 4.14.20 or later, which is available in most Linux distributions such as Clear Linux, Rancher OS, and Ubuntu Linux. The setup instructions previously listed are based on Ubuntu 16.04 LTS distribution.
 
 Build the CIC Package
 ---------------------
@@ -42,7 +42,7 @@ Reference the :ref:`build-from-source` section in the Getting Started Guide to s
     **cic_dev**
         target for development purposes (available on the CIC branch of the |C| Android-P release)
 
-The following commands select **cic-userdebug** as the lunch target and start the build. The CIC package will be generated at **$OUT/$TARGET_PRODUCT-*.tar.gz**.
+The following commands select **cic-userdebug** as the lunch target and start the build. The CIC package generates at **$OUT/$TARGET_PRODUCT-*.tar.gz**.
 
 .. code-block:: bash
 
@@ -60,7 +60,7 @@ After completely building the code, download and extract the CIC package on the 
     $ ./aic install
     $ ./aic start
 
-A window will be pop-up showing Android is booting after the CIC container is initialized and running. You can stop the CIC by enter the following command:
+After the CIC container initializes and runs, a window will pop up to show Android booting. You can stop the CIC by enter the following command:
 
 .. code-block:: bash
 

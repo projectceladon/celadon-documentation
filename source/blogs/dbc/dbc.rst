@@ -1,48 +1,49 @@
-Making Android Host Debuggable - ADB for x86 Android Solutions
-==============================================================
+Making the Android* Host Debuggable - ADB for x86 Android Solutions
+###################################################################
 
-Table of Contents
-#################
+This blog provides an overview of the :abbr:`DBC (USB Debug Class)`
+infrastructure followed by the steps to enable the feature on |C| and
+seamlessly run :command:`adb` over a USB Type-A port.
+
 
 .. contents::
     :depth: 2
     :local:
 
-Introduction
-------------
+Description
+***********
 
-Android Host ecosystem consists of new applications like Android Automotive,
-Chromebook, or gateway running on |NUC| like systems. A significant
-challenge in these Android host solutions is the lack of USB Device mode as
-most of x86 platforms are USB host systems. To address this issue, and to allow
-a DUT with Debug Host x86 platforms provide an infrastructure that offers
-a back-to-back connection using an USB Debug Class infra structure.
-This blog provides an overview of the *USB Debug Class* infra (DbC), followed
-by the steps to enable the feature on |C| and seamlessly run ``adb`` over a
-USB Type-A port.
+The Android host ecosystem consists of new applications like Android
+Automotive, Chromebook*, or gateways running on |NUC|-like systems. A
+significant challenge with these Android host solutions is the lack of USB
+Device mode because most of x86 platforms are USB host systems. The DBC
+addresses this issue and allows a :abbr:`DUT (Device Under Test)` with
+debug host x86 platforms to provide an infrastructure that offers a
+back-to-back connection using an USB Debug Class infrastructure.
+
 
 DBC Overview
-------------
+************
 
-*xDBC* stands for the USB Debug capability, provided an extensible Host Controller
-Interface. The Universal Serial Bus is a host controlled bus. Host Controller is
-the hardware whose functionality is to manage USB bus and USB host ports. It is
-responsible for initiating and managing all USB transfers. *Extensible Host
-Controller Interface (xHCI)* is a register-level interface that provides a
-mechanism that allows the host controller (xHC) to communicate with the Operating
-System of the host computer. In addition to exposing register interfaces essential
-for proper functioning of the xHC, xHCI supports many extended capabilities,
+The :abbr:`xDBC (USB Debug Capability)` provides the :abbr:`xHCI (Extensible
+Host Controller Interface)`. The Universal Serial Bus is a host-controlled
+bus. The Host Controller is the hardware that manages the USB bus and USB
+host ports. It initiates and manages all USB transfers. The xHCI is a
+register-level interface providing a mechanism that allows the
+:abbr:`xHC (Host Controller)` to communicate with the operating system of the
+host computer. In addition to exposing register interfaces that are essential
+for the xHC to function properly, xHCI supports many extended capabilities,
 which can be optionally implemented by xHC.
 
-It includes Extended Power Management Capability, I/O Virtualization capability,
-USB Legacy support capability among many others. USB Debug Capability is one of
-the main extended capabilities supported by xHCI.
+xHCI includes extended power management capability, I/O virtualization
+capability, and USB legacy support capability, among many others. xDBC is one
+of the main extended capabilities supported by xHCI.
 
-This functionality enables low-level system debug over USB. The xHCI debug
-capabilities (xDBC) provides a means of connecting two systems where one system
-is a Debug Host and the other is a Debug target. This is achieved through emulating
-a debug device by using xDBC on the debug target. The debug device presented by the
-debug target can be used by debug host for low level system debugging of target.
+This functionality enables low-level system debug over USB. The xHCI provides
+a means of connecting a debug host and a debug target. This is achieved
+by emulating a debug device by using xDBC on the debug target. The debug
+device presented by the debug target can be used by the debug host for
+low-level system debugging of the target.
 
 GitHub PRs to enable adb over DbC for |C| KBL NUC
 -------------------------------------------------
@@ -54,51 +55,61 @@ GitHub PRs to enable adb over DbC for |C| KBL NUC
 Steps to enable ADB over DbC support in Host Machine
 ----------------------------------------------------
 
-#. Add the following permission to the udev rule */etc/udev/rules.d/51-android.rules* (create the file if it does not exist):
+#. Add the following permission to the udev rule
+   :file:`/etc/udev/rules.d/51-android.rules` (create the file if it does
+   not exist):
 
     .. code-block:: text
 
         #DBC
         SUBSYSTEM=="usb", ATTRS{idVendor}=="1d6b", ATTRS{idProduct}=="0010", MODE="0666", GROUP="plugdev", SYMLINK+="android%n"
 
-#. Reboot the host system, or run the following commands with root permission to take effect:
+#. Reboot the host system, or run the following commands with root
+   permission to take effect:
 
     .. code-block:: bash
 
         root@intel:~# udevadm control --reload-rules
         root@intel:~# udevadm trigger
 
-#. Rename or remove the kernel module *usb_debug.ko* in the host system if any:
+#. Rename or remove the kernel module :command:`usb_debug.ko` in the host
+   system if any:
 
     .. code-block:: bash
 
         root@intel:~# cd /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ && mv usb_debug.ko usbdebug
 
-#. Check if the *usb_debug* driver module is loaded to the kernel with the following command:
+#. Check if the :command:`usb_debug` driver module is loaded to the kernel
+   with the following command:
 
     .. code-block:: bash
 
         root@intel:~# lsmod | grep usb_debug
 
-#. Unload the *usb_debug* driver module if it is loaded:
+#. Unload the :command:`usb_debug` driver module if it is loaded:
 
     .. code-block:: bash
 
         root@intel:~# rmmod usb_debug
 
-#. The ``adb`` command installed by the Android SDK does not support ADB over DbC, you should use the ``adb`` command built from the |C| source tree. The ADB over DbC enabled ``adb`` command is avaiable in the *out/host/linux-x86/bin/* folder after the build.
+#. The :command:`adb` command installed by the Android SDK does not support
+   ADB over DbC, you should use the :command:`adb` command built from the |C|
+   source tree. The ADB over DbC enabled :command:`adb` command is avaiable
+   in the :file:`out/host/linux-x86/bin/` folder after the build.
 
 Steps to enable ADB over DbC support on |NUC| BLKNUC7iDNHE system
 -----------------------------------------------------------------
 
-#. Check the Android property value *persist.vendor.sys.usb.adbover* with the following command. The default value is ``dwc``, represents normal ADB over USB (DWC).
+#. Check the Android property value
+   :command:`persist.vendor.sys.usb.adbover` with the following command. The
+   default value is :command:`dwc`, represents normal ADB over USB (DWC).
 
     .. code-block:: bash
 
         root@intel:~# getprop persist.vendor.sys.usb.adbover
         dwc
 
-#. Reset the property value to ``dbc``, then reboot the target system.
+#. Reset the property value to :command:`dbc`, then reboot the target system.
 
     .. code-block:: bash
 
@@ -107,11 +118,13 @@ Steps to enable ADB over DbC support on |NUC| BLKNUC7iDNHE system
 Connect the Target to the Host System
 -------------------------------------
 
-Plug the debug Target to the Host system using a `USB Type-A to Type-A (3.0) SuperSpeed Debug cable <https://www.datapro.net/products/usb-3-0-super-speed-a-a-debugging-cable.html>`_. 
+Plug the debug Target to the Host system using a `USB Type-A to Type-A (3.0)
+SuperSpeed Debug cable <https://www.datapro.net/products/usb-3-0-super-speed-
+-a-debugging-cable.html>`_.
 A USB 2.0 Type-A to Type-A cable does not work in this case.
 
-At this point the target should have enumerated as a Debug Device on the Host. This can be
-confirmed with the following command:
+At this point the target should have enumerated as a Debug Device on the
+Host. This can be confirmed with the following command:
 
     .. code-block:: bash
 
@@ -131,7 +144,9 @@ confirmed with the following command:
         E:  Ad=01(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
         E:  Ad=81(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
 
-.. Note:: **Speed** should be *5000* (i.e. Spd=5000) and **Driver** should be *usbfs* (i.e. Driver=usbfs) in the previous command output.
+.. Note:: :envvar:`Speed` should be *5000* (i.e. :envvar:`Spd=5000`) and
+   :envvar:`Driver` should be *usbfs* (i.e. :envvar:`Driver=usbfs`) in the
+   previous command output.
 
 ADB Detection in Host Machine
 -----------------------------
@@ -147,14 +162,15 @@ ADB Detection in Host Machine
 Steps to switch back to normal ADB over USB (DWC)
 -------------------------------------------------
 
-#. Check the Android property value *persist.vendor.sys.usb.adbover* with the following command.
+#. Check the Android property value :envvar:`persist.vendor.sys.usb.adbover`
+   with the following command.
 
     .. code-block:: bash
 
         root@intel:~# getprop persist.vendor.sys.usb.adbover
         dbc
 
-#. Reset the property value to ``dwc``, then reboot the target system.
+#. Reset the property value to :envvar:`dwc`, then reboot the target system.
 
     .. code-block:: bash
 
@@ -169,11 +185,11 @@ ADB over DbC throughput test result
 Conclusion
 ----------
 
-DbC is ideal choice for platforms which don't have USB device controller IP and
-requires debugging support. If platform uses dedicated USB device controller for
-just debugging support, it can be replaced with DbC. DbC is dependable debugging
-solution which is critical for early platform bring up where there is limited BIOS
-support etc.
+DbC is ideal choice for platforms that don't have USB device controller IP
+and require debugging support. If a platform uses dedicated USB device
+controller for just debugging support, it can be replaced with DbC. DbC is
+a dependable debugging solution, which is critical for early platform bring-
+up where there is limited BIOS support etc.
 
 References
 ----------

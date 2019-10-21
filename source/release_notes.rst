@@ -5,6 +5,133 @@ Release Notes
 
 .. contents:: :local:
 
+21-Oct-2019
+============
+
+.. note::
+    * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
+    * This is a Pre-Production binary Q Release for evaluation and development purposes and it cannot be used for production purposes.
+
+Integrated Features
+-------------------
+
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.3 support for Display
+* Mass Storage USB 2.0 and 3.x devices are supported
+* adb & fastboot supported over USB 2.0
+* adb over DbC is supported
+* adb over WIFI and Ethernet is supported
+* Audio playback over USB and 3.5mm Headset supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Android Kernelflinger boot support
+* Thermal Daemon is enabled for project |C|
+* Video Codec support on |C|
+    **Decoder**
+        * AVC High profile @ Level 5.1 (4k@30fps)
+        * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)
+
+        .. note::
+            Main 10 with BT2020 and ST2084 information is not supported
+
+        * VP9 profile 0 @ Level 5 (4k@30fps)
+        * Vp8 8 bits 1080p@60fps
+    **Encoder**
+        * AVC High profile @ level 4.1 (1080P@30fps)
+        * HEVC Main profile @ Level 4 (1080P@30fps)
+* Art-extension is enabled
+* f2fs filesystem support enabled
+* S3 Suspend/Resume is supported
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV
+* Audio Encoders supported: AAC-LC, AAC ELD, HEAAC, HEAAC-V2, PCM/WAV
+* SDHCI host controller is enabled
+* Security
+    * SELinux enforcing, File Based Encryption, Trusty, Keymaster 3.0
+    * Reference solution - TPM based h/w binding reference implementation
+    * User guide:
+        * SELinux Configuration and Rules
+        * How to Enable or Disable Trusty for Debugging
+* Flashing binaries via |PFT|
+    * To reduce the flash time, Platform flash Tool can be used with the following configurations:
+        * Blank_without_lock (used for first time install or GPT layout change case)
+        * Update_without_lock (used for image update on installed device)
+
+    If your device is in unlocked state:
+        * "Blank_without_lock" duration is 30% of "Blank"
+        * "Update_without_lock" duration is 5% of "Update"
+
+Important Notes and Remarks
+---------------------------
+
+|C| build has been validated on |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_ in the following function domains:
+
+.. list-table::
+    :widths: 30 10 60
+    :header-rows: 1
+
+    * - Component
+      - Results
+      - Comments
+    * - Wi-Fi
+      - OK
+      -
+    * - Wi-Fi Hotspot
+      - OK
+      -
+    * - BT
+      - OK
+      - File Transfer Protocol
+    * - Audio Playback over USB/3.5mm Headset
+      - OK
+      - MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+    * - Audio Record over USB HS/3.5mm Headset-in/Main Mic
+      - OK
+      - AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, PCM/WAV  formats supported
+    * - adb connect over WIFI
+      - OK
+      -
+    * - adb connect over Ethernet
+      - OK
+      -
+    * - Display /Touch and Gesture
+      - OK
+      -
+    * - Storage/SD Card
+      - OK
+      -
+    * - Security
+      - OK
+      -
+    * - Boot/Kernel
+      - OK
+      -
+    * - USB devices over OTG
+      - OK
+      -
+    * - Ethernet
+      - OK
+      -
+    * - Fastboot
+      - OK
+      -
+    * - Web browsing
+      - OK
+      -
+    * - Video playback
+      - OK
+      - H264/H265/MPEG2/VP8/VP9 Video Playback
+
+Known Issues
+------------
+* Flashing time takes longer while using the kernelflinger method (~30mins), To reduce the flash time, Platform flash Tool can be used. Also the "installer.cmd" file can be altered (as per the PFT configurations) and flashed using kernel flinger method.
+• adb over wifi and ethernet works only after, ``setprop service.adb.tcp.port 5555`` and restart of USB debugging.
+• Device seen offline for 4-5 seconds on disconnect and reconnect of dbc cable.
+• Time and lock icon are displayed once on Android Start Animation when power on the DUT when connected with dual display.
+• Time flickers on All apps screen when launch Intel@Phone Doctor and touch menu button.
+• Glitch observed while the DUT is booting to UI at the intel logo screen.
+
+ 
 20-Sept-2019
 ============
 

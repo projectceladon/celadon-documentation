@@ -139,7 +139,7 @@ Run the Celadon in ACRN + OVMF
 ------------------------------
 Get launch_android.sh in /usr/share/acrn/samples/nuc/.
 
-Copy the built Celadon **[lunch_target]/[lunch_target]** *_gptimage.img to your working directory, and rename it to android.img.
+Copy the built Celadon **[lunch_target]/[lunch_target]** \*_gptimage.img to your working directory, and rename it to android.img.
 
 Get acrn-dm and ovmf.fd
 ==========================================================

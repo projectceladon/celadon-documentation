@@ -30,7 +30,7 @@ Set up Docker Engine
 #. You must install Docker on both the development host and the target
    device. Enter the following commands to install the prerequisites, set up
    the repository, and install the Docker Engine. Refer to the
-   `Get Docker Engine - Community for Ubuntu `_ installation guide for more
+   `Get Docker Engine - Community for Ubuntu`_ installation guide for more
    detailed information.
 
    .. code-block:: bash

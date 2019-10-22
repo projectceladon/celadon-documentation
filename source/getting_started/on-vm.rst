@@ -188,7 +188,7 @@ Reboot to Android UI
 
 Run the script :file:`start_android_qcow2.sh` to faciltate booting the CaaS
 images with `QEMU <https://www.qemu.org/>`_. Download the
-:file:`start_android_qcow2.sh`_ script to the working directory and change
+`start_android_qcow2.sh`_ script to the working directory and change
 the permissions on the binary executable with the following commands:
 
 .. code-block:: bash

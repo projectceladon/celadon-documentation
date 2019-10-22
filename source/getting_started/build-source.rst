@@ -67,7 +67,7 @@ Create an empty directory that will hold the |C| source files and serve as the w
     $ cd celadon
     $ repo init -u https://github.com/projectceladon/manifest.git
 
-The master branch of |C| build is based on Google `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Early Release. Use the following command to initialize your source tree with the Google `Android 9 Pie <https://www.android.com/versions/pie-9-0/>`_ code base:
+The master branch of |C| build is based on Google `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Release. Use the following command to initialize your source tree with the Google `Android 9 Pie <https://www.android.com/versions/pie-9-0/>`_ code base:
 
 .. code-block:: bash
 
@@ -102,7 +102,7 @@ Specify your |C| lunch target using the ``lunch`` command. You can run ``lunch``
 
     $ lunch celadon-userdebug
 
-The following command selects **celadon_ivi-userdebug** as the lunch target for building the `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Early Release image with IVI UI:
+The following command selects **celadon_ivi-userdebug** as the lunch target for building the `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Release image with IVI UI:
 
 .. code-block:: bash
 

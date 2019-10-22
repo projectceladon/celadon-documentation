@@ -125,13 +125,12 @@ Important Notes and Remarks
 Known Issues
 ------------
 * Flashing time takes longer while using the kernelflinger method (~30mins), To reduce the flash time, Platform flash Tool can be used. Also the "installer.cmd" file can be altered (as per the PFT configurations) and flashed using kernel flinger method.
-• adb over wifi and ethernet works only after, ``setprop service.adb.tcp.port 5555`` and restart of USB debugging.
-• Device seen offline for 4-5 seconds on disconnect and reconnect of dbc cable.
-• Time and lock icon are displayed once on Android Start Animation when power on the DUT when connected with dual display.
-• Time flickers on All apps screen when launch Intel@Phone Doctor and touch menu button.
-• Glitch observed while the DUT is booting to UI at the intel logo screen.
+* adb over wifi and ethernet works only after, ``setprop service.adb.tcp.port 5555`` and restart of USB debugging.
+* Device seen offline for 4-5 seconds on disconnect and reconnect of dbc cable.
+* Time and lock icon are displayed once on Android Start Animation when power on the DUT when connected with dual display.
+* Time flickers on All apps screen when launch Intel@Phone Doctor and touch menu button.
+* Glitch observed while the DUT is booting to UI at the intel logo screen.
 
- 
 20-Sept-2019
 ============
 

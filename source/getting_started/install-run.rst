@@ -7,7 +7,7 @@ Prerequisites
 -------------
 
 .. caution::
-    |C| project delivers the `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Early Release for evaluation and development purposes, it **MUST** not be used for production purposes.
+    |C| project delivers the `Android 10 <https://www.android.com/android-10/>`_ Pre-Production Release for evaluation and development purposes, it **MUST** not be used for production purposes.
 
 The following hardware are required to proceed with the installation.
 
@@ -135,7 +135,7 @@ In addition to the traditional Android UI launcher, |C| supports the experimenta
 .. figure:: images/ivi_ui_launcher_apps.jpg
     :align: center
 
-The following screenshots show the device running the Android 10 Pre-Production Early Release.
+The following screenshots show the device running the Android 10 Pre-Production Release.
 
 .. figure:: images/android10_home.jpg
     :align: center

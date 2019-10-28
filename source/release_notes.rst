@@ -135,8 +135,9 @@ Known Issues
 ============
 
 .. note::
-    * **CaaS** (|C| As a Service) and **CIC** (|C| In Container) Android 10 are supported on Intel Platforms running Android on various Bare Metal x86 systems, Virtual Machines (KVM/Qemu), and also Containers.
-    * This is a Pre-Production CaaS and CIC Release for evaluation and development purposes and it cannot be used for production purposes.
+    * The :abbr:`CaaS (Celadon as a Service)` and :abbr:`CIC (Celadon in Container)` releases are supported on Intel Platforms running Android on various Bare Metal x86 systems, Virtual Machines (KVM/Qemu), and also Containers.
+    * The ingredients of the CaaS release can be used to build a service architecture, so that with customers we can deliver a **Celadon as a Service** solution.
+    * These are Pre-Production CaaS and CIC Releases for evaluation and development purposes, they cannot be used for production.
 
 Important Notes and Remarks
 ---------------------------

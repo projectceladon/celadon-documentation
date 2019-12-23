@@ -41,3 +41,4 @@ System Validation
    :maxdepth: 1
 
    test-strategy/test-strategy
+   pnp-testsuites/pnp-testsuites

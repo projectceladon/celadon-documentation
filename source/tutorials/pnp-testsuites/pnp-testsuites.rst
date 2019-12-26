@@ -432,7 +432,7 @@ This KPI measures the warm launch time of a browser using HSC.
 
     #. Open the browser app and navigate to the example testing website.
        Press :kbd:`home` to move the app to the background, and then launch
-       the browser app again to check the original navigation can be comlete
+       the browser app again to check the original navigation can be completed
        automatically without manual operations (i.e. warm launch).
 
     #. Set up HSC environment.

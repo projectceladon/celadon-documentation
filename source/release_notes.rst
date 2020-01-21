@@ -5,6 +5,116 @@ Release Notes
 
 .. contents:: :local:
 
+CIV_01.20.04.02_A10
+===================
+
+This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+
+Integrated Features
+-------------------
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.3 support for Display
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported.
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Thermal Daemon is enabled for project-celadon
+* Video Codec support on celadon
+  **Decoder**
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+  **Encoder**
+    * AVC High profile @ level 4.1 (1080P@30fps)
+    * HEVC Main profile @ Level 4 (1080P@30fps)
+* Art-extension is enabled
+* f2fs filesystem support enabled
+* S3 Suspend/Resume is supported
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* SDHCI host controller is enabled
+* File sharing between Multi guest-OSes is enabled.
+* Security
+  SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+  User guide:
+    SELinux Configuration and Rules
+    How to Enable or Disable Trusty for Debugging
+* Flashing binaries via PFT – Platform Flash Tool
+  * To reduce the flash time, Platform flash Tool can be used with the following config’s:
+        * Blank_without_lock  (used for first time install or GPT layout change case)
+        * Update_without_lock  (used for image update on installed device)
+          If your device is in unlocked state:
+        * “Blank_without_lock” duration is 30% of “Blank”
+          “Update_without_lock” duration is 5% of “Update”
+
+Important Notes and Remarks
+---------------------------
+|C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains:
+
+.. list-table::
+    :widths: 30 10 60
+    :header-rows: 1
+
+    * - Component
+      - Results
+      - Comments
+
+    * - Wi-Fi
+      - OK
+      - Host wifi is been used in QEMU.
+
+    * - BT
+      - OK
+      - File Transfer Protocol
+
+    * - Audio Playback over USB Headset /HDMI devices
+      - OK
+      - MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+
+    * - Adb connect over Wi-Fi
+      - OK
+      -
+
+    * - adb connect over Ethernet
+      - OK
+      -
+    * - Display /Touch and Gesture
+      - OK
+      -
+    * - Storage/SD Card
+      - OK
+      - Add “-device usb-host,vendorid=,productid=” into startandroidqcow2.sh.
+
+    * - Security
+      - OK
+      -
+    * - Boot/Kernel
+      - OK
+      - Boots on QEMU 3.0.0
+
+    * - Ethernet
+      - OK
+      -
+    * - Image Flash
+      - OK
+      -
+    * - Web browsing
+      - OK
+      -
+    * - Video playback
+      - OK
+      - H264/H265/MPEG2/VP8/VP9 Video Playback
+
+
+Known Issues
+------------
+* Audio recording is not supported currently.
+* Video play is not smooth on 4K monitor.
+* Touch Screen operation is not smooth on 4K monitor.
+
 CIV_00.19.04.51_A10
 ===================
 

@@ -23,12 +23,16 @@ Integrated Features
 * Wired Ethernet support
 * Thermal Daemon is enabled for project-celadon
 * Video Codec support on celadon
+
   **Decoder**
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
+
   **Encoder**
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled
@@ -39,11 +43,14 @@ Integrated Features
 * File sharing between Multi guest-OSes is enabled.
 * Security
   SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+
   User guide:
+
     SELinux Configuration and Rules
     How to Enable or Disable Trusty for Debugging
 * Flashing binaries via PFT – Platform Flash Tool
   * To reduce the flash time, Platform flash Tool can be used with the following config’s:
+
         * Blank_without_lock  (used for first time install or GPT layout change case)
         * Update_without_lock  (used for image update on installed device)
           If your device is in unlocked state:
@@ -133,12 +140,16 @@ Integrated Features
 * Wired Ethernet support
 * Thermal Daemon is enabled for project-celadon
 * Video Codec support on celadon
+
   **Decoder**
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
+
   **Encoder**
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled 
@@ -149,11 +160,15 @@ Integrated Features
 * File sharing between Multi guest-OSes is enabled.
 * Security
   SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+
   User guide:
+
     SELinux Configuration and Rules
     How to Enable or Disable Trusty for Debugging
 * Flashing binaries via PFT – Platform Flash Tool
+
   * To reduce the flash time, Platform flash Tool can be used with the following config’s:
+
 	* Blank_without_lock  (used for first time install or GPT layout change case)
 	* Update_without_lock  (used for image update on installed device)
 	  If your device is in unlocked state:
@@ -252,7 +267,9 @@ Integrated Features
 * Android Kernelflinger boot support
 * Thermal Daemon is enabled for project |C|
 * Video Codec support on |C|
+
     **Decoder**
+
         * AVC High profile @ Level 5.1 (4k@30fps)
         * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)
 
@@ -261,7 +278,9 @@ Integrated Features
 
         * VP9 profile 0 @ Level 5 (4k@30fps)
         * Vp8 8 bits 1080p@60fps
+
     **Encoder**
+
         * AVC High profile @ level 4.1 (1080P@30fps)
         * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled
@@ -271,17 +290,22 @@ Integrated Features
 * Audio Encoders supported: AAC-LC, AAC ELD, HEAAC, HEAAC-V2, PCM/WAV
 * SDHCI host controller is enabled
 * Security
+
     * SELinux enforcing, File Based Encryption, Trusty, Keymaster 3.0
     * Reference solution - TPM based h/w binding reference implementation
     * User guide:
+ 
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 * Flashing binaries via |PFT|
+
     * To reduce the flash time, Platform flash Tool can be used with the following configurations:
+ 
         * Blank_without_lock (used for first time install or GPT layout change case)
         * Update_without_lock (used for image update on installed device)
 
     If your device is in unlocked state:
+
         * "Blank_without_lock" duration is 30% of "Blank"
         * "Update_without_lock" duration is 5% of "Update"
 
@@ -446,7 +470,9 @@ Integrated Features
 * Android Kernelflinger boot support
 * Thermal Daemon is enabled for project |C|
 * Video Codec support on |C|
+
     **Decoder**
+
         * AVC High profile @ Level 5.1 (4k@30fps)
         * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)
 
@@ -455,7 +481,9 @@ Integrated Features
 
         * VP9 profile 0 @ Level 5 (4k@30fps)
         * Vp8 8 bits 1080p@60fps
+
     **Encoder**
+
         * AVC High profile @ level 4.1 (1080P@30fps)
         * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled 
@@ -465,17 +493,21 @@ Integrated Features
 * Audio Encoders supported: AAC-LC, AAC ELD, HEAAC, HEAAC-V2, PCM/WAV
 * SDHCI host controller is enabled
 * Security
+
     * SELinux enforcing, File Based Encryption, Trusty, Keymaster 3.0
     * Reference solution - TPM based h/w binding reference implementation
     * User guide:
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 * Flashing binaries via |PFT|
+
     * To reduce the flash time, Platform flash Tool can be used with the following configurations:
+
         * Blank_without_lock (used for first time install or GPT layout change case)
         * Update_without_lock (used for image update on installed device)
 
     If your device is in unlocked state:
+
         * "Blank_without_lock" duration is 30% of "Blank"
         * "Update_without_lock" duration is 5% of "Update"
 
@@ -588,12 +620,14 @@ Integrated Features
 * Video Codec support on celadon
 
   Decoder
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
 
   Encoder
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled in CELADON
@@ -605,12 +639,15 @@ Integrated Features
 * SDHCI host controller is enabled
 * Security reference solution - TPM based h/w binding reference implementation
 * Selinux: enabled the neverallow check for selinux
+
      * User guide:
+
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
 * Flashing binaries via PFT – Platform Flash Tool
 * Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
+
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
 
 Important Notes and Remarks
@@ -680,6 +717,7 @@ Integrated Features
 * Image / video capture and multiple USB camera enabled
 
   Model
+
     * logitech C922 pro stream webcam
 * Wifi / BT / Ethernet enabled and works fine on discrete module Thunder Peak [Model: 9260NGW]
 * OTA upgrade of full & incremental packages works fine
@@ -693,6 +731,7 @@ Integrated Features
 * Video Codec support is enabled on celadon. Multiple-ways simultaneous decode/encode video supported. More than 16 simultaneous decode streams @ 1080p
 
   Decoder
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
@@ -701,6 +740,7 @@ Integrated Features
     * HTML 5 HW acceleration
 
   Encoder
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
 
@@ -768,12 +808,14 @@ Integrated Features
 * Video Codec support on celadon
 
   Decoder
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
 
   Encoder
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled in CELADON
@@ -785,12 +827,15 @@ Integrated Features
 * SDHCI host controller is enabled
 * Security reference solution - TPM based h/w binding reference implementation
 * Selinux: enabled the neverallow check for selinux
+
      * User guide: 
+
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
 * Flashing binaries via PFT – Platform Flash Tool
 * Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
+
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled. 
 
 Important Notes and Remarks
@@ -864,12 +909,14 @@ Integrated Features
 * Video Codec support on celadon
 
   Decoder
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
 
   Encoder
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled in CELADON
@@ -955,12 +1002,14 @@ Integrated Features
 * Video Codec support on celadon
 
   Decoder
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
 
   Encoder
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled in CELADON
@@ -1048,12 +1097,14 @@ Integrated Features
 * Video Codec support on celadon
 
   Decoder
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported) 
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
 
   Encoder
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)  
 * Art-extension is enabled in CELADON
@@ -1143,12 +1194,14 @@ Integrated Features
 * Video Codec support on celadon
   
   Decoder
+
     * AVC High profile @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps) (Main 10 with BT2020 and ST2084 information is not supported) 
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
   
   Encoder
+
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps) 
 * Art-extension is enabled in CELADON

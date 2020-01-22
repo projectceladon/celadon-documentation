@@ -79,11 +79,10 @@ a *qcow2* formatted virtual disk.
 Reboot to Android UI
 ********************
 
-Run the script :file:`start_android_qcow2.sh` with root permissions to faciltate the booting of CaaS
-images with `QEMU <https://www.qemu.org/>`_.
-Before launching the script to boot to the Android UI, edit the CaaS image
-filename in the script if necessary. The default image file
-:file:`android.qcow2` is hard-coded in the script:
+A script :file:`start_android_qcow2.sh` is developed to facilitate the CaaS images 
+booting process. However, before launching the script to boot to the Android UI,
+you may need to edit the CaaS image filename in the script, as the default image
+file `android.qcow2` is hard-coded in the script:
 
 .. code-block:: bash
 
@@ -98,6 +97,9 @@ filename in the script if necessary. The default image file
         ...
     }
     ...
+
+Enter the following commands to run the script :file:`start_android_qcow2.sh` with
+root permissions to faciltate the booting of CaaS images with `QEMU <https://www.qemu.org/>`_.
 
 .. code-block:: bash
 

@@ -5,8 +5,8 @@ Release Notes
 
 .. contents:: :local:
 
-CIV_01.20.04.02_A10
-===================
+CIV_00.19.04.20.02_A10
+======================
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).

@@ -5,6 +5,50 @@ Release Notes
 
 .. contents:: :local:
 
+CIC_00.19.04.20.03_A09
+======================
+
+.. note::
+    * The :abbr:`CIC (Celadon in Container)` release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
+    * This is a Pre-Production CIC Releases for evaluation and development purposes, they cannot be used for production.
+
+Important Notes and Remarks
+---------------------------
+
+This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains.
+
+* Container
+
+    ======================== =======
+    Test Case                Results
+    ======================== =======
+    Image Flash               Pass
+    System Boot Up            Pass
+    Touch Screen              Pass
+    Basic Video Playback      Pass
+    Basic Audio Playback      Pass
+    Music App                 Pass
+    Multi touch               Pass
+    Navigation bar            Pass
+    UI Display                Pass
+    Wifi [Host]               Pass
+    Network [Wifi/Ethernet]   Pass
+    Multi camera              Pass
+    Screen lock               Pass
+    Docker commands           Pass
+    adb                       Pass
+    BT [Host]                 Pass
+    Wired Headset             Pass
+    ======================== =======
+
+Known Issues
+------------
+
+* Multiple instances under implementation.
+* Boot time optimization in progress.
+* need to reboot device after 'adb reboot' for files to be reflected.
+* CIC performance is under tuning.
+
 CIV_00.19.04.20.02_A10
 ======================
 

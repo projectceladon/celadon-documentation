@@ -73,6 +73,8 @@ Build the CIC Package
       $ lunch cic-userdebug
       $ make cic -j $(nproc)
 
+.. _deploy-cic-on-target:
+
 Deploy on Target
 ****************
 

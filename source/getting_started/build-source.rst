@@ -58,9 +58,9 @@ Set up the development environment
             python-pystache git-lfs python3
 
 Installing Docker\*
-*******************
+===================
 
-|C| as a Service (*CaaS*) and |C| in Container (*CIC*) require
+:abbr:`CaaS (Celadon as a Service)` and :abbr:`CIC (Celadon in Container)` require
 `Docker <https://www.docker.com/>`_ to build the images. 
 
 #. Install the following packages before performing the CaaS or CIC build:
@@ -88,8 +88,11 @@ Installing Docker\*
    
        $ sudo usermod -aG docker $USER
 
+Build |C| in VM with Android 10
+*******************************
+
 Download the source
-*******************
+===================
 
 #. Enter the following commands to create an empty directory to hold the
    |C| source files and serve as the working directory, and to bring down the
@@ -98,24 +101,14 @@ Download the source
    .. note::
       The URL specifies the manifest that refers to various repositories
       used by |C|, which are placed within the working directory. For now, a
-      *.repo* folder is created to store the manifest and the metadata of
+      :file:`.repo/` folder is created to store the manifest and the metadata of
       the source repositories.
 
    .. code-block:: bash
 
-       $ mkdir celadon
-       $ cd celadon
+       $ mkdir caas
+       $ cd caas
        $ repo init -u https://github.com/projectceladon/manifest.git
-
-#. The master branch of |C| build is based on Google
-   `Android 10 <https://www.android.com/android-10/>`_ Pre-Production
-   Release. Use the following command to initialize your source tree with
-   the Google `Android 9 Pie <https://www.android.com/versions/pie-9-0/>`_
-   code base:
-
-   .. code-block:: bash
-
-       $ repo init -u https://github.com/projectceladon/manifest -b celadon/p/mr0/master -m default.xml
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time
@@ -126,12 +119,12 @@ Download the source
 
    .. code-block:: bash
 
-       $ repo sync
+       $ repo sync -c
 
 .. _build-os-image:
 
-Build the OS image
-******************
+Build the CaaS image
+====================
 
 #. Optionally, delete existing output of any previous build with the
    following command in the top-most |C| source directory:
@@ -149,53 +142,90 @@ Build the OS image
 
 #. Specify your |C| lunch target using the :command:`lunch` command. You can
    run :command:`lunch` with no arguments to choose different build
-   variants, and select a lunch target from a list of available options. For
-   example, the following command configures the build system for
-   `Android 9 Pie <https://www.android.com/versions/pie-9-0/>`_ with the
-   traditional tablet UI:
-
-   .. code-block:: bash
-
-       $ lunch celadon-userdebug
-
-#. The following command selects :command:`celadon_ivi-userdebug` as the
-   lunch target for building the
-   `Android 10 <https://www.android.com/android-10/>`_ Pre-Production
-   Release image with IVI UI:
-
-   .. code-block:: bash
-
-       $ lunch celadon_ivi-userdebug
-
-   Alternatively, you can :ref:`run-as-service`; use either
-   :command:`caas-userdebug` or :command:`cic-userdebug` lunch targets as
-   shown below:
+   variants, and select a lunch target from a list of available options.
+   For example, the following commands configure the build system to
+   build the installer files for |C| in VM images with the traditional tablet UI:
 
    .. code-block:: bash
 
        $ lunch caas-userdebug
-
-   or
-
-   .. code-block:: bash
-
-       $ lunch cic-userdebug
-
-#. Build the |C| installer files with the command shown below.
-
-   .. code-block:: bash
-
        $ make SPARSE_IMG=true flashfiles -j $(nproc)
-    
+
    .. note::
       The *-j $(nproc)* argument instructs the builder to compile the source
       code with parallel tasks. The generated kernelflinger executables
       .ZIP file
-      (:file:`out/target/product/celadon/celadon.flashfiles.eng.${USER}.zip`)
+      (:file:`out/target/product/caas/caas.flashfiles.eng.${USER}.zip`)
       is available after the build. You can follow :ref:`install-on-nuc` of
       this guide to flash the installer image to a removable USB drive and
-      install |C| on a |NUC|.
+      install |C| on an Intel platform.
+
+Build |C| in Container with Android 9
+*************************************
+
+Download the source
+===================
+
+#. Enter the following commands to create an empty directory to hold the
+   |C| source files and serve as the working directory, and to bring down the
+   latest version of :command:`repo` tool, including its most recent fixes.
 
    .. note::
-       For the CIC build, the generated image is packaged at the following
-       location: :file:`out/target/product/celadon/cic-${USER}.tar.gz`
+      The URL specifies the manifest that refers to various repositories
+      used by |C|, which are placed within the working directory. For now, a
+      :file:`.repo/` folder is created to store the manifest and the metadata of
+      the source repositories.
+
+   .. code-block:: bash
+
+       $ mkdir cic
+       $ cd cic
+       $ repo init -u https://github.com/projectceladon/manifest -b celadon/p/mr0/master -m cic
+
+#. Enter the following command to pull down the |C| Android source tree to
+   your working directory. The :command:`repo sync` operation might take time
+   depending on your Internet download speed. Refer to the
+   `Downloading the Source <https://source.android.com/setup/build/downloading>`_
+   section of the AOSP website for tips to download the source behind a
+   proxy.
+
+   .. code-block:: bash
+
+       $ repo sync -c
+
+.. _build-cic-package:
+
+Build the CIC package
+=====================
+
+#. Optionally, delete existing output of any previous build with the
+   following command in the top-most |C| source directory:
+
+   .. code-block:: bash
+
+       $ make clobber
+
+#. Enter the following command to initialize the build variables with the
+   :file:`envsetup.sh` script:
+
+   .. code-block:: bash
+
+       $ source build/envsetup.sh
+
+#. Specify your |C| lunch target using the :command:`lunch` command. You can
+   run :command:`lunch` with no arguments to choose different build
+   variants, and select a lunch target from a list of available options.
+   For example, the following commands configure the build system to
+   build the package containing |C| in Container images with the traditional tablet UI:
+
+   .. code-block:: bash
+
+       $ lunch cic_dev-userdebug
+       $ make cic -j $(nproc)
+
+   .. note::
+      The *-j $(nproc)* argument instructs the builder to compile the source
+      code with parallel tasks. The generated CIC package
+      (:file:`out/target/product/cic/cic-${USER}.tar.gz`)
+      is available after the build. You can follow :ref:`deploy-cic-on-target` of
+      this guide to deploy and start the CIC container on the target device.

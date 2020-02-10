@@ -21,7 +21,7 @@ Frequently Asked Questions
 :Q:
     **How could I start adding software components to my own Celadon build?**
 :A:
-    |C| follows the same practice as Android for adding software components to the build. A tutorial :ref:`add-movidius-ncsdk` is provided as an example to add |Movidius| Hardware Abstraction Layer to |C|.
+    |C| follows the same practice as Android for adding software components to the build.
 
 :Q:
     **I would like to contribute. Would Intel accept my contributions?**

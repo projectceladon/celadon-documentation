@@ -53,8 +53,7 @@ Flash and Boot the Device
 The following CaaS image types are generated at the end of the build:
 
 * caas.img
-    The GPT disk image for live booting on the target device. Refer to the
-    :ref:`Live Boot <usb-live-boot>` section to write the CaaS GPT image to a USB key, and to boot Android from that USB key.
+    The GPT disk image for live booting on the target device.
 
 * caas-flashfiles-eng.<user>.zip
     The compressed *flashfile* package contains the kernelflinger executables

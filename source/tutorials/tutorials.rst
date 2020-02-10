@@ -9,7 +9,6 @@ Development
 .. toctree::
    :maxdepth: 1
 
-   add-intel-movidius-nnsdk/add-intel-movidius-nnsdk
    enabling-uac3/enabling-uac3
    software-debug-tips/software-debug-tips
    thermal-daemon/thermal-daemon

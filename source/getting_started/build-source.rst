@@ -13,15 +13,21 @@ download source code, and build |C| from source.
 Prerequisites
 *************
 
-* A 64-bit development workstation running the Ubuntu* 16.04 (Xenial Xerus)
-  operating system.
+* A 64-bit development workstation running Ubuntu* 18.04 (Bionic Beaver)
+  operating system and Linux kernel version 5.0 or above. The following
+  host configuration has been verified:
+
+   .. code-block:: console
+
+       Host : Ubuntu 18.04
+       Host Kernel version : 5.0.0-32-generic
 
 * At least 150GB of free disk space on your workstation to checkout the
   source code and to store the build artifacts.
 
 .. note:: 
    Although Android\* is typically built with a GNU/Linux\* or macOS\*
-   operating system, we recommend you build |C| images on Ubuntu* 16.04.
+   operating system, we recommend you build |C| images on Ubuntu* 18.04.
    For setup instructions using other operating systems, refer to the
    `Establishing a Build Environment <https://source.android.com/setup/build/initializing>`_ section on the AOSP website.
 
@@ -41,7 +47,7 @@ Set up the development environment
        $ chmod a+x ~/bin/repo
        $ export PATH=~/bin:$PATH
 
-#. Install the following required packages on your 64-bit Ubuntu 16.04 LTS
+#. Install the following required packages on your 64-bit Ubuntu 18.04 LTS
    development workstation prior to starting the build:
 
    .. code-block:: bash

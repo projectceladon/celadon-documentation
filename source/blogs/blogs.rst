@@ -7,4 +7,3 @@ Blogs
     :maxdepth: 1
 
     dbc/dbc
-    uart/uart

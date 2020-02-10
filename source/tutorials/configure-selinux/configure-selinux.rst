@@ -17,7 +17,9 @@ SELinux Configuration
 To change SELinux in build time
 -------------------------------
 
-    The SELinux operation mode is configured using *mixins*. Edit the '*mixins.spec*' file in the source folder for your lunch target at '*device/intel/project-celadon/<target-name>/mixins.spec*' and rebuilt the image to take effect. Set the '*sepolicy*' key to either **permissive** or **enforcing** to enable the corresponding SELinux mode.
+For :abbr:`CiV (Celadon in VM)` scenario:
+
+    The SELinux operation mode is configured using **mixins**. Edit the :file:`mixins.spec` file in the source folder for your lunch target at :file:`device/intel/project-celadon/<target-name>/mixins.spec` and rebuild the image to take effect. Set the :file:`sepolicy` key to either **permissive** or **enforcing** to enable the corresponding SELinux mode.
 
     .. code-block:: none
         :emphasize-lines: 3
@@ -31,6 +33,25 @@ To change SELinux in build time
     .. note::
         1. The *permissive* mode is only activated in **userdebug** or **eng** builds. The user builds always operate in *enforcing* SELinux mode in Android.
         2. After you change the *sepolicy* value in *mixins.spec*, run the '*device/intel/mixins/mixin-update*' script to make the changes take effect before the build starts.
+
+For :abbr:`CiC (Celadon in Container)` scenario:
+
+    CiC shares the same kernel running in the host, we need to change the SELinux mode for CiC by modifying the host kernel command line. For example, on a Ubuntu host device, edit the default GRUB configuration file :file:`/etc/default/grub`, and append the following option to the **GRUB_CMDLINE_LINUX_DEFAULT** key:
+
+    .. code-block:: none
+
+        ...
+        GRUB_CMDLINE_LINUX_DEFAULT="androidboot.selinux=permissive"
+        ...
+
+    After updating the GRUB bootloader configuration and reboot the host with the following commands, the |C| in Container will be run in permissive mode by default.
+
+    .. code-block:: none
+
+        $ sudo update-grub && reboot
+
+    .. note::
+        1. The *permissive* mode is only activated in **userdebug** or **eng** builds. The user builds always operate in *enforcing* SELinux mode in Android.
 
 To change SELinux mode at runtime
 ---------------------------------
@@ -74,13 +95,21 @@ When you add a new module to |C|, you might need to add relevant sepolicy rules,
 Add the initial sepolicy rules
 ------------------------------
 
-#. Create a sub-folder '*rfkill*' under the *device/intel/project-celadon/sepolicy* directory to host the sepolicy rules files.
+#. For :abbr:`CiV (Celadon in VM)` scenario, create a sub-folder :file:`rfkill` under the :file:`device/intel/project-celadon/sepolicy/` directory to host the sepolicy rules files.
+   For :abbr:`CiC (Celadon in Container)` scenario, the :file:`rfkill` folder should be created in :file:`device/intel/cic/common/sepolicy` directory.
 
-#. Introduce the previous folder to the sepolicy compiler by adding the following line to the board configuration overlay file '*device/intel/mixins/groups/rfkill/true/BoardConfig.mk*'.
+#. Introduce the previous folder to the sepolicy compiler by adding the following line to the board configuration overlay file.
+   For :abbr:`CiV (Celadon in VM)` scenario, edit the file :file:`device/intel/mixins/groups/rfkill/true/BoardConfig.mk`:
 
     .. code-block:: none
 
         BOARD_SEPOLICY_DIRS += $(INTEL_PATH_SEPOLICY)/rfkill
+
+   Or, for :abbr:`CiC (Celadon in Container)` scenario, edit the file :file:`device/intel/cic/common/BoardConfig.mk`:
+
+    .. code-block:: none
+
+        BOARD_SEPOLICY_DIRS += device/intel/cic/common/sepolicy/rfkill
 
 #. Inside the sepolicy rules folder, create an initial file named '*file_contexts*' with the following content. This assigns a file label for the *rfkill* executable file:
 
@@ -88,7 +117,7 @@ Add the initial sepolicy rules
 
         /vendor/bin/rfkill-init.sh	u:object_r:rfkill_exec:s0
 
-#. Create a SELinux type enforcement file '*rfkill.te*' fo define the policy type and access control for the *rfkill* module:
+#. Create a SELinux type enforcement file :file:`rfkill.te` to define the policy type and access control for the :file:`rfkill` module:
 
     .. code-block:: none
         :emphasize-lines: 2, 4, 7

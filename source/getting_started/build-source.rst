@@ -14,13 +14,7 @@ Prerequisites
 *************
 
 * A 64-bit development workstation running Ubuntu* 18.04 (Bionic Beaver)
-  operating system and Linux kernel version 5.0 or above. The following
-  host configuration has been verified:
-
-   .. code-block:: console
-
-       Host : Ubuntu 18.04
-       Host Kernel version : 5.0.0-32-generic
+  operating system.
 
 * At least 150GB of free disk space on your workstation to checkout the
   source code and to store the build artifacts.

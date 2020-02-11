@@ -4,8 +4,8 @@ Run Project |C| on Intel® architectures
 =======================================
 
 The idea of :abbr:`CaaS (Celadon as a Service)` is to run |C| as a service
-seamlessly on bare metal systems with Intel architecture, virtual machines,
-and containers based on an unified software architecture. The architecture of
+seamlessly on virtual machines, containers, and bare metal systems with Intel architecture
+based on an unified software architecture. The architecture of
 CaaS is designed to be fully compliant with the Google* Android*
 `CDD <https://source.android.com/compatibility/cdd>`_, and allows the
 scalability and extensibility for flexible customizations at the same time.
@@ -19,8 +19,8 @@ The diagram shown below illustrates the overall CaaS software architecture.
 The :abbr:`AAF (Auto Adaptation Framework)` is the key component introduced
 to automatically detect and bind the kernel drivers, and to load the HAL
 modules and configurations for a variety of devices exposed on different bare
-metal systems and virtual platforms. Therefore, when you run Android on bare
-metal systems, VMs, and containers, they are all served by a single image
+metal systems and virtual platforms. Therefore, when you run Android on VMs,
+containers, and bare metal systems, they are all served by a single image
 with an unified architecture.
 
 .. figure:: images/caas-architecture.png
@@ -34,6 +34,5 @@ with an unified architecture.
 .. toctree::
    :maxdepth: 1
 
-   on-bm
    on-vm
    on-container

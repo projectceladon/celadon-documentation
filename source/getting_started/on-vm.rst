@@ -3,7 +3,8 @@
 Run |C| on a virtual machine
 ############################
 
-This page explains what you'll need to run |C| on a virtual machine.
+This page explains what you'll need to run |C| on a virtual machine or
+a bare metal Intel® hardware platform.
 
 .. contents::
    :local:
@@ -42,19 +43,21 @@ specify :envvar:`caas` as the lunch target to build the CaaS images. The
 following CaaS image types are generated at the end of the build:
 
 caas.img
-    The GPT disk image for direct booting. Skip the following section to
+    The GPT disk image for direct booting. Skip next section to
     boot the CaaS image with QEMU.
 
 caas-flashfiles-eng.<user>.zip
     The compressed *flashfile* package contains the CaaS partition images.
     Proceed with the following section to install these images to a virtual
-    disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
+    disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format,
+    or refer to :ref:`caas-on-bm` section to install the images on a bare metal.
 
 Create a CaaS virtual disk
 **************************
 
 .. note::
-        Skip this section if you plan to boot the device directly with the GPT disk image :file:`caas.img`.
+        Skip this section if you plan to boot the device directly with the GPT disk image :file:`caas.img`,
+        or install the flashfile package :file:`caas-flashfiles-eng.<user>.zip` on a bare metal.
 
 Follow the instructions below to create and set up CaaS partitions on
 a *qcow2* formatted virtual disk.

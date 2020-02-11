@@ -42,12 +42,12 @@ Set up Docker Engine
       $ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
       $ sudo usermod -aG docker $USER
 
-   The last command is optional if you want to run the Docker as a non-root
-   user.
+   .. note::
+      The last command is optional if you want to run the Docker as a non-root user.
 
 #. Restart your session for changes to take effect.
 
-On the target device, CIC currently requires Linux\* kernel version 4.14.20 or later, which is available in most Linux distributions such as Clear Linux, Rancher OS, and Ubuntu Linux. The setup instructions previously listed are based on Ubuntu 16.04 LTS distribution.
+On the target device, CIC currently requires Linux\* kernel version 4.14.20 or later, which is available in most Linux distributions such as Clear Linux, Rancher OS, and Ubuntu Linux. The setup instructions previously listed are based on Ubuntu 18.04 LTS distribution.
 
 Build the CIC Package
 *********************
@@ -59,12 +59,12 @@ Build the CIC Package
    cic
       target to compliant with Android CDD
 
-    cic_dev
+   cic_dev
       target for development purposes (available on the CIC branch of the |C|
       Android-P release)
 
 #. Run the following commands to select **cic-userdebug** as the lunch
-   target and start the build. The CIC package generates at
+   target and start the build. The CIC package is generated at
    :file:`$OUT/$TARGET_PRODUCT-*.tar.gz`.
 
    .. code-block:: bash

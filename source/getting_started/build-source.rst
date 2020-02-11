@@ -156,9 +156,10 @@ Build the CaaS image
       code with parallel tasks. The generated kernelflinger executables
       .ZIP file
       (:file:`out/target/product/caas/caas.flashfiles.eng.${USER}.zip`)
-      is available after the build. You can follow :ref:`install-on-nuc` of
-      this guide to flash the installer image to a removable USB drive and
-      install |C| on an Intel platform.
+      is available after the build. You can refer to :ref:`caas-on-vm`
+      section to prepare the host environment and boot the CaaS image with QEMU.
+      Or, follow :ref:`install-on-nuc` of this guide to flash the installer
+      image to a removable USB drive and install |C| on an Intel platform.
 
 Build |C| in Container with Android 9
 *************************************

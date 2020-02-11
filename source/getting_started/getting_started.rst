@@ -12,7 +12,6 @@ Machines, and Containers. This guide also explains how to contribute patches.
    :maxdepth: 2
 
    as-service
-   install-run
    build-source
    submit-patch
    how-to

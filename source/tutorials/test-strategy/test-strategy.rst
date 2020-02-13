@@ -3,33 +3,35 @@
 Test strategy for |C|
 #####################
 
-|C| is an open source Android software reference stack for the Android community to bring ideas to life while developing on the latest Android release and the latest Intel hardware platforms. The following |NUC| systems are used to validate regular |C| releases.
+|C| is an open source Android software reference stack for the Android community to bring ideas to life while developing on the latest Android release and the latest Intel hardware platforms. The following |NUC| system has been used to validate regular |C| releases.
 
     * |NUC| Kit `NUC7i5DNHE <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html>`_ with `0065 <https://downloadcenter.intel.com/downloads/eula/28885/BIOS-Update-DNKBLi5v-86A-?httpDown=https://downloadmirror.intel.com/28885/eng/DNi50065.bio>`_ BIOS firmware
-    * |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_ with `0060 <https://downloadcenter.intel.com/downloads/eula/28641/BIOS-Update-AYAPLCEL-86A-?httpDown=https://downloadmirror.intel.com/28641/eng/AY0060.bio>`_ BIOS firmware
 
 Weekly Validation Phase
 -----------------------
 
-The weekly validation cycle includes system functional test execution, Compliance testing - `CTS <https://source.android.com/compatibility/cts>`_, `VTS <https://source.android.com/compatibility/vts>`_, `CTS-Verifier <https://source.android.com/compatibility/cts/verifier>`_, STS, and Power and performance KPI's based on the defined features on the program quarterly.
+The weekly validation cycle includes system functional test execution, Compliance testing, and Power and performance KPI's based on the defined features on the program quarterly.
 
     * The testplan is created based on the features in the verify/closed state from the weekly release builds. The execution is completed weekly on each domain until the SWQRC criteria is met. This criteria is defined at the start of the program.
-    * The HP ALM (Application Lifecycle Management) tool is used to map/track all the testcases against the requirements defined in Jira.
-    * The PLC (Product Life Cycle) portal gives the consolidated results in addition to track the software completion, requirement coverage, defects and system validation results.
+    * The HP :abbr:`ALM (Application Lifecycle Management)` tool is used to map/track all the testcases against the requirements defined in Jira.
+    * The :abbr:`PLC (Product Life Cycle)` portal gives the consolidated results in addition to track the software completion, requirement coverage, defects and system validation results.
 
 Android Validation In-Scope
 ---------------------------
 
 Android validation is scoped for the following:
 
-* Bare metal Android (Native OS) for |C| project
-    * KBL-NUC IVI Pie Jira
-    * APL-NUC IVI Q Jira
+* :abbr:`CIC (Celadon in Container)` and :abbr:`CIV (Celadon in VM)` platfroms consist of
+
+    * Kaby Lake CIC Pie & CometLake CIC Pie
+    * Kaby Lake CIV Android 10 & Comet Lake CIV Android 10
 
 * Functional validation of all E2E defined features in JIRA
+
 * Non Functional (Compliance/PnP)
-    * PnP KPIs defined that are captured in Jira
-    * CTS/VTS/CTS-Verifier/STS testing
+
+        * PnP KPIs defined that are captured in Jira
+        * CTS/VTS/CTS-Verifier/STS testing
 
 Android Validation Out-Scope
 ----------------------------
@@ -49,7 +51,7 @@ Validation Activates Key Flow
 Test Suite
 ----------
 
-The objective of the System functional test is to ensure 100% validation coverage for POR features, and evaluate functionalities of the product as a whole from the end-to-end perspective. The System Validation includes positive, negative, feature interactive, and User experience tests.
+The objective of the System functional test is to ensure 100% validation coverage for POR features, and evaluate functionalities of the product as a whole from the end-to-end perspective.
 
 .. list-table::
     :widths: 50 50
@@ -61,8 +63,8 @@ The objective of the System functional test is to ensure 100% validation coverag
       - Requirement-based testing. Test cases are end-to-end and cover features captured in Jira (manual + automation)
     * - PnP - Performance
       - Measures performance KPIs
-    * - Google Compliance - CTS/VTS/STS/CTS-Verifier
-      - CTS/VTS/STS/CTS-Verifier test suite as per planned features on the program.
+    * - Google Compliance - CTS/CTS-Verifier
+      - CTS/CTS-Verifier test suite as per planned features on the program.
 
 Test Suite and Defect Tracking
 ------------------------------

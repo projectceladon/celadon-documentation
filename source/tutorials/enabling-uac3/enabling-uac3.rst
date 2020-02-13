@@ -161,7 +161,7 @@ XHCI is capable of supporting hardware LPM in modern Intel platforms. For exampl
 
 If the output value is **disabled**, you could enable LPM by writing **1** to the entry. The transition into LPM L1 mode can be confirmed through protocol traces.
 
-The following snapshot shows Lecroy traces of LPM transaction on an Intel Kabylake platform with a UAC3-compliant audio device:
+The following snapshot shows Lecroy traces of LPM transaction on an Intel Kaby Lake platform with a UAC3-compliant audio device:
 
 .. figure:: images/uac3-usb-protocol-trace.png
     :align: center

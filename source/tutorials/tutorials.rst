@@ -11,16 +11,7 @@ Development
 
    enabling-uac3/enabling-uac3
    software-debug-tips/software-debug-tips
-   thermal-daemon/thermal-daemon
-
-Profiling
----------
-
-.. toctree::
-   :maxdepth: 1
-
-   profiling-gpu/profiling-gpu
-   profiling-system-power-consumption-using-socwatch/profiling-system-power-consumption-using-socwatch
+   dbc/dbc
 
 Security
 --------

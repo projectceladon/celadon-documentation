@@ -1,7 +1,9 @@
+.. _debug-android-host:
+
 Making the Android* Host Debuggable - ADB for x86 Android Solutions
 ###################################################################
 
-This blog provides an overview of the :abbr:`DBC (USB Debug Class)`
+This tutorial provides an overview of the :abbr:`DBC (USB Debug Class)`
 infrastructure followed by the steps to enable the feature on |C| and
 seamlessly run :command:`adb` over a USB Type-A port.
 
@@ -195,7 +197,9 @@ References
 ----------
 
 DBC CAP Blog
+
     https://www.kernel.org/doc/html/v5.0/driver-api/usb/usb3-debug-port.html
 
 XHCI Spec
+
     https://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/extensible-host-controler-interface-usb-xhci.pdf

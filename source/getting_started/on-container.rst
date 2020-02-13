@@ -13,13 +13,34 @@ container.
 Description
 ***********
 
-The goal of the :abbr:`CIC (Celadon in Container)` feature is to run the |C|
-Android image in a Docker container, so that you can run the image on Linux\*
-devices through Docker tools, and run Android applications in it.
+:abbr:`CIC (Celadon in Container)` is Intel's open Source Android solution
+for running |C| on a Linux based container environment, in order to achieve
+high-scalability, low performance overhead for some emerging use cases
+such as Cloud Gaming, IOT and :abbr:`FCF (Flexible Container Framework)`.
+
+To support CIC running multiple Android instances on a single kernel without
+interfering each other, the following isolation approach is implemented:
+
+    :dfn:`I/O Devices`
+
+        I/O devices can be shared between different Android instances,
+        and mediation is required.
+
+    :dfn:`Kernel`
+
+        Shared resources consumed by the Android instances should be isolated.
+
+            * CPU, Memory are isolated using CGroup.
+            * Binder is isolated by adding multiple device nodes.
+
+    :dfn:`Usespace`
+
+        Resources in different Android instances need to be isolated,
+        for example, network/process id/... PID, process name, network, cgroup names, etc.
 
 CIC should be able to run on modern PCs with 6th generation or later Intel®
 Architecture Processors with integrated GPU. The |NUC| model `NUC7i7BNH`_
-and model `NUC7i5BNH`_ are recommended to try out the CIC features.
+and model `NUC7i5BNH`_ are recommended devices to try out the CIC features.
 
 .. note::
    The current version of CIC is 0.5, which provides a preview of the feature for pilot and development purposes. Some features such as Trusty, Verified Boot, and the OTA update do not exist in this preview version. We plan for these features in upcoming releases.
@@ -56,21 +77,23 @@ Build the CIC Package
    Guide to set up the |C| source tree and the build environment. There are
    two build targets associated with the CIC builds:
 
-   cic
-      target to compliant with Android CDD
+   :makevar:`cic`
 
-   cic_dev
-      target for development purposes (available on the CIC branch of the |C|
+      The lunch target which is Android CDD compliant.
+
+   :makevar:`cic_dev`
+
+      The lunch target for development purposes (available on the CIC branch of the |C|
       Android-P release)
 
-#. Run the following commands to select **cic-userdebug** as the lunch
+#. Run the following commands to select :makevar:`cic_dev-userdebug` as the lunch
    target and start the build. The CIC package is generated at
    :file:`$OUT/$TARGET_PRODUCT-*.tar.gz`.
 
    .. code-block:: bash
 
       $ source build/envsetup.sh
-      $ lunch cic-userdebug
+      $ lunch cic_dev-userdebug
       $ make cic -j $(nproc)
 
 .. _deploy-cic-on-target:

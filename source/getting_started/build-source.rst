@@ -60,10 +60,10 @@ Set up the development environment
 Installing Docker\*
 ===================
 
-:abbr:`CaaS (Celadon as a Service)` and :abbr:`CIC (Celadon in Container)` require
+:abbr:`CiV (Celadon in VM)` and :abbr:`CIC (Celadon in Container)` require
 `Docker <https://www.docker.com/>`_ to build the images. 
 
-#. Install the following packages before performing the CaaS or CIC build:
+#. Install the following packages before performing the CiV or CiC build:
 
    .. code-block:: bash
 
@@ -106,8 +106,8 @@ Download the source
 
    .. code-block:: bash
 
-       $ mkdir caas
-       $ cd caas
+       $ mkdir civ
+       $ cd civ
        $ repo init -u https://github.com/projectceladon/manifest.git
 
 #. Enter the following command to pull down the |C| Android source tree to
@@ -123,8 +123,8 @@ Download the source
 
 .. _build-os-image:
 
-Build the CaaS image
-====================
+Build |C| in VM image
+=====================
 
 #. Optionally, delete existing output of any previous build with the
    following command in the top-most |C| source directory:
@@ -157,7 +157,7 @@ Build the CaaS image
       .ZIP file
       (:file:`out/target/product/caas/caas.flashfiles.eng.${USER}.zip`)
       is available after the build. You can refer to :ref:`caas-on-vm`
-      section to prepare the host environment and boot the CaaS image with QEMU.
+      section to prepare the host environment and boot the CiV image with QEMU.
       Or, follow :ref:`install-on-nuc` of this guide to flash the installer
       image to a removable USB drive and install |C| on an Intel platform.
 
@@ -196,8 +196,8 @@ Download the source
 
 .. _build-cic-package:
 
-Build the CIC package
-=====================
+Build |C| in Container package
+==============================
 
 #. Optionally, delete existing output of any previous build with the
    following command in the top-most |C| source directory:

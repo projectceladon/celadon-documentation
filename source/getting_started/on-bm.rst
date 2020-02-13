@@ -18,11 +18,20 @@ Hardware Prerequisites
 * Intel® Xeon® E3 processor family
 * Intel® Xeon® E5 processor family
 
-You can try out the :abbr:`CaaS (Celadon as a Service)` experience on your
+You can try out the :abbr:`CiV (Celadon in VM)` experience on your
 Intel® architecture (x86) hardware platforms with UEFI BIOS and Intel®
 Virtualization Technology (Intel® VT) for IA-32, Intel® 64 and Intel®
 Architecture (Intel® VT-x) and Intel® Virtualization Technology (Intel® VT)
 for Directed I/O (Intel® VT-d) features enabled.
+
+.. note::
+    Users should be aware that test suites provided by Google may not pass
+    with 100% scoring if deploying |C| on bare metal systems. While |C| in VM
+    deployments are supported by `Google Mobile Services (GMS) <https://www.android.com/gms/>`_,
+    |C| on bare metal does not have GMS support. Dedicated use cases like retail,
+    client, education and gaming do not need GMS. If there is a need for GMS
+    while running |C| on bare metal, direct communication with Google will
+    be necessary.
 
 Configure the BIOS Setting
 **************************
@@ -34,7 +43,7 @@ Configure the BIOS Setting
 #. Enable Intel® VT-d and Intel® VT-x features in the Security configuration
    of the BIOS if it is not enabled.
 
-#. Disable the *Secure Boot* feature in the BIOS for live testing the CaaS
+#. Disable the *Secure Boot* feature in the BIOS for live testing the CiV
    features at the early stage. Secure Boot should be re-enabled later.
 
     .. note::
@@ -45,25 +54,27 @@ Configure the BIOS Setting
 Build Android Image
 *******************
 
-Refer to the :ref:`build-os-image` section in the Getting Started Guide to build the CaaS images.
+Refer to the :ref:`build-os-image` section in the Getting Started Guide to build the CiV images.
 
 Flash and Boot the Device
 *************************
 
-The following CaaS image types are generated at the end of the build:
+The following CiV image types are generated at the end of the build:
 
-* caas.img
+* :file:`caas.img`
+
     The GPT disk image for live booting on the target device.
 
-* caas-flashfiles-eng.<user>.zip
+* :file:`caas-flashfiles-eng.<user>.zip`
+
     The compressed *flashfile* package contains the kernelflinger executables.
     Refer to the :ref:`install-on-nuc` section to unzip the content of the
-    package to a USB key, and install the CaaS images from the *UEFI Shell*.
+    package to a USB key, and install the CiV images from the *UEFI Shell*.
 
 Live Boot
 *********
 
-The *live boot* feature is enabled in the CaaS images by default.
+The *live boot* feature is enabled in the CiV images by default.
 The live boot feature allows you to flash a specially-built image to a USB
 drive and then boot from the USB drive to Android\* directly without
 installing Android to internal storage first.

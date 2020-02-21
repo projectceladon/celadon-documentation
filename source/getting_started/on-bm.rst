@@ -1,9 +1,9 @@
 .. _caas-on-bm:
 
-Run |C| on Bare Metal
-#####################
+Run Native |C| on Intel Platforms
+#################################
 
-This page explains what you'll need to run |C| on bare metal.
+This page explains what you'll need to run |C| natively on Intel hardware platforms.
 
 .. contents::
    :local:

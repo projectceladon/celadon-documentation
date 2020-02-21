@@ -1,10 +1,10 @@
 .. _caas-on-vm:
 
-Run |C| on a virtual machine
+Run |C| in a virtual machine
 ############################
 
-This page explains what you'll need to run |C| on a virtual machine or
-a bare metal Intel® hardware platform.
+This page explains what you'll need to run |C| in a virtual machine, or
+run native |C| on an Intel® hardware platform.
 
 .. contents::
    :local:
@@ -26,7 +26,7 @@ instructions to set up `Clear Linux OS <https://clearlinux.org/>`_ 30870 or
 `Ubuntu OS <https://ubuntu.com/>`_ 18.04.3 as the host device.
 Any later OS version should also work.
 During the installation, you will be prompted by some questions to confirm the
-changes to the packages, it's safe to respond 'y' to all of them.
+changes to the packages, it's safe to respond :kbd:`y` to all of them.
 
      .. code-block:: bash
 
@@ -51,15 +51,17 @@ following CiV image types are generated at the end of the build:
 
     The compressed *flashfile* package contains the |C| partition images for running in a VM.
     Proceed with the following section to install these images to a virtual
-    disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format,
-    or refer to :ref:`caas-on-bm` section to install the images on a bare metal.
+    disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
+    The flashfile package also can be used to install |C| natively on Intel hardware platforms,
+    refer to :ref:`caas-on-bm` section for more detailed information.
 
 Create a CiV virtual disk
 *************************
 
 .. note::
         Skip this section if you plan to boot the device directly with the GPT disk image :file:`caas.img`,
-        or install the flashfile package :file:`caas-flashfiles-eng.<user>.zip` on a bare metal.
+        or install the flashfile package :file:`caas-flashfiles-eng.<user>.zip`
+        natively on an Intel hardware platform.
 
 Follow the instructions below to create and set up CiV partitions on
 a *qcow2* formatted virtual disk.

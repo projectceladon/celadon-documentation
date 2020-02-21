@@ -60,7 +60,7 @@ Set up the development environment
 Installing Docker\*
 ===================
 
-:abbr:`CiV (Celadon in VM)` and :abbr:`CIC (Celadon in Container)` require
+:abbr:`CiV (Celadon in VM)` and :abbr:`CiC (Celadon in Container)` require
 `Docker <https://www.docker.com/>`_ to build the images. 
 
 #. Install the following packages before performing the CiV or CiC build:
@@ -226,7 +226,7 @@ Build |C| in Container package
 
    .. note::
       The *-j $(nproc)* argument instructs the builder to compile the source
-      code with parallel tasks. The generated CIC package
+      code with parallel tasks. The generated CiC package
       (:file:`out/target/product/cic/cic-${USER}.tar.gz`)
       is available after the build. You can follow :ref:`deploy-cic-on-target` of
-      this guide to deploy and start the CIC container on the target device.
+      this guide to deploy and start the CiC container on the target device.

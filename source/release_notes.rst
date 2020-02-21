@@ -9,8 +9,8 @@ CIC_00.19.04.20.03_A09
 ======================
 
 .. note::
-    * The :abbr:`CIC (Celadon in Container)` release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
-    * This is a Pre-Production CIC Releases for evaluation and development purposes, they cannot be used for production.
+    * The :abbr:`CiC (Celadon in Container)` release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
+    * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
 
 Important Notes and Remarks
 ---------------------------
@@ -47,7 +47,7 @@ Known Issues
 * Multiple instances under implementation.
 * Boot time optimization in progress.
 * need to reboot device after 'adb reboot' for files to be reflected.
-* CIC performance is under tuning.
+* CiC performance is under tuning.
 
 CIV_00.19.04.20.02_A10
 ======================

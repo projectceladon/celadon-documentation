@@ -85,8 +85,9 @@ Frequently Asked Questions
 :Q:
     Can |C| still be run on bare metal?
 :A:
-    Yes, |C| continues to support Android* on bare metal. Refer to the
-    :ref:`caas-on-bm` section to install |C| in VM images on a bare metal system.
+    Intel supports VM and Container configurations for |C|. Users can potentially
+    take the opensource |C| project and run in different configurations including
+    Native.
 
     .. note::
         Users should be aware that test suites provided by Google may not

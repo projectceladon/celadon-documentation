@@ -6,9 +6,9 @@
 .. toctree::
    :maxdepth: 2
 
-   getting_started/getting_started
+   getting-started/getting-started
    tutorials/tutorials
-   release_notes
+   release-notes
    references
    faqs
    sitemap

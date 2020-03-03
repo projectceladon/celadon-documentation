@@ -17,7 +17,7 @@ vendor's key and Windows\* key by default. However, the default setting does
 not include the key to verify the kernelflinger. If the BIOS has enabled
 secure boot, you will get the following error message:
 
-.. figure:: images/Authorization_fail.jpg
+.. figure:: images/authorization-fail.jpg
     :align: center
 
 You'll need a USB drive with at least 1GB of free space to perform the
@@ -54,25 +54,25 @@ to BIOS.
 
 #. Select the :menuselection:`(db)` option and press :kbd:`Enter`.
 
-   .. figure:: images/select_menu.jpg
+   .. figure:: images/select-menu.jpg
       :align: center
 
 #. Choose :menuselection:`Add New Key` to add the DB key.
 
-   .. figure:: images/add_db.jpg
+   .. figure:: images/add-db.jpg
       :align: center
 
 #. Browse your USB drives to locate your keys and add them one at a time.
 
-   .. figure:: images/browse_db_from_usb.jpg
+   .. figure:: images/browse-db-from-usb.jpg
       :align: center
 
-   .. figure:: images/auth_key.jpg
+   .. figure:: images/auth-key.jpg
       :align: center
 
    Repeat the same steps and add the new key for KEK
 
-   .. figure:: images/menu_kek.jpg
+   .. figure:: images/menu-kek.jpg
       :align: center
 
 How to change the partition size in |C| image

@@ -17,7 +17,7 @@ Frequently Asked Questions
     hardware, including
     `Intel® NUC Kit NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
     - the leading platform for in-vehicle infotainment (IVI) configurations.
-    Please check out :ref:`release_notes` for detailed new release features.
+    Please check out :ref:`release-notes` for detailed new release features.
 
 :Q:
     Why might developers and independent software vendors want to use Celadon
@@ -34,7 +34,7 @@ Frequently Asked Questions
           `additional test suites <https://01.org/projectceladon/documentation/tutorials/test-strategy>`_
           on leading platforms and configurations
         * Functionality across a
-          `variety of Intel hardware <https://01.org/projectceladon/documentation/getting_started/as-service>`_,
+          :ref:`variety of Intel hardware <run-as-service>`,
           including `Intel® NUC Kit NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
           - the leading platform for in vehicle infotainment (IVI) configurations
         * Rich vertical solution configurations allowing for ease of scalability and extensibility across market segments
@@ -123,7 +123,7 @@ Frequently Asked Questions
 :Q:
     **What Android desserts are supported in Celadon?**
 :A:
-    The latest Android dessert is supported as soon as Google publicly releases the dessert. Please see the :ref:`release_notes` for the latest supported desserts.
+    The latest Android dessert is supported as soon as Google publicly releases the dessert. Please see the :ref:`release-notes` for the latest supported desserts.
 
 :Q:
     **Will the latest Celadon work on older hardware that was previously supported?**

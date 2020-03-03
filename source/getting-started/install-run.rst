@@ -59,17 +59,17 @@ The kernelflinger executables are loaded and run by the **UEFI Shell**. To enabl
 
 Click the *Advanced* button on the *Boot Order* pane, then click the *Boot Configuration* tab to ensure the Internal UEFI Shell option is checked in the *Boot Devices* list.
 
-.. figure:: images/enable_uefi_shell.jpg
+.. figure:: images/enable-uefi-shell.jpg
     :align: center
 
 On a refresh of the 7th generation |NUC| model (i.e. `Dawson Canyon <https://ark.intel.com/products/codename/126293/Dawson-Canyon>`_), if you have ever installed |C| on the |NUC| system, you can install |C| on it with `Intel Platform Flash Tool Lite <https://01.org/node/2463>`_ using Android fastboot protocol. Proceed with the instructions on the :ref:`install-using-pft` section to install |C| using |PFT|.
 
 Save any modified configuration before rebooting the system, and press **F10** to enter the Boot Menu. Plug the USB flash drive with kernelflinger executables on it to any USB port, and select **UEFI: Built-in EFI Shell** to boot the NUC. After counting down, the UEFI Shell runs the ``startup.nsh`` script on the USB flash drive, and installs the Celadon images automatically.
 
-.. figure:: images/select_uefi_shell.jpg
+.. figure:: images/select-uefi-shell.jpg
     :align: center
 
-.. figure:: images/install_kernel_flinger.jpg
+.. figure:: images/install-kernel-flinger.jpg
     :align: center
 
 .. _install-using-pft:
@@ -87,7 +87,7 @@ If you are installing |C| on a refresh of the 7th generation |NUC| model, to tak
 
 You also need a USB dongle (e.g. `Dawson Canyon USB 3.0 female to 10-pin header cable <https://www.gorite.com/dawson-canyon-usb-3-0-female-to-10-pin-header-cable>`_) to exercise the internal USB 3.0 port header on the main board of the |NUC| system. Refer to the `Technical Product Specification <https://www.intel.com/content/dam/support/us/en/documents/mini-pcs/nuc-kits/NUC7i5DN_TechProdSpec.pdf>`_ to identify the USB 3.0 port header on the main board.
 
-.. figure:: images/NUC755DNH_USB.jpg
+.. figure:: images/usb-dongle-on-nuc7i5dnh.jpg
     :align: center
 
 Save the modified configuration before rebooting the system, press **F10** to enter the Boot Menu. Select **UEFI: Built-in EFI Shell** to boot the NUC, press any key to stop the countdown timer and enter the UEFI Shell. Run the |C| loader in Fastboot mode with the following command in the UEFI shell:
@@ -129,19 +129,19 @@ The first boot of the device takes time to prepare the built-in apps. Be patient
 
 In addition to the traditional Android UI launcher, |C| supports the experimental automotive UI launcher introduced in Android 9.0 Pie. The automotive UI is enabled in the images built for **cel_kbl** and **cel_apl** lunch targets.
 
-.. figure:: images/ivi_ui_launcher.png
+.. figure:: images/ivi-ui-launcher.png
     :align: center
 
-.. figure:: images/ivi_ui_launcher_apps.jpg
+.. figure:: images/ivi-ui-launcher-apps.jpg
     :align: center
 
 The following screenshots show the device running the Android 10 Pre-Production Release.
 
-.. figure:: images/android10_home.jpg
+.. figure:: images/android10-home.jpg
     :align: center
 
-.. figure:: images/android10_apps1.jpg
+.. figure:: images/android10-apps1.jpg
     :align: center
 
-.. figure:: images/android10_apps2.jpg
+.. figure:: images/android10-apps2.jpg
     :align: center

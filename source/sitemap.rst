@@ -6,8 +6,8 @@ Project |C| - Documentation Sitemap
 .. toctree::
    :includehidden:
 
-   getting_started/getting_started
+   getting-started/getting-started
    tutorials/tutorials
-   release_notes
+   release-notes
    faqs
    references

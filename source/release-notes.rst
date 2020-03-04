@@ -111,7 +111,6 @@ Important Notes and Remarks
 
 Known Issues
 ------------
-* Audio recording is not supported currently.
 * Video play is not smooth on 4K monitor.
 * Touch Screen operation is not smooth on 4K monitor.
 

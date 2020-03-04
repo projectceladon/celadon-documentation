@@ -48,14 +48,6 @@ Integrated Features
 
     SELinux Configuration and Rules
     How to Enable or Disable Trusty for Debugging
-* Flashing binaries via PFT – Platform Flash Tool
-  * To reduce the flash time, Platform flash Tool can be used with the following config’s:
-
-        * Blank_without_lock  (used for first time install or GPT layout change case)
-        * Update_without_lock  (used for image update on installed device)
-          If your device is in unlocked state:
-        * “Blank_without_lock” duration is 30% of “Blank”
-          “Update_without_lock” duration is 5% of “Update”
 
 Important Notes and Remarks
 ---------------------------
@@ -209,14 +201,6 @@ Integrated Features
 
     SELinux Configuration and Rules
     How to Enable or Disable Trusty for Debugging
-* Flashing binaries via PFT – Platform Flash Tool
-  * To reduce the flash time, Platform flash Tool can be used with the following config’s:
-
-        * Blank_without_lock  (used for first time install or GPT layout change case)
-        * Update_without_lock  (used for image update on installed device)
-          If your device is in unlocked state:
-        * “Blank_without_lock” duration is 30% of “Blank”
-          “Update_without_lock” duration is 5% of “Update”
 
 Important Notes and Remarks
 ---------------------------
@@ -326,15 +310,6 @@ Integrated Features
 
     SELinux Configuration and Rules
     How to Enable or Disable Trusty for Debugging
-* Flashing binaries via PFT – Platform Flash Tool
-
-  * To reduce the flash time, Platform flash Tool can be used with the following config’s:
-
-	* Blank_without_lock  (used for first time install or GPT layout change case)
-	* Update_without_lock  (used for image update on installed device)
-	  If your device is in unlocked state:
-        * “Blank_without_lock” duration is 30% of “Blank”
-	  “Update_without_lock” duration is 5% of “Update”
 
 Important Notes and Remarks
 ---------------------------

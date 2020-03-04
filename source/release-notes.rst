@@ -41,6 +41,7 @@ Integrated Features
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * SDHCI host controller is enabled
 * File sharing between Multi guest-OSes is enabled.
+* QEMU version is upgraded to 4.2
 * Security
   SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
 

@@ -85,7 +85,6 @@ Integrated Features
 * f2fs filesystem support enabled
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * SDHCI host controller is enabled
-* File sharing between Multi guest-OSes is enabled.
 * QEMU version is upgraded to 4.2
 * Security
   SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
@@ -109,11 +108,11 @@ Important Notes and Remarks
 
     * - Wi-Fi
       - OK
-      - Host wifi is been used in QEMU.
+      - Host wifi is been used in QEMU
 
     * - BT
       - OK
-      - File Transfer Protocol
+      - Host BT is been used in QEMU for HOGP profile (LE profile)
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -152,7 +151,10 @@ Important Notes and Remarks
     * - Video playback
       - OK
       - H264/H265/MPEG2/VP8/VP9 Video Playback
-
+      
+    * - USB
+      - OK
+      - MTP/PTP Initiator Role 
 
 Known Issues
 ------------

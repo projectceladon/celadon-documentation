@@ -237,7 +237,6 @@ Integrated Features
     * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled
 * f2fs filesystem support enabled
-* S3 Suspend/Resume is supported
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * SDHCI host controller is enabled
 * File sharing between Multi guest-OSes is enabled.

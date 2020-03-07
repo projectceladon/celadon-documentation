@@ -10,8 +10,9 @@ CIC_00.20.01.08_A09
 ===================
 
 .. note::
-* The :abbr:`CiC (Celadon in Container)` manifest release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
-* This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
+
+    * The :abbr:`CiC (Celadon in Container)` manifest release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
+    * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
 
 Important Notes and Remarks
 ---------------------------

@@ -20,7 +20,7 @@ quarterly.
 
     * The testplan is created based on the features in the verify/closed state from
       the weekly release builds. The execution is completed weekly on each domain
-      until the SWQRC criteria is met. This criteria is defined at the start of the program.
+      until the defined software criteria is met. This criteria is defined at the start of the program.
     * The Validation team maps and tracks all the testcases against the defined requirements.
     * The Validation team will share the consolidated results based on the ask with details
       on software completion, requirement coverage, defects and system validation results.
@@ -32,22 +32,22 @@ Android validation is scoped for the following:
 
 * :abbr:`CiC (Celadon in Container)` and :abbr:`CiV (Celadon in VM)` platfroms consist of
 
-    * Kaby Lake CiC Pie & CometLake CiC Pie
-    * Kaby Lake CiV Android 10 & Comet Lake CiV Android 10
+    * Kaby Lake CiC and Comet Lake CiC Pie
+    * Kaby Lake CiV Android 10
 
-* Functional validation of all :abbr:`E2E (End-to-End)` defined features in JIRA
+* Functional validation of all end to end defined features in JIRA
 
-* Non Functional (Compliance/PnP) - based on customer requests
+* Non Functional (Compliance/Performance) - based on customer requests
 
-        * PnP KPIs list defined
+        * Performance KPIs list defined
         * Compliance testing
 
 Android Validation Out-Scope
 ----------------------------
 
 * All unit, white-box, and pre-integration testing is owned by the function
-  domain :abbr:`CoEs.(Center of Excellence)`. CoEs must guarantee component
-  level qualification such as :abbr:`ABL (Automotive Boot Loader)`, Kernel,
+  domain owners. Domain owners must guarantee component
+  level qualification such as Kernel,
   Debug & Trace, USB, WIFI, and Bluetooth.
 * Hardware component and relevant features
 * FuSA Certification
@@ -64,7 +64,7 @@ Test Suite
 ----------
 
 The objective of the System functional test is to ensure 100% validation coverage
-for :abbr:`POR (Plan of Record)` features, and evaluate functionalities of
+for the applicable features, and evaluate functionalities of
 the product from the end-to-end perspective.
 
 .. list-table::

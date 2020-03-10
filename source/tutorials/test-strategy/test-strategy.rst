@@ -14,14 +14,14 @@ Intel hardware platforms. The following |NUC| system has been used to validate r
 Weekly Validation Phase
 -----------------------
 
-The weekly validation cycle includes system functional test execution, Compliance
-testing, and Power and performance KPI's based on the defined features on the program
-quarterly.
+The weekly validation cycle includes system functional test execution, compliance
+testing, and :abbr:`KPI (Key Performance Indicators)` based on the defined features of the
+quarterly program.
 
-    * The testplan is created based on the features in the verify/closed state from
-      the weekly release builds. The execution is completed weekly on each domain
-      until the defined software criteria is met. This criteria is defined at the start of the program.
-    * The Validation team maps and tracks all the testcases against the defined requirements.
+    * The test plan is created based on the features in the verify/closed state from
+      the weekly release builds. Software criteria are defined at the start of the program,
+      and execution is completed weekly on each domain until the defined software criteria are met.
+    * The validation team maps & tracks all the test cases against the defined requirements.
     * The Validation team will share the consolidated results based on the ask with details
       on software completion, requirement coverage, defects and system validation results.
 
@@ -30,7 +30,7 @@ Android Validation In-Scope
 
 Android validation is scoped for the following:
 
-* :abbr:`CiC (Celadon in Container)` and :abbr:`CiV (Celadon in VM)` platfroms consist of
+* :abbr:`CiC (Celadon in Container)` and :abbr:`CiV (Celadon in Virtual Machine)` platfroms consist of
 
     * Kaby Lake CiC and Comet Lake CiC Pie
     * Kaby Lake CiV Android 10
@@ -63,9 +63,9 @@ Validation Activates Key Flow
 Test Suite
 ----------
 
-The objective of the System functional test is to ensure 100% validation coverage
-for the applicable features, and evaluate functionalities of
-the product from the end-to-end perspective.
+The objective of the System Functional Test is to ensure 100% validation coverage
+for applicable features where required and evaluate end-to-end functionalities of
+the product.
 
 .. list-table::
     :widths: 50 50
@@ -78,8 +78,8 @@ the product from the end-to-end perspective.
         | captured in Jira (manual + automation)
     * - PnP - Performance
       - Measures performance KPIs
-    * - Google Compliance - CTS/CTS-Verifier
-      - CTS/CTS-Verifier test suite as per planned features on the program.
+    * - Google Compliance
+      - CiC and CiV architectures are designed to meet full CDD compliance
 
 Test Suite and Defect Tracking
 ------------------------------
@@ -87,9 +87,8 @@ Test Suite and Defect Tracking
 System functional testing is executed in a cumulative manner. The weekly functional
 test suite is focused on features moved to verify state and is validated on weekly releases.
 
-* Full coverage for features in JIRA.
-* Validation is conducted on internal builds and JIRA is raised to the internal JIRA.
-* All jaised internal JIRAs are synced to external JIRA. 
+* Coverage for for all the features defined. Validation is conducted on internal builds
+  and issues reported are synced to external JIRA.
 
 .. figure:: images/jira-bridge.png
     :align: center

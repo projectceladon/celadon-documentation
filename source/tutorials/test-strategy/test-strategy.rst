@@ -30,7 +30,7 @@ Android Validation In-Scope
 
 Android validation is scoped for the following:
 
-* :abbr:`CiC (Celadon in Container)` and :abbr:`CiV (Celadon in Virtual Machine)` platfroms consist of
+* :abbr:`CiC (Celadon in Container)` and :abbr:`CiV (Celadon in Virtual Machine)` platforms consist of
 
     * Kaby Lake CiC and Comet Lake CiC Pie
     * Kaby Lake CiV Android 10
@@ -54,41 +54,20 @@ Android Validation Out-Scope
 * Pre-Certification
 * Documentation
 
-Validation Activates Key Flow
+Validation Activity Flow
 -----------------------------
 
 .. figure:: images/validation-activates-key-flow.png
     :align: center
 
-Test Suite
-----------
-
-The objective of the System Functional Test is to ensure 100% validation coverage
-for applicable features where required and evaluate end-to-end functionalities of
-the product.
-
-.. list-table::
-    :widths: 50 50
-    :header-rows: 1
-
-    * - Test Suite
-      - Description
-    * - System Functional
-      - | Requirement-based testing. Test cases are end-to-end and cover features
-        | captured in Jira (manual + automation)
-    * - PnP - Performance
-      - Measures performance KPIs
-    * - Google Compliance
-      - CiC and CiV architectures are designed to meet full CDD compliance
-
-Test Suite and Defect Tracking
+System Functional Testing and Defect Tracking
 ------------------------------
 
 System functional testing is executed in a cumulative manner. The weekly functional
-test suite is focused on features moved to verify state and is validated on weekly releases.
+tests focus on features moved to verify state and are validated on weekly releases.
 
-* Coverage for for all the features defined. Validation is conducted on internal builds
-  and issues reported are synced to external JIRA.
+* Coverage for all the features defined. Validation is conducted on internal builds
+  and issues reported are synced to external `JIRA. <https://01.org/jira/projects/CEL/issues/?filter=allopenissues>`_
 
 .. figure:: images/jira-bridge.png
     :align: center

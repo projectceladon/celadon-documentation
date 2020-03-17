@@ -64,10 +64,10 @@ Test Suite and Defect Tracking
 ------------------------------
 
 System functional testing is executed in a cumulative manner. The weekly functional
-tests focus on features moved to verify state and are validated on weekly releases.
+test suite is focused on features moved to verify state and is validated on weekly releases.
 
 * Coverage for all the features defined. Validation is conducted on internal builds
-  and issues reported are synced to external `JIRA. <https://01.org/jira/projects/CEL/issues/?filter=allopenissues>`_
+  and issues reported are synced to external JIRA.
 
 .. figure:: images/jira-bridge.png
     :align: center

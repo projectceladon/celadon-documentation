@@ -16,7 +16,7 @@ Prerequisites
 * A 64-bit development workstation running Ubuntu* 18.04 (Bionic Beaver)
   operating system.
 
-* At least 150GB of free disk space on your workstation to checkout the
+* Around 350GB of free disk space on your workstation is required to checkout the
   source code and to store the build artifacts.
 
 .. note:: 
@@ -55,7 +55,7 @@ Set up the development environment
             schedtool dpkg-dev liblz4-tool make optipng maven \
             libssl-dev bc bsdmainutils gettext python-mako \
             libelf-dev sbsigntool dosfstools mtools efitools \
-            python-pystache git-lfs python3
+            python-pystache git-lfs python3 flex
 
 Installing Docker\*
 ===================

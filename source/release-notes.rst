@@ -17,7 +17,7 @@ New Features
 * Wifi Control from Android in VM 
 * Multi-Camera upto 2 camera’s are supported
 * MTP/PTP Initiator Role 
-* Bar-code Scanner  
+* Barcode Scanner  
 * 9pfs based file transfer 
 
 Existing Features
@@ -27,10 +27,9 @@ Existing Features
 * HWC 2.3 support for Display
 * Mass Storage USB 2.0 and 3.x devices is supported
 * Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported.
+* Audio playback over USB Headset and HDMI are supported
 * Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
 * Wired Ethernet support
-* Thermal Daemon is enabled for project-celadon
 * Video Codec support on celadon
 
   **Decoder**

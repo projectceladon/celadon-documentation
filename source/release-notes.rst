@@ -62,53 +62,30 @@ Known Issues
 * Hotplug doesn't work in secondary display
  
 Validation Results
--------------------
-|C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains:
-Component
-Results
-Comments
-Wi-Fi
-OK
-Host wifi is switched to Android UI in QEMU
-BT
-OK
-Bluetooth is working
-Audio Playback over USB Headset /HDMI devices
-OK
-MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
-Adb connect over Wi-Fi
-OK
- 
-adb connect over Ethernet
-OK
- 
-Display /Touch and Gesture
-OK
- 
-Storage/SD Card
-OK
-Add “-device usb-host,vendorid=,productid=” into startandroidqcow2.sh.
-Security
-OK
- 
-Boot/Kernel
-OK
-Boots on QEMU 4.2.0
-Ethernet
-OK
- 
-Image Flash
-OK
- 
-Web browsing
-OK
- 
-Video playback
-OK
-H264/H265/MPEG2/VP8/VP9 Video Playback
-USB
-OK
-MTP/PTP Initiator Role
+-----------------
+
+|C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU
+BT                             OK        Bluetooth is working 
+Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Storage/SD Card                OK       Add “-device usb-host,vendorid=,productid=” into startandroidqcow2.sh.
+Security                       OK
+Boot/Kernel                    OK       Boots on QEMU 4.2.0
+Ethernet                       OK
+Image Flash                    OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+USB                            OK       MTP/PTP Initiator Role
+
+=============================  =======  ========
+
  
 Tools/Configuration
 -------------------

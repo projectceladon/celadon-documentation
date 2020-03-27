@@ -5,6 +5,104 @@ Release Notes
 
 .. contents:: :local:
 
+CELADON_01.20.01.12_A09
+===============
+
+This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for PMR0 Bare Metal .
+
+Features
+-------------------
+
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.0 support for Display
+* Adb & Fastboot supported over USB 2.0 and USB 3.0
+* Adb over WIFI and Ethernet is supported
+* USB digital audio playback support
+* Since no default sound card is present we should connect USB headsset for any BT or media related activities for KBL COMMERCIAL NUC hardware
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Android Kernelflinger boot support
+* Thermal Daemon is enabled for CELADON
+* 4K support is enabled on CELADON
+* Video Codec support on celadon
+
+  Decoder
+
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+
+  Encoder
+
+    * AVC High profile @ level 4.1 (1080P@30fps)
+    * HEVC Main profile @ Level 4 (1080P@30fps)
+* Art-extension is enabled in CELADON
+* f2fs filesystem support enabled
+* S3 Suspend/Resume is supported
+* Audio decoders supported: MP3/AAC-LC/HEAAC/HEAAC-v2/FLAC/VORBIS/OPUS/AMRNB/AMRWB
+* Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
+* HDMI audio playback is enabled
+* SDHCI host controller is enabled
+* Security reference solution - TPM based h/w binding reference implementation
+* Selinux: enabled the neverallow check for selinux
+
+     * User guide:
+
+        * SELinux Configuration and Rules
+        * How to Enable or Disable Trusty for Debugging
+
+* Flashing binaries via PFT – Platform Flash Tool
+* Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
+
+   * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
+
+Known Issues
+------------
+
+* UI Flicker observed in few Screens for example - Under AOSP settings .
+* Lets Drive screen seen, on click of applications under "New User"
+* webM format video hangs during switch from full screen to normal : only on chrome browser
+* media file copying from external memory to internal memory fails when huge file is copied
+* saved system time changes to default after reboot
+* Bluetooth pairing fails in first boot cycle
+* Bluetooth pairing fails if USB headset is not connected to DUT
+* Media KW errors are present in this build
+
+Validation Results
+-----------------
+
+|C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK       WiFi Direct, WiFi streaming
+Wi-Fi Hotspot                  OK
+BT                             OK       File Transfer Protocol
+Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Storage/SD Card                OK
+Security                       OK
+Boot/Kernel                    OK
+USB devices over OTG           OK
+Ethernet                       OK
+Fastboot                       OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+=============================  =======  ========
+
+
+Helpful Hints/Links
+-------------------
+* Manifest Link : https://github.com/projectceladon/manifest/tree/master/stable-build 
+* Binary Link :   https://github.com/projectceladon/celadon-binary 
+
+---------------
 
 CIC_00.20.01.08_A09
 ===================

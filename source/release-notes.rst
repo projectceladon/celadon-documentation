@@ -158,14 +158,8 @@ Features
 Known Issues
 ------------
 
-* UI Flicker observed in few Screens for example - Under AOSP settings .
 * Lets Drive screen seen, on click of applications under "New User"
-* webM format video hangs during switch from full screen to normal : only on chrome browser
-* media file copying from external memory to internal memory fails when huge file is copied
 * saved system time changes to default after reboot
-* Bluetooth pairing fails in first boot cycle
-* Bluetooth pairing fails if USB headset is not connected to DUT
-* Media KW errors are present in this build
 
 Validation Results
 -----------------

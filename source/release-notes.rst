@@ -13,7 +13,7 @@ This is a Pre-Production Release for evaluation and development purposes and it 
 New Features 
 -------------
 
-* Proxy Settings in Wireless Network 
+* Setting Proxy for Wireless Network 
 * Wifi Control from Android in VM 
 * Multi-Camera upto 2 camera’s are supported
 * MTP/PTP Initiator Role 

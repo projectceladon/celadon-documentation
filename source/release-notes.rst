@@ -178,7 +178,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK

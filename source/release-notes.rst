@@ -301,7 +301,7 @@ Important Notes and Remarks
 
     * - BT
       - OK
-      - Host BT is been used in QEMU for HOGP profile (LE profile)
+      - BT is working 
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -455,7 +455,7 @@ Important Notes and Remarks
 
     * - BT
       - OK
-      - File Transfer Protocol
+      - BT is working 
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -523,7 +523,8 @@ Integrated Features
 
   **Decoder**
 
-    * AVC High profile @ Level 5.1 (4k@30fps)
+    * AVC High pro
+     @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
@@ -563,7 +564,7 @@ Important Notes and Remarks
 
     * - BT
       - OK
-      - File Transfer Protocol
+      - BT is working 
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -699,7 +700,7 @@ Important Notes and Remarks
       -
     * - BT
       - OK
-      - File Transfer Protocol
+      - BT is working
     * - Audio Playback over USB/3.5mm Headset
       - OK
       - MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
@@ -901,7 +902,7 @@ Important Notes and Remarks
       -
     * - BT
       - OK
-      - File Transfer Protocol
+      - Bt is working 
     * - Audio Playback over USB/3.5mm Headset
       - OK
       - MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
@@ -1030,7 +1031,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1123,7 +1124,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working 
 Ethernet                       OK       IP/Browsing
 Audio playback                 OK
 USB Camera                     OK
@@ -1218,7 +1219,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1309,7 +1310,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working 
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1402,7 +1403,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working 
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1497,7 +1498,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       Bluetooth is working 
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1594,7 +1595,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       Bluetooth is working 
 Audio over 3.5mm jack          OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
@@ -1669,7 +1670,7 @@ Important Notes and Remarks
 Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
-BT                             OK       File Transfer Protocol
+BT                             OK       Bluetooth is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Audio over 3.5mm jack          OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK

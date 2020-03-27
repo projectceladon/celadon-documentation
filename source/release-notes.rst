@@ -17,7 +17,7 @@ New Features
 * Wifi Control from Android in VM 
 * Multi-Camera upto 2 camera’s are supported
 * MTP/PTP Initiator Role 
-* Bare-code Scanner  
+* Bar-code Scanner  
 * 9pfs based file transfer 
 
 Existing Features

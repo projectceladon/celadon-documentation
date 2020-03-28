@@ -10,6 +10,7 @@ CIV_01.20.01.12_A10
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug)
 
+
 New Features 
 -------------
 
@@ -19,6 +20,8 @@ New Features
 * MTP/PTP Initiator Role 
 * Barcode Scanner  
 * 9pfs based file transfer 
+* Use Command : sudo -E ./start_android_qcow2.sh --wifi-passthrough (To get WIFI control in Android UI)
+  and sudo -E ./start_android_qcow2.sh (To get WIFI control in HOST side)
 
 Existing Features
 -----------------
@@ -91,7 +94,6 @@ Tools/Configuration
 * QEMU Version 4.2.0
 * Host Ubuntu 18.04 
 * Host Kernel Version 5.3.0.xx 
- 
 
 
 Helpful Hints / Links

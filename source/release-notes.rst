@@ -93,8 +93,8 @@ Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 
 Helpful Hints/Links
 -------------------
-* Manifest Link : https://github.com/projectceladon/manifest/tree/master/stable-build 
-* Binary Link :   https://github.com/projectceladon/celadon-binary 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CELADON_01.20.01.12_A09.xml
+* Binary Link :   https://github.com/projectceladon/celadon-binary/blob/master/CELADON_01.20.01.12_A09/cel_kbl-flashfiles-eng.build.zip
 
 ---------------
 

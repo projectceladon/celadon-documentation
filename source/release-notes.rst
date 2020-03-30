@@ -5,6 +5,104 @@ Release Notes
 
 .. contents:: :local:
 
+CIV_01.20.01.12_A10
+======================
+
+This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug)
+
+
+New Features 
+-------------
+
+* Setting Proxy for Wireless Network 
+* Wifi Control from Android in VM 
+* Multi-Camera upto 2 camera’s are supported
+* MTP/PTP Initiator Role 
+* Barcode Scanner  
+* 9pfs based file transfer 
+* Use Command : sudo -E ./start_android_qcow2.sh --wifi-passthrough (To get WIFI control in Android UI)
+  and sudo -E ./start_android_qcow2.sh (To get WIFI control in HOST side)
+
+Existing Features
+-----------------
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.3 support for Display
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Video Codec support on celadon
+
+  **Decoder**
+
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+
+  **Encoder**
+
+    * AVC High profile @ level 4.1 (1080P@30fps)
+    * HEVC Main profile @ Level 4 (1080P@30fps)
+* Art-extension is enabled
+* Sdcardfs filesystem support enabled
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* SDHCI host controller is enabled
+* eMMC and SATA storage media supported
+* Generic storage HAL supported
+* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+  User guide:
+
+    SELinux Configuration and Rules
+    How to Enable or Disable Trusty for Debugging
+
+Known Issues
+-------------
+* Unable to connect WPA/WPA2 Enterprise Wi-Fi network in Android VM
+* Hotplug doesn't work in secondary display
+ 
+Validation Results
+-----------------
+
+|C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU
+BT                             OK        Bluetooth is working 
+Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Storage/SD Card                OK       Add “-device usb-host,vendorid=,productid=” into startandroidqcow2.sh.
+Security                       OK
+Boot/Kernel                    OK       Boots on QEMU 4.2.0
+Ethernet                       OK
+Image Flash                    OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+USB                            OK       MTP/PTP Initiator Role
+
+=============================  =======  ========
+
+ 
+Tools/Configuration
+-------------------
+* QEMU Version 4.2.0
+* Host Ubuntu 18.04 
+* Host Kernel Version 5.3.0.xx 
+
+
+Helpful Hints / Links
+---------------------
+* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
+* We can use CIV Q-MR0 image to flash on the KBL NUC as a Bare Metal 
+* Manifest Link :https://github.com/projectceladon/manifest/tree/master/stable-build 
+* Binary Link :https://github.com/projectceladon/celadon-binary 
+
 CELADON_01.20.01.12_A09
 ===============
 

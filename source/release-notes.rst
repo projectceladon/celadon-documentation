@@ -5,6 +5,104 @@ Release Notes
 
 .. contents:: :local:
 
+CIC_01.20.01.12_A09
+======================
+
+This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in container [CIC]
+
+
+New Features
+-------------
+
+* New dynamic lunch target added 'cic'
+* Setup script handles both secure & non-secure install from same image
+* Ex: 
+* ./setup-aic    --> non-secure 
+* ./setup-aic -s --> secure 
+* SEpolicy enabled [Very important : Ensure Sepolicy & LSM configs are enabled as part of host kernel]
+* Trusty enabled
+* Audio can work on both mediation & pass through
+* BT and Wifi can work through mediation
+* USB Mass storage works fine
+* MTP/PTP Initiator Role enabled
+
+Existing Features
+-----------------
+
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.3 support for Display
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Video Codec support on celadon
+* Sdcardfs filesystem support enabled
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* SDHCI host controller is enabled
+* eMMC / SATA / NVMe storage media supported
+* Generic storage HAL supported
+
+Known Issues
+-------------
+
+* Ensure Sepolicy & LSM configs are enabled as part of host kernel, else CIC cant boot.
+* While installing, Donot use same folder to keep secure & non-secure images. Create separate folders.
+* Secure image flashing wont allow docker update. [Reason : System partition should not be modified]
+* BT and Wifi Pass through are work in progress. Currently only mediaton enabled.
+* Debian package wont work well. Fix is Work in progress.
+* Lock screen cannot work in non-secure install
+
+Validation Results
+-----------------
+
+This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains, for both 
+secure & non-secure.
+
+* Container
+
+    ======================== =======
+    Test Case                Results
+    ======================== =======
+    Image Flash               Pass
+    System Boot Up            Pass
+    Touch Screen              Pass
+    Basic Video Playback      Pass
+    Basic Audio Playback      Pass
+    Music App                 Pass
+    Multi touch               Pass
+    Navigation bar            Pass
+    UI Display                Pass
+    Wifi [Host]               Pass
+    Network [Wifi/Ethernet]   Pass
+    Multi camera              Pass
+    Screen lock               Pass
+    Docker commands           Pass
+    adb                       Pass
+    BT [Host]                 Pass
+    Wired Headset             Pass
+    SE-Policy                 Pass
+    ======================== =======
+
+
+Tools/Configuration
+-------------------
+* Docker version      : 18.09.2
+* Host Ubuntu         : 18.04
+* Host Kernel Version : 4.19.102 [With LSM & SELinux enabled]
+
+Helpful Hints / Links
+---------------------
+
+* Few links are under construction, please stay tuned for latest updates soon.
+* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
+* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
+* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_01.20.01.12_A09.xml
+* Binary Link   : https://github.com/projectceladon/celadon-binary/blob/master/CIC_01.20.01.12_A09/cic-aic-CC0000105.tar.gz
+
+
 CIV_01.20.01.12_A10
 ======================
 

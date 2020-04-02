@@ -197,7 +197,7 @@ Tools/Configuration
 Helpful Hints / Links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
-* We can use CIV Q-MR0 image to flash on the KBL NUC as a Bare Metal 
+* We can use the same CIV Q-MR0 image to flash on the KBL NUC and APL NUC as a Bare Metal <Lunch target caas-userdebug >
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.20.01.12_A10.xml
 * Binary Link :https://github.com/projectceladon/celadon-binary/blob/master/CIV_01.20.01.12_A10/caas-flashfiles-eng.build.zip
 

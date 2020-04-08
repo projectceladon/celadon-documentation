@@ -56,7 +56,7 @@ Known Issues
 * Lock screen cannot work in non-secure install
 
 Validation Results
------------------
+------------------
 
 This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains, for both 
 secure & non-secure.
@@ -162,7 +162,7 @@ Known Issues
 * Hotplug doesn't work in secondary display
  
 Validation Results
------------------
+------------------
 
 |C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
 
@@ -202,7 +202,7 @@ Helpful Hints / Links
 * Binary Link :https://github.com/projectceladon/celadon-binary/blob/master/CIV_01.20.01.12_A10/caas-flashfiles-eng.build.zip
 
 CELADON_01.20.01.12_A09
-===============
+=======================
 
 This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for PMR0 Bare Metal .
@@ -262,7 +262,7 @@ Known Issues
 * saved system time changes to default after reboot
 
 Validation Results
------------------
+------------------
 
 |C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
 
@@ -623,8 +623,7 @@ Integrated Features
 
   **Decoder**
 
-    * AVC High pro
-     @ Level 5.1 (4k@30fps)
+    * AVC High pro @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps

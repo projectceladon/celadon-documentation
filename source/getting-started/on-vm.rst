@@ -3,8 +3,7 @@
 Run |C| in a virtual machine
 ############################
 
-This page explains what you'll need to run |C| in a virtual machine, or
-run native |C| on an Intel® hardware platform.
+This page explains what you'll need to run |C| in a virtual machine.
 
 .. contents::
    :local:
@@ -52,16 +51,12 @@ following CiV image types are generated at the end of the build:
     The compressed *flashfile* package contains the |C| partition images for running in a VM.
     Proceed with the following section to install these images to a virtual
     disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
-    The flashfile package also can be used to install |C| natively on Intel hardware platforms,
-    refer to :ref:`caas-on-bm` section for more detailed information.
 
 Create a CiV virtual disk
 *************************
 
 .. note::
-        Skip this section if you plan to boot the device directly with the GPT disk image :file:`caas.img`,
-        or install the flashfile package :file:`caas-flashfiles-eng.<user>.zip`
-        natively on an Intel hardware platform.
+        Skip this section if you plan to boot the device directly with the GPT disk image :file:`caas.img`.
 
 Follow the instructions below to create and set up CiV partitions on
 a *qcow2* formatted virtual disk.
@@ -87,7 +82,7 @@ a *qcow2* formatted virtual disk.
 Reboot to Android UI
 ********************
 
-A script :file:`start_android_qcow2.sh` is developed to facilitate the CiV images 
+A script :file:`start_android_qcow2.sh` is developed to facilitate the CiV images
 booting process. However, before launching the script to boot to the Android UI,
 you may need to edit the CiV image filename in the script, as the default image
 file `android.qcow2` is hard-coded in the script:

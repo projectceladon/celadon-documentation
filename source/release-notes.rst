@@ -192,6 +192,7 @@ Tools/Configuration
 * QEMU Version 4.2.0
 * Host Ubuntu 18.04 
 * Host Kernel Version 5.3.0.xx 
+* Guest kernel 4.19.107
 
 
 Helpful Hints / Links

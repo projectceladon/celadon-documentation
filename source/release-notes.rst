@@ -1059,6 +1059,7 @@ Known Issues
 * Device seen offline for 4-5 seconds on disconnect and reconnect of dbc cable.
 * Time flickers on All apps screen when launch Intel@Phone Doctor and touch menu button.
 * BT PAN and Wi-Fi direct UI support removed for automotive variant.
+* Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
 
 ww201925_KBLNUC
 ===============

@@ -924,6 +924,7 @@ Known Issues
 .. note::
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production Early Q Release for evaluation and development purposes and it cannot be used for production purposes.
+    * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
 
 Integrated Features
 -------------------
@@ -1059,7 +1060,6 @@ Known Issues
 * Device seen offline for 4-5 seconds on disconnect and reconnect of dbc cable.
 * Time flickers on All apps screen when launch Intel@Phone Doctor and touch menu button.
 * BT PAN and Wi-Fi direct UI support removed for automotive variant.
-* Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
 
 ww201925_KBLNUC
 ===============
@@ -1068,6 +1068,7 @@ ww201925_KBLNUC
 Software Version                  Android version 9
 Mesa                              18.3.6
 Kernel Version                    4.19.46
+Manifest                          https://github.com/projectceladon/manifest/blob/master/stable-build/ww201925_H.xml
 ================================  =====
 
 Important Note
@@ -1151,6 +1152,7 @@ Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 Setup 
 ---------------
 USB headset should always be connected to DUT
+
 
 Known Issues
 ------------

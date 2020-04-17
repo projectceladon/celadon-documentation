@@ -9,6 +9,7 @@ Development
 .. toctree::
    :maxdepth: 1
 
+   mixins/mixins
    enabling-uac3/enabling-uac3
    software-debug-tips/software-debug-tips
    dbc/dbc

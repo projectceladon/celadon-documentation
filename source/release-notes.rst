@@ -302,6 +302,7 @@ CIC_00.20.01.08_A09
 
     * The :abbr:`CiC (Celadon in Container)` manifest release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
+    * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.01.08_A09.xml 
 
 Important Notes and Remarks
 ---------------------------
@@ -346,6 +347,7 @@ CIV_00.20.01.09_A10
 
 This is a Pre-Production February Manifest Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.01.09_A10.xml
 
 Integrated Features
 -------------------
@@ -457,6 +459,7 @@ CIC_00.19.04.20.03_A09
 .. note::
     * The :abbr:`CiC (Celadon in Container)` release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
+    * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.19.04.20.03_A09.xml
 
 Important Notes and Remarks
 ---------------------------
@@ -500,6 +503,7 @@ CIV_00.19.04.20.02_A10
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.20.02_A10.xml
 
 Integrated Features
 -------------------
@@ -608,6 +612,7 @@ CIV_00.19.04.51_A10
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.51_A10.xml
 
 Integrated Features
 -------------------
@@ -1068,7 +1073,7 @@ ww201925_KBLNUC
 Software Version                  Android version 9
 Mesa                              18.3.6
 Kernel Version                    4.19.46
-Manifest                          https://github.com/projectceladon/manifest/blob/master/stable-build/ww201925_H.xml
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201925_H.xml
 ================================  =====
 
 Important Note
@@ -1176,6 +1181,7 @@ ww201925_CLK
 Software Version                  Android version 9
 Mesa                              18.3.6
 Kernel Version                    4.19.46
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201925_clk.xml
 ================================  =====
 
 Important Note
@@ -1258,6 +1264,7 @@ ww201913_KBLNUC
 Software Version                  Android version 9
 Mesa                              18.3.2
 Kernel Version                    4.19.19
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201913.xml
 ================================  =====
 
 Important Note
@@ -1358,7 +1365,7 @@ Build ID                          cel_kbl-userdebug 9 PPR2.181005.003.A1 eng.bui
 Software Version                  Android version 9
 Mesa                              18.2.6
 Kernel Version                    4.19
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201904
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201904.xml
 ================================  =====
 
 Important Note
@@ -1451,7 +1458,7 @@ Build ID                          cel_apl-userdebug 9 PPR2.181005.003.A1 eng.bui
 Software Version                  Android version 9
 Mesa                              18.2.6
 Kernel Version                    4.19
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201852
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201852.xml
 ================================  =====
 
 Important Note
@@ -1546,7 +1553,7 @@ Build ID                          cel_apl-userdebug 9 PPR2.181005.003.A1 eng.bui
 Software Version                  Android version 9
 Mesa                              18.2.6
 Kernel Version                    4.19
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201851
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201851.xml
 ================================  =====
 
 Important Note
@@ -1642,7 +1649,7 @@ Build ID                          cel_apl-userdebug 9 PPR2.181005.003.A1 eng.bui
 Software Version                  Android version 9
 Mesa                              18.2.6
 Kernel Version                    4.19
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201851
+manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201851.xml
 ================================  =====
 
 Important Note
@@ -1739,7 +1746,7 @@ Build ID                          cel_apl-userdebug 9 PPR1.180610.011 eng.build 
 Software Version                  Android version 9
 Mesa                              18.2.0-rc4
 Kernel Version                    4.14.67
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201840
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201840.xml
 ================================  =====
 
 Important Note

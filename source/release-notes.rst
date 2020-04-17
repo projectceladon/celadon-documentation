@@ -721,6 +721,7 @@ Known Issues
 .. note::
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production binary Q Release for evaluation and development purposes and it cannot be used for production purposes.
+    * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
 
 Integrated Features
 -------------------
@@ -924,7 +925,6 @@ Known Issues
 .. note::
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production Early Q Release for evaluation and development purposes and it cannot be used for production purposes.
-    * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
 
 Integrated Features
 -------------------

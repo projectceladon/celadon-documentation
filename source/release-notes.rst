@@ -3,7 +3,16 @@
 Release Notes
 #############
 
-.. contents:: :local:
+Releases
+********
+
+.. note::
+
+    Refer to :ref:`release-naming-convention` to decode the the release tags of the following |C| releases.
+
+.. contents::
+   :local:
+   :depth: 1
 
 CIC_01.20.01.12_A09
 ======================

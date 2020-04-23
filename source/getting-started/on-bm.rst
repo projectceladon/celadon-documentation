@@ -1,6 +1,6 @@
 .. _caas-on-bm:
 
-Run Native |C| on Intel Platforms
+Run |C| on Intel Platforms
 #################################
 
 This page explains what you'll need to run |C| natively on Intel hardware platforms.
@@ -98,7 +98,7 @@ Perform the following steps to live-boot |C|.
        supports the USB live boot feature for your
        :command:`[lunch_target]`, because the feature is enabled by default
        for some of the lunch targets such as :command:`"caas"`,
-       :command:`"celadon_ivi"` and :command:`"celadon_tablet"`. 
+       :command:`"celadon_ivi"` and :command:`"celadon_tablet"`.
 
        The following example shows the mixins config file
        :file:`device/intel/project-celadon/caas/mixins.spec` for the
@@ -131,7 +131,7 @@ Perform the following steps to live-boot |C|.
 
     #. The previous command creates an image file of 16GB bytes that
        contains an entire GPT disk. To change the default image size, edit
-       the mixins config file 
+       the mixins config file
        :file:`device/intel/project-celadon/[lunch_target]/mixins.spec`
        as follows:
 

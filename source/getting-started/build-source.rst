@@ -221,7 +221,7 @@ Build |C| in Container package
 
    .. code-block:: bash
 
-       $ lunch cic_dev-userdebug
+       $ lunch cic-userdebug
        $ make cic -j $(nproc)
 
    .. note::

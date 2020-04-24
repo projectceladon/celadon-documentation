@@ -7,25 +7,24 @@ Frequently Asked Questions
     What is the new Project Celadon release?
 :A:
     The new Project |C| release refers to the source code that makes up
-    the September 2019 Project |C| Release (**20-Sept-2019**). While Project |C|
-    had long supported Android* on bare metal deployments using Intel® architecture,
+    the September 2019 Project |C| Release (**20-Sept-2019**), and each release since. While Project |C|
+    had long supported Android* on bare metal deployments using Intel® Architecture,
     there was no support for containerized or virtualized deployments of Android
-    on Intel architecture. The |C| community is filling that gap with
-    the September release, which allows one Android image to be deployed
-    across Virtual Machines (VM) and Containers on Intel
-    architectures. |C| source code can be used across a variety of Intel
+    on Intel architecture. The |C| community filled that gap with
+    the September 2019 release, which allows one Android image to be deployed
+    across Virtual Machines (VM) and Containers on Intel®
+    Architectures. |C| source code can be used across a variety of Intel
     hardware, including
-    `Intel® NUC Kit NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
-    - the leading platform for in-vehicle infotainment (IVI) configurations.
-    Please check out :ref:`release-notes` for detailed new release features.
+    `Intel® NUC Kit NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_.
+    Please check out :ref:`release-notes` for all the latest detailed release features.
 
 :Q:
     Why might developers and independent software vendors want to use Celadon
     in VM or Celadon in Container?
 :A:
-    The new Project |C| packaging will still take only one step to install,
+    The new Project |C| packaging still only takes one step to install,
     and in addition to gaining VM and container support for Android on
-    Intel architecture, developers and :abbr:`ISVs (Independent Software Vendors)`
+    Intel® Architecture, developers and :abbr:`ISVs (Independent Software Vendors)`
     will continue experiencing:
 
         * Open platform enabling helping developers speed time to market across
@@ -36,7 +35,6 @@ Frequently Asked Questions
         * Functionality across a
           :ref:`variety of Intel hardware <run-as-service>`,
           including `Intel® NUC Kit NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
-          - the leading platform for in vehicle infotainment (IVI) configurations
         * Rich vertical solution configurations allowing for ease of scalability and extensibility across market segments
 
 :Q:
@@ -99,10 +97,10 @@ Frequently Asked Questions
         |C| on bare metal, direct communication with Google will be necessary.
 
 :Q:
-    What are some example use cases and workload/applications that benefit from this latest release?
+    What are some example use cases and workload/applications that benefit from the new Celadon releases?
 :A:
-    `Digital Signage <https://01.org/projectceladon/digital-signage>`_
-    and Secure Payment solutions are ideal for virtualized deployments, due to the high security and scalability virtualized deployments provide. With Celadon in VM, however, developers and ISVs can continue utilizing Intel® hardware acceleration while having the flexibility to customize to the latest Android applications. In comparison, Cloud gaming applications are ideal for Celadon in Container deployments. Cloud gaming requires high performance and high densities - two things containerized Android excels at.
+    `Digital Signage <https://01.org/projectceladon/digital-signage-solutions-android-intel-architectures>`_
+    and Secure Payment solutions are ideal for virtualized deployments, due to the high security and scalability virtualized deployments provide. With Celadon in VM, however, developers and ISVs can continue utilizing Intel® hardware acceleration while having the flexibility to customize to the latest Android applications. In comparison, `Cloud gaming <https://01.org/projectceladon/cloud-gaming-solutions-android-intel-architectures>`_ applications are ideal for Celadon in Container deployments. `Cloud gaming <https://01.org/projectceladon/cloud-gaming-solutions-android-intel-architectures>`_ requires high performance and high densities - two things containerized Android excels at.
 
     Overall, virtualized and containerized workloads are pervasive. Customers demand support for each workload deployment type - particularly for Android workloads. The latest Celadon release allows developers and ISV's to consolidate workloads under one image, leading to boundless opportunities to provide broad market support.
 

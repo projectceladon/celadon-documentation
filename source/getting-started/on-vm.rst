@@ -12,7 +12,7 @@ This page explains what you'll need to run |C| in a virtual machine.
 Prerequisites
 *************
 
-* Linux\* kernel version 5.0.0 or above running as the host OS
+* Ubuntu 18.04.3 or higher running Linux\* kernel version 5.0.0 or above.
 
 Prepare the host environment
 ****************************
@@ -20,10 +20,9 @@ Prepare the host environment
 To simpify the preparation works, a helper script :file:`setup_host.sh` is
 provided.
 The host device that launches the virtual machine requires Linux kernel
-version 5.0.0 or above running as the host OS. Complete the following
-instructions to set up `Clear Linux OS <https://clearlinux.org/>`_ 30870 or
-`Ubuntu OS <https://ubuntu.com/>`_ 18.04.3 as the host device.
-Any later OS version should also work.
+version 5.0.0 or above running as the host OS, Ubuntu 18.04 is prerequisite.
+Complete the following instructions to set up Docker\* and the required
+software on Ubuntu 18.04.3 before running |C| in a VM with `QEMU`_.
 During the installation, you will be prompted by some questions to confirm the
 changes to the packages, it's safe to respond :kbd:`y` to all of them.
 
@@ -115,7 +114,6 @@ root permissions to facilitate the booting of CiV images with `QEMU <https://www
 .. figure:: images/caas-qemu-lockscreen.jpg
     :align: center
 
-
-.. _Clear Linux installation guide: https://docs.01.org/clearlinux/latest/get-started/bare-metal-install-desktop.html
+.. _QEMU: https://www.qemu.org/
 
 .. _start_android_qcow2.sh: https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_android_qcow2.sh

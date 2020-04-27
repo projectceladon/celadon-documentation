@@ -22,11 +22,11 @@ The following hardware are required to proceed with the installation.
           - Android-9
           - Android-10
         * - |NUC| Kit `NUC7i5DNHE <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html>`_
-          - `0065 <https://downloadcenter.intel.com/downloads/eula/28885/BIOS-Update-DNKBLi5v-86A-?httpDown=https://downloadmirror.intel.com/28885/eng/DNi50065.bio>`_
+          - `0068 <https://downloadcenter.intel.com/downloads/eula/29462/BIOS-Update-DNKBLi5v-86A-?httpDown=https%3A%2F%2Fdownloadmirror.intel.com%2F29462%2Feng%2FDNi50068.bio>`_
           - ``celadon``, ``cel_kbl``
           -
         * - |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_
-          - `0060 <https://downloadcenter.intel.com/downloads/eula/28641/BIOS-Update-AYAPLCEL-86A-?httpDown=https://downloadmirror.intel.com/28641/eng/AY0060.bio>`_
+          - `0066 <https://downloadcenter.intel.com/downloads/eula/29319/BIOS-Update-AYAPLCEL-86A-?httpDown=https%3A%2F%2Fdownloadmirror.intel.com%2F29319%2Feng%2FAY0066.bio>`_
           - ``cel_apl``
           - ``celadon_ivi``
 

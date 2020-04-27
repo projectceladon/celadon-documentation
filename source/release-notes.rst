@@ -5,6 +5,295 @@ Release Notes
 
 .. contents:: :local:
 
+CIC_01.20.01.12_A09
+======================
+
+This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in container [CIC]
+
+
+New Features
+-------------
+
+* New dynamic lunch target added 'cic'
+* Setup script handles both secure & non-secure install from same image
+* Ex: 
+* ./setup-aic    --> non-secure 
+* ./setup-aic -s --> secure 
+* SEpolicy enabled [Very important : Ensure Sepolicy & LSM configs are enabled as part of host kernel]
+* Trusty enabled
+* Audio can work on both mediation & pass through
+* BT and Wifi can work through mediation
+* USB Mass storage works fine
+* MTP/PTP Initiator Role enabled
+
+Existing Features
+-----------------
+
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.3 support for Display
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Video Codec support on celadon
+* Sdcardfs filesystem support enabled
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* SDHCI host controller is enabled
+* eMMC / SATA / NVMe storage media supported
+* Generic storage HAL supported
+
+Known Issues
+-------------
+
+* Ensure Sepolicy & LSM configs are enabled as part of host kernel, else CIC cant boot.
+* While installing, Donot use same folder to keep secure & non-secure images. Create separate folders.
+* Secure image flashing wont allow docker update. [Reason : System partition should not be modified]
+* BT and Wifi Pass through are work in progress. Currently only mediaton enabled.
+* Debian package wont work well. Fix is Work in progress.
+* Lock screen cannot work in non-secure install
+
+Validation Results
+------------------
+
+This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains, for both 
+secure & non-secure.
+
+* Container
+
+    ======================== =======
+    Test Case                Results
+    ======================== =======
+    Image Flash               Pass
+    System Boot Up            Pass
+    Touch Screen              Pass
+    Basic Video Playback      Pass
+    Basic Audio Playback      Pass
+    Music App                 Pass
+    Multi touch               Pass
+    Navigation bar            Pass
+    UI Display                Pass
+    Wifi [Host]               Pass
+    Network [Wifi/Ethernet]   Pass
+    Multi camera              Pass
+    Screen lock               Pass
+    Docker commands           Pass
+    adb                       Pass
+    BT [Host]                 Pass
+    Wired Headset             Pass
+    SE-Policy                 Pass
+    ======================== =======
+
+
+Tools/Configuration
+-------------------
+* Docker version      : 18.09.2
+* Host Ubuntu         : 18.04
+* Host Kernel Version : 4.19.102 [With LSM & SELinux enabled]
+
+Helpful Hints / Links
+---------------------
+
+* Few links are under construction, please stay tuned for latest updates soon.
+* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
+* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
+* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_01.20.01.12_A09.xml
+* Binary Link   : https://github.com/projectceladon/celadon-binary/blob/master/CIC_01.20.01.12_A09/cic-aic-CC0000105.tar.gz
+
+
+CIV_01.20.01.12_A10
+======================
+
+This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug)
+
+
+New Features 
+-------------
+
+* Setting Proxy for Wireless Network 
+* Wifi Control from Android in VM 
+* Multi-Camera upto 2 camera’s are supported
+* MTP/PTP Initiator Role 
+* Barcode Scanner  
+* 9pfs based file transfer 
+* Use Command : sudo -E ./start_android_qcow2.sh --wifi-passthrough (To get WIFI control in Android UI)
+  and sudo -E ./start_android_qcow2.sh (To get WIFI control in HOST side)
+
+Existing Features
+-----------------
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.3 support for Display
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Video Codec support on celadon
+
+  **Decoder**
+
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+
+  **Encoder**
+
+    * AVC High profile @ level 4.1 (1080P@30fps)
+    * HEVC Main profile @ Level 4 (1080P@30fps)
+* Art-extension is enabled
+* Sdcardfs filesystem support enabled
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* SDHCI host controller is enabled
+* eMMC and SATA storage media supported
+* Generic storage HAL supported
+* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+  User guide:
+
+    SELinux Configuration and Rules
+    How to Enable or Disable Trusty for Debugging
+
+Known Issues
+-------------
+* Unable to connect WPA/WPA2 Enterprise Wi-Fi network in Android VM
+* Hotplug doesn't work in secondary display
+ 
+Validation Results
+------------------
+
+|C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU
+BT                             OK        Bluetooth is working 
+Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Storage/SD Card                OK       Add “-device usb-host,vendorid=,productid=” into startandroidqcow2.sh.
+Security                       OK
+Boot/Kernel                    OK       Boots on QEMU 4.2.0
+Ethernet                       OK
+Image Flash                    OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+USB                            OK       MTP/PTP Initiator Role
+
+=============================  =======  ========
+
+ 
+Tools/Configuration
+-------------------
+* QEMU Version 4.2.0
+* Host Ubuntu 18.04 
+* Host Kernel Version 5.3.0.xx 
+* Guest kernel 4.19.107
+
+
+Helpful Hints / Links
+---------------------
+* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
+* We can use the same CIV Q-MR0 image to flash on the KBL NUC and APL NUC as a Bare Metal <Lunch target caas-userdebug >
+* Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.20.01.12_A10.xml
+* Binary Link :https://github.com/projectceladon/celadon-binary/blob/master/CIV_01.20.01.12_A10/caas-flashfiles-eng.build.zip
+
+CELADON_01.20.01.12_A09
+=======================
+
+This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for PMR0 Bare Metal .
+
+Features
+-------------------
+
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.0 support for Display
+* Adb & Fastboot supported over USB 2.0 and USB 3.0
+* Adb over WIFI and Ethernet is supported
+* USB digital audio playback support
+* Since no default sound card is present we should connect USB headsset for any BT or media related activities for KBL COMMERCIAL NUC hardware
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Android Kernelflinger boot support
+* Thermal Daemon is enabled for CELADON
+* 4K support is enabled on CELADON
+* Video Codec support on celadon
+
+  Decoder
+
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+
+  Encoder
+
+    * AVC High profile @ level 4.1 (1080P@30fps)
+    * HEVC Main profile @ Level 4 (1080P@30fps)
+* Art-extension is enabled in CELADON
+* f2fs filesystem support enabled
+* S3 Suspend/Resume is supported
+* Audio decoders supported: MP3/AAC-LC/HEAAC/HEAAC-v2/FLAC/VORBIS/OPUS/AMRNB/AMRWB
+* Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
+* HDMI audio playback is enabled
+* SDHCI host controller is enabled
+* Security reference solution - TPM based h/w binding reference implementation
+* Selinux: enabled the neverallow check for selinux
+
+     * User guide:
+
+        * SELinux Configuration and Rules
+        * How to Enable or Disable Trusty for Debugging
+
+* Flashing binaries via PFT – Platform Flash Tool
+* Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
+
+   * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
+
+Known Issues
+------------
+
+* Lets Drive screen seen, on click of applications under "New User"
+* saved system time changes to default after reboot
+
+Validation Results
+------------------
+
+|C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK       WiFi Direct, WiFi streaming
+Wi-Fi Hotspot                  OK
+BT                             OK       
+Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Storage/SD Card                OK
+Security                       OK
+Boot/Kernel                    OK
+USB devices over OTG           OK
+Ethernet                       OK
+Fastboot                       OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+=============================  =======  ========
+
+
+Helpful Hints/Links
+-------------------
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CELADON_01.20.01.12_A09.xml
+* Binary Link :   https://github.com/projectceladon/celadon-binary/blob/master/CELADON_01.20.01.12_A09/cel_kbl-flashfiles-eng.build.zip
+
+---------------
 
 CIC_00.20.01.08_A09
 ===================
@@ -13,6 +302,7 @@ CIC_00.20.01.08_A09
 
     * The :abbr:`CiC (Celadon in Container)` manifest release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
+    * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.01.08_A09.xml 
 
 Important Notes and Remarks
 ---------------------------
@@ -57,6 +347,7 @@ CIV_00.20.01.09_A10
 
 This is a Pre-Production February Manifest Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.01.09_A10.xml
 
 Integrated Features
 -------------------
@@ -113,7 +404,7 @@ Important Notes and Remarks
 
     * - BT
       - OK
-      - Host BT is been used in QEMU for HOGP profile (LE profile)
+      - BT is working 
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -168,6 +459,7 @@ CIC_00.19.04.20.03_A09
 .. note::
     * The :abbr:`CiC (Celadon in Container)` release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
+    * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.19.04.20.03_A09.xml
 
 Important Notes and Remarks
 ---------------------------
@@ -211,6 +503,7 @@ CIV_00.19.04.20.02_A10
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.20.02_A10.xml
 
 Integrated Features
 -------------------
@@ -267,7 +560,7 @@ Important Notes and Remarks
 
     * - BT
       - OK
-      - File Transfer Protocol
+      - BT is working 
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -319,6 +612,7 @@ CIV_00.19.04.51_A10
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.51_A10.xml
 
 Integrated Features
 -------------------
@@ -335,7 +629,7 @@ Integrated Features
 
   **Decoder**
 
-    * AVC High profile @ Level 5.1 (4k@30fps)
+    * AVC High pro @ Level 5.1 (4k@30fps)
     * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
@@ -375,7 +669,7 @@ Important Notes and Remarks
 
     * - BT
       - OK
-      - File Transfer Protocol
+      - BT is working 
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -432,6 +726,7 @@ Known Issues
 .. note::
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production binary Q Release for evaluation and development purposes and it cannot be used for production purposes.
+    * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
 
 Integrated Features
 -------------------
@@ -511,7 +806,7 @@ Important Notes and Remarks
       -
     * - BT
       - OK
-      - File Transfer Protocol
+      - BT is working
     * - Audio Playback over USB/3.5mm Headset
       - OK
       - MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
@@ -713,7 +1008,7 @@ Important Notes and Remarks
       -
     * - BT
       - OK
-      - File Transfer Protocol
+      - Bt is working 
     * - Audio Playback over USB/3.5mm Headset
       - OK
       - MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
@@ -778,6 +1073,7 @@ ww201925_KBLNUC
 Software Version                  Android version 9
 Mesa                              18.3.6
 Kernel Version                    4.19.46
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201925_H.xml
 ================================  =====
 
 Important Note
@@ -842,7 +1138,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -861,6 +1157,7 @@ Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 Setup 
 ---------------
 USB headset should always be connected to DUT
+
 
 Known Issues
 ------------
@@ -884,6 +1181,7 @@ ww201925_CLK
 Software Version                  Android version 9
 Mesa                              18.3.6
 Kernel Version                    4.19.46
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201925_clk.xml
 ================================  =====
 
 Important Note
@@ -935,7 +1233,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working 
 Ethernet                       OK       IP/Browsing
 Audio playback                 OK
 USB Camera                     OK
@@ -966,6 +1264,7 @@ ww201913_KBLNUC
 Software Version                  Android version 9
 Mesa                              18.3.2
 Kernel Version                    4.19.19
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201913.xml
 ================================  =====
 
 Important Note
@@ -1030,7 +1329,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1066,7 +1365,7 @@ Build ID                          cel_kbl-userdebug 9 PPR2.181005.003.A1 eng.bui
 Software Version                  Android version 9
 Mesa                              18.2.6
 Kernel Version                    4.19
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201904
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201904.xml
 ================================  =====
 
 Important Note
@@ -1121,7 +1420,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working 
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1159,7 +1458,7 @@ Build ID                          cel_apl-userdebug 9 PPR2.181005.003.A1 eng.bui
 Software Version                  Android version 9
 Mesa                              18.2.6
 Kernel Version                    4.19
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201852
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201852.xml
 ================================  =====
 
 Important Note
@@ -1214,7 +1513,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       BT is working 
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1254,7 +1553,7 @@ Build ID                          cel_apl-userdebug 9 PPR2.181005.003.A1 eng.bui
 Software Version                  Android version 9
 Mesa                              18.2.6
 Kernel Version                    4.19
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201851
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201851.xml
 ================================  =====
 
 Important Note
@@ -1309,7 +1608,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       Bluetooth is working 
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1350,7 +1649,7 @@ Build ID                          cel_apl-userdebug 9 PPR2.181005.003.A1 eng.bui
 Software Version                  Android version 9
 Mesa                              18.2.6
 Kernel Version                    4.19
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201851
+manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201851.xml
 ================================  =====
 
 Important Note
@@ -1406,7 +1705,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       File Transfer Protocol
+BT                             OK       Bluetooth is working 
 Audio over 3.5mm jack          OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
@@ -1447,7 +1746,7 @@ Build ID                          cel_apl-userdebug 9 PPR1.180610.011 eng.build 
 Software Version                  Android version 9
 Mesa                              18.2.0-rc4
 Kernel Version                    4.14.67
-Download Link                     https://github.com/projectceladon/celadon-binary/tree/master/ww201840
+Manifest Link                     https://github.com/projectceladon/manifest/blob/master/stable-build/ww201840.xml
 ================================  =====
 
 Important Note
@@ -1481,7 +1780,7 @@ Important Notes and Remarks
 Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
-BT                             OK       File Transfer Protocol
+BT                             OK       Bluetooth is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Audio over 3.5mm jack          OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK

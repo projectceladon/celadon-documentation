@@ -27,7 +27,7 @@ GNU Debugger (*gdb*) is the most popular debugger for debug C/C++ programs on UN
         $ source build/envsetup.sh
         $ lunch celadon-userdebug
 
-#. Reference the :ref:`build-from-source` section in the Getting Started Guide to build the |C| installer image, and follow the :ref:`install-on-nuc` section to install |C| on a |NUC|.
+#. Reference the :ref:`build-from-source` section in the Getting Started Guide to build the |C| installer image.
 
 #. After booting up the |NUC|, set up an *adb* connection from the development host to the |NUC| over Ethernet with the following commands prior the debugging process:
 

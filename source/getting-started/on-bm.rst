@@ -68,7 +68,7 @@ The following CiV image types are generated at the end of the build:
 * :file:`caas-flashfiles-eng.<user>.zip`
 
     The compressed *flashfile* package contains the kernelflinger executables.
-    Refer to the :ref:`install-on-nuc` section to unzip the content of the
+    You need to unzip the content of the
     package to a USB key, and install the CiV images from the *UEFI Shell*.
 
 Live Boot

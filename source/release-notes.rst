@@ -259,8 +259,7 @@ Features
 
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
-
-* Flashing binaries via PFT – Platform Flash Tool
+        
 * Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
 
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
@@ -783,17 +782,6 @@ Integrated Features
  
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
-* Flashing binaries via |PFT|
-
-    * To reduce the flash time, Platform flash Tool can be used with the following configurations:
- 
-        * Blank_without_lock (used for first time install or GPT layout change case)
-        * Update_without_lock (used for image update on installed device)
-
-    If your device is in unlocked state:
-
-        * "Blank_without_lock" duration is 30% of "Blank"
-        * "Update_without_lock" duration is 5% of "Update"
 
 Important Notes and Remarks
 ---------------------------
@@ -858,7 +846,6 @@ Important Notes and Remarks
 
 Known Issues
 ------------
-* Flashing time takes longer while using the kernelflinger method (~30mins), To reduce the flash time, Platform flash Tool can be used. Also the "installer.cmd" file can be altered (as per the PFT configurations) and flashed using kernel flinger method.
 * adb over wifi and ethernet works only after, ``setprop service.adb.tcp.port 5555`` and restart of USB debugging.
 * Device seen offline for 4-5 seconds on disconnect and reconnect of dbc cable.
 * Time and lock icon are displayed once on Android Start Animation when power on the DUT when connected with dual display.
@@ -985,17 +972,6 @@ Integrated Features
     * User guide:
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
-* Flashing binaries via |PFT|
-
-    * To reduce the flash time, Platform flash Tool can be used with the following configurations:
-
-        * Blank_without_lock (used for first time install or GPT layout change case)
-        * Update_without_lock (used for image update on installed device)
-
-    If your device is in unlocked state:
-
-        * "Blank_without_lock" duration is 30% of "Blank"
-        * "Update_without_lock" duration is 5% of "Update"
 
 Important Notes and Remarks
 ---------------------------
@@ -1060,8 +1036,6 @@ Important Notes and Remarks
 
 Known Issues
 ------------
-
-* Flashing time takes longer while using the kernel flinger method (~30mins), To reduce the flash time, Platform flash Tool can be used. Also the "installer.cmd" file can be altered (as per the PFT configurations) and flashed using kernel flinger method.
 * Android Open Source Music Player crashes if headset disconnected and reconnected during audio playback.
 * Cannot save images captured in "TestingCam" app.
 * Glitch observed while the DUT is booting to UI at the intel logo screen.
@@ -1131,8 +1105,6 @@ Integrated Features
 
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
-
-* Flashing binaries via PFT – Platform Flash Tool
 * Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
 
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
@@ -1322,8 +1294,6 @@ Integrated Features
 
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
-
-* Flashing binaries via PFT – Platform Flash Tool
 * Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
 
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled. 
@@ -1416,7 +1386,6 @@ Integrated Features
 * Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
 * SDHCI host controller is enabled
 * Security reference solution - TPM based h/w binding reference implementation
-* Flashing binaries via PFT – Platform Flash Tool
 
 
 Important Notes and Remarks
@@ -1509,7 +1478,6 @@ Integrated Features
 * Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
 * SDHCI host controller is enabled
 * Security reference solution - TPM based h/w binding reference implementation
-* Flashing binaries via PFT – Platform Flash Tool
 
 
 Important Notes and Remarks
@@ -1604,7 +1572,6 @@ Integrated Features
 * Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
 * SDHCI host controller is enabled
 * Security reference solution - TPM based h/w binding reference implementation
-* Flashing binaries via PFT – Platform Flash Tool 
 
 
 Important Notes and Remarks
@@ -1701,7 +1668,6 @@ Integrated Features
 * Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
 * SDHCI host controller is enabled 
 * Security reference solution - TPM based h/w binding reference implementation
-* Flashing binaries via PFT – Platform Flash Tool
 
 
 Important Notes and Remarks

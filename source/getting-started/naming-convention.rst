@@ -3,9 +3,10 @@
 Release Naming Convention
 #########################
 
-|C| offers several types of release packages for different usages. Releases are numbered and tagged
-according to the release timestamp, the exit criteria were met, and the Android dessert that the release
-is based off. The naming convention of a |C| release tag is:
+|C| offers several types of release packages for different usages. Releases
+are numbered and tagged according to the release timestamp, the exit
+criteria were met, and the Android\* dessert on which the release is based.
+The naming convention of a |C| release tag is:
 
     .. code-block:: none
 
@@ -25,7 +26,7 @@ is based off. The naming convention of a |C| release tag is:
     * The *[Year]* field represents the exit criteria of the Year.
     * The *[Quarter]* field represents the exit criteria of the Quarter.
     * The *[Work Week]* field represents the exit criteria of the working week.
-    * The *[Android Dessert]* field represents the version of Android dessert the release is based off.
+    * The *[Android Dessert]* field represents the version of Android dessert on which the release is based.
 
     Examples:
 

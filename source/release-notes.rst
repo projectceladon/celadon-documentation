@@ -17,7 +17,7 @@ Releases
 CIV_00.20.02.19_A10
 ======================
 
-This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel Platform and CML NUC - NUC10i7FN* is the leading platform for Celadon in VM (lunch target: caas-userdebug)
+This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* is the leading platform for Celadon in VM (lunch target: caas-userdebug)
 
 New Features
 -------------

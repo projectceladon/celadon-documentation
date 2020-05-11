@@ -87,7 +87,7 @@ Ethernet                       OK
 Image Flash                    OK
 Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
-USB                            OK       Keybord , Mouse  
+USB                            OK       Keybord , Mouse , Pen drive
 
 =============================  =======  ========
 

@@ -26,6 +26,8 @@ New Features
 * Wifi Control from Android in VM using usb passthrough 
 * Dual USB camera support is enabled
 * 9pfs based file transfer
+* To passthrough USB host controller in CML NUC, run the CIV launch script like this:
+  sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
 
 Existing Features
 -----------------

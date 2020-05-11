@@ -55,8 +55,6 @@ Existing Features
 * Art-extension is enabled
 * Sdcardfs filesystem support enabled
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
-* SDHCI host controller is enabled
-* eMMC and SATA storage media supported
 * Generic storage HAL supported
 * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
     * User guide:
@@ -82,8 +80,7 @@ BT                             OK        Bluetooth is working
 Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
-Display /Touch and Gesture     OK
-Storage/SD Card                OK       Add “-device usb-host,vendorid=,productid=” into startandroidqcow2.sh.
+Display /Touch and Gesture     OK  
 Security                       OK
 Boot/Kernel                    OK       Boots on QEMU 4.2.0
 Ethernet                       OK

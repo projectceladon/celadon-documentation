@@ -42,7 +42,7 @@ Set up the development environment
        $ export PATH=~/bin:$PATH
 
 #. Install the following required packages on your 64-bit Ubuntu 18.04 LTS
-   development workstation prior to starting the build:
+   development workstation prior to the compilation:
 
    .. code-block:: bash
    
@@ -57,21 +57,20 @@ Set up the development environment
             libelf-dev sbsigntool dosfstools mtools efitools \
             python-pystache git-lfs python3 flex
 
-Installing Docker\*
-===================
+#. Both :abbr:`CiV (Celadon in VM)` and :abbr:`CiC (Celadon in Container)`
+   require `Docker <https://www.docker.com/>`_ to build the images.
+   The following instructions install Docker\* on your Ubuntu development
+   workstation:
 
-:abbr:`CiV (Celadon in VM)` and :abbr:`CiC (Celadon in Container)` require
-`Docker <https://www.docker.com/>`_ to build the images. 
-
-#. Install the following packages before performing the CiV or CiC build:
+   a) Install the following packages before performing the CiV or CiC build:
 
    .. code-block:: bash
 
        $ sudo apt-get install apt-transport-https ca-certificates curl
 
-#. Execute the following commands to add the Docker's official GPG key, set
-   up the repository, and install the Docker Engine - Community from the
-   repository:
+   b) Run the following commands to add the Docker's official GPG key, set
+      up the repository, and install the *Docker Engine - Community* from the
+      repository:
 
    .. code-block:: bash
 
@@ -80,9 +79,9 @@ Installing Docker\*
        $ sudo apt-get update
        $ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
-#. You may use Docker as a non-root user by adding your user ID to the
-   **docker** group. For more information, refer to the
-   `Get Docker Engine - Community for Ubuntu <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`_ installation guide.
+   c) You may run Docker as a non-root user by adding your user ID to the
+      **docker** group. For more information, refer to the
+      `Get Docker Engine - Community for Ubuntu <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`_ installation guide.
 
    .. code-block:: bash
    
@@ -109,6 +108,17 @@ Download the source
        $ mkdir civ
        $ cd civ
        $ repo init -u https://github.com/projectceladon/manifest.git
+
+   Note, the last :command:`repo init` command pulls the latest development
+   CiV source code from the the *master* branch. To checkout the source code
+   of the `QMR0 March-31-2020`_ release that passed the *Platform Exit*
+   criteria, run the following command instead:
+
+   .. _QMR0 March-31-2020: https://01.org/projectceladon/documentation/release-notes#civ-01-20-01-12-a10
+
+   .. code-block:: bash
+
+       $ repo init -u https://github.com/projectceladon/manifest -b celadon/master/2020q1 -m default.xml
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time
@@ -144,7 +154,7 @@ Build |C| in VM image
    run :command:`lunch` with no arguments to choose different build
    variants, and select a lunch target from a list of available options.
    For example, the following commands configure the build system to
-   build the installer files for |C| in VM images with the traditional tablet UI:
+   build the installer files for |C| in VM images:
 
    .. code-block:: bash
 
@@ -155,7 +165,7 @@ Build |C| in VM image
       The *-j $(nproc)* argument instructs the builder to compile the source
       code with parallel tasks. The generated kernelflinger executables
       .ZIP file
-      (:file:`out/target/product/caas/caas.flashfiles.eng.${USER}.zip`)
+      (:file:`out/target/product/caas/caas-flashfiles-eng.${USER}.zip`)
       is available after the build. You can refer to :ref:`caas-on-vm`
       section to prepare the host environment and boot the CiV image with QEMU.
 
@@ -180,6 +190,17 @@ Download the source
        $ mkdir cic
        $ cd cic
        $ repo init -u https://github.com/projectceladon/manifest -b celadon/p/mr0/master -m cic
+
+   Note, the last :command:`repo init` command pulls the latest development
+   CiC source code from the the *master* branch. To checkout the source code of
+   the `PMR0 March-31-2020`_ release that passed the *Platform Exit*
+   criteria, run the following command instead:
+
+   .. _PMR0 March-31-2020: https://01.org/projectceladon/documentation/release-notes#cic-01-20-01-12-a09
+
+   .. code-block:: bash
+
+       $ repo init -u https://github.com/projectceladon/manifest -b celadon/p/mr0/2020q1 -m cic
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time
@@ -215,7 +236,7 @@ Build |C| in Container package
    run :command:`lunch` with no arguments to choose different build
    variants, and select a lunch target from a list of available options.
    For example, the following commands configure the build system to
-   build the package containing |C| in Container images with the traditional tablet UI:
+   build the package containing |C| in Container images:
 
    .. code-block:: bash
 
@@ -225,6 +246,6 @@ Build |C| in Container package
    .. note::
       The *-j $(nproc)* argument instructs the builder to compile the source
       code with parallel tasks. The generated CiC package
-      (:file:`out/target/product/cic/cic-${USER}.tar.gz`)
+      (:file:`out/target/product/cic/cic-aic-eng.${USER}.<time code>.tar.gz`)
       is available after the build. You can follow :ref:`deploy-cic-on-target` of
       this guide to deploy and start the CiC container on the target device.

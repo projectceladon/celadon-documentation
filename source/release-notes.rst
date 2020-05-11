@@ -160,10 +160,11 @@ Existing Features
 * eMMC and SATA storage media supported
 * Generic storage HAL supported
 * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
-  User guide:
 
-    SELinux Configuration and Rules
-    How to Enable or Disable Trusty for Debugging
+     * User guide:
+
+        * SELinux Configuration and Rules
+        * How to Enable or Disable Trusty for Debugging
 
 Known Issues
 -------------

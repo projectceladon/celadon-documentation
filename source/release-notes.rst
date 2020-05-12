@@ -22,7 +22,6 @@ This is a Pre-Production Manifest Release for evaluation and development purpose
 New Features
 -------------
 
-* Setting Proxy for Wireless Network
 * Wifi Control from Android in VM using usb passthrough 
 * To passthrough USB host controller in CML NUC, run the CIV launch script like this:
   sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
@@ -41,6 +40,7 @@ Existing Features
 * Mass Storage USB 2.0 and 3.x devices is supported
 * Adb over WIFI and Ethernet is supported
 * Audio playback over USB Headset and HDMI are supported
+* Setting Proxy for Wireless Network
 * Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
 * Wired Ethernet support
 * Video Codec support on celadon

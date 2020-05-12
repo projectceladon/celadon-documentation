@@ -24,9 +24,14 @@ New Features
 
 * Setting Proxy for Wireless Network
 * Wifi Control from Android in VM using usb passthrough 
-* 9pfs based file transfer
 * To passthrough USB host controller in CML NUC, run the CIV launch script like this:
   sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
+* Power Management - Shutdown and Reboot 
+* OTA offline update
+* Ethernet Wired Network Bridge is enabled 
+* Android Time keeping with Host OS
+* Product Information to Guest OS
+* ODM partition for vendor customizations 
 
 Existing Features
 -----------------
@@ -56,6 +61,7 @@ Existing Features
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * Generic storage HAL supported
 * SATA emulation is supported
+* 9pfs based file transfer
 * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
     * User guide:
         * SELinux Configuration and Rules

@@ -56,6 +56,7 @@ Existing Features
 * Sdcardfs filesystem support enabled
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * Generic storage HAL supported
+* SATA emulation is supported
 * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
     * User guide:
         * SELinux Configuration and Rules

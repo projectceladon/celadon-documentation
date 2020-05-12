@@ -76,12 +76,12 @@ Known Issues
 Validation Results
 ------------------
 
-|C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
+|C| build has been validated on CML NUC - NUC10i7FN* in the following function domains:
 
 =============================  =======  ========
 Component                      Results  Comments
 =============================  =======  ========
-Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU
+Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
 BT                             OK        Bluetooth is working
 Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
 Adb connect over WIFI          OK

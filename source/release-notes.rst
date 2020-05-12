@@ -70,7 +70,6 @@ Existing Features
 
 Known Issues
 -------------
-* Unable to connect WPA/WPA2 Enterprise Wi-Fi network in Android VM
 * Hotplug doesn't work in secondary display
 
 Validation Results

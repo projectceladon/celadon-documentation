@@ -71,6 +71,7 @@ Existing Features
 Known Issues
 -------------
 * Hotplug doesn't work in secondary display
+* dEQP-VK(Vulkan 1.1) is failing 
 
 Validation Results
 ------------------

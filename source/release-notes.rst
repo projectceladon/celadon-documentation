@@ -109,7 +109,7 @@ Helpful Hints / Links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
 * Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
-* Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build
+* Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.19_A10.xml
 * For CIV QMR0 we are now switching to the platform : CML NUC - NUC10i7FN* 
 
 

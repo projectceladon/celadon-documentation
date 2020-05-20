@@ -58,28 +58,30 @@ from source depending on the target graphics virtualization technology,
 and installs the required software on Ubuntu 18.04 for running
 |C| in a VM with QEMU.
 
-Enter the following commands to download the :file:`setup_host.sh` script
-and set it executable:
+Download and extract release package(`caas-releasefiles-<$buildvariant>.tar.gz`)
+from: `celadon-binary <https://github.com/projectceladon/celadon-binary>`_
+Meanwhile, you can also refer :ref:`build-os-image` section to build release
+packages.
 
      .. code-block:: bash
 
         $ mkdir -p ~/civ && cd ~/civ
-        $ wget https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/setup_host.sh
-        $ chmod +x setup_host.sh
+        $ tar zxvf caas-releasefiles-<$buildvariant>.tar.gz
+        $ chmod +x scripts/setup_host.sh
 
 Launch the script with no argument to set up the environment for running
 CiV using Intel GVT-g technology:
 
      .. code-block:: bash
 
-        $ sudo -E ./setup_host.sh
+        $ sudo -E ./scripts/setup_host.sh
 
 Or, pass :command:`--gvtd` argument to the script for setting up an
 Intel GVT-d environment:
 
      .. code-block:: bash
 
-        $ sudo -E ./setup_host.sh --gvtd
+        $ sudo -E ./scripts/setup_host.sh --gvtd
 
 During the installation, you will be prompted by some questions to confirm the
 changes to the packages, it's safe to respond :kbd:`y` to all of them.
@@ -131,6 +133,11 @@ following CiV image types are generated at the end of the build:
     Proceed with the following section to install these images to a virtual
     disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
 
+:file:`caas-releasefiles-<$buildvariant>.tar.gz`
+
+    The release tar ball contains all required flashfiles/scrips for running Celadon in VM.
+
+
 Create a CiV virtual disk
 *************************
 
@@ -145,7 +152,7 @@ a *qcow2* formatted virtual disk.
     .. code-block:: bash
 
         $ cd ~/civ
-        $ sudo ./start_flash_usb.sh caas-flashfiles-eng.<user>.zip
+        $ sudo ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip
 
 #. By running the :file:`start_flash_usb.sh` script, a QEMU window will be popped up, it
    will drop to the built-in UEFI Shell and start flashing the partitions to
@@ -187,13 +194,13 @@ using Intel GVT-d technology.
 
     $ cd ~/civ
     # The following command runs CiV using Intel GVT-g
-    $ sudo -E ./start_android_qcow2.sh
+    $ sudo -E ./scripts/start_android_qcow2.sh
 
 .. code-block:: bash
 
     # The following command runs CiV using Intel GVT-d, and passes
     # all the attached USB devices such as keyboard, mouse to the VM.
-    $ sudo -E ./start_android_qcow2.sh --gvtd --usb-host-passthrough
+    $ sudo -E ./scripts/start_android_qcow2.sh --gvtd --usb-host-passthrough
 
 xHCI pass-through option
 ========================
@@ -208,7 +215,7 @@ the platform get automatically enumerated inside the Android VM:
 .. code-block:: bash
 
     # The following command pass-through the xHCI to the VM
-    $ sudo -E ./start_android_qcow2.sh --usb-host-passthrough
+    $ sudo -E ./scripts/start_android_qcow2.sh --usb-host-passthrough
 
 .. warning::
     All the USB devices, including keyboard and mouse, will be disconnected

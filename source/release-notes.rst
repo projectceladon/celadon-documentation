@@ -14,6 +14,86 @@ Releases
    :local:
    :depth: 1
 
+CIC_00.20.02.20_A09
+======================
+
+This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+This release is supported on Intel Platform and CML NUC - NUC10i7FN* is the leading platform for Celadon in container [CIC]
+
+New Features
+-------------
+
+* Vendor WiFi hal integrated
+* Battery Indicator enabled
+* From storage, Sdcardfs filesystem support, eMMC 5.1 controller driver support, eMMC Storage support enabled
+* Mesa upgraded to 19.3.3
+* Following features added on AOSP side :
+    * Support host shortcut for android apps
+    * Support copy and paste feature between AIC and Host
+    * Support multi-user data isolation
+    * Add cic monitor service to support shutdown and reboot
+
+Existing Features
+-----------------
+
+* HDMI display support
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Video Codec support on celadon
+* Sdcardfs filesystem support enabled
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* SDHCI host controller is enabled
+* eMMC / SATA / NVMe storage media supported
+* Generic storage HAL supported
+
+Known Issues
+-------------
+* Trusty is removed due to conflict in BIOS.
+
+Validation Results
+------------------
+
+This |C| build has been validated on CML NUC - NUC10i7FN* in the following function domains, for both
+secure & non-secure.
+
+  ======================== =======
+  Test Case                Results
+  ======================== =======
+  Image Flash               Pass
+  System Boot Up            Pass
+  Touch Screen              Pass
+  Basic Video Playback      Pass
+  Basic Audio Playback      Pass
+  Navigation bar            Pass
+  UI Display                Pass
+  Wifi [Host]               Pass
+  Network [Wifi/Ethernet]   Pass
+  Multi camera              Pass
+  Screen lock               Pass
+  Docker commands           Pass
+  adb                       Pass
+  BT [Host]                 Pass
+  SE-Policy                 Pass
+  ======================== =======
+
+Tools/Configuration
+-------------------
+* Docker version      : 18.09.2
+* Host Ubuntu         : 18.04
+* Host Kernel Version : 5.4.35 [With SELinux enabled]
+
+Helpful Hints / Links
+---------------------
+
+* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
+* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
+* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.02.20_A09.xml
+* Binary Link   : <NA>
+
+
 CIV_00.20.02.19_A10
 ======================
 
@@ -84,7 +164,7 @@ BT                             OK        Bluetooth is working
 Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
-Display /Touch and Gesture     OK  
+Display /Touch and Gesture     OK
 Security                       OK
 Boot                           OK       Boots on QEMU 4.2.0
 Ethernet                       OK
@@ -102,15 +182,14 @@ Tools/Configuration
 * Host Ubuntu 18.04
 * Host Kernel Version 5.4.35
   Steps to build the host kernel for CIV [CML NUC]--> https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
-* Guest kernel 5.4.37 
-
+* Guest kernel 5.4.37
 
 Helpful Hints / Links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
 * Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.19_A10.xml
-* For CIV QMR0 we are now switching to the platform : CML NUC - NUC10i7FN* 
+* For CIV QMR0 we are now switching to the platform : CML NUC - NUC10i7FN*
 
 
 CIC_01.20.01.12_A09
@@ -138,9 +217,7 @@ New Features
 Existing Features
 -----------------
 
-* Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
-* HWC 2.3 support for Display
 * Mass Storage USB 2.0 and 3.x devices is supported
 * Adb over WIFI and Ethernet is supported
 * Audio playback over USB Headset and HDMI are supported

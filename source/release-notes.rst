@@ -17,9 +17,9 @@ Releases
 CIC_00.20.02.20_A09
 ======================
 
-This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on CML NUC - NUC10i7FN* Celadon in Container.
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 New Features
 -------------
@@ -98,8 +98,8 @@ Helpful Hints / Links
 CIV_00.20.02.19_A10
 ======================
 
-This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM 
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+* This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 New Features
 -------------
@@ -198,9 +198,9 @@ Helpful Hints / Links
 CIC_01.20.01.12_A09
 ======================
 
-This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in container [CIC]
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 New Features
@@ -295,8 +295,8 @@ Helpful Hints / Links
 CIV_01.20.01.12_A10
 ======================
 
-This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug)
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug) .
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 New Features 
@@ -396,9 +396,9 @@ Helpful Hints / Links
 CELADON_01.20.01.12_A09
 =======================
 
-This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for PMR0 Bare Metal .
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Features
 -------------------
@@ -537,10 +537,10 @@ Known Issues
 CIV_00.20.01.09_A10
 ======================
 
-This is a Pre-Production February Manifest Release for evaluation and development purposes and it cannot be used for production purposes.
-This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
-Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.01.09_A10.xml
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+* This is a Pre-Production February Manifest Release for evaluation and development purposes and it cannot be used for production purposes.
+* This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+* Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.01.09_A10.xml
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -805,10 +805,10 @@ Known Issues
 CIV_00.19.04.51_A10
 ===================
 
-This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
-This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
-Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.51_A10.xml
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+* This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
+* Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.51_A10.xml
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------

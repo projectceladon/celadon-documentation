@@ -55,6 +55,7 @@ Known Issues
 * Landscape mode doesn't work.
 * 'GPU Overdraw' developer option has more Blue Screen.
 * Memory allocation info doesn't show for graphics ('EGL mtrack or Gfx).
+* On Security enabled cic, adb install / playstore download are the only options for 3rd party apk installation.
 
 Validation Results
 ------------------

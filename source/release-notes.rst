@@ -19,7 +19,6 @@ CIC_00.20.02.20_A09
 
 * This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on CML NUC - NUC10i7FN* Celadon in Container.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 New Features
 -------------
@@ -92,14 +91,14 @@ Helpful Hints / Links
 * Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
 * Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
 * Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.02.20_A09.xml
-* Binary Link   : <NA>
+* Binary Link   : <NA
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 CIV_00.20.02.19_A10
 ======================
 
 * This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 New Features
 -------------
@@ -193,6 +192,8 @@ Helpful Hints / Links
 * Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.19_A10.xml
 * For CIV QMR0 we are now switching to the platform : CML NUC - NUC10i7FN*
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 
 
 CIC_01.20.01.12_A09
@@ -200,7 +201,6 @@ CIC_01.20.01.12_A09
 
 * This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in container [CIC]
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 New Features
@@ -290,13 +290,13 @@ Helpful Hints / Links
 * Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
 * Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_01.20.01.12_A09.xml
 * Binary Link   : https://github.com/projectceladon/celadon-binary/blob/master/CIC_01.20.01.12_A09/cic-aic-CC0000105.tar.gz
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 CIV_01.20.01.12_A10
 ======================
 
 * This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug) .
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 New Features 
@@ -351,6 +351,7 @@ Known Issues
 -------------
 * Unable to connect WPA/WPA2 Enterprise Wi-Fi network in Android VM
 * Hotplug doesn't work in secondary display
+
  
 Validation Results
 ------------------
@@ -392,13 +393,14 @@ Helpful Hints / Links
 * We can use the same CIV Q-MR0 image to flash on the KBL NUC and APL NUC as a Bare Metal <Lunch target caas-userdebug >
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.20.01.12_A10.xml
 * Binary Link :https://github.com/projectceladon/celadon-binary/blob/master/CIV_01.20.01.12_A10/caas-flashfiles-eng.build.zip
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 CELADON_01.20.01.12_A09
 =======================
 
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for PMR0 Bare Metal .
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 
 Features
 -------------------
@@ -483,6 +485,7 @@ Helpful Hints/Links
 -------------------
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CELADON_01.20.01.12_A09.xml
 * Binary Link :   https://github.com/projectceladon/celadon-binary/blob/master/CELADON_01.20.01.12_A09/cel_kbl-flashfiles-eng.build.zip
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 ---------------
 
@@ -494,7 +497,6 @@ CIC_00.20.01.08_A09
     * The :abbr:`CiC (Celadon in Container)` manifest release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
     * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.01.08_A09.xml 
-    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Important Notes and Remarks
 ---------------------------
@@ -532,6 +534,7 @@ Known Issues
 * Boot time optimization in progress.
 * need to reboot device after 'adb reboot' for files to be reflected.
 * CiC performance is under tuning.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 CIV_00.20.01.09_A10
@@ -540,7 +543,6 @@ CIV_00.20.01.09_A10
 * This is a Pre-Production February Manifest Release for evaluation and development purposes and it cannot be used for production purposes.
 * This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.01.09_A10.xml
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -645,6 +647,7 @@ Known Issues
 ------------
 * Video play is not smooth on 4K monitor.
 * Touch Screen operation is not smooth on 4K monitor.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 CIC_00.19.04.20.03_A09
 ======================
@@ -653,7 +656,7 @@ CIC_00.19.04.20.03_A09
     * The :abbr:`CiC (Celadon in Container)` release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
     * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.19.04.20.03_A09.xml
-    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 
 Important Notes and Remarks
 ---------------------------
@@ -691,6 +694,7 @@ Known Issues
 * Boot time optimization in progress.
 * need to reboot device after 'adb reboot' for files to be reflected.
 * CiC performance is under tuning.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 CIV_00.19.04.20.02_A10
 ======================
@@ -698,7 +702,6 @@ CIV_00.19.04.20.02_A10
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.20.02_A10.xml
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -801,6 +804,7 @@ Known Issues
 * Audio recording is not supported currently.
 * Video play is not smooth on 4K monitor.
 * Touch Screen operation is not smooth on 4K monitor.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 CIV_00.19.04.51_A10
 ===================
@@ -808,7 +812,6 @@ CIV_00.19.04.51_A10
 * This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 * This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.51_A10.xml
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -914,6 +917,7 @@ Known Issues
 * Android UI doesn’t boot up with Full Screen.
 * Video play is not smooth on 4K monitor.
 * Touch Screen operation is not smooth on 4K monitor.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 21-Oct-2019
@@ -923,7 +927,6 @@ Known Issues
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production binary Q Release for evaluation and development purposes and it cannot be used for production purposes.
     * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
-    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1040,6 +1043,7 @@ Known Issues
 * Time and lock icon are displayed once on Android Start Animation when power on the DUT when connected with dual display.
 * Time flickers on All apps screen when launch Intel@Phone Doctor and touch menu button.
 * Glitch observed while the DUT is booting to UI at the intel logo screen.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 20-Sept-2019
 ============
@@ -1048,7 +1052,6 @@ Known Issues
     * The :abbr:`CaaS (Celadon as a Service)` and :abbr:`CIC (Celadon in Container)` releases are supported on Intel Platforms running Android on various Bare Metal x86 systems, Virtual Machines (KVM/Qemu), and also Containers.
     * The ingredients of the CaaS release can be used to build a service architecture, so that with customers we can deliver a **Celadon as a Service** solution.
     * These are Pre-Production CaaS and CIC Releases for evaluation and development purposes, they cannot be used for production.
-    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Important Notes and Remarks
 ---------------------------
@@ -1109,6 +1112,7 @@ Known Issues
 * Bluetooth function is not ready on CAAS VM release.
 * Audio 3.5 mm headphone function is not ready on CAAS VM release.
 * CAAS and CIC performance is under tuning.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 05-Sept-2019
 ============
@@ -1116,7 +1120,6 @@ Known Issues
 .. note::
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production Early Q Release for evaluation and development purposes and it cannot be used for production purposes.
-    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1239,6 +1242,7 @@ Known Issues
 * Device seen offline for 4-5 seconds on disconnect and reconnect of dbc cable.
 * Time flickers on All apps screen when launch Intel@Phone Doctor and touch menu button.
 * BT PAN and Wi-Fi direct UI support removed for automotive variant.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 ww201925_KBLNUC
 ===============
@@ -1253,7 +1257,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes. 
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 
 Integrated Features
 -------------------
@@ -1343,6 +1347,7 @@ Known Issues
 * Bluetooth pairing fails in first boot cycle
 * Bluetooth pairing fails if USB headset is not connected to DUT
 * Media KW errors are present in this build 
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 ---------------
 
@@ -1360,7 +1365,6 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1428,6 +1432,8 @@ Known Issues
 ------------
 
 * Too many button events generated after single power button press. This partially affects suspend/resume using power-button.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 
 ---------------
 
@@ -1444,7 +1450,6 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1527,6 +1532,7 @@ Known Issues
 * media file copying from external memory to internal memory fails when huge file is copied
 * saved system time changes to default after reboot
 * Call,Alarm volume and alarm sound not audible via USB headset
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 ---------------
 
@@ -1544,7 +1550,6 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1616,7 +1621,7 @@ Known Issues
 * Bluetooth file transfer fails in the first attempt after DUT reboot and it works fine once BT is reset
 * Lets Drive screen seen, on click of applications under "New User"
 * webM format video hangs during switch from full screen to normal 
-
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 --------
 
 Status
@@ -1637,7 +1642,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 
 Integrated Features
 -------------------
@@ -1709,6 +1714,7 @@ Known Issues
 * Bluetooth file transfer fails in the first attempt after DUT reboot and it works fine once BT is reset
 * Lets Drive screen seen, on click of applications under "New User"
 * While executing DEPQ CTS  , at a certain point there is adb disconnect observed where the DUT freezes , however once the adb is reconnected the test continues but the DUT is frozen
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 --------
 
@@ -1732,7 +1738,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 
 Integrated Features
 -------------------
@@ -1804,6 +1810,7 @@ Known Issues
 * Bluetooth file transfer fails in the first attempt after DUT reboot and it works fine once BT is reset
 * Lets Drive screen seen, on click of applications under "New User"
 * While executing DEPQ CTS  , at a certain point there is adb disconnect observed where the DUT freezes , however once the adb is reconnected the test continues but the DUT is frozen 
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 --------
 
@@ -1828,7 +1835,7 @@ manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 
 Integrated Features
 -------------------
@@ -1901,6 +1908,7 @@ Known Issues
 * Lets Drive screen seen on click of applications under "New User" 
 * Need to press power button twice to wake-up from S3"
 * Basic Functionality of VGA port works like multidisplay support but there are issues with hotplug and some new Video Post Processing features (adjust Hue/Contrast/Saturation of video)
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Status
 -------
@@ -1925,7 +1933,6 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key
 
 Integrated Features
 -------------------
@@ -1979,3 +1986,4 @@ Known Issues
 * Video playback works. Hangs observed on some random runs
 * ADB over USB is not enabled due to lack of device mode
 * Basic Functionality of VGA port works like multidisplay support but there are issues with hotplug and some new Video Post Processing features (adjust Hue/Contrast/Saturation of video)
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key

@@ -18,7 +18,7 @@ CIC_00.20.02.20_A09
 ======================
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
-This release is supported on Intel Platform and CML NUC - NUC10i7FN* is the leading platform for Celadon in container [CIC]
+This release is supported on CML NUC - NUC10i7FN* Celadon in Container.
 
 New Features
 -------------
@@ -51,7 +51,7 @@ Existing Features
 
 Known Issues
 -------------
-* Trusty is removed due to conflict in BIOS.
+* Trusty is not supported due to conflict in BIOS.
 
 Validation Results
 ------------------

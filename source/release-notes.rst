@@ -19,6 +19,7 @@ CIC_00.20.02.20_A09
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on CML NUC - NUC10i7FN* Celadon in Container.
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 New Features
 -------------
@@ -98,6 +99,8 @@ CIV_00.20.02.19_A10
 ======================
 
 This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM 
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 New Features
 -------------
 
@@ -197,6 +200,7 @@ CIC_01.20.01.12_A09
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in container [CIC]
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 New Features
@@ -292,6 +296,7 @@ CIV_01.20.01.12_A10
 ======================
 
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug)
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 New Features 
@@ -393,6 +398,7 @@ CELADON_01.20.01.12_A09
 
 This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for PMR0 Bare Metal .
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Features
 -------------------
@@ -488,6 +494,7 @@ CIC_00.20.01.08_A09
     * The :abbr:`CiC (Celadon in Container)` manifest release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
     * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.01.08_A09.xml 
+    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Important Notes and Remarks
 ---------------------------
@@ -533,6 +540,7 @@ CIV_00.20.01.09_A10
 This is a Pre-Production February Manifest Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.01.09_A10.xml
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -645,6 +653,7 @@ CIC_00.19.04.20.03_A09
     * The :abbr:`CiC (Celadon in Container)` release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
     * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.19.04.20.03_A09.xml
+    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Important Notes and Remarks
 ---------------------------
@@ -689,6 +698,7 @@ CIV_00.19.04.20.02_A10
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.20.02_A10.xml
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -798,6 +808,7 @@ CIV_00.19.04.51_A10
 This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.51_A10.xml
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -912,6 +923,7 @@ Known Issues
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production binary Q Release for evaluation and development purposes and it cannot be used for production purposes.
     * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
+    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1036,6 +1048,7 @@ Known Issues
     * The :abbr:`CaaS (Celadon as a Service)` and :abbr:`CIC (Celadon in Container)` releases are supported on Intel Platforms running Android on various Bare Metal x86 systems, Virtual Machines (KVM/Qemu), and also Containers.
     * The ingredients of the CaaS release can be used to build a service architecture, so that with customers we can deliver a **Celadon as a Service** solution.
     * These are Pre-Production CaaS and CIC Releases for evaluation and development purposes, they cannot be used for production.
+    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Important Notes and Remarks
 ---------------------------
@@ -1103,6 +1116,7 @@ Known Issues
 .. note::
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production Early Q Release for evaluation and development purposes and it cannot be used for production purposes.
+    * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1239,6 +1253,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes. 
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1345,6 +1360,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1428,6 +1444,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1527,6 +1544,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1619,6 +1637,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1713,6 +1732,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1808,6 +1828,7 @@ manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Integrated Features
 -------------------
@@ -1904,6 +1925,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 Important Note
 --------------
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key
 
 Integrated Features
 -------------------

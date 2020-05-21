@@ -52,6 +52,9 @@ Existing Features
 Known Issues
 -------------
 * Trusty is not supported due to conflict in BIOS.
+* Landscape mode doesn't work.
+* 'GPU Overdraw' developer option has more Blue Screen.
+* Memory allocation info doesn't show for graphics ('EGL mtrack or Gfx).
 
 Validation Results
 ------------------

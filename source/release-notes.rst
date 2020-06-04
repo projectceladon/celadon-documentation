@@ -102,14 +102,13 @@ Tools/Configuration
 * Host Ubuntu 18.04
 * Host Kernel Version 5.4.35
   Steps to build the host kernel for CIV [CML NUC]--> https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
-* Guest kernel 5.4.37
+* Guest kernel 5.4.42
 
 Helpful Hints / Links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
 * Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
-* Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.19_A10.xml
-* For CIV QMR0 we are now switching to the platform : CML NUC - NUC10i7FN*
+* Manifest Link :
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 

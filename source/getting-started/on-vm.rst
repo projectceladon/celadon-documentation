@@ -255,6 +255,30 @@ in the Android VM:
          $bt_passthrough \
          ...
 
+Audio pass-through option
+=========================
+
+In Intel GVT-d setup, the audio controller can be passd through to the guest
+by adding :command:`--audio-passthrough` argument while invoking the
+:file:`start_android_qcow2.sh` script, the host then has no control over it.
+
+.. code-block:: bash
+
+    $ sudo -E ./scripts/start_android_qcow2.sh --gvtd --usb-host-passthrough --audio-passthrough
+
+.. note::
+    With the above setup, PCI controllers, which are part of the same IOMMU
+    group as the audio controller, will also be pass-through to the guest.
+    For example, if the Ethernet controller and the audio controller are
+    in the same IOMMU group, the Ethernet controller will be moved to the guest.
+    Thus if you are connecting to the host via Ethernet, the network accesses to
+    the host will be drop. Since the Android guest has accesses to the Ethernet
+    controller, you can connect to it using the command:
+
+    .. code-block:: bash
+
+       $ adb connect <guest-ip-addr>:5555
+
 .. figure:: images/caas-qemu-booting.jpg
     :align: center
 

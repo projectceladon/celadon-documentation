@@ -70,7 +70,11 @@ Existing Features
 
 Known Issues
 -------------
-* dEQP-VK(Vulkan 1.1) is failing
+* Noise heard in the background of the recorded file when recorded over 3.5mm headset
+* Camera Preview is lost while switching between dual and single mode
+* Audio is not routing to 3.5mm Headset for ALC256 audio codec
+* Front view camera is not having mirror Image preview 
+* Hotplug support for USB Camera doesn't work
 
 Validation Results
 ------------------

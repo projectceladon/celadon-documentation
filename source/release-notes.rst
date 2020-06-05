@@ -34,7 +34,7 @@ New Features
 Existing Features
 -----------------
 * Graphics Memory Allocator (Gralloc) 1.0
-* Graphics GVT-g support' and "Graphics GVT-d support
+* Graphics GVT-g and GVT-d support
 * HDMI display support
 * HWC 2.3 support for Display
 * Mass Storage USB 2.0 and 3.x devices is supported

@@ -83,9 +83,12 @@ Known Issues
 -------------
 * Noise heard in the background of the recorded file when recorded over 3.5mm headset
 * Camera Preview is lost while switching between dual and single mode
+* Camera Preview is not available when USB camera is connected after Andorid is Launched through VM 
+* Android UI is not displayed if we use EDP display
 * Audio is not routing to 3.5mm Headset for ALC256 audio codec
 * Front view camera is not having mirror Image preview 
 * Hotplug support for USB Camera doesn't work
+* Blue Screen observed while switching from between Front and Rear Camera (occurence - randomn)
 
 Validation Results
 ------------------

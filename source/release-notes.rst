@@ -394,7 +394,13 @@ Tools/Configuration
 Helpful Hints / Links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
-* We can use the same CIV Q-MR0 image to flash on the KBL NUC and APL NUC as a Bare Metal <Lunch target caas-userdebug >
+* We can use the same CIV Q-MR0 image to flash on the KBL NUC and APL NUC as a Bare Metal <Lunch target caas-userdebug > 
+* We haven’t ever validated ‘adb over USB’ on Android 10 + NUC7 (KBL) CIV_01.20.01.12_A10 as a Bare Metal and we don’t support it
+  Please use below alternative
+    * Adb over Ethernet works
+    * Please fall back to Android ‘P’  where adb over USB” works 
+      https://github.com/projectceladon/celadon-documentation/blob/master/source/release-notes.rst#celadon-01-20-01-12-a09
+
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.20.01.12_A10.xml
 * Binary Link :https://github.com/projectceladon/celadon-binary/blob/master/CIV_01.20.01.12_A10/caas-flashfiles-eng.build.zip
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.

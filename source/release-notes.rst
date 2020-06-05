@@ -32,7 +32,7 @@ New Features
 * File Sharing between Guest OSes
 * vp9 encoder support
 * SDHCI mediation enabled and supported SD card
-   CIV launch script for SD Card: sudo -E ./start_android_qcow2.sh --sdonly
+   -CIV launch script for SD Card: sudo -E ./start_android_qcow2.sh --sdonly
 
 Existing Features
 -----------------

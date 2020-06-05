@@ -21,16 +21,16 @@ CIV_00.20.02.23_A10
 
 New Features
 -------------
-
-* Wifi Control from Android in VM using usb passthrough
-* To passthrough USB host controller in CML NUC, run the CIV launch script like this:
-  sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
-* Power Management - Shutdown and Reboot
-* OTA offline update
-* Ethernet Wired Network Bridge is enabled
-* Android Time keeping with Host OS
-* Product Information to Guest OS
-* ODM partition for vendor customizations
+* Android Thermal HAL and Thermal Manager Service 
+* Audio Passthrough Solution based on HDA
+* Android SE Linux Support
+* Integrated Sensor Hub Enablemenent supporting Android Defined Sensors
+* OTA Android Update from USB Disk
+* Bluetooth Control from Android in VM 
+* HDMI Audio Output Support 
+* Virtio-gpu Support 
+* Battery Percentage propagation to the Android guest OS
+* File Sharing between Guest OSes
 
 Existing Features
 -----------------
@@ -43,6 +43,15 @@ Existing Features
 * Setting Proxy for Wireless Network
 * Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
 * Wired Ethernet support
+* Wifi Control from Android in VM using usb passthrough
+* To passthrough USB host controller in CML NUC, run the CIV launch script like this:
+  sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
+* Power Management - Shutdown and Reboot
+* OTA offline update
+* Ethernet Wired Network Bridge is enabled
+* Android Time keeping with Host OS
+* Product Information to Guest OS
+* ODM partition for vendor customizations
 * Video Codec support on celadon
 
   **Decoder**
@@ -66,7 +75,6 @@ Existing Features
     * User guide:
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
-
 
 Known Issues
 -------------
@@ -114,7 +122,6 @@ Helpful Hints / Links
 * Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
 * Manifest Link :
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
-
 
 
 CIC_00.20.02.20_A09

@@ -23,7 +23,6 @@ New Features
 -------------
 * Android Thermal HAL and Thermal Manager Service 
 * Audio Passthrough Solution based on HDA
-* Android SE Linux Support
 * Integrated Sensor Hub Enablemenent supporting Android Defined Sensors
 * OTA Android Update from USB Disk
 * Bluetooth Control from Android in VM 

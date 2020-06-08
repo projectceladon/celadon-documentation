@@ -136,7 +136,13 @@ Helpful Hints / Links
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
     * sudo dpkg -i *.deb
+    * sudo vim /etc/default/grub   ### Update grub to wait indefinitely for kernel selection on boot
+        * #GRUB_TIMEOUT_STYLE=hidden # Comment out GRUB_TIMEOUT_STYLE=hidden
+        * #GRUB_TIMEOUT=-1  #Uncommment following ling and modify grub timeout to -1 for indefinite wait or 5 for 5secs wait
+        * #Save the file
+        * sudo update-grub
     * sudo reboot
+
 
 CIC_00.20.02.20_A09
 ======================

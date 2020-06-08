@@ -130,7 +130,7 @@ Helpful Hints / Links
 * Steps To build the host kernel for this Manifest
     * Sync the manifest from the above Manifest link
     * Build the source code and caas-releasefiles-userdebug.tar.gz will be generated
-    * Download  caas-releasefiles-<$buildvariant>.tar.gz and put it under ~/civ
+    * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh

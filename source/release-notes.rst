@@ -118,8 +118,7 @@ Tools/Configuration
 -------------------
 * QEMU Version 4.2.0
 * Host Ubuntu 18.04
-* Host Kernel Version 5.4.35
-  Steps to build the host kernel for CIV [CML NUC]--> https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
+* Host Kernel Version 5.4.35 
 * Guest kernel 5.4.42
 
 Helpful Hints / Links
@@ -128,7 +127,16 @@ Helpful Hints / Links
 * Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
 * Manifest Link :
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
-
+* Steps To build the host kernel for this Manifest
+    * Sync the manifest from the above Manifest link
+    * Build the source code and caas-releasefiles-userdebug.tar.gz will be generated
+    * Download  caas-releasefiles-<$buildvariant>.tar.gz and put it under ~/civ
+    * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
+    * cd patches/kernel/lts2019-chromium
+    * ./build_weekly.sh
+    * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
+    * sudo dpkg -i *.deb
+    * sudo reboot
 
 CIC_00.20.02.20_A09
 ======================

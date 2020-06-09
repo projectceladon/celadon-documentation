@@ -33,7 +33,6 @@ New Features
    * Thermal temperature information will be sent to Android for graceful shutdown of guest
    * CIV launch script: sudo -E ./start_android_qcow2.sh --enable-vsock
 * File Sharing between Guest OSes
-* vp9 encoder support
 * SDHCI mediation enabled and supported SD card
    * CIV launch script for SD Card: sudo -E ./start_android_qcow2.sh --sdonly
 

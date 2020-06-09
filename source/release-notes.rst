@@ -86,7 +86,7 @@ Known Issues
 -------------
 * Noise heard in the background of the recorded file when recorded over 3.5mm headset
 * Camera Preview is lost while switching between dual and single mode
-* Camera Preview is not available when USB camera is connected after Andorid is Launched through VM 
+* Camera Preview is not available when USB camera is connected after Android is Launched through VM 
 * Android UI is not displayed if we use EDP display
 * Audio is not routing to 3.5mm Headset for ALC256 audio codec
 * Front view camera is not having mirror Image preview 
@@ -113,7 +113,7 @@ Ethernet                       OK
 Image Flash                    OK
 Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
-USB                            OK       Keybord , Mouse , Pen drive
+USB                            OK       Keyboard , Mouse , Pen drive
 
 =============================  =======  ========
 

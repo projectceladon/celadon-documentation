@@ -143,7 +143,7 @@ Helpful Hints / Links
         * sudo vim /etc/default/grub  
         * Comment out GRUB_TIMEOUT_STYLE=hidden
           #GRUB_TIMEOUT_STYLE=hidden 
-        * Uncommment following line and modify grub timeout to -1 for indefinite wait or 5 for 5secs wait
+        * Uncomment following line and modify grub timeout to -1 for indefinite wait or 5 for 5secs wait
           #GRUB_TIMEOUT=-1 
         * Save the file
         * sudo update-grub

@@ -23,7 +23,7 @@ New Features
 -------------
 * Android Thermal HAL and Thermal Manager Service 
 * Audio Solution based on HDA
-* Integrated Sensor Hub Enablemenent supporting Android Defined Sensors
+* Integrated Sensor Hub Enablement supporting Android Defined Sensors
 * OTA Android Update from USB Disk
 * Bluetooth Control from Android in VM 
 * HDMI Audio Output Support 
@@ -91,7 +91,7 @@ Known Issues
 * Audio is not routing to 3.5mm Headset for ALC256 audio codec
 * Front view camera is not having mirror Image preview 
 * Hotplug support for USB Camera doesn't work
-* Blue Screen observed while switching from between Front and Rear Camera (occurence - randomn)
+* Blue Screen observed while switching from between Front and Rear Camera (occurrence  - random)
 
 Validation Results
 ------------------

@@ -127,8 +127,8 @@ Tools/Configuration
 Helpful Hints / Links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
-* Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
-* Manifest Link :
+* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.23_A10.xml
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 * Steps To build the host kernel for this Manifest
     * Sync the manifest from the above Manifest link

@@ -14,6 +14,99 @@ Releases
    :local:
    :depth: 1
 
+CIC_00.20.02.23_A09
+======================
+
+* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+This release is supported on CML NUC - NUC10i7FN* Celadon in Container.
+
+New Features
+-------------
+
+* Debian package release with Adaptive Installation Script support
+* Support android reboot in cic-monitor service
+* Klocwork issue fixes
+* Support for multi window display
+* Camera back and front switching implementation
+
+Existing Features
+-----------------
+
+* HDMI display support
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Video Codec support on celadon
+* Sdcardfs filesystem support enabled
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* SDHCI host controller is enabled
+* eMMC / SATA / NVMe storage media supported
+* Generic storage HAL supported
+* Vendor WiFi hal integrated
+* Battery Indicator enabled
+* From storage, Sdcardfs filesystem support, eMMC 5.1 controller driver support, eMMC Storage support enabled
+* Mesa upgraded to 19.3.3
+* Following features added on AOSP side :
+    * Support host shortcut for android apps
+    * Support copy and paste feature between AIC and Host
+    * Support multi-user data isolation
+    * Add cic monitor service to support shutdown and reboot
+
+Known Issues
+-------------
+* Trusty is not supported due to conflict in BIOS.
+* Memory allocation doesn't show for graphics('EGL mtrack or Gfx).
+* Unable to capture photo and video after hot-plug.
+* Camera flip icon is displayed after hotplug.
+* GPU Overdraw options having Blue Screen
+* Device is going down while running CTS
+* On Security enabled cic, adb install / playstore download are the only options for 3rd party apk installation.
+* After connecting Wi-Fi in Android Container adb over emulator does not work and stability KPI-1 is blocked as WIFI on/off will disconnect adb over WIFI
+
+Validation Results
+------------------
+
+This |C| build has been validated on CML NUC - NUC10i7FN* in the following function domains, for both
+secure & non-secure.
+
+  ======================== =======
+  Test Case                Results
+  ======================== =======
+  Image Flash               Pass
+  System Boot Up            Pass
+  Touch Screen              Pass
+  Basic Video Playback      Pass
+  Basic Audio Playback      Pass
+  Navigation bar            Pass
+  UI Display                Pass
+  Wifi [Host]               Pass
+  Network [Wifi/Ethernet]   Pass
+  Multi camera              Pass
+  Screen lock               Pass
+  Docker commands           Pass
+  adb[USB]                  Pass
+  adb[Ethernet]             Pass
+  BT [Host]                 Pass
+  SE-Policy                 Pass
+  ======================== =======
+
+Tools/Configuration
+-------------------
+* Docker version      : 18.09.2
+* Host Ubuntu         : 18.04
+* Host Kernel Version : 5.4.42 [With SELinux enabled]
+
+Helpful Hints / Links
+---------------------
+
+* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
+* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
+* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.02.23_A09.xml
+* Binary Link   : <NA>
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+
 CIV_00.20.02.23_A10
 ======================
 

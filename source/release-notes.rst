@@ -82,6 +82,7 @@ Existing Features
 
 Known Issues
 -------------
+* When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.   
 * Noise heard in the background of the recorded file when recorded over 3.5mm headset
 * Camera Preview is lost while switching between dual and single mode
 * Camera Preview is not available when USB camera is connected after Android is Launched through VM 

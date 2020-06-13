@@ -86,7 +86,6 @@ secure & non-secure.
   Multi camera              Pass
   Screen lock               Pass
   Docker commands           Pass
-  adb[USB]                  Pass
   adb[Ethernet]             Pass
   BT [Host]                 Pass
   SE-Policy                 Pass

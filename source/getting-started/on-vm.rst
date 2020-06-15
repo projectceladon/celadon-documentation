@@ -171,7 +171,7 @@ Reboot to Android UI
 A script :file:`start_android_qcow2.sh` is developed to facilitate the CiV images
 booting process. However, before launching the script to boot to the Android UI,
 you may need to edit the CiV image filename in the script, as the default image
-file `android.qcow2` is hard-coded in the script:
+file :file:`android.qcow2` is hard-coded in the script:
 
 .. code-block:: bash
 
@@ -254,6 +254,34 @@ in the Android VM:
          -device usb-host,vendorid=0x14cd,productid=0x125c \
          $bt_passthrough \
          ...
+
+Launching with SD card
+======================
+
+In case your hardware platform supports SD cards through the :abbr:`SDHCI
+(Secure Digital Host Controller Interface)` controller, you can enable
+SDHCI mediation by adding :command:`--sdonly` or :command:`--sdemmc-coexist`
+argument while invoking the :file:`start_android_qcow2.sh` script if the
+SD card is present in the slot. The argument :command:`--sdemmc-coexist`
+is used if the SDHCI controller supports both SD and eMMC cards, and
+the SD card partiton is present on the :file:`/dev/mmcblk1p1` device,
+or :command:`--sdonly` should be used, and the SD card is present on the
+:file:`/dev/mmcblk0p1` device.
+
+With the following command, the SD card interface will be mediated to the
+Android guest OS, and Android will mount the SD card on boot.
+The external SD card mount is validated with sdcardfs file system and the
+mount point is available in the standard UI interfaces like file explorer,
+storage settings etc.
+
+.. code-block:: bash
+
+    $ sudo -E ./scripts/start_android_qcow2.sh --sdonly
+
+.. note::
+    #. This option should be given only if SD card is present in the slot.
+    #. Do not specify :command:`--usb-host-passthrough` argument together
+       with the SD card options, or the SD card won't be operational.
 
 Audio pass-through option
 =========================

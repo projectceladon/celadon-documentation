@@ -90,8 +90,9 @@ Known Issues
 * All the USB peripheral devices has to be connected before the VM is launched 
 * Android UI is not displayed if we use EDP display
 * Audio is not routing to 3.5mm Headset for ALC256 audio codec
-* Hotplug support for USB Camera doesn't work
 * Volume Control using the Audio Peripherals like USB headset and 3.5mm Headset is not working 
+* Power Button Long Press is not implemented , only short press and very long button press
+* Userspace Fastboot functionality is not implemented in this release 
 
 Validation Results
 ------------------

@@ -22,6 +22,12 @@ CIV_00.20.02.24_A10
 
 New Features
 -------------
+* Android key Input Manager Framework is implemented for Power & Volume buttons
+* Integrated Sensor Hub Enablement for Android Supported Sensors
+* Ethernet Wired Network Bridge 
+
+Existing Features
+-----------------
 * Android Thermal HAL and Thermal Manager Service
 * Audio Solution based on HDA
 * OTA Android Update from USB Disk
@@ -35,9 +41,6 @@ New Features
 * File Sharing between Guest OSes
 * SDHCI mediation enabled and supported SD card
    * CIV launch script for SD Card: sudo -E ./start_android_qcow2.sh --sdonly
-
-Existing Features
------------------
 * Graphics Memory Allocator (Gralloc) 1.0
 * Graphics GVT-g and GVT-d support
 * HDMI display support
@@ -84,10 +87,12 @@ Existing Features
 Known Issues
 -------------
 * When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
-* Camera Preview is not available when USB camera is connected after Android is Launched through VM
+* All the USB peripheral devices has to be connected before the VM is launched 
 * Android UI is not displayed if we use EDP display
 * Audio is not routing to 3.5mm Headset for ALC256 audio codec
 * Hotplug support for USB Camera doesn't work
+* Volume Control using the Audio Peripherals like USB headset and 3.5mm Headset is not working 
+
 
 Validation Results
 ------------------

@@ -84,14 +84,10 @@ Existing Features
 Known Issues
 -------------
 * When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
-* Noise heard in the background of the recorded file when recorded over 3.5mm headset
-* Camera Preview is lost while switching between dual and single mode
 * Camera Preview is not available when USB camera is connected after Android is Launched through VM
 * Android UI is not displayed if we use EDP display
 * Audio is not routing to 3.5mm Headset for ALC256 audio codec
-* Front view camera is not having mirror Image preview
 * Hotplug support for USB Camera doesn't work
-* Blue Screen observed while switching from between Front and Rear Camera (occurrence  - random)
 
 Validation Results
 ------------------

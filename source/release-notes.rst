@@ -93,7 +93,6 @@ Known Issues
 * Hotplug support for USB Camera doesn't work
 * Volume Control using the Audio Peripherals like USB headset and 3.5mm Headset is not working 
 
-
 Validation Results
 ------------------
 

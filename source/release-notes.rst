@@ -73,7 +73,6 @@ Existing Features
 
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
-* Art-extension is enabled
 * Sdcardfs filesystem support enabled
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * Generic storage HAL supported

@@ -29,6 +29,7 @@ New Features
 Existing Features
 -----------------
 * Android Thermal HAL and Thermal Manager Service
+* BZIP2 performance improvements 
 * Audio Solution based on HDA
 * OTA Android Update from USB Disk
 * Bluetooth Control from Android in VM

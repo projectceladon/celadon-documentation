@@ -97,7 +97,7 @@ Known Issues
     * Application Crash
     * Capture and Recording issue which makes application hang 
     * Camera Preview becomes green
-        * Solution : Needs application restart (close and open application ) to work properly.
+    * Solution : Needs application restart (close and open application ) to work properly.
 
 
 Validation Results

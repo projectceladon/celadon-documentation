@@ -94,7 +94,7 @@ Known Issues
 * Power Button Long Press is not implemented , only short press and very long button press
 * Userspace Fastboot functionality is not implemented in this release 
 * Sudden removal of USB camera can lead application crash\capture or recording not works\Preview becomes green etc.
-  * Solution : Needs application restart (close and open application ) to work properly.
+    * Solution : Needs application restart (close and open application ) to work properly.
 
 
 Validation Results

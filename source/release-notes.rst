@@ -93,8 +93,11 @@ Known Issues
 * Volume Control using the Audio Peripherals like USB headset and 3.5mm Headset is not working 
 * Power Button Long Press is not implemented , only short press and very long button press
 * Userspace Fastboot functionality is not implemented in this release 
-* Sudden removal of USB camera can lead application crash,capture or recording not works\Preview becomes green etc.
-    * Solution : Needs application restart (close and open application ) to work properly.
+* USB Hotplug of camera can lead to
+    * Application Crash
+    * Capture and Recording issue which makes application hang 
+    * Camera Preview becomes green
+        * Solution : Needs application restart (close and open application ) to work properly.
 
 
 Validation Results

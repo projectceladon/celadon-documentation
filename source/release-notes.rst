@@ -139,8 +139,6 @@ Helpful Hints / Links
 * Binary Link : https://github.com/projectceladon/celadon-binary/blob/master/CIV_00.20.02.24_A10/caas-releasefiles-userdebug.tar.gz
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 * Steps To build the host kernel for this Manifest
-    * Sync the manifest from the above Manifest link
-    * Build the source code and caas-releasefiles-userdebug.tar.gz will be generated
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
     * cd patches/kernel/lts2019-chromium

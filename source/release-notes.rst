@@ -20,7 +20,7 @@ CIV_00.20.02.24_A10
 
 * This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM.
 
-New Features (Additional Features wrt to Previous CIV Manifest Release - CIV_00.20.02.23_A10)
+New Features (Additional Features in comparison to Previous CIV Manifest Release - CIV_00.20.02.23_A10)
 --------------------------------------------------------------------------------------------
 * Android key Input Manager Framework is implemented for Power & Volume buttons
 * Integrated Sensor Hub Enablement for Android Supported Sensors

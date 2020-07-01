@@ -98,7 +98,7 @@ Known Issues
     * Capture and Recording issue which makes application hang 
     * Camera Preview becomes green
     * Solution : Needs application restart (close and open application ) to work properly.
-
+ 
 
 Validation Results
 ------------------
@@ -133,8 +133,8 @@ Tools/Configuration
 
 Helpful Hints / Links
 ---------------------
-* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
-* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm
+* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
+* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.24_A10.xml
 * Binary Link : https://github.com/projectceladon/celadon-binary/blob/master/CIV_00.20.02.24_A10/caas-releasefiles-userdebug.tar.gz
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.

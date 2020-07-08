@@ -19,7 +19,7 @@ Prerequisites
 *************
 
 * A |NUC| with 5th Generation or newer Intel Core Processors.
-* Ubuntu 18.04.3 or later version preinstalled which runs Linux\* kernel
+* Ubuntu 20.04 (Focal Fossa) preinstalled which runs Linux\* kernel
   version 5.0.0 or above.
 
   .. note::
@@ -50,12 +50,12 @@ Prepare the host environment
 Set up QEMU and Intel GVT technology
 ====================================
 
-The host device that launches the virtual machine requires Ubuntu 18.04.
+The host device that launches the virtual machine requires Ubuntu 20.04.
 To simpify the preparation works, a helper script :file:`setup_host.sh` is
 provided.
 The script re-builds the :file:`OVMF.fd` firmware and `QEMU`_ emulator
 from source depending on the target graphics virtualization technology,
-and installs the required software on Ubuntu 18.04 for running
+and installs the required software on the installed Ubuntu system for running
 |C| in a VM with QEMU.
 
 Download and extract release package(`caas-releasefiles-<$buildvariant>.tar.gz`)

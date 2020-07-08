@@ -55,8 +55,9 @@ Set up Security-Enhanced Linux (SELinux)
 ========================================
 
 #. On the target device, CiC currently requires Ubuntu 18.04.3 or later
-   running `SELinux`_ module enabled Linux\* kernel. Though SELinux module
-   is enabled in the kernel of Ubuntu 18.04.3 by default, you have to hook
+   running `SELinux`_ module enabled Linux\* kernel, Ubuntu 20.04 (Focal Fossa)
+   is recommended. Though SELinux module
+   may be enabled in the Ubuntu kernels by default, you have to hook
    the module to the kernel through the Linux Security Module (LSM) framework.
    The following command adds the required kernel command line option to
    the configuration file template :file:`/etc/default/grub` of GRUB bootloader,

@@ -14,7 +14,7 @@ Prerequisites
 *************
 
 * A 64-bit development workstation running Ubuntu* 18.04 (Bionic Beaver)
-  operating system.
+  operating system or later.
 
 * Around 350GB of free disk space on your workstation is required to checkout the
   source code and to store the build artifacts.
@@ -159,15 +159,19 @@ Build |C| in VM image
    .. code-block:: bash
 
        $ lunch caas-userdebug
-       $ make SPARSE_IMG=true flashfiles -j $(nproc)
+       $ make BUILD_CPU_ARCH=kabylake flashfiles -j $(nproc)
 
    .. note::
-      The *-j $(nproc)* argument instructs the builder to compile the source
-      code with parallel tasks. The generated kernelflinger executables
-      .ZIP file
-      (:file:`out/target/product/caas/caas-flashfiles-eng.${USER}.zip`)
-      is available after the build. You can refer to :ref:`caas-on-vm`
-      section to prepare the host environment and boot the CiV image with QEMU.
+      #. The *-j $(nproc)* argument instructs the builder to compile the source
+         code with parallel tasks. The generated kernelflinger executables
+         .ZIP file
+         (:file:`out/target/product/caas/caas-flashfiles-eng.${USER}.zip`)
+         is available after the build. You can refer to :ref:`caas-on-vm`
+         section to prepare the host environment and boot the CiV image with QEMU.
+      #. The ':makevar:`BUILD_CPU_ARCH`' variable instructs the builder to
+         generate images that leverage `AVX`_ and `AVX2`_ instructions on
+         the target device. It's recommended to specify ':makevar:`BUILD_CPU_ARCH=kabylake`'
+         while building the images for `Comet Lake`_ platform.
 
 Build |C| in Container with Android 9
 *************************************
@@ -249,3 +253,7 @@ Build |C| in Container package
       (:file:`out/target/product/cic/cic-aic-eng.${USER}.<time code>.tar.gz`)
       is available after the build. You can follow :ref:`deploy-cic-on-target` of
       this guide to deploy and start the CiC container on the target device.
+
+.. _AVX:    https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions
+.. _AVX2:   https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2
+.. _Comet Lake: https://en.wikipedia.org/wiki/Comet_Lake

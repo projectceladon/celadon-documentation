@@ -5,11 +5,9 @@ Run |C| in a virtual machine
 
 This page explains what you'll need to run |C| in a virtual machine.
 
-Running |C| in VMs requires `Intel Graphics Virtualization Technology`_ (GVT)
-to deliver excellent virtual GPU performance in VMs. Depending on your
-applications, you can run :abbr:`CiV (Celadon in VM)` using Intel® GVT-g
-technology (default), or allowing for GPU passthrough to a single Android
-guest VM through Intel® GVT-d technology.
+Depending on your applications, you can run :abbr:`CiV (Celadon in VM)` using
+Intel® GVT-g technology, or allowing for GPU passthrough to a single Android
+guest VM through Intel® GVT-d technology, or VirtIO GPU, or pure software rendering.
 
 .. contents::
    :local:
@@ -70,31 +68,14 @@ packages.
         $ chmod +x scripts/setup_host.sh
 
 Launch the script with no argument to set up the environment for running
-CiV using Intel GVT-g technology:
+CiV using Intel GVT technology:
 
      .. code-block:: bash
 
         $ sudo -E ./scripts/setup_host.sh
 
-Or, pass :command:`--gvtd` argument to the script for setting up an
-Intel GVT-d environment:
-
-     .. code-block:: bash
-
-        $ sudo -E ./scripts/setup_host.sh --gvtd
-
 During the installation, you will be prompted by some questions to confirm the
 changes to the packages, it's safe to respond :kbd:`y` to all of them.
-
-.. note::
-    After setting up the Intel GVT-d environment, your Ubuntu host is
-    configured to disable GUI desktop on next boot. It's required to run
-    the host OS in text mode, so that the GPU can be pass-through to the
-    Android VM. To start GUI destkop temporary, run the following command:
-
-    .. code-block:: bash
-
-       $ sudo systemctl start gdm3
 
 Use |C| kernel
 ==============
@@ -165,64 +146,127 @@ a *qcow2* formatted virtual disk.
    Now we get the CiV virtual disk :file:`android.qcow2` under the current
    directory.
 
-Reboot to Android UI
-********************
+Boot to Android UI
+******************
 
-A script :file:`start_android_qcow2.sh` is developed to facilitate the CiV images
-booting process. However, before launching the script to boot to the Android UI,
-you may need to edit the CiV image filename in the script, as the default image
-file :file:`android.qcow2` is hard-coded in the script:
+A script `start_civ.sh` is developed to facilitate the CiV images
+booting process. It supports various options:
 
 .. code-block:: bash
 
-    #!/bin/bash
+    start_civ.sh [-h] [-m] [-c] [-g] [-d] [-f] [-v] [-s] [-p] [-b] [-e] [--passthrough-pci-usb] [--passthrough-pci-audio] [--passthrough-pci-eth] [--passthrough-wifi] [--thermal-mediation] [--battery-mediation] [--guest-pm-control] [--guest-time-keep]
 
-    work_dir=$PWD
-    caas_image=$work_dir/android.qcow2
-    ...
+.. list-table::
+   :widths: 35 78
+   :header-rows: 0
+
+   * - :kbd:`-h`
+     - show this help message.
+
+   * - :kbd:`-m`
+     - specify guest memory size, eg. "-m 4G". Default is 2G if this is not specified.
+
+   * - :kbd:`-c`
+     - specify guest cpu number, eg. "-c 4". Default is 1 if this is not specified.
+
+   * - :kbd:`-g`
+     - specify guest graphics mode, current support **VirtIO | GVT-g | GVT-d | QXL**.
+
+       VirtIO GPU, eg. "-g VirtIO"
+
+       QXL VGA, eg. "-g QXL"
+
+       GVT-g, eg. "-g GVT-g,uuid=4ec1ff92-81d7-11e9-aed4-5bf6a9a2bb0a", if uuid is not specified, a hardcoded uuid will be used
+
+       GVT-d: romfile is supported for GVT-d, eg. "-g GVT-d,romfile=/path/to/romfile", romfile is optional.
+
+       The default value is VirtIO if this parameter is not specified.
+
+   * - :kbd:`-d`
+     - specify guest virtual disk image, eg. "-d /path/to/android.img". Default is "$PWD/android.qcow2" if this is not specified.
+
+   * - :kbd:`-f`
+     - specify guest firmware image, eg. "-d /path/to/ovmf.fd". Default is "$PWD/OVMF.fd" if this is not specified.
+
+   * - :kbd:`-v`
+     - specify guest vsock cid, eg. "-v 4". Default is 3.
+
+   * - :kbd:`-s`
+     - specify guest share folder path, eg. "-s /path/to/share/with/guest".
+
+   * - :kbd:`-p`
+     - specify host forward ports, current support adb/fastboot, eg. "-p adb=6666,fastboot=7777". Default is adb=5555,fastboot=5554
+
+   * - :kbd:`-b`
+     - specify host block device as guest virtual device, eg." -b /dev/mmcblk0 "
+
+   * - :kbd:`-e`
+     - specify extra qemu cmd, eg. "-e "-full-screen -monitor stdio""
+
+   * - :kbd:`--passthrough-pci-usb`
+     - passthrough USB PCI bus to guest.
+
+   * - :kbd:`--passthrough-pci-audio`
+     - passthrough Audio PCI bus to guest.
+
+   * - :kbd:`--passthrough-pci-eth`
+     - passthrough Ethernet PCI bus to guest.
+
+   * - :kbd:`--passthrough-pci-wifi`
+     - passthrough WiFi PCI bus to guest.
+
+   * - :kbd:`--thermal-mediation`
+     - enable thermal mediation.
+
+   * - :kbd:`--battery-mediation`
+     - enable battery mediation.
+
+   * - :kbd:`--guest-pm-control`
+     - allow guest control host PM.
+
+   * - :kbd:`--guest-time-keep`
+     - reflect guest time setting on Host OS.
+
 
 Intel GVT option
 ================
 
-Enter the following commands to run the script :file:`start_android_qcow2.sh` with
+Enter the following commands to run the script `start_civ.sh` with
 root permissions to facilitate the booting of CiV images with QEMU.
-The script utilizes Intel GVT-g for graphics virtualization by default,
-you can pass :command:`--gvtd` argument to the script to run the CiV images
-using Intel GVT-d technology.
 
 .. code-block:: bash
 
     $ cd ~/civ
     # The following command runs CiV using Intel GVT-g
-    $ sudo -E ./scripts/start_android_qcow2.sh
+    $ sudo -E ./scripts/start_civ.sh -g GVT-g
 
 .. code-block:: bash
 
     # The following command runs CiV using Intel GVT-d, and passes
     # all the attached USB devices such as keyboard, mouse to the VM.
-    $ sudo -E ./scripts/start_android_qcow2.sh --gvtd --usb-host-passthrough
+    $ sudo -E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
 
-xHCI pass-through option
-========================
+USB PCI controller pass-through option
+======================================
 
 You can pass-through not only the GPU but also the USB host controller (xHCI)
 to the Android VM, in order to attach all the connected USB devices
 (e.g. camera, USB thumb drive) to the VM.
-By passing :command:`--usb-host-passthrough` argument to the
-:file:`start_android_qcow2.sh` script, all the USB devices connected to
-the platform get automatically enumerated inside the Android VM:
+By passing :command:`--passthrough-pci-usb` argument to the `start_civ.sh` script,
+all the USB devices connected to the platform get automatically enumerated inside
+the Android VM:
 
 .. code-block:: bash
 
     # The following command pass-through the xHCI to the VM
-    $ sudo -E ./scripts/start_android_qcow2.sh --usb-host-passthrough
+    $ sudo -E ./scripts/start_civ.sh --passthrough-pci-usb
 
 .. warning::
     All the USB devices, including keyboard and mouse, will be disconnected
     from the host OS and get attached to the Android VM.
 
 An alternative methodology is to passthrough only selected USB devices
-to the Android VM by modifying the :file:`start_android_qcow2.sh` script.
+to the Android VM by modifying the `start_civ.sh` script.
 For example, to pass-through the USB SD card reader in the following list,
 whose vendorID and productID are **14cd** and **125c** respectively:
 
@@ -236,37 +280,21 @@ whose vendorID and productID are **14cd** and **125c** respectively:
         Bus 001 Device 004: ID 1c4f:0002 SiGma Micro Keyboard TRACER Gamma Ivory
         Bus 001 Device 008: ID 14cd:125c Super Top SD card reader
 
-Add a new setting to the "*common_usb_device_passthrough*" list in the
-:file:`start_android_qcow2.sh` script as below, to enumerate the device
+Execute `start_civ.sh` script as below, to enumerate the device
 in the Android VM:
 
     .. code-block:: none
 
-        ...
-        common_usb_device_passthrough="\
-         -device qemu-xhci,id=xhci,addr=0x8 \
-         `/bin/bash $usb_switch` \
-         -device usb-host,vendorid=0x03eb,productid=0x8a6e \
-         -device usb-host,vendorid=0x0eef,productid=0x7200 \
-         -device usb-host,vendorid=0x222a,productid=0x0141 \
-         -device usb-host,vendorid=0x222a,productid=0x0088 \
-         # Pass-through specific USB device as below       \
-         -device usb-host,vendorid=0x14cd,productid=0x125c \
-         $bt_passthrough \
-         ...
+        sudo -E ./scripts/start_civ.sh -e "-device usb-host,vendroidid=0x14cd,productid=0x125c"
+
 
 Launching with SD card
 ======================
 
 In case your hardware platform supports SD cards through the :abbr:`SDHCI
 (Secure Digital Host Controller Interface)` controller, you can enable
-SDHCI mediation by adding :command:`--sdonly` or :command:`--sdemmc-coexist`
-argument while invoking the :file:`start_android_qcow2.sh` script if the
-SD card is present in the slot. The argument :command:`--sdemmc-coexist`
-is used if the SDHCI controller supports both SD and eMMC cards, and
-the SD card partiton is present on the :file:`/dev/mmcblk1p1` device,
-or :command:`--sdonly` should be used, and the SD card is present on the
-:file:`/dev/mmcblk0p1` device.
+SDHCI mediation by adding :command:`-b <sdcard block device>` option argument while
+invoking the `start_civ.sh` script if the SD card is present in the slot.
 
 With the following command, the SD card interface will be mediated to the
 Android guest OS, and Android will mount the SD card on boot.
@@ -276,23 +304,23 @@ storage settings etc.
 
 .. code-block:: bash
 
-    $ sudo -E ./scripts/start_android_qcow2.sh --sdonly
+    $ sudo -E ./scripts/start_civ.sh -b /dev/mmcblk0p1
 
 .. note::
     #. This option should be given only if SD card is present in the slot.
-    #. Do not specify :command:`--usb-host-passthrough` argument together
+    #. Do not specify :command:`--passthrough-pci-usb` argument together
        with the SD card options, or the SD card won't be operational.
 
 Audio pass-through option
 =========================
 
-In Intel GVT-d setup, the audio controller can be passd through to the guest
-by adding :command:`--audio-passthrough` argument while invoking the
-:file:`start_android_qcow2.sh` script, the host then has no control over it.
+The audio controller can be passd through to the guest
+by adding :command:`--passthrough-pci-audio` argument while invoking the
+`start_civ.sh` script, the host then has no control over it.
 
 .. code-block:: bash
 
-    $ sudo -E ./scripts/start_android_qcow2.sh --gvtd --usb-host-passthrough --audio-passthrough
+    $ sudo -E ./scripts/start_civ.sh --passthrough-pci-audio
 
 .. note::
     With the above setup, PCI controllers, which are part of the same IOMMU
@@ -316,8 +344,6 @@ by adding :command:`--audio-passthrough` argument while invoking the
 .. _Intel Graphics Virtualization Technology: https://01.org/igvt-g
 
 .. _QEMU: https://www.qemu.org/
-
-.. _start_android_qcow2.sh: https://raw.githubusercontent.com/projectceladon/device-androidia-mixins/master/groups/device-specific/caas/start_android_qcow2.sh
 
 .. _NUC7i5DNHE: https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html
 

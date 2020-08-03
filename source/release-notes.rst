@@ -40,10 +40,10 @@ Existing Features
 * Battery and Thermal mediation support for Android guest OS
    * Battery percentage of host os will be propagated to Android guest.
    * Thermal temperature information will be sent to Android for graceful shutdown of guest
-   * CIV launch script: sudo -E ./start_android_qcow2.sh --enable-vsock
+   * CIV launch script: sudo -E ./scripts/start_android_qcow2.sh --enable-vsock
 * File Sharing between Guest OSes
 * SDHCI mediation enabled and supported SD card
-   * CIV launch script for SD Card: sudo -E ./start_android_qcow2.sh --sdonly
+   * CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh --sdonly
 * Graphics Memory Allocator (Gralloc) 1.0
 * Graphics GVT-g and GVT-d support
 * HDMI display support
@@ -90,11 +90,11 @@ Known Issues
 -------------
 * When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
 * All the USB peripheral devices has to be connected before the VM is launched
-* Android UI is not displayed if we use EDP display
-* Audio is not routing to 3.5mm Headset after USB Headset reconnection.
-* Volume Control using the Audio Peripherals like USB headset and 3.5mm Headset is not working
 * Power Button Long Press is not implemented , only short press and very long button press
 * Userspace Fastboot functionality is not implemented in this release
+* Chrome Browser crashed while deleting multiple history records
+* USB Disk is detected as SD Card in android and OTA update fails when we select U Disk
+* Android adoptable storage developer feature virtual sdcard format never completes
 * USB Hotplug of camera can lead to
     * Application Crash
     * Capture and Recording issue which makes application hang

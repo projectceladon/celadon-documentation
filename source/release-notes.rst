@@ -27,9 +27,7 @@ New Features
 -------------
 
 * multi window support with bug fixes
-* Add HostKeymaster support
 * Enable 3.5mm Jack detection on CML NUC
-* Add socket IPC support for cic-keymaster
 * Enable Android NN HAL to interface with Openvino in CiC/CiV
 * Enable multi-instances support in cic target
 

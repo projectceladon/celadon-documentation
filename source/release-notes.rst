@@ -87,7 +87,6 @@ Known Issues
 * android.security.cts.BitmapFactorySecurityTests#test_android_bug_156261521 failed
 * android.security.cts.ActivityManagerTest#testActivityManager_attachNullApplication failed
 * After connecting Wi-Fi in Android Container adb over emulator does not work and stability KPI-1 is blocked as WIFI on/off will disconnect adb over WIFI
-* Don’t Suspend / press power button on cml host. Device cant be recovered until rebooted.
 * Trusty is not supported due to conflict in BIOS.
 * On Security enabled cic, adb install / playstore download are the only options for 3rd party apk installation.
 

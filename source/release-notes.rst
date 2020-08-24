@@ -186,6 +186,7 @@ Existing Features
 * Android Time keeping with Host OS
 * Product Information to Guest OS
 * ODM partition for vendor customizations
+* Only logitech C922 pro stream webcam is supported for all camera related testing
 * Video Codec support on celadon
 
   **Decoder**
@@ -450,6 +451,7 @@ Existing Features
 * Power Management - Shutdown and Reboot
 * OTA offline update
 * Ethernet Wired Network Bridge is enabled
+* Only logitech C922 pro stream webcam is supported for all camera related testing
 * Android Time keeping with Host OS
 * Product Information to Guest OS
 * ODM partition for vendor customizations
@@ -678,6 +680,7 @@ Existing Features
 * To passthrough USB host controller in CML NUC, run the CIV launch script like this:
   sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
 * Power Management - Shutdown and Reboot
+* Only logitech C922 pro stream webcam is supported for all camera related testing
 * OTA offline update
 * Ethernet Wired Network Bridge is enabled
 * Android Time keeping with Host OS
@@ -906,6 +909,7 @@ Existing Features
     * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled
 * Sdcardfs filesystem support enabled
+* Only logitech C922 pro stream webcam is supported for all camera related testing
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * Generic storage HAL supported
 * SATA emulation is supported
@@ -1106,6 +1110,7 @@ Existing Features
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * SDHCI host controller is enabled
 * eMMC and SATA storage media supported
+* Only logitech C922 pro stream webcam is supported for all camera related testing
 * Generic storage HAL supported
 * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
 

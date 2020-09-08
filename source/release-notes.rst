@@ -21,11 +21,12 @@ CIV_00.20.03.36_A10
 
 New Features
 -------------
-* Power Management - Suspend,Resume
-* ADB on xHCI DbC for Android USB Host only systems
+
 
 Existing Features
 -----------------
+* Power Management - Suspend,Resume
+* ADB on xHCI DbC for Android USB Host only systems
 * Android key Input Manager Framework is implemented for Power & Volume buttons
 * Integrated Sensor Hub Enablement for Android Supported Sensors
 * Ethernet Wired Network Bridge

@@ -22,7 +22,6 @@ CIV_00.20.03.36_A10
 New Features
 -------------
 * Trusty Hardware Seed binding
-* 
 
 Existing Features
 -----------------

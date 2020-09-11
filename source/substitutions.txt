@@ -1,6 +1,6 @@
 .. |C|              replace:: Celadon
 .. |Movidius|       replace:: Intel Movidius
-.. |Movidius-attr|  replate:: Intel® Movidius™
+.. |Movidius-attr|  replace:: Intel® Movidius™
 .. |NN|             replace:: Neural Network
 .. |NUC|            replace:: Intel NUC
 .. |NUC-attr|       replace:: Intel® NUC

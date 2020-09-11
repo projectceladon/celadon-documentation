@@ -1,6 +1,10 @@
 .. |C|              replace:: Celadon
 .. |Movidius|       replace:: Intel Movidius
+.. |Movidius-attr|  replate:: Intel® Movidius™
 .. |NN|             replace:: Neural Network
 .. |NUC|            replace:: Intel NUC
+.. |NUC-attr|       replace:: Intel® NUC
 .. |PFT|            replace:: Intel Platform Flash Tool
+.. |PFT-attr|       replace:: Intel® Platform Flash Tool
 .. |SoC|            replace:: Intel SoC Watch
+.. |SoC-attr|       replace:: Intel® SoC Watch

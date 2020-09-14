@@ -14,4 +14,5 @@ Machines, and Containers. This guide also explains how to contribute patches.
    as-service
    build-source
    submit-patch
+   host-os-hardening
    how-to

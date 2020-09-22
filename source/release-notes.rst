@@ -15,6 +15,135 @@ Releases
    :depth: 1
 
 
+CIC_01.20.03.36_A09
+======================
+
+* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+This release is supported on CML NUC - NUC10i7FN* Celadon in Container.
+
+Previous Release : CIC_00.20.03.31_A09
+
+New Features
+-------------
+* Metrics Discovery API (MDAPI) support in graphics driver
+* STS fix for android.security.cts.BitmapFactorySecurityTests#test_android_bug_156261521
+* STS fix for android.security.cts.ActivityManagerTest#testActivityManager_attachNullApplication
+* Fix for MultiCamera gives pop-up "USB hot plug detected" for USB HS and KB
+* Fix for cfc.desktop is not created after cic installation
+* Fix for Setting in camera application doesn't work after clicking on Surveillance Button
+* Fix for Android UI Doesn't launch after setup for 1st time with cfc in freshly install Ubuntu
+
+Existing Features
+-----------------
+
+* multi window support with bug fixes
+* Enable 3.5mm Jack detection on CML NUC
+* Enable Android NN HAL to interface with Openvino in CiC/CiV
+* Enable multi-instances support in cic target
+* Selinux and dm-verity features are enabled
+* Debian package release with Adaptive Installation Script support
+* Support android reboot in cic-monitor service
+* Klocwork issue fixes
+* Support for multi window display
+* Camera back and front switching implementation
+* HDMI display support
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Video Codec support on celadon
+* Sdcardfs filesystem support enabled
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* SDHCI host controller is enabled
+* eMMC / SATA / NVMe storage media supported
+* Generic storage HAL supported
+* Vendor WiFi hal integrated
+* Battery Indicator enabled
+* From storage, Sdcardfs filesystem support, eMMC 5.1 controller driver support, eMMC Storage support enabled
+* Mesa upgraded to 19.3.3
+* Following features added on AOSP side :
+    * Support host shortcut for android apps
+    * Support copy and paste feature between AIC and Host
+    * Support multi-user data isolation
+    * Add cic monitor service to support shutdown and reboot
+* Android Service Access, Clock/time-zone matches with host, keyboard matches with host, Screen zoom works, back button event propagation works fine
+* IPP lib integrated, & DEX2OAT optimization is enabled
+* Audio / Video streaming on RTP/RTSP works fine
+* USB camera hot plug and camera selection are enabled
+* memtrack works fine
+* Host input events (touchscreen) works fine
+* SOF-HDA support enabled
+* Enable File based encryption on secure flash.
+* Add HostKeymaster support.
+* Provide Settings screen to set ethernet proxy settings.
+* Fix for Audio is not routing over HDMI and USB headset.
+* Fix for CTS execution completion.
+* Fix for Bluetooth crash issue.
+
+Known Issues
+-------------
+* No FBE support for multi user
+* After changing resolution recorded video fallsback to default resolution
+* FIO_Sequential_Read_SSD data has -36.03% regression
+* Android Ui not launched after adb reboot when screen lock set
+* Test cases are failing in VtsHalWifiSupplicant modules
+* WiFi status bar shows ON default
+* Unable to control android volume using USB headset volume buttons.
+* Getting Error "transfer error: secure_mkdirs failed: Operation not permitted" while running cts
+* android.security.cts.BitmapFactorySecurityTests#test_android_bug_156261521 failed
+* android.security.cts.ActivityManagerTest#testActivityManager_attachNullApplication failed
+* Stability KPI-1 is blocked as device goes offline while KPI run
+* Trusty is not supported due to conflict in BIOS.
+* On Security enabled cic, adb install / playstore download are the only options for 3rd party apk installation.
+
+Important Note
+--------------
+* To modify cpu cores usage : After Container start up run the command "sudo docker update --cpuset-cpus="0-11" android0_PID" , where android0_PID is the Docker PID of android instance.
+* Ensure Lvm2 & thin-provisioning-tools packages are installed.
+* Please ensure latest version of libjson-c is installed.
+
+Validation Results
+------------------
+
+This |C| build has been validated on CML NUC - NUC10i7FN* in the following function domains, for both
+secure & non-secure.
+
+  ======================== =======
+  Test Case                Results
+  ======================== =======
+  Image Flash               Pass
+  System Boot Up            Pass
+  Touch Screen              Pass
+  Basic Video Playback      Pass
+  Basic Audio Playback      Pass
+  Navigation bar            Pass
+  UI Display                Pass
+  Wifi [Host]               Pass
+  Network [Wifi/Ethernet]   Pass
+  Multi camera              Pass
+  Screen lock               Pass
+  Docker commands           Pass
+  adb[Ethernet]             Pass
+  BT [Host]                 Pass
+  SE-Policy                 Pass
+  ======================== =======
+
+Tools/Configuration
+-------------------
+* Docker version      : 18.09.2
+* Host Ubuntu         : 20.04
+* Host Kernel Version : 5.4.58 [SELinux config enabled in host kernel-config]
+
+Helpful Hints / Links
+---------------------
+
+* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
+* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
+* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_01.20.03.36_A09.xml
+* Binary Link   : https://github.com/projectceladon/celadon-binary/tree/master/CIC_01.20.03.36_A09
+
+
 CIC_00.20.03.31_A09
 ======================
 

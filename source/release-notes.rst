@@ -18,8 +18,9 @@ Releases
 CIC_01.20.03.36_A09
 ======================
 
-* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes.
+This is a Production release, that will, or could, be used in a production capacity.
 This release is supported on CML NUC - NUC10i7FN* Celadon in Container.
+If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Previous Release : CIC_00.20.03.31_A09
 
@@ -142,6 +143,7 @@ Helpful Hints / Links
 * Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
 * Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_01.20.03.36_A09.xml
 * Binary Link   : https://github.com/projectceladon/celadon-binary/tree/master/CIC_01.20.03.36_A09
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
 CIC_00.20.03.31_A09

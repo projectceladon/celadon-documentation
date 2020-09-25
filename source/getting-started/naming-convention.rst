@@ -23,10 +23,14 @@ The naming convention of a |C| release tag is:
         - ':command:`01`' represents the release reaches the platform exit criteria.
         - ':command:`02`' and onward represent sustenancing releases. The number is increased each time a sustenancing package is released.
 
-    * The *[Year]* field represents the exit criteria of the Year.
-    * The *[Quarter]* field represents the exit criteria of the Quarter.
-    * The *[Work Week]* field represents the exit criteria of the working week.
-    * The *[Android Dessert]* field represents the version of Android dessert on which the release is based.
+    * The *[Year]* field represents the Year when the agreed quality
+      criteria were met.
+    * The *[Quarter]* field represents the Quarter when the agreed quality
+      criteria were met.
+    * The *[Work Week]* field represents the Work week when the agreed
+      quality criteria were met.
+    * The *[Android Dessert]* field represents the version of Android
+      dessert on which the release is based.
 
     Examples:
 

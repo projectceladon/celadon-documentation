@@ -18,8 +18,8 @@ Releases
 CIC_01.20.03.36_A09
 ===================
 
-* This is a Pre-Production Release for evaluation and development purposes
-  and it cannot be used for production purposes.
+This is a Pre-Production Release for evaluation and development purposes
+and it cannot be used for production purposes.
 This release is supported on Comet Lake |NUC-attr| NUC10i7F Celadon in
 Container.
 

@@ -159,9 +159,8 @@ CIC_00.20.03.31_A09
 ======================
 
 * This is a Pre-Production Release for evaluation and development purposes
-  and it cannot be used for production purposes.
-This release is supported on Comet Lake |NUC| - NUC10i7FN Celadon in
-Container.
+  and it cannot be used for production purposes. This release is supported
+  on Comet Lake |NUC| - NUC10i7FN Celadon in Container.
 
 Previous release : CIC_00.20.02.24_A09
 
@@ -422,7 +421,7 @@ Helpful hints/links
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i *.deb
+    * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
@@ -440,9 +439,8 @@ CIC_00.20.02.24_A09
 ======================
 
 * This is a Pre-Production Release for evaluation and development purposes
-  and it cannot be used for production purposes.
-This release is supported on Comet Lake |NUC| NUC10i7F Celadon in
-Container.
+  and it cannot be used for production purposes. This release is supported
+  on Comet Lake |NUC| NUC10i7F Celadon in Container.
 
 Previous release : CIC_00.20.02.23_A09
 
@@ -649,7 +647,9 @@ Existing features
 * 9pfs based file transfer
 * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
   Keymaster 3.0
+
     * User guide:
+
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
@@ -723,7 +723,7 @@ Helpful hints/links
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i *.deb
+    * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
@@ -962,7 +962,7 @@ Helpful hints/links
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i *.deb
+    * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot 
         * sudo vim /etc/default/grub  
         * Comment out GRUB_TIMEOUT_STYLE=hidden
@@ -1123,7 +1123,9 @@ Existing features
 * 9pfs based file transfer
 * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
   Keymaster 3.0
+
     * User guide:
+
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
@@ -1387,10 +1389,13 @@ Tools/Configuration
 Helpful hints/links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
-* We can use the same CIV Q-MR0 image to flash on the KBL NUC and APL NUC as a Bare Metal <Lunch target caas-userdebug > 
-* We haven’t ever validated ‘adb over USB’ on Android 10 + NUC7 (KBL) CIV_01.20.01.12_A10 as a Bare Metal and we don’t support it
-  Please use below alternative
-    * Adb over Ethernet works
+* We can use the same CIV Q-MR0 image to flash on the Kaby Lake |NUC| and
+  Appollo Lake |NUC| as a Bare Metal <Lunch target caas-userdebug > 
+* We haven’t ever validated ‘adb over USB’ on Android 10 + NUC7 (KBL)
+  CIV_01.20.01.12_A10 as a Bare Metal and we don’t support it
+* Please use below alternative:
+
+    * ADB over Ethernet works
     * Please fall back to Android ‘P’  where adb over USB” works 
       https://github.com/projectceladon/celadon-documentation/blob/master/source/release-notes.rst#celadon-01-20-01-12-a09
 
@@ -2623,11 +2628,13 @@ Known issues
 ------------
 
 * UI Flicker observed in few Screens for example - Under AOSP settings .
-* Bluetooth file transfer fails in the first attempt after DUT reboot and it works fine once BT is reset
+* Bluetooth file transfer fails in the first attempt after DUT reboot and it
+  works fine once BT is reset
 * Lets Drive screen seen, on click of applications under "New User"
 * webM format video hangs during switch from full screen to normal 
-* If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
---------
+* If you plan to use Celadon in your product, please replace all the test
+  keys under device/intel/build/testkeys/ with your product key.
+
 
 Status
 -------

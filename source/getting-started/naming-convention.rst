@@ -38,9 +38,9 @@ The naming convention of a |C| release tag is:
     Release Tag               Comment
     -----------------------   -------
     CIV_00.19.04.51_A10       | represents an Android 10 based :abbr:`CIV (Celadon in VM)` release 
-                              | which met the Q4 quarterly exit criteria in 2019 ww51
+                              | which met the agreed quality criteria in 2019 Q4 WW51
     CIC_01.20.01.12_A09       | represents an Android 9 based :abbr:`CIC (Celadon in Container)` release
-                              | which met the platform exit criteria in 2020 ww12
-    CELADON_02.20.04.51_A09   | represents the first |C| sustenancing release based on Android 9
+                              | which met the platform exit criteria in 2020 Q1 ww12
+    CELADON_02.20.04.51_A09   | represents the first |C| sustenance release based on Android 9
                               | released on 2020 Q4 in ww51
     =======================   =======

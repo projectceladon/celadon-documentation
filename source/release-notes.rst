@@ -18,9 +18,10 @@ Releases
 CIC_01.20.03.36_A09
 ===================
 
-This is a Production release, that will, or could, be used in a production capacity.
-This release is supported on CML NUC - NUC10i7FN* Celadon in Container.
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+This is a Pre-Production Release for evaluation and development purposes
+and it cannot be used for production purposes.
+This release is supported on Comet Lake |NUC-attr| NUC10i7F Celadon in
+Container.
 
 Previous release : CIC_00.20.03.31_A09
 

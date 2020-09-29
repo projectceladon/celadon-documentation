@@ -131,8 +131,8 @@ Tools/Configuration
 -------------------
 * QEMU Version 4.2.0
 * Host Ubuntu 20.04
-* Host Kernel Version 5.4.50
-* Guest kernel 5.4.50
+* Host Kernel Version 5.4.58
+* Guest kernel 5.4.58
 
 Helpful Hints / Links
 ---------------------

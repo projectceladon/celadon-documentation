@@ -110,11 +110,6 @@ Known Issues
 *   Userspace Fastboot functionality is not implemented in this release
 *   Chrome Browser crashed while deleting multiple history records
 *   Android adoptable storage developer feature virtual sdcard format never completes
-*   USB Hotplug of camera can lead to
-    * Application Crash
-    * Capture and Recording issue which makes application hang
-    * Camera Preview becomes green
-    * Solution : Needs application restart (close and open application ) to work properly.
 
 
 Validation Results

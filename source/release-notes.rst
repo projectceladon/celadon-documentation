@@ -28,21 +28,15 @@ Existing Features
 -----------------
 * Trusty Hardware Seed binding
 * Power Management - Suspend,Resume
-* ADB on xHCI DbC for Android USB Host only systems
 * Android key Input Manager Framework is implemented for Power & Volume buttons
 * Integrated Sensor Hub Enablement for Android Supported Sensors
 * Ethernet Wired Network Bridge
 * Android Thermal HAL and Thermal Manager Service
 * BZIP2 performance improvements
 * Audio Solution based on HDA
-* OTA Android Update from USB Disk
 * Bluetooth Control from Android in VM
 * HDMI Audio Output Support
 * Virtio-gpu Support
-* Battery and Thermal mediation support for Android guest OS
-   * Battery percentage of host os will be propagated to Android guest.
-   * Thermal temperature information will be sent to Android for graceful shutdown of guest
-   * CIV launch script: sudo -E ./scripts/start_android_qcow2.sh --enable-vsock
 * File Sharing between Guest OSes
 * SDHCI mediation enabled and supported SD card
    * CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh --sdonly
@@ -60,7 +54,6 @@ Existing Features
 * To passthrough USB host controller in CML NUC, run the CIV launch script like this:
   sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
 * Power Management - Shutdown and Reboot
-* OTA offline update
 * Ethernet Wired Network Bridge is enabled
 * Android Time keeping with Host OS
 * Product Information to Guest OS
@@ -79,7 +72,6 @@ Existing Features
 
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
-* Sdcardfs filesystem support enabled
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * Generic storage HAL supported
 * SATA emulation is supported
@@ -92,14 +84,33 @@ Existing Features
 
 Known Issues
 -------------
-* When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
-* All the USB peripheral devices has to be connected before the VM is launched
-* Power Button Long Press is not implemented , only short press and very long button press
-* Userspace Fastboot functionality is not implemented in this release
-* Chrome Browser crashed while deleting multiple history records
-* USB Disk is detected as SD Card in android and OTA update fails when we select U Disk
-* Android adoptable storage developer feature virtual sdcard format never completes
-* USB Hotplug of camera can lead to
+*	Camera Preview doesn't show , unable to capture photo/record video
+*	During HFP Audio call , audio is not routed to BT headset via Hangouts[GVT-d and GVT-g]
+*	Device shutdown fail in thermal chamber.
+*	Not able to authorize device in user build as " allow usb debugging pop up disappear"
+*	Mouse and KB is not detecting after adb reboot
+*	Chrome Browser app crashes
+*	File-Based Encryption is failing & Encryption shows device not encrypted
+*	Chrome Browser crashed while deleting multiple history records
+*	3rd Display is blank in extend mode
+*	Android UI not Displaying in eDP Display after adb reboot.
+*	dEQP-VK(Vulkan) tests failed.
+*	Sluggish video playback observed for H.264 4K 60fps video file
+*	Noise heard when tap/seek is performed on seekbar during Video playback.
+*	Touch sound is very low while tapping on home / back button [USB Headset]
+*	Glitch observed in audio playback while doing pause/play operation.
+*	Audio is not heard until volume level 3
+*	Audio routing fails to be expected sync device.
+*	Audio is not recording with 3.5 mm Headset in gvt-d
+*	Device unable to enter in suspend after 1st attempt.
+*	Unable to get media volume with adb shell
+*	Not able set screen lock Pattern / Pin / Password 
+*   All the USB peripheral devices has to be connected before the VM is launched
+*   Power Button Long Press is not implemented , only short press and very long button press
+*   Userspace Fastboot functionality is not implemented in this release
+*   Chrome Browser crashed while deleting multiple history records
+*   Android adoptable storage developer feature virtual sdcard format never completes
+*   USB Hotplug of camera can lead to
     * Application Crash
     * Capture and Recording issue which makes application hang
     * Camera Preview becomes green

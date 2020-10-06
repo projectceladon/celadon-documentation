@@ -244,7 +244,6 @@ Known Issues
 * All the USB peripheral devices has to be connected before the VM is launched
 * Power Button Long Press is not implemented , only short press and very long button press
 * Userspace Fastboot functionality is not implemented in this release
-* Chrome Browser crashed while deleting multiple history records
 * USB Disk is detected as SD Card in android and OTA update fails when we select U Disk
 * Android adoptable storage developer feature virtual sdcard format never completes
 * USB Hotplug of camera can lead to
@@ -665,7 +664,6 @@ Known issues
 * All the USB peripheral devices has to be connected before the VM is launched
 * Power Button Long Press is not implemented , only short press and very long button press
 * Userspace Fastboot functionality is not implemented in this release
-* Chrome Browser crashed while deleting multiple history records
 * USB Disk is detected as SD Card in android and OTA update fails when we select U Disk
 * Android adoptable storage developer feature virtual sdcard format never completes
 * USB Hotplug of camera can lead to
@@ -2648,7 +2646,6 @@ Known issues
 
 * UI Flicker observed in few Screens for example - Under AOSP settings .
 * Lets Drive screen seen, on click of applications under "New User"
-* webM format video hangs during switch from full screen to normal : only on chrome browser
 * media file copying from external memory to internal memory fails when huge file is copied
 * saved system time changes to default after reboot
 * Bluetooth pairing fails in first boot cycle
@@ -2835,7 +2832,6 @@ Known issues
 
 * UI Flicker observed in few Screens for example - Under AOSP settings .
 * Lets Drive screen seen, on click of applications under "New User"
-* webM format video hangs during switch from full screen to normal : only on chrome browser
 * media file copying from external memory to internal memory fails when huge file is copied
 * saved system time changes to default after reboot
 * Call,Alarm volume and alarm sound not audible via USB headset

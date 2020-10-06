@@ -89,9 +89,7 @@ Known Issues
 *	Device shutdown fail in thermal chamber.
 *	Not able to authorize device in user build as " allow usb debugging pop up disappear"
 *	Mouse and KB is not detecting after adb reboot
-*	Chrome Browser app crashes
 *	File-Based Encryption is failing & Encryption shows device not encrypted
-*	Chrome Browser crashed while deleting multiple history records
 *	3rd Display is blank in extend mode
 *	Android UI not Displaying in eDP Display after adb reboot.
 *	dEQP-VK(Vulkan) tests failed.
@@ -108,7 +106,6 @@ Known Issues
 *   All the USB peripheral devices has to be connected before the VM is launched
 *   Power Button Long Press is not implemented , only short press and very long button press
 *   Userspace Fastboot functionality is not implemented in this release
-*   Chrome Browser crashed while deleting multiple history records
 *   Android adoptable storage developer feature virtual sdcard format never completes
 
 

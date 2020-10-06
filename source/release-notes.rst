@@ -107,6 +107,7 @@ Known Issues
 *   Power Button Long Press is not implemented , only short press and very long button press
 *   Userspace Fastboot functionality is not implemented in this release
 *   Android adoptable storage developer feature virtual sdcard format never completes
+*   When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
 
 
 Validation Results

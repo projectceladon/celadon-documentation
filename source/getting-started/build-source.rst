@@ -87,8 +87,8 @@ Set up the development environment
    
        $ sudo usermod -aG docker $USER
 
-Build |C| in VM with Android 10
-*******************************
+Build |C| in VM with Android 10/11
+**********************************
 
 Download the source
 ===================
@@ -107,12 +107,20 @@ Download the source
 
        $ mkdir civ
        $ cd civ
-       $ repo init -u https://github.com/projectceladon/manifest.git
+       $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 
    Note, the last :command:`repo init` command pulls the latest development
-   CiV source code from the the *master* branch. To checkout the source code
+   CiV source code based on *Android 11* from the master branch.
+   To continuously working on the *Android 10* based CiV source code,
+   use the following manifest instead:
+
+   .. code-block:: bash
+
+       $ repo init -u https://github.com/projectceladon/manifest  -b celadon/q/mr0/stable -m default.xml
+
+   You can also checkout the source code
    of the `QMR0 March-31-2020`_ release that passed the *Platform Exit*
-   criteria, run the following command instead:
+   criteria with the following command:
 
    .. _QMR0 March-31-2020: https://01.org/projectceladon/documentation/release-notes#civ-01-20-01-12-a10
 

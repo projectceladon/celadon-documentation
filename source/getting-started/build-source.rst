@@ -14,7 +14,7 @@ Prerequisites
 *************
 
 * A 64-bit development workstation running Ubuntu* 18.04 (Bionic Beaver)
-  operating system or later.
+  operating system.
 
 * Around 350GB of free disk space on your workstation is required to checkout the
   source code and to store the build artifacts.

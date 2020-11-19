@@ -13,11 +13,14 @@ download source code, and build |C| from source.
 Prerequisites
 *************
 
-* A 64-bit development workstation running Ubuntu* 18.04 (Bionic Beaver)
+* A 64-bit development workstation running Ubuntu\* 18.04 (Bionic Beaver)
   operating system.
 
-* Around 350GB of free disk space on your workstation is required to checkout the
-  source code and to store the build artifacts.
+* One of the supported versions of python\*, either 2.7 or 3.5.6, with
+  python 2.7 as the default.
+
+* Around 350GB of free disk space on your workstation is required to 
+  checkout the source code and to store the build artifacts.
 
 .. note:: 
    Although Android\* is typically built with a GNU/Linux\* or macOS\*
@@ -87,8 +90,8 @@ Set up the development environment
    
        $ sudo usermod -aG docker $USER
 
-Build |C| in VM with Android 10/11
-**********************************
+Build |C| in VM with Android\* 10/11
+************************************
 
 Download the source
 ===================
@@ -111,7 +114,7 @@ Download the source
 
    Note, the last :command:`repo init` command pulls the latest development
    CiV source code based on *Android 11* from the master branch.
-   To continuously working on the *Android 10* based CiV source code,
+   To continue working on the *Android 10* based CiV source code,
    use the following manifest instead:
 
    .. code-block:: bash

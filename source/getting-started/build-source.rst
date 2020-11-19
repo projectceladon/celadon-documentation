@@ -24,7 +24,7 @@ Prerequisites
 
 .. note:: 
    Although Android\* is typically built with a GNU/Linux\* or macOS\*
-   operating system, we recommend you build |C| images on Ubuntu* 18.04.
+   operating system, we recommend you build |C| images on Ubuntu\* 18.04.
    For setup instructions using other operating systems, refer to the
    `Establishing a Build Environment <https://source.android.com/setup/build/initializing>`_ section on the AOSP website.
 
@@ -58,7 +58,7 @@ Set up the development environment
             schedtool dpkg-dev liblz4-tool make optipng maven \
             libssl-dev bc bsdmainutils gettext python-mako \
             libelf-dev sbsigntool dosfstools mtools efitools \
-            python-pystache git-lfs python3 flex
+            python-pystache git-lfs python3 flex clang
 
 #. Both :abbr:`CiV (Celadon in VM)` and :abbr:`CiC (Celadon in Container)`
    require `Docker <https://www.docker.com/>`_ to build the images.
@@ -90,8 +90,8 @@ Set up the development environment
    
        $ sudo usermod -aG docker $USER
 
-Build |C| in VM with Android\* 10/11
-************************************
+Build |C| in VM with Android 11
+*******************************
 
 Download the source
 ===================

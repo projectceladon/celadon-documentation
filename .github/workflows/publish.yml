@@ -34,4 +34,3 @@ jobs:
     - name: Publish the docs
       run: |
         wget ${{secrets.PUBLISH_URL}}
-        cat clearlinux-latest

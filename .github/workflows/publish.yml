@@ -21,6 +21,7 @@ jobs:
       run: |
         export PATH="$HOME/.local/bin:$PATH"
         make html
+        mv _build/html $HOME/output
     - name: Deploy the docs
       run: |
         cd $HOME/output

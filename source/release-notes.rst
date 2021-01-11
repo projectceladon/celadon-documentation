@@ -19,8 +19,10 @@ CIV_01.20.04.50_A11
 ======================
 * This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM.
 
-
 New Features
+-----------------
+
+Existing Features
 -----------------
 * Trusty Hardware Seed binding
 * Power Management - Suspend,Resume

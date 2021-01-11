@@ -135,15 +135,16 @@ Tools/Configuration
 -------------------
 * QEMU Version 4.2.0
 * Host Ubuntu 20.04
-* Host Kernel Version 5.4.67
-* Guest kernel 5.4.67
+* Host Kernel Version 5.4.76
+* Guest kernel 5.4.76
 
 
 Helpful Hints / Links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
-* Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.04.39_A11.xml
+* Manifest Link :
+* BInary Link :
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 * Steps To build the host kernel for this Manifest
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ

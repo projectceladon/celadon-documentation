@@ -98,6 +98,7 @@ Known Issues
 * Hotplug support for USB Camera fails
 * Device hang , preview lags and camera application not responding
 * AV1 Video doesn't play smoothly
+* Unable to get media volume with adb shell
 
 Validation Results
 ------------------

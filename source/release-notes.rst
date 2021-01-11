@@ -8,7 +8,7 @@ Releases
 
 .. note::
 
-    Refer to :ref:`release-naming-convention` to decode the the release tags of the following |C| releases.
+    Refer to :ref:`release-naming-convention` to decode the release tags of the following |C| releases.
 
 .. contents::
    :local:

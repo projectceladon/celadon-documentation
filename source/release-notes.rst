@@ -82,31 +82,7 @@ Existing Features
 
 Known Issues
 -------------
-*	Camera Preview doesn't show , unable to capture photo/record video
-*	During HFP Audio call , audio is not routed to BT headset via Hangouts[GVT-d and GVT-g]
-*	Device shutdown fail in thermal chamber.
-*	Not able to authorize device in user build as " allow usb debugging pop up disappear"
-*	Mouse and KB is not detecting after adb reboot
-*	File-Based Encryption is failing & Encryption shows device not encrypted
-*	3rd Display is blank in extend mode
-*	Android UI not Displaying in eDP Display after adb reboot.
-*	dEQP-VK(Vulkan) tests failed.
-*	Sluggish video playback observed for H.264 4K 60fps video file
-*	Noise heard when tap/seek is performed on seekbar during Video playback.
-*	Touch sound is very low while tapping on home / back button [USB Headset]
-*	Glitch observed in audio playback while doing pause/play operation.
-*	Audio is not heard until volume level 3
-*	Audio routing fails to be expected sync device.
-*	Audio is not recording with 3.5 mm Headset in gvt-d
-*	Device unable to enter in suspend after 1st attempt.
-*	Unable to get media volume with adb shell
-*	Not able set screen lock Pattern / Pin / Password 
-*   All the USB peripheral devices has to be connected before the VM is launched
-*   Power Button Long Press is not implemented , only short press and very long button press
-*   Userspace Fastboot functionality is not implemented in this release
-*   Android adoptable storage developer feature virtual sdcard format never completes
-*   When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
-
+*	
 
 Validation Results
 ------------------

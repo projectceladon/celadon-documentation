@@ -141,7 +141,7 @@ Tools/Configuration
 
 Helpful Hints / Links
 ---------------------
-* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
+* Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link :
 * BInary Link :

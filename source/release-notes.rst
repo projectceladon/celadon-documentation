@@ -82,7 +82,22 @@ Existing Features
 
 Known Issues
 -------------
-*	
+* After deprecation of sdcardFS in Android R, Storage stats are not having correct values
+* ADB over DBC is not working
+* /data/logs folder not seen after flashing the image
+* Logs, Kpanic and hdcp directory not created in /data with CONFIG_SDCARDFS disabled 
+* Android is not booting in Mosaic mode
+* GLrenderer : Virtio or Google swiftshader : Unable to launch Android
+* Guest auto exit after several suspend/resume
+* Suspend and wake up device, Wifi will re-connect
+* GTS Exo-player failure due to DRM process crash
+* After changing resolution, recorded video fallsback to default resolution
+* Device hang , preview lags and camera application not responding
+* BLE Scanner role is not working
+* Device doesn't show simultaneous two camera preview
+* Camera Flicker in Preview and Recording
+* Hotplug support for USB Camera fails
+
 
 Validation Results
 ------------------

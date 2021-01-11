@@ -92,12 +92,12 @@ Known Issues
 * Suspend and wake up device, Wifi will re-connect
 * GTS Exo-player failure due to DRM process crash
 * After changing resolution, recorded video fallsback to default resolution
-* Device hang , preview lags and camera application not responding
 * BLE Scanner role is not working
 * Device doesn't show simultaneous two camera preview
 * Camera Flicker in Preview and Recording
 * Hotplug support for USB Camera fails
-
+* Device hang , preview lags and camera application not responding
+* AV1 Video doesn't play smoothly
 
 Validation Results
 ------------------

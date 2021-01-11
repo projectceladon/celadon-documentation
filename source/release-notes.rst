@@ -93,7 +93,7 @@ Known Issues
 * GTS Exo-player failure due to DRM process crash
 * After changing resolution, recorded video fallsback to default resolution
 * BLE Scanner role is not working
-* Device doesn't show simultaneous two camera preview
+* Sometimes Device doesnt show simultaneous two camera preview
 * Camera Flicker in Preview and Recording
 * Hotplug support for USB Camera fails
 * Device hang , preview lags and camera application not responding

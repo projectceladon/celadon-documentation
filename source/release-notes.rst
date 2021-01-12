@@ -31,6 +31,8 @@ New Features
 * Soft restart
 * Updatable APEX
 * Config store HAL deprecated
+* Graphics Memory Allocator (Gralloc) 4.0
+* HWC 2.4 support for Display
 
 Existing Features
 -----------------
@@ -48,10 +50,8 @@ Existing Features
 * File Sharing between Guest OSes
 * SDHCI mediation enabled and supported SD card
    * CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh --sdonly
-* Graphics Memory Allocator (Gralloc) 4.0
 * Graphics GVT-g and GVT-d support
 * HDMI display support
-* HWC 2.4 support for Display
 * Mass Storage USB 2.0 and 3.x devices is supported
 * Adb over WIFI and Ethernet is supported
 * Audio playback over USB Headset and HDMI are supported

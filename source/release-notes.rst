@@ -27,7 +27,7 @@ New Features
      * Audio & Audio effects HAL 6.0 
      * Health HAL 2.1
      * Boot HAL upgraded to 1.1
-* Mainline modules
+* Upgraded Mainline modules
 * Soft restart
 * Updatable APEX
 * Config store HAL deprecated

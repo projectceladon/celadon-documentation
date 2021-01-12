@@ -22,10 +22,11 @@ CIV_01.20.04.50_A11
 New Features
 -----------------
 * API Level 30 & FCM target Level 5
- * AIDL for Power and Light HALs
- * Audio & Audio effects HAL 6.0 
- * Health HAL 2.1
- * Boot HAL upgraded to 1.1
+ * Other Changes that came as part of API level Up
+     * AIDL for Power and Light HALs
+     * Audio & Audio effects HAL 6.0 
+     * Health HAL 2.1
+     * Boot HAL upgraded to 1.1
 * Mainline modules
 * Soft restart
 * Updatable APEX

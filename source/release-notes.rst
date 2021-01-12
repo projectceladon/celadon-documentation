@@ -94,14 +94,13 @@ Important Remarks
 -------------
 * For CaaS-CIV
 
-  * Recommended system requirements for Host:
-    * CPU:  4 cores or more 
-    * RAM: 4GB or more
-    * Disk:  40GB or more 
-
-  * Recommended configuration for CPU cores & Memory allocated to Guest VM 
-    * CPU: [default 1 core]
-    * RAM: [default 2GB]
+  * Recommended system requirements for Host
+     * CPU:  4 cores or more 
+     * RAM: 4GB or more
+     * Disk:  40GB or more 
+  * Recommended configuration for CPU cores & Memory allocated to Guest VM
+     * CPU: [default 1 core]
+     * RAM: [default 2GB]
   * Note: Allocating 100% Host resources in terms of memory and cores to guest is not recommended currently and it can cause instabilities.
 
 

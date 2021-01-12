@@ -93,6 +93,7 @@ Existing Features
 Important Remarks
 -------------
 * For CaaS-CIV
+
   * Recommended system requirements for Host:
     * CPU:  4 cores or more 
     * RAM: 4GB or more

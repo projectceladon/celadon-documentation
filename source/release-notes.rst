@@ -107,7 +107,6 @@ Important Remarks
 Known Issues
 -------------
 * After deprecation of sdcardFS in Android R, Storage stats are not having correct values
-* ADB over DBC is not working
 * /data/logs folder not seen after flashing the image
 * Logs, Kpanic and hdcp directory not created in /data with CONFIG_SDCARDFS disabled 
 * Android is not booting in Mosaic mode

@@ -41,14 +41,11 @@ Existing Features
 * Power Management - Suspend,Resume
 * Android key Input Manager Framework is implemented for Power & Volume buttons
 * Integrated Sensor Hub Enablement for Android Supported Sensors
-* Ethernet Wired Network Bridge
 * Android Thermal HAL and Thermal Manager Service
 * BZIP2 performance improvements
-* Audio Solution based on HDA
 * Bluetooth Control from Android in VM
 * HDMI Audio Output Support
 * Virtio-gpu Support
-* File Sharing between Guest OSes
 * SDHCI mediation enabled and supported SD card
    * CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh --sdonly
 * Graphics GVT-g and GVT-d support

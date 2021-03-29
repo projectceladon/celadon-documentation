@@ -52,20 +52,20 @@ Set up the development environment
       $ sudo apt-get update
       $ sudo apt-get install openjdk-8-jdk git ccache automake \
             lzop bison gperf build-essential zip curl \
-            zlib1g-dev g++-multilib python-networkx \
+            zlib1g-dev g++-multilib python3-networkx \
             libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
             libghc-bzlib-dev squashfs-tools pngcrush \
             schedtool dpkg-dev liblz4-tool make optipng maven \
             libssl-dev bc bsdmainutils gettext python-mako \
             libelf-dev sbsigntool dosfstools mtools efitools \
-            python-pystache git-lfs python3 flex clang
+            python-pystache git-lfs python3 flex clang libncurses5
 
-#. Both :abbr:`CiV (Celadon in VM)` and :abbr:`CiC (Celadon in Container)`
-   require `Docker <https://www.docker.com/>`_ to build the images.
+#. :abbr:`CiC (Celadon in Container)`
+   requires `Docker <https://www.docker.com/>`_ to build the images.
    The following instructions install Docker\* on your Ubuntu development
    workstation:
 
-   a) Install the following packages before performing the CiV or CiC build:
+   a) Install the following packages before performing the CiC build:
 
    .. code-block:: bash
 

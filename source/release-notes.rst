@@ -52,7 +52,7 @@ Existing Features
 * HDMI display support
 * Mass Storage USB 2.0 and 3.x devices is supported
 * Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
+* Audio playback over USB Headset, 3.5mm and HDMI are supported 
 * Setting Proxy for Wireless Network
 * Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
 * Ethernet works fine with Ethernet to USB converter

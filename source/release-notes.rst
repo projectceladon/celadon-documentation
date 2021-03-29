@@ -126,7 +126,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
 BT                             OK        Bluetooth is working
-Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Audio Playback                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
 Display /Touch and Gesture     OK

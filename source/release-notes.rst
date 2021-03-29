@@ -145,7 +145,7 @@ Tools/Configuration
 -------------------
 * QEMU Version 4.2.0
 * Host Ubuntu 20.04
-* Host Kernel Version 5.4.76
+* Host Kernel Version 5.4.76 [Build kernel from the tar ball of this release -Steps Below under hints section]
 * Guest kernel 5.4.76
 
 

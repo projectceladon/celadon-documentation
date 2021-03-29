@@ -55,8 +55,7 @@ Existing Features
 * Audio playback over USB Headset and HDMI are supported
 * Setting Proxy for Wireless Network
 * Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
-* Wired Ethernet support
-* Ethernet works fine with Ethernet to USb converter
+* Ethernet works fine with Ethernet to USB converter
 * Wifi Control from Android in VM using usb passthrough
 * To passthrough USB host controller in CML NUC, run the CIV launch script like this:
   sudo -E ./start_android_qcow2.sh  --usb-host-passthrough

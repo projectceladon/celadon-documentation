@@ -15,7 +15,7 @@ Releases
    :local:
    :depth: 1
 
-CIV_01.21.01.12_A11
+CIV_00.21.01.12_A11
 ======================
 * This is a Production Manifest Release for evaluation and development purposes. This release is supported on TGL NUC Celadon in VM.
 

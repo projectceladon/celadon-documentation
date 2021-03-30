@@ -17,7 +17,7 @@ Releases
 
 CIV_00.21.01.12_A11
 ======================
-* This is a Pre-Production Manifest Release for evaluation and development purposes. This release is supported on TGL NUC Celadon in VM.
+* This is a binary Release for evaluation and development purposes. This release is supported on TGL NUC Celadon in VM.
 
 New Features
 -----------------

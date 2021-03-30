@@ -19,10 +19,10 @@ Prerequisites
 * One of the supported versions of python\*, either 2.7 or 3.5.6, with
   python 2.7 as the default.
 
-* Around 350GB of free disk space on your workstation is required to 
+* Around 350GB of free disk space on your workstation is required to
   checkout the source code and to store the build artifacts.
 
-.. note:: 
+.. note::
    Although Android\* is typically built with a GNU/Linux\* or macOS\*
    operating system, we recommend you build |C| images on Ubuntu\* 18.04.
    For setup instructions using other operating systems, refer to the
@@ -32,7 +32,7 @@ Set up the development environment
 **********************************
 
 |C| and Android source code consist of multiple Git\* repositories. The
-:command:`repo` tool makes it easier to work with those repositories. 
+:command:`repo` tool makes it easier to work with those repositories.
 
 #. Create a local :file:`bin/` directory, download the :command:`repo` tool
    to that directory, and make the binary executable with the following commands:
@@ -48,7 +48,7 @@ Set up the development environment
    development workstation prior to the compilation:
 
    .. code-block:: bash
-   
+
       $ sudo apt-get update
       $ sudo apt-get install openjdk-8-jdk git ccache automake \
             lzop bison gperf build-essential zip curl \
@@ -87,7 +87,7 @@ Set up the development environment
       `Get Docker Engine - Community for Ubuntu <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`_ installation guide.
 
    .. code-block:: bash
-   
+
        $ sudo usermod -aG docker $USER
 
 Build |C| in VM with Android 11

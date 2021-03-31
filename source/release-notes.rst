@@ -48,8 +48,8 @@ Existing Features
 * Virtio-gpu Support
 * SDHCI mediation enabled and supported SD card
    * CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh --sdonly
-* Graphics GVT-g and GVT-d support
-* HDMI display support
+* Graphics GVT-d support
+* HDMI and DP display support
 * Mass Storage USB 2.0 and 3.x devices is supported
 * Adb over WIFI and Ethernet is supported
 * Audio playback over USB Headset, 3.5mm and HDMI are supported 
@@ -65,7 +65,7 @@ Existing Features
 * Product Information to Guest OS
 * ODM partition for vendor customizations
 * Only logitech C922 pro stream webcam is supported for all camera related testing
-* Video Codec support on celadon
+* HW Video Codecs support on celadon
 
   **Decoder**
 

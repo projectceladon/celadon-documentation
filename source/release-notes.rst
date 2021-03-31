@@ -21,6 +21,7 @@ CIV_00.21.01.12_A11
 
 New Features
 -----------------
+* ADB over DbC support
 
 
 Existing Features

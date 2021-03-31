@@ -23,6 +23,7 @@ New Features
 -----------------
 * ADB over DbC support
 * Widevine Ready for TGL NUC
+* WFA Security- Enhanced Open (OWE) support
 
 
 Existing Features

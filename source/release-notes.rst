@@ -106,12 +106,11 @@ Important Remarks
 Known Issues
 -------------
 * After recording the video in MultiCamera, it can be successfully played in MUltiCamera, but the playback in photos app fails
-* Storage FIO KPI doesn't meet target,device reboots and stuck at android logo
 * Android is not Booting UI after "adb reboot" when connected with eDP Display
 * Possible Buffer overflow with strncat in hcitools
 * Camera Preview Flickers
-* CFI failure seen during suspend/resume
-* Android UI is flickering while using mouse /keyboard
+* CFI failure seen during suspend/resume , This is merged on Latest HEAD
+* Android UI is flickering sometimes
 * Android UI doesn't launch in Mosaic mode
 * Captured Photo shows Black in ImageView.[AOSP Camera]
 * ADB goes offline after performing adb root/remount operation , this issue is fixed on the latest HEAD

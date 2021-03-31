@@ -57,7 +57,7 @@ Existing Features
 * Adb over WIFI and Ethernet is supported
 * Audio playback over USB Headset, 3.5mm and HDMI are supported 
 * Setting Proxy for Wireless Network
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
 * Ethernet works fine with Ethernet to USB converter
 * Wifi Control from Android in VM using usb passthrough
 * To passthrough USB host controller in CML NUC, run the CIV launch script like this:
@@ -159,6 +159,7 @@ Helpful Hints / Links
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link :
+* Binary Link :
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 * Steps To build the host kernel for this Manifest
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ

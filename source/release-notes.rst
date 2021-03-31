@@ -122,7 +122,7 @@ Known Issues
 Validation Results
 ------------------
 
-|C| build has been validated on TGL NUC in the following function domains:
+|C| build has been validated on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_  in the following function domains:
 
 =============================  =======  ========
 Component                      Results  Comments

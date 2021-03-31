@@ -113,7 +113,7 @@ Known Issues
 * Android UI is flickering while using mouse /keyboard
 * Android UI doesn't launch in Mosaic mode
 * Captured Photo shows Black in ImageView.[AOSP Camera]
-* ADB goes offline after performing adb root/remount operation
+* ADB goes offline after performing adb root/remount operation , this issue is fixed on the latest HEAD
 * Direct LAN to TGL NUC ethernet port is not working in this release
    * The fix patch for Direct LAN to TGL NUC ethernet port issue is as below - it is merged on the latest HEAD
       * https://github.com/projectceladon/device-androidia-mixins/pull/1086 # 2021-03-30 # Add support for Ethernet Controller I225-V

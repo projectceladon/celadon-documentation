@@ -158,7 +158,7 @@ Helpful Hints / Links
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml
 * Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A11
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
+* The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should to use their own keys to sign their release images
 * Steps To build the host kernel for this Manifest
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz

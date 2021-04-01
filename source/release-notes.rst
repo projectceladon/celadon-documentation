@@ -60,8 +60,7 @@ Existing Features
 * Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
 * Ethernet works fine with Ethernet to USB converter
 * Wifi Control from Android in VM using usb passthrough
-* To passthrough USB host controller in CML NUC, run the CIV launch script like this:
-  sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
+* To passthrough USB host controller in TGL NUC, run the CIV launch script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
 * Power Management - Shutdown and Reboot
 * Android Time keeping with Host OS
 * Product Information to Guest OS

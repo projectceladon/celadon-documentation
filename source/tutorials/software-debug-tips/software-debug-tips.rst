@@ -5,6 +5,80 @@ Software Debugging Tips on |C|
 
 In addition the useful tools and techniques documented in the `Debugging Native Android Platform Code <https://source.android.com/devices/tech/debug>`_ section on the AOSP website, this article provides additional information to facilitate the software debugging on |C| devices.
 
+How to do adb remount and push files to system partitions
+=============================================================
+
+Android version 4.4 and higher supports `Verified Boot <https://source.android.com/security/verifiedboot>`_ through the optional **device-mapper-verity (dm-verity)** kernel feature, which provides transparent integrity checking of block devices. The *dm-verity* helps to prevent persistent rootkits that can hold onto root privileges and compromise devices. Android users can leverage this feature to ensure the booting device is in the same state as it was in last used.
+
+Android */vendor* and */system* partitions are in read only mode by default, developers can't write data or push files to it unless remount the partition. However, the operation does not work with the ``adb remount`` command directly as shown in the following:
+
+    .. code-block:: none
+        :emphasize-lines: 2, 7-9
+
+        $ adb push test.wav /vendor
+        adb: error: failed to copy 'test.wav' to '/vendor/test.wav': remote couldn't create file: Read-only file system
+        test.wav: 0 files pushed. 564.3 MB/s (3604040 bytes in 0.006s)
+        $ adb root
+        restarting adbd as root
+        # adb remount
+        remount of the / superblock failed: Permission denied
+        remount of the /vendor superblock failed: I/O error
+        remount failed
+
+Go through the following steps to remount the */system* or */vendor* partitions:
+
+* Reboot the device in **fastboot** mode if it already booted into the main OS
+
+    .. code-block:: bash
+
+        $ adb reboot bootloader
+
+* Unlock the device for flashing the image
+
+    .. code-block:: bash
+
+        $ fastboot flashing unlock
+
+* Flash the **vbmeta_disable_verity** image
+
+    .. code-block:: bash
+
+        $ fastboot flash vbmeta_a vbmeta_disable_verity.img
+
+* Lock the device
+
+    .. code-block:: bash
+
+        $ fastboot flashing lock
+
+* Boot the device with the updated image
+
+    .. code-block:: bash
+
+        $ fastboot reboot
+
+* Once the platform boots to the main OS, enter the following commands to remount the partitions:
+
+    .. code-block:: bash
+
+        $ adb root
+        # remount the /system and /vendor partitions
+        # adb remount
+
+* Now ``adb remount`` command should succeed as below:
+
+    .. code-block:: bash
+
+        $ adb remount
+        remount succeeded
+
+* You can now push files to */system* or */vendor* partition as the following:
+
+    .. code-block:: bash
+
+        $ adb push test.wav /vendor
+        test.wav: 1 file pushed. 39.8 MB/s (26460078 bytes in 0.634s)
+
 Debugging using gdb
 ===================
 

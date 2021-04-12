@@ -88,11 +88,16 @@ Reference Configuration
 -----------------------
 
  * Supported Hardware
-------------------
+---------------------
+
+Product - NUC11PAQI7
 
 
  * Supported Software
-------------------
+---------------------
+AOSP Version - android-11.0.0_r33
+NUC11PAQI7 Host Kernel - -5.4.76-cvhb
+NUC11PAQI7 Guest kernel - -5.4.76-cvhb
 
 
 
@@ -108,7 +113,7 @@ Helpful hints
 ---------------------
 
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.  
-  * The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should  use their own keys to sign their release images
+* The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should  use their own keys to sign their release images
 
 
 CIV_00.21.01.12_A11

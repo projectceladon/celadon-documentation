@@ -83,11 +83,11 @@ How to Install this Release /Related Documents
     * Select compiled kernel from "Advanced options for Ubuntu"
    
 * Flash and run steps
-  * Download flash-files [https://github.com/projectceladon/celadon-binary]
-  * Untar <flash-files>
-  * sudo -E ./scripts/setup_host -u headless
-  * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
-  * sudo -E ./scripts/start_civ.sh -g GVT-d
+   * Download flash-files [https://github.com/projectceladon/celadon-binary]
+   * Untar <flash-files>
+   * sudo -E ./scripts/setup_host -u headless
+   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+   * sudo -E ./scripts/start_civ.sh -g GVT-d
 
 
 

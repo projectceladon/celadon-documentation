@@ -14,6 +14,64 @@ Releases
 .. contents::
    :local:
    :depth: 1
+   
+   
+CIV_XX.XX.XX.XX_AXX
+======================
+* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
+
+New Features
+-----------------
+
+
+Existing Features
+-----------------
+
+
+
+Important Remarks
+-------------
+
+  
+
+Known Issues
+-------------
+
+
+Validation Results
+------------------
+
+
+
+Tools/Configuration
+-------------------
+
+
+Helpful Hints / Links
+---------------------
+* Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
+* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml
+* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A11
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.  
+  * The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should  use their own keys to sign their release images
+* Steps To build the host kernel for this Manifest
+    * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
+    * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
+    * cd patches/kernel/lts2019-chromium
+    * ./build_weekly.sh
+    * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
+    * sudo dpkg -i *.deb
+    * Update grub to wait indefinitely for kernel selection on boot
+        * sudo vim /etc/default/grub
+        * Comment out GRUB_TIMEOUT_STYLE=hidden
+          #GRUB_TIMEOUT_STYLE=hidden
+        * Uncomment following line and modify grub timeout to -1 for indefinite wait or 5 for 5secs wait
+          #GRUB_TIMEOUT=-1
+        * Save the file
+        * sudo update-grub
+    * sudo reboot
+    * Select compiled kernel from "Advanced options for Ubuntu"
 
 CIV_00.21.01.12_A11
 ======================

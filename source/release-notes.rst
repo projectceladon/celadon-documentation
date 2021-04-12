@@ -99,6 +99,7 @@ Reference Configuration
 
 Acronyms and terms
 ------------------
+CIV - Celadon in Virtual Machine
 
 
 

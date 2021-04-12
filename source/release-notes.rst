@@ -88,13 +88,10 @@ Reference Configuration
 -----------------------
 
  * Supported Hardware
----------------------
-
    * Product - NUC11PAQI7
 
 
  * Supported Software
----------------------
    * AOSP Version - android-11.0.0_r33
    * NUC11PAQI7 Host Kernel - -5.4.76-cvhb
    * NUC11PAQI7 Guest kernel - -5.4.76-cvhb

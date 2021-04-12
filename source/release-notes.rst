@@ -20,41 +20,46 @@ CIV_XX.XX.XX.XX_AXX
 ======================
 * This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
 
+Intended Audience
+-----------------
+* Open Source Community who has subscribed to https://lists.01.org/postorius/lists/celadon.lists.01.org/
+
+Customer Support  
+-----------------
+* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+
+Introduction
+------------
+
+New in This Release
+-------------------
+
 New Features
 -----------------
 
 
-Existing Features
------------------
+Changes to Existing Features
+----------------------------
 
 
+Unsupported or Discontinued Features
+-------------------------------------
 
-Important Remarks
--------------
-
-  
 
 Known Issues
--------------
+------------
 
 
-Validation Results
-------------------
+Where to Find the Release 
+-------------------------
+* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A1
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml
 
 
-
-Tools/Configuration
--------------------
-
-
-Helpful Hints / Links
----------------------
+How to Install this Release /Related Documents
+----------------------------
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A11
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.  
-  * The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should  use their own keys to sign their release images
 * Steps To build the host kernel for this Manifest
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
@@ -72,6 +77,29 @@ Helpful Hints / Links
         * sudo update-grub
     * sudo reboot
     * Select compiled kernel from "Advanced options for Ubuntu"
+
+
+Validation Results
+------------------
+
+
+
+Reference Configuration [Hardware & Software]
+---------------------------------------------
+
+
+Acronyms and terms
+------------------
+
+
+
+
+Helpful hints
+---------------------
+
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.  
+  * The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should  use their own keys to sign their release images
+
 
 CIV_00.21.01.12_A11
 ======================

@@ -35,15 +35,10 @@ New in This Release
 -------------------
 
  * New Features
------------------
-
 
  * Changes to Existing Features
-----------------------------
-
 
  * Unsupported or Discontinued Features
--------------------------------------
 
 
 Known Issues

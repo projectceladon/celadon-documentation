@@ -54,9 +54,9 @@ Where to Find the Release
 How to Install this Release /Related Documents
 ----------------------------------------------
 * Steps to sync to this Release
-  * repo init -u https://github.com/projectceladon/manifest -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml
-  * NOTE : Manifest tag will change according to the latest release
-  * repo sync -c -q -j${nproc}
+   * repo init -u https://github.com/projectceladon/manifest -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml
+   * NOTE : Manifest tag will change according to the latest release
+   * repo sync -c -q -j${nproc}
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Steps To build the host kernel for this Manifest

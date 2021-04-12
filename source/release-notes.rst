@@ -34,15 +34,15 @@ Introduction
 New in This Release
 -------------------
 
-New Features
+ * New Features
 -----------------
 
 
-Changes to Existing Features
+ * Changes to Existing Features
 ----------------------------
 
 
-Unsupported or Discontinued Features
+ * Unsupported or Discontinued Features
 -------------------------------------
 
 

@@ -57,8 +57,13 @@ How to Install this Release /Related Documents
    * repo init -u https://github.com/projectceladon/manifest -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml
    * NOTE : Manifest tag will change according to the latest release
    * repo sync -c -q -j${nproc}
-* Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
-* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
+   
+* Android Build commands
+   * For Compilation please use Ubuntu 18.04
+   * source build/envsetup.sh
+   * lunch caas-userdebug
+   * make flashfiles -jN
+   
 * Steps To build the host kernel for this Manifest
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
@@ -76,6 +81,16 @@ How to Install this Release /Related Documents
         * sudo update-grub
     * sudo reboot
     * Select compiled kernel from "Advanced options for Ubuntu"
+   
+* Flash and run steps
+  * Download flash-files [https://github.com/projectceladon/celadon-binary]
+  * Untar <flash-files>
+  * sudo -E ./scripts/setup_host -u headless
+  * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+  * sudo -E ./scripts/start_civ.sh -g GVT-d
+
+
+
 
 
 Validation Results
@@ -107,9 +122,10 @@ CIV - Celadon in Virtual Machine
 
 Helpful hints
 ---------------------
-
 * If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.  
 * The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should  use their own keys to sign their release images
+* Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
+* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 
 
 CIV_00.21.01.12_A11

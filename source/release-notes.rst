@@ -22,7 +22,7 @@ CIV_XX.XX.XX.XX_AXX
 
 Intended Audience
 -----------------
-* Open Source Community who has subscribed to https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* Open Source Community who has subscribed to celadon@lists.01.org
 
 Customer Support  
 -----------------

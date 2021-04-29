@@ -59,6 +59,7 @@ Set up the development environment
             libssl-dev bc bsdmainutils gettext python-mako \
             libelf-dev sbsigntool dosfstools mtools efitools \
             python-pystache git-lfs python3 flex clang libncurses5
+      $ sudo apt install cryptsetup-bin
 
 #. :abbr:`CiC (Celadon in Container)`
    requires `Docker <https://www.docker.com/>`_ to build the images.

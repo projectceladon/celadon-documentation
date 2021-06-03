@@ -30,7 +30,7 @@ jobs:
         git config --global user.email "${GITHUB_ACTOR}@github.com"
         git add .
         git commit -m "latest html output"
-        git push -f https://${GITHUB_ACTOR}:${{secrets.ACCESS_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git HEAD:latestHTML
+        git push -f https://${GITHUB_ACTOR}:${{secrets.ACTIONS_DEPLOY_KEY}}@github.com/${GITHUB_REPOSITORY}.git HEAD:latestHTML
     - name: Publish the docs
       run: |
         wget ${{secrets.PUBLISH_URL}}

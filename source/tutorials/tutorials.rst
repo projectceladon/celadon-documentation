@@ -14,6 +14,7 @@ Development
    software-debug-tips/software-debug-tips
    dbc/dbc
    widevine/widevine-integration
+   bare-metal/boot-civ-bare-metal
 
 Security
 --------

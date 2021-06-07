@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Test Strategy for Celadon &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Celadon Power and Performance Test Suite" href="../pnp-testsuites/pnp-testsuites.html" />
+    <link rel="prev" title="How to Enable or Disable Trusty for Debugging" href="../security/trusty-enabling/trusty-enabling.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#development">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#security">Security</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#system-validation">System Validation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Test Strategy for Celadon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#weekly-validation-phase">Weekly validation phase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scope-of-android-validation">Scope of Android validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#out-of-scope-for-android-validation">Out of scope for Android validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#validation-activities-key-flow">Validation activities key flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-suite-and-defect-tracking">Test suite and defect tracking</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pnp-testsuites/pnp-testsuites.html">Celadon Power and Performance Test Suite</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../sitemap.html">Project Celadon - Documentation Sitemap</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../tutorials.html#development">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials.html#security">Security</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../tutorials.html#system-validation">System Validation</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Test Strategy for Celadon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pnp-testsuites/pnp-testsuites.html">Celadon Power and Performance Test Suite</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faqs.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>Test Strategy for Celadon</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/test-strategy/test-strategy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="test-strategy-for-c">
+<span id="system-validation-test-strategy"></span><h1>Test Strategy for Celadon<a class="headerlink" href="#test-strategy-for-c" title="Permalink to this headline">¶</a></h1>
+<p>Celadon is an open source Android* software reference stack for the Android
+community. Celadon helps to bring ideas to life while developing on the
+latest Android release and the latest Intel hardware platforms. The
+following Intel® NUC system has been used to validate regular Celadon releases.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Intel NUC Kit NUC10i7FNH &lt;<a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc10i7fnh.html">https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc10i7fnh.html</a>&gt;</p></li>
+</ul>
+</div></blockquote>
+<section id="weekly-validation-phase">
+<h2>Weekly validation phase<a class="headerlink" href="#weekly-validation-phase" title="Permalink to this headline">¶</a></h2>
+<p>The weekly validation cycle includes system functional test execution,
+compliance testing, and <abbr title="key performance indicators">KPI</abbr> based on
+the defined features of the quarterly program.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The test plan is created based on the features in the verify/closed
+state from the weekly release builds. Software criteria are defined
+at the start of the program, and execution is completed weekly on
+each domain until the defined software criteria are met.</p></li>
+<li><p>The validation team maps and tracks all the test cases against the
+defined requirements.</p></li>
+<li><p>The validation team shares the consolidated reports based on the
+request with details on software completion, requirement coverage,
+defects, and system validation results.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="scope-of-android-validation">
+<h2>Scope of Android validation<a class="headerlink" href="#scope-of-android-validation" title="Permalink to this headline">¶</a></h2>
+<p>Android validation is scoped for the following:</p>
+<ul>
+<li><p>The <abbr title="Celadon in Container">CiC</abbr> and
+<abbr title="Celadon in Virtual Machine">CiV</abbr> platforms consist of</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Comet Lake CiC Pie</p></li>
+<li><p>Comet Lake CiV Android 10</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Functional validation of all end-to-end defined features in JIRA*</p></li>
+<li><p>Non-functional (compliance/performance) - based on customer requests:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Performance KPI list defined</p></li>
+<li><p>Compliance testing</p></li>
+<li><p>Stability testing</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="out-of-scope-for-android-validation">
+<h2>Out of scope for Android validation<a class="headerlink" href="#out-of-scope-for-android-validation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Hardware component and relevant features</p></li>
+<li><p>FuSA certification</p></li>
+<li><p>Pre-certification</p></li>
+<li><p>Documentation</p></li>
+</ul>
+</section>
+<section id="validation-activities-key-flow">
+<h2>Validation activities key flow<a class="headerlink" href="#validation-activities-key-flow" title="Permalink to this headline">¶</a></h2>
+<figure class="align-center">
+<img alt="../../_images/validation-activities-flow.png" src="../../_images/validation-activities-flow.png" />
+</figure>
+</section>
+<section id="test-suite-and-defect-tracking">
+<h2>Test suite and defect tracking<a class="headerlink" href="#test-suite-and-defect-tracking" title="Permalink to this headline">¶</a></h2>
+<p>System functional testing is executed in a cumulative manner. The weekly
+functional test suite is focused on features moved to the verify state and is
+validated on weekly releases.</p>
+<p>Defects reporting can be done by sending an email to: <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;01&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>01<span>&#46;</span>org</a></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pnp-testsuites/pnp-testsuites.html" class="btn btn-neutral float-right" title="Celadon Power and Performance Test Suite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../security/trusty-enabling/trusty-enabling.html" class="btn btn-neutral" title="How to Enable or Disable Trusty for Debugging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Jun 07, 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

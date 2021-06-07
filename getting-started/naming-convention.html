@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Release Naming Convention &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitemap.html">Project Celadon - Documentation Sitemap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Release Naming Convention</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/getting-started/naming-convention.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="release-naming-convention">
+<span id="id1"></span><h1>Release Naming Convention<a class="headerlink" href="#release-naming-convention" title="Permalink to this headline">¶</a></h1>
+<p>Celadon offers several types of release packages for different usages. Releases
+are numbered and tagged according to the release timestamp, the exit
+criteria were met, and the Android* dessert on which the release is based.
+The naming convention of a Celadon release tag is:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[Type]_[Exit Code].[Year].[Quarter].[Work Week]_A[Android Dessert]
+</pre></div>
+</div>
+<ul>
+<li><p>The <em>[Type]</em> field specifies the type of the release package:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>‘<strong class="command">CIV</strong>’ denotes a release for running Celadon in a VM.</p></li>
+<li><p>‘<strong class="command">CIC</strong>’ denotes a release for running Celadon in a Container.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The <em>[Exit Code]</em> field specifies the code of platform exit stage:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>‘<strong class="command">00</strong>’ represents the release is going through the platform exit stage.</p></li>
+<li><p>‘<strong class="command">01</strong>’ represents the release reaches the platform exit criteria.</p></li>
+<li><p>‘<strong class="command">02</strong>’ and onward represent sustenancing releases. The number is increased each time a sustenancing package is released.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The <em>[Year]</em> field represents the Year when the agreed quality
+criteria were met.</p></li>
+<li><p>The <em>[Quarter]</em> field represents the Quarter when the agreed quality
+criteria were met.</p></li>
+<li><p>The <em>[Work Week]</em> field represents the Work week when the agreed
+quality criteria were met.</p></li>
+<li><p>The <em>[Android Dessert]</em> field represents the version of Android
+dessert on which the release is based.</p></li>
+</ul>
+<p>Examples:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Release Tag</p></td>
+<td><p>Comment</p></td>
+</tr>
+<tr class="row-even"><td><p>CIV_00.19.04.51_A10</p></td>
+<td><div class="line-block">
+<div class="line">represents an Android 10 based <abbr title="Celadon in VM">CIV</abbr> release</div>
+<div class="line">which met the agreed quality criteria in 2019 Q4 WW51</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>CIC_01.20.01.12_A09</p></td>
+<td><div class="line-block">
+<div class="line">represents an Android 9 based <abbr title="Celadon in Container">CIC</abbr> release</div>
+<div class="line">which met the platform exit criteria in 2020 Q1 ww12</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>CELADON_02.20.04.51_A09</p></td>
+<td><div class="line-block">
+<div class="line">represents the first Celadon sustenance release based on Android 9</div>
+<div class="line">released on 2020 Q4 in ww51</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Jun 07, 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

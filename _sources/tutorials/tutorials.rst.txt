@@ -13,6 +13,7 @@ Development
    enabling-uac3/enabling-uac3
    software-debug-tips/software-debug-tips
    dbc/dbc
+   widevine/widevine-integration
    bare-metal/boot-civ-bare-metal
 
 Security

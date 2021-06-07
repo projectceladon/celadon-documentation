@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Widevine* L3 Integration Guide &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Boot CiV on Bare Metal" href="../bare-metal/boot-civ-bare-metal.html" />
+    <link rel="prev" title="Making the Android* Host Debuggable - ADB for x86 Android Solutions" href="../dbc/dbc.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../mixins/mixins.html">Mixins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enabling-uac3/enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software-debug-tips/software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbc/dbc.html">Making the Android* Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Widevine* L3 Integration Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#widevine-libraries-integration">Widevine libraries integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#widevine-keybox-provision">Widevine keybox provision</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verify-widevine-function">Verify Widevine function</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../bare-metal/boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../sitemap.html">Project Celadon - Documentation Sitemap</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../mixins/mixins.html">Mixins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../enabling-uac3/enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software-debug-tips/software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbc/dbc.html">Making the Android* Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../bare-metal/boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials.html#security">Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faqs.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>Widevine* L3 Integration Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/widevine/widevine-integration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="widevine-l3-integration-guide">
+<span id="widevine-integration"></span><h1>Widevine* L3 Integration Guide<a class="headerlink" href="#widevine-l3-integration-guide" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This section explains the process to integrate the Widevine v15
+libraries into Celadon. It contains the following:</p>
+<ul class="simple">
+<li><p>Library and APKs integration</p></li>
+<li><p>Services integration</p></li>
+<li><p>Verification methods</p></li>
+<li><p>Troubleshooting</p></li>
+</ul>
+<p>The target audience includes system integrators and testers for the Widevine
+function and GTS/VTS.</p>
+<section id="terminology">
+<h3>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Acronym</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Widevine</p></td>
+<td><p>DRM solution which is used in Google* Android* by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GTS</p></td>
+<td><p>GMS Test Suite.</p></td>
+</tr>
+<tr class="row-even"><td><p>VTS</p></td>
+<td><p>Google Vendor Test Suite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CiV</p></td>
+<td><p>Celadon in VM</p></td>
+</tr>
+<tr class="row-even"><td><p>CiC</p></td>
+<td><p>Celadon in Container</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="widevine-libraries-integration">
+<h2>Widevine libraries integration<a class="headerlink" href="#widevine-libraries-integration" title="Permalink to this headline">¶</a></h2>
+<section id="sources">
+<h3>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Check out the Celadon code base according to the Celadon release note on
+<a class="reference external" href="https://01.org/projectceladon/">https://01.org/projectceladon/</a>.</p>
+<p>The version we verified for Android 10 has the last commit of
+.repo/manifests/r1 as shown below (the newer version should be OK):</p>
+<blockquote>
+<div><p>commit 50bafa394758150137f1f89e499fbce812443d50</p>
+<p>Refs:
+{origin/cactus/celadon-r2/candidates/mergerequest},
+{origin/cactus/celadon-r1/can</p>
+<p>Author: rnaidu &lt;<a class="reference external" href="mailto:ramya&#46;v&#46;naidu&#37;&#52;&#48;intel&#46;com">ramya<span>&#46;</span>v<span>&#46;</span>naidu<span>&#64;</span>intel<span>&#46;</span>com</a>&gt;</p>
+<p>AuthorDate: Wed Apr 29 18:50:24 2020 +0530</p>
+<p>Commit: buildslave &lt;<a class="reference external" href="mailto:ctbbot&#37;&#52;&#48;intel&#46;com">ctbbot<span>&#64;</span>intel<span>&#46;</span>com</a>&gt;</p>
+<p>CommitDate: Tue May 5 07:25:05 2020 +0000</p>
+<blockquote>
+<div><p>Upgrading the aosp for civ</p>
+<p>Change-Id: Id41d20e11de0f349bddccb8b6b8c3a7a2a23a8b6</p>
+</div></blockquote>
+</div></blockquote>
+<p>The version we verified for Android 11 was
+manifest-android_r_staging-2020_WW36_A-r1-generated.xml.</p>
+</li>
+<li><p>Customers should get the widevine DRM package from Google. Normally, it
+contains:</p>
+<blockquote>
+<div><p>├── Android.mk</p>
+<p>├── CleanSpec.mk</p>
+<p>├── libwvdrmengine</p>
+<p>│   ├── Android.mk</p>
+<p>│   ├── build_and_run_all_unit_tests.sh</p>
+<p>│   ├── cdm</p>
+<p>│   ├── docs</p>
+<p>│   ├── include</p>
+<p>│   ├── include_hidl</p>
+<p>│   ├── level3</p>
+<p>│   ├── mediacrypto</p>
+<p>│   ├── mediadrm</p>
+<p>│   ├── move_widevine_data.sh</p>
+<p>│   ├── oem_certificate_generator</p>
+<p>│   ├── oemcrypto</p>
+<p>│   ├── run_all_unit_tests.sh</p>
+<p>│   ├── src</p>
+<p>│   ├── src_hidl</p>
+<p>│   ├── test</p>
+<p>│   └── vts</p>
+<p>└── tests</p>
+<p>└── Android.mk</p>
+</div></blockquote>
+<p>The latest commit on our code base that was verified is shown below.
+Newer versions also should be acceptable.</p>
+<blockquote>
+<div><p>commit 387e21ac55064cc523102130bcaa4773de3959b6</p>
+<p>Refs: {origin/mirror/pdk/q-fs-release}</p>
+<p>Merge: 7a8e7dc 367befa</p>
+<p>Author:     android-build-team Robot
+&lt;<a class="reference external" href="mailto:android-build-team-robot&#37;&#52;&#48;google&#46;com">android-build-team-robot<span>&#64;</span>google<span>&#46;</span>com</a>&gt;</p>
+<p>AuthorDate: Sun Jun 2 23:08:40 2019 +0000</p>
+<p>Commit:     android-build-team Robot
+&lt;<a class="reference external" href="mailto:android-build-team-robot&#37;&#52;&#48;google&#46;com">android-build-team-robot<span>&#64;</span>google<span>&#46;</span>com</a>&gt;</p>
+<p>CommitDate: Sun Jun 2 23:08:40 2019 +0000</p>
+<blockquote>
+<div><p>Snap for 5627676 from 367befa3b7bffac8f9c569e269adafe7c906f343
+to qt-release*</p>
+<p>Change-Id: I43b1a334b936dbd81dfbaa99371fa835a7b9efdc*</p>
+</div></blockquote>
+</div></blockquote>
+<p>It is normally put under <code class="docutils literal notranslate"><span class="pre">vendor/widevine/</span></code>.</p>
+</li>
+<li><p>Intel provides the following information in this document for
+customer integration.</p>
+<ol class="arabic simple">
+<li><p>Mixins setting reference</p></li>
+<li><p>Sepolicy config reference</p></li>
+<li><p>Enablement flag for each project</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="changes-to-be-made-in-celadon">
+<h3>Changes to be made in Celadon<a class="headerlink" href="#changes-to-be-made-in-celadon" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Mixins for the Widevine module should be created under project
+<code class="docutils literal notranslate"><span class="pre">device/intel/mixins/</span></code></p>
+<blockquote>
+<div><p>cd device/intel/mixins/groups/</p>
+<p>mkdir -p widevine/false</p>
+<p>mkdir -p widevine/L3_Gen</p>
+<p>ln -s L3_Gen default</p>
+<p>touch widevine/false/empty_dir</p>
+<p>touch widevine/L3_Gen/BoardConfig.mk</p>
+<p>touch widevine/L3_Gen/product.mk</p>
+<p>touch groups/widevine/doc.spec</p>
+</div></blockquote>
+</li>
+<li><p>Sepolicy for Widevine module, under project
+<code class="docutils literal notranslate"><span class="pre">device/intel/sepolicy/</span></code></p>
+<blockquote>
+<div><p>cd device/intel/sepolicy</p>
+<p>mkdir -p widevine/gen/gen_common/</p>
+<p>touch widevine/gen/gen_common/file.te</p>
+<p>touch widevine/gen/gen_common/file_contexts</p>
+<p>touch widevine/gen/gen_common/hal_drm_widevine.te</p>
+</div></blockquote>
+</li>
+<li><p>Enable widevine level 3 in project mixins, which is a one line change
+in the project related mixins file, such as
+<code class="docutils literal notranslate"><span class="pre">device/intel/project-celadon/caas/mixins.spec</span></code></p></li>
+</ul>
+<section id="create-mixins-files-and-fill-the-content">
+<h4>Create mixins files and fill the content<a class="headerlink" href="#create-mixins-files-and-fill-the-content" title="Permalink to this headline">¶</a></h4>
+<p>Add the text below to widevine/doc.spec (this step is optional):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="c1"># device/intel/mixins/groups/widevine/doc.spec</span>
+
+ <span class="o">===</span> <span class="n">Overview</span>
+
+ <span class="n">widevine</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">enable</span><span class="o">/</span><span class="n">disable</span> <span class="n">the</span> <span class="n">Android</span> <span class="n">DRM</span> <span class="n">widevine</span> <span class="n">feature</span> <span class="ow">and</span>
+ <span class="nb">set</span> <span class="n">the</span> <span class="n">relatedsecure</span> <span class="n">level</span><span class="o">.</span>
+
+ <span class="o">---</span> <span class="n">deps</span>
+
+     <span class="o">-</span> <span class="n">sepolicy</span>
+
+ <span class="o">====</span> <span class="n">Options</span>
+
+ <span class="o">---</span> <span class="n">L1</span>\<span class="n">_Gen</span>
+
+ <span class="n">this</span> <span class="n">option</span> <span class="n">enables</span> <span class="n">widevine</span> <span class="n">level</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">Gen</span> <span class="n">based</span> <span class="n">devices</span><span class="o">.</span>
+
+ <span class="o">---</span> <span class="n">code</span> <span class="nb">dir</span>
+
+     <span class="o">-</span> <span class="n">device</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">mixins</span><span class="o">/</span><span class="n">groups</span><span class="o">/</span><span class="n">widevine</span>
+
+     <span class="o">-</span> <span class="n">device</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">sepolicy</span><span class="o">/</span><span class="n">widevine</span>
+
+     <span class="o">-</span> <span class="n">vendor</span><span class="o">/</span><span class="n">widevine</span>
+
+     <span class="o">-</span> <span class="n">vendor</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">liboemcrypto</span><span class="o">/</span><span class="n">gen</span>
+
+<span class="o">---</span> <span class="n">parameters</span>
+
+     <span class="o">-</span> <span class="n">widevine</span>\<span class="n">_arch</span><span class="p">:</span> <span class="n">Graphics</span> <span class="n">arch</span><span class="p">,</span> <span class="n">gen9</span> <span class="k">for</span> <span class="n">BXT</span><span class="p">,</span> <span class="n">gen8</span> <span class="k">for</span> <span class="n">CHT</span><span class="o">.</span>
+
+ <span class="o">---</span> <span class="n">L3</span>\<span class="n">_Gen</span>
+
+ <span class="n">this</span> <span class="n">option</span> <span class="n">enables</span> <span class="n">widevine</span> <span class="n">level</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">Gen</span> <span class="n">based</span> <span class="n">devices</span><span class="o">.</span>
+
+<span class="o">---</span> <span class="n">code</span> <span class="nb">dir</span>
+
+    <span class="o">-</span> <span class="n">device</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">mixins</span><span class="o">/</span><span class="n">groups</span><span class="o">/</span><span class="n">widevine</span>
+
+    <span class="o">-</span> <span class="n">device</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">sepolicy</span><span class="o">/</span><span class="n">widevine</span>
+
+    <span class="o">-</span> <span class="n">vendor</span><span class="o">/</span><span class="n">widevine</span>
+
+ <span class="o">---</span> <span class="n">default</span>
+
+ <span class="n">this</span> <span class="n">option</span> <span class="n">will</span> <span class="n">only</span> <span class="n">enable</span> <span class="n">default</span> <span class="n">drm</span><span class="p">,</span> <span class="n">when</span> <span class="ow">not</span> <span class="n">explicitly</span> <span class="n">selected</span>
+ <span class="ow">in</span> <span class="n">mixins</span> <span class="n">spec</span> <span class="n">file</span><span class="p">,</span> <span class="n">the</span> <span class="n">default</span> <span class="n">option</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+
+<span class="o">---</span> <span class="n">code</span> <span class="nb">dir</span>
+
+    <span class="o">-</span> <span class="n">device</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">mixins</span><span class="o">/</span><span class="n">groups</span><span class="o">/</span><span class="n">widevine</span>
+
+    <span class="o">-</span> <span class="n">device</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">sepolicy</span><span class="o">/</span><span class="n">drm</span><span class="o">-</span><span class="n">default</span>
+
+    <span class="o">-</span> <span class="n">hardware</span><span class="o">/</span><span class="n">interfaces</span><span class="o">/</span><span class="n">drm</span><span class="o">/</span><span class="mf">1.0</span><span class="o">/</span><span class="n">default</span>
+</pre></div>
+</div>
+<p>Add the text below to
+device/intel/mixins/groups/widevine/L3_Gen/product.mk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># device/intel/mixins/groups/widevine/L3\_Gen/product.mk</span>
+
+<span class="c1">#enable Widevine drm</span>
+
+<span class="n">PRODUCT</span>\<span class="n">_PROPERTY</span>\<span class="n">_OVERRIDES</span> <span class="o">+=</span> <span class="n">drm</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="n">true</span>
+
+<span class="n">PRODUCT</span>\<span class="n">_PACKAGES</span> <span class="o">+=</span> \\
+
+  <span class="n">libwvdrmengine</span> \\
+
+  <span class="n">libwvhidl</span> \\
+
+    <span class="n">android</span><span class="o">.</span><span class="n">hardware</span><span class="o">.</span><span class="n">drm</span><span class="o">@</span><span class="mf">1.2</span><span class="o">-</span><span class="n">service</span><span class="o">.</span><span class="n">widevine</span>
+
+<span class="n">PRODUCT</span>\<span class="n">_PACKAGES</span>\<span class="n">_ENG</span> <span class="o">+=</span> <span class="n">ExoPlayerDemo</span>
+
+<span class="n">BOARD</span>\<span class="n">_WIDEVINE</span>\<span class="n">_OEMCRYPTO</span>\<span class="n">_LEVEL</span> <span class="o">:=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Replace <a class="reference external" href="mailto:android&#46;hardware&#46;drm&#37;&#52;&#48;1&#46;2-service&#46;widevine">android<span>&#46;</span>hardware<span>&#46;</span>drm<span>&#64;</span>1<span>&#46;</span>2-service<span>&#46;</span>widevine</a> with
+<a class="reference external" href="mailto:android&#46;hardware&#46;drm&#37;&#52;&#48;1&#46;3-service&#46;widevine">android<span>&#46;</span>hardware<span>&#46;</span>drm<span>&#64;</span>1<span>&#46;</span>3-service<span>&#46;</span>widevine</a> for Android 11</p>
+<p>Add the text below to
+device/intel/mixins/groups/widevine/L3_Gen/BoardConfig.mk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># device/intel/mixins/groups/widevine/L3\_Gen/BoardConfig.
+
+BOARD\_SEPOLICY\_DIRS +=
+$(INTEL\_PATH\_SEPOLICY)/widevine/gen/gen\_common
+</pre></div>
+</div>
+<p>For Android 11, make the following changes, if it’s not updated on your code
+base:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># device/intel/mixins/groups/default-drm/true/product.mk</span>
+
+<span class="c1">#only enable default drm service</span>
+
+<span class="n">PRODUCT</span>\<span class="n">_PACKAGES</span> <span class="o">+=</span> <span class="n">android</span><span class="o">.</span><span class="n">hardware</span><span class="o">.</span><span class="n">drm</span><span class="o">@</span><span class="mf">1.0</span><span class="o">-</span><span class="n">service</span> \\
+
+                     <span class="n">android</span><span class="o">.</span><span class="n">hardware</span><span class="o">.</span><span class="n">drm</span><span class="o">@</span><span class="mf">1.0</span><span class="o">-</span><span class="n">impl</span> \\
+
+<span class="o">-</span>         <span class="n">android</span><span class="o">.</span><span class="n">hardware</span><span class="o">.</span><span class="n">drm</span><span class="o">@</span><span class="mf">1.2</span><span class="o">-</span><span class="n">service</span><span class="o">.</span><span class="n">clearkey</span>
+
+<span class="o">+</span>         <span class="n">android</span><span class="o">.</span><span class="n">hardware</span><span class="o">.</span><span class="n">drm</span><span class="o">@</span><span class="mf">1.3</span><span class="o">-</span><span class="n">service</span><span class="o">.</span><span class="n">clearkey</span>
+</pre></div>
+</div>
+<p>Update manifest.xml as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># device/intel/mixins/groups/device-specific/caas/manifest.xml</span>
+
+         <span class="o">&lt;/</span><span class="n">interface</span><span class="o">&gt;</span>
+
+<span class="o">-</span>        <span class="o">&lt;</span><span class="n">fqname</span><span class="o">&gt;@</span><span class="mf">1.1</span><span class="p">::</span><span class="n">ICryptoFactory</span><span class="o">/</span><span class="n">clearkey</span><span class="o">&lt;/</span><span class="n">fqname</span><span class="o">&gt;</span>
+
+<span class="o">-</span>        <span class="o">&lt;</span><span class="n">fqname</span><span class="o">&gt;@</span><span class="mf">1.1</span><span class="p">::</span><span class="n">IDrmFactory</span><span class="o">/</span><span class="n">clearkey</span><span class="o">&lt;/</span><span class="n">fqname</span><span class="o">&gt;</span>
+
+<span class="o">-</span>        <span class="o">&lt;</span><span class="n">fqname</span><span class="o">&gt;@</span><span class="mf">1.1</span><span class="p">::</span><span class="n">ICryptoFactory</span><span class="o">/</span><span class="n">widevine</span><span class="o">&lt;/</span><span class="n">fqname</span><span class="o">&gt;</span>
+
+<span class="o">-</span>        <span class="o">&lt;</span><span class="n">fqname</span><span class="o">&gt;@</span><span class="mf">1.1</span><span class="p">::</span><span class="n">IDrmFactory</span><span class="o">/</span><span class="n">widevine</span><span class="o">&lt;/</span><span class="n">fqname</span><span class="o">&gt;</span>
+
+<span class="o">+</span>        <span class="o">&lt;</span><span class="n">fqname</span><span class="o">&gt;@</span><span class="mf">1.3</span><span class="p">::</span><span class="n">ICryptoFactory</span><span class="o">/</span><span class="n">clearkey</span><span class="o">&lt;/</span><span class="n">fqname</span><span class="o">&gt;</span>
+
+<span class="o">+</span>        <span class="o">&lt;</span><span class="n">fqname</span><span class="o">&gt;@</span><span class="mf">1.3</span><span class="p">::</span><span class="n">IDrmFactory</span><span class="o">/</span><span class="n">clearkey</span><span class="o">&lt;/</span><span class="n">fqname</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;/</span><span class="n">hal</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="add-sepolicy-for-widevine">
+<h4>Add sepolicy for Widevine<a class="headerlink" href="#add-sepolicy-for-widevine" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>cd device/intel/sepolicy/</p>
+<p>mkdir -p widevine/gen/gen_common</p>
+<p>touch widevine/gen/gen_common/file_contexts</p>
+<p>touch widevine/gen/gen_common/file.te</p>
+<p>touch widevine/gen/gen_common/hal_drm_widevine.te</p>
+</div></blockquote>
+<p>Add the text below to file_contexts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># device/intel/sepolicy/ widevine/gen/gen\_common/file\_contexts
+
+/(vendor\|system/vendor)/bin/hw/android\\.hardware\\.drm@1\\.2-service.widevine
+u:object\_r:hal\_drm\_default\_exec:s0
+
+/data/vendor/mediadrm(/.\*)?
+u:object\_r:mediadrm\_vendor\_data\_file:s0
+
+\*Replace @1\\.2-service.widevine with @1\\.3-service.widevine for
+Android 11
+</pre></div>
+</div>
+<p>Add the text below to file.te:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># device/intel/sepolicy/ widevine/gen/gen\_common/file.te</span>
+
+<span class="c1">#data/vendor/mediadrm</span>
+
+<span class="nb">type</span> <span class="n">mediadrm</span>\<span class="n">_vendor</span>\<span class="n">_data</span>\<span class="n">_file</span><span class="p">,</span> <span class="n">file</span>\<span class="n">_type</span><span class="p">,</span> <span class="n">data</span>\<span class="n">_file</span>\<span class="n">_type</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Add the text below to hal_drm_widevine.te:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># device/intel/sepolicy/ widevine/gen/gen\_common/hal\_drm\_widevine.te</span>
+
+<span class="n">vndbinder</span>\<span class="n">_use</span><span class="p">(</span><span class="n">hal</span>\<span class="n">_drm</span>\<span class="n">_default</span><span class="p">)</span>
+
+<span class="n">allow</span> <span class="n">hal</span>\<span class="n">_drm</span>\<span class="n">_default</span> <span class="n">mediadrm</span>\<span class="n">_vendor</span>\<span class="n">_data</span>\<span class="n">_file</span><span class="p">:</span><span class="nb">dir</span>
+<span class="n">create</span>\<span class="n">_dir</span>\<span class="n">_perms</span><span class="p">;</span>
+
+<span class="n">allow</span> <span class="n">hal</span>\<span class="n">_drm</span>\<span class="n">_default</span> <span class="n">mediadrm</span>\<span class="n">_vendor</span>\<span class="n">_data</span>\<span class="n">_file</span><span class="p">:</span><span class="n">file</span>
+<span class="n">create</span>\<span class="n">_file</span>\<span class="n">_perms</span><span class="p">;</span>
+
+<span class="n">allow</span> <span class="n">hal</span>\<span class="n">_drm</span>\<span class="n">_default</span> <span class="n">gpu</span>\<span class="n">_device</span><span class="p">:</span><span class="nb">dir</span> <span class="n">search</span><span class="p">;</span>
+
+<span class="n">allow</span> <span class="n">hal</span>\<span class="n">_drm</span>\<span class="n">_default</span> <span class="n">gpu</span>\<span class="n">_device</span><span class="p">:</span><span class="nb">chr</span>\<span class="n">_file</span> <span class="n">rw</span>\<span class="n">_file</span>\<span class="n">_perms</span><span class="p">;</span>
+
+<span class="n">allow</span> <span class="n">hal</span>\<span class="n">_drm</span>\<span class="n">_default</span> <span class="n">tmpfs</span><span class="p">:</span><span class="n">file</span> <span class="p">{</span> <span class="n">read</span> <span class="n">write</span> <span class="nb">map</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>For Android 11, make the changes shown below to
+drm-default/file_contexts if it’s not updated in your code base yet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># device/intel/sepolicy/drm-default/file\_contexts</span>
+
+<span class="o">-/</span><span class="n">vendor</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">hw</span><span class="o">/</span><span class="n">android</span>\\<span class="o">.</span><span class="n">hardware</span>\\<span class="o">.</span><span class="n">drm</span><span class="o">@</span><span class="mi">1</span>\\<span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">service</span>\\<span class="o">.</span><span class="n">clearkey</span>
+<span class="n">u</span><span class="p">:</span><span class="nb">object</span>\<span class="n">_r</span><span class="p">:</span><span class="n">hal</span>\<span class="n">_drm</span>\<span class="n">_clearkey</span>\<span class="n">_exec</span><span class="p">:</span><span class="n">s0</span>
+
+<span class="o">+/</span><span class="n">vendor</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">hw</span><span class="o">/</span><span class="n">android</span>\\<span class="o">.</span><span class="n">hardware</span>\\<span class="o">.</span><span class="n">drm</span><span class="o">@</span><span class="mi">1</span>\\<span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="n">service</span>\\<span class="o">.</span><span class="n">clearkey</span>
+<span class="n">u</span><span class="p">:</span><span class="nb">object</span>\<span class="n">_r</span><span class="p">:</span><span class="n">hal</span>\<span class="n">_drm</span>\<span class="n">_clearkey</span>\<span class="n">_exec</span><span class="p">:</span><span class="n">s0</span>
+</pre></div>
+</div>
+<p>Add the last line to enable widevine L3 for Celadon caas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># device/intel/project-celadon/caas/mixins.spec
+
+…
+
+gptbuild: true(size=16G,generate\_craff=false,compress\_gptimage=true)
+
+dynamic-partitions: true(super\_img\_in\_flashzip=true)
+
+dbc: true
+
+atrace: true
+
+firmware: true(all\_firmwares=true)
+
+aaf: true
+
+suspend: never
+
+widevine: L3\_Gen
+</pre></div>
+</div>
+</section>
+</section>
+<section id="checkpoints">
+<h3>Checkpoints<a class="headerlink" href="#checkpoints" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Make sure that <code class="docutils literal notranslate"><span class="pre">vendor/widewine/Android.mk</span></code> is included in
+your device’s build process. (Normally, it should be included.)</p></li>
+<li><p>After the build, you should have the following binaries in
+<code class="docutils literal notranslate"><span class="pre">out/target/product/$(TARGET\_DEVICE).</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">vendor/lib/libwvhidl.so</span></code></p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>vendor/lib/mediadrm/libwvdrmengine.so ``</p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a><a class="reference external" href="mailto:vendor/bin/hw/android&#46;hardware&#46;drm&#37;&#52;&#48;1&#46;2-service&#46;widevine">vendor/bin/hw/android<span>&#46;</span>hardware<span>&#46;</span>drm<span>&#64;</span>1<span>&#46;</span>2-service<span>&#46;</span>widevine</a> ``</p>
+<p><code class="docutils literal notranslate"><span class="pre">vendor/etc/init/android.hardware.drm&#64;1.2-service.widevine.rc</span></code> &lt;<a class="reference external" href="mailto:vendor/etc/init/android&#46;hardware&#46;drm&#37;&#52;&#48;1&#46;2-service&#46;widevine&#46;rc">mailto:vendor/etc/init/android<span>&#46;</span>hardware<span>&#46;</span>drm<span>&#64;</span>1<span>&#46;</span>2-service<span>&#46;</span>widevine<span>&#46;</span>rc</a>&gt;`__</p>
+<p>For Android 11:</p>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a class="reference external" href="mailto:vendor/bin/hw/android&#46;hardware&#46;drm&#37;&#52;&#48;1&#46;3-service&#46;widevine">vendor/bin/hw/android<span>&#46;</span>hardware<span>&#46;</span>drm<span>&#64;</span>1<span>&#46;</span>3-service<span>&#46;</span>widevine</a> ``</p>
+<p><code class="docutils literal notranslate"><span class="pre">vendor/etc/init/android.hardware.drm&#64;1.3-service.widevine.rc</span></code></p>
+</li>
+<li><p>Finally, you need to ensure that those files are on the TARGET
+devices and services are running.</p></li>
+</ol>
+</section>
+</section>
+<section id="widevine-keybox-provision">
+<h2>Widevine keybox provision<a class="headerlink" href="#widevine-keybox-provision" title="Permalink to this headline">¶</a></h2>
+<p>Level 3 doesn’t need an factory Keybox provision.</p>
+</section>
+<section id="verify-widevine-function">
+<h2>Verify Widevine function<a class="headerlink" href="#verify-widevine-function" title="Permalink to this headline">¶</a></h2>
+<section id="use-exoplayer-to-check">
+<h3>Use Exoplayer to check<a class="headerlink" href="#use-exoplayer-to-check" title="Permalink to this headline">¶</a></h3>
+<p>ExoPlayerDemo.apk can be used to do an end-to-end verification of Modular
+DRM. To install the ExoPlayer app, which is in source code, execute the
+following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">adb</span> <span class="pre">install</span> <span class="pre">vendor/widevine/libwvdrmengine/test/demo/ExoPlayerDemo.apk</span></code></p>
+<p>To run, launch ExoPlayer, then choose the clip to play. The
+Widevine-encrypted DASH CENC assets are in the “WIDEVINE DASH GTS”
+section.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===</span><span class="n">WIDEVINE</span> <span class="n">DASH</span> <span class="n">GTS</span><span class="o">===</span>
+
+<span class="o">|</span> <span class="n">WV</span><span class="p">:</span><span class="n">HDCP</span> <span class="ow">not</span> <span class="n">specified</span>
+<span class="o">|</span> <span class="n">HDCP</span> <span class="ow">not</span> <span class="n">requied</span>
+<span class="o">|</span> <span class="n">HDCP</span> <span class="n">requied</span>
+<span class="o">|</span> <span class="n">Secure</span> <span class="n">video</span> <span class="n">path</span> <span class="n">requied</span><span class="p">(</span><span class="n">MP4</span><span class="p">,</span><span class="n">H264</span><span class="p">)</span>
+<span class="o">|</span> <span class="n">Secure</span> <span class="n">video</span> <span class="n">path</span> <span class="n">requied</span> <span class="p">(</span><span class="n">WebM</span><span class="p">,</span><span class="n">VP9</span><span class="p">)</span>
+<span class="o">|</span> <span class="n">Secure</span> <span class="n">video</span> <span class="n">path</span> <span class="n">requied</span> <span class="p">(</span><span class="n">MP4</span><span class="p">,</span><span class="n">H265</span><span class="p">)</span>
+<span class="o">|</span> <span class="n">HDCP</span><span class="o">+</span><span class="n">Secure</span> <span class="n">video</span> <span class="n">path</span> <span class="n">requied</span>
+<span class="o">|</span> <span class="mi">30</span><span class="n">s</span> <span class="n">license</span> <span class="n">duration</span><span class="p">(</span><span class="n">fails</span> <span class="n">at</span> <span class="o">~</span><span class="mi">30</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="check-the-ap-log">
+<h3>Check the AP log<a class="headerlink" href="#check-the-ap-log" title="Permalink to this headline">¶</a></h3>
+<p>Check logcat to confirm that the widevine service is running.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adb</span> <span class="n">logcat</span> \<span class="o">*</span><span class="p">:</span><span class="n">s</span> <span class="n">WVCdm</span><span class="p">:</span><span class="n">v</span>
+
+<span class="n">D</span> <span class="n">WVCdm</span> <span class="p">:</span> <span class="n">Instantiating</span> <span class="n">CDM</span><span class="o">.</span>
+
+<span class="n">I</span> <span class="n">WVCdm</span> <span class="p">:</span> <span class="p">[</span><span class="n">cdm</span>\<span class="n">_engine</span><span class="o">.</span><span class="n">cpp</span><span class="p">(</span><span class="mi">529</span><span class="p">):</span><span class="n">QueryStatus</span><span class="p">]</span> <span class="n">CdmEngine</span><span class="p">::</span><span class="n">QueryStatus</span>
+
+<span class="n">I</span> <span class="n">WVCdm</span> <span class="p">:</span> <span class="p">[</span><span class="n">oemcrypto</span>\<span class="n">_adapter</span>\<span class="n">_dynamic</span><span class="o">.</span><span class="n">cpp</span><span class="p">(</span><span class="mi">636</span><span class="p">):</span><span class="n">Initialize</span><span class="p">]</span> <span class="n">Level</span> <span class="mi">3</span>
+<span class="n">Build</span> <span class="n">Info</span> <span class="p">(</span><span class="n">v15</span><span class="p">):</span> <span class="n">OEMCrypto</span> <span class="n">Level3</span> <span class="n">Code</span> <span class="mi">8162</span> <span class="n">Apr</span> <span class="mi">18</span> <span class="mi">2019</span> <span class="mi">19</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mi">27</span>
+
+<span class="n">I</span> <span class="n">WVCdm</span> <span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">):]</span> <span class="n">Level3</span> <span class="n">Library</span> <span class="mi">8162</span> <span class="n">Apr</span> <span class="mi">18</span> <span class="mi">2019</span> <span class="mi">19</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mi">27</span>
+
+<span class="n">I</span> <span class="n">WVCdm</span> <span class="p">:</span> <span class="p">[</span><span class="n">oemcrypto</span>\<span class="n">_adapter</span>\<span class="n">_dynamic</span><span class="o">.</span><span class="n">cpp</span><span class="p">(</span><span class="mi">650</span><span class="p">):</span><span class="n">Initialize</span><span class="p">]</span> <span class="n">L3</span>
+<span class="n">Initialized</span><span class="o">.</span> <span class="n">Trying</span> <span class="n">L1</span><span class="o">.</span>
+
+<span class="n">W</span> <span class="n">WVCdm</span> <span class="p">:</span> <span class="p">[</span><span class="n">oemcrypto</span>\<span class="n">_adapter</span>\<span class="n">_dynamic</span><span class="o">.</span><span class="n">cpp</span><span class="p">(</span><span class="mi">662</span><span class="p">):</span><span class="n">Initialize</span><span class="p">]</span> <span class="n">Could</span> <span class="ow">not</span>
+<span class="n">load</span> <span class="n">liboemcrypto</span><span class="o">.</span><span class="n">so</span><span class="o">.</span> <span class="n">Falling</span> <span class="n">back</span> <span class="n">to</span> <span class="n">L3</span><span class="o">.</span> <span class="n">dlopen</span> <span class="n">failed</span><span class="p">:</span> <span class="n">library</span>
+<span class="s2">&quot;liboemcrypto.so&quot;</span> <span class="ow">not</span> <span class="n">found</span>
+
+<span class="n">I</span> <span class="n">WVCdm</span> <span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">):]</span> <span class="n">L3</span> <span class="n">Terminate</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="run-gts-test-cases">
+<h3>Run GTS test cases<a class="headerlink" href="#run-gts-test-cases" title="Permalink to this headline">¶</a></h3>
+<p>In the GTS test environment, check the GtsExoPlayerTestCases and
+GtsMediaTestCases modules to confirm that the widevine service is enabled
+successfully:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span>  <span class="n">run</span> <span class="n">gts</span> <span class="o">-</span><span class="n">m</span> <span class="n">GtsExoPlayerTestCases</span>
+
+<span class="o">&gt;</span>  <span class="n">run</span> <span class="n">gts</span> <span class="o">-</span><span class="n">m</span> <span class="n">GtsMediaTestCases</span>
+</pre></div>
+</div>
+<p>All test cases in these two modules are expected to pass.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../bare-metal/boot-civ-bare-metal.html" class="btn btn-neutral float-right" title="Boot CiV on Bare Metal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../dbc/dbc.html" class="btn btn-neutral" title="Making the Android* Host Debuggable - ADB for x86 Android Solutions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Jun 07, 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

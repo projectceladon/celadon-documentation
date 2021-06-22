@@ -107,8 +107,7 @@ Known Issues
 
 Where to Find the Release 
 -------------------------
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A1
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml
+* Manifest Link : 
 
 
 How to Install this Release 
@@ -156,6 +155,26 @@ How to Install this Release
 Validation Results
 ------------------
 
+|C| build has been validated on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_  in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
+BT                             OK        Bluetooth is working
+Audio Playback                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Security                       OK
+Boot                           OK       Boots on QEMU 4.2.0
+Ethernet                       OK
+Image Flash                    OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+USB                            OK       Keyboard , Mouse , Pen drive
+
+=============================  =======  ========
 
 
 Reference Configuration 
@@ -174,8 +193,6 @@ Reference Configuration
 Acronyms and terms
 ------------------
 CIV - Celadon in Virtual Machine
-
-
 
 
 Helpful hints /Related Documents

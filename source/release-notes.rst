@@ -184,9 +184,9 @@ Reference Configuration
 
 
  * Supported Software
-     * AOSP Version - android-11.0.0_r33
-     * NUC11PAQI7 Host Kernel - -5.4.76-cvhb
-     * NUC11PAQI7 Guest kernel - -5.4.76-cvhb
+     * AOSP Version - android-11.0.0_r37
+     * NUC11PAQI7 Host Kernel - -5.4.121-cvhb
+     * NUC11PAQI7 Guest kernel - -5.4.121-cvhb
      
 
 Acronyms and terms

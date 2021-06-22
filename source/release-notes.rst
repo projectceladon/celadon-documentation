@@ -124,8 +124,6 @@ Helpful hints /Related Documents
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 
-Intended Audience
-Open Source Community who has subscribed to celadon@lists.01.org
 
 CIV_00.21.01.12_A11
 ======================

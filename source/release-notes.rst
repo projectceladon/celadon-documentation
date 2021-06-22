@@ -17,67 +17,115 @@ Releases
 
 CIV_00.21.02.24_A11
 ======================
-This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on |NUC| Kit NUC11PAQI7 Celadon in VM.
+* This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
+
 Intended Audience
-Open Source Community who has subscribed to celadon@lists.01.org
-Customer Support
-subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+-----------------
+* Open Source Community who has subscribed to celadon@lists.01.org
+
+Customer Support  
+-----------------
+* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+
 Introduction
+------------
+
 New in This Release
-New Features
-Changes to Existing Features
-Unsupported or Discontinued Features
+-------------------
+
+ * New Features
+
+ * Changes to Existing Features
+
+ * Unsupported or Discontinued Features
+
+
 Known Issues
-Where to Find the Release
-Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A1
-Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml
-How to Install this Release
-Steps to sync to this Release
-repo init -u https://github.com/projectceladon/manifest -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml
-NOTE : Manifest tag will change according to the latest release
-repo sync -c -q -j${nproc}
-Android Build commands
-For Compilation please use Ubuntu 18.04
-source build/envsetup.sh
-lunch caas-userdebug
-make flashfiles -jN
-Steps To build the host kernel for this Manifest
-Download caas-releasefiles-userdebug.tar.gz and put it under ~/civ
-cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
-cd patches/kernel/lts2019-chromium
-./build_weekly.sh
-Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-sudo dpkg -i *.deb
-Update grub to wait indefinitely for kernel selection on boot
-sudo vim /etc/default/grub
-Comment out GRUB_TIMEOUT_STYLE=hidden #GRUB_TIMEOUT_STYLE=hidden
-Uncomment following line and modify grub timeout to -1 for indefinite wait or 5 for 5secs wait #GRUB_TIMEOUT=-1
-Save the file
-sudo update-grub
-sudo reboot
-Select compiled kernel from "Advanced options for Ubuntu"
-Flash and run steps
-Download flash-files [https://github.com/projectceladon/celadon-binary]
-Untar <flash-files>
-sudo -E ./scripts/setup_host -u headless
-sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off
-sudo -E ./scripts/start_civ.sh -g GVT-d
+------------
+
+
+Where to Find the Release 
+-------------------------
+* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A1
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml
+
+
+How to Install this Release 
+----------------------------------------------
+* Steps to sync to this Release
+   * repo init -u https://github.com/projectceladon/manifest -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml
+   * NOTE : Manifest tag will change according to the latest release
+   * repo sync -c -q -j${nproc}
+
+* Android Build commands
+   * For Compilation please use Ubuntu 18.04
+   * source build/envsetup.sh
+   * lunch caas-userdebug
+   * make flashfiles -jN
+
+* Steps To build the host kernel for this Manifest
+    * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
+    * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
+    * cd patches/kernel/lts2019-chromium
+    * ./build_weekly.sh
+    * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
+    * sudo dpkg -i *.deb
+    * Update grub to wait indefinitely for kernel selection on boot
+        * sudo vim /etc/default/grub
+        * Comment out GRUB_TIMEOUT_STYLE=hidden
+          #GRUB_TIMEOUT_STYLE=hidden
+        * Uncomment following line and modify grub timeout to -1 for indefinite wait or 5 for 5secs wait
+          #GRUB_TIMEOUT=-1
+        * Save the file
+        * sudo update-grub
+    * sudo reboot
+    * Select compiled kernel from "Advanced options for Ubuntu"
+
+* Flash and run steps
+   * Download flash-files [https://github.com/projectceladon/celadon-binary]
+   * Untar <flash-files>
+   * sudo -E ./scripts/setup_host -u headless
+   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+   * sudo -E ./scripts/start_civ.sh -g GVT-d
+
+
+
+
+
 Validation Results
-Reference Configuration
-Supported Hardware
-Product - NUC11PAQI7
-Supported Software
-AOSP Version - android-11.0.0_r33
-NUC11PAQI7 Host Kernel - -5.4.76-cvhb
-NUC11PAQI7 Guest kernel - -5.4.76-cvhb
+------------------
+
+
+
+Reference Configuration 
+-----------------------
+
+ * Supported Hardware
+     * Product - NUC11PAQI7
+
+
+ * Supported Software
+     * AOSP Version - android-11.0.0_r33
+     * NUC11PAQI7 Host Kernel - -5.4.76-cvhb
+     * NUC11PAQI7 Guest kernel - -5.4.76-cvhb
+     
+
 Acronyms and terms
+------------------
 CIV - Celadon in Virtual Machine
 
+
+
+
 Helpful hints /Related Documents
-If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
-The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should use their own keys to sign their release images
-Build Celadon in VM https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
-Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
+---------------------
+* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.  
+* The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should  use their own keys to sign their release images
+* Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
+* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
+
+Intended Audience
+Open Source Community who has subscribed to celadon@lists.01.org
 
 CIV_00.21.01.12_A11
 ======================

@@ -35,8 +35,7 @@ New in This Release
 
  * New Features
  
-  Existing Features
- -------------------
+ * Existing Features
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
       * AIDL for Power and Light HALs

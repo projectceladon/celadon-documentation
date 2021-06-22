@@ -37,69 +37,69 @@ New in This Release
  
  * Existing Features
  -------------------
- * API Level 30 & FCM target Level 5
- * Other Changes that came as part of API level Up
-     * AIDL for Power and Light HALs
-     * Audio & Audio effects HAL 6.0 
-     * Health HAL 2.1
-     * Boot HAL upgraded to 1.1
-* Upgraded Mainline modules
-* Soft restart
-* Updatable APEX
-* Config store HAL deprecated
-* Graphics Memory Allocator (Gralloc) 4.0
-* HWC 2.4 support for Display
-* Trusty Hardware Seed binding
-* Power Management - Suspend,Resume
-* Android key Input Manager Framework is implemented for Power & Volume buttons
-* Integrated Sensor Hub Enablement for Android Supported Sensors
-* Android Thermal HAL and Thermal Manager Service
-* BZIP2 performance improvements
-* Bluetooth Control from Android in VM
-* HDMI Audio Output Support
-* Virtio-gpu Support
-* SDHCI mediation enabled and supported SD card
-   * CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh --sdonly
-* Graphics GVT-d support
-* HDMI and DP display support
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset, 3.5mm and HDMI are supported 
-* Setting Proxy for Wireless Network
-* Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
-* Ethernet works fine with Ethernet to USB converter
-* Wifi Control from Android in VM using usb passthrough
-* To passthrough USB host controller in NUC11PAQI7, run the CIV launch script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
-* Power Management - Shutdown and Reboot
-* Android Time keeping with Host OS
-* Product Information to Guest OS
-* ODM partition for vendor customizations
-* Only logitech C922 pro stream webcam is supported for all camera related testing
-* HW Video Codecs support on celadon
+    * API Level 30 & FCM target Level 5
+    * Other Changes that came as part of API level Up
+      * AIDL for Power and Light HALs
+      * Audio & Audio effects HAL 6.0 
+      * Health HAL 2.1
+      * Boot HAL upgraded to 1.1
+    * Upgraded Mainline modules
+    * Soft restart
+    * Updatable APEX
+    * Config store HAL deprecated
+    * Graphics Memory Allocator (Gralloc) 4.0
+    * HWC 2.4 support for Display
+    * Trusty Hardware Seed binding
+    * Power Management - Suspend,Resume
+    * Android key Input Manager Framework is implemented for Power & Volume buttons
+    * Integrated Sensor Hub Enablement for Android Supported Sensors
+    * Android Thermal HAL and Thermal Manager Service
+    * BZIP2 performance improvements
+    * Bluetooth Control from Android in VM
+    * HDMI Audio Output Support
+    * Virtio-gpu Support
+    * SDHCI mediation enabled and supported SD card
+      * CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh --sdonly
+    * Graphics GVT-d support
+    * HDMI and DP display support
+    * Mass Storage USB 2.0 and 3.x devices is supported
+    * Adb over WIFI and Ethernet is supported
+    * Audio playback over USB Headset, 3.5mm and HDMI are supported 
+    * Setting Proxy for Wireless Network
+    * Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
+    * Ethernet works fine with Ethernet to USB converter
+    * Wifi Control from Android in VM using usb passthrough
+    * To passthrough USB host controller in NUC11PAQI7, run the CIV launch script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
+    * Power Management - Shutdown and Reboot
+    * Android Time keeping with Host OS
+    * Product Information to Guest OS
+    * ODM partition for vendor customizations
+    * Only logitech C922 pro stream webcam is supported for all camera related testing
+    * HW Video Codecs support on celadon
 
-  **Decoder**
+        **Decoder**
 
-    * AVC High profile @ Level 5.1 (4k@30fps)
-    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
-    * VP9 profile 0 @ Level 5 (4k@30fps)
-    * Vp8 8 bits 1080p@60fps
+            * AVC High profile @ Level 5.1 (4k@30fps)
+            * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+            * VP9 profile 0 @ Level 5 (4k@30fps)
+            * Vp8 8 bits 1080p@60fps
 
-  **Encoder**
+        **Encoder**
 
-    * AVC High profile @ level 4.1 (1080P@30fps)
-    * HEVC Main profile @ Level 4 (1080P@30fps)
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
-* Generic storage HAL supported
-* SATA emulation is supported
-* 9pfs based file transfer
-* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
-    * User guide:
-        * SELinux Configuration and Rules
-        * How to Enable or Disable Trusty for Debugging
+            * AVC High profile @ level 4.1 (1080P@30fps)
+            * HEVC Main profile @ Level 4 (1080P@30fps)
+    * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+    * Generic storage HAL supported
+    * SATA emulation is supported
+    * 9pfs based file transfer
+    * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+         * User guide:
+            * SELinux Configuration and Rules
+            * How to Enable or Disable Trusty for Debugging
+    
+     * Changes to Existing Features
 
- * Changes to Existing Features
-
- * Unsupported or Discontinued Features
+     * Unsupported or Discontinued Features
 
 
 Known Issues

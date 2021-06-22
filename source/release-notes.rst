@@ -191,7 +191,7 @@ Reference Configuration
 
 Acronyms and terms
 ------------------
-CIV - Celadon in Virtual Machine
+* CIV - Celadon in Virtual Machine
 
 
 Helpful hints /Related Documents

@@ -32,7 +32,6 @@ Introduction
 
 New in This Release
 -------------------
-
  * New Features
  
  * Existing Features
@@ -96,9 +95,9 @@ New in This Release
             * SELinux Configuration and Rules
             * How to Enable or Disable Trusty for Debugging
     
-     * Changes to Existing Features
+ * Changes to Existing Features
 
-     * Unsupported or Discontinued Features
+ * Unsupported or Discontinued Features
 
 
 Known Issues

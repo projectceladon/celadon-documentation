@@ -56,9 +56,9 @@ Set up the development environment
             libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
             libghc-bzlib-dev squashfs-tools pngcrush \
             schedtool dpkg-dev liblz4-tool make optipng maven \
-            libssl-dev bc bsdmainutils gettext python-mako \
+            libssl-dev bc bsdmainutils gettext python3-mako \
             libelf-dev sbsigntool dosfstools mtools efitools \
-            python-pystache git-lfs python3 flex clang libncurses5
+            python3-pystache git-lfs python3 flex clang libncurses5
       $ sudo apt install cryptsetup-bin
 
 #. :abbr:`CiC (Celadon in Container)`

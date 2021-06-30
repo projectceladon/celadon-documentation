@@ -108,7 +108,7 @@ Known Issues
 
 Where to Find the Release 
 -------------------------
-* Manifest Link : 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.02.25_A11.xml
 
 
 How to Install this Release 

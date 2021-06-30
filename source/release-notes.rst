@@ -33,9 +33,10 @@ Introduction
 New in This Release
 -------------------
  * New Features
-    * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats are supported 
-    * Power Management - Suspend/Resume is supported
-    * Local Video Playback with Widevine DRM - Level 3 is supported
+    * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
+    * Power Management - Suspend/Resume
+    * Local Video Playback with Widevine DRM - Level 3 
+    * External USB Camera 
  
  * Existing Features
     * API Level 30 & FCM target Level 5

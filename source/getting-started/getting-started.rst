@@ -12,6 +12,7 @@ Machines, and Containers. This guide also explains how to contribute patches.
    :maxdepth: 2
 
    as-service
+   naming-convention
    build-source
    submit-patch
    host-os-hardening

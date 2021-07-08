@@ -11,4 +11,3 @@
    release-notes
    references
    faqs
-   sitemap

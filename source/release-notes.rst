@@ -19,26 +19,26 @@ CIV_00.21.02.25_A11
 ======================
 * This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
 
-Intended Audience
+Intended audience
 -----------------
 * Open Source Community who has subscribed to celadon@lists.01.org
 
-Customer Support  
+Customer support  
 -----------------
 * subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
 
 Introduction
 ------------
 
-New in This Release
+New in this release
 -------------------
- * New Features
+ * New features
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume
     * Local Video Playback with Widevine DRM - Level 3 
     * External USB Camera 
  
- * Existing Features
+ * Existing features
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
       * AIDL for Power and Light HALs
@@ -99,42 +99,43 @@ New in This Release
             * SELinux Configuration and Rules
             * How to Enable or Disable Trusty for Debugging
     
- * Changes to Existing Features
+ * Changes to existing features
 
- * Unsupported or Discontinued Features
+ * Unsupported or discontinued features
 
 
-Known Issues
+Known issues
 ------------
 * Android UI Flicker when booted with eDP Display
 * Blank screen is displayed while video playback [Configuration : GLrenderer-Virtio] & [GLrenderer-Softpipe]
 * Camera Preview Flickers while using MultiCamera application
 
-Where to Find the Release 
+Where to find the release
 -------------------------
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.02.25_A11.xml
 
 
-How to Install this Release 
-----------------------------------------------
-* Steps to sync to this Release
+How to install this release
+---------------------------
+* Steps to sync to this release
    * repo init -u https://github.com/projectceladon/manifest -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml
    * NOTE : Manifest tag will change according to the latest release
    * repo sync -c -q -j${nproc}
 
-* Android Build commands
+* Android build commands
    * For Compilation please use Ubuntu 18.04
    * source build/envsetup.sh
    * lunch caas-userdebug
    * make flashfiles -jN
 
-* Steps To build the host kernel for this Manifest
+* Steps To build the host kernel for this manifest
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh
-    * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i *.deb
+    * Deb files will be generated in
+      patches/kernel/lts2019-chromium/host_kernel
+    * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
@@ -157,7 +158,7 @@ How to Install this Release
 
 
 
-Validation Results
+Validation results
 ------------------
 
 |C| build has been validated on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_  in the following function domains:
@@ -182,7 +183,7 @@ USB                            OK       Keyboard , Mouse , Pen drive
 =============================  =======  ========
 
 
-Reference Configuration 
+Reference Configuration
 -----------------------
 
  * Supported Hardware
@@ -197,13 +198,18 @@ Reference Configuration
 
 Acronyms and terms
 ------------------
+
 * CIV - Celadon in Virtual Machine
 
 
 Helpful hints /Related Documents
----------------------
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.  
-* The release of this project will be signed by test keys, it's only a reference for our customer and we are not responsible for this. Customer should  use their own keys to sign their release images
+--------------------------------
+
+* If you plan to use Celadon in product, please replace all the test keys
+  under device/intel/build/testkeys/ with your product key.  
+* The release of this project will be signed by test keys, it's only a
+  reference for our customer and we are not responsible for this. Customers
+  should use their own keys to sign their release images
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 
@@ -223,11 +229,14 @@ New Features
 Existing Features
 -----------------
 * API Level 30 & FCM target Level 5
+
  * Other Changes that came as part of API level Up
+
      * AIDL for Power and Light HALs
      * Audio & Audio effects HAL 6.0 
      * Health HAL 2.1
      * Boot HAL upgraded to 1.1
+
 * Upgraded Mainline modules
 * Soft restart
 * Updatable APEX
@@ -283,8 +292,9 @@ Existing Features
         * How to Enable or Disable Trusty for Debugging
 
 
-Important Remarks
--------------
+Important remarks
+-----------------
+
 * For CaaS-CIV
 
   * Recommended system requirements for Host
@@ -296,7 +306,7 @@ Important Remarks
      * RAM: [default 2GB]
   
 
-Known Issues
+Known issues
 -------------
 * After recording the video in MultiCamera, it can be successfully played in MUltiCamera, but the playback in photos app fails
 * Android is not Booting UI after "adb reboot" when connected with eDP Display
@@ -313,7 +323,7 @@ Known Issues
       * https://github.com/projectceladon/vendor-intel-utils/pull/1071 # 2021-03-30 # Enable config for Ethernet Controller I225-LM/I225-V support
 * Android UI Flicker when booted with eDP Display
 
-Validation Results
+Validation results
 ------------------
 
 |C| build has been validated on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_  in the following function domains:
@@ -360,7 +370,7 @@ Helpful Hints / Links
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i *.deb
+    * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
@@ -379,11 +389,14 @@ CIV_01.20.04.50_A11
 New Features
 -----------------
 * API Level 30 & FCM target Level 5
+
  * Other Changes that came as part of API level Up
+
      * AIDL for Power and Light HALs
      * Audio & Audio effects HAL 6.0 
      * Health HAL 2.1
      * Boot HAL upgraded to 1.1
+
 * Upgraded Mainline modules
 * Soft restart
 * Updatable APEX
@@ -447,8 +460,9 @@ Existing Features
         * How to Enable or Disable Trusty for Debugging
 
 
-Important Remarks
--------------
+Important remarks
+-----------------
+
 * For CaaS-CIV
 
   * Recommended system requirements for Host
@@ -461,8 +475,8 @@ Important Remarks
   * Note: Allocating 100% Host resources in terms of memory and cores to guest is not recommended currently and it can cause instabilities.
 
 
-Known Issues
--------------
+Known issues
+------------
 * After deprecation of sdcardFS in Android R, Storage stats are not having correct values
 * /data/logs folder not seen after flashing the image
 * Logs, Kpanic and hdcp directory not created in /data with CONFIG_SDCARDFS disabled 
@@ -480,7 +494,7 @@ Known Issues
 * AV1 Video doesn't play smoothly
 * Unable to get media volume with adb shell
 
-Validation Results
+Validation results
 ------------------
 
 |C| build has been validated on CML NUC - NUC10i7FN* in the following function domains:
@@ -525,7 +539,7 @@ Helpful Hints / Links
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i *.deb
+    * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
@@ -600,7 +614,7 @@ New Features
         * How to Enable or Disable Trusty for Debugging
 
 
-Known Issues
+Known issues
 -------------
 *	Camera Preview doesn't show , unable to capture photo/record video
 *	During HFP Audio call , audio is not routed to BT headset via Hangouts[GVT-d and GVT-g]
@@ -628,7 +642,7 @@ Known Issues
 *   When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
 
 
-Validation Results
+Validation results
 ------------------
 
 |C| build has been validated on CML NUC - NUC10i7FN* in the following function domains:
@@ -673,7 +687,7 @@ Helpful Hints / Links
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i *.deb
+    * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
@@ -760,7 +774,7 @@ Existing Features
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
-Known Issues
+Known issues
 -------------
 * When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
 * All the USB peripheral devices has to be connected before the VM is launched
@@ -775,7 +789,7 @@ Known Issues
     * Solution : Needs application restart (close and open application ) to work properly.
 
 
-Validation Results
+Validation results
 ------------------
 
 |C| build has been validated on CML NUC - NUC10i7FN* in the following function domains:
@@ -818,7 +832,7 @@ Helpful Hints / Links
     * cd patches/kernel/lts2019-chromium
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i *.deb
+    * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden

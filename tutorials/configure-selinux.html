@@ -178,14 +178,12 @@
 Android to enforce the Mandatory Access Control for security. SELinux
 supports two working modes: permissive and enforcing:</p>
 <ul class="simple">
-<li><p>In <strong>permissive</strong> mode, it only audits the operations of all domains and</p></li>
+<li><p>In <strong>permissive</strong> mode, it only audits the operations of all domains and
+prints the AVC (Access Vector Cache) errors that violate the sepolicy
+rules, but it never blocks any operations.</p></li>
+<li><p>In <strong>enforcing</strong> mode, it prints out the AVC errors and also blocks the
+operations that violate the sepolicy rules.</p></li>
 </ul>
-<p>prints the AVC (Access Vector Cache) errors that violate the sepolicy rules,
-but it never blocks any operations.</p>
-<ul class="simple">
-<li><p>In <strong>enforcing</strong> mode, it prints out the AVC errors and also blocks the</p></li>
-</ul>
-<p>operations that violate the sepolicy rules.</p>
 <p>It is a good practice to set SELinux in permissive mode at the beginning of
 the development phase in order to easily bring up the system and fix any
 SELinux errors. After resolving all AVC errors, change the SELinux mode to
@@ -276,9 +274,9 @@ Enforcing
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
 <li><p>You must run the <code class="docutils literal notranslate"><span class="pre">setenforce</span></code> command with <em>root</em> permission.</p></li>
+<li><p>Changing the SELinux operation mode returns it to its default
+mode specified in the <em>mixins.spec</em> file after system reboots.</p></li>
 </ol>
-<p>2. Changing the SELinux operation mode returns it to its default
-mode specified in the <em>mixins.spec</em> file after system reboots.</p>
 </div>
 </div></blockquote>
 </section>
@@ -291,16 +289,14 @@ instructions take the ‘<em>rfkill</em>’ module as an example, and show you t
 required steps to get access to the system resources.</p>
 <section id="add-the-initial-sepolicy-rules">
 <h3>Add the initial sepolicy rules<a class="headerlink" href="#add-the-initial-sepolicy-rules" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>For <abbr title="Celadon in VM">CiV</abbr> scenario, create a sub-folder <code class="file docutils literal notranslate"><span class="pre">rfkill</span></code> under the <code class="file docutils literal notranslate"><span class="pre">device/intel/project-celadon/sepolicy/</span></code> directory to host the sepolicy rules files.
 For <abbr title="Celadon in Container">CiC</abbr> scenario,
 the <code class="file docutils literal notranslate"><span class="pre">rfkill</span></code> folder should be created in
 <code class="file docutils literal notranslate"><span class="pre">device/intel/cic/common/sepolicy</span></code> directory.</p></li>
-</ol>
-<p>#. Introduce the previous folder to the sepolicy compiler by adding the
-following line to the board configuration overlay file.</p>
-<blockquote>
-<div><p>For <abbr title="Celadon in VM">CiV</abbr> scenario, edit the file <code class="file docutils literal notranslate"><span class="pre">device/intel/mixins/groups/rfkill/true/BoardConfig.mk</span></code>:</p>
+<li><p>Introduce the previous folder to the sepolicy compiler by adding the
+following line to the board configuration overlay file.
+For <abbr title="Celadon in VM">CiV</abbr> scenario, edit the file <code class="file docutils literal notranslate"><span class="pre">device/intel/mixins/groups/rfkill/true/BoardConfig.mk</span></code>:</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>BOARD_SEPOLICY_DIRS += $(INTEL_PATH_SEPOLICY)/rfkill
 </pre></div>
@@ -312,7 +308,8 @@ following line to the board configuration overlay file.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</div></blockquote>
+</li>
+</ol>
 <p>#. Inside the sepolicy rules folder, create an initial file
 named ‘<em>file_contexts</em>’ with the following content. This assigns a file
 label for the <em>rfkill</em> executable file:</p>
@@ -424,7 +421,7 @@ $ adb root <span class="o">&amp;&amp;</span> adb shell load_sepolicy /sdcard/pre
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jun 30, 2021.
+      Last updated on Jul 08, 2021.
 
     </p>
   </div>

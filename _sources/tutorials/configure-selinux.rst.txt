@@ -9,11 +9,11 @@ Android to enforce the Mandatory Access Control for security. SELinux
 supports two working modes: permissive and enforcing:
 
 * In **permissive** mode, it only audits the operations of all domains and
-prints the AVC (Access Vector Cache) errors that violate the sepolicy rules,
-but it never blocks any operations.
+  prints the AVC (Access Vector Cache) errors that violate the sepolicy
+  rules, but it never blocks any operations.
 
 * In **enforcing** mode, it prints out the AVC errors and also blocks the
-operations that violate the sepolicy rules.
+  operations that violate the sepolicy rules.
 
 It is a good practice to set SELinux in permissive mode at the beginning of
 the development phase in order to easily bring up the system and fix any
@@ -113,7 +113,7 @@ To change SELinux mode at runtime
     .. note::
         1. You must run the ``setenforce`` command with *root* permission.
         2. Changing the SELinux operation mode returns it to its default
-        mode specified in the *mixins.spec* file after system reboots.
+           mode specified in the *mixins.spec* file after system reboots.
 
 Add sepolicy rules for a module
 ===============================
@@ -132,7 +132,7 @@ Add the initial sepolicy rules
    :file:`device/intel/cic/common/sepolicy` directory.
 
 #. Introduce the previous folder to the sepolicy compiler by adding the
-following line to the board configuration overlay file.
+   following line to the board configuration overlay file.
    For :abbr:`CiV (Celadon in VM)` scenario, edit the file :file:`device/intel/mixins/groups/rfkill/true/BoardConfig.mk`:
 
     .. code-block:: none

@@ -14,6 +14,7 @@ Machines, and Containers. This guide also explains how to contribute patches.
    as-service
    naming-convention
    build-source
+   on-bm
    submit-patch
    host-os-hardening
    how-to

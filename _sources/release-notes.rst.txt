@@ -19,26 +19,26 @@ CIV_00.21.02.25_A11
 ======================
 * This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
 
-Intended Audience
+Intended audience
 -----------------
 * Open Source Community who has subscribed to celadon@lists.01.org
 
-Customer Support  
+Customer support  
 -----------------
 * subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
 
 Introduction
 ------------
 
-New in This Release
+New in this release
 -------------------
- * New Features
+ * New features
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume
     * Local Video Playback with Widevine DRM - Level 3 
     * External USB Camera 
  
- * Existing Features
+ * Existing features
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
       * AIDL for Power and Light HALs
@@ -99,9 +99,9 @@ New in This Release
             * SELinux Configuration and Rules
             * How to Enable or Disable Trusty for Debugging
     
- * Changes to Existing Features
+ * Changes to existing features
 
- * Unsupported or Discontinued Features
+ * Unsupported or discontinued features
 
 
 Known issues
@@ -110,25 +110,25 @@ Known issues
 * Blank screen is displayed while video playback [Configuration : GLrenderer-Virtio] & [GLrenderer-Softpipe]
 * Camera Preview Flickers while using MultiCamera application
 
-Where to Find the Release 
+Where to find the release
 -------------------------
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.02.25_A11.xml
 
 
-How to Install this Release 
-----------------------------------------------
-* Steps to sync to this Release
+How to install this release
+---------------------------
+* Steps to sync to this release
    * repo init -u https://github.com/projectceladon/manifest -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml
    * NOTE : Manifest tag will change according to the latest release
    * repo sync -c -q -j${nproc}
 
-* Android Build commands
+* Android build commands
    * For Compilation please use Ubuntu 18.04
    * source build/envsetup.sh
    * lunch caas-userdebug
    * make flashfiles -jN
 
-* Steps To build the host kernel for this Manifest
+* Steps To build the host kernel for this manifest
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
     * cd patches/kernel/lts2019-chromium

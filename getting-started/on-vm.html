@@ -183,8 +183,10 @@
 <span id="caas-on-vm"></span><h1>Run Celadon in a virtual machine<a class="headerlink" href="#run-c-in-a-virtual-machine" title="Permalink to this headline">¶</a></h1>
 <p>This page explains what you’ll need to run Celadon in a virtual machine.</p>
 <p>Depending on your applications, you can run <abbr title="Celadon in VM">CiV</abbr> using
-Intel® GVT-g technology, or allowing for GPU passthrough to a single Android
-guest VM through Intel® GVT-d technology, or VirtIO GPU, or pure software rendering.</p>
+Intel® GVT-g technology, or allowing for GPU passthrough to a single
+Android* guest VM through Intel® Virtualization Technology (Intel® VT) for
+Directed I/O (Intel® VT-d) technology, or VirtIO GPU, or pure
+software rendering.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
@@ -198,28 +200,27 @@ guest VM through Intel® GVT-d technology, or VirtIO GPU, or pure software rende
 <section id="prerequisites">
 <h2><a class="toc-backref" href="#id1">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p>A Intel NUC with 5th Generation or newer Intel Core Processors.</p></li>
-<li><p>Ubuntu 20.04 (Focal Fossa) preinstalled which runs Linux* kernel
+<li><p>An Intel NUC with an eighth Generation or newer Intel® Core™ Processor.</p></li>
+<li><p>Ubuntu* 20.04 (Focal Fossa) preinstalled which runs Linux* kernel
 version 5.0.0 or above.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><abbr title="Celadon in VM">CiV</abbr> releases have been validated on
 Intel NUC model <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html">NUC7i5DNHE</a>. Releases after <strong>April 17th 2020</strong> are
 validated on Intel NUC model <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnk.html">NUC10i7FNK</a> and <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnh.html">NUC10i7FNH</a> to
-take performance advantages of 10th Generation Intel® Core Processors.</p>
+take performance advantages of 10th Generation Intel Core Processors.</p>
 </div>
 </li>
 </ul>
 </section>
 <section id="intel-gvt-d-overview">
 <h2><a class="toc-backref" href="#id2">Intel GVT-d overview</a><a class="headerlink" href="#intel-gvt-d-overview" title="Permalink to this headline">¶</a></h2>
-<p>Intel Graphics Virtualization Technology covers three distinct flavors
-of graphics virtualization approaches. Among these approaches,
-Intel GVT-d is based on
-<abbr title="Intel® Virtualization Technology for Directed I/O">Intel® VT-d</abbr>
+<p>Intel® Graphics Virtualization Technology (Intel® GVT) covers three distinct
+flavors of graphics virtualization approaches. Among these approaches,
+Intel GVT-d is based on Intel VT-d
 technology, it also includes additional graphics related configuration
 options when compared to standard NIC pass-through devices.
-Intel® GVT-d allows direct assignment of an entire GPU’s capacity to
+Intel GVT-d allows direct assignment of an entire GPU’s capacity to
 a single user, passing the native driver capabilities through the hypervisor
 without limitations.</p>
 <p>Refer to this <a class="reference external" href="https://01.org/sites/default/files/downloads/igvt-g/gvtflyer.pdf">article</a>
@@ -236,30 +237,28 @@ The script re-builds the <code class="file docutils literal notranslate"><span c
 from source depending on the target graphics virtualization technology,
 and installs the required software on the installed Ubuntu system for running
 Celadon in a VM with QEMU.</p>
-<p>Download and extract release package(<cite>caas-releasefiles-&lt;$buildvariant&gt;.tar.gz</cite>)
+<p>Download and extract release
+package(<cite>caas-releasefiles-&lt;$buildvariant&gt;.tar.gz</cite>)
 from: <a class="reference external" href="https://github.com/projectceladon/celadon-binary">celadon-binary</a>
 Meanwhile, you can also refer <a class="reference internal" href="build-source.html#build-os-image"><span class="std std-ref">Build Celadon in VM image</span></a> section to build release
 packages.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir -p ~/civ <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/civ
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir -p ~/civ <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/civ
 $ tar zxvf caas-releasefiles-&lt;<span class="nv">$buildvariant</span>&gt;.tar.gz
 $ chmod +x scripts/setup_host.sh
 </pre></div>
 </div>
-</div></blockquote>
 <p>Launch the script with no argument to set up the environment for running
 CiV using Intel GVT technology:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/setup_host.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/setup_host.sh
 </pre></div>
 </div>
-</div></blockquote>
-<p>During the installation, you will be prompted by some questions to confirm the
-changes to the packages, it’s safe to respond <kbd class="kbd docutils literal notranslate">y</kbd> to all of them.</p>
+<p>During the installation, you will be prompted by some questions to
+confirm the changes to the packages, it’s safe to respond <kbd class="kbd docutils literal notranslate">y</kbd> to all of
+them.</p>
 </section>
 <section id="use-c-kernel">
 <h3>Use Celadon kernel<a class="headerlink" href="#use-c-kernel" title="Permalink to this headline">¶</a></h3>
-<p>The Linux kernel is extremely important on every Android devices, Google
+<p>The Linux kernel is extremely important on every Android device. Google*
 recommends using <a class="reference external" href="https://source.android.com/devices/architecture/kernel/android-common">AOSP common kernels</a> on Android devices to include
 features and implementations required by Android.
 In addition to the AOSP common kernel, Celadon also integrates several
@@ -270,7 +269,7 @@ especially running CiV on <a class="reference external" href="https://www.intel.
 To that end, a
 <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh">helper script</a>
 <code class="file docutils literal notranslate"><span class="pre">build.sh</span></code> is designed to facilitate
-the building and deploying of Celadon kerenl on a Ubuntu host.
+the building and deploying of Celadon kernel on a Ubuntu host.
 Refer to the <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README">README</a> for detailed instructions.</p>
 </section>
 </section>
@@ -292,7 +291,8 @@ disk image in <a class="reference external" href="https://www.linux-kvm.org/page
 </div></blockquote>
 <p><code class="file docutils literal notranslate"><span class="pre">caas-releasefiles-&lt;$buildvariant&gt;.tar.gz</span></code></p>
 <blockquote>
-<div><p>The release tar ball contains all required flashfiles/scrips for running Celadon in VM.</p>
+<div><p>The release tar ball contains all required flashfiles/scrips for running
+Celadon in VM.</p>
 </div></blockquote>
 </section>
 <section id="create-a-civ-virtual-disk">
@@ -424,9 +424,9 @@ $ sudo -E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
 <p>You can pass-through not only the GPU but also the USB host controller (xHCI)
 to the Android VM, in order to attach all the connected USB devices
 (e.g. camera, USB thumb drive) to the VM.
-By passing <strong class="command">--passthrough-pci-usb</strong> argument to the <cite>start_civ.sh</cite> script,
-all the USB devices connected to the platform get automatically enumerated inside
-the Android VM:</p>
+By passing <strong class="command">--passthrough-pci-usb</strong> argument to the <cite>start_civ.sh</cite>
+script, all the USB devices connected to the platform get automatically
+enumerated inside the Android VM:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following command pass-through the xHCI to the VM</span>
 $ sudo -E ./scripts/start_civ.sh --passthrough-pci-usb
 </pre></div>
@@ -462,8 +462,9 @@ in the Android VM:</p>
 <section id="launching-with-sd-card">
 <h3>Launching with SD card<a class="headerlink" href="#launching-with-sd-card" title="Permalink to this headline">¶</a></h3>
 <p>In case your hardware platform supports SD cards through the <abbr title="Secure Digital Host Controller Interface">SDHCI</abbr> controller, you can enable
-SDHCI mediation by adding <strong class="command">-b &lt;sdcard block device&gt;</strong> option argument while
-invoking the <cite>start_civ.sh</cite> script if the SD card is present in the slot.</p>
+SDHCI mediation by adding <strong class="command">-b &lt;sdcard block device&gt;</strong> option
+argument while invoking the <cite>start_civ.sh</cite> script if the SD card is present
+in the slot.</p>
 <p>With the following command, the SD card interface will be mediated to the
 Android guest OS, and Android will mount the SD card on boot.
 The external SD card mount is validated with sdcardfs file system and the
@@ -533,7 +534,7 @@ controller, you can connect to it using the command:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jul 09, 2021.
+      Last updated on Jul 14, 2021.
 
     </p>
   </div>

@@ -24,8 +24,8 @@ Intended audience
 -----------------
 * Open Source Community who has subscribed to celadon@lists.01.org
 
-Customer support  
------------------
+Customer support
+----------------
 * subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
 
 Introduction
@@ -54,7 +54,8 @@ New in this release
     * HWC 2.4 support for Display
     * Trusty Hardware Seed binding
     * Power Management - Suspend,Resume
-    * Android key Input Manager Framework is implemented for Power & Volume buttons
+    * Android\* key Input Manager Framework is implemented for Power &
+      Volume buttons
     * Integrated Sensor Hub Enablement for Android Supported Sensors
     * Android Thermal HAL and Thermal Manager Service
     * BZIP2 performance improvements
@@ -77,13 +78,15 @@ New in this release
     * Android Time keeping with Host OS
     * Product Information to Guest OS
     * ODM partition for vendor customizations
-    * Only logitech C922 pro stream webcam is supported for all camera related testing
+    * Only logitech C922 pro stream webcam is supported for all camera
+      related testing
     * HW Video Codecs support on celadon
 
         **Decoder**
 
             * AVC High profile @ Level 5.1 (4k@30fps)
-            * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+            * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10
+              with BT2020 and ST2084 information is not supported)
             * VP9 profile 0 @ Level 5 (4k@30fps)
             * Vp8 8 bits 1080p@60fps
 
@@ -91,11 +94,13 @@ New in this release
 
             * AVC High profile @ level 4.1 (1080P@30fps)
             * HEVC Main profile @ Level 4 (1080P@30fps)
-    * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+    * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2,
+      VORBIS, OPUS, MIDI, FLAC, PCM/WAV
     * Generic storage HAL supported
     * SATA emulation is supported
     * 9pfs based file transfer
-    * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+    * Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
+      Keymaster 3.0
          * User guide:
             * SELinux Configuration and Rules
             * How to Enable or Disable Trusty for Debugging
@@ -142,7 +147,8 @@ How to install this release
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
           #GRUB_TIMEOUT_STYLE=hidden
-        * Uncomment following line and modify grub timeout to -1 for indefinite wait or 5 for 5secs wait
+        * Uncomment the following line and modify grub timeout to -1 for
+          indefinite wait or 5 for 5secs wait
           #GRUB_TIMEOUT=-1
         * Save the file
         * sudo update-grub
@@ -1066,7 +1072,7 @@ New features
 * Fix for MultiCamera gives pop-up "USB hot plug detected" for USB HS and KB
 * Fix for cfc.desktop is not created after cic installation
 * Fix for Setting in camera application doesn't work after clicking on Surveillance Button
-* Fix for Android\* UI Doesn't launch after setup for 1st time with cfc in
+* Fix for Android UI Doesn't launch after setup for 1st time with cfc in
   freshly install Ubuntu\*
 
 Existing features

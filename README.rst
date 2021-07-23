@@ -20,8 +20,8 @@ prerequisites:
 * `Sphinx`_
 
 The instructions for installing these varies according to OS. On a basic out-
-of-the-box Ubuntu-like OS (which usually has Python installed by default),
-check your python version you might need something like:
+of-the-box Ubuntu\*-like OS (which usually has Python\* installed by
+default), check your python version using commands similar to the following:
 
 .. code-block:: console
 
@@ -38,8 +38,8 @@ check your python version you might need something like:
 Cloning the documentation repository
 ====================================
 
-We have confirmed Sphinx installed.  The next step is to clone Gitlab
-repository to our local machine.
+After confirming that Sphinx and Python are installed, clone the Gitlab
+repository to your local machine:
 
 
 .. code-block:: console
@@ -49,9 +49,9 @@ repository to our local machine.
 Run make
 ========
 
-Finally are we ready to run ``make``. Be sure to :command:`cd` to the
-:file:`source/` directory where your ``.rst`` files are, before
-running :command:`make html`, or the doc format of your choice.
+First, :command:`cd` to the :file:`source/` directory that contains your
+``.rst`` files.
+Then run :command:`make html` or the doc format of your choice.
 
 .. code-block:: console
 
@@ -71,8 +71,8 @@ Open one of the .html pages in a web browser to view the rendered
 documentation.
 
 For tips on how to contribute documentation formatted in the .rst style
-needed to integrate beautifully on the clearlinux.org website, please see
- `Theming Sphinx`_.
+needed to integrate beautifully on the Celadon website, please see
+ `reStructuredText Primer`_.
 
 
 
@@ -80,4 +80,4 @@ needed to integrate beautifully on the clearlinux.org website, please see
 .. _GNU make: https://www.gnu.org/software/make/
 .. _Python: https://www.python.org/
 .. _PIP: https://pypi.python.org/pypi/pip/
-.. _Theming Sphinx: https://github.com/otcshare/tcs-hub/blob/master/theming-sphinx.rst
+.. _reStructuredText Primer: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html

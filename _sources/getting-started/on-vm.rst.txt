@@ -18,7 +18,7 @@ software rendering.
 Prerequisites
 *************
 
-* An |NUC| with an eighth Generation or newer |Core-attr| Processor.
+* An |NUC-attr| with an eighth generation or newer |Core-attr| Processor.
 * Ubuntu\* 20.04 (Focal Fossa) preinstalled which runs Linux\* kernel
   version 5.0.0 or above.
 

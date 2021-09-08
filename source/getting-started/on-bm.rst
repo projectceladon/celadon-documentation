@@ -13,10 +13,7 @@ This page explains what you'll need to run |C| natively on Intel hardware platfo
 Hardware Prerequisites
 **********************
 
-* Most of 5th, 6th, 7th, or 8th SoC Generation Intel® Core processors and
-  Intel® Celeron® processors
-* Intel® Xeon® E3 processor family
-* Intel® Xeon® E5 processor family
+* An |NUC-attr| with an eighth generation or newer |Core-attr| Processor.
 
 You can try out the :abbr:`CiV (Celadon in VM)` experience on your
 Intel® architecture (x86) hardware platforms with UEFI BIOS and Intel®

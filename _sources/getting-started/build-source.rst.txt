@@ -120,7 +120,7 @@ Download the source
 
    .. code-block:: bash
 
-       $ repo init -u https://github.com/projectceladon/manifest  -b celadon/q/mr0/stable -m default.xml
+       $ repo init -u https://github.com/projectceladon/manifest  -b celadon/q/mr0/stable -m stable-build/CIV_00.20.03.31_A10.xml
 
    You can also checkout the source code
    of the `QMR0 March-31-2020`_ release that passed the *Platform Exit*

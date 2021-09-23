@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making the Android* Host Debuggable - ADB for x86 Android Solutions &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Widevine* L3 Integration Guide" href="widevine-integration.html" />
+    <link rel="prev" title="Software Debugging Tips on Celadon" href="software-debug-tips.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mixins.html">Mixins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Making the Android* Host Debuggable - ADB for x86 Android Solutions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dbc-overview">DBC Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>Making the Android* Host Debuggable - ADB for x86 Android Solutions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/dbc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="making-the-android-host-debuggable-adb-for-x86-android-solutions">
+<span id="debug-android-host"></span><h1>Making the Android* Host Debuggable - ADB for x86 Android Solutions<a class="headerlink" href="#making-the-android-host-debuggable-adb-for-x86-android-solutions" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial provides an overview of the <abbr title="USB Debug Class">DBC</abbr>
+infrastructure followed by the steps to enable the feature on Celadon and
+seamlessly run <strong class="command">adb</strong> over a USB Type-A port.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#dbc-overview" id="id2">DBC Overview</a></p>
+<ul>
+<li><p><a class="reference internal" href="#github-prs-to-enable-adb-over-dbc-for-c-kbl-nuc" id="id3">GitHub PRs to enable adb over DbC for Celadon KBL NUC</a></p></li>
+<li><p><a class="reference internal" href="#steps-to-enable-adb-over-dbc-support-in-host-machine" id="id4">Steps to enable ADB over DbC support in Host Machine</a></p></li>
+<li><p><a class="reference internal" href="#steps-to-enable-adb-over-dbc-support-on-nuc-blknuc7idnhe-system" id="id5">Steps to enable ADB over DbC support on Intel NUC BLKNUC7iDNHE system</a></p></li>
+<li><p><a class="reference internal" href="#connect-the-target-to-the-host-system" id="id6">Connect the Target to the Host System</a></p></li>
+<li><p><a class="reference internal" href="#adb-detection-in-host-machine" id="id7">ADB Detection in Host Machine</a></p></li>
+<li><p><a class="reference internal" href="#steps-to-switch-back-to-normal-adb-over-usb-dwc" id="id8">Steps to switch back to normal ADB over USB (DWC)</a></p></li>
+<li><p><a class="reference internal" href="#adb-over-dbc-throughput-test-result" id="id9">ADB over DbC throughput test result</a></p></li>
+<li><p><a class="reference internal" href="#conclusion" id="id10">Conclusion</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id11">References</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="description">
+<h2><a class="toc-backref" href="#id1">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The Android host ecosystem consists of new applications like Android
+Automotive, Chromebook*, or gateways running on Intel NUC-like systems. A
+significant challenge with these Android host solutions is the lack of USB
+Device mode because most of x86 platforms are USB host systems. The DBC
+addresses this issue and allows a <abbr title="Device Under Test">DUT</abbr> with
+debug host x86 platforms to provide an infrastructure that offers a
+back-to-back connection using an USB Debug Class infrastructure.</p>
+</section>
+<section id="dbc-overview">
+<h2><a class="toc-backref" href="#id2">DBC Overview</a><a class="headerlink" href="#dbc-overview" title="Permalink to this headline">¶</a></h2>
+<p>The <abbr title="USB Debug Capability">xDBC</abbr> provides the <abbr title="Extensible Host Controller Interface">xHCI</abbr>. The Universal Serial Bus is a host-controlled
+bus. The Host Controller is the hardware that manages the USB bus and USB
+host ports. It initiates and manages all USB transfers. The xHCI is a
+register-level interface providing a mechanism that allows the
+<abbr title="Host Controller">xHC</abbr> to communicate with the operating system of the
+host computer. In addition to exposing register interfaces that are essential
+for the xHC to function properly, xHCI supports many extended capabilities,
+which can be optionally implemented by xHC.</p>
+<p>xHCI includes extended power management capability, I/O virtualization
+capability, and USB legacy support capability, among many others. xDBC is one
+of the main extended capabilities supported by xHCI.</p>
+<p>This functionality enables low-level system debug over USB. The xHCI provides
+a means of connecting a debug host and a debug target. This is achieved
+by emulating a debug device by using xDBC on the debug target. The debug
+device presented by the debug target can be used by the debug host for
+low-level system debugging of the target.</p>
+<section id="github-prs-to-enable-adb-over-dbc-for-c-kbl-nuc">
+<h3><a class="toc-backref" href="#id3">GitHub PRs to enable adb over DbC for Celadon KBL NUC</a><a class="headerlink" href="#github-prs-to-enable-adb-over-dbc-for-c-kbl-nuc" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/pull/291">Kernel and adb changes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/projectceladon/device-androidia-mixins/pull/274">Adding android property to switch between adb over DWC and DBC</a></p></li>
+<li><p><a class="reference external" href="https://github.com/projectceladon/device-androidia/pull/416">Adding sepolicy to access DbC RAW device node</a></p></li>
+</ol>
+</section>
+<section id="steps-to-enable-adb-over-dbc-support-in-host-machine">
+<h3><a class="toc-backref" href="#id4">Steps to enable ADB over DbC support in Host Machine</a><a class="headerlink" href="#steps-to-enable-adb-over-dbc-support-in-host-machine" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Add the following permission to the udev rule
+<code class="file docutils literal notranslate"><span class="pre">/etc/udev/rules.d/51-android.rules</span></code> (create the file if it does
+not exist):</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#DBC
+SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;1d6b&quot;, ATTRS{idProduct}==&quot;0010&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;, SYMLINK+=&quot;android%n&quot;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Reboot the host system, or run the following commands with root
+permission to take effect:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# udevadm control --reload-rules
+root@intel:~# udevadm trigger
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Rename or remove the kernel module <strong class="command">usb_debug.ko</strong> in the host
+system if any:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# <span class="nb">cd</span> /lib/modules/<span class="k">$(</span>uname -r<span class="k">)</span>/kernel/drivers/usb/serial/ <span class="o">&amp;&amp;</span> mv usb_debug.ko usbdebug
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Check if the <strong class="command">usb_debug</strong> driver module is loaded to the kernel
+with the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# lsmod <span class="p">|</span> grep usb_debug
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Unload the <strong class="command">usb_debug</strong> driver module if it is loaded:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# rmmod usb_debug
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>The <strong class="command">adb</strong> command installed by the Android SDK does not support
+ADB over DbC, you should use the <strong class="command">adb</strong> command built from the Celadon
+source tree. The ADB over DbC enabled <strong class="command">adb</strong> command is avaiable
+in the <code class="file docutils literal notranslate"><span class="pre">out/host/linux-x86/bin/</span></code> folder after the build.</p></li>
+</ol>
+</section>
+<section id="steps-to-enable-adb-over-dbc-support-on-nuc-blknuc7idnhe-system">
+<h3><a class="toc-backref" href="#id5">Steps to enable ADB over DbC support on Intel NUC BLKNUC7iDNHE system</a><a class="headerlink" href="#steps-to-enable-adb-over-dbc-support-on-nuc-blknuc7idnhe-system" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Check the Android property value
+<strong class="command">persist.vendor.sys.usb.adbover</strong> with the following command. The
+default value is <strong class="command">dwc</strong>, represents normal ADB over USB (DWC).</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# getprop persist.vendor.sys.usb.adbover
+dwc
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Reset the property value to <strong class="command">dbc</strong>, then reboot the target system.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# setprop persist.vendor.sys.usb.adbover dbc
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="connect-the-target-to-the-host-system">
+<h3><a class="toc-backref" href="#id6">Connect the Target to the Host System</a><a class="headerlink" href="#connect-the-target-to-the-host-system" title="Permalink to this headline">¶</a></h3>
+<p>Plug the debug Target to the Host system using a <a class="reference external" href="https://www.datapro.net/products/usb-3-0-super-speed--a-debugging-cable.html">USB Type-A to Type-A (3.0)
+SuperSpeed Debug cable</a>.
+A USB 2.0 Type-A to Type-A cable does not work in this case.</p>
+<p>At this point the target should have enumerated as a Debug Device on the
+Host. This can be confirmed with the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# lsusb -t
+/:  Bus <span class="m">02</span>.Port <span class="m">1</span>: Dev <span class="m">1</span>, <span class="nv">Class</span><span class="o">=</span>root_hub, <span class="nv">Driver</span><span class="o">=</span>xhci-hcd/10p, 5000M
+    <span class="p">|</span>__ Port <span class="m">4</span>: Dev <span class="m">31</span>, If <span class="m">0</span>, <span class="nv">Class</span><span class="o">=</span>Diagnostic, <span class="nv">Driver</span><span class="o">=</span>usbfs, 5000M
+
+root@intel:~# cat /sys/kernel/debug/usb/devices
+T:  <span class="nv">Bus</span><span class="o">=</span><span class="m">02</span> <span class="nv">Lev</span><span class="o">=</span><span class="m">01</span> <span class="nv">Prnt</span><span class="o">=</span><span class="m">01</span> <span class="nv">Port</span><span class="o">=</span><span class="m">03</span> <span class="nv">Cnt</span><span class="o">=</span><span class="m">01</span> Dev#<span class="o">=</span> <span class="m">31</span> <span class="nv">Spd</span><span class="o">=</span><span class="m">5000</span> <span class="nv">MxCh</span><span class="o">=</span> <span class="m">0</span>
+D:  <span class="nv">Ver</span><span class="o">=</span> <span class="m">3</span>.00 <span class="nv">Cls</span><span class="o">=</span><span class="m">00</span><span class="o">(</span>&gt;ifc <span class="o">)</span> <span class="nv">Sub</span><span class="o">=</span><span class="m">00</span> <span class="nv">Prot</span><span class="o">=</span><span class="m">00</span> <span class="nv">MxPS</span><span class="o">=</span> <span class="m">9</span> <span class="c1">#Cfgs=  1</span>
+P:  <span class="nv">Vendor</span><span class="o">=</span>1d6b <span class="nv">ProdID</span><span class="o">=</span><span class="m">0010</span> <span class="nv">Rev</span><span class="o">=</span> <span class="m">0</span>.10
+S:  <span class="nv">Manufacturer</span><span class="o">=</span>Linux Foundation
+S:  <span class="nv">Product</span><span class="o">=</span>Linux USB Debug Target
+S:  <span class="nv">SerialNumber</span><span class="o">=</span>DW1724778700007
+C:* <span class="c1">#Ifs= 1 Cfg#= 1 Atr=c0 MxPwr=  0mA</span>
+I:* If#<span class="o">=</span> <span class="m">0</span> <span class="nv">Alt</span><span class="o">=</span> <span class="m">0</span> <span class="c1">#EPs= 2 Cls=dc(unk. ) Sub=02 Prot=01 Driver=usbfs</span>
+E:  <span class="nv">Ad</span><span class="o">=</span><span class="m">01</span><span class="o">(</span>I<span class="o">)</span> <span class="nv">Atr</span><span class="o">=</span><span class="m">02</span><span class="o">(</span>Bulk<span class="o">)</span> <span class="nv">MxPS</span><span class="o">=</span><span class="m">1024</span> <span class="nv">Ivl</span><span class="o">=</span>0ms
+E:  <span class="nv">Ad</span><span class="o">=</span><span class="m">81</span><span class="o">(</span>I<span class="o">)</span> <span class="nv">Atr</span><span class="o">=</span><span class="m">02</span><span class="o">(</span>Bulk<span class="o">)</span> <span class="nv">MxPS</span><span class="o">=</span><span class="m">1024</span> <span class="nv">Ivl</span><span class="o">=</span>0ms
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">Speed</span></code> should be <em>5000</em> (i.e. <span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">Spd=5000</span></code>) and
+<span class="target" id="index-2"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">Driver</span></code> should be <em>usbfs</em> (i.e. <span class="target" id="index-3"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">Driver=usbfs</span></code>) in the
+previous command output.</p>
+</div>
+</section>
+<section id="adb-detection-in-host-machine">
+<h3><a class="toc-backref" href="#id7">ADB Detection in Host Machine</a><a class="headerlink" href="#adb-detection-in-host-machine" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:/home/prabhatc/Desktop# ./adb devices
+List of devices attached
+* daemon not running. starting it now on port <span class="m">5037</span> *
+* daemon started successfully *
+DW1724778700007 device
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="steps-to-switch-back-to-normal-adb-over-usb-dwc">
+<h3><a class="toc-backref" href="#id8">Steps to switch back to normal ADB over USB (DWC)</a><a class="headerlink" href="#steps-to-switch-back-to-normal-adb-over-usb-dwc" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Check the Android property value <span class="target" id="index-4"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">persist.vendor.sys.usb.adbover</span></code>
+with the following command.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# getprop persist.vendor.sys.usb.adbover
+dbc
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Reset the property value to <span class="target" id="index-5"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">dwc</span></code>, then reboot the target system.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~# setprop persist.vendor.sys.usb.adbover dwc
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="adb-over-dbc-throughput-test-result">
+<h3><a class="toc-backref" href="#id9">ADB over DbC throughput test result</a><a class="headerlink" href="#adb-over-dbc-throughput-test-result" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Achieved 28.0 MB/s (1073741824 bytes in 36.528s) for pulling 1GB file.</p></li>
+<li><p>Achieved 27.0 MB/s (1073741824 bytes in 37.860s) for pushing 1GB file.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h3><a class="toc-backref" href="#id10">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
+<p>DbC is ideal choice for platforms that don’t have USB device controller IP
+and require debugging support. If a platform uses dedicated USB device
+controller for just debugging support, it can be replaced with DbC. DbC is
+a dependable debugging solution, which is critical for early platform bring-
+up where there is limited BIOS support etc.</p>
+</section>
+<section id="references">
+<h3><a class="toc-backref" href="#id11">References</a><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<p>DBC CAP Blog</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.kernel.org/doc/html/v5.0/driver-api/usb/usb3-debug-port.html">https://www.kernel.org/doc/html/v5.0/driver-api/usb/usb3-debug-port.html</a></p>
+</div></blockquote>
+<p>XHCI Spec</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/extensible-host-controler-interface-usb-xhci.pdf">https://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/extensible-host-controler-interface-usb-xhci.pdf</a></p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="widevine-integration.html" class="btn btn-neutral float-right" title="Widevine* L3 Integration Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="software-debug-tips.html" class="btn btn-neutral" title="Software Debugging Tips on Celadon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Sep 15, 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

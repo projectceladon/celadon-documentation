@@ -173,7 +173,7 @@ Build |C| in VM image
    .. code-block:: bash
 
        $ lunch caas-userdebug
-       $ make BUILD_CPU_ARCH=kabylake flashfiles -j $(nproc)
+       $ make flashfiles -j $(nproc)
 
    .. note::
       #. The *-j $(nproc)* argument instructs the builder to compile the source

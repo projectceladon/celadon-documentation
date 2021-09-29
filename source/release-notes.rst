@@ -129,16 +129,13 @@ New in this release
 Known issues
 ------------
 
-* Android UI Flicker when booted with eDP Display
-* Blank screen is displayed while video playback
-  [Configuration : GLrenderer-Virtio] & [GLrenderer-Softpipe]
-* Camera Preview Flickers while using MultiCamera application
+* 
 
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.02.27_A11.xml
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.02.27_A11
+* Manifest Link : 
+* Binary Link : 
 
 
 How to install this release

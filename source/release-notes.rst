@@ -138,8 +138,7 @@ Known issues
   [Configuration : GLrenderer-Virtio] & [GLrenderer-Softpipe]
 * Camera Preview Flickers while using MultiCamera application
 * IPV6 network does not work for usb2ethernet converter in recovery mode
-* We are able to modify time zone when "Use network-provided time" is enabled , this should happen automatically from network and should not be editable
-
+* Modification of  time zone when "Use network-provided time" should be disabled
 
 
 Where to find the release

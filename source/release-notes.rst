@@ -20,7 +20,7 @@ Releases
 CIV_00.21.03.39_A11
 ===================
 * This is a Production Binary Release for evaluation and development
-  purposes and it cannot be used for production purposes. This release is
+  purposes . This release is
   supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
 
 Intended audience
@@ -40,14 +40,17 @@ New in this release
 -------------------
 
  * New features
-
+    * Power Management - Suspend/Resume - Stability
+    * Intel Sensor Hub 
+    * Config WLAN 
+    * Audio HDA Mediation
+    * Compliance Production Targets achieved
+   
+ * Existing features
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume
     * Local Video Playback with Widevine DRM - Level 3 
     * External USB Camera 
- 
- * Existing features
-
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
 

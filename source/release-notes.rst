@@ -44,7 +44,7 @@ New in this release
     * Intel Sensor Hub 
     * Config WLAN 
     * Audio HDA Mediation
-    * Compliance Production Targets achieved
+    * Compliance production targets achieved
    
  * Existing features
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats

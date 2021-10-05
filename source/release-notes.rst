@@ -126,6 +126,7 @@ New in this release
             * How to Enable or Disable Trusty for Debugging
     
  * Changes to existing features
+    * Dynamic routing to HDMI audio devices 
 
  * Unsupported or discontinued features
 

@@ -45,6 +45,7 @@ New in this release
     * Config WLAN 
     * Audio HDA Mediation
     * Compliance production targets achieved
+    * 
    
  * Existing features
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
@@ -77,7 +78,7 @@ New in this release
     * Virtio-gpu Support
     * SDHCI mediation enabled and supported SD card
 
-      * CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh --sdonly
+      * CIV launch script for SD Card: sudo -E ./scripts/start_civ.sh -d GVT-d -b /dev/mmcblk0p1 --passthrough-pci-usb 
 
     * Graphics GVT-d support
     * HDMI and DP display support

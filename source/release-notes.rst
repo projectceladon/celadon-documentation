@@ -45,8 +45,7 @@ New in this release
     * Config WLAN 
     * Audio HDA Mediation
     * Compliance production targets achieved
-    * 
-   
+      
  * Existing features
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume

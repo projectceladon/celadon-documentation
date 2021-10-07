@@ -82,7 +82,7 @@ New in this release
 
 Known issues
 ------------
-* There are WIP features in all components for full feature completions, tests only basic sanity of components.
+* There are WIP features in all components for full feature completions, This release tests only basic sanity of components.
 
 Where to find the release
 -------------------------

@@ -47,7 +47,7 @@ New in this release
     * Bug fixes, customizations and optimizations for x86
     * SE Policy updated for API level 31
     * AIDL libs updated
- * Android 12 main Features: 
+ * Includes Android 12 main features: 
     * Graphics introduced scheduling plans, 
     * Graphics: Surface flinger caching, GPU memory accounting, profiling and GPU scheduling
     * Accessibility, System UI and backup & restore features updated with minor modifications

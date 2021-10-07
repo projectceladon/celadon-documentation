@@ -18,6 +18,9 @@ Releases
 
 CIV_00.21.03.41_A12
 ===================
+
+* We are glad to announce that the Celadon Project now supports Android 12 within 2 days of Google PV. We wish the Celadon community to start working with Android 12 and provide us feedback on what more you would like to see in the Celadon project.
+  
 * This is a Pre Production Manifest Release for evaluation and development
   purposes and it cannot be used for production purposes. This release is
   supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.

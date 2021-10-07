@@ -172,7 +172,7 @@ Reference configuration
 
  * Supported software
 
-     * AOSP Version - android-11.0.0_r39
+     * AOSP Version - android-12.0.0_r2
      * NUC11PAQI7 Host Kernel - -5.4.142-cvhb
      * NUC11PAQI7 Guest kernel - -5.4.142-cvhb
      

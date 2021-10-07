@@ -16,8 +16,189 @@ Releases
    :local:
    :depth: 1
 
+CIV_00.21.03.41_A12
+===================
 
-CIV_00.21.03.39_A11
+* We are glad to announce that the Celadon Project now supports Android 12 within 2 days of Google PV. We wish the Celadon community to start working with Android 12 and provide us feedback on what more you would like to see in the Celadon project.
+  
+* This is a Pre Production Manifest Release for evaluation and development
+  purposes and it cannot be used for production purposes. This release is
+  supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
+
+Intended audience
+-----------------
+
+* Open Source Community who has subscribed to celadon@lists.01.org
+
+Customer support
+----------------
+
+* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+
+Introduction
+------------
+
+New in this release
+-------------------
+
+ * New features
+    * Android 12 with latest AOSP manifest (android-12.0.0_r2)
+    * Celadon supports Android 12 with API level 31 and FCM target level 6
+    * Boot control HAL upgraded to V1.2
+    * Audio HAL upgraded to V7.0
+    * Basic sanity test passed for all components *
+    * Bug fixes, customizations and optimizations for x86
+    * SE Policy updated for API level 31
+    * AIDL libs updated
+    * Health HAL is optimized to adapt the new changes for S Dessert 
+ * Includes Android 12 main features: 
+    * Graphics introduced scheduling plans, 
+    * Graphics: Surface flinger caching, GPU memory accounting, profiling and GPU scheduling
+    * Accessibility, System UI and backup & restore features updated with minor modifications
+    * FUSE passthrough introduced to improve IO performance
+    * IncFS updated with Better Monitoring Support, virtio-9p support, fs-verity support
+    * Enabled NNAPI updatability in Machine Learning
+    * New platform features for Mainline Module
+    * Incremental: new Android 12+ feature that could reduce initial downloads of app 
+    * Approximate location access and privacy related updates
+    * New Storage Features like Storage management API changes, New directory for voice recordings, Media management access, App storage access and Extended file access support.
+    * Memory accounting updates
+    * Framework introduced changes in foreground service, Gamepad – Input device features, Haptic related vibrator changes
+    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio along with audio HAL v7.0
+    * Media transcoding, media extractor related changes and improved quality in encoded video
+    * AVIF image support, Easier blurs, color filters, and other effects
+    * CameraX vendor extension support
+    * Enabled NNAPI updatability in Machine Learning
+    * New platform features for Mainline Module
+    * Improvements to bandwidth estimation APIs in connectivity and introduced principle of 5G slicing
+    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization 
+    * Bluetooth side, BLE audio introduced, NFC API/UX improved for payment enhancement.
+    * Activity Detection, CHRE, Bluesky, FLP & RTT related changes
+    * Major changes in window management and introduced Display grouping and emphasis for multi-display context
+    * pKVM (Protected KVM) code compatibility available, Celadon won’t support it.
+    * Rich Haptic experience – Actuator effects, audio-coupled haptic, Enriched image supported notifications, rounded corner APIs etc.
+    * Picture in Picture (PiP) improvements, Immersive mode improvements for gesture navigation, Rich content insertion and Recents URL sharing
+    * Provide apps direct access to tombstone traces
+    * Android 12 release from Google shall be referred from the below links
+         * Release Notes: https://source.android.com/setup/start/android-12-release
+         * Blog : https://android-developers.googleblog.com/2021/10/android-12-is-live-in-aosp.html
+
+
+Known issues
+------------
+* There are WIP features in all components for full feature completions, This release tests only basic sanity of components.
+
+Where to find the release
+-------------------------
+
+* Manifest Link : 
+
+
+How to install this release
+---------------------------
+
+* Steps to sync to this release
+
+   * repo init -u https://github.com/projectceladon/manifest -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml
+   * NOTE : Manifest tag will change according to the latest release
+   * repo sync -c -q -j${nproc}
+
+* Android build commands
+
+   * For Compilation please use Ubuntu 18.04
+   * source build/envsetup.sh
+   * lunch caas-userdebug
+   * make flashfiles -jN
+
+* Steps To build the host kernel for this manifest
+
+    * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
+    * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
+    * cd patches/kernel/lts2019-chromium
+    * ./build_weekly.sh
+    * Deb files will be generated in
+      patches/kernel/lts2019-chromium/host_kernel
+    * sudo dpkg -i \*.deb
+    * Update grub to wait indefinitely for kernel selection on boot
+
+        * sudo vim /etc/default/grub
+        * Comment out GRUB_TIMEOUT_STYLE=hidden
+          #GRUB_TIMEOUT_STYLE=hidden
+        * Uncomment the following line and modify grub timeout to -1 for
+          indefinite wait or 5 for 5secs wait
+          #GRUB_TIMEOUT=-1
+        * Save the file
+        * sudo update-grub
+
+    * sudo reboot
+    * Select compiled kernel from "Advanced options for Ubuntu"
+
+* Flash and run steps
+
+   * After Building Binary please follow below steps
+   * Untar <flash-files>
+   * sudo -E ./scripts/setup_host -u headless
+   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+   * sudo -E ./scripts/start_civ.sh -g GVT-d
+
+Validation results
+------------------
+
+This build has been validated on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_  in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
+BT                             OK        Bluetooth is working
+Audio Playback                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Security                       OK
+Boot                           OK       Boots on QEMU 4.2.0
+Ethernet                       OK
+Image Flash                    OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+USB                            OK       Keyboard , Mouse , Pen drive
+
+=============================  =======  ========
+
+
+Reference configuration
+-----------------------
+
+ * Supported hardware
+
+     * Product - NUC11PAQI7
+
+
+ * Supported software
+
+     * AOSP Version - android-12.0.0_r2
+     * NUC11PAQI7 Host Kernel - -5.4.142-cvhb
+     * NUC11PAQI7 Guest kernel - -5.4.142-cvhb
+     
+
+Acronyms and terms
+------------------
+
+* CIV - Celadon in Virtual Machine
+
+
+Helpful hints / related documents
+---------------------------------
+
+* If you plan to use Celadon in product, please replace all the test keys
+  under device/intel/build/testkeys/ with your product key.  
+* The release of this project will be signed by test keys, it's only a
+  reference for our customer and we are not responsible for this. Customers
+  should use their own keys to sign their release images
+* Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
+* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
+
+CIV_01.21.03.39_A11
 ===================
 * This is a Production Binary Release for evaluation and development
   purposes . This release is
@@ -144,7 +325,7 @@ Known issues
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.03.39_A11.xml
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.21.03.39_A11.xml
 * Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.03.39_A11
 
 

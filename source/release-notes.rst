@@ -50,6 +50,7 @@ New in this release
     * Bug fixes, customizations and optimizations for x86
     * SE Policy updated for API level 31
     * AIDL libs updated
+    * Health HAL is optimized to adapt the new changes for S Dessert 
  * Includes Android 12 main features: 
     * Graphics introduced scheduling plans, 
     * Graphics: Surface flinger caching, GPU memory accounting, profiling and GPU scheduling

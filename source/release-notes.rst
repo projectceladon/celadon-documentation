@@ -131,7 +131,7 @@ How to install this release
 
 * Flash and run steps
 
-   * Download flash-files [https://github.com/projectceladon/celadon-binary]
+   * After creating Binary please follow below steps
    * Untar <flash-files>
    * sudo -E ./scripts/setup_host -u headless
    * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 

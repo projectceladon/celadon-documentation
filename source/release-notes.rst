@@ -131,7 +131,7 @@ How to install this release
 
 * Flash and run steps
 
-   * After creating Binary please follow below steps
+   * After Building Binary please follow below steps
    * Untar <flash-files>
    * sudo -E ./scripts/setup_host -u headless
    * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 

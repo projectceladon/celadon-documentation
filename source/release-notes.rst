@@ -197,7 +197,7 @@ Helpful hints / related documents
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 
-CIV_00.21.03.39_A11
+CIV_01.21.03.39_A11
 ===================
 * This is a Production Binary Release for evaluation and development
   purposes . This release is

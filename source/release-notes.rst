@@ -16,11 +16,13 @@ Releases
    :depth: 1
 
 CIV_00.21.01.12_A11
-======================
+===================
+
 * This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
 
 New Features
 -----------------
+
 * Supports Intel Core 11th Gen 
 * ADB over DbC support
 * Widevine Ready for NUC11PAQI7
@@ -29,6 +31,7 @@ New Features
 
 Existing Features
 -----------------
+
 * API Level 30 & FCM target Level 5
  * Other Changes that came as part of API level Up
      * AIDL for Power and Light HALs
@@ -43,7 +46,8 @@ Existing Features
 * HWC 2.4 support for Display
 * Trusty Hardware Seed binding
 * Power Management - Suspend,Resume
-* Android key Input Manager Framework is implemented for Power & Volume buttons
+* Android key Input Manager Framework is implemented for Power & Volume
+  buttons
 * Integrated Sensor Hub Enablement for Android Supported Sensors
 * Android Thermal HAL and Thermal Manager Service
 * BZIP2 performance improvements
@@ -61,18 +65,21 @@ Existing Features
 * Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
 * Ethernet works fine with Ethernet to USB converter
 * Wifi Control from Android in VM using usb passthrough
-* To passthrough USB host controller in NUC11PAQI7, run the CIV launch script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
+* To passthrough USB host controller in NUC11PAQI7, run the CIV launch
+  script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
 * Power Management - Shutdown and Reboot
 * Android Time keeping with Host OS
 * Product Information to Guest OS
 * ODM partition for vendor customizations
-* Only logitech C922 pro stream webcam is supported for all camera related testing
+* Only logitech C922 pro stream webcam is supported for all camera related
+  testing
 * HW Video Codecs support on celadon
 
   **Decoder**
 
     * AVC High profile @ Level 5.1 (4k@30fps)
-    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020
+      and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
 
@@ -80,18 +87,21 @@ Existing Features
 
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
+  OPUS, MIDI, FLAC, PCM/WAV
 * Generic storage HAL supported
 * SATA emulation is supported
 * 9pfs based file transfer
-* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
+  Keymaster 3.0
     * User guide:
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
 
 Important Remarks
--------------
+-----------------
+
 * For CaaS-CIV
 
   * Recommended system requirements for Host
@@ -104,18 +114,23 @@ Important Remarks
   
 
 Known Issues
--------------
-* After recording the video in MultiCamera, it can be successfully played in MUltiCamera, but the playback in photos app fails
-* Android is not Booting UI after "adb reboot" when connected with eDP Display
+------------
+
+* After recording the video in MultiCamera, it can be successfully played in
+  MUltiCamera, but the playback in photos app fails
+* Android is not Booting UI after "adb reboot" when connected with eDP
+  Display
 * Possible Buffer overflow with strncat in hcitools
 * Camera Preview Flickers
 * CFI failure seen during suspend/resume , This is merged on Latest HEAD
 * Android UI is flickering sometimes
 * Android UI doesn't launch in Mosaic mode
 * Captured Photo shows Black in ImageView.[AOSP Camera]
-* ADB goes offline after performing adb root/remount operation , this issue is fixed on the latest HEAD
+* ADB goes offline after performing adb root/remount operation , this issue
+  is fixed on the latest HEAD
 * Direct LAN to NUC11PAQI7 ethernet port is not working in this release
-   * The fix patch for Direct LAN to NUC11PAQI7 ethernet port issue is as below - it is merged on the latest HEAD
+   * The fix patch for Direct LAN to NUC11PAQI7 ethernet port issue is as
+     below - it is merged on the latest HEAD
       * https://github.com/projectceladon/device-androidia-mixins/pull/1086 # 2021-03-30 # Add support for Ethernet Controller I225-V
       * https://github.com/projectceladon/vendor-intel-utils/pull/1071 # 2021-03-30 # Enable config for Ethernet Controller I225-LM/I225-V support
 * Android UI Flicker when booted with eDP Display
@@ -147,6 +162,7 @@ USB                            OK       Keyboard , Mouse , Pen drive
 
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 20.04
 * Host Kernel Version 5.4.76 [Build kernel from the tar ball of this release -Steps Below under hints section]
@@ -155,6 +171,7 @@ Tools/Configuration
 
 Helpful Hints / Links
 ---------------------
+
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml
@@ -180,11 +197,14 @@ Helpful Hints / Links
     * Select compiled kernel from "Advanced options for Ubuntu"
 
 CIV_01.20.04.50_A11
-======================
-* This is a Production Manifest Release for evaluation and development purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM.
+===================
+
+* This is a Production Manifest Release for evaluation and development
+  purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM.
 
 New Features
------------------
+------------
+
 * API Level 30 & FCM target Level 5
  * Other Changes that came as part of API level Up
      * AIDL for Power and Light HALs
@@ -200,9 +220,11 @@ New Features
 
 Existing Features
 -----------------
+
 * Trusty Hardware Seed binding
 * Power Management - Suspend,Resume
-* Android key Input Manager Framework is implemented for Power & Volume buttons
+* Android key Input Manager Framework is implemented for Power & Volume
+  buttons
 * Integrated Sensor Hub Enablement for Android Supported Sensors
 * Ethernet Wired Network Bridge
 * Android Thermal HAL and Thermal Manager Service
@@ -255,7 +277,8 @@ Existing Features
 
 
 Important Remarks
--------------
+-----------------
+
 * For CaaS-CIV
 
   * Recommended system requirements for Host
@@ -269,7 +292,8 @@ Important Remarks
 
 
 Known Issues
--------------
+------------
+
 * After deprecation of sdcardFS in Android R, Storage stats are not having correct values
 * /data/logs folder not seen after flashing the image
 * Logs, Kpanic and hdcp directory not created in /data with CONFIG_SDCARDFS disabled 
@@ -314,6 +338,7 @@ USB                            OK       Keyboard , Mouse , Pen drive
 
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 20.04
 * Host Kernel Version 5.4.76
@@ -322,6 +347,7 @@ Tools/Configuration
 
 Helpful Hints / Links
 ---------------------
+
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.20.04.50_A11.xml
@@ -345,12 +371,14 @@ Helpful Hints / Links
     * Select compiled kernel from "Advanced options for Ubuntu"
 
 CIV_00.20.04.39_A11
-======================
+===================
+
 * This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM.
 
 
 New Features
------------------
+------------
+
 * Trusty Hardware Seed binding
 * Power Management - Suspend,Resume
 * Android key Input Manager Framework is implemented for Power & Volume buttons
@@ -408,7 +436,8 @@ New Features
 
 
 Known Issues
--------------
+------------
+
 *	Camera Preview doesn't show , unable to capture photo/record video
 *	During HFP Audio call , audio is not routed to BT headset via Hangouts[GVT-d and GVT-g]
 *	Device shutdown fail in thermal chamber.
@@ -462,6 +491,7 @@ USB                            OK       Keyboard , Mouse , Pen drive
 
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 20.04
 * Host Kernel Version 5.4.67
@@ -470,6 +500,7 @@ Tools/Configuration
 
 Helpful Hints / Links
 ---------------------
+
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.04.39_A11.xml
@@ -495,16 +526,18 @@ Helpful Hints / Links
 
 
 CIV_00.20.03.39_A10
-======================
+===================
 
 * This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on CML NUC - NUC10i7FN* Celadon in VM.
 
 New Features
--------------
+------------
+
 * Trusty Hardware Seed binding
 
 Existing Features
 -----------------
+
 * Power Management - Suspend,Resume
 * ADB on xHCI DbC for Android USB Host only systems
 * Android key Input Manager Framework is implemented for Power & Volume buttons
@@ -568,7 +601,8 @@ Existing Features
         * How to Enable or Disable Trusty for Debugging
 
 Known Issues
--------------
+------------
+
 * When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
 * All the USB peripheral devices has to be connected before the VM is launched
 * Power Button Long Press is not implemented , only short press and very long button press
@@ -608,6 +642,7 @@ USB                            OK       Keyboard , Mouse , Pen drive
 
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 20.04
 * Host Kernel Version 5.4.58
@@ -615,6 +650,7 @@ Tools/Configuration
 
 Helpful Hints / Links
 ---------------------
+
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.03.39_A10.xml
@@ -652,6 +688,7 @@ Previous release : CIC_00.20.03.31_A09
 
 New features
 ------------
+
 * Metrics Discovery API (MDAPI) support in graphics driver
 * STS fix for android.security.cts.BitmapFactorySecurityTests#test_android_bug_156261521
 * STS fix for android.security.cts.ActivityManagerTest#testActivityManager_attachNullApplication
@@ -713,6 +750,7 @@ Existing features
 
 Known issues
 ------------
+
 * No FBE support for multi user
 * After changing resolution recorded video fallsback to default resolution
 * FIO_Sequential_Read_SSD data has -36.03% regression
@@ -732,6 +770,7 @@ Known issues
 
 Important note
 --------------
+
 * To modify cpu cores usage : After Container start up run the command
   "sudo docker update --cpuset-cpus="0-11" android0_PID" , where
   android0_PID is the Docker\* PID of android instance.
@@ -766,12 +805,13 @@ following function domains, for both secure and non-secure.
 
 Tools/Configuration
 -------------------
+
 * Docker version      : 18.09.2
 * Host Ubuntu         : 20.04
 * Host Kernel Version : 5.4.58 [SELinux config enabled in host kernel-config]
 
 Helpful hints/links
----------------------
+-------------------
 
 * Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
 * Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
@@ -781,7 +821,7 @@ Helpful hints/links
 
 
 CIC_00.20.03.31_A09
-======================
+===================
 
 * This is a Pre-Production Release for evaluation and development purposes
   and it cannot be used for production purposes. This release is supported
@@ -847,6 +887,7 @@ Existing features
 
 Known issues
 ------------
+
 * After changing resolution recorded video fallsback to default resolution
 * FIO_Sequential_Read_SSD data has -36.03% regression
 * Android Ui not launched after adb reboot when screen lock set
@@ -866,6 +907,7 @@ Known issues
 
 Important note
 --------------
+
 * To modify cpu cores usage : After Container start up run the command
   "sudo docker update --cpuset-cpus="0-11" android0_PID" , where
   android0_PID is the Docker PID of android instance.
@@ -900,6 +942,7 @@ secure and non-secure.
 
 Tools/Configuration
 -------------------
+
 * Docker version      : 18.09.2
 * Host Ubuntu         : 20.04
 * Host Kernel Version : 5.4.50 [SELinux config enabled in host kernel-config]
@@ -922,11 +965,13 @@ CIV_00.20.03.31_A10
 
 New features 
 -------------
+
 * Power Management - Suspend,Resume
 * ADB on xHCI DbC for Android USB Host only systems
 
 Existing features
 -----------------
+
 * Android key Input Manager Framework is implemented for Power & Volume buttons
 * Integrated Sensor Hub Enablement for Android Supported Sensors
 * Ethernet Wired Network Bridge
@@ -989,6 +1034,7 @@ Existing features
 
 Known issues
 -------------
+
 * When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
 * All the USB peripheral devices has to be connected before the VM is launched
 * Power Button Long Press is not implemented , only short press and very long button press
@@ -1028,13 +1074,15 @@ USB                            OK       Keyboard , Mouse , Pen drive
 
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 20.04
 * Host Kernel Version 5.4.50
 * Guest kernel 5.4.50
 
 Helpful hints/links
----------------------
+-------------------
+
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.03.31_A10.xml
@@ -1123,6 +1171,7 @@ Existing features
 
 Known issues
 -------------
+
 * Unable to install graphics apk (less memory)
 * Multi-camera application crashes after hotplug
 * Unable to control volume using 3.5mm headset volume buttons.
@@ -1148,6 +1197,7 @@ Known issues
 
 Important note
 --------------
+
 * To modify cpu cores usage : After Container start up run the command "sudo docker update --cpuset-cpus="0-11" android0_PID" , where android0_PID is the Docker PID of android instance.
 * Ensure Lvm2 & thin-provisioning-tools packages are installed.
 * Please ensure latest version of libjson-c is installed.
@@ -1180,6 +1230,7 @@ following function domains, for both secure and non-secure.
 
 Tools/Configuration
 -------------------
+
 * Docker version      : 18.09.2
 * Host Ubuntu         : 18.04
 * Host Kernel Version : 5.4.42 [SELinux config enabled in host kernel-config]
@@ -1202,8 +1253,10 @@ CIV_00.20.02.24_A10
   purposes and it cannot be used for production purposes. This release is
   supported on Comet Lake |NUC| NUC10i7F Celadon in VM.
 
-New features (Additional features in comparison to previous CIV Manifest Release - CIV_00.20.02.23_A10)
--------------------------------------------------------------------------------------------------------
+New features
+------------
+
+(Additional features in comparison to previous CIV Manifest Release - CIV_00.20.02.23_A10)
 
 * Android key Input Manager Framework is implemented for Power and Volume
   buttons
@@ -1212,6 +1265,7 @@ New features (Additional features in comparison to previous CIV Manifest Release
 
 Existing features
 -----------------
+
 * Android Thermal HAL and Thermal Manager Service
 * BZIP2 performance improvements 
 * Audio Solution based on HDA
@@ -1279,6 +1333,7 @@ Existing features
 
 Known issues
 -------------
+
 * When enabling GVT-d, the Guest OS may not light up the physical screen
   before the OS driver loads. As a result, the Guest BIOS and the Fastboot
   UI is not visible on the physical screen. This occurs because the physical
@@ -1328,13 +1383,15 @@ USB                            OK       Keyboard , Mouse , Pen drive
 
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 18.04
 * Host Kernel Version 5.4.42
 * Guest kernel 5.4.42
 
 Helpful hints/links
----------------------
+-------------------
+
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.24_A10.xml
@@ -1362,14 +1419,14 @@ Helpful hints/links
 
 
 CIC_00.20.02.23_A09
-======================
+===================
 
 * This is a Pre-Production Release for evaluation and development purposes
   and it cannot be used for production purposes. This release is supported
   on Comet Lake |NUC| NUC10i7F Celadon in Container.
 
 New features
--------------
+------------
 
 * Debian package release with Adaptive Installation Script support
 * Support android reboot in cic-monitor service
@@ -1405,7 +1462,8 @@ Existing features
     * Add cic monitor service to support shutdown and reboot
 
 Known issues
--------------
+------------
+
 * Trusty is not supported due to conflict in BIOS.
 * Memory allocation doesn't show for graphics('EGL mtrack or Gfx).
 * Unable to capture photo and video after hot-plug.
@@ -1446,6 +1504,7 @@ following function domains, for both secure and non-secure.
 
 Tools/Configuration
 -------------------
+
 * Docker version      : 18.09.2
 * Host Ubuntu         : 18.04
 * Host Kernel Version : 5.4.42 [With SELinux enabled]
@@ -1461,12 +1520,13 @@ Helpful hints/links
   keys under device/intel/build/testkeys/ with your product key.
 
 CIV_00.20.02.23_A10
-======================
+===================
 
 * This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Comet Lake |NUC| NUC10i7F Celadon in VM.
 
 New features
--------------
+------------
+
 * Android Thermal HAL and Thermal Manager Service 
 * Audio Solution based on HDA
 * OTA Android Update from USB Disk
@@ -1483,6 +1543,7 @@ New features
 
 Existing features
 -----------------
+
 * Graphics Memory Allocator (Gralloc) 1.0
 * Graphics GVT-g and GVT-d support
 * HDMI display support
@@ -1529,6 +1590,7 @@ Existing features
 
 Known issues
 -------------
+
 * When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.   
 * Noise heard in the background of the recorded file when recorded over 3.5mm headset
 * Camera Preview is lost while switching between dual and single mode
@@ -1565,6 +1627,7 @@ USB                            OK       Keyboard , Mouse , Pen drive
 
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 18.04
 * Host Kernel Version 5.4.35 
@@ -1572,6 +1635,7 @@ Tools/Configuration
 
 Helpful hints/links
 ---------------------
+
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm 
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.23_A10.xml
@@ -1601,13 +1665,13 @@ Helpful hints/links
 
 
 CIC_00.20.02.20_A09
-======================
+===================
 
 * This is a Pre-Production Release for evaluation and development purposes
   and it cannot be used for production purposes. This release is supported on Comet Lake |NUC| NUC10i7F Celadon in Container.
 
 New features
--------------
+------------
 
 * Vendor WiFi hal integrated
 * Battery Indicator enabled
@@ -1639,6 +1703,7 @@ Existing features
 
 Known issues
 -------------
+
 * Trusty is not supported due to conflict in BIOS.
 * Landscape mode doesn't work.
 * 'GPU Overdraw' developer option has more Blue Screen.
@@ -1674,12 +1739,13 @@ following function domains, for both secure and non-secure.
 
 Tools/Configuration
 -------------------
+
 * Docker version      : 18.09.2
 * Host Ubuntu         : 18.04
 * Host Kernel Version : 5.4.35 [With SELinux enabled]
 
 Helpful hints/links
----------------------
+-------------------
 
 * Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
 * Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
@@ -1690,14 +1756,14 @@ Helpful hints/links
 
 
 CIV_00.20.02.19_A10
-======================
+===================
 
 * This is a Pre-Production Manifest Release for evaluation and development
   purposes and it cannot be used for production purposes. This release is
   supported on Comet Lake |NUC| NUC10i7F Celadon in VM.
 
 New features
--------------
+------------
 
 * Wifi Control from Android in VM using usb passthrough 
 * To passthrough USB host controller in Comet Lake |NUC|, run the CIV launch script
@@ -1712,6 +1778,7 @@ New features
 
 Existing features
 -----------------
+
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
 * HWC 2.3 support for Display
@@ -1755,7 +1822,8 @@ Existing features
 
 
 Known issues
--------------
+------------
+
 * dEQP-VK(Vulkan 1.1) is failing 
 
 Validation results
@@ -1786,6 +1854,7 @@ USB                            OK       Keybord , Mouse , Pen drive
 
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 18.04
 * Host Kernel Version 5.4.35
@@ -1794,6 +1863,7 @@ Tools/Configuration
 
 Helpful hints/links
 ---------------------
+
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
 * Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.19_A10.xml
@@ -1805,7 +1875,7 @@ Helpful hints/links
 
 
 CIC_01.20.01.12_A09
-======================
+===================
 
 * This is a Pre-Production Release for evaluation and development purposes
   and it cannot be used for production purposes. This release is supported
@@ -1814,7 +1884,7 @@ CIC_01.20.01.12_A09
 
 
 New features
--------------
+------------
 
 * New dynamic lunch target added 'cic'
 * Setup script handles both secure and non-secure install from same image
@@ -1847,7 +1917,7 @@ Existing features
 * Generic storage HAL supported
 
 Known issues
--------------
+------------
 
 * Ensure Sepolicy & LSM configs are enabled as part of host kernel, else
   CIC cant boot.
@@ -1894,6 +1964,7 @@ function domains, for both secure and non-secure.
 
 Tools/Configuration
 -------------------
+
 * Docker version      : 18.09.2
 * Host Ubuntu         : 18.04
 * Host Kernel Version : 4.19.102 [With LSM & SELinux enabled]
@@ -1912,7 +1983,7 @@ Helpful hints/links
 
 
 CIV_01.20.01.12_A10
-======================
+===================
 
 * This is a Pre-Production Release for evaluation and development purposes
   and it cannot be used for production purposes. This release is supported
@@ -1920,8 +1991,8 @@ CIV_01.20.01.12_A10
   |C| in VM (lunch target: caas-userdebug).
 
 
-New features 
--------------
+New features
+------------
 
 * Setting Proxy for Wireless Network 
 * Wifi Control from Android in VM 
@@ -1935,6 +2006,7 @@ New features
 
 Existing features
 -----------------
+
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
 * HWC 2.3 support for Display
@@ -1971,7 +2043,8 @@ Existing features
         * How to Enable or Disable Trusty for Debugging
 
 Known issues
--------------
+------------
+
 * Unable to connect WPA/WPA2 Enterprise Wi-Fi network in Android VM
 * Hotplug doesn't work in secondary display
 
@@ -2004,6 +2077,7 @@ USB                            OK       MTP/PTP Initiator Role
  
 Tools/Configuration
 -------------------
+
 * QEMU Version 4.2.0
 * Host Ubuntu 18.04 
 * Host Kernel Version 5.3.0.xx 
@@ -2011,7 +2085,8 @@ Tools/Configuration
 
 
 Helpful hints/links
----------------------
+-------------------
+
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
 * We can use the same CIV Q-MR0 image to flash on the Kaby Lake |NUC| and
   Appollo Lake |NUC| as a Bare Metal <Lunch target caas-userdebug > 
@@ -2037,7 +2112,7 @@ CELADON_01.20.01.12_A09
 
 
 Features
--------------------
+--------
 
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
@@ -2078,7 +2153,7 @@ Features
 
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
-        
+
 * Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
 
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
@@ -2117,11 +2192,12 @@ Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 
 Helpful Hints/Links
 -------------------
+
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CELADON_01.20.01.12_A09.xml
 * Binary Link :   https://github.com/projectceladon/celadon-binary/blob/master/CELADON_01.20.01.12_A09/cel_kbl-flashfiles-eng.build.zip
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
----------------
+
 
 CIC_00.20.01.08_A09
 ===================
@@ -2132,7 +2208,7 @@ CIC_00.20.01.08_A09
     * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
     * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.01.08_A09.xml 
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains.
@@ -2172,14 +2248,15 @@ Known issues
 
 
 CIV_00.20.01.09_A10
-======================
+===================
 
 * This is a Pre-Production February Manifest Release for evaluation and development purposes and it cannot be used for production purposes.
 * This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.01.09_A10.xml
 
-Integrated Features
+Integrated features
 -------------------
+
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
 * HWC 2.3 support for Display
@@ -2215,8 +2292,9 @@ Integrated Features
     SELinux Configuration and Rules
     How to Enable or Disable Trusty for Debugging
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
+
 |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains:
 
 .. list-table::
@@ -2292,7 +2370,7 @@ CIC_00.19.04.20.03_A09
     * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.19.04.20.03_A09.xml
 
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains.
@@ -2337,7 +2415,7 @@ This is a Pre-Production Release for evaluation and development purposes and it 
 This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.20.02_A10.xml
 
-Integrated Features
+Integrated features
 -------------------
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
@@ -2374,8 +2452,9 @@ Integrated Features
     SELinux Configuration and Rules
     How to Enable or Disable Trusty for Debugging
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
+
 |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains:
 
 .. list-table::
@@ -2435,6 +2514,7 @@ Important notes and Remarks
 
 Known issues
 ------------
+
 * Audio recording is not supported currently.
 * Video play is not smooth on 4K monitor.
 * Touch Screen operation is not smooth on 4K monitor.
@@ -2447,8 +2527,9 @@ CIV_00.19.04.51_A10
 * This release is supported on Intel Platform and KBL NUC (NUC7i5DNHE) is the leading platform for Celadon in VM (lunch target: caas-userdebug).
 * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.19.04.51_A10.xml
 
-Integrated Features
+Integrated features
 -------------------
+
 * Graphics Memory Allocator (Gralloc) 1.0
 * HDMI display support
 * HWC 2.3 support for Display
@@ -2484,8 +2565,9 @@ Integrated Features
     SELinux Configuration and Rules
     How to Enable or Disable Trusty for Debugging
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
+
 |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains:
 
 .. list-table::
@@ -2545,6 +2627,7 @@ Important notes and Remarks
  
 Known issues
 ------------
+
 * Video can be displayed with green flickering during playback.
 * Audio recording is not supported currently.
 * Audio is not routing through USB speakers.
@@ -2562,7 +2645,7 @@ Known issues
     * This is a Pre-Production binary Q Release for evaluation and development purposes and it cannot be used for production purposes.
     * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -2609,7 +2692,7 @@ Integrated Features
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_ in the following function domains:
@@ -2672,6 +2755,7 @@ Important notes and Remarks
 
 Known issues
 ------------
+
 * adb over wifi and ethernet works only after, ``setprop service.adb.tcp.port 5555`` and restart of USB debugging.
 * Device seen offline for 4-5 seconds on disconnect and reconnect of dbc cable.
 * Time and lock icon are displayed once on Android Start Animation when power on the DUT when connected with dual display.
@@ -2687,7 +2771,7 @@ Known issues
     * The ingredients of the CaaS release can be used to build a service architecture, so that with customers we can deliver a **Celadon as a Service** solution.
     * These are Pre-Production CaaS and CIC Releases for evaluation and development purposes, they cannot be used for production.
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 This |C| build has been validated on |NUC| Kit NUC7i5DNH in the following function domains. The boot up function is supported on most Intel@ X86 platforms.
@@ -2755,7 +2839,7 @@ Known issues
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production Early Q Release for evaluation and development purposes and it cannot be used for production purposes.
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -2801,7 +2885,7 @@ Integrated Features
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_ in the following function domains:
@@ -2864,6 +2948,7 @@ Important notes and Remarks
 
 Known issues
 ------------
+
 * Android Open Source Music Player crashes if headset disconnected and reconnected during audio playback.
 * Cannot save images captured in "TestingCam" app.
 * Glitch observed while the DUT is booting to UI at the intel logo screen.
@@ -2890,10 +2975,11 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
+
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes. 
 
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -2939,7 +3025,7 @@ Integrated Features
 
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
@@ -2966,7 +3052,8 @@ Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 
 
 Setup 
----------------
+-----
+
 USB headset should always be connected to DUT
 
 
@@ -2986,7 +3073,7 @@ Known issues
 
 
 ww201925_CLK
-===============
+============
 
 ================================  =====
 Software Version                  Android version 9
@@ -2997,9 +3084,10 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
+
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
-Integrated Features
+Integrated features
 -------------------
 
 * Device boots fine on M.2 & SATA based SSD's and eMMC based storage devices
@@ -3036,7 +3124,7 @@ Integrated Features
     * HEVC Main profile @ Level 4 (1080P@30fps)
 
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 =============================  =======  ========
@@ -3068,7 +3156,6 @@ Known issues
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
----------------
 
 ww201913_KBLNUC
 ===============
@@ -3082,9 +3169,10 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
+
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -3130,7 +3218,7 @@ Integrated Features
 
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled. 
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
@@ -3181,9 +3269,10 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
+
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -3220,7 +3309,7 @@ Integrated Features
 * Security reference solution - TPM based h/w binding reference implementation
 
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
@@ -3259,7 +3348,7 @@ Known issues
 
 
 Status
--------
+------
 
 
 ww201852_KBLNUC
@@ -3275,10 +3364,11 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
+
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -3315,7 +3405,7 @@ Integrated Features
 * Security reference solution - TPM based h/w binding reference implementation
 
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
@@ -3350,7 +3440,6 @@ Known issues
 * While executing DEPQ CTS  , at a certain point there is adb disconnect observed where the DUT freezes , however once the adb is reconnected the test continues but the DUT is frozen
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
---------
 
 Status
 -------
@@ -3371,10 +3460,11 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
+
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -3411,7 +3501,7 @@ Integrated Features
 * Security reference solution - TPM based h/w binding reference implementation
 
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC7i5DNH  <https://ark.intel.com/products/122488/Intel-NUC-Kit-NUC7i5DNHE>`_ in the following function domains:
@@ -3446,14 +3536,12 @@ Known issues
 * While executing DEPQ CTS  , at a certain point there is adb disconnect observed where the DUT freezes , however once the adb is reconnected the test continues but the DUT is frozen 
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
---------
 
 Status
 -------
 
 * This WW51 Release has achieved 99.97% CTS pass rate and we are trending to achieve 100% CTS pass rate that we will be announcing shortly .. STAY TUNED.
 
----------------
 
 ww201851_APLNUC
 ===============
@@ -3468,10 +3556,11 @@ manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
+
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -3509,7 +3598,7 @@ Integrated Features
 * Security reference solution - TPM based h/w binding reference implementation
 
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC6CAYH  <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_ in the following function domains:
@@ -3545,13 +3634,13 @@ Known issues
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Status
--------
+------
+
 * APL_NUC validation is done until WW48 , the manifest is taken based on WW51 
 * BIOS public drop for APL_NUC is available , Adb & Fastboot is supported over USB 2.0 and USB 3.0
 * BIOS Link : https://downloadcenter.intel.com/download/28478/?product=95078 
 * BIOS_Release Notes: https://downloadmirror.intel.com/28478/eng/AY_0059_ReleaseNotes.pdf 
 
---------
 
 ww201840
 ========
@@ -3566,9 +3655,10 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
+
 * This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
-Integrated Features
+Integrated features
 -------------------
 
 * Graphics Memory Allocator (Gralloc) 1.0
@@ -3586,7 +3676,7 @@ Integrated Features
 * Art-extension is enabled in CELADON
 * f2fs filesystem support enabled
 
-Important notes and Remarks
+Important notes and remarks
 ---------------------------
 
 |C| build has been validated on |NUC| Kit `NUC6CAYH  <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_ in the following function domains:

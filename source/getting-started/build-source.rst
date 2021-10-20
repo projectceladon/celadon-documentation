@@ -166,6 +166,7 @@ Build |C| in VM image
        $ make flashfiles -j $(nproc)
 
    .. note::
+      #. This is needed for the Tiger Lake Intel® NUC platform.
       #. The *-j $(nproc)* argument instructs the builder to compile the source
          code with parallel tasks. The generated kernelflinger executables
          .ZIP file
@@ -173,8 +174,11 @@ Build |C| in VM image
          is available after the build. You can refer to :ref:`caas-on-vm`
          section to prepare the host environment and boot the CiV image with QEMU.
       #. The ':makevar:`BUILD_CPU_ARCH`' variable instructs the builder to
-         generate images that leverage `AVX`_ and `AVX2`_ instructions on
-         the target device. It's recommended to specify ':makevar:`BUILD_CPU_ARCH=kabylake`'
+         generate images that leverage
+         `Intel® Advanced Vector Extensions (Intel® AVX)`_ and 
+         `Intel® Advanced Vector Extensions 2 (Intel® AVX2)`_ instructions on
+         the target device. It's recommended to specify
+         :makevar:`BUILD_CPU_ARCH=kabylake`'
          while building the images for `Comet Lake`_ platform.
 
 Build |C| in Container with Android 9
@@ -258,6 +262,6 @@ Build |C| in Container package
       is available after the build. You can follow :ref:`deploy-cic-on-target` of
       this guide to deploy and start the CiC container on the target device.
 
-.. _AVX:    https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions
-.. _AVX2:   https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2
+.. _ Intel® Advanced Vector Extensions (Intel® AVX):    https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions
+.. _Intel® Advanced Vector Extensions 2 (Intel® AVX2):   https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2
 .. _Comet Lake: https://en.wikipedia.org/wiki/Comet_Lake

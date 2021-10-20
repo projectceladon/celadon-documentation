@@ -8,6 +8,7 @@ metal using an Intel® NUC.
 
 Prerequisites
 *************
+
 -  Intel NUC model `NUC11PAQI7 <https://www.intel.in/content/www/in/en/products/details/nuc/kits.html>`__
 
 -  Type-C cable for display
@@ -146,8 +147,3 @@ components:
 +-----------------------------+----------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 |   Factory reset             |                            | Settings-> System->Advanced->Reset Options->Erase all data                                     | System resets.                                                                                  |
 +-----------------------------+----------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-
-Current known issue
-*******************
-
-1. On NUC with two HDMI ports, only the port0 HDMI display works.

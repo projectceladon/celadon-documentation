@@ -23,10 +23,11 @@ Prerequisites
   checkout the source code and to store the build artifacts.
 
 .. note::
-   Although Android\* is typically built with a GNU/Linux\* or macOS\*
-   operating system, we recommend you build |C| images on Ubuntu\* 18.04.
-   For setup instructions using other operating systems, refer to the
-   `Establishing a Build Environment <https://source.android.com/setup/build/initializing>`_ section on the AOSP website.
+   #. Although Android\* is typically built with a GNU/Linux\* or macOS\*
+      operating system, we recommend you build |C| images on Ubuntu\* 18.04.
+      For setup instructions using other operating systems, refer to the
+      `Establishing a Build Environment <https://source.android.com/setup/build/initializing>`_ section on the AOSP website.
+   #. Also, note the `Android prerequisites <https://source.android.com/setup/build/requirements>`_ for build.
 
 Set up the development environment
 **********************************
@@ -175,7 +176,7 @@ Build |C| in VM image
          section to prepare the host environment and boot the CiV image with QEMU.
       #. The ':makevar:`BUILD_CPU_ARCH`' variable instructs the builder to
          generate images that leverage
-         `Intel® Advanced Vector Extensions (Intel® AVX)`_ and 
+         `Intel® Advanced Vector Extensions (Intel® AVX)`_ and
          `Intel® Advanced Vector Extensions 2 (Intel® AVX2)`_ instructions on
          the target device. It's recommended to specify
          :makevar:`BUILD_CPU_ARCH=kabylake`'

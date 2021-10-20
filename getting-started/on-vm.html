@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Run Celadon in a virtual machine &mdash; Documentation for the Celadon Project</title>
@@ -99,7 +98,9 @@
 <li class="toctree-l3"><a class="reference internal" href="on-container.html">Run Celadon in a Docker* container</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how-to.html">How do I …</a></li>
@@ -109,25 +110,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../sitemap.html">Project Celadon - Documentation Sitemap</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Run Celadon in a virtual machine</a></li>
-<li class="toctree-l4"><a class="reference internal" href="on-container.html">Run Celadon in a Docker* container</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
-<li class="toctree-l3"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
-<li class="toctree-l3"><a class="reference internal" href="how-to.html">How do I …</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../references.html">References</a></li>
-</ul>
-</li>
 </ul>
 
             
@@ -196,87 +178,87 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="run-c-in-a-virtual-machine">
-<span id="caas-on-vm"></span><h1>Run Celadon in a virtual machine<a class="headerlink" href="#run-c-in-a-virtual-machine" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="run-c-in-a-virtual-machine">
+<span id="caas-on-vm"></span><h1>Run Celadon in a virtual machine</h1>
 <p>This page explains what you’ll need to run Celadon in a virtual machine.</p>
 <p>Depending on your applications, you can run <abbr title="Celadon in VM">CiV</abbr> using
-Intel® GVT-g technology, or allowing for GPU passthrough to a single Android
-guest VM through Intel® GVT-d technology, or VirtIO GPU, or pure software rendering.</p>
+Intel® GVT-g technology, or allowing for GPU passthrough to a single
+Android* guest VM through Intel® Virtualization Technology (Intel® VT) for
+Directed I/O (Intel® VT-d) technology, or VirtIO GPU, or pure
+software rendering.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#intel-gvt-d-overview" id="id2">Intel GVT-d overview</a></p></li>
-<li><p><a class="reference internal" href="#prepare-the-host-environment" id="id3">Prepare the host environment</a></p></li>
-<li><p><a class="reference internal" href="#build-c-images-running-in-vm" id="id4">Build Celadon images running in VM</a></p></li>
-<li><p><a class="reference internal" href="#create-a-civ-virtual-disk" id="id5">Create a CiV virtual disk</a></p></li>
-<li><p><a class="reference internal" href="#boot-to-android-ui" id="id6">Boot to Android UI</a></p></li>
+<li><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></li>
+<li><a class="reference internal" href="#intel-gvt-d-overview" id="id2">Intel GVT-d overview</a></li>
+<li><a class="reference internal" href="#prepare-the-host-environment" id="id3">Prepare the host environment</a></li>
+<li><a class="reference internal" href="#build-c-images-running-in-vm" id="id4">Build Celadon images running in VM</a></li>
+<li><a class="reference internal" href="#create-a-civ-virtual-disk" id="id5">Create a CiV virtual disk</a></li>
+<li><a class="reference internal" href="#boot-to-android-ui" id="id6">Boot to Android UI</a></li>
 </ul>
 </div>
-<section id="prerequisites">
-<h2><a class="toc-backref" href="#id1">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h2><a class="toc-backref" href="#id1">Prerequisites</a></h2>
 <ul>
-<li><p>A Intel NUC with 5th Generation or newer Intel Core Processors.</p></li>
-<li><p>Ubuntu 20.04 (Focal Fossa) preinstalled which runs Linux* kernel
+<li><p class="first">An Intel® NUC with an eighth generation or newer Intel® Core™ Processor.</p>
+</li>
+<li><p class="first">Ubuntu* 20.04 (Focal Fossa) preinstalled which runs Linux* kernel
 version 5.0.0 or above.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><abbr title="Celadon in VM">CiV</abbr> releases have been validated on
+<p class="first admonition-title">Note</p>
+<p class="last"><abbr title="Celadon in VM">CiV</abbr> releases have been validated on
 Intel NUC model <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html">NUC7i5DNHE</a>. Releases after <strong>April 17th 2020</strong> are
 validated on Intel NUC model <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnk.html">NUC10i7FNK</a> and <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnh.html">NUC10i7FNH</a> to
-take performance advantages of 10th Generation Intel® Core Processors.</p>
+take performance advantages of 10th Generation Intel Core Processors.</p>
 </div>
 </li>
 </ul>
-</section>
-<section id="intel-gvt-d-overview">
-<h2><a class="toc-backref" href="#id2">Intel GVT-d overview</a><a class="headerlink" href="#intel-gvt-d-overview" title="Permalink to this headline">¶</a></h2>
-<p>Intel Graphics Virtualization Technology covers three distinct flavors
-of graphics virtualization approaches. Among these approaches,
-Intel GVT-d is based on
-<abbr title="Intel® Virtualization Technology for Directed I/O">Intel® VT-d</abbr>
+</div>
+<div class="section" id="intel-gvt-d-overview">
+<h2><a class="toc-backref" href="#id2">Intel GVT-d overview</a></h2>
+<p>Intel® Graphics Virtualization Technology (Intel® GVT) covers three distinct
+flavors of graphics virtualization approaches. Among these approaches,
+Intel GVT-d is based on Intel VT-d
 technology, it also includes additional graphics related configuration
 options when compared to standard NIC pass-through devices.
-Intel® GVT-d allows direct assignment of an entire GPU’s capacity to
+Intel GVT-d allows direct assignment of an entire GPU’s capacity to
 a single user, passing the native driver capabilities through the hypervisor
 without limitations.</p>
 <p>Refer to this <a class="reference external" href="https://01.org/sites/default/files/downloads/igvt-g/gvtflyer.pdf">article</a>
 for introduction on Intel Graphics Virtualization Technology.</p>
-</section>
-<section id="prepare-the-host-environment">
-<h2><a class="toc-backref" href="#id3">Prepare the host environment</a><a class="headerlink" href="#prepare-the-host-environment" title="Permalink to this headline">¶</a></h2>
-<section id="set-up-qemu-and-intel-gvt-technology">
-<h3>Set up QEMU and Intel GVT technology<a class="headerlink" href="#set-up-qemu-and-intel-gvt-technology" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="prepare-the-host-environment">
+<h2><a class="toc-backref" href="#id3">Prepare the host environment</a></h2>
+<div class="section" id="set-up-qemu-and-intel-gvt-technology">
+<h3>Set up QEMU and Intel GVT technology</h3>
 <p>The host device that launches the virtual machine requires Ubuntu 20.04.
-To simpify the preparation works, a helper script <code class="file docutils literal notranslate"><span class="pre">setup_host.sh</span></code> is
+To simpify the preparation works, a helper script <code class="file docutils literal"><span class="pre">setup_host.sh</span></code> is
 provided.
-The script re-builds the <code class="file docutils literal notranslate"><span class="pre">OVMF.fd</span></code> firmware and <a class="reference external" href="https://www.qemu.org/">QEMU</a> emulator
+The script re-builds the <code class="file docutils literal"><span class="pre">OVMF.fd</span></code> firmware and <a class="reference external" href="https://www.qemu.org/">QEMU</a> emulator
 from source depending on the target graphics virtualization technology,
 and installs the required software on the installed Ubuntu system for running
 Celadon in a VM with QEMU.</p>
-<p>Download and extract release package(<cite>caas-releasefiles-&lt;$buildvariant&gt;.tar.gz</cite>)
+<p>Download and extract release
+package(<cite>caas-releasefiles-&lt;$buildvariant&gt;.tar.gz</cite>)
 from: <a class="reference external" href="https://github.com/projectceladon/celadon-binary">celadon-binary</a>
 Meanwhile, you can also refer <a class="reference internal" href="build-source.html#build-os-image"><span class="std std-ref">Build Celadon in VM image</span></a> section to build release
 packages.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir -p ~/civ <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/civ
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mkdir -p ~/civ <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/civ
 $ tar zxvf caas-releasefiles-&lt;<span class="nv">$buildvariant</span>&gt;.tar.gz
 $ chmod +x scripts/setup_host.sh
 </pre></div>
 </div>
-</div></blockquote>
 <p>Launch the script with no argument to set up the environment for running
 CiV using Intel GVT technology:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/setup_host.sh
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/setup_host.sh
 </pre></div>
 </div>
-</div></blockquote>
-<p>During the installation, you will be prompted by some questions to confirm the
-changes to the packages, it’s safe to respond <kbd class="kbd docutils literal notranslate">y</kbd> to all of them.</p>
-</section>
-<section id="use-c-kernel">
-<h3>Use Celadon kernel<a class="headerlink" href="#use-c-kernel" title="Permalink to this headline">¶</a></h3>
-<p>The Linux kernel is extremely important on every Android devices, Google
+<p>During the installation, you will be prompted by some questions to
+confirm the changes to the packages, it’s safe to respond <code class="kbd docutils literal"><span class="pre">y</span></code> to all of
+them.</p>
+</div>
+<div class="section" id="use-c-kernel">
+<h3>Use Celadon kernel</h3>
+<p>The Linux kernel is extremely important on every Android device. Google*
 recommends using <a class="reference external" href="https://source.android.com/devices/architecture/kernel/android-common">AOSP common kernels</a> on Android devices to include
 features and implementations required by Android.
 In addition to the AOSP common kernel, Celadon also integrates several
@@ -286,171 +268,170 @@ so it’s strongly recommended to run the Celadon kernel as the host OS,
 especially running CiV on <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnk.html">NUC10i7FNK</a> or <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnh.html">NUC10i7FNH</a> Intel NUC devices.
 To that end, a
 <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh">helper script</a>
-<code class="file docutils literal notranslate"><span class="pre">build.sh</span></code> is designed to facilitate
-the building and deploying of Celadon kerenl on a Ubuntu host.
+<code class="file docutils literal"><span class="pre">build.sh</span></code> is designed to facilitate
+the building and deploying of Celadon kernel on a Ubuntu host.
 Refer to the <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README">README</a> for detailed instructions.</p>
-</section>
-</section>
-<section id="build-c-images-running-in-vm">
-<h2><a class="toc-backref" href="#id4">Build Celadon images running in VM</a><a class="headerlink" href="#build-c-images-running-in-vm" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="build-c-images-running-in-vm">
+<h2><a class="toc-backref" href="#id4">Build Celadon images running in VM</a></h2>
 <p>Refer to the <a class="reference internal" href="build-source.html#build-os-image"><span class="std std-ref">Build Celadon in VM image</span></a> section in the Getting Started Guide and
-specify <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">caas</span></code> as the lunch target to build the CiV images. The
+specify <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">caas</span></code> as the lunch target to build the CiV images. The
 following CiV image types are generated at the end of the build:</p>
-<p><code class="file docutils literal notranslate"><span class="pre">caas.img</span></code></p>
+<p><code class="file docutils literal"><span class="pre">caas.img</span></code></p>
 <blockquote>
-<div><p>The GPT disk image for direct booting. Skip next section to
-boot the CiV image with QEMU.</p>
-</div></blockquote>
-<p><code class="file docutils literal notranslate"><span class="pre">caas-flashfiles-eng.&lt;user&gt;.zip</span></code></p>
+<div>The GPT disk image for direct booting. Skip next section to
+boot the CiV image with QEMU.</div></blockquote>
+<p><code class="file docutils literal"><span class="pre">caas-flashfiles-eng.&lt;user&gt;.zip</span></code></p>
 <blockquote>
-<div><p>The compressed <em>flashfile</em> package contains the Celadon partition images for running in a VM.
+<div>The compressed <em>flashfile</em> package contains the Celadon partition images for running in a VM.
 Proceed with the following section to install these images to a virtual
-disk image in <a class="reference external" href="https://www.linux-kvm.org/page/Qcow2">qcow2</a> format.</p>
-</div></blockquote>
-<p><code class="file docutils literal notranslate"><span class="pre">caas-releasefiles-&lt;$buildvariant&gt;.tar.gz</span></code></p>
+disk image in <a class="reference external" href="https://www.linux-kvm.org/page/Qcow2">qcow2</a> format.</div></blockquote>
+<p><code class="file docutils literal"><span class="pre">caas-releasefiles-&lt;$buildvariant&gt;.tar.gz</span></code></p>
 <blockquote>
-<div><p>The release tar ball contains all required flashfiles/scrips for running Celadon in VM.</p>
-</div></blockquote>
-</section>
-<section id="create-a-civ-virtual-disk">
-<h2><a class="toc-backref" href="#id5">Create a CiV virtual disk</a><a class="headerlink" href="#create-a-civ-virtual-disk" title="Permalink to this headline">¶</a></h2>
+<div>The release tar ball contains all required flashfiles/scrips for running
+Celadon in VM.</div></blockquote>
+</div>
+<div class="section" id="create-a-civ-virtual-disk">
+<h2><a class="toc-backref" href="#id5">Create a CiV virtual disk</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Skip this section if you plan to boot the device directly with the GPT disk image <code class="file docutils literal notranslate"><span class="pre">caas.img</span></code>.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">Skip this section if you plan to boot the device directly with the GPT disk image <code class="file docutils literal"><span class="pre">caas.img</span></code>.</p>
 </div>
 <p>Follow the instructions below to create and set up CiV partitions on
 a <em>qcow2</em> formatted virtual disk.</p>
 <ol class="arabic">
-<li><p>Run the helper script <code class="file docutils literal notranslate"><span class="pre">start_flash_usb.sh</span></code>.</p>
+<li><p class="first">Run the helper script <code class="file docutils literal"><span class="pre">start_flash_usb.sh</span></code>.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/civ
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/civ
 $ sudo ./scripts/start_flash_usb.sh caas-flashfiles-eng.&lt;user&gt;.zip
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>By running the <code class="file docutils literal notranslate"><span class="pre">start_flash_usb.sh</span></code> script, a QEMU window will be popped up, it
+<li><p class="first">By running the <code class="file docutils literal"><span class="pre">start_flash_usb.sh</span></code> script, a QEMU window will be popped up, it
 will drop to the built-in UEFI Shell and start flashing the partitions to
 the virtual disk image.</p>
 <blockquote>
-<div><figure class="align-center">
+<div><div class="figure align-center">
 <img alt="../_images/qemu-bios-flashing.png" src="../_images/qemu-bios-flashing.png" />
-</figure>
+</div>
 </div></blockquote>
 </li>
-<li><p>The QEMU window will be closed automatically once flash complete.
-Now we get the CiV virtual disk <code class="file docutils literal notranslate"><span class="pre">android.qcow2</span></code> under the current
-directory.</p></li>
+<li><p class="first">The QEMU window will be closed automatically once flash complete.
+Now we get the CiV virtual disk <code class="file docutils literal"><span class="pre">android.qcow2</span></code> under the current
+directory.</p>
+</li>
 </ol>
-</section>
-<section id="boot-to-android-ui">
-<h2><a class="toc-backref" href="#id6">Boot to Android UI</a><a class="headerlink" href="#boot-to-android-ui" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="boot-to-android-ui">
+<h2><a class="toc-backref" href="#id6">Boot to Android UI</a></h2>
 <p>A script <cite>start_civ.sh</cite> is developed to facilitate the CiV images
 booting process. It supports various options:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>start_civ.sh <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-m<span class="o">]</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-g<span class="o">]</span> <span class="o">[</span>-d<span class="o">]</span> <span class="o">[</span>-f<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-s<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-b<span class="o">]</span> <span class="o">[</span>-e<span class="o">]</span> <span class="o">[</span>--passthrough-pci-usb<span class="o">]</span> <span class="o">[</span>--passthrough-pci-audio<span class="o">]</span> <span class="o">[</span>--passthrough-pci-eth<span class="o">]</span> <span class="o">[</span>--passthrough-wifi<span class="o">]</span> <span class="o">[</span>--thermal-mediation<span class="o">]</span> <span class="o">[</span>--battery-mediation<span class="o">]</span> <span class="o">[</span>--guest-pm-control<span class="o">]</span> <span class="o">[</span>--guest-time-keep<span class="o">]</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>start_civ.sh <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-m<span class="o">]</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-g<span class="o">]</span> <span class="o">[</span>-d<span class="o">]</span> <span class="o">[</span>-f<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-s<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-b<span class="o">]</span> <span class="o">[</span>-e<span class="o">]</span> <span class="o">[</span>--passthrough-pci-usb<span class="o">]</span> <span class="o">[</span>--passthrough-pci-audio<span class="o">]</span> <span class="o">[</span>--passthrough-pci-eth<span class="o">]</span> <span class="o">[</span>--passthrough-wifi<span class="o">]</span> <span class="o">[</span>--thermal-mediation<span class="o">]</span> <span class="o">[</span>--battery-mediation<span class="o">]</span> <span class="o">[</span>--guest-pm-control<span class="o">]</span> <span class="o">[</span>--guest-time-keep<span class="o">]</span>
 </pre></div>
 </div>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 69%" />
+<col width="31%" />
+<col width="69%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td><p><kbd class="kbd docutils literal notranslate">-h</kbd></p></td>
-<td><p>show this help message.</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">-h</span></code></td>
+<td>show this help message.</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd docutils literal notranslate">-m</kbd></p></td>
-<td><p>specify guest memory size, eg. “-m 4G”. Default is 2G if this is not specified.</p></td>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">-m</span></code></td>
+<td>specify guest memory size, eg. “-m 4G”. Default is 2G if this is not specified.</td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd docutils literal notranslate">-c</kbd></p></td>
-<td><p>specify guest cpu number, eg. “-c 4”. Default is 1 if this is not specified.</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">-c</span></code></td>
+<td>specify guest cpu number, eg. “-c 4”. Default is 1 if this is not specified.</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd docutils literal notranslate">-g</kbd></p></td>
-<td><p>specify guest graphics mode, current support <strong>VirtIO | GVT-g | GVT-d | QXL</strong>.</p>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">-g</span></code></td>
+<td><p class="first">specify guest graphics mode, current support <strong>VirtIO | GVT-g | GVT-d | QXL</strong>.</p>
 <p>VirtIO GPU, eg. “-g VirtIO”</p>
 <p>QXL VGA, eg. “-g QXL”</p>
 <p>GVT-g, eg. “-g GVT-g,uuid=4ec1ff92-81d7-11e9-aed4-5bf6a9a2bb0a”, if uuid is not specified, a hardcoded uuid will be used</p>
 <p>GVT-d: romfile is supported for GVT-d, eg. “-g GVT-d,romfile=/path/to/romfile”, romfile is optional.</p>
-<p>The default value is VirtIO if this parameter is not specified.</p>
+<p class="last">The default value is VirtIO if this parameter is not specified.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd docutils literal notranslate">-d</kbd></p></td>
-<td><p>specify guest virtual disk image, eg. “-d /path/to/android.img”. Default is “$PWD/android.qcow2” if this is not specified.</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">-d</span></code></td>
+<td>specify guest virtual disk image, eg. “-d /path/to/android.img”. Default is “$PWD/android.qcow2” if this is not specified.</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd docutils literal notranslate">-f</kbd></p></td>
-<td><p>specify guest firmware image, eg. “-d /path/to/ovmf.fd”. Default is “$PWD/OVMF.fd” if this is not specified.</p></td>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">-f</span></code></td>
+<td>specify guest firmware image, eg. “-d /path/to/ovmf.fd”. Default is “$PWD/OVMF.fd” if this is not specified.</td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd docutils literal notranslate">-v</kbd></p></td>
-<td><p>specify guest vsock cid, eg. “-v 4”. Default is 3.</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">-v</span></code></td>
+<td>specify guest vsock cid, eg. “-v 4”. Default is 3.</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd docutils literal notranslate">-s</kbd></p></td>
-<td><p>specify guest share folder path, eg. “-s /path/to/share/with/guest”.</p></td>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">-s</span></code></td>
+<td>specify guest share folder path, eg. “-s /path/to/share/with/guest”.</td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd docutils literal notranslate">-p</kbd></p></td>
-<td><p>specify host forward ports, current support adb/fastboot, eg. “-p adb=6666,fastboot=7777”. Default is adb=5555,fastboot=5554</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">-p</span></code></td>
+<td>specify host forward ports, current support adb/fastboot, eg. “-p adb=6666,fastboot=7777”. Default is adb=5555,fastboot=5554</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd docutils literal notranslate">-b</kbd></p></td>
-<td><p>specify host block device as guest virtual device, eg.” -b /dev/mmcblk0 “</p></td>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">-b</span></code></td>
+<td>specify host block device as guest virtual device, eg.” -b /dev/mmcblk0 “</td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd docutils literal notranslate">-e</kbd></p></td>
-<td><p>specify extra qemu cmd, eg. “-e “-full-screen -monitor stdio””</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">-e</span></code></td>
+<td>specify extra qemu cmd, eg. “-e “-full-screen -monitor stdio”“</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">-</kbd>-<kbd class="kbd docutils literal notranslate">passthrough</kbd>-<kbd class="kbd docutils literal notranslate">pci</kbd>-<kbd class="kbd docutils literal notranslate">usb</kbd></kbd></p></td>
-<td><p>passthrough USB PCI bus to guest.</p></td>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">--passthrough-pci-usb</span></code></td>
+<td>passthrough USB PCI bus to guest.</td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">-</kbd>-<kbd class="kbd docutils literal notranslate">passthrough</kbd>-<kbd class="kbd docutils literal notranslate">pci</kbd>-<kbd class="kbd docutils literal notranslate">audio</kbd></kbd></p></td>
-<td><p>passthrough Audio PCI bus to guest.</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">--passthrough-pci-audio</span></code></td>
+<td>passthrough Audio PCI bus to guest.</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">-</kbd>-<kbd class="kbd docutils literal notranslate">passthrough</kbd>-<kbd class="kbd docutils literal notranslate">pci</kbd>-<kbd class="kbd docutils literal notranslate">eth</kbd></kbd></p></td>
-<td><p>passthrough Ethernet PCI bus to guest.</p></td>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">--passthrough-pci-eth</span></code></td>
+<td>passthrough Ethernet PCI bus to guest.</td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">-</kbd>-<kbd class="kbd docutils literal notranslate">passthrough</kbd>-<kbd class="kbd docutils literal notranslate">pci</kbd>-<kbd class="kbd docutils literal notranslate">wifi</kbd></kbd></p></td>
-<td><p>passthrough WiFi PCI bus to guest.</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">--passthrough-pci-wifi</span></code></td>
+<td>passthrough WiFi PCI bus to guest.</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">-</kbd>-<kbd class="kbd docutils literal notranslate">thermal</kbd>-<kbd class="kbd docutils literal notranslate">mediation</kbd></kbd></p></td>
-<td><p>enable thermal mediation.</p></td>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">--thermal-mediation</span></code></td>
+<td>enable thermal mediation.</td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">-</kbd>-<kbd class="kbd docutils literal notranslate">battery</kbd>-<kbd class="kbd docutils literal notranslate">mediation</kbd></kbd></p></td>
-<td><p>enable battery mediation.</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">--battery-mediation</span></code></td>
+<td>enable battery mediation.</td>
 </tr>
-<tr class="row-even"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">-</kbd>-<kbd class="kbd docutils literal notranslate">guest</kbd>-<kbd class="kbd docutils literal notranslate">pm</kbd>-<kbd class="kbd docutils literal notranslate">control</kbd></kbd></p></td>
-<td><p>allow guest control host PM.</p></td>
+<tr class="row-even"><td><code class="kbd docutils literal"><span class="pre">--guest-pm-control</span></code></td>
+<td>allow guest control host PM.</td>
 </tr>
-<tr class="row-odd"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">-</kbd>-<kbd class="kbd docutils literal notranslate">guest</kbd>-<kbd class="kbd docutils literal notranslate">time</kbd>-<kbd class="kbd docutils literal notranslate">keep</kbd></kbd></p></td>
-<td><p>reflect guest time setting on Host OS.</p></td>
+<tr class="row-odd"><td><code class="kbd docutils literal"><span class="pre">--guest-time-keep</span></code></td>
+<td>reflect guest time setting on Host OS.</td>
 </tr>
 </tbody>
 </table>
-<section id="intel-gvt-option">
-<h3>Intel GVT option<a class="headerlink" href="#intel-gvt-option" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="intel-gvt-option">
+<h3>Intel GVT option</h3>
 <p>Enter the following commands to run the script <cite>start_civ.sh</cite> with
 root permissions to facilitate the booting of CiV images with QEMU.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/civ
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/civ
 <span class="c1"># The following command runs CiV using Intel GVT-g</span>
 $ sudo -E ./scripts/start_civ.sh -g GVT-g
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following command runs CiV using Intel GVT-d, and passes</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># The following command runs CiV using Intel GVT-d, and passes</span>
 <span class="c1"># all the attached USB devices such as keyboard, mouse to the VM.</span>
 $ sudo -E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
 </pre></div>
 </div>
-</section>
-<section id="usb-pci-controller-pass-through-option">
-<h3>USB PCI controller pass-through option<a class="headerlink" href="#usb-pci-controller-pass-through-option" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="usb-pci-controller-pass-through-option">
+<h3>USB PCI controller pass-through option</h3>
 <p>You can pass-through not only the GPU but also the USB host controller (xHCI)
 to the Android VM, in order to attach all the connected USB devices
 (e.g. camera, USB thumb drive) to the VM.
-By passing <strong class="command">--passthrough-pci-usb</strong> argument to the <cite>start_civ.sh</cite> script,
-all the USB devices connected to the platform get automatically enumerated inside
-the Android VM:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following command pass-through the xHCI to the VM</span>
+By passing <strong class="command">--passthrough-pci-usb</strong> argument to the <cite>start_civ.sh</cite>
+script, all the USB devices connected to the platform get automatically
+enumerated inside the Android VM:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># The following command pass-through the xHCI to the VM</span>
 $ sudo -E ./scripts/start_civ.sh --passthrough-pci-usb
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>All the USB devices, including keyboard and mouse, will be disconnected
+<p class="first admonition-title">Warning</p>
+<p class="last">All the USB devices, including keyboard and mouse, will be disconnected
 from the host OS and get attached to the Android VM.</p>
 </div>
 <p>An alternative methodology is to passthrough only selected USB devices
@@ -458,7 +439,7 @@ to the Android VM by modifying the <cite>start_civ.sh</cite> script.
 For example, to pass-through the USB SD card reader in the following list,
 whose vendorID and productID are <strong>14cd</strong> and <strong>125c</strong> respectively:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ lsusb
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ lsusb
 Bus <span class="m">004</span> Device <span class="m">001</span>: ID 1d6b:0003 Linux Foundation <span class="m">3</span>.0 root hub
 Bus <span class="m">003</span> Device <span class="m">001</span>: ID 1d6b:0002 Linux Foundation <span class="m">2</span>.0 root hub
 Bus <span class="m">001</span> Device <span class="m">003</span>: ID <span class="m">8087</span>:0a2b Intel Corp.
@@ -471,43 +452,44 @@ Bus <span class="m">001</span> Device <span class="m">008</span>: ID 14cd:125c S
 <p>Execute <cite>start_civ.sh</cite> script as below, to enumerate the device
 in the Android VM:</p>
 <blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo -E ./scripts/start_civ.sh -e &quot;-device usb-host,vendroidid=0x14cd,productid=0x125c&quot;
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>sudo -E ./scripts/start_civ.sh -e &quot;-device usb-host,vendroidid=0x14cd,productid=0x125c&quot;
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-<section id="launching-with-sd-card">
-<h3>Launching with SD card<a class="headerlink" href="#launching-with-sd-card" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="launching-with-sd-card">
+<h3>Launching with SD card</h3>
 <p>In case your hardware platform supports SD cards through the <abbr title="Secure Digital Host Controller Interface">SDHCI</abbr> controller, you can enable
-SDHCI mediation by adding <strong class="command">-b &lt;sdcard block device&gt;</strong> option argument while
-invoking the <cite>start_civ.sh</cite> script if the SD card is present in the slot.</p>
+SDHCI mediation by adding <strong class="command">-b &lt;sdcard block device&gt;</strong> option
+argument while invoking the <cite>start_civ.sh</cite> script if the SD card is present
+in the slot.</p>
 <p>With the following command, the SD card interface will be mediated to the
 Android guest OS, and Android will mount the SD card on boot.
 The external SD card mount is validated with sdcardfs file system and the
 mount point is available in the standard UI interfaces like file explorer,
 storage settings etc.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/start_civ.sh -b /dev/mmcblk0p1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/start_civ.sh -b /dev/mmcblk0p1
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>This option should be given only if SD card is present in the slot.</p></li>
-<li><p>Do not specify <strong class="command">--passthrough-pci-usb</strong> argument together
-with the SD card options, or the SD card won’t be operational.</p></li>
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>This option should be given only if SD card is present in the slot.</li>
+<li>Do not specify <strong class="command">--passthrough-pci-usb</strong> argument together
+with the SD card options, or the SD card won’t be operational.</li>
 </ol>
 </div>
-</section>
-<section id="audio-pass-through-option">
-<h3>Audio pass-through option<a class="headerlink" href="#audio-pass-through-option" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="audio-pass-through-option">
+<h3>Audio pass-through option</h3>
 <p>The audio controller can be passd through to the guest
 by adding <strong class="command">--passthrough-pci-audio</strong> argument while invoking the
 <cite>start_civ.sh</cite> script, the host then has no control over it.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/start_civ.sh --passthrough-pci-audio
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/start_civ.sh --passthrough-pci-audio
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>With the above setup, PCI controllers, which are part of the same IOMMU
 group as the audio controller, will also be pass-through to the guest.
 For example, if the Ethernet controller and the audio controller are
@@ -515,19 +497,19 @@ in the same IOMMU group, the Ethernet controller will be moved to the guest.
 Thus if you are connecting to the host via Ethernet, the network accesses to
 the host will be drop. Since the Android guest has accesses to the Ethernet
 controller, you can connect to it using the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ adb connect &lt;guest-ip-addr&gt;:5555
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ adb connect &lt;guest-ip-addr&gt;:5555
 </pre></div>
 </div>
 </div>
-<figure class="align-center">
+<div class="figure align-center">
 <img alt="../_images/caas-qemu-booting.jpg" src="../_images/caas-qemu-booting.jpg" />
-</figure>
-<figure class="align-center">
+</div>
+<div class="figure align-center">
 <img alt="../_images/caas-qemu-lockscreen.jpg" src="../_images/caas-qemu-lockscreen.jpg" />
-</figure>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -550,7 +532,7 @@ controller, you can connect to it using the command:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jun 07, 2021.
+      Last updated on Oct 20, 2021.
 
     </p>
   </div>

@@ -417,22 +417,23 @@ Checkpoints
 #. Make sure that ``vendor/widewine/Android.mk`` is included in
    your device’s build process. (Normally, it should be included.)
 
-#. After the build, you should have the following binaries in
-   ``out/target/product/$(TARGET\_DEVICE).``
+#. After the build, you should have the following binaries in::
 
-   ``vendor/lib/libwvhidl.so``
+     out/target/product/$(TARGET\_DEVICE).
 
-   ``vendor/lib/mediadrm/libwvdrmengine.so ``
+     vendor/lib/libwvhidl.so
 
-   ``vendor/bin/hw/android.hardware.drm@1.2-service.widevine ``
+     vendor/lib/mediadrm/libwvdrmengine.so
 
-   ``vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc`` <mailto:vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc>`__
+     vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 
-   For Android 11:
+     vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc <mailto:vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc>`__
 
-   ``vendor/bin/hw/android.hardware.drm@1.3-service.widevine ``
+   For Android 11::
 
-   ``vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc``
+     vendor/bin/hw/android.hardware.drm@1.3-service.widevine ``
+
+     vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc``
 
 #. Finally, you need to ensure that those files are on the TARGET
    devices and services are running.

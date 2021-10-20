@@ -9,12 +9,12 @@ Development
 .. toctree::
    :maxdepth: 1
 
-   mixins/mixins
-   enabling-uac3/enabling-uac3
-   software-debug-tips/software-debug-tips
-   dbc/dbc
-   widevine/widevine-integration
-   bare-metal/boot-civ-bare-metal
+   mixins
+   enabling-uac3
+   software-debug-tips
+   dbc
+   widevine-integration
+   boot-civ-bare-metal
 
 Security
 --------
@@ -22,9 +22,9 @@ Security
 .. toctree::
    :maxdepth: 1
 
-   configure-selinux/configure-selinux
-   security/trusty-hardware-binding/trusty-hardware-binding
-   security/trusty-enabling/trusty-enabling
+   configure-selinux
+   security/trusty-hardware-binding
+   security/trusty-enabling
 
 System Validation
 -----------------
@@ -32,5 +32,5 @@ System Validation
 .. toctree::
    :maxdepth: 1
 
-   test-strategy/test-strategy
-   pnp-testsuites/pnp-testsuites
+   test-strategy
+   pnp-testsuites

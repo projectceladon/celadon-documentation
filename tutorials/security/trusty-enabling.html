@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Enable or Disable Trusty for Debugging &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Test Strategy for Celadon" href="../test-strategy.html" />
+    <link rel="prev" title="Trusty Hardware Binding on Celadon" href="trusty-hardware-binding.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#development">Development</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#security">Security</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../configure-selinux.html">SELinux Configuration and Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trusty-hardware-binding.html">Trusty Hardware Binding on Celadon</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to Enable or Disable Trusty for Debugging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-enable-trusty">How to enable Trusty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-disable-trusty">How to disable Trusty</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>How to Enable or Disable Trusty for Debugging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/security/trusty-enabling.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-enable-or-disable-trusty-for-debugging">
+<span id="trusty-enabling"></span><h1>How to Enable or Disable Trusty for Debugging</h1>
+<p><a class="reference external" href="https://01.org/trusty-ia">Trusty</a> is a mandatory component since Android Oreo dessert onwards. It provides the hardware-backed security services such as the keymaster, gatekeeper, crypto, and so forth. These services are required for applications such as data storage encryption.</p>
+<div class="section" id="how-to-enable-trusty">
+<h2>How to enable Trusty</h2>
+<p>Project Celadon supports Trusty. To enable Trusty explicitly, update the config file <code class="file docutils literal"><span class="pre">device/intel/project-celadon/$&lt;lunch-target&gt;/mixins.spec</span></code> in the device config project ‘<em>device-androidia</em>’ as follows:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>..
+[groups]
+device-specific: celadon
+treble: true
+..
+<span class="hll">trusty: true(ref_target=$&lt;target name&gt;)
+</span></pre></div>
+</div>
+<p>The following parameters are valid options within the brackets in the previous configuration setting:</p>
+<ul>
+<li><p class="first"><strong class="makevar">ref_target</strong> : <code class="docutils literal"><span class="pre">mandatory</span></code></p>
+<blockquote>
+<div><p>This option defines the reference target device.</p>
+<p>For project Celadon, it can be any of the following values:</p>
+<blockquote>
+<div><p><em>project-celadon_apl</em> : For IVI usage running on Intel Apollo Lake family</p>
+<p><em>project-celadon_kbl</em> : For IVI usage running on Intel Kaby Lake Core processor</p>
+<p><em>project-celadon_64</em> : For tablet usage running on for Commercial Kaby Lake and Apollo Lake NUCs</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first"><strong class="makevar">enable_hw_sec</strong> : <code class="docutils literal"><span class="pre">optional</span></code></p>
+<blockquote>
+<div><p>This flag indicates the Trusty feature is backed by hardware or software. By setting this option to <em>true</em>, the security services are provided by the Trusty, or the software-backed security services are used.</p>
+<p>Default: <em>true</em></p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong class="makevar">enable_storage_proxyd</strong> : <code class="docutils literal"><span class="pre">optional</span></code></p>
+<blockquote>
+<div><p>This flag defines whether the storge proxy daemon service is started or not. At present, this flag must be set to true when Trusty is enabled.</p>
+<p>Default: <em>true</em></p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong class="makevar">keymaster_version</strong> : <code class="docutils literal"><span class="pre">optional</span></code></p>
+<blockquote>
+<div><p>This option specifies the keymaster HAL version is used, it can be 1 or 2. Note, keymaster 3.0 uses the HAL version 2.</p>
+<p>Default: <em>2</em></p>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Those optional parameters are primarily used for debugging purposes during the development.
+Users should not set any of the parameters explicitly unless the impact is clearly understood.</p>
+</div>
+<p>After the mixin configuration is changed, the user must run the <strong class="command">mixin-update</strong> script before re-building the image in order to apply the changes to the project device configuration. Follow the instructions in <a class="reference internal" href="../../getting-started/build-source.html#build-from-source"><span class="std std-ref">Build Celadon From Source</span></a> Guide to rebuild the Celadon images.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ device/intel/mixins/mixin-update
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-disable-trusty">
+<h2>How to disable Trusty</h2>
+<p>It is common practice to disable the Trusty temporarily for ease of debugging
+while you bring up a new platform, or migrate to the new Android dessert.
+To disable, set the ‘<strong>trusty</strong>’ option to <em>false</em> in the mixins config file
+<code class="file docutils literal"><span class="pre">mixins.spec</span></code> of the device config project, and update the mixins configurations
+with the <strong class="command">device/intel/mixins/mixin-update</strong> script. Then, the Trusty is disabled after rebuilding the Celadon image.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>..
+[groups]
+device-specific: celadon
+treble: true
+..
+<span class="hll">trusty: false
+</span></pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../test-strategy.html" class="btn btn-neutral float-right" title="Test Strategy for Celadon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trusty-hardware-binding.html" class="btn btn-neutral" title="Trusty Hardware Binding on Celadon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Oct 20, 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

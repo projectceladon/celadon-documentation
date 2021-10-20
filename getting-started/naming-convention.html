@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Release Naming Convention &mdash; Documentation for the Celadon Project</title>
@@ -29,7 +28,9 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Build Celadon From Source" href="build-source.html" />
+    <link rel="prev" title="Run Celadon in a Docker* container" href="on-container.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -82,13 +83,21 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Release Naming Convention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to.html">How do I …</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sitemap.html">Project Celadon - Documentation Sitemap</a></li>
 </ul>
 
             
@@ -134,6 +143,8 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="getting-started.html">Getting Started</a> &raquo;</li>
+        
       <li>Release Naming Convention</li>
     
     
@@ -153,69 +164,73 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="release-naming-convention">
-<span id="id1"></span><h1>Release Naming Convention<a class="headerlink" href="#release-naming-convention" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-naming-convention">
+<span id="id1"></span><h1>Release Naming Convention</h1>
 <p>Celadon offers several types of release packages for different usages. Releases
 are numbered and tagged according to the release timestamp, the exit
 criteria were met, and the Android* dessert on which the release is based.
 The naming convention of a Celadon release tag is:</p>
 <blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[Type]_[Exit Code].[Year].[Quarter].[Work Week]_A[Android Dessert]
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>[Type]_[Exit Code].[Year].[Quarter].[Work Week]_A[Android Dessert]
 </pre></div>
 </div>
 <ul>
-<li><p>The <em>[Type]</em> field specifies the type of the release package:</p>
+<li><p class="first">The <em>[Type]</em> field specifies the type of the release package:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>‘<strong class="command">CIV</strong>’ denotes a release for running Celadon in a VM.</p></li>
-<li><p>‘<strong class="command">CIC</strong>’ denotes a release for running Celadon in a Container.</p></li>
+<li>‘<strong class="command">CIV</strong>’ denotes a release for running Celadon in a VM.</li>
+<li>‘<strong class="command">CIC</strong>’ denotes a release for running Celadon in a Container.</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>The <em>[Exit Code]</em> field specifies the code of platform exit stage:</p>
+<li><p class="first">The <em>[Exit Code]</em> field specifies the code of platform exit stage:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>‘<strong class="command">00</strong>’ represents the release is going through the platform exit stage.</p></li>
-<li><p>‘<strong class="command">01</strong>’ represents the release reaches the platform exit criteria.</p></li>
-<li><p>‘<strong class="command">02</strong>’ and onward represent sustenancing releases. The number is increased each time a sustenancing package is released.</p></li>
+<li>‘<strong class="command">00</strong>’ represents the release is going through the platform exit stage.</li>
+<li>‘<strong class="command">01</strong>’ represents the release reaches the platform exit criteria.</li>
+<li>‘<strong class="command">02</strong>’ and onward represent sustenancing releases. The number is increased each time a sustenancing package is released.</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>The <em>[Year]</em> field represents the Year when the agreed quality
-criteria were met.</p></li>
-<li><p>The <em>[Quarter]</em> field represents the Quarter when the agreed quality
-criteria were met.</p></li>
-<li><p>The <em>[Work Week]</em> field represents the Work week when the agreed
-quality criteria were met.</p></li>
-<li><p>The <em>[Android Dessert]</em> field represents the version of Android
-dessert on which the release is based.</p></li>
+<li><p class="first">The <em>[Year]</em> field represents the Year when the agreed quality
+criteria were met.</p>
+</li>
+<li><p class="first">The <em>[Quarter]</em> field represents the Quarter when the agreed quality
+criteria were met.</p>
+</li>
+<li><p class="first">The <em>[Work Week]</em> field represents the Work week when the agreed
+quality criteria were met.</p>
+</li>
+<li><p class="first">The <em>[Android Dessert]</em> field represents the version of Android
+dessert on which the release is based.</p>
+</li>
 </ul>
 <p>Examples:</p>
-<table class="docutils align-default">
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 24%" />
-<col style="width: 76%" />
+<col width="24%" />
+<col width="76%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Release Tag</p></td>
-<td><p>Comment</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td>Release Tag</td>
+<td>Comment</td>
 </tr>
-<tr class="row-even"><td><p>CIV_00.19.04.51_A10</p></td>
-<td><div class="line-block">
+<tr class="row-even"><td>CIV_00.19.04.51_A10</td>
+<td><div class="first last line-block">
 <div class="line">represents an Android 10 based <abbr title="Celadon in VM">CIV</abbr> release</div>
 <div class="line">which met the agreed quality criteria in 2019 Q4 WW51</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>CIC_01.20.01.12_A09</p></td>
-<td><div class="line-block">
+<tr class="row-odd"><td>CIC_01.20.01.12_A09</td>
+<td><div class="first last line-block">
 <div class="line">represents an Android 9 based <abbr title="Celadon in Container">CIC</abbr> release</div>
 <div class="line">which met the platform exit criteria in 2020 Q1 ww12</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>CELADON_02.20.04.51_A09</p></td>
-<td><div class="line-block">
+<tr class="row-even"><td>CELADON_02.20.04.51_A09</td>
+<td><div class="first last line-block">
 <div class="line">represents the first Celadon sustenance release based on Android 9</div>
 <div class="line">released on 2020 Q4 in ww51</div>
 </div>
@@ -224,7 +239,7 @@ dessert on which the release is based.</p></li>
 </tbody>
 </table>
 </div></blockquote>
-</section>
+</div>
 
 
            </div>
@@ -232,13 +247,22 @@ dessert on which the release is based.</p></li>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="build-source.html" class="btn btn-neutral float-right" title="Build Celadon From Source" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="on-container.html" class="btn btn-neutral" title="Run Celadon in a Docker* container" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jun 07, 2021.
+      Last updated on Oct 20, 2021.
 
     </p>
   </div>

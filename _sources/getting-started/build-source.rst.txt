@@ -51,14 +51,16 @@ Set up the development environment
 
       $ sudo apt-get update
       $ sudo apt-get install openjdk-8-jdk git ccache automake \
-            lzop bison gperf build-essential zip curl \
-            zlib1g-dev g++-multilib python3-networkx \
-            libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
-            libghc-bzlib-dev squashfs-tools pngcrush \
-            schedtool dpkg-dev liblz4-tool make optipng maven \
-            libssl-dev bc bsdmainutils gettext python-mako \
-            libelf-dev sbsigntool dosfstools mtools efitools \
-            python-pystache git-lfs python3 flex clang libncurses5
+             lzop bison gperf build-essential zip curl \
+             zlib1g-dev g++-multilib python3-networkx \
+             libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
+             libghc-bzlib-dev squashfs-tools pngcrush \
+             schedtool dpkg-dev liblz4-tool make optipng maven \
+             libssl-dev bc bsdmainutils gettext python3-mako \
+             libelf-dev sbsigntool dosfstools mtools efitools \
+             python3-pystache git-lfs python3 flex clang libncurses5 \
+             fakeroot ncurses-dev xz-utils
+
       $ sudo apt install cryptsetup-bin
 
 #. :abbr:`CiC (Celadon in Container)`
@@ -91,7 +93,7 @@ Set up the development environment
 
        $ sudo usermod -aG docker $USER
 
-Build |C| in VM with Android 11
+Build |C| in VM with Android 12
 *******************************
 
 Download the source
@@ -114,23 +116,13 @@ Download the source
        $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 
    Note, the last :command:`repo init` command pulls the latest development
-   CiV source code based on *Android 11* from the master branch.
-   To continue working on the *Android 10* based CiV source code,
+   CiV source code based on *Android 12* from the master branch.
+   To continue working on the *Android 11* based CiV source code,
    use the following manifest instead:
 
    .. code-block:: bash
 
        $ repo init -u https://github.com/projectceladon/manifest  -b celadon/q/mr0/stable -m default.xml
-
-   You can also checkout the source code
-   of the `QMR0 March-31-2020`_ release that passed the *Platform Exit*
-   criteria with the following command:
-
-   .. _QMR0 March-31-2020: https://01.org/projectceladon/documentation/release-notes#civ-01-20-01-12-a10
-
-   .. code-block:: bash
-
-       $ repo init -u https://github.com/projectceladon/manifest -b celadon/master/2020q1 -m default.xml
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time
@@ -171,9 +163,10 @@ Build |C| in VM image
    .. code-block:: bash
 
        $ lunch caas-userdebug
-       $ make BUILD_CPU_ARCH=kabylake flashfiles -j $(nproc)
+       $ make flashfiles -j $(nproc)
 
    .. note::
+      #. This is needed for the Tiger Lake Intel® NUC platform.
       #. The *-j $(nproc)* argument instructs the builder to compile the source
          code with parallel tasks. The generated kernelflinger executables
          .ZIP file
@@ -181,8 +174,11 @@ Build |C| in VM image
          is available after the build. You can refer to :ref:`caas-on-vm`
          section to prepare the host environment and boot the CiV image with QEMU.
       #. The ':makevar:`BUILD_CPU_ARCH`' variable instructs the builder to
-         generate images that leverage `AVX`_ and `AVX2`_ instructions on
-         the target device. It's recommended to specify ':makevar:`BUILD_CPU_ARCH=kabylake`'
+         generate images that leverage
+         `Intel® Advanced Vector Extensions (Intel® AVX)`_ and 
+         `Intel® Advanced Vector Extensions 2 (Intel® AVX2)`_ instructions on
+         the target device. It's recommended to specify
+         :makevar:`BUILD_CPU_ARCH=kabylake`'
          while building the images for `Comet Lake`_ platform.
 
 Build |C| in Container with Android 9
@@ -266,6 +262,6 @@ Build |C| in Container package
       is available after the build. You can follow :ref:`deploy-cic-on-target` of
       this guide to deploy and start the CiC container on the target device.
 
-.. _AVX:    https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions
-.. _AVX2:   https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2
+.. _ Intel® Advanced Vector Extensions (Intel® AVX):    https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions
+.. _Intel® Advanced Vector Extensions 2 (Intel® AVX2):   https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2
 .. _Comet Lake: https://en.wikipedia.org/wiki/Comet_Lake

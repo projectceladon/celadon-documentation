@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Getting Started &mdash; Documentation for the Celadon Project</title>
@@ -87,7 +86,9 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how-to.html">How do I …</a></li>
@@ -97,21 +98,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../sitemap.html">Project Celadon - Documentation Sitemap</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Started</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
-<li class="toctree-l3"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
-<li class="toctree-l3"><a class="reference internal" href="how-to.html">How do I …</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../references.html">References</a></li>
-</ul>
-</li>
 </ul>
 
             
@@ -176,8 +162,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="getting-started">
-<span id="get-started"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="getting-started">
+<span id="get-started"></span><h1>Getting Started</h1>
 <p>The Getting Started Guide provides step-by-step instructions to build your
 Celadon Android images from the source repositories. This guide will help you
 start using the generated images on Intel® platforms, Virtual
@@ -189,11 +175,21 @@ Machines, and Containers. This guide also explains how to contribute patches.</p
 <li class="toctree-l2"><a class="reference internal" href="on-container.html">Run Celadon in a Docker* container</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="build-source.html">Build Celadon From Source</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="build-source.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build-source.html#set-up-the-development-environment">Set up the development environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build-source.html#build-c-in-vm-with-android-11">Build Celadon in VM with Android 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source.html#build-c-in-vm-with-android-12">Build Celadon in VM with Android 12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build-source.html#build-c-in-container-with-android-9">Build Celadon in Container with Android 9</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html#hardware-prerequisites">Hardware Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html#configure-the-bios-setting">Configure the BIOS Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html#build-android-image">Build Android Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html#flash-and-boot-the-device">Flash and Boot the Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html#live-boot">Live Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html#dual-boot-c-with-windows">Dual Boot Celadon with Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="submit-patch.html">Submit your patches</a><ul>
@@ -210,7 +206,7 @@ Machines, and Containers. This guide also explains how to contribute patches.</p
 </li>
 </ul>
 </div>
-</section>
+</div>
 
 
            </div>
@@ -233,7 +229,7 @@ Machines, and Containers. This guide also explains how to contribute patches.</p
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jun 07, 2021.
+      Last updated on Oct 20, 2021.
 
     </p>
   </div>

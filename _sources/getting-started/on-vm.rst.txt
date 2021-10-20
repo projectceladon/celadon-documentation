@@ -6,8 +6,10 @@ Run |C| in a virtual machine
 This page explains what you'll need to run |C| in a virtual machine.
 
 Depending on your applications, you can run :abbr:`CiV (Celadon in VM)` using
-Intel® GVT-g technology, or allowing for GPU passthrough to a single Android
-guest VM through Intel® GVT-d technology, or VirtIO GPU, or pure software rendering.
+Intel® GVT-g technology, or allowing for GPU passthrough to a single
+Android\* guest VM through Intel® Virtualization Technology (Intel® VT) for
+Directed I/O (Intel® VT-d) technology, or VirtIO GPU, or pure
+software rendering.
 
 .. contents::
    :local:
@@ -16,26 +18,25 @@ guest VM through Intel® GVT-d technology, or VirtIO GPU, or pure software rende
 Prerequisites
 *************
 
-* A |NUC| with 5th Generation or newer Intel Core Processors.
-* Ubuntu 20.04 (Focal Fossa) preinstalled which runs Linux\* kernel
+* An |NUC-attr| with an eighth generation or newer |Core-attr| Processor.
+* Ubuntu\* 20.04 (Focal Fossa) preinstalled which runs Linux\* kernel
   version 5.0.0 or above.
 
   .. note::
      :abbr:`CiV (Celadon in VM)` releases have been validated on
      |NUC| model `NUC7i5DNHE`_. Releases after **April 17th 2020** are
      validated on |NUC| model `NUC10i7FNK`_ and `NUC10i7FNH`_ to
-     take performance advantages of 10th Generation Intel® Core Processors.
+     take performance advantages of 10th Generation |Core| Processors.
 
 Intel GVT-d overview
 ********************
 
-Intel Graphics Virtualization Technology covers three distinct flavors
-of graphics virtualization approaches. Among these approaches,
-Intel GVT-d is based on
-:abbr:`Intel® VT-d (Intel® Virtualization Technology for Directed I/O)`
+Intel® Graphics Virtualization Technology (Intel® GVT) covers three distinct
+flavors of graphics virtualization approaches. Among these approaches,
+Intel GVT-d is based on Intel VT-d
 technology, it also includes additional graphics related configuration
 options when compared to standard NIC pass-through devices.
-Intel® GVT-d allows direct assignment of an entire GPU's capacity to
+Intel GVT-d allows direct assignment of an entire GPU's capacity to
 a single user, passing the native driver capabilities through the hypervisor
 without limitations.
 
@@ -56,31 +57,33 @@ from source depending on the target graphics virtualization technology,
 and installs the required software on the installed Ubuntu system for running
 |C| in a VM with QEMU.
 
-Download and extract release package(`caas-releasefiles-<$buildvariant>.tar.gz`)
+Download and extract release
+package(`caas-releasefiles-<$buildvariant>.tar.gz`)
 from: `celadon-binary <https://github.com/projectceladon/celadon-binary>`_
 Meanwhile, you can also refer :ref:`build-os-image` section to build release
 packages.
 
-     .. code-block:: bash
+.. code-block:: bash
 
-        $ mkdir -p ~/civ && cd ~/civ
-        $ tar zxvf caas-releasefiles-<$buildvariant>.tar.gz
-        $ chmod +x scripts/setup_host.sh
+   $ mkdir -p ~/civ && cd ~/civ
+   $ tar zxvf caas-releasefiles-<$buildvariant>.tar.gz
+   $ chmod +x scripts/setup_host.sh
 
 Launch the script with no argument to set up the environment for running
 CiV using Intel GVT technology:
 
-     .. code-block:: bash
+.. code-block:: bash
 
-        $ sudo -E ./scripts/setup_host.sh
+   $ sudo -E ./scripts/setup_host.sh
 
-During the installation, you will be prompted by some questions to confirm the
-changes to the packages, it's safe to respond :kbd:`y` to all of them.
+During the installation, you will be prompted by some questions to
+confirm the changes to the packages, it's safe to respond :kbd:`y` to all of
+them.
 
 Use |C| kernel
 ==============
 
-The Linux kernel is extremely important on every Android devices, Google
+The Linux kernel is extremely important on every Android device. Google\*
 recommends using `AOSP common kernels`_ on Android devices to include
 features and implementations required by Android.
 In addition to the AOSP common kernel, |C| also integrates several
@@ -91,7 +94,7 @@ especially running CiV on `NUC10i7FNK`_ or `NUC10i7FNH`_ |NUC| devices.
 To that end, a
 `helper script <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh>`_
 :file:`build.sh` is designed to facilitate
-the building and deploying of |C| kerenl on a Ubuntu host.
+the building and deploying of |C| kernel on a Ubuntu host.
 Refer to the `README`_ for detailed instructions.
 
 .. _README: https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
@@ -116,7 +119,8 @@ following CiV image types are generated at the end of the build:
 
 :file:`caas-releasefiles-<$buildvariant>.tar.gz`
 
-    The release tar ball contains all required flashfiles/scrips for running Celadon in VM.
+    The release tar ball contains all required flashfiles/scrips for running
+    |C| in VM.
 
 
 Create a CiV virtual disk
@@ -252,9 +256,9 @@ USB PCI controller pass-through option
 You can pass-through not only the GPU but also the USB host controller (xHCI)
 to the Android VM, in order to attach all the connected USB devices
 (e.g. camera, USB thumb drive) to the VM.
-By passing :command:`--passthrough-pci-usb` argument to the `start_civ.sh` script,
-all the USB devices connected to the platform get automatically enumerated inside
-the Android VM:
+By passing :command:`--passthrough-pci-usb` argument to the `start_civ.sh`
+script, all the USB devices connected to the platform get automatically
+enumerated inside the Android VM:
 
 .. code-block:: bash
 
@@ -293,8 +297,9 @@ Launching with SD card
 
 In case your hardware platform supports SD cards through the :abbr:`SDHCI
 (Secure Digital Host Controller Interface)` controller, you can enable
-SDHCI mediation by adding :command:`-b <sdcard block device>` option argument while
-invoking the `start_civ.sh` script if the SD card is present in the slot.
+SDHCI mediation by adding :command:`-b <sdcard block device>` option
+argument while invoking the `start_civ.sh` script if the SD card is present
+in the slot.
 
 With the following command, the SD card interface will be mediated to the
 Android guest OS, and Android will mount the SD card on boot.

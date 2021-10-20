@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Run Celadon on Intel Platforms &mdash; Documentation for the Celadon Project</title>
@@ -29,7 +28,9 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Submit your patches" href="submit-patch.html" />
+    <link rel="prev" title="Build Celadon From Source" href="build-source.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -82,13 +83,29 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run Celadon on Intel Platforms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-prerequisites">Hardware Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-the-bios-setting">Configure the BIOS Setting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-android-image">Build Android Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flash-and-boot-the-device">Flash and Boot the Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#live-boot">Live Boot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dual-boot-c-with-windows">Dual Boot Celadon with Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to.html">How do I …</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sitemap.html">Project Celadon - Documentation Sitemap</a></li>
 </ul>
 
             
@@ -134,6 +151,8 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="getting-started.html">Getting Started</a> &raquo;</li>
+        
       <li>Run Celadon on Intel Platforms</li>
     
     
@@ -153,26 +172,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="run-c-on-intel-platforms">
-<span id="caas-on-bm"></span><h1>Run Celadon on Intel Platforms<a class="headerlink" href="#run-c-on-intel-platforms" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="run-c-on-intel-platforms">
+<span id="caas-on-bm"></span><h1>Run Celadon on Intel Platforms</h1>
 <p>This page explains what you’ll need to run Celadon natively on Intel hardware platforms.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#hardware-prerequisites" id="id1">Hardware Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#configure-the-bios-setting" id="id2">Configure the BIOS Setting</a></p></li>
-<li><p><a class="reference internal" href="#build-android-image" id="id3">Build Android Image</a></p></li>
-<li><p><a class="reference internal" href="#flash-and-boot-the-device" id="id4">Flash and Boot the Device</a></p></li>
-<li><p><a class="reference internal" href="#live-boot" id="id5">Live Boot</a></p></li>
-<li><p><a class="reference internal" href="#dual-boot-c-with-windows" id="id6">Dual Boot Celadon with Windows</a></p></li>
+<li><a class="reference internal" href="#hardware-prerequisites" id="id1">Hardware Prerequisites</a></li>
+<li><a class="reference internal" href="#configure-the-bios-setting" id="id2">Configure the BIOS Setting</a></li>
+<li><a class="reference internal" href="#build-android-image" id="id3">Build Android Image</a></li>
+<li><a class="reference internal" href="#flash-and-boot-the-device" id="id4">Flash and Boot the Device</a></li>
+<li><a class="reference internal" href="#live-boot" id="id5">Live Boot</a></li>
+<li><a class="reference internal" href="#dual-boot-c-with-windows" id="id6">Dual Boot Celadon with Windows</a></li>
 </ul>
 </div>
-<section id="hardware-prerequisites">
-<h2><a class="toc-backref" href="#id1">Hardware Prerequisites</a><a class="headerlink" href="#hardware-prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hardware-prerequisites">
+<h2><a class="toc-backref" href="#id1">Hardware Prerequisites</a></h2>
 <ul class="simple">
-<li><p>Most of 5th, 6th, 7th, or 8th SoC Generation Intel® Core processors and
-Intel® Celeron® processors</p></li>
-<li><p>Intel® Xeon® E3 processor family</p></li>
-<li><p>Intel® Xeon® E5 processor family</p></li>
+<li>An Intel® NUC with an eighth generation or newer Intel® Core™ Processor.</li>
 </ul>
 <p>You can try out the <abbr title="Celadon in VM">CiV</abbr> experience on your
 Intel® architecture (x86) hardware platforms with UEFI BIOS and Intel®
@@ -180,8 +196,8 @@ Virtualization Technology (Intel® VT) for IA-32, Intel® 64 and Intel®
 Architecture (Intel® VT-x) and Intel® Virtualization Technology (Intel® VT)
 for Directed I/O (Intel® VT-d) features enabled.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Users should be aware that test suites provided by Google may not pass
+<p class="first admonition-title">Note</p>
+<p class="last">Users should be aware that test suites provided by Google may not pass
 with 100% scoring if deploying Celadon on bare metal systems. While Celadon in VM
 deployments are supported by <a class="reference external" href="https://www.android.com/gms/">Google Mobile Services (GMS)</a>,
 Celadon on bare metal does not have GMS support. Dedicated use cases like retail,
@@ -189,42 +205,44 @@ client, education and gaming do not need GMS. If there is a need for GMS
 while running Celadon on bare metal, direct communication with Google will
 be necessary.</p>
 </div>
-</section>
-<section id="configure-the-bios-setting">
-<h2><a class="toc-backref" href="#id2">Configure the BIOS Setting</a><a class="headerlink" href="#configure-the-bios-setting" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="configure-the-bios-setting">
+<h2><a class="toc-backref" href="#id2">Configure the BIOS Setting</a></h2>
 <ol class="arabic">
-<li><p>Depending on your bare metal target device, enter the BIOS firmware menu
-by pressing the hotkey (e.g. <kbd class="kbd docutils literal notranslate">F2</kbd>, <kbd class="kbd docutils literal notranslate">DEL</kbd>, or <kbd class="kbd docutils literal notranslate">F12</kbd>) at
-the start of system bootup.</p></li>
-<li><p>Enable Intel® VT-d and Intel® VT-x features in the Security configuration
-of the BIOS if it is not enabled.</p></li>
-<li><p>Disable the <em>Secure Boot</em> feature in the BIOS for live testing the CiV
+<li><p class="first">Depending on your bare metal target device, enter the BIOS firmware menu
+by pressing the hotkey (e.g. <code class="kbd docutils literal"><span class="pre">F2</span></code>, <code class="kbd docutils literal"><span class="pre">DEL</span></code>, or <code class="kbd docutils literal"><span class="pre">F12</span></code>) at
+the start of system bootup.</p>
+</li>
+<li><p class="first">Enable Intel® VT-d and Intel® VT-x features in the Security configuration
+of the BIOS if it is not enabled.</p>
+</li>
+<li><p class="first">Disable the <em>Secure Boot</em> feature in the BIOS for live testing the CiV
 features at the early stage. Secure Boot should be re-enabled later.</p>
 <blockquote>
 <div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Do not forget to restore your previous BIOS settings after the test.
+<p class="first admonition-title">Note</p>
+<p class="last">Do not forget to restore your previous BIOS settings after the test.
 Disabling the Secure Boot feature may result in the previously
 installed OS failing to boot.</p>
 </div>
 </div></blockquote>
 </li>
 </ol>
-</section>
-<section id="build-android-image">
-<h2><a class="toc-backref" href="#id3">Build Android Image</a><a class="headerlink" href="#build-android-image" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="build-android-image">
+<h2><a class="toc-backref" href="#id3">Build Android Image</a></h2>
 <p>Refer to the <a class="reference internal" href="build-source.html#build-os-image"><span class="std std-ref">Build Celadon in VM image</span></a> section in the Getting Started Guide to build the CiV images.</p>
-</section>
-<section id="flash-and-boot-the-device">
-<h2><a class="toc-backref" href="#id4">Flash and Boot the Device</a><a class="headerlink" href="#flash-and-boot-the-device" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="flash-and-boot-the-device">
+<h2><a class="toc-backref" href="#id4">Flash and Boot the Device</a></h2>
 <p>The following CiV image types are generated at the end of the build:</p>
 <ul>
-<li><p><code class="file docutils literal notranslate"><span class="pre">caas.img</span></code></p>
+<li><p class="first"><code class="file docutils literal"><span class="pre">caas.img</span></code></p>
 <blockquote>
 <div><p>The GPT disk image for live booting on the target device.</p>
 </div></blockquote>
 </li>
-<li><p><code class="file docutils literal notranslate"><span class="pre">caas-flashfiles-eng.&lt;user&gt;.zip</span></code></p>
+<li><p class="first"><code class="file docutils literal"><span class="pre">caas-flashfiles-eng.&lt;user&gt;.zip</span></code></p>
 <blockquote>
 <div><p>The compressed <em>flashfile</em> package contains the kernelflinger executables.
 You need to unzip the content of the
@@ -232,9 +250,9 @@ package to a USB key, and install the CiV images from the <em>UEFI Shell</em>.</
 </div></blockquote>
 </li>
 </ul>
-</section>
-<section id="live-boot">
-<h2><a class="toc-backref" href="#id5">Live Boot</a><a class="headerlink" href="#live-boot" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="live-boot">
+<h2><a class="toc-backref" href="#id5">Live Boot</a></h2>
 <p>The <em>live boot</em> feature is enabled in the CiV images by default.
 The live boot feature allows you to flash a specially-built image to a USB
 drive and then boot from the USB drive to Android* directly without
@@ -247,45 +265,47 @@ the USB drive. With this approach, Celadon supports all Android features, except
 some security features that need hardware binding.</p>
 <p>Perform the following steps to live-boot Celadon.</p>
 <ol class="arabic">
-<li><p>Build a live boot image.</p>
+<li><p class="first">Build a live boot image.</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p>Follow the steps in <a class="reference internal" href="build-source.html#build-from-source"><span class="std std-ref">Build Celadon From Source</span></a> to set up the local
-development environment and to download the source code.</p></li>
-<li><p>Open the <em>mixins</em> config file to verify that the kernelflinger
+<li><p class="first">Follow the steps in <a class="reference internal" href="build-source.html#build-from-source"><span class="std std-ref">Build Celadon From Source</span></a> to set up the local
+development environment and to download the source code.</p>
+</li>
+<li><p class="first">Open the <em>mixins</em> config file to verify that the kernelflinger
 supports the USB live boot feature for your
 <strong class="command">[lunch_target]</strong>, because the feature is enabled by default
 for some of the lunch targets such as <strong class="command">&quot;caas&quot;</strong>,
 <strong class="command">&quot;celadon_ivi&quot;</strong> and <strong class="command">&quot;celadon_tablet&quot;</strong>.</p>
 <p>The following example shows the mixins config file
-<code class="file docutils literal notranslate"><span class="pre">device/intel/project-celadon/caas/mixins.spec</span></code> for the
+<code class="file docutils literal"><span class="pre">device/intel/project-celadon/caas/mixins.spec</span></code> for the
 <strong class="command">&quot;caas&quot;</strong> lunch target:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>boot-arch: project_celadon(...,...,usb_storage=true,live_boot=true)
+<div class="highlight-none"><div class="highlight"><pre><span></span>boot-arch: project_celadon(...,...,usb_storage=true,live_boot=true)
 </pre></div>
 </div>
 </li>
-<li><p>Enable the live boot feature by adding the <strong class="command">usb_storage</strong>
-and <strong class="command">live_boot</strong> options to the <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> file.</p></li>
-<li><p>Execute the following command to build a live boot image:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make <span class="nv">SPARSE_IMAGE</span><span class="o">=</span><span class="nb">true</span> gptimage -j <span class="k">$(</span>nproc<span class="k">)</span>
+<li><p class="first">Enable the live boot feature by adding the <strong class="command">usb_storage</strong>
+and <strong class="command">live_boot</strong> options to the <code class="file docutils literal"><span class="pre">mixins.spec</span></code> file.</p>
+</li>
+<li><p class="first">Execute the following command to build a live boot image:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ make <span class="nv">SPARSE_IMAGE</span><span class="o">=</span><span class="nb">true</span> gptimage -j <span class="k">$(</span>nproc<span class="k">)</span>
 </pre></div>
 </div>
 <p>As an alternative, you can pass the options in the <strong class="command">make</strong>
 command line:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make <span class="nv">SPARSE_IMAGE</span><span class="o">=</span><span class="nb">true</span> <span class="nv">KERNELFLINGER_SUPPORT_USB_STORAGE</span><span class="o">=</span><span class="nb">true</span> <span class="nv">KERNELFLINGER_SUPPORT_LIVE_BOOT</span><span class="o">=</span><span class="nb">true</span> gptimage -j <span class="k">$(</span>nproc<span class="k">)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ make <span class="nv">SPARSE_IMAGE</span><span class="o">=</span><span class="nb">true</span> <span class="nv">KERNELFLINGER_SUPPORT_USB_STORAGE</span><span class="o">=</span><span class="nb">true</span> <span class="nv">KERNELFLINGER_SUPPORT_LIVE_BOOT</span><span class="o">=</span><span class="nb">true</span> gptimage -j <span class="k">$(</span>nproc<span class="k">)</span>
 </pre></div>
 </div>
 <p>After a successful build, you will have an
-<code class="file docutils literal notranslate"><span class="pre">out/target/product/[lunch_target]/[lunch_target].img</span></code> image.
-For example, an <code class="file docutils literal notranslate"><span class="pre">out/target/product/caas/caas.img</span></code> image is
+<code class="file docutils literal"><span class="pre">out/target/product/[lunch_target]/[lunch_target].img</span></code> image.
+For example, an <code class="file docutils literal"><span class="pre">out/target/product/caas/caas.img</span></code> image is
 generated for the <strong class="command">caas</strong> lunch target.</p>
 </li>
-<li><p>The previous command creates an image file of 16GB bytes that
+<li><p class="first">The previous command creates an image file of 16GB bytes that
 contains an entire GPT disk. To change the default image size, edit
 the mixins config file
-<code class="file docutils literal notranslate"><span class="pre">device/intel/project-celadon/[lunch_target]/mixins.spec</span></code>
+<code class="file docutils literal"><span class="pre">device/intel/project-celadon/[lunch_target]/mixins.spec</span></code>
 as follows:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gptbuild: true(size=16G,generate_craff=false)
+<div class="highlight-none"><div class="highlight"><pre><span></span>gptbuild: true(size=16G,generate_craff=false)
 </pre></div>
 </div>
 </li>
@@ -294,28 +314,29 @@ as follows:</p>
 </li>
 </ol>
 <ol class="arabic" id="usb-live-boot">
-<li><p>Flash the live boot image to a USB drive.</p>
+<li><p class="first">Flash the live boot image to a USB drive.</p>
 <ul>
-<li><p>For Linux*, use the <em>dd</em> tool to flash the image file to the USB
+<li><p class="first">For Linux*, use the <em>dd</em> tool to flash the image file to the USB
 drive. For example:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo dd <span class="k">if</span><span class="o">=</span>caas.img <span class="nv">of</span><span class="o">=</span>/dev/sdc <span class="nv">bs</span><span class="o">=</span>1M
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo dd <span class="k">if</span><span class="o">=</span>caas.img <span class="nv">of</span><span class="o">=</span>/dev/sdc <span class="nv">bs</span><span class="o">=</span>1M
 </pre></div>
 </div>
 <div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>You <strong>MUST</strong> change the <code class="file docutils literal notranslate"><span class="pre">/dev/sdc</span></code> to the actual USB drive
+<p class="first admonition-title">Caution</p>
+<p class="last">You <strong>MUST</strong> change the <code class="file docutils literal"><span class="pre">/dev/sdc</span></code> to the actual USB drive
 device.</p>
 </div>
 <p>Be sure all the buffered data is written to the USB drive before
 removing the USB drive by running the <strong class="command">sync</strong> command in Linux.</p>
 </div></blockquote>
 </li>
-<li><p>For Windows, use the <em>rufus</em> tool to flash the image file to the USB
-drive.</p></li>
+<li><p class="first">For Windows, use the <em>rufus</em> tool to flash the image file to the USB
+drive.</p>
+</li>
 </ul>
 </li>
-<li><p>Boot from the USB drive to Android directly.</p>
+<li><p class="first">Boot from the USB drive to Android directly.</p>
 <p>Insert the USB drive and power on the computer. Then, press a function
 key to enter the BIOS boot menu. Select <span class="menuselection">boot</span> from the
 USB drive. Now, you can boot from the USB drive to Android directly.</p>
@@ -323,19 +344,19 @@ USB drive. Now, you can boot from the USB drive to Android directly.</p>
 removed the USB drive, the data will be saved to the USB drive. You can
 then use the saved data on other computers.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>If you already installed Android in the internal storage, disable
-the internal storage if you are using USB live boot.</p></li>
-<li><p>If you want to use one USB drive in two computers, make sure the
-lock state is the same on each computer.</p></li>
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>If you already installed Android in the internal storage, disable
+the internal storage if you are using USB live boot.</li>
+<li>If you want to use one USB drive in two computers, make sure the
+lock state is the same on each computer.</li>
 </ol>
 </div>
 </li>
 </ol>
-</section>
-<section id="dual-boot-c-with-windows">
-<h2><a class="toc-backref" href="#id6">Dual Boot Celadon with Windows</a><a class="headerlink" href="#dual-boot-c-with-windows" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="dual-boot-c-with-windows">
+<h2><a class="toc-backref" href="#id6">Dual Boot Celadon with Windows</a></h2>
 <p>You may want to install Windows and Celadon Android on one device, and select
 which OS to boot every time the device is powering up. To facilitate dual
 boot, install Windows and Celadon on two separate storage devices.</p>
@@ -344,8 +365,8 @@ which does not prompt the target storage device to install.
 You must disconnect the Windows installed storage device first,
 connect the storage back to the device after installing Celadon, and then
 select the OS to boot from the BIOS boot menu.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -353,13 +374,22 @@ select the OS to boot from the BIOS boot menu.</p>
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="submit-patch.html" class="btn btn-neutral float-right" title="Submit your patches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="build-source.html" class="btn btn-neutral" title="Build Celadon From Source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jun 07, 2021.
+      Last updated on Oct 20, 2021.
 
     </p>
   </div>

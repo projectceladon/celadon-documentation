@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Submit your patches &mdash; Documentation for the Celadon Project</title>
@@ -31,7 +30,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Host OS Hardening" href="host-os-hardening.html" />
-    <link rel="prev" title="Build Celadon From Source" href="build-source.html" /> 
+    <link rel="prev" title="Run Celadon on Intel Platforms" href="on-bm.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -87,7 +86,9 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Submit your patches</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#c-github-manifest-structure">Celadon GitHub Manifest Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#c-branching-strategy">Celadon Branching Strategy</a></li>
@@ -105,26 +106,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../sitemap.html">Project Celadon - Documentation Sitemap</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Submit your patches</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#c-github-manifest-structure">Celadon GitHub Manifest Structure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#c-branching-strategy">Celadon Branching Strategy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#submit-patches">Submit Patches</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
-<li class="toctree-l3"><a class="reference internal" href="how-to.html">How do I …</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../references.html">References</a></li>
-</ul>
-</li>
 </ul>
 
             
@@ -191,71 +172,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="submit-your-patches">
-<span id="submit-patch"></span><h1>Submit your patches<a class="headerlink" href="#submit-your-patches" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="submit-your-patches">
+<span id="submit-patch"></span><h1>Submit your patches</h1>
 <p>Celadon uses <a class="reference external" href="https://help.github.com/articles/about-pull-requests/">GitHub Pull-Requests</a> (PR) to submit and review code submissions. You are required to be aware of the software repository and branch in the Celadon source tree where your code is contibuted before submitting any changes.</p>
-<section id="c-github-manifest-structure">
-<h2>Celadon GitHub Manifest Structure<a class="headerlink" href="#c-github-manifest-structure" title="Permalink to this headline">¶</a></h2>
-<p>Celadon source code consists of multiple repositories (i.e. “<strong>projects</strong>”), the manifest file <em>.repo/manifests/default.xml</em> contains the information needed (i.e. “<strong>remotes</strong>”) to fetch those repositories. It includes the following files to instruct the <code class="docutils literal notranslate"><span class="pre">repo</span></code> command to compose the Celadon source tree:</p>
-<table class="docutils align-default">
+<div class="section" id="c-github-manifest-structure">
+<h2>Celadon GitHub Manifest Structure</h2>
+<p>Celadon source code consists of multiple repositories (i.e. “<strong>projects</strong>”), the manifest file <em>.repo/manifests/default.xml</em> contains the information needed (i.e. “<strong>remotes</strong>”) to fetch those repositories. It includes the following files to instruct the <code class="docutils literal"><span class="pre">repo</span></code> command to compose the Celadon source tree:</p>
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 69%" />
+<col width="31%" />
+<col width="69%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td><p>include/aosp_vanilla.xml</p></td>
-<td><p>This is vanilla AOSP code based on <cite>refs/tags/android-10.0.0_rN</cite>
-for CiV builds, and <cite>refs/tags/android-9.0.0_rN</cite> for CiC builds.</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td>include/aosp_vanilla.xml</td>
+<td>This is vanilla AOSP code based on <cite>refs/tags/android-10.0.0_rN</cite>
+for CiV builds, and <cite>refs/tags/android-9.0.0_rN</cite> for CiC builds.</td>
 </tr>
-<tr class="row-even"><td><p>include/remove-android_ia.xml</p></td>
-<td><p>The repositories to be removed from the AOSP code</p></td>
+<tr class="row-even"><td>include/remove-android_ia.xml</td>
+<td>The repositories to be removed from the AOSP code</td>
 </tr>
-<tr class="row-odd"><td><p>include/bsp-celadon.xml</p></td>
-<td><p>The BSP source code customized for Celadon</p></td>
+<tr class="row-odd"><td>include/bsp-celadon.xml</td>
+<td>The BSP source code customized for Celadon</td>
 </tr>
 </tbody>
 </table>
 <p>To get the <strong>remote</strong> in order to upload code, use the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote -v
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git remote -v
 </pre></div>
 </div>
 <p>The following table lists the <em>remote</em> aliases supported by Celadon:</p>
-<table class="docutils align-default">
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 18%" />
-<col style="width: 82%" />
+<col width="18%" />
+<col width="82%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td><p>github</p></td>
-<td><p>Good-to-go with the GitHub PR push process</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td>github</td>
+<td>Good-to-go with the GitHub PR push process</td>
 </tr>
-<tr class="row-even"><td><p>aosp</p></td>
-<td><p>Create a google_diff patch &amp; in-parallel
-up-stream to aosp</p></td>
+<tr class="row-even"><td>aosp</td>
+<td>Create a google_diff patch &amp; in-parallel
+up-stream to aosp</td>
 </tr>
-<tr class="row-odd"><td><p>kernelorg</p></td>
-<td><p>Upstream to kernel.org</p></td>
+<tr class="row-odd"><td>kernelorg</td>
+<td>Upstream to kernel.org</td>
 </tr>
-<tr class="row-even"><td><p>graphics</p></td>
-<td><p>Upstream to graphics remote</p></td>
+<tr class="row-even"><td>graphics</td>
+<td>Upstream to graphics remote</td>
 </tr>
-<tr class="row-odd"><td><p>intel</p></td>
-<td><p>Upstream to intel remote</p></td>
+<tr class="row-odd"><td>intel</td>
+<td>Upstream to intel remote</td>
 </tr>
-<tr class="row-even"><td><p>trusty-ia</p></td>
-<td><p>Upstream to trusty-ia remote</p></td>
+<tr class="row-even"><td>trusty-ia</td>
+<td>Upstream to trusty-ia remote</td>
 </tr>
 </tbody>
 </table>
 <p>Further, you can enter the following commands to identify which branch the source head points to:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote show &lt;remote-alias&gt; <span class="p">|</span> grep <span class="s1">&#39;HEAD branch:&#39;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git remote show &lt;remote-alias&gt; <span class="p">|</span> grep <span class="s1">&#39;HEAD branch:&#39;</span>
 </pre></div>
 </div>
-</section>
-<section id="c-branching-strategy">
-<h2>Celadon Branching Strategy<a class="headerlink" href="#c-branching-strategy" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="c-branching-strategy">
+<h2>Celadon Branching Strategy</h2>
 <p>There is a <em>master branch</em> and <em>stable branch</em> for some of Celadon repositories. Make developer changes on the master branch. The CoE (i.e. Center of Excellence) lead of the repo pulls them from the master branch to the stable branch once it is stabilized. Please review the manifest include file <em>.repo/manifests/include/bsp-celadon.xml</em>, which tells the branch info that the project source code is branched off. For example, the source code of the <em>art-extenstion</em> project and <em>trusty</em> projects are based on the stable branch and master branch respectively:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
+<div class="highlight-bash"><div class="highlight"><pre><span></span>...
 &lt;project <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;vendor_intel_art-extension&quot;</span> <span class="nv">path</span><span class="o">=</span><span class="s2">&quot;vendor/intel/art-extension&quot;</span> <span class="nv">remote</span><span class="o">=</span><span class="s2">&quot;github&quot;</span> <span class="nv">revision</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span>/&gt;
 ...
 &lt;project <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;trusty_external_headers&quot;</span> <span class="nv">path</span><span class="o">=</span><span class="s2">&quot;trusty/external/headers&quot;</span> <span class="nv">remote</span><span class="o">=</span><span class="s2">&quot;trusty-ia&quot;</span> <span class="nv">revision</span><span class="o">=</span><span class="s2">&quot;master&quot;</span>/&gt;
@@ -263,12 +244,12 @@ up-stream to aosp</p></td>
 ...
 </pre></div>
 </div>
-</section>
-<section id="submit-patches">
-<h2>Submit Patches<a class="headerlink" href="#submit-patches" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="submit-patches">
+<h2>Submit Patches</h2>
 <p>Once you determine which remote repository to fetch the original source code from and which branch the software has branched off of, you can set up a local workspace. Do this by <a class="reference external" href="https://help.github.com/articles/fork-a-repo">cloning the source repository</a> on your computer. If you would like to propose changes to any non-AOSP project repository, <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request-from-a-fork">create a Pull Request</a>, and send the URL of the PR to the domain owners for review. You may revise and <a class="reference external" href="https://help.github.com/articles/changing-a-commit-message">update the submitted PRs</a> to address any review feedback from the domain owners.</p>
 <p>We recommend you create commit messages in the following format when you submit your code to Celadon:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[CELADON] &lt;One Line Summary&gt;
+<div class="highlight-none"><div class="highlight"><pre><span></span>[CELADON] &lt;One Line Summary&gt;
 
 &lt;Description&gt;
 
@@ -276,37 +257,39 @@ Tracked-On:
 Signed-off:
 </pre></div>
 </div>
-<section id="submit-aosp-patches">
-<h3>Submit AOSP Patches<a class="headerlink" href="#submit-aosp-patches" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="submit-aosp-patches">
+<h3>Submit AOSP Patches</h3>
 <p>Patches against the AOSP project source code use a different approach. Complete the following steps to create your <em>google_diff</em> patch set to make any changes on an AOSP project.</p>
 <ol class="arabic">
-<li><p>Clone the AOSP project to your local workspace. Make your changes and create your commit messages in the workspace.</p></li>
-<li><p>Generate the patch set using the following command, where <em>n</em> is the number of commits added in the previous step.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git format-patch HEAD~&lt;n&gt;
+<li><p class="first">Clone the AOSP project to your local workspace. Make your changes and create your commit messages in the workspace.</p>
+</li>
+<li><p class="first">Generate the patch set using the following command, where <em>n</em> is the number of commits added in the previous step.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ git format-patch HEAD~&lt;n&gt;
 </pre></div>
 </div>
 </li>
-<li><p>Copy the patch files generated in the previous step to the <em>vendor/intel/utils/aosp_diff/</em> folder in the Celadon source tree according to the following guidelines. Maintain the patch number in sequence and create the previous folder if it does not exist.</p>
+<li><p class="first">Copy the patch files generated in the previous step to the <em>vendor/intel/utils/aosp_diff/</em> folder in the Celadon source tree according to the following guidelines. Maintain the patch number in sequence and create the previous folder if it does not exist.</p>
 <blockquote>
 <div><ul>
-<li><p>If the patch file is to make changes to the following areas in the common AOSP code (i.e. applicable to all hardware and no product dependency), move the patch file to the ‘vendor/intel/utils/aosp_diff/<strong>preliminary</strong>/’ folder.</p>
+<li><p class="first">If the patch file is to make changes to the following areas in the common AOSP code (i.e. applicable to all hardware and no product dependency), move the patch file to the ‘vendor/intel/utils/aosp_diff/<strong>preliminary</strong>/’ folder.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Patches for CTS/VTS</p></li>
-<li><p>Patches for AOSP build</p></li>
-<li><p>Patches for AOSP major feature enabling</p></li>
-<li><p>Patches proposed by COE for upstream</p></li>
+<li>Patches for CTS/VTS</li>
+<li>Patches for AOSP build</li>
+<li>Patches for AOSP major feature enabling</li>
+<li>Patches proposed by COE for upstream</li>
 </ol>
 </div></blockquote>
 </li>
-<li><p>Otherwise, move the patch file to the ‘vendor/intel/utils/aosp_diff/<strong>&lt;target_product&gt;</strong>/’ folder.</p></li>
+<li><p class="first">Otherwise, move the patch file to the ‘vendor/intel/utils/aosp_diff/<strong>&lt;target_product&gt;</strong>/’ folder.</p>
+</li>
 </ul>
 </div></blockquote>
 </li>
 </ol>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -319,7 +302,7 @@ Signed-off:
         <a href="host-os-hardening.html" class="btn btn-neutral float-right" title="Host OS Hardening" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="build-source.html" class="btn btn-neutral" title="Build Celadon From Source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="on-bm.html" class="btn btn-neutral" title="Run Celadon on Intel Platforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -329,7 +312,7 @@ Signed-off:
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jun 07, 2021.
+      Last updated on Oct 20, 2021.
 
     </p>
   </div>

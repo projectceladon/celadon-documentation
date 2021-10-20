@@ -184,14 +184,14 @@
 download source code, and build Celadon from source.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#prerequisites" id="id3">Prerequisites</a></li>
-<li><a class="reference internal" href="#set-up-the-development-environment" id="id4">Set up the development environment</a></li>
-<li><a class="reference internal" href="#build-c-in-vm-with-android-12" id="id5">Build Celadon in VM with Android 12</a></li>
-<li><a class="reference internal" href="#build-c-in-container-with-android-9" id="id6">Build Celadon in Container with Android 9</a></li>
+<li><a class="reference internal" href="#prerequisites" id="id4">Prerequisites</a></li>
+<li><a class="reference internal" href="#set-up-the-development-environment" id="id5">Set up the development environment</a></li>
+<li><a class="reference internal" href="#build-c-in-vm-with-android-12" id="id6">Build Celadon in VM with Android 12</a></li>
+<li><a class="reference internal" href="#build-c-in-container-with-android-9" id="id7">Build Celadon in Container with Android 9</a></li>
 </ul>
 </div>
 <div class="section" id="prerequisites">
-<h2><a class="toc-backref" href="#id3">Prerequisites</a></h2>
+<h2><a class="toc-backref" href="#id4">Prerequisites</a></h2>
 <ul class="simple">
 <li>A 64-bit development workstation running Ubuntu* 18.04 (Bionic Beaver)
 operating system.</li>
@@ -212,7 +212,7 @@ For setup instructions using other operating systems, refer to the
 </div>
 </div>
 <div class="section" id="set-up-the-development-environment">
-<h2><a class="toc-backref" href="#id4">Set up the development environment</a></h2>
+<h2><a class="toc-backref" href="#id5">Set up the development environment</a></h2>
 <p>Celadon and Android source code consist of multiple Git* repositories. The
 <strong class="command">repo</strong> tool makes it easier to work with those repositories.</p>
 <ol class="arabic">
@@ -276,7 +276,7 @@ $ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 </ol>
 </div>
 <div class="section" id="build-c-in-vm-with-android-12">
-<h2><a class="toc-backref" href="#id5">Build Celadon in VM with Android 12</a></h2>
+<h2><a class="toc-backref" href="#id6">Build Celadon in VM with Android 12</a></h2>
 <div class="section" id="download-the-source">
 <h3>Download the source</h3>
 <ol class="arabic">
@@ -351,7 +351,7 @@ is available after the build. You can refer to <a class="reference internal" hre
 section to prepare the host environment and boot the CiV image with QEMU.</li>
 <li>The ‘<strong class="makevar">BUILD_CPU_ARCH</strong>’ variable instructs the builder to
 generate images that leverage
-<a href="#id7"><span class="problematic" id="id8">`Intel® Advanced Vector Extensions (Intel® AVX)`_</span></a> and
+<a class="reference external" href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions">Intel® Advanced Vector Extensions (Intel® AVX)</a> and
 <a class="reference external" href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2">Intel® Advanced Vector Extensions 2 (Intel® AVX2)</a> instructions on
 the target device. It’s recommended to specify
 <strong class="makevar">BUILD_CPU_ARCH=kabylake</strong>’
@@ -363,7 +363,7 @@ while building the images for <a class="reference external" href="https://en.wik
 </div>
 </div>
 <div class="section" id="build-c-in-container-with-android-9">
-<h2><a class="toc-backref" href="#id6">Build Celadon in Container with Android 9</a></h2>
+<h2><a class="toc-backref" href="#id7">Build Celadon in Container with Android 9</a></h2>
 <div class="section" id="id1">
 <h3>Download the source</h3>
 <ol class="arabic">

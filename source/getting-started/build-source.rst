@@ -176,8 +176,8 @@ Build |C| in VM image
          section to prepare the host environment and boot the CiV image with QEMU.
       #. The ':makevar:`BUILD_CPU_ARCH`' variable instructs the builder to
          generate images that leverage
-         `Intel® Advanced Vector Extensions (Intel® AVX)`_ and
-         `Intel® Advanced Vector Extensions 2 (Intel® AVX2)`_ instructions on
+         `Intel® Advanced Vector Extensions (Intel® AVX) <https://en.wikipedia.org/wiki/Advanced_Vector_Extensions>`_ and
+         `Intel® Advanced Vector Extensions 2 (Intel® AVX2) <https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2>`_ instructions on
          the target device. It's recommended to specify
          :makevar:`BUILD_CPU_ARCH=kabylake`'
          while building the images for `Comet Lake`_ platform.

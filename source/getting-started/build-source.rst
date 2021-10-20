@@ -93,7 +93,7 @@ Set up the development environment
 
        $ sudo usermod -aG docker $USER
 
-Build |C| in VM with Android 11
+Build |C| in VM with Android 12
 *******************************
 
 Download the source
@@ -116,23 +116,13 @@ Download the source
        $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 
    Note, the last :command:`repo init` command pulls the latest development
-   CiV source code based on *Android 11* from the master branch.
-   To continue working on the *Android 10* based CiV source code,
+   CiV source code based on *Android 12* from the master branch.
+   To continue working on the *Android 11* based CiV source code,
    use the following manifest instead:
 
    .. code-block:: bash
 
-       $ repo init -u https://github.com/projectceladon/manifest  -b celadon/q/mr0/stable -m stable-build/CIV_00.20.03.31_A10.xml
-
-   You can also checkout the source code
-   of the `QMR0 March-31-2020`_ release that passed the *Platform Exit*
-   criteria with the following command:
-
-   .. _QMR0 March-31-2020: https://01.org/projectceladon/documentation/release-notes#civ-01-20-01-12-a10
-
-   .. code-block:: bash
-
-       $ repo init -u https://github.com/projectceladon/manifest -b celadon/master/2020q1 -m default.xml
+       $ repo init -u https://github.com/projectceladon/manifest  -b celadon/q/mr0/stable -m default.xml
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time

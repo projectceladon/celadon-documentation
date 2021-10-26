@@ -123,7 +123,7 @@ Download the source
 
    .. code-block:: bash
 
-       $ repo init -u https://github.com/projectceladon/manifest  -b celadon/q/mr0/stable -m default.xml
+       $ repo init -u https://github.com/projectceladon/manifest  -b celadon/r/mr0/stable -m default.xml
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time

@@ -332,8 +332,8 @@ System Requirements
 -------------------
 * Recommended system requirements for Host:
     * CPU:  4 cores or more 
-    * RAM: 4GB or more
-    * Disk:  40GB or more 
+    * RAM:  8 GB or more
+    * Hard-Disk: 250 GB [Desired]
 
 How to install this release
 ---------------------------

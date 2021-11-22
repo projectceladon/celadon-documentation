@@ -328,6 +328,12 @@ Where to find the release
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.21.03.39_A11.xml
 * Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.03.39_A11
 
+System Requirements 
+-------------------
+* Recommended system requirements for Host:
+    * CPU:  4 cores or more 
+    * RAM: 4GB or more
+    * Disk:  40GB or more 
 
 How to install this release
 ---------------------------

@@ -167,20 +167,13 @@ Build |C| in VM image
        $ make flashfiles -j $(nproc)
 
    .. note::
-      #. This is needed for the Tiger Lake Intel® NUC platform.
-      #. The *-j $(nproc)* argument instructs the builder to compile the source
+         The *-j $(nproc)* argument instructs the builder to compile the source
          code with parallel tasks. The generated kernelflinger executables
          .ZIP file
          (:file:`out/target/product/caas/caas-flashfiles-eng.${USER}.zip`)
          is available after the build. You can refer to :ref:`caas-on-vm`
          section to prepare the host environment and boot the CiV image with QEMU.
-      #. The ':makevar:`BUILD_CPU_ARCH`' variable instructs the builder to
-         generate images that leverage
-         `Intel® Advanced Vector Extensions (Intel® AVX) <https://en.wikipedia.org/wiki/Advanced_Vector_Extensions>`_ and
-         `Intel® Advanced Vector Extensions 2 (Intel® AVX2) <https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2>`_ instructions on
-         the target device. It's recommended to specify
-         :makevar:`BUILD_CPU_ARCH=kabylake`'
-         while building the images for `Comet Lake`_ platform.
+
 
 Build |C| in Container with Android 9
 *************************************

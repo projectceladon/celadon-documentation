@@ -26,36 +26,35 @@ Prerequisites
 -  Wi-Fi device (such as laptop, smartphone, or tablet) to test the NUC
    serving as a hotspot.
 
-Steps to sync to specific release
-*********************************
+Steps to sync to latest HEAD for bare metal
+*******************************************
 
 Run the following commands to sync to the approved release and run CiV
 on bare metal.
 
-1. repo init -u `https://github.com/projectceladon/manifest/blob/master/stable-build/CIV\_00.21.01.12\_A11.xml <https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml>`__
+1. repo init -u `https://github.com/projectceladon/manifest <https://github.com/projectceladon/manifest>`__ -b celadon/r/mr0/stable
 
 2. repo sync -c -q -j${nproc}
 
 3. Cherry-pick the following patch:
 
-   `*https://github.com/projectceladon/device-androidia/pull/1163* <https://github.com/projectceladon/device-androidia/pull/1163>`__
+   `*https://github.com/projectceladon/device-androidia/pull/1285* <https://github.com/projectceladon/device-androidia/pull/1285>`__
 
-Android build commands
-**********************
+4. This is using Yocto as the Guest Kernel.
 
-For the development environment configuration, please refer to
-`*https://01.org/projectceladon/documentation/getting-started* <https://01.org/projectceladon/documentation/getting-started>`__.
 
-For compilation, use Ubuntu\* 18.04.
-
-Build steps
-===========
+Build steps on the latest HEAD
+==============================
 
 1. source build/envsetup.sh
 
 2. lunch caas-userdebug
 
 3. make flashfiles -jN
+
+4. make BASE_LTS2020_YOCTO_KERNEL=true flashfiles -JN
+   this is for
+   `NUC11PAQI7 <https://www.intel.in/content/www/in/en/products/details/nuc/kits.html>`__ as Bare Metal.
 
 Flashing a CIV image as bare metal
 **********************************

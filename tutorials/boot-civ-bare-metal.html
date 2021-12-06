@@ -94,8 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Boot CiV on Bare Metal</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#steps-to-sync-to-specific-release">Steps to sync to specific release</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#android-build-commands">Android build commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#steps-to-sync-to-latest-head-for-bare-metal">Steps to sync to latest HEAD for bare metal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flashing-a-civ-image-as-bare-metal">Flashing a CIV image as bare metal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sanity-results">Sanity Results</a></li>
 </ul>
@@ -193,31 +192,30 @@ metal using an Intel® NUC.</p>
 serving as a hotspot.</li>
 </ul>
 </div>
-<div class="section" id="steps-to-sync-to-specific-release">
-<h2>Steps to sync to specific release</h2>
+<div class="section" id="steps-to-sync-to-latest-head-for-bare-metal">
+<h2>Steps to sync to latest HEAD for bare metal</h2>
 <p>Run the following commands to sync to the approved release and run CiV
 on bare metal.</p>
 <ol class="arabic">
-<li><p class="first">repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml</a></p>
+<li><p class="first">repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest">https://github.com/projectceladon/manifest</a> -b celadon/r/mr0/stable</p>
 </li>
 <li><p class="first">repo sync -c -q -j${nproc}</p>
 </li>
 <li><p class="first">Cherry-pick the following patch:</p>
-<p><a class="reference external" href="https://github.com/projectceladon/device-androidia/pull/1163">*https://github.com/projectceladon/device-androidia/pull/1163*</a></p>
+<p><a class="reference external" href="https://github.com/projectceladon/device-androidia/pull/1285">*https://github.com/projectceladon/device-androidia/pull/1285*</a></p>
+</li>
+<li><p class="first">This is using Yocto as the Guest Kernel.</p>
 </li>
 </ol>
-</div>
-<div class="section" id="android-build-commands">
-<h2>Android build commands</h2>
-<p>For the development environment configuration, please refer to
-<a class="reference external" href="https://01.org/projectceladon/documentation/getting-started">*https://01.org/projectceladon/documentation/getting-started*</a>.</p>
-<p>For compilation, use Ubuntu* 18.04.</p>
-<div class="section" id="build-steps">
-<h3>Build steps</h3>
+<div class="section" id="build-steps-on-the-latest-head">
+<h3>Build steps on the latest HEAD</h3>
 <ol class="arabic simple">
 <li>source build/envsetup.sh</li>
 <li>lunch caas-userdebug</li>
 <li>make flashfiles -jN</li>
+<li>make BASE_LTS2020_YOCTO_KERNEL=true flashfiles -JN
+this is for
+<a class="reference external" href="https://www.intel.in/content/www/in/en/products/details/nuc/kits.html">NUC11PAQI7</a> as Bare Metal.</li>
 </ol>
 </div>
 </div>

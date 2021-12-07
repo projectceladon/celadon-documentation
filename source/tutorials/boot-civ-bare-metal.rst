@@ -50,9 +50,7 @@ Build steps on the latest HEAD
 
 2. lunch caas-userdebug
 
-3. make flashfiles -jN
-
-4. make BASE_LTS2020_YOCTO_KERNEL=true flashfiles -JN
+3. make BASE_LTS2020_YOCTO_KERNEL=true flashfiles -JN
    this is for
    `NUC11PAQI7 <https://www.intel.in/content/www/in/en/products/details/nuc/kits.html>`__ as Bare Metal.
 

@@ -89,6 +89,7 @@ Where to find the release
 -------------------------
 
 * Manifest Link : 
+* Binary Link :
 
 
 How to install this release
@@ -111,7 +112,7 @@ How to install this release
 
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
-    * cd patches/kernel/lts2019-chromium
+    * cd patches/kernel/lts2020-chromium
     * ./build_weekly.sh
     * Deb files will be generated in
       patches/kernel/lts2019-chromium/host_kernel

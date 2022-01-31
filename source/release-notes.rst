@@ -39,9 +39,9 @@ New in this release
 -------------------
 
  * New features
+   * Android 12 with latest AOSP release tag (android-12.0.0_r26)
 
  * Includes Android 12 main features: 
-    * Android 12 with latest AOSP manifest (android-12.0.0_r2)
     * Celadon supports Android 12 with API level 31 and FCM target level 6
     * Boot control HAL upgraded to V1.2
     * Audio HAL upgraded to V7.0

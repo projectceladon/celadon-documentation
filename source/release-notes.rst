@@ -40,7 +40,8 @@ New in this release
 
  * New features
     * Android 12 with latest AOSP release tag (android-12.0.0_r26)
-    * Integrated VM Manager to configure CIV - Details - https://github.com/projectceladon/vm_manager/wiki/User-Guide
+    * Integrated VM Manager to configure CIV - Details - https://github.com/projectceladon/vm_manager/wiki/User-Guide 
+      [start_civ ]
 
  * Includes Android 12 main features: 
     * Celadon supports Android 12 with API level 31 and FCM target level 6
@@ -134,12 +135,7 @@ How to install this release
     * Select compiled kernel from "Advanced options for Ubuntu"
 
 * Flash and run steps
-
-   * After Building Binary please follow below steps
-   * Untar <flash-files>
-   * sudo -E ./scripts/setup_host -u headless
-   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
-   * sudo -E ./scripts/start_civ.sh -g GVT-d
+     * https://github.com/projectceladon/vm_manager/wiki/User-Guide
 
 Validation results
 ------------------

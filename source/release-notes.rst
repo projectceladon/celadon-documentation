@@ -39,6 +39,8 @@ New in this release
 -------------------
 
  * New features
+
+ * Includes Android 12 main features: 
     * Android 12 with latest AOSP manifest (android-12.0.0_r2)
     * Celadon supports Android 12 with API level 31 and FCM target level 6
     * Boot control HAL upgraded to V1.2
@@ -48,7 +50,6 @@ New in this release
     * SE Policy updated for API level 31
     * AIDL libs updated
     * Health HAL is optimized to adapt the new changes for S Dessert 
- * Includes Android 12 main features: 
     * Graphics introduced scheduling plans, 
     * Graphics: Surface flinger caching, GPU memory accounting, profiling and GPU scheduling
     * Accessibility, System UI and backup & restore features updated with minor modifications

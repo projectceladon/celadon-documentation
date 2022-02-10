@@ -13,7 +13,7 @@ software rendering.
 
 .. contents::
    :local:
-   :depth: 1
+   :depth: 2
 
 Prerequisites
 *************
@@ -65,7 +65,7 @@ packages.
 
 .. code-block:: bash
 
-   $ mkdir -p ~/civ && cd ~/civ
+   $ sudo mkdir -p /opt/civ-1 && sudo chown -R $(id -u):(id -g) /opt/civ-1
    $ tar zxvf caas-releasefiles-<$buildvariant>.tar.gz
    $ chmod +x scripts/setup_host.sh
 
@@ -136,7 +136,7 @@ a *qcow2* formatted virtual disk.
 
     .. code-block:: bash
 
-        $ cd ~/civ
+        $ cd /opt/civ-1
         $ sudo ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip
 
 #. By running the :file:`start_flash_usb.sh` script, a QEMU window will be popped up, it
@@ -152,6 +152,119 @@ a *qcow2* formatted virtual disk.
 
 Boot to Android UI
 ******************
+
+| There are two ways to start CiV instance: `vm-manager` and `start_civ.sh`.
+| For Android-12 and later release, please refer `vm-manger <#use-vm-manager>`_.
+| For Android-11 and before release, please refer `start_civ.sh <#use-start-civ-sh>`_.
+| Check Release Notes here: https://docs.01.org/celadon/release-notes.html.
+
+Use vm-manager
+==============
+
+A tool `vm-manager` is developed to facilitate the CiV images
+booting process. It supports various options:
+
+.. code-block:: bash
+
+    vm-manager [-c] [-i config_file_path] [-d vm_name] [-b vm_name] [-q vm_name] [-f vm_name] [-m vm_name] [-l] [-v] [-h]
+
+.. list-table::
+   :widths: 35 78
+   :header-rows: 0
+
+   * - :kbd:`-c`
+     - Create a new CiV guest configuration
+
+   * - :kbd:`-i`
+     - Import a CiV guest from existing config file
+
+   * - :kbd:`-d`
+     - Delete a CiV guest
+
+   * - :kbd:`-b`
+     - Start a CiV guest
+
+   * - :kbd:`-q`
+     - Stop a CiV guest
+
+   * - :kbd:`-f`
+     - Flash a CiV guest
+
+   * - :kbd:`-u`
+     - Update an existing CiV guest
+
+   * - :kbd:`-l`
+     - List existing CiV guest
+
+   * - :kbd:`-v`
+     - Show CiV vm-manager version
+
+   * - :kbd:`-h`
+     - Show this help message
+
+
+All CiV guest configuration file(INI formated) are stored at :file:`$HOME/.intel/.civ/`,
+
+#. Install vm-manager
+   Download latest release package from: https://github.com/projectceladon/vm_manager/releases.
+   Install it: sudo apt-get install ./vm-manager_vx.y.z_$OS_VER.deb
+
+#. Create a ini file under :file:`$HOME/.intel/.civ/civ-1.ini`. Configure it as below: ::
+
+     [global]
+     name=civ-1
+     flashfiles=/opt/civ-1/caas-flashfiles-CR0000317.zip
+     adb_port=5555
+     fastboot_port=5554
+
+     [emulator]
+     path=/usr/bin/qemu-system-x86_64
+
+     [memory]
+     size=4G
+
+     [vcpu]
+     num=1
+
+     [firmware]
+     type=unified
+     path=/opt/civ-1/OVMF.fd
+
+     [disk]
+     size=30G
+     path=/opt/civ-1/android.qcow2
+
+     [graphics]
+     type=GVT-g
+     gvtg_version=i915-GVTg_V5_4
+     vgpu_uuid=1fc89c23-e8a6-47a9-83be-ec23d6f4bb17
+
+     [vtpm]
+     bin_path=/usr/bin/swtpm
+     data_dir=/opt/civ-1/vtpm0
+
+     [rpmb]
+     bin_path=/opt/civ-1/scripts/rpmb_dev
+     data_dir=/opt/civ-1/
+
+     [aaf]
+     path=/opt/civ-1/scripts/aaf
+
+     [extra]
+     cmd=-chardev socket,id=ch0,path=/tmp/civ1-console,server,nowait,logfile=/tmp/civ1_serial.log -serial chardev:ch0
+
+#. Start the instance:
+     .. code-block:: bash
+
+        $ sudo vm-manager -b civ-1
+
+For more details, please reference this wiki to get started:
+`CiV VM Manager User Guide <https://github.com/projectceladon/vm_manager/wiki/User-Guide>`_.
+
+
+Use start_civ.sh
+================
+
 
 A script `start_civ.sh` is developed to facilitate the CiV images
 booting process. It supports various options:
@@ -233,14 +346,14 @@ booting process. It supports various options:
 
 
 Intel GVT option
-================
+++++++++++++++++
 
 Enter the following commands to run the script `start_civ.sh` with
 root permissions to facilitate the booting of CiV images with QEMU.
 
 .. code-block:: bash
 
-    $ cd ~/civ
+    $ cd /opt/civ-1
     # The following command runs CiV using Intel GVT-g
     $ sudo -E ./scripts/start_civ.sh -g GVT-g
 
@@ -251,7 +364,7 @@ root permissions to facilitate the booting of CiV images with QEMU.
     $ sudo -E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
 
 USB PCI controller pass-through option
-======================================
+++++++++++++++++++++++++++++++++++++++
 
 You can pass-through not only the GPU but also the USB host controller (xHCI)
 to the Android VM, in order to attach all the connected USB devices
@@ -293,7 +406,7 @@ in the Android VM:
 
 
 Launching with SD card
-======================
+++++++++++++++++++++++
 
 In case your hardware platform supports SD cards through the :abbr:`SDHCI
 (Secure Digital Host Controller Interface)` controller, you can enable
@@ -317,7 +430,7 @@ storage settings etc.
        with the SD card options, or the SD card won't be operational.
 
 Audio pass-through option
-=========================
++++++++++++++++++++++++++
 
 The audio controller can be passd through to the guest
 by adding :command:`--passthrough-pci-audio` argument while invoking the

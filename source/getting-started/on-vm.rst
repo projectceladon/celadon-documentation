@@ -19,7 +19,7 @@ Prerequisites
 *************
 
 * An |NUC-attr| with an eighth generation or newer |Core-attr| Processor.
-* Ubuntu\* 20.04 (Focal Fossa) preinstalled which runs Linux\* kernel
+* Ubuntu\* 20.04 (Focal Fossa) preinstalled that runs Linux\* kernel
   version 5.0.0 or above.
 
   .. note::
@@ -41,7 +41,7 @@ a single user, passing the native driver capabilities through the hypervisor
 without limitations.
 
 Refer to this `article <https://01.org/sites/default/files/downloads/igvt-g/gvtflyer.pdf>`_
-for introduction on Intel Graphics Virtualization Technology.
+for an introduction to Intel Graphics Virtualization Technology.
 
 Prepare the host environment
 ****************************
@@ -51,17 +51,16 @@ Set up QEMU and Intel GVT technology
 
 The host device that launches the virtual machine requires Ubuntu 20.04.
 To simpify the preparation works, a helper script :file:`setup_host.sh` is
-provided.
-The script re-builds the :file:`OVMF.fd` firmware and `QEMU`_ emulator
-from source depending on the target graphics virtualization technology,
-and installs the required software on the installed Ubuntu system for running
-|C| in a VM with QEMU.
+provided. The script re-builds the :file:`OVMF.fd` firmware and
+`QEMU`_ emulator from source depending on the target graphics virtualization
+technology, and installs the required software on the installed Ubuntu
+system for running |C| in a VM with QEMU.
 
-Download and extract release
+Download and extract the release
 package(`caas-releasefiles-<$buildvariant>.tar.gz`)
 from: `celadon-binary <https://github.com/projectceladon/celadon-binary>`_
-Meanwhile, you can also refer :ref:`build-os-image` section to build release
-packages.
+Meanwhile, you can also refer to :ref:`build-os-image` section to build
+release packages.
 
 .. code-block:: bash
 
@@ -94,7 +93,7 @@ especially running CiV on `NUC10i7FNK`_ or `NUC10i7FNH`_ |NUC| devices.
 To that end, a
 `helper script <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh>`_
 :file:`build.sh` is designed to facilitate
-the building and deploying of |C| kernel on a Ubuntu host.
+the building and deploying of |C| kernel on an Ubuntu host.
 Refer to the `README`_ for detailed instructions.
 
 .. _README: https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
@@ -108,26 +107,28 @@ following CiV image types are generated at the end of the build:
 
 :file:`caas.img`
 
-    The GPT disk image for direct booting. Skip next section to
-    boot the CiV image with QEMU.
+The GPT disk image for direct booting. Skip the next section to
+boot the CiV image with QEMU.
 
 :file:`caas-flashfiles-eng.<user>.zip`
 
-    The compressed *flashfile* package contains the |C| partition images for running in a VM.
-    Proceed with the following section to install these images to a virtual
-    disk image in `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
+The compressed *flashfile* package contains the |C| partition images for
+running in a VM. Proceed with the following section to install these
+images to a virtual disk image in
+`qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
 
 :file:`caas-releasefiles-<$buildvariant>.tar.gz`
 
-    The release tar ball contains all required flashfiles/scrips for running
-    |C| in VM.
+The release tar ball contains all required flashfiles/scrips for running
+|C| in VM.
 
 
 Create a CiV virtual disk
 *************************
 
 .. note::
-        Skip this section if you plan to boot the device directly with the GPT disk image :file:`caas.img`.
+        Skip this section if you plan to boot the device directly with the
+        GPT disk image :file:`caas.img`.
 
 Follow the instructions below to create and set up CiV partitions on
 a *qcow2* formatted virtual disk.
@@ -139,29 +140,32 @@ a *qcow2* formatted virtual disk.
         $ cd /opt/civ-1
         $ sudo ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip
 
-#. By running the :file:`start_flash_usb.sh` script, a QEMU window will be popped up, it
-   will drop to the built-in UEFI Shell and start flashing the partitions to
-   the virtual disk image.
+#. By running the :file:`start_flash_usb.sh` script, a QEMU window will pop
+   up, it will drop to the built-in UEFI Shell, and start flashing the
+   partitions to the virtual disk image.
 
     .. figure:: images/qemu-bios-flashing.png
         :align: center
 
-#. The QEMU window will be closed automatically once flash complete.
+#. The QEMU window will be closed automatically once flashing is complete.
    Now we get the CiV virtual disk :file:`android.qcow2` under the current
    directory.
 
 Boot to Android UI
 ******************
 
-| There are two ways to start CiV instance: `vm-manager` and `start_civ.sh`.
-| For Android-12 and later release, please refer `vm-manger <#use-vm-manager>`_.
-| For Android-11 and before release, please refer `start_civ.sh <#use-start-civ-sh>`_.
-| Check Release Notes here: https://docs.01.org/celadon/release-notes.html.
+There are two ways to start a CiV instance:
+`vm-manager` and `start_civ.sh`.
+For Android-12 and later releases, please refer to
+`vm-manger <#use-vm-manager>`_.
+For Android-11 and previous releases, please refer to
+`start_civ.sh <#use-start-civ-sh>`_.
+Check Release Notes here: https://docs.01.org/celadon/release-notes.html.
 
 Use vm-manager
 ==============
 
-A tool `vm-manager` is developed to facilitate the CiV images
+The `vm-manager` tool was developed to facilitate the CiV images
 booting process. It supports various options:
 
 .. code-block:: bash
@@ -203,13 +207,19 @@ booting process. It supports various options:
      - Show this help message
 
 
-All CiV guest configuration file(INI formated) are stored at :file:`$HOME/.intel/.civ/`,
+All CiV guest configuration file (INI formated) are stored at
+:file:`$HOME/.intel/.civ/`,
 
 #. Install vm-manager
-   Download latest release package from: https://github.com/projectceladon/vm_manager/releases.
-   Install it: sudo apt-get install ./vm-manager_vx.y.z_$OS_VER.deb
+   Download the latest release package from: https://github.com/projectceladon/vm_manager/releases.
+   Install it with this command:
 
-#. Create a ini file under :file:`$HOME/.intel/.civ/civ-1.ini`. Configure it as below: ::
+   .. code-block:: bash
+
+      sudo apt-get install ./vm-manager_vx.y.z_$OS_VER.deb
+
+#. Create a ini file under :file:`$HOME/.intel/.civ/civ-1.ini`. Configure it
+   as shown below: ::
 
      [global]
      name=civ-1
@@ -258,7 +268,7 @@ All CiV guest configuration file(INI formated) are stored at :file:`$HOME/.intel
 
         $ sudo vm-manager -b civ-1
 
-For more details, please reference this wiki to get started:
+For more details, please reference the following wiki to get started:
 `CiV VM Manager User Guide <https://github.com/projectceladon/vm_manager/wiki/User-Guide>`_.
 
 
@@ -266,8 +276,8 @@ Use start_civ.sh
 ================
 
 
-A script `start_civ.sh` is developed to facilitate the CiV images
-booting process. It supports various options:
+The `start_civ.sh` script was developed to facilitate the CiV images
+booting process. It supports the following options:
 
 .. code-block:: bash
 
@@ -346,10 +356,10 @@ booting process. It supports various options:
 
 
 Intel GVT option
-++++++++++++++++
+================
 
 Enter the following commands to run the script `start_civ.sh` with
-root permissions to facilitate the booting of CiV images with QEMU.
+root permissions to facilitate booting CiV images with QEMU.
 
 .. code-block:: bash
 
@@ -364,18 +374,18 @@ root permissions to facilitate the booting of CiV images with QEMU.
     $ sudo -E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
 
 USB PCI controller pass-through option
-++++++++++++++++++++++++++++++++++++++
+======================================
 
 You can pass-through not only the GPU but also the USB host controller (xHCI)
-to the Android VM, in order to attach all the connected USB devices
+to the Android VM to attach all the connected USB devices
 (e.g. camera, USB thumb drive) to the VM.
 By passing :command:`--passthrough-pci-usb` argument to the `start_civ.sh`
-script, all the USB devices connected to the platform get automatically
+script, all the USB devices connected to the platform are automatically
 enumerated inside the Android VM:
 
 .. code-block:: bash
 
-    # The following command pass-through the xHCI to the VM
+    # The following command passes through the xHCI to the VM
     $ sudo -E ./scripts/start_civ.sh --passthrough-pci-usb
 
 .. warning::
@@ -397,7 +407,7 @@ whose vendorID and productID are **14cd** and **125c** respectively:
         Bus 001 Device 004: ID 1c4f:0002 SiGma Micro Keyboard TRACER Gamma Ivory
         Bus 001 Device 008: ID 14cd:125c Super Top SD card reader
 
-Execute `start_civ.sh` script as below, to enumerate the device
+Execute `start_civ.sh` script as shown below, to enumerate the device
 in the Android VM:
 
     .. code-block:: none
@@ -406,9 +416,9 @@ in the Android VM:
 
 
 Launching with SD card
-++++++++++++++++++++++
+**********************
 
-In case your hardware platform supports SD cards through the :abbr:`SDHCI
+If your hardware platform supports SD cards through the :abbr:`SDHCI
 (Secure Digital Host Controller Interface)` controller, you can enable
 SDHCI mediation by adding :command:`-b <sdcard block device>` option
 argument while invoking the `start_civ.sh` script if the SD card is present
@@ -416,9 +426,9 @@ in the slot.
 
 With the following command, the SD card interface will be mediated to the
 Android guest OS, and Android will mount the SD card on boot.
-The external SD card mount is validated with sdcardfs file system and the
-mount point is available in the standard UI interfaces like file explorer,
-storage settings etc.
+The external SD card mount is validated with the sdcardfs file system and the
+mount point is available in the standard UI interfaces, such as file
+explorer, storage settings etc.
 
 .. code-block:: bash
 
@@ -430,9 +440,9 @@ storage settings etc.
        with the SD card options, or the SD card won't be operational.
 
 Audio pass-through option
-+++++++++++++++++++++++++
+*************************
 
-The audio controller can be passd through to the guest
+The audio controller can be passed through to the guest
 by adding :command:`--passthrough-pci-audio` argument while invoking the
 `start_civ.sh` script, the host then has no control over it.
 
@@ -444,10 +454,11 @@ by adding :command:`--passthrough-pci-audio` argument while invoking the
     With the above setup, PCI controllers, which are part of the same IOMMU
     group as the audio controller, will also be pass-through to the guest.
     For example, if the Ethernet controller and the audio controller are
-    in the same IOMMU group, the Ethernet controller will be moved to the guest.
-    Thus if you are connecting to the host via Ethernet, the network accesses to
-    the host will be drop. Since the Android guest has accesses to the Ethernet
-    controller, you can connect to it using the command:
+    in the same IOMMU group, the Ethernet controller will be moved to the
+    guest. Thus if you are connecting to the host via Ethernet, the network
+    accesses to the host will be drop. Since the Android guest has accesses
+    to the Ethernet controller, you can connect to it using the following
+    command:
 
     .. code-block:: bash
 

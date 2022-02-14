@@ -409,6 +409,7 @@ New in this release
     * Compliance production targets achieved
       
  * Existing features
+    *This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume
     * Local Video Playback with Widevine DRM - Level 3 
@@ -646,7 +647,7 @@ New in this release
     * External USB Camera 
  
  * Existing features
-
+    * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
 
@@ -876,7 +877,7 @@ New in this release
     * External USB Camera 
  
  * Existing features
-
+    * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
 
@@ -1089,8 +1090,8 @@ New features
 
 Existing Features
 -----------------
-
-* API Level 30 & FCM target Level 5
+ * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
+ * API Level 30 & FCM target Level 5
 
  * Other Changes that came as part of API level Up
 
@@ -1304,7 +1305,7 @@ New features
 
 Existing features
 -----------------
-
+* This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
 * Trusty Hardware Seed binding
 * Power Management - Suspend,Resume
 * Android key Input Manager Framework is implemented for Power and

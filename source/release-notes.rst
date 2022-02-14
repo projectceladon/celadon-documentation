@@ -15,7 +15,7 @@ Releases
 .. contents::
    :local:
    :depth: 1
-   
+
 CIV_00.22.01.04_A12
 ===================
 * This is a Pre Production Binary Release for evaluation and development
@@ -40,8 +40,7 @@ New in this release
 
  * New features
     * Android 12 with latest AOSP release tag (android-12.0.0_r26)
-    * Integrated VM Manager to configure CIV - Details - https://github.com/projectceladon/vm_manager/wiki/User-Guide 
-      [start_civ ]
+    * Integrated VM Manager to configure CIV - Details - https://github.com/projectceladon/vm_manager/wiki/User-Guide
 
  * Includes Android 12 main features: 
     * Celadon supports Android 12 with API level 31 and FCM target level 6
@@ -91,8 +90,8 @@ Known issues
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.22.01.04_A12.xml
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.22.01.04_A12
+* Manifest Link : 
+* Binary Link :
 
 
 How to install this release
@@ -135,7 +134,12 @@ How to install this release
     * Select compiled kernel from "Advanced options for Ubuntu"
 
 * Flash and run steps
-     * https://github.com/projectceladon/vm_manager/wiki/User-Guide
+
+   * After Building Binary please follow below steps
+   * Untar <flash-files>
+   * sudo -E ./scripts/setup_host -u headless
+   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+   * sudo -E ./scripts/start_civ.sh -g GVT-d
 
 Validation results
 ------------------
@@ -192,7 +196,6 @@ Helpful hints / related documents
   should use their own keys to sign their release images
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm
-   
 
 CIV_00.21.03.41_A12
 ===================
@@ -269,14 +272,7 @@ Known issues
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.03.41_A12.xml
-
-System Requirements 
--------------------
-* Recommended system requirements for Host:
-    * CPU:  4 cores or more 
-    * RAM:  8 GB or more
-    * Hard-Disk: 250 GB [Desired]
+* Manifest Link : 
 
 
 How to install this release
@@ -413,6 +409,7 @@ New in this release
     * Compliance production targets achieved
       
  * Existing features
+    *This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume
     * Local Video Playback with Widevine DRM - Level 3 
@@ -513,12 +510,6 @@ Where to find the release
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.21.03.39_A11.xml
 * Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.03.39_A11
 
-System Requirements 
--------------------
-* Recommended system requirements for Host:
-    * CPU:  4 cores or more 
-    * RAM:  8 GB or more
-    * Hard-Disk: 250 GB [Desired]
 
 How to install this release
 ---------------------------
@@ -656,7 +647,7 @@ New in this release
     * External USB Camera 
  
  * Existing features
-
+    * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
 
@@ -886,7 +877,7 @@ New in this release
     * External USB Camera 
  
  * Existing features
-
+    * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
 
@@ -1099,8 +1090,8 @@ New features
 
 Existing Features
 -----------------
-
-* API Level 30 & FCM target Level 5
+ * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
+ * API Level 30 & FCM target Level 5
 
  * Other Changes that came as part of API level Up
 
@@ -1314,7 +1305,7 @@ New features
 
 Existing features
 -----------------
-
+* This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
 * Trusty Hardware Seed binding
 * Power Management - Suspend,Resume
 * Android key Input Manager Framework is implemented for Power and

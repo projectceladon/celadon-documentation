@@ -5,8 +5,8 @@ Release Notes
 
 
 
-Releases Android
-****************
+Releases 
+********
 
 .. note::
 

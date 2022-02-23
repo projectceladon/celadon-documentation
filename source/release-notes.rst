@@ -2827,118 +2827,6 @@ Helpful hints/links
   keys under device/intel/build/testkeys/ with your product key.
 
 
-CIV_00.20.02.19_A10
-======================
-
-* This is a Pre-Production Manifest Release for evaluation and development
-  purposes and it cannot be used for production purposes. This release is
-  supported on Comet Lake |NUC| NUC10i7F Celadon in VM.
-
-New features
--------------
-
-* Wifi Control from Android in VM using usb passthrough 
-* To passthrough USB host controller in Comet Lake |NUC|, run the CIV launch script
-  like this:
-  ``sudo -E ./start_android_qcow2.sh  --usb-host-passthrough``
-* Power Management - Shutdown and Reboot 
-* OTA offline update
-* Ethernet Wired Network Bridge is enabled 
-* Android Time keeping with Host OS
-* Product Information to Guest OS
-* ODM partition for vendor customizations 
-
-Existing features
------------------
-* Graphics Memory Allocator (Gralloc) 1.0
-* HDMI display support
-* HWC 2.3 support for Display
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
-* Setting Proxy for Wireless Network
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
-* Wired Ethernet support
-* Video Codec support on celadon
-
-  **Decoder**
-
-    * AVC High profile @ Level 5.1 (4k@30fps)
-    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020
-      and ST2084 information is not supported)
-    * VP9 profile 0 @ Level 5 (4k@30fps)
-    * Vp8 8 bits 1080p@60fps
-
-  **Encoder**
-
-    * AVC High profile @ level 4.1 (1080P@30fps)
-    * HEVC Main profile @ Level 4 (1080P@30fps)
-
-* Art-extension is enabled
-* Sdcardfs filesystem support enabled
-* Only logitech C922 pro stream webcam is supported for all camera related
-  testing
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
-  OPUS, MIDI, FLAC, PCM/WAV
-* Generic storage HAL supported
-* SATA emulation is supported
-* 9pfs based file transfer
-* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
-  Keymaster 3.0
-
-    * User guide:
-
-        * SELinux Configuration and Rules
-        * How to Enable or Disable Trusty for Debugging
-
-
-Known issues
--------------
-* dEQP-VK(Vulkan 1.1) is failing 
-
-Validation results
-------------------
-
-|C| build has been validated on Comet Lake |NUC| NUC10i7F in the
-following function domains:
-
-=============================  =======  ========
-Component                      Results  Comments
-=============================  =======  ========
-Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
-BT                             OK        Bluetooth is working
-Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
-Adb connect over WIFI          OK
-Adb connect over Ethernet      OK
-Display /Touch and Gesture     OK
-Security                       OK
-Boot                           OK       Boots on QEMU 4.2.0
-Ethernet                       OK
-Image Flash                    OK
-Web browsing                   OK
-Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
-USB                            OK       Keybord , Mouse , Pen drive
-
-=============================  =======  ========
-
-
-Tools/Configuration
--------------------
-* QEMU Version 4.2.0
-* Host Ubuntu 18.04
-* Host Kernel Version 5.4.35
-  Steps to build the host kernel for CIV [Comet Lake |NUC|]--> https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
-* Guest kernel 5.4.37
-
-Helpful hints/links
----------------------
-* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
-* Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
-* Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.19_A10.xml
-* For CIV QMR0 we are now switching to the platform : Comet Lake |NUC|
-  NUC10i7F
-* If you plan to use Celadon in your product, please replace all the test
-  keys under device/intel/build/testkeys/ with your product key.
 
 
 
@@ -3172,7 +3060,121 @@ Deprecated Releases
 .. contents::
    :local:
    :depth: 1 
-   
+
+CIV_00.20.02.19_A10
+======================
+
+* This is a Pre-Production Manifest Release for evaluation and development
+  purposes and it cannot be used for production purposes. This release is
+  supported on Comet Lake |NUC| NUC10i7F Celadon in VM.
+
+New features
+-------------
+
+* Wifi Control from Android in VM using usb passthrough 
+* To passthrough USB host controller in Comet Lake |NUC|, run the CIV launch script
+  like this:
+  ``sudo -E ./start_android_qcow2.sh  --usb-host-passthrough``
+* Power Management - Shutdown and Reboot 
+* OTA offline update
+* Ethernet Wired Network Bridge is enabled 
+* Android Time keeping with Host OS
+* Product Information to Guest OS
+* ODM partition for vendor customizations 
+
+Existing features
+-----------------
+* Graphics Memory Allocator (Gralloc) 1.0
+* HDMI display support
+* HWC 2.3 support for Display
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Setting Proxy for Wireless Network
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Video Codec support on celadon
+
+  **Decoder**
+
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020
+      and ST2084 information is not supported)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+
+  **Encoder**
+
+    * AVC High profile @ level 4.1 (1080P@30fps)
+    * HEVC Main profile @ Level 4 (1080P@30fps)
+
+* Art-extension is enabled
+* Sdcardfs filesystem support enabled
+* Only logitech C922 pro stream webcam is supported for all camera related
+  testing
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
+  OPUS, MIDI, FLAC, PCM/WAV
+* Generic storage HAL supported
+* SATA emulation is supported
+* 9pfs based file transfer
+* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
+  Keymaster 3.0
+
+    * User guide:
+
+        * SELinux Configuration and Rules
+        * How to Enable or Disable Trusty for Debugging
+
+
+Known issues
+-------------
+* dEQP-VK(Vulkan 1.1) is failing 
+
+Validation results
+------------------
+
+|C| build has been validated on Comet Lake |NUC| NUC10i7F in the
+following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
+BT                             OK        Bluetooth is working
+Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Security                       OK
+Boot                           OK       Boots on QEMU 4.2.0
+Ethernet                       OK
+Image Flash                    OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+USB                            OK       Keybord , Mouse , Pen drive
+
+=============================  =======  ========
+
+
+Tools/Configuration
+-------------------
+* QEMU Version 4.2.0
+* Host Ubuntu 18.04
+* Host Kernel Version 5.4.35
+  Steps to build the host kernel for CIV [Comet Lake |NUC|]--> https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
+* Guest kernel 5.4.37
+
+Helpful hints/links
+---------------------
+* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
+* Flash Steps :https://01.org/projectceladon/documentation/getting-started/on-vm
+* Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.19_A10.xml
+* For CIV QMR0 we are now switching to the platform : Comet Lake |NUC|
+  NUC10i7F
+* If you plan to use Celadon in your product, please replace all the test
+  keys under device/intel/build/testkeys/ with your product key.
+
+
 CELADON_01.20.01.12_A09
 =======================
 

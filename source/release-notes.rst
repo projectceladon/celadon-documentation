@@ -11,7 +11,7 @@ Base Releases
 *************
 
 .. contents::
-   :local: 1
+   :local: 0
    :depth: 0
    
 CIV_00.22.01.04_A12

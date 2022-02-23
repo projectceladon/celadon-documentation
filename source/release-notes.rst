@@ -3162,8 +3162,8 @@ Helpful hints/links
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
-Deprecated Reeases (latest Android)
-******************************
+Deprecated Reeases
+******************
 
 .. contents::
    :local:

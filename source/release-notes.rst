@@ -3162,7 +3162,12 @@ Helpful hints/links
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 
+Base Releases
+*************
 
+.. contents::
+   :local:
+   :depth: 1 
    
 CELADON_01.20.01.12_A09
 =======================

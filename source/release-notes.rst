@@ -2598,144 +2598,7 @@ Helpful hints/links
 * If you plan to use Celadon in your product, please replace all the test
   keys under device/intel/build/testkeys/ with your product key.
 
-CIV_00.20.02.23_A10
-======================
 
-* This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Comet Lake |NUC| NUC10i7F Celadon in VM.
-
-New features
--------------
-* Android Thermal HAL and Thermal Manager Service 
-* Audio Solution based on HDA
-* OTA Android Update from USB Disk
-* Bluetooth Control from Android in VM 
-* HDMI Audio Output Support 
-* Virtio-gpu Support 
-* Battery and Thermal mediation support for Android guest OS
-   * Battery percentage of host os will be propagated to Android guest.
-   * Thermal temperature information will be sent to Android for graceful shutdown of guest
-   * CIV launch script: sudo -E ./start_android_qcow2.sh --enable-vsock
-* File Sharing between Guest OSes
-* SDHCI mediation enabled and supported SD card
-   * CIV launch script for SD Card: sudo -E ./start_android_qcow2.sh --sdonly
-
-Existing features
------------------
-* Graphics Memory Allocator (Gralloc) 1.0
-* Graphics GVT-g and GVT-d support
-* HDMI display support
-* HWC 2.3 support for Display
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
-* Setting Proxy for Wireless Network
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
-* Wired Ethernet support
-* Wifi Control from Android in VM using usb passthrough
-* To passthrough USB host controller in Comet Lake |NUC|, run the CIV launch script like this:
-  sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
-* Power Management - Shutdown and Reboot
-* Only logitech C922 pro stream webcam is supported for all camera related testing
-* OTA offline update
-* Ethernet Wired Network Bridge is enabled
-* Android Time keeping with Host OS
-* Product Information to Guest OS
-* ODM partition for vendor customizations
-* Video Codec support on celadon
-
-  **Decoder**
-
-    * AVC High profile @ Level 5.1 (4k@30fps)
-    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
-    * VP9 profile 0 @ Level 5 (4k@30fps)
-    * Vp8 8 bits 1080p@60fps
-
-  **Encoder**
-
-    * AVC High profile @ level 4.1 (1080P@30fps)
-    * HEVC Main profile @ Level 4 (1080P@30fps)
-* Art-extension is enabled
-* Sdcardfs filesystem support enabled
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
-* Generic storage HAL supported
-* SATA emulation is supported
-* 9pfs based file transfer
-* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
-    * User guide:
-        * SELinux Configuration and Rules
-        * How to Enable or Disable Trusty for Debugging
-
-Known issues
--------------
-* When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.   
-* Noise heard in the background of the recorded file when recorded over 3.5mm headset
-* Camera Preview is lost while switching between dual and single mode
-* Camera Preview is not available when USB camera is connected after Android is Launched through VM 
-* Android UI is not displayed if we use EDP display
-* Audio is not routing to 3.5mm Headset for ALC256 audio codec
-* Front view camera is not having mirror Image preview 
-* Hotplug support for USB Camera doesn't work
-* Blue Screen observed while switching from between Front and Rear Camera (occurrence  - random)
-
-Validation results
-------------------
-
-|C| build has been validated on Comet Lake |NUC| NUC10i7F in the following function domains:
-
-=============================  =======  ========
-Component                      Results  Comments
-=============================  =======  ========
-Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
-BT                             OK        Bluetooth is working
-Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
-Adb connect over WIFI          OK
-Adb connect over Ethernet      OK
-Display /Touch and Gesture     OK
-Security                       OK
-Boot                           OK       Boots on QEMU 4.2.0
-Ethernet                       OK
-Image Flash                    OK
-Web browsing                   OK
-Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
-USB                            OK       Keyboard , Mouse , Pen drive
-
-=============================  =======  ========
-
-Tools/Configuration
--------------------
-* QEMU Version 4.2.0
-* Host Ubuntu 18.04
-* Host Kernel Version 5.4.35 
-* Guest kernel 5.4.42
-
-Helpful hints/links
----------------------
-* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
-* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.23_A10.xml
-* If you plan to use Celadon in your product, please replace all the test
-  keys under device/intel/build/testkeys/ with your product key.
-* Steps To build the host kernel for this Manifest
-    * Sync the manifest from the above Manifest link
-    * Build the source code and caas-releasefiles-userdebug.tar.gz will be
-      generated
-    * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
-    * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
-    * cd patches/kernel/lts2019-chromium
-    * ./build_weekly.sh
-    * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
-    * sudo dpkg -i \*.deb
-    * Update grub to wait indefinitely for kernel selection on boot 
-        * sudo vim /etc/default/grub  
-        * Comment out GRUB_TIMEOUT_STYLE=hidden
-          #GRUB_TIMEOUT_STYLE=hidden 
-        * Uncomment following line and modify grub timeout to -1 for
-          indefinite wait or 5 for 5secs wait
-          #GRUB_TIMEOUT=-1 
-        * Save the file
-        * sudo update-grub
-    * sudo reboot
-    * Select compiled kernel from "Advanced options for Ubuntu"
 
 
 CIC_00.20.02.20_A09
@@ -3060,6 +2923,145 @@ Deprecated Releases
 .. contents::
    :local:
    :depth: 1 
+
+CIV_00.20.02.23_A10
+======================
+
+* This is a Pre-Production Manifest Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Comet Lake |NUC| NUC10i7F Celadon in VM.
+
+New features
+-------------
+* Android Thermal HAL and Thermal Manager Service 
+* Audio Solution based on HDA
+* OTA Android Update from USB Disk
+* Bluetooth Control from Android in VM 
+* HDMI Audio Output Support 
+* Virtio-gpu Support 
+* Battery and Thermal mediation support for Android guest OS
+   * Battery percentage of host os will be propagated to Android guest.
+   * Thermal temperature information will be sent to Android for graceful shutdown of guest
+   * CIV launch script: sudo -E ./start_android_qcow2.sh --enable-vsock
+* File Sharing between Guest OSes
+* SDHCI mediation enabled and supported SD card
+   * CIV launch script for SD Card: sudo -E ./start_android_qcow2.sh --sdonly
+
+Existing features
+-----------------
+* Graphics Memory Allocator (Gralloc) 1.0
+* Graphics GVT-g and GVT-d support
+* HDMI display support
+* HWC 2.3 support for Display
+* Mass Storage USB 2.0 and 3.x devices is supported
+* Adb over WIFI and Ethernet is supported
+* Audio playback over USB Headset and HDMI are supported
+* Setting Proxy for Wireless Network
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
+* Wired Ethernet support
+* Wifi Control from Android in VM using usb passthrough
+* To passthrough USB host controller in Comet Lake |NUC|, run the CIV launch script like this:
+  sudo -E ./start_android_qcow2.sh  --usb-host-passthrough
+* Power Management - Shutdown and Reboot
+* Only logitech C922 pro stream webcam is supported for all camera related testing
+* OTA offline update
+* Ethernet Wired Network Bridge is enabled
+* Android Time keeping with Host OS
+* Product Information to Guest OS
+* ODM partition for vendor customizations
+* Video Codec support on celadon
+
+  **Decoder**
+
+    * AVC High profile @ Level 5.1 (4k@30fps)
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
+    * VP9 profile 0 @ Level 5 (4k@30fps)
+    * Vp8 8 bits 1080p@60fps
+
+  **Encoder**
+
+    * AVC High profile @ level 4.1 (1080P@30fps)
+    * HEVC Main profile @ Level 4 (1080P@30fps)
+* Art-extension is enabled
+* Sdcardfs filesystem support enabled
+* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
+* Generic storage HAL supported
+* SATA emulation is supported
+* 9pfs based file transfer
+* Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty, Keymaster 3.0
+    * User guide:
+        * SELinux Configuration and Rules
+        * How to Enable or Disable Trusty for Debugging
+
+Known issues
+-------------
+* When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.   
+* Noise heard in the background of the recorded file when recorded over 3.5mm headset
+* Camera Preview is lost while switching between dual and single mode
+* Camera Preview is not available when USB camera is connected after Android is Launched through VM 
+* Android UI is not displayed if we use EDP display
+* Audio is not routing to 3.5mm Headset for ALC256 audio codec
+* Front view camera is not having mirror Image preview 
+* Hotplug support for USB Camera doesn't work
+* Blue Screen observed while switching from between Front and Rear Camera (occurrence  - random)
+
+Validation results
+------------------
+
+|C| build has been validated on Comet Lake |NUC| NUC10i7F in the following function domains:
+
+=============================  =======  ========
+Component                      Results  Comments
+=============================  =======  ========
+Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
+BT                             OK        Bluetooth is working
+Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Adb connect over WIFI          OK
+Adb connect over Ethernet      OK
+Display /Touch and Gesture     OK
+Security                       OK
+Boot                           OK       Boots on QEMU 4.2.0
+Ethernet                       OK
+Image Flash                    OK
+Web browsing                   OK
+Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
+USB                            OK       Keyboard , Mouse , Pen drive
+
+=============================  =======  ========
+
+Tools/Configuration
+-------------------
+* QEMU Version 4.2.0
+* Host Ubuntu 18.04
+* Host Kernel Version 5.4.35 
+* Guest kernel 5.4.42
+
+Helpful hints/links
+---------------------
+* Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
+* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.23_A10.xml
+* If you plan to use Celadon in your product, please replace all the test
+  keys under device/intel/build/testkeys/ with your product key.
+* Steps To build the host kernel for this Manifest
+    * Sync the manifest from the above Manifest link
+    * Build the source code and caas-releasefiles-userdebug.tar.gz will be
+      generated
+    * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
+    * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
+    * cd patches/kernel/lts2019-chromium
+    * ./build_weekly.sh
+    * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
+    * sudo dpkg -i \*.deb
+    * Update grub to wait indefinitely for kernel selection on boot 
+        * sudo vim /etc/default/grub  
+        * Comment out GRUB_TIMEOUT_STYLE=hidden
+          #GRUB_TIMEOUT_STYLE=hidden 
+        * Uncomment following line and modify grub timeout to -1 for
+          indefinite wait or 5 for 5secs wait
+          #GRUB_TIMEOUT=-1 
+        * Save the file
+        * sudo update-grub
+    * sudo reboot
+    * Select compiled kernel from "Advanced options for Ubuntu"
 
 CIV_00.20.02.19_A10
 ======================

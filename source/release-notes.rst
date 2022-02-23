@@ -7,6 +7,10 @@ Release Notes
 
     Refer to :ref:`release-naming-convention` to decode the the release tags of the following |C| releases.
     
+.. contents::
+   :local:
+   :depth: 1    
+    
 Base Releases
 *************
 

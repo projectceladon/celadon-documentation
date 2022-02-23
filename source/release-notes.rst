@@ -3,14 +3,22 @@
 Release Notes
 #############
 
-
-
-Releases 
-********
-
 .. note::
 
     Refer to :ref:`release-naming-convention` to decode the the release tags of the following |C| releases.
+
+Production Releases
+*******************
+
+.. contents::
+   :local:
+   :depth: 1
+
+CIV_02.XX.XX.XX_A
+===================
+
+Base Releases (latest Android)
+******************************
 
 .. contents::
    :local:

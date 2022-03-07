@@ -15,13 +15,12 @@ or containers, they are all served by a single Celadon image with a unified
 architecture, accelerating development of broad workload consolidation
 use cases from Edge to Cloud.
 
-.. figure:: images/civ-cic-arch-combined.png
-    :align: center
+.. figure:: images/civ-arch.png
+   :align: center
 
 .. note::
-   The :abbr:`CiV (Celadon in VM)` and :abbr:`CiC (Celadon in Container)`
-   are currently under early development. This is an early Pre-
-   Production CiV and CiC Release for evaluation and development purposes.
+   :abbr:`CiV (Celadon in VM)` is currently under early development. This is an
+   early Pre-Production CiV release for evaluation and development purposes.
 
 .. toctree::
    :maxdepth: 1

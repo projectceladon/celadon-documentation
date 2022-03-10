@@ -6,18 +6,18 @@ Release Notes
 .. note::
 
     Refer to :ref:`release-naming-convention` to decode the the release tags of the following |C| releases.
-    
+
 .. contents::
    :local:
-   :depth: 1    
-    
+   :depth: 1
+
 Base Releases
 *************
 
 .. contents::
    :local:
    :depth: 1
-   
+
 CIV_00.22.01.04_A12
 ===================
 * This is a Pre Production Binary Release for evaluation and development
@@ -44,8 +44,8 @@ New in this release
     * Android 12 with latest AOSP release tag (android-12.0.0_r26)
     * Integrated VM Manager to configure CIV replacing start_civ.sh
         * This changes launch steps for CIV - please refer https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
-     
- * Includes Android 12 main features: 
+
+ * Includes Android 12 main features:
     * Celadon supports Android 12 with API level 31 and FCM target level 6
     * Boot control HAL upgraded to V1.2
     * Audio HAL upgraded to V7.0
@@ -53,15 +53,15 @@ New in this release
     * Bug fixes, customizations and optimizations for x86
     * SE Policy updated for API level 31
     * AIDL libs updated
-    * Health HAL is optimized to adapt the new changes for S Dessert 
-    * Graphics introduced scheduling plans, 
+    * Health HAL is optimized to adapt the new changes for S Dessert
+    * Graphics introduced scheduling plans,
     * Graphics: Surface flinger caching, GPU memory accounting, profiling and GPU scheduling
     * Accessibility, System UI and backup & restore features updated with minor modifications
     * FUSE passthrough introduced to improve IO performance
     * IncFS updated with Better Monitoring Support, virtio-9p support, fs-verity support
     * Enabled NNAPI updatability in Machine Learning
     * New platform features for Mainline Module
-    * Incremental: new Android 12+ feature that could reduce initial downloads of app 
+    * Incremental: new Android 12+ feature that could reduce initial downloads of app
     * Approximate location access and privacy related updates
     * New Storage Features like Storage management API changes, New directory for voice recordings, Media management access, App storage access and Extended file access support.
     * Memory accounting updates
@@ -73,7 +73,7 @@ New in this release
     * Enabled NNAPI updatability in Machine Learning
     * New platform features for Mainline Module
     * Improvements to bandwidth estimation APIs in connectivity and introduced principle of 5G slicing
-    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization 
+    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
     * Bluetooth side, BLE audio introduced, NFC API/UX improved for payment enhancement.
     * Activity Detection, CHRE, Bluesky, FLP & RTT related changes
     * Major changes in window management and introduced Display grouping and emphasis for multi-display context
@@ -176,7 +176,7 @@ Reference configuration
      * AOSP Version - android-12.0.0_r26
      * NUC11PAQI7 Host Kernel - -5.10.82-cvhb
      * NUC11PAQI7 Guest kernel - -5.10.91-cvhb
-     
+
 
 Acronyms and terms
 ------------------
@@ -194,13 +194,13 @@ Helpful hints / related documents
   should use their own keys to sign their release images
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
-   
+
 
 CIV_00.21.03.41_A12
 ===================
 
 * We are glad to announce that the Celadon Project now supports Android 12 within 2 days of Google PV. We wish the Celadon community to start working with Android 12 and provide us feedback on what more you would like to see in the Celadon project.
-  
+
 * This is a Pre Production Manifest Release for evaluation and development
   purposes and it cannot be used for production purposes. This release is
   supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
@@ -230,16 +230,16 @@ New in this release
     * Bug fixes, customizations and optimizations for x86
     * SE Policy updated for API level 31
     * AIDL libs updated
-    * Health HAL is optimized to adapt the new changes for S Dessert 
- * Includes Android 12 main features: 
-    * Graphics introduced scheduling plans, 
+    * Health HAL is optimized to adapt the new changes for S Dessert
+ * Includes Android 12 main features:
+    * Graphics introduced scheduling plans,
     * Graphics: Surface flinger caching, GPU memory accounting, profiling and GPU scheduling
     * Accessibility, System UI and backup & restore features updated with minor modifications
     * FUSE passthrough introduced to improve IO performance
     * IncFS updated with Better Monitoring Support, virtio-9p support, fs-verity support
     * Enabled NNAPI updatability in Machine Learning
     * New platform features for Mainline Module
-    * Incremental: new Android 12+ feature that could reduce initial downloads of app 
+    * Incremental: new Android 12+ feature that could reduce initial downloads of app
     * Approximate location access and privacy related updates
     * New Storage Features like Storage management API changes, New directory for voice recordings, Media management access, App storage access and Extended file access support.
     * Memory accounting updates
@@ -251,7 +251,7 @@ New in this release
     * Enabled NNAPI updatability in Machine Learning
     * New platform features for Mainline Module
     * Improvements to bandwidth estimation APIs in connectivity and introduced principle of 5G slicing
-    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization 
+    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
     * Bluetooth side, BLE audio introduced, NFC API/UX improved for payment enhancement.
     * Activity Detection, CHRE, Bluesky, FLP & RTT related changes
     * Major changes in window management and introduced Display grouping and emphasis for multi-display context
@@ -273,10 +273,10 @@ Where to find the release
 
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.03.41_A12.xml
 
-System Requirements 
+System Requirements
 -------------------
 * Recommended system requirements for Host:
-    * CPU:  4 cores or more 
+    * CPU:  4 cores or more
     * RAM:  8 GB or more
     * Hard-Disk: 250 GB [Desired]
 
@@ -325,7 +325,7 @@ How to install this release
    * After Building Binary please follow below steps
    * Untar <flash-files>
    * sudo -E ./scripts/setup_host -u headless
-   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off
    * sudo -E ./scripts/start_civ.sh -g GVT-d
 
 Validation results
@@ -366,7 +366,7 @@ Reference configuration
      * AOSP Version - android-12.0.0_r2
      * NUC11PAQI7 Host Kernel - -5.4.142-cvhb
      * NUC11PAQI7 Guest kernel - -5.4.142-cvhb
-     
+
 
 Acronyms and terms
 ------------------
@@ -409,22 +409,22 @@ New in this release
 
  * New features
     * Power Management - Suspend/Resume - Stability
-    * Intel Sensor Hub 
-    * Config WLAN 
+    * Intel Sensor Hub
+    * Config WLAN
     * Audio HDA Mediation
     * Compliance production targets achieved
-      
+
  * Existing features
     * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume
-    * Local Video Playback with Widevine DRM - Level 3 
-    * External USB Camera 
+    * Local Video Playback with Widevine DRM - Level 3
+    * External USB Camera
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
 
       * AIDL for Power and Light HALs
-      * Audio & Audio effects HAL 6.0 
+      * Audio & Audio effects HAL 6.0
       * Health HAL 2.1
       * Boot HAL upgraded to 1.1
 
@@ -446,19 +446,19 @@ New in this release
     * Virtio-gpu Support
     * SDHCI mediation enabled and supported SD card
 
-      * CIV launch script for SD Card: sudo -E ./scripts/start_civ.sh -d GVT-d -b /dev/mmcblk0p1 --passthrough-pci-usb 
+      * CIV launch script for SD Card: sudo -E ./scripts/start_civ.sh -d GVT-d -b /dev/mmcblk0p1 --passthrough-pci-usb
 
     * Graphics GVT-d support
     * HDMI and DP display support
     * Mass Storage USB 2.0 and 3.x devices is supported
     * Adb over WIFI and Ethernet is supported
-    * Audio playback over USB Headset, 3.5mm and HDMI are supported 
+    * Audio playback over USB Headset, 3.5mm and HDMI are supported
     * Setting Proxy for Wireless Network
     * Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
     * Ethernet works fine with Ethernet to USB converter
     * Wifi Control from Android in VM using usb passthrough
     * To passthrough USB host controller in NUC11PAQI7, run the CIV launch
-      script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
+      script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
     * Power Management - Shutdown and Reboot
     * Android Time keeping with Host OS
     * Product Information to Guest OS
@@ -492,9 +492,9 @@ New in this release
 
             * SELinux Configuration and Rules
             * How to Enable or Disable Trusty for Debugging
-    
+
  * Changes to existing features
-    * Dynamic routing to HDMI audio devices 
+    * Dynamic routing to HDMI audio devices
 
  * Unsupported or discontinued features
 
@@ -516,10 +516,10 @@ Where to find the release
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.21.03.39_A11.xml
 * Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.03.39_A11
 
-System Requirements 
+System Requirements
 -------------------
 * Recommended system requirements for Host:
-    * CPU:  4 cores or more 
+    * CPU:  4 cores or more
     * RAM:  8 GB or more
     * Hard-Disk: 250 GB [Desired]
 
@@ -567,7 +567,7 @@ How to install this release
    * Download flash-files [https://github.com/projectceladon/celadon-binary]
    * Untar <flash-files>
    * sudo -E ./scripts/setup_host -u headless
-   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off
    * sudo -E ./scripts/start_civ.sh -g GVT-d
 
 Validation results
@@ -608,7 +608,7 @@ Reference configuration
      * AOSP Version - android-11.0.0_r39
      * NUC11PAQI7 Host Kernel - -5.4.142-cvhb
      * NUC11PAQI7 Guest kernel - -5.4.142-cvhb
-     
+
 
 Acronyms and terms
 ------------------
@@ -655,16 +655,16 @@ New in this release
 
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume
-    * Local Video Playback with Widevine DRM - Level 3 
-    * External USB Camera 
- 
+    * Local Video Playback with Widevine DRM - Level 3
+    * External USB Camera
+
  * Existing features
     * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
 
       * AIDL for Power and Light HALs
-      * Audio & Audio effects HAL 6.0 
+      * Audio & Audio effects HAL 6.0
       * Health HAL 2.1
       * Boot HAL upgraded to 1.1
 
@@ -692,13 +692,13 @@ New in this release
     * HDMI and DP display support
     * Mass Storage USB 2.0 and 3.x devices is supported
     * Adb over WIFI and Ethernet is supported
-    * Audio playback over USB Headset, 3.5mm and HDMI are supported 
+    * Audio playback over USB Headset, 3.5mm and HDMI are supported
     * Setting Proxy for Wireless Network
     * Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
     * Ethernet works fine with Ethernet to USB converter
     * Wifi Control from Android in VM using usb passthrough
     * To passthrough USB host controller in NUC11PAQI7, run the CIV launch
-      script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
+      script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
     * Power Management - Shutdown and Reboot
     * Android Time keeping with Host OS
     * Product Information to Guest OS
@@ -732,7 +732,7 @@ New in this release
 
             * SELinux Configuration and Rules
             * How to Enable or Disable Trusty for Debugging
-    
+
  * Changes to existing features
 
  * Unsupported or discontinued features
@@ -797,7 +797,7 @@ How to install this release
    * Download flash-files [https://github.com/projectceladon/celadon-binary]
    * Untar <flash-files>
    * sudo -E ./scripts/setup_host -u headless
-   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off
    * sudo -E ./scripts/start_civ.sh -g GVT-d
 
 Validation results
@@ -838,7 +838,7 @@ Reference configuration
      * AOSP Version - android-11.0.0_r38
      * NUC11PAQI7 Host Kernel - -5.4.121-cvhb
      * NUC11PAQI7 Guest kernel - -5.4.121-cvhb
-     
+
 
 Acronyms and terms
 ------------------
@@ -885,16 +885,16 @@ New in this release
 
     * AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats
     * Power Management - Suspend/Resume
-    * Local Video Playback with Widevine DRM - Level 3 
-    * External USB Camera 
- 
+    * Local Video Playback with Widevine DRM - Level 3
+    * External USB Camera
+
  * Existing features
     * This release uses start_civ.sh to launch Link -https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh
     * API Level 30 & FCM target Level 5
     * Other Changes that came as part of API level Up
 
       * AIDL for Power and Light HALs
-      * Audio & Audio effects HAL 6.0 
+      * Audio & Audio effects HAL 6.0
       * Health HAL 2.1
       * Boot HAL upgraded to 1.1
 
@@ -922,12 +922,12 @@ New in this release
     * HDMI and DP display support
     * Mass Storage USB 2.0 and 3.x devices is supported
     * Adb over WIFI and Ethernet is supported
-    * Audio playback over USB Headset, 3.5mm and HDMI are supported 
+    * Audio playback over USB Headset, 3.5mm and HDMI are supported
     * Setting Proxy for Wireless Network
     * Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
     * Ethernet works fine with Ethernet to USB converter
     * Wifi Control from Android in VM using usb passthrough
-    * To passthrough USB host controller in NUC11PAQI7, run the CIV launch script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
+    * To passthrough USB host controller in NUC11PAQI7, run the CIV launch script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
     * Power Management - Shutdown and Reboot
     * Android Time keeping with Host OS
     * Product Information to Guest OS
@@ -960,7 +960,7 @@ New in this release
 
             * SELinux Configuration and Rules
             * How to Enable or Disable Trusty for Debugging
-    
+
  * Changes to existing features
 
  * Unsupported or discontinued features
@@ -1024,7 +1024,7 @@ How to install this release
    * Download flash-files [https://github.com/projectceladon/celadon-binary]
    * Untar <flash-files>
    * sudo -E ./scripts/setup_host -u headless
-   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off 
+   * sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip --display-off
    * sudo -E ./scripts/start_civ.sh -g GVT-d
 
 
@@ -1066,7 +1066,7 @@ Reference configuration
      * AOSP Version - android-11.0.0_r37
      * NUC11PAQI7 Host Kernel - -5.4.121-cvhb
      * NUC11PAQI7 Guest kernel - -5.4.121-cvhb
-     
+
 
 Acronyms and terms
 ------------------
@@ -1094,7 +1094,7 @@ CIV_00.21.01.12_A11
 New features
 -----------------
 
-* Supports Intel Core 11th Gen 
+* Supports Intel Core 11th Gen
 * ADB over DbC support
 * Widevine Ready for NUC11PAQI7
 * WFA Security- Enhanced Open (OWE) support
@@ -1108,7 +1108,7 @@ Existing Features
  * Other Changes that came as part of API level Up
 
      * AIDL for Power and Light HALs
-     * Audio & Audio effects HAL 6.0 
+     * Audio & Audio effects HAL 6.0
      * Health HAL 2.1
      * Boot HAL upgraded to 1.1
 
@@ -1136,13 +1136,13 @@ Existing Features
 * HDMI and DP display support
 * Mass Storage USB 2.0 and 3.x devices is supported
 * Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset, 3.5mm and HDMI are supported 
+* Audio playback over USB Headset, 3.5mm and HDMI are supported
 * Setting Proxy for Wireless Network
 * Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2
 * Ethernet works fine with Ethernet to USB converter
 * Wifi Control from Android in VM using usb passthrough
 * To passthrough USB host controller in NUC11PAQI7, run the CIV launch
-  script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb 
+  script like this: sudo E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
 * Power Management - Shutdown and Reboot
 * Android Time keeping with Host OS
 * Product Information to Guest OS
@@ -1193,7 +1193,7 @@ Important remarks
 
      * CPU: [default 1 core]
      * RAM: [default 2GB]
-  
+
 
 Known issues
 -------------
@@ -1304,7 +1304,7 @@ New features
  * Other Changes that came as part of API level Up
 
      * AIDL for Power and Light HALs
-     * Audio & Audio effects HAL 6.0 
+     * Audio & Audio effects HAL 6.0
      * Health HAL 2.1
      * Boot HAL upgraded to 1.1
 
@@ -1408,7 +1408,7 @@ Known issues
 * After deprecation of sdcardFS in Android R, Storage stats are not having
   correct values
 * /data/logs folder not seen after flashing the image
-* Logs, Kpanic and hdcp directory not created in /data with CONFIG_SDCARDFS disabled 
+* Logs, Kpanic and hdcp directory not created in /data with CONFIG_SDCARDFS disabled
 * Android is not booting in Mosaic mode
 * GLrenderer : Virtio or Google swiftshader : Unable to launch Android
 * Guest auto exit after several suspend/resume
@@ -1565,7 +1565,7 @@ Known issues
 *	Audio is not recording with 3.5 mm Headset in gvt-d
 *	Device unable to enter in suspend after 1st attempt.
 *	Unable to get media volume with adb shell
-*	Not able set screen lock Pattern / Pin / Password 
+*	Not able set screen lock Pattern / Pin / Password
 *   All the USB peripheral devices has to be connected before the VM is launched
 *   Power Button Long Press is not implemented , only short press and very long button press
 *   Userspace Fastboot functionality is not implemented in this release
@@ -1647,15 +1647,15 @@ CIV_01.20.01.12_A10
   |C| in VM (lunch target: caas-userdebug).
 
 
-New features 
+New features
 -------------
 
-* Setting Proxy for Wireless Network 
-* Wifi Control from Android in VM 
+* Setting Proxy for Wireless Network
+* Wifi Control from Android in VM
 * Multi-Camera upto 2 camera’s are supported
-* MTP/PTP Initiator Role 
-* Barcode Scanner  
-* 9pfs based file transfer 
+* MTP/PTP Initiator Role
+* Barcode Scanner
+* 9pfs based file transfer
 * Use Command : sudo -E ./start_android_qcow2.sh --wifi-passthrough (To get
   WIFI control in Android UI) and sudo -E ./start_android_qcow2.sh (To get
   WIFI control in HOST side)
@@ -1702,7 +1702,7 @@ Known issues
 * Unable to connect WPA/WPA2 Enterprise Wi-Fi network in Android VM
 * Hotplug doesn't work in secondary display
 
- 
+
 Validation results
 ------------------
 
@@ -1712,7 +1712,7 @@ Validation results
 Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU
-BT                             OK        Bluetooth is working 
+BT                             OK        Bluetooth is working
 Audio over USB                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -1728,12 +1728,12 @@ USB                            OK       MTP/PTP Initiator Role
 
 =============================  =======  ========
 
- 
+
 Tools/Configuration
 -------------------
 * QEMU Version 4.2.0
-* Host Ubuntu 18.04 
-* Host Kernel Version 5.3.0.xx 
+* Host Ubuntu 18.04
+* Host Kernel Version 5.3.0.xx
 * Guest kernel 4.19.107
 
 
@@ -1741,13 +1741,13 @@ Helpful hints/links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
 * We can use the same CIV Q-MR0 image to flash on the Kaby Lake |NUC| and
-  Appollo Lake |NUC| as a Bare Metal <Lunch target caas-userdebug > 
+  Appollo Lake |NUC| as a Bare Metal <Lunch target caas-userdebug >
 * We haven’t ever validated ‘adb over USB’ on Android 10 + NUC7 (KBL)
   CIV_01.20.01.12_A10 as a Bare Metal and we don’t support it
 * Please use below alternative:
 
     * ADB over Ethernet works
-    * Please fall back to Android ‘P’  where adb over USB” works 
+    * Please fall back to Android ‘P’  where adb over USB” works
       https://github.com/projectceladon/celadon-documentation/blob/master/source/release-notes.rst#celadon-01-20-01-12-a09
 
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.20.01.12_A10.xml
@@ -1760,722 +1760,9 @@ Deprecated Releases
 
 .. contents::
    :local:
-   :depth: 1 
+   :depth: 1
 
 
-CIC_01.20.03.36_A09
-===================
-
-This is a Pre-Production Release for evaluation and development purposes
-and it cannot be used for production purposes.
-This release is supported on Comet Lake |NUC-attr| NUC10i7F Celadon in
-Container.
-
-Previous release : CIC_00.20.03.31_A09
-
-New features
-------------
-* Metrics Discovery API (MDAPI) support in graphics driver
-* STS fix for android.security.cts.BitmapFactorySecurityTests#test_android_bug_156261521
-* STS fix for android.security.cts.ActivityManagerTest#testActivityManager_attachNullApplication
-* Fix for MultiCamera gives pop-up "USB hot plug detected" for USB HS and KB
-* Fix for cfc.desktop is not created after cic installation
-* Fix for Setting in camera application doesn't work after clicking on Surveillance Button
-* Fix for Android UI Doesn't launch after setup for 1st time with cfc in
-  freshly install Ubuntu\*
-
-Existing features
------------------
-
-* multi window support with bug fixes
-* Enable 3.5mm Jack detection on Comet Lake |NUC|
-* Enable Android NN HAL to interface with OpenVINO™ in CiC/CiV
-* Enable multi-instances support in cic target
-* Selinux and dm-verity features are enabled
-* Debian\* package release with Adaptive Installation Script support
-* Support android reboot in cic-monitor service
-* Klocwork\* issue fixes
-* Support for multi window display
-* Camera back and front switching implementation
-* HDMI display support
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth® 4.2
-* Wired Ethernet support
-* Video Codec support on celadon
-* Sdcardfs filesystem support enabled
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
-* SDHCI host controller is enabled
-* eMMC / SATA / NVMe storage media supported
-* Generic storage HAL supported
-* Vendor WiFi hal integrated
-* Battery Indicator enabled
-* From storage, Sdcardfs filesystem support, eMMC 5.1 controller driver support, eMMC Storage support enabled
-* Mesa upgraded to 19.3.3
-* Following features added on AOSP side :
-    * Support host shortcut for android apps
-    * Support copy and paste feature between AIC and Host
-    * Support multi-user data isolation
-    * Add cic monitor service to support shutdown and reboot
-* Android Service Access, Clock/time-zone matches with host, keyboard
-  matches with host, Screen zoom works, back button event propagation works
-  fine
-* IPP lib integrated, & DEX2OAT optimization is enabled
-* Audio / Video streaming on RTP/RTSP works fine
-* USB camera hot plug and camera selection are enabled
-* memtrack works fine
-* Host input events (touchscreen) works fine
-* SOF-HDA support enabled
-* Enable File based encryption on secure flash.
-* Add HostKeymaster support.
-* Provide Settings screen to set ethernet proxy settings.
-* Fix for Audio is not routing over HDMI and USB headset.
-* Fix for CTS execution completion.
-* Fix for Bluetooth crash issue.
-
-Known issues
-------------
-* No FBE support for multi user
-* After changing resolution recorded video fallsback to default resolution
-* FIO_Sequential_Read_SSD data has -36.03% regression
-* Android Ui not launched after adb reboot when screen lock set
-* Test cases are failing in VtsHalWifiSupplicant modules
-* WiFi status bar shows ON default
-* Unable to control android volume using USB headset volume buttons.
-* Getting Error "transfer error: secure_mkdirs failed: Operation not
-  permitted" while running cts
-* android.security.cts.BitmapFactorySecurityTests#test_android_bug_156261521
-  failed
-* android.security.cts.ActivityManagerTest#testActivityManager_attachNullApplication failed
-* Stability KPI-1 is blocked as device goes offline while KPI run
-* Trusty is not supported due to conflict in BIOS.
-* On Security enabled cic, adb install / playstore download are the only
-  options for 3rd party apk installation.
-
-Important note
---------------
-* To modify cpu cores usage : After Container start up run the command
-  "sudo docker update --cpuset-cpus="0-11" android0_PID" , where
-  android0_PID is the Docker\* PID of android instance.
-* Ensure Lvm2 & thin-provisioning-tools packages are installed.
-* Please ensure latest version of libjson-c is installed.
-
-Validation results
-------------------
-
-This |C| build has been validated on Comet Lake Intel® NUC NUC10i7FN in the
-following function domains, for both secure and non-secure.
-
-  ======================== =======
-  Test Case                Results
-  ======================== =======
-  Image Flash               Pass
-  System Boot Up            Pass
-  Touch Screen              Pass
-  Basic Video Playback      Pass
-  Basic Audio Playback      Pass
-  Navigation bar            Pass
-  UI Display                Pass
-  Wifi [Host]               Pass
-  Network [Wifi/Ethernet]   Pass
-  Multi camera              Pass
-  Screen lock               Pass
-  Docker commands           Pass
-  adb[Ethernet]             Pass
-  BT [Host]                 Pass
-  SE-Policy                 Pass
-  ======================== =======
-
-Tools/Configuration
--------------------
-* Docker version      : 18.09.2
-* Host Ubuntu         : 20.04
-* Host Kernel Version : 5.4.58 [SELinux config enabled in host kernel-config]
-
-Helpful hints/links
----------------------
-
-* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
-* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
-* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_01.20.03.36_A09.xml
-* Binary Link   : https://github.com/projectceladon/celadon-binary/tree/master/CIC_01.20.03.36_A09
-* If you plan to use Celadon in product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
-
-
-CIC_00.20.03.31_A09
-======================
-
-* This is a Pre-Production Release for evaluation and development purposes
-  and it cannot be used for production purposes. This release is supported
-  on Comet Lake |NUC| - NUC10i7FN Celadon in Container.
-
-Previous release : CIC_00.20.02.24_A09
-
-New features
-------------
-
-* multi window support with bug fixes
-* Enable 3.5mm Jack detection on Comet Lake |NUC|
-* Enable Android NN HAL to interface with OpenVINO in CiC/CiV
-* Enable multi-instances support in cic target
-
-Existing features
------------------
-
-* Selinux and dm-verity features are enabled
-* Debian package release with Adaptive Installation Script support
-* Support android reboot in cic-monitor service
-* Klocwork issue fixes
-* Support for multi window display
-* Camera back and front switching implementation
-* HDMI display support
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
-* Wired Ethernet support
-* Video Codec support on celadon
-* Sdcardfs filesystem support enabled
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
-  OPUS, MIDI, FLAC, PCM/WAV
-* SDHCI host controller is enabled
-* eMMC / SATA / NVMe storage media supported
-* Generic storage HAL supported
-* Vendor WiFi\* hal integrated
-* Battery Indicator enabled
-* From storage, Sdcardfs filesystem support, eMMC 5.1 controller driver
-  support, eMMC Storage support enabled
-* Mesa upgraded to 19.3.3
-* Following features added on AOSP side :
-    * Support host shortcut for android apps
-    * Support copy and paste feature between AIC and Host
-    * Support multi-user data isolation
-    * Add cic monitor service to support shutdown and reboot
-* Android Service Access, Clock/time-zone matches with host, keyboard
-  matches with host, Screen zoom works, back button event propagation works
-  fine
-* IPP lib integrated, & DEX2OAT optimization is enabled
-* Audio / Video streaming on RTP/RTSP works fine
-* USB camera hot plug and camera selection are enabled
-* memtrack works fine
-* Host input events (touchscreen) works fine
-* SOF-HDA support enabled
-* Enable File based encryption on secure flash.
-* Add HostKeymaster support.
-* Provide Settings screen to set ethernet proxy settings.
-* Fix for Audio is not routing over HDMI and USB headset.
-* Fix for CTS execution completion.
-* Fix for Bluetooth crash issue.
-
-Known issues
-------------
-* After changing resolution recorded video fallsback to default resolution
-* FIO_Sequential_Read_SSD data has -36.03% regression
-* Android Ui not launched after adb reboot when screen lock set
-* Test cases are failing in VtsHalWifiSupplicant modules
-* WiFi status bar shows ON default
-* Unable to control android volume using USB headset volume buttons.
-* Getting Error "transfer error: secure_mkdirs failed: Operation not
-  permitted" while running cts
-* android.security.cts.BitmapFactorySecurityTests#test_android_bug_156261521
-  failed
-* android.security.cts.ActivityManagerTest#testActivityManager_attachNullApplication failed
-* After connecting Wi-Fi in Android Container adb over emulator does not
-  work and stability KPI-1 is blocked as WIFI on/off will disconnect adb over WIFI
-* Trusty is not supported due to conflict in BIOS.
-* On Security enabled cic, adb install / playstore download are the only
-  options for 3rd party apk installation.
-
-Important note
---------------
-* To modify cpu cores usage : After Container start up run the command
-  "sudo docker update --cpuset-cpus="0-11" android0_PID" , where
-  android0_PID is the Docker PID of android instance.
-* Ensure Lvm2 & thin-provisioning-tools packages are installed.
-* Please ensure latest version of libjson-c is installed.
-
-Validation results
-------------------
-
-This |C| build has been validated on Comet Lake |NUC| NUC10i7F in the following function domains, for both
-secure and non-secure.
-
-  ======================== =======
-  Test Case                Results
-  ======================== =======
-  Image Flash               Pass
-  System Boot Up            Pass
-  Touch Screen              Pass
-  Basic Video Playback      Pass
-  Basic Audio Playback      Pass
-  Navigation bar            Pass
-  UI Display                Pass
-  Wifi [Host]               Pass
-  Network [Wifi/Ethernet]   Pass
-  Multi camera              Pass
-  Screen lock               Pass
-  Docker commands           Pass
-  adb[Ethernet]             Pass
-  BT [Host]                 Pass
-  SE-Policy                 Pass
-  ======================== =======
-
-Tools/Configuration
--------------------
-* Docker version      : 18.09.2
-* Host Ubuntu         : 20.04
-* Host Kernel Version : 5.4.50 [SELinux config enabled in host kernel-config]
-
-Helpful hints/links
----------------------
-
-* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
-* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
-* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.03.31_A09.xml
-* Binary Link   : NA
-* If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
-
-
-
-
-
-CIC_00.20.02.24_A09
-======================
-
-* This is a Pre-Production Release for evaluation and development purposes
-  and it cannot be used for production purposes. This release is supported
-  on Comet Lake |NUC| NUC10i7F Celadon in Container.
-
-Previous release : CIC_00.20.02.23_A09
-
-New features
--------------
-
-* Enable File based encryption on secure flash.
-* Add HostKeymaster support.
-* Provide Settings screen to set ethernet proxy settings.
-* Fix for Audio is not routing over HDMI and USB headset.
-* Fix for CTS execution completion.
-* Fix for Bluetooth crash issue.
-
-Existing features
------------------
-
-* Selinux and dm-verity features are enabled
-* Debian package release with Adaptive Installation Script support
-* Support android reboot in cic-monitor service
-* Klocwork issue fixes
-* Support for multi window display
-* Camera back and front switching implementation
-* HDMI display support
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
-* Wired Ethernet support
-* Video Codec support on celadon
-* Sdcardfs filesystem support enabled
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
-  OPUS, MIDI, FLAC, PCM/WAV
-* SDHCI host controller is enabled
-* eMMC / SATA / NVMe storage media supported
-* Generic storage HAL supported
-* Vendor WiFi hal integrated
-* Battery Indicator enabled
-* From storage, Sdcardfs filesystem support, eMMC 5.1 controller driver
-  support, eMMC Storage support enabled
-* Mesa upgraded to 19.3.3
-* Following features added on AOSP side :
-    * Support host shortcut for android apps
-    * Support copy and paste feature between AIC and Host
-    * Support multi-user data isolation
-    * Add cic monitor service to support shutdown and reboot
-* Android Service Access, Clock/time-zone matches with host, keyboard
-  matches with host, Screen zoom works, back button event propagation works fine
-* IPP lib integrated, & DEX2OAT optimization is enabled
-* Audio / Video streaming on RTP/RTSP works fine
-* USB camera hot plug and camera selection are enabled
-* memtrack works fine
-* Host input events (touchscreen) works fine
-* SOF-HDA support enabled
-
-
-
-Known issues
--------------
-* Unable to install graphics apk (less memory)
-* Multi-camera application crashes after hotplug
-* Unable to control volume using 3.5mm headset volume buttons.
-* Stability KPI-2 Fails
-* Unable to control android volume using USB headset volume buttons.
-* Getting Error "transfer error: secure_mkdirs failed: Operation not
-  permitted" while running cts
-* Memory allocation doesn't show for graphics('EGL mtrack or Gfx).
-* Unable to capture photo and video after hot-plug.
-* Camera flip icon is displayed after hotplug.
-* After connecting Wi-Fi in Android Container adb over emulator does not
-  work and stability KPI-1 is blocked as WIFI on/off will disconnect adb
-  over WIFI
-* GPU Overdraw options having Blue Screen
-* App issue - some app display disorder in multi-window mode
-* App issue - some app flick in multi-window mode
-* Don’t Suspend / press power button on cml host. Device cant be recovered
-  until rebooted.
-* Trusty is not supported due to conflict in BIOS.
-* On Security enabled cic, adb install / playstore download are the only
-  options for 3rd party apk installation.
-* ADB goes offline frequently on adb-ethernet.
-
-Important note
---------------
-* To modify cpu cores usage : After Container start up run the command "sudo docker update --cpuset-cpus="0-11" android0_PID" , where android0_PID is the Docker PID of android instance.
-* Ensure Lvm2 & thin-provisioning-tools packages are installed.
-* Please ensure latest version of libjson-c is installed.
-
-Validation results
-------------------
-
-This |C| build has been validated on Comet Lake |NUC| NUC10i7F in the
-following function domains, for both secure and non-secure.
-
-  ======================== =======
-  Test Case                Results
-  ======================== =======
-  Image Flash               Pass
-  System Boot Up            Pass
-  Touch Screen              Pass
-  Basic Video Playback      Pass
-  Basic Audio Playback      Pass
-  Navigation bar            Pass
-  UI Display                Pass
-  Wifi [Host]               Pass
-  Network [Wifi/Ethernet]   Pass
-  Multi camera              Pass
-  Screen lock               Pass
-  Docker commands           Pass
-  adb[Ethernet]             Pass
-  BT [Host]                 Pass
-  SE-Policy                 Pass
-  ======================== =======
-
-Tools/Configuration
--------------------
-* Docker version      : 18.09.2
-* Host Ubuntu         : 18.04
-* Host Kernel Version : 5.4.42 [SELinux config enabled in host kernel-config]
-
-Helpful hints/links
----------------------
-
-* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
-* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
-* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.02.24_A09.xml
-* Binary Link   : https://github.com/projectceladon/celadon-binary/blob/master/CIC_00.20.02.24_A09/cic-aic-CC0000131.tar.gz
-* If you plan to use Celadon in your product, please replace all the test keys
-  under device/intel/build/testkeys/ with your product key.
-
-
-
-CIC_00.20.02.23_A09
-======================
-
-* This is a Pre-Production Release for evaluation and development purposes
-  and it cannot be used for production purposes. This release is supported
-  on Comet Lake |NUC| NUC10i7F Celadon in Container.
-
-New features
--------------
-
-* Debian package release with Adaptive Installation Script support
-* Support android reboot in cic-monitor service
-* Klocwork issue fixes
-* Support for multi window display
-* Camera back and front switching implementation
-
-Existing features
------------------
-
-* HDMI display support
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
-* Wired Ethernet support
-* Video Codec support on Celadon
-* Sdcardfs filesystem support enabled
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
-  OPUS, MIDI, FLAC, PCM/WAV
-* SDHCI host controller is enabled
-* eMMC / SATA / NVMe storage media supported
-* Generic storage HAL supported
-* Vendor WiFi hal integrated
-* Battery Indicator enabled
-* From storage, Sdcardfs filesystem support, eMMC 5.1 controller driver
-  support, eMMC Storage support enabled
-* Mesa upgraded to 19.3.3
-* Following features added on AOSP side :
-    * Support host shortcut for android apps
-    * Support copy and paste feature between AIC and Host
-    * Support multi-user data isolation
-    * Add cic monitor service to support shutdown and reboot
-
-Known issues
--------------
-* Trusty is not supported due to conflict in BIOS.
-* Memory allocation doesn't show for graphics('EGL mtrack or Gfx).
-* Unable to capture photo and video after hot-plug.
-* Camera flip icon is displayed after hotplug.
-* GPU Overdraw options having Blue Screen
-* Device is going down while running CTS
-* On Security enabled cic, adb install / playstore download are the only
-  options for 3rd party apk installation.
-* After connecting Wi-Fi in Android Container adb over emulator does not
-  work and stability KPI-1 is blocked as WIFI on/off will disconnect adb
-  over WIFI
-
-Validation results
-------------------
-
-This |C| build has been validated on Comet Lake |NUC| NUC10i7F in the
-following function domains, for both secure and non-secure.
-
-  ======================== =======
-  Test Case                Results
-  ======================== =======
-  Image Flash               Pass
-  System Boot Up            Pass
-  Touch Screen              Pass
-  Basic Video Playback      Pass
-  Basic Audio Playback      Pass
-  Navigation bar            Pass
-  UI Display                Pass
-  Wifi [Host]               Pass
-  Network [Wifi/Ethernet]   Pass
-  Multi camera              Pass
-  Screen lock               Pass
-  Docker commands           Pass
-  adb[Ethernet]             Pass
-  BT [Host]                 Pass
-  SE-Policy                 Pass
-  ======================== =======
-
-Tools/Configuration
--------------------
-* Docker version      : 18.09.2
-* Host Ubuntu         : 18.04
-* Host Kernel Version : 5.4.42 [With SELinux enabled]
-
-Helpful hints/links
----------------------
-
-* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
-* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
-* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.02.23_A09.xml
-* Binary Link   : <NA>
-* If you plan to use Celadon in your product, please replace all the test
-  keys under device/intel/build/testkeys/ with your product key.
-
-
-
-
-CIC_00.20.02.20_A09
-======================
-
-* This is a Pre-Production Release for evaluation and development purposes
-  and it cannot be used for production purposes. This release is supported on Comet Lake |NUC| NUC10i7F Celadon in Container.
-
-New features
--------------
-
-* Vendor WiFi hal integrated
-* Battery Indicator enabled
-* From storage, Sdcardfs filesystem support, eMMC 5.1 controller driver
-  support, eMMC Storage support enabled
-* Mesa upgraded to 19.3.3
-* Following features added on AOSP side :
-    * Support host shortcut for android apps
-    * Support copy and paste feature between AIC and Host
-    * Support multi-user data isolation
-    * Add cic monitor service to support shutdown and reboot
-
-Existing features
------------------
-
-* HDMI display support
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
-* Wired Ethernet support
-* Video Codec support on celadon
-* Sdcardfs filesystem support enabled
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
-  OPUS, MIDI, FLAC, PCM/WAV
-* SDHCI host controller is enabled
-* eMMC / SATA / NVMe storage media supported
-* Generic storage HAL supported
-
-Known issues
--------------
-* Trusty is not supported due to conflict in BIOS.
-* Landscape mode doesn't work.
-* 'GPU Overdraw' developer option has more Blue Screen.
-* Memory allocation info doesn't show for graphics ('EGL mtrack or Gfx).
-* On Security enabled cic, adb install / playstore download are the only
-  options for 3rd party apk installation.
-
-Validation results
-------------------
-
-This |C| build has been validated on Comet Lake |NUC| NUC10i7F in the
-following function domains, for both secure and non-secure.
-
-  ======================== =======
-  Test Case                Results
-  ======================== =======
-  Image Flash               Pass
-  System Boot Up            Pass
-  Touch Screen              Pass
-  Basic Video Playback      Pass
-  Basic Audio Playback      Pass
-  Navigation bar            Pass
-  UI Display                Pass
-  Wifi [Host]               Pass
-  Network [Wifi/Ethernet]   Pass
-  Multi camera              Pass
-  Screen lock               Pass
-  Docker commands           Pass
-  adb                       Pass
-  BT [Host]                 Pass
-  SE-Policy                 Pass
-  ======================== =======
-
-Tools/Configuration
--------------------
-* Docker version      : 18.09.2
-* Host Ubuntu         : 18.04
-* Host Kernel Version : 5.4.35 [With SELinux enabled]
-
-Helpful hints/links
----------------------
-
-* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
-* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
-* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.02.20_A09.xml
-* Binary Link   : <NA
-* If you plan to use Celadon in your product, please replace all the test
-  keys under device/intel/build/testkeys/ with your product key.
-
-
-
-
-
-CIC_01.20.01.12_A09
-======================
-
-* This is a Pre-Production Release for evaluation and development purposes
-  and it cannot be used for production purposes. This release is supported
-  on Intel Platform and Kaby Lake NUC (NUC7i5DNHE) is the leading platform
-  for Celadon in container [CIC]
-
-
-New features
--------------
-
-* New dynamic lunch target added 'cic'
-* Setup script handles both secure and non-secure install from same image
-* Ex: 
-* ./setup-aic    --> non-secure 
-* ./setup-aic -s --> secure 
-* SEpolicy enabled [Very important : Ensure Sepolicy & LSM configs are
-  enabled as part of host kernel]
-* Trusty enabled
-* Audio can work on both mediation & pass through
-* BT and Wifi can work through mediation
-* USB Mass storage works fine
-* MTP/PTP Initiator Role enabled
-
-Existing features
------------------
-
-* HDMI display support
-* Mass Storage USB 2.0 and 3.x devices is supported
-* Adb over WIFI and Ethernet is supported
-* Audio playback over USB Headset and HDMI are supported
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
-* Wired Ethernet support
-* Video Codec support on celadon
-* Sdcardfs filesystem support enabled
-* Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
-  OPUS, MIDI, FLAC, PCM/WAV
-* SDHCI host controller is enabled
-* eMMC / SATA / NVMe storage media supported
-* Generic storage HAL supported
-
-Known issues
--------------
-
-* Ensure Sepolicy & LSM configs are enabled as part of host kernel, else
-  CIC cant boot.
-* While installing, Donot use same folder to keep secure and non-secure
-  images. Create separate folders.
-* Secure image flashing wont allow docker update. [Reason : System partition
-  should not be modified]
-* BT and Wifi Pass through are work in progress. Currently only mediaton
-  enabled.
-* Debian package wont work well. Fix is Work in progress.
-* Lock screen cannot work in non-secure install
-
-Validation results
-------------------
-
-This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following
-function domains, for both secure and non-secure.
-
-* Container
-
-    ======================== =======
-    Test Case                Results
-    ======================== =======
-    Image Flash               Pass
-    System Boot Up            Pass
-    Touch Screen              Pass
-    Basic Video Playback      Pass
-    Basic Audio Playback      Pass
-    Music App                 Pass
-    Multi touch               Pass
-    Navigation bar            Pass
-    UI Display                Pass
-    Wifi [Host]               Pass
-    Network [Wifi/Ethernet]   Pass
-    Multi camera              Pass
-    Screen lock               Pass
-    Docker commands           Pass
-    adb                       Pass
-    BT [Host]                 Pass
-    Wired Headset             Pass
-    SE-Policy                 Pass
-    ======================== =======
-
-
-Tools/Configuration
--------------------
-* Docker version      : 18.09.2
-* Host Ubuntu         : 18.04
-* Host Kernel Version : 4.19.102 [With LSM & SELinux enabled]
-
-Helpful hints/links
----------------------
-
-* Few links are under construction, please stay tuned for latest updates
-  soon.
-* Build CIC     : https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-container-with-android-9
-* Flash steps   : https://01.org/projectceladon/documentation/getting-started/on-container
-* Manifest Link : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_01.20.01.12_A09.xml
-* Binary Link   : https://github.com/projectceladon/celadon-binary/blob/master/CIC_01.20.01.12_A09/cic-aic-CC0000105.tar.gz
-* If you plan to use Celadon in your product, please replace all the test
-  keys under device/intel/build/testkeys/ with your product key.
 
 CIV_00.20.03.39_A10
 ======================
@@ -2627,7 +1914,7 @@ CIV_00.20.03.31_A10
 * This is a Pre-Production Manifest Release for evaluation and development
   purposes and it cannot be used for production purposes. This release is supported on Comet Lake |NUC| NUC10i7F Celadon in VM.
 
-New features 
+New features
 -------------
 * Power Management - Suspend,Resume
 * ADB on xHCI DbC for Android USB Host only systems
@@ -2764,7 +2051,7 @@ Helpful hints/links
         * sudo update-grub
     * sudo reboot
     * Select compiled kernel from "Advanced options for Ubuntu"
-   
+
 CIV_00.20.02.24_A10
 ======================
 
@@ -2778,12 +2065,12 @@ New features (Additional features in comparison to previous CIV Manifest Release
 * Android key Input Manager Framework is implemented for Power and Volume
   buttons
 * Integrated Sensor Hub Enablement for Android Supported Sensors
-* Ethernet Wired Network Bridge 
+* Ethernet Wired Network Bridge
 
 Existing features
 -----------------
 * Android Thermal HAL and Thermal Manager Service
-* BZIP2 performance improvements 
+* BZIP2 performance improvements
 * Audio Solution based on HDA
 * OTA Android Update from USB Disk
 * Bluetooth Control from Android in VM
@@ -2855,21 +2142,21 @@ Known issues
   display is initialized by the GOP driver or VBIOS before the OS driver
   loads, and the Guest BIOS doesn’t have them.
 * All the USB peripheral devices has to be connected before the VM is
-  launched 
+  launched
 * Android UI is not displayed if we use EDP display
 * Audio is not routing to 3.5mm Headset after USB Headset reconnection.
 * Volume Control using the Audio Peripherals like USB headset and 3.5mm
-  Headset is not working 
+  Headset is not working
 * Power Button Long Press is not implemented , only short press and very
   long button press
-* Userspace Fastboot functionality is not implemented in this release 
+* Userspace Fastboot functionality is not implemented in this release
 * USB Hotplug of camera can lead to
     * Application Crash
-    * Capture and Recording issue which makes application hang 
+    * Capture and Recording issue which makes application hang
     * Camera Preview becomes green
     * Solution : Needs application restart (close and open application ) to
       work properly.
- 
+
 
 Validation results
 ------------------
@@ -2928,7 +2215,7 @@ Helpful hints/links
         * Save the file
         * sudo update-grub
     * sudo reboot
-    * Select compiled kernel from "Advanced options for Ubuntu"   
+    * Select compiled kernel from "Advanced options for Ubuntu"
 
 CIV_00.20.02.23_A10
 ======================
@@ -2937,12 +2224,12 @@ CIV_00.20.02.23_A10
 
 New features
 -------------
-* Android Thermal HAL and Thermal Manager Service 
+* Android Thermal HAL and Thermal Manager Service
 * Audio Solution based on HDA
 * OTA Android Update from USB Disk
-* Bluetooth Control from Android in VM 
-* HDMI Audio Output Support 
-* Virtio-gpu Support 
+* Bluetooth Control from Android in VM
+* HDMI Audio Output Support
+* Virtio-gpu Support
 * Battery and Thermal mediation support for Android guest OS
    * Battery percentage of host os will be propagated to Android guest.
    * Thermal temperature information will be sent to Android for graceful shutdown of guest
@@ -2999,13 +2286,13 @@ Existing features
 
 Known issues
 -------------
-* When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.   
+* When enabling GVT-d, the Guest OS may not light up the physical screen before the OS driver loads. As a result, the Guest BIOS and the Fastboot UI is not visible on the physical screen. This occurs because the physical display is initialized by the GOP driver or VBIOS before the OS driver loads, and the Guest BIOS doesn’t have them.
 * Noise heard in the background of the recorded file when recorded over 3.5mm headset
 * Camera Preview is lost while switching between dual and single mode
-* Camera Preview is not available when USB camera is connected after Android is Launched through VM 
+* Camera Preview is not available when USB camera is connected after Android is Launched through VM
 * Android UI is not displayed if we use EDP display
 * Audio is not routing to 3.5mm Headset for ALC256 audio codec
-* Front view camera is not having mirror Image preview 
+* Front view camera is not having mirror Image preview
 * Hotplug support for USB Camera doesn't work
 * Blue Screen observed while switching from between Front and Rear Camera (occurrence  - random)
 
@@ -3037,13 +2324,13 @@ Tools/Configuration
 -------------------
 * QEMU Version 4.2.0
 * Host Ubuntu 18.04
-* Host Kernel Version 5.4.35 
+* Host Kernel Version 5.4.35
 * Guest kernel 5.4.42
 
 Helpful hints/links
 ---------------------
 * Build Celadon in VM with Android 10 https://01.org/projectceladon/documentation/getting-started/build-source#build-c-in-vm-with-android-10
-* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm 
+* Flash Steps : https://01.org/projectceladon/documentation/getting-started/on-vm
 * Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.20.02.23_A10.xml
 * If you plan to use Celadon in your product, please replace all the test
   keys under device/intel/build/testkeys/ with your product key.
@@ -3057,13 +2344,13 @@ Helpful hints/links
     * ./build_weekly.sh
     * Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel
     * sudo dpkg -i \*.deb
-    * Update grub to wait indefinitely for kernel selection on boot 
-        * sudo vim /etc/default/grub  
+    * Update grub to wait indefinitely for kernel selection on boot
+        * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
-          #GRUB_TIMEOUT_STYLE=hidden 
+          #GRUB_TIMEOUT_STYLE=hidden
         * Uncomment following line and modify grub timeout to -1 for
           indefinite wait or 5 for 5secs wait
-          #GRUB_TIMEOUT=-1 
+          #GRUB_TIMEOUT=-1
         * Save the file
         * sudo update-grub
     * sudo reboot
@@ -3079,16 +2366,16 @@ CIV_00.20.02.19_A10
 New features
 -------------
 
-* Wifi Control from Android in VM using usb passthrough 
+* Wifi Control from Android in VM using usb passthrough
 * To passthrough USB host controller in Comet Lake |NUC|, run the CIV launch script
   like this:
   ``sudo -E ./start_android_qcow2.sh  --usb-host-passthrough``
-* Power Management - Shutdown and Reboot 
+* Power Management - Shutdown and Reboot
 * OTA offline update
-* Ethernet Wired Network Bridge is enabled 
+* Ethernet Wired Network Bridge is enabled
 * Android Time keeping with Host OS
 * Product Information to Guest OS
-* ODM partition for vendor customizations 
+* ODM partition for vendor customizations
 
 Existing features
 -----------------
@@ -3136,7 +2423,7 @@ Existing features
 
 Known issues
 -------------
-* dEQP-VK(Vulkan 1.1) is failing 
+* dEQP-VK(Vulkan 1.1) is failing
 
 Validation results
 ------------------
@@ -3234,7 +2521,7 @@ Features
 
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
-        
+
 * Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
 
    * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
@@ -3255,7 +2542,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       
+BT                             OK
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -3278,54 +2565,6 @@ Helpful Hints/Links
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 ---------------
-
-CIC_00.20.01.08_A09
-===================
-
-.. note::
-
-    * The :abbr:`CiC (Celadon in Container)` manifest release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
-    * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
-    * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.20.01.08_A09.xml 
-
-Important notes and Remarks
----------------------------
-
-This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains.
-
-* Container
-
-    ======================== =======
-    Test Case                Results
-    ======================== =======
-    Image Flash               Pass
-    System Boot Up            Pass
-    Touch Screen              Pass
-    Basic Video Playback      Pass
-    Basic Audio Playback      Pass
-    Music App                 Pass
-    Multi touch               Pass
-    Navigation bar            Pass
-    UI Display                Pass
-    Wifi [Host]               Pass
-    Network [Wifi/Ethernet]   Pass
-    Multi camera              Pass
-    Screen lock               Pass
-    Docker commands           Pass
-    adb                       Pass
-    BT [Host]                 Pass
-    Wired Headset             Pass
-    ======================== =======
-
-Known issues
-------------
-
-* Multiple instances under implementation.
-* Boot time optimization in progress.
-* need to reboot device after 'adb reboot' for files to be reflected.
-* CiC performance is under tuning.
-* If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
-
 
 CIV_00.20.01.09_A10
 ======================
@@ -3389,7 +2628,7 @@ Important notes and Remarks
 
     * - BT
       - OK
-      - BT is working 
+      - BT is working
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -3428,10 +2667,10 @@ Important notes and Remarks
     * - Video playback
       - OK
       - H264/H265/MPEG2/VP8/VP9 Video Playback
-      
+
     * - USB
       - OK
-      - MTP/PTP Initiator Role 
+      - MTP/PTP Initiator Role
 
 Known issues
 ------------
@@ -3439,52 +2678,7 @@ Known issues
 * Touch Screen operation is not smooth on 4K monitor.
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
-CIC_00.19.04.20.03_A09
-======================
 
-.. note::
-    * The :abbr:`CiC (Celadon in Container)` release is curently supported on Intel Platform : KBL NUC (NUC7i5DNHE).
-    * This is a Pre-Production CiC Releases for evaluation and development purposes, they cannot be used for production.
-    * Manifest : https://github.com/projectceladon/manifest/blob/celadon/p/mr0/master/stable-build/CIC_00.19.04.20.03_A09.xml
-
-
-Important notes and Remarks
----------------------------
-
-This |C| build has been validated on |NUC| Kit NUC7i5DNHE in the following function domains.
-
-* Container
-
-    ======================== =======
-    Test Case                Results
-    ======================== =======
-    Image Flash               Pass
-    System Boot Up            Pass
-    Touch Screen              Pass
-    Basic Video Playback      Pass
-    Basic Audio Playback      Pass
-    Music App                 Pass
-    Multi touch               Pass
-    Navigation bar            Pass
-    UI Display                Pass
-    Wifi [Host]               Pass
-    Network [Wifi/Ethernet]   Pass
-    Multi camera              Pass
-    Screen lock               Pass
-    Docker commands           Pass
-    adb                       Pass
-    BT [Host]                 Pass
-    Wired Headset             Pass
-    ======================== =======
-
-Known issues
-------------
-
-* Multiple instances under implementation.
-* Boot time optimization in progress.
-* need to reboot device after 'adb reboot' for files to be reflected.
-* CiC performance is under tuning.
-* If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 CIV_00.19.04.20.02_A10
 ======================
@@ -3548,7 +2742,7 @@ Important notes and Remarks
 
     * - BT
       - OK
-      - BT is working 
+      - BT is working
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -3627,7 +2821,7 @@ Integrated Features
 
     * AVC High profile @ level 4.1 (1080P@30fps)
     * HEVC Main profile @ Level 4 (1080P@30fps)
-* Art-extension is enabled 
+* Art-extension is enabled
 * f2fs filesystem support enabled
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, MIDI, FLAC, PCM/WAV
 * SDHCI host controller is enabled
@@ -3658,7 +2852,7 @@ Important notes and Remarks
 
     * - BT
       - OK
-      - BT is working 
+      - BT is working
 
     * - Audio Playback over USB Headset /HDMI devices
       - OK
@@ -3666,8 +2860,8 @@ Important notes and Remarks
 
     * - Adb connect over Wi-Fi
       - OK
-      - 
-      
+      -
+
     * - adb connect over Ethernet
       - OK
       -
@@ -3698,7 +2892,7 @@ Important notes and Remarks
       - OK
       - H264/H265/MPEG2/VP8/VP9 Video Playback
 
- 
+
 Known issues
 ------------
 * Video can be displayed with green flickering during playback.
@@ -3716,7 +2910,7 @@ Known issues
 .. note::
     * Android Q is supported on Intel Platform and Apollo Lake NUC (`NUC6CAYH <https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html>`_) is the leading platform for IVI configuration (lunch target: ``celadon_ivi``).
     * This is a Pre-Production binary Q Release for evaluation and development purposes and it cannot be used for production purposes.
-    * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml  
+    * Manifest : https://github.com/projectceladon/manifest/blob/master/stable-build/ww201941_B.xml
 
 Integrated Features
 -------------------
@@ -3761,7 +2955,7 @@ Integrated Features
     * SELinux enforcing, File Based Encryption, Trusty, Keymaster 3.0
     * Reference solution - TPM based h/w binding reference implementation
     * User guide:
- 
+
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 
@@ -3839,9 +3033,9 @@ Known issues
 ============
 
 .. note::
-    * The :abbr:`CaaS (Celadon as a Service)` and :abbr:`CIC (Celadon in Container)` releases are supported on Intel Platforms running Android on various Bare Metal x86 systems, Virtual Machines (KVM/Qemu), and also Containers.
+    * The :abbr:`CaaS (Celadon as a Service)` releases are supported on Intel Platforms running Android on various Bare Metal x86 systems, Virtual Machines (KVM/Qemu), and also Containers.
     * The ingredients of the CaaS release can be used to build a service architecture, so that with customers we can deliver a **Celadon as a Service** solution.
-    * These are Pre-Production CaaS and CIC Releases for evaluation and development purposes, they cannot be used for production.
+    * These are Pre-Production CaaS Releases for evaluation and development purposes, they cannot be used for production.
 
 Important notes and Remarks
 ---------------------------
@@ -3880,7 +3074,7 @@ This |C| build has been validated on |NUC| Kit NUC7i5DNH in the following functi
     Media Local Playback      Pass  Video can be displayed but still overlay blue screen after using command : adb shell service call SurfaceFlinger 1008 i32 1
     Audio Playback            Pass  Pass on Usb devices (audio etc.) passthrough: Add "-device usb-host,vendorid=,productid=" into startandroid_qcow2.sh.
     Adb over Ethernet         Pass
-    USB storage               Pass  Add "-device usb-host,vendorid=,productid=" into startandroidqcow2.sh. 
+    USB storage               Pass  Add "-device usb-host,vendorid=,productid=" into startandroidqcow2.sh.
     Touch Screen              Pass
     Touch Screen Zoom In/Out  Pass
     ======================== ====== =======
@@ -3890,7 +3084,7 @@ This |C| build has been validated on |NUC| Kit NUC7i5DNH in the following functi
     ======================== =======
     Test Case                Results
     ======================== =======
-    Image Flash               Pass 
+    Image Flash               Pass
     System Boot Up            Pass
     Touch Screen              Pass
     ======================== =======
@@ -3898,10 +3092,9 @@ This |C| build has been validated on |NUC| Kit NUC7i5DNH in the following functi
 Known issues
 ------------
 
-* Only cover boot up function in early android 10 CIC image release.
 * Bluetooth function is not ready on CAAS VM release.
 * Audio 3.5 mm headphone function is not ready on CAAS VM release.
-* CAAS and CIC performance is under tuning.
+* CAAS performance is under tuning.
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 05-Sept-2019
@@ -3943,7 +3136,7 @@ Integrated Features
 
         * AVC High profile @ level 4.1 (1080P@30fps)
         * HEVC Main profile @ Level 4 (1080P@30fps)
-* Art-extension is enabled 
+* Art-extension is enabled
 * f2fs filesystem support enabled
 * S3 Suspend/Resume is supported
 * Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV
@@ -3977,7 +3170,7 @@ Important notes and Remarks
       -
     * - BT
       - OK
-      - Bt is working 
+      - Bt is working
     * - Audio Playback over USB/3.5mm Headset
       - OK
       - MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
@@ -4046,7 +3239,7 @@ Manifest Link                     https://github.com/projectceladon/manifest/blo
 
 Important note
 --------------
-* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes. 
+* This is a Pre-Production Release for evaluation and development purpose and it cannot be used for production purposes.
 
 
 Integrated Features
@@ -4121,7 +3314,7 @@ Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 =============================  =======  ========
 
 
-Setup 
+Setup
 ---------------
 USB headset should always be connected to DUT
 
@@ -4135,7 +3328,7 @@ Known issues
 * saved system time changes to default after reboot
 * Bluetooth pairing fails in first boot cycle
 * Bluetooth pairing fails if USB headset is not connected to DUT
-* Media KW errors are present in this build 
+* Media KW errors are present in this build
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 ---------------
@@ -4200,7 +3393,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       BT is working 
+BT                             OK       BT is working
 Ethernet                       OK       IP/Browsing
 Audio playback                 OK
 USB Camera                     OK
@@ -4273,18 +3466,18 @@ Integrated Features
 * S3 Suspend/Resume is supported
 * Audio decoders supported: MP3/AAC-LC/HEAAC/HEAAC-v2/FLAC/VORBIS/OPUS/AMRNB/AMRWB
 * Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
-* HDMI audio playback is enabled 
+* HDMI audio playback is enabled
 * SDHCI host controller is enabled
 * Security reference solution - TPM based h/w binding reference implementation
 * Selinux: enabled the neverallow check for selinux
 
-     * User guide: 
+     * User guide:
 
         * SELinux Configuration and Rules
         * How to Enable or Disable Trusty for Debugging
 * Currently HDMI with stereo is enabled by default to support HDMI audio playback as there is no support for channel map, card and device detection from kernel space.
 
-   * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled. 
+   * To test the multichannel 5.1 channel playback, use setprop vendor.audio.hdmi_multichannel 1 from adb shell and make sure to unplug and re-plug HDMI device before testing . On commercial NUC currently HDMI device port 3 is enabled.
 
 Important notes and Remarks
 ---------------------------
@@ -4386,7 +3579,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       BT is working 
+BT                             OK       BT is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -4409,7 +3602,7 @@ Known issues
 * Bluetooth file transfer fails in the first attempt after DUT reboot and it
   works fine once BT is reset
 * Lets Drive screen seen, on click of applications under "New User"
-* webM format video hangs during switch from full screen to normal 
+* webM format video hangs during switch from full screen to normal
 * If you plan to use Celadon in your product, please replace all the test
   keys under device/intel/build/testkeys/ with your product key.
 
@@ -4481,7 +3674,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       BT is working 
+BT                             OK       BT is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -4539,7 +3732,7 @@ Integrated Features
 * Adb & Fastboot supported over USB 2.0 and USB 3.0
 * Adb over WIFI and Ethernet is supported
 * USB digital audio playback support
-* Since no default sound card is present we should connect USB headsset for any BT or media related activities for KBL COMMERCIAL NUC hardware 
+* Since no default sound card is present we should connect USB headsset for any BT or media related activities for KBL COMMERCIAL NUC hardware
 * Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
 * Wired Ethernet support
 * Android Kernelflinger boot support
@@ -4550,14 +3743,14 @@ Integrated Features
   Decoder
 
     * AVC High profile @ Level 5.1 (4k@30fps)
-    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported) 
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps)(Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
 
   Encoder
 
     * AVC High profile @ level 4.1 (1080P@30fps)
-    * HEVC Main profile @ Level 4 (1080P@30fps)  
+    * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled in CELADON
 * f2fs filesystem support enabled
 * S3 Suspend/Resume is supported
@@ -4577,7 +3770,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       Bluetooth is working 
+BT                             OK       Bluetooth is working
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
@@ -4599,7 +3792,7 @@ Known issues
 * UI Flicker observed in few Screens for example - Under AOSP settings .
 * Bluetooth file transfer fails in the first attempt after DUT reboot and it works fine once BT is reset
 * Lets Drive screen seen, on click of applications under "New User"
-* While executing DEPQ CTS  , at a certain point there is adb disconnect observed where the DUT freezes , however once the adb is reconnected the test continues but the DUT is frozen 
+* While executing DEPQ CTS  , at a certain point there is adb disconnect observed where the DUT freezes , however once the adb is reconnected the test continues but the DUT is frozen
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 --------
@@ -4637,31 +3830,31 @@ Integrated Features
 * Adb over WIFI and Ethernet is supported
 * USB digital audio playback support
 * DMIC support
-* Realtek ALC283 HD Audio via a stereo microphone/headphone 3.5 mm jack on the front panel is supported 
-* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2 
+* Realtek ALC283 HD Audio via a stereo microphone/headphone 3.5 mm jack on the front panel is supported
+* Wi-Fi 802.11 a/b/g/n/ac and Bluetooth 4.2
 * Wired Ethernet support
 * Android Kernelflinger boot support
 * Thermal Daemon is enabled for CELADON
 * 4K support is enabled on CELADON
 * Video Codec support on celadon
-  
+
   Decoder
 
     * AVC High profile @ Level 5.1 (4k@30fps)
-    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps) (Main 10 with BT2020 and ST2084 information is not supported) 
+    * HEVC Main and Main 10 profile @ Level 5 (4k@30fps) (Main 10 with BT2020 and ST2084 information is not supported)
     * VP9 profile 0 @ Level 5 (4k@30fps)
     * Vp8 8 bits 1080p@60fps
-  
+
   Encoder
 
     * AVC High profile @ level 4.1 (1080P@30fps)
-    * HEVC Main profile @ Level 4 (1080P@30fps) 
+    * HEVC Main profile @ Level 4 (1080P@30fps)
 * Art-extension is enabled in CELADON
 * f2fs filesystem support enabled
 * S3 Suspend/Resume is supported
-* Audio decoders supported: MP3/AAC-LC/HEAAC/HEAAC-v2/FLAC/VORBIS/OPUS/AMRNB/AMRWB 
+* Audio decoders supported: MP3/AAC-LC/HEAAC/HEAAC-v2/FLAC/VORBIS/OPUS/AMRNB/AMRWB
 * Audio Encoders: AAC-LC, AAC ELD, HEAAC, AMR-NB, AMR-WB, WAV
-* SDHCI host controller is enabled 
+* SDHCI host controller is enabled
 * Security reference solution - TPM based h/w binding reference implementation
 
 
@@ -4675,7 +3868,7 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK       WiFi Direct, WiFi streaming
 Wi-Fi Hotspot                  OK
-BT                             OK       Bluetooth is working 
+BT                             OK       Bluetooth is working
 Audio over 3.5mm jack          OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Audio over USB                 OK       MP3/AAC/MIDI/FLAC/WAV Audio playback
 Adb connect over WIFI          OK
@@ -4695,17 +3888,17 @@ Known issues
 ------------
 
 * DUT freezes while using 4k monitor as display
-* Lets Drive screen seen on click of applications under "New User" 
+* Lets Drive screen seen on click of applications under "New User"
 * Need to press power button twice to wake-up from S3"
 * Basic Functionality of VGA port works like multidisplay support but there are issues with hotplug and some new Video Post Processing features (adjust Hue/Contrast/Saturation of video)
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
 
 Status
 -------
-* APL_NUC validation is done until WW48 , the manifest is taken based on WW51 
+* APL_NUC validation is done until WW48 , the manifest is taken based on WW51
 * BIOS public drop for APL_NUC is available , Adb & Fastboot is supported over USB 2.0 and USB 3.0
-* BIOS Link : https://downloadcenter.intel.com/download/28478/?product=95078 
-* BIOS_Release Notes: https://downloadmirror.intel.com/28478/eng/AY_0059_ReleaseNotes.pdf 
+* BIOS Link : https://downloadcenter.intel.com/download/28478/?product=95078
+* BIOS_Release Notes: https://downloadmirror.intel.com/28478/eng/AY_0059_ReleaseNotes.pdf
 
 --------
 
@@ -4713,7 +3906,7 @@ ww201840
 ========
 
 ================================  =====
-Build ID                          cel_apl-userdebug 9 PPR1.180610.011 eng.build 20181003.120126 test-keys 
+Build ID                          cel_apl-userdebug 9 PPR1.180610.011 eng.build 20181003.120126 test-keys
 Software Version                  Android version 9
 Mesa                              18.2.0-rc4
 Kernel Version                    4.14.67
@@ -4771,8 +3964,8 @@ SD card                        OK
 Known issues
 ------------
 
-* Backlight on/off is not working 
-* Media is not getting paused after disconnecting USB headset 
+* Backlight on/off is not working
+* Media is not getting paused after disconnecting USB headset
 * Video playback works. Hangs observed on some random runs
 * ADB over USB is not enabled due to lack of device mode
 * Basic Functionality of VGA port works like multidisplay support but there are issues with hotplug and some new Video Post Processing features (adjust Hue/Contrast/Saturation of video)

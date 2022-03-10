@@ -162,57 +162,50 @@
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">The new Project Celadon release refers to the source code that makes up
-the September 2019 Project Celadon Release (<strong>20-Sept-2019</strong>), and each release since. While Project Celadon
-had long supported Android* on bare metal deployments using Intel® Architecture,
-there was no support for containerized or virtualized deployments of Android
-on Intel architecture. The Celadon community filled that gap with
-the September 2019 release, which allows one Android image to be deployed
-across Virtual Machines (VM) and Containers on Intel®
-Architectures. Celadon source code can be used across a variety of Intel
-hardware, including
+the September 2019 Project Celadon Release (<strong>20-Sept-2019</strong>), and each
+release since. While Project Celadon had long supported Android* on bare
+metal deployments using Intel® Architecture, there was no support for
+virtualized deployments of Android on Intel architecture. The Celadon
+community filled that gap with the September 2019 release, which allows
+one Android image to be deployed across Virtual Machines (VM) on
+Intel® architectures. Celadon source code can be used across a variety of
+Intel hardware, including
 <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html">Intel® NUC Kit NUC6CAYH</a>.
 Please check out <a class="reference internal" href="release-notes.html#release-notes"><span class="std std-ref">Release Notes</span></a> for all the latest detailed release features.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first">Why might developers and independent software vendors want to use Celadon
-in VM or Celadon in Container?</p>
+in VM?</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">The new Project Celadon packaging still only takes one step to install,
 and in addition to gaining VM and container support for Android on
-Intel® Architecture, developers and <abbr title="Independent Software Vendors">ISVs</abbr>
-will continue experiencing:</p>
+Intel® Architecture, developers and
+<abbr title="Independent Software Vendors">ISVs</abbr> will continue
+experiencing:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Open platform enabling helping developers speed time to market across
-a variety of infrastructures</li>
-<li>Compliance with the Android Compatibility Test Suite (CTS), as well as
+<li>Open platform enabling helping developers speed time to market
+across a variety of infrastructures</li>
+<li>Compliance with the Android Compatibility Test Suite (CTS),
+as well as
 <a class="reference external" href="https://01.org/projectceladon/documentation/tutorials/test-strategy">additional test suites</a>
 on leading platforms and configurations</li>
 <li>Functionality across a
 <a class="reference internal" href="getting-started/as-service.html#run-as-service"><span class="std std-ref">variety of Intel hardware</span></a>,
 including <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html">Intel® NUC Kit NUC6CAYH</a></li>
-<li>Rich vertical solution configurations allowing for ease of scalability and extensibility across market segments</li>
+<li>Rich vertical solution configurations allowing for ease of
+scalability and extensibility across market segments</li>
 </ul>
 </div></blockquote>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first">What are the differences between Celadon in VM and Celadon in Container deployments?</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon VM and Container deployments differ in a few ways. First, Celadon in VM deployments include Celadon as the guest operating system, running in a virtual machine, in a virtualized environment. In comparison, Celadon in Container runs in a hosted Linux* container, in a containerized environment.</p>
-<p>Another difference between the two deployment methods is in <strong>security</strong>. Celadon in VM provides a stronger separation between guest VMs and the virtual machine monitor, leading to superior component isolation vs containerized solutions. As an example, if a malfunctioning application causes a hang in the guest operating system kernel in a Celadon in VM deployment, only the guest OS kernel will be affected. In comparison, a malfunctioning application causing an issue to the OS kernel in a Celadon in Container deployment may affect all Celadon container instances.</p>
-<p>One last difference between the two deployment types is related to resource consumption and <strong>density</strong>. Typically, containerized deployments can run at higher densities as compared to virtualized or bare metal deployments. Celadon in VM deployments typically have moderate densities. Initial performance perspectives show minimal performance differences between VM and container instances at Edge levels of workload consolidation.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col width="50%" />
+<col width="50%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
 <th class="head">Celadon in VM</th>
-<th class="head">Celadon in Container</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -227,11 +220,6 @@ including <a class="reference external" href="https://www.intel.com/content/www/
 <div class="line">virtualized environment.</div>
 </div>
 </td>
-<td><div class="first last line-block">
-<div class="line">Containerized Celadon deployments utilize the host Linux OS,</div>
-<div class="line">running in a containerized environment.</div>
-</div>
-</td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
 <div class="line">Security</div>
@@ -242,13 +230,6 @@ including <a class="reference external" href="https://www.intel.com/content/www/
 <div class="line">Running Celadon in a virtualized environment provides a</div>
 <div class="line">stronger separation between guest VMs and host VM, leading</div>
 <div class="line">to superior component isolation  vs containerized deployments.</div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line">Containerized Celadon deployments offer less separation</div>
-<div class="line">between guest and host containers, however, new features</div>
-<div class="line">like device encryption offer opportunities to enhance</div>
-<div class="line">isolation.</div>
 </div>
 </td>
 </tr>
@@ -262,11 +243,6 @@ including <a class="reference external" href="https://www.intel.com/content/www/
 <div class="line">Virtualized Celadon deployments run at moderate densities;</div>
 <div class="line">less than containerized deployments, but more than bare</div>
 <div class="line">metal deployments.</div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line">Containerized Celadon deployments run at higher densities</div>
-<div class="line">as compared to virtualized or bare metal deployments.</div>
 </div>
 </td>
 </tr>
@@ -295,52 +271,78 @@ Celadon on bare metal, direct communication with Google will be necessary.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first"><a class="reference external" href="https://01.org/projectceladon/digital-signage-solutions-android-intel-architectures">Digital Signage</a>
-and Secure Payment solutions are ideal for virtualized deployments, due to the high security and scalability virtualized deployments provide. With Celadon in VM, however, developers and ISVs can continue utilizing Intel® hardware acceleration while having the flexibility to customize to the latest Android applications. In comparison, <a class="reference external" href="https://01.org/projectceladon/cloud-gaming-solutions-android-intel-architectures">Cloud gaming</a> applications are ideal for Celadon in Container deployments. <a class="reference external" href="https://01.org/projectceladon/cloud-gaming-solutions-android-intel-architectures">Cloud gaming</a> requires high performance and high densities - two things containerized Android excels at.</p>
-<p>Overall, virtualized and containerized workloads are pervasive. Customers demand support for each workload deployment type - particularly for Android workloads. The latest Celadon release allows developers and ISV’s to consolidate workloads under one image, leading to boundless opportunities to provide broad market support.</p>
+and Secure Payment solutions are ideal for virtualized deployments, due
+to the high security and scalability virtualized deployments provide.
+With Celadon in VM, however, developers and ISVs can continue utilizing
+Intel® hardware acceleration while having the flexibility to customize
+to the latest Android applications.</p>
+<p>Overall, virtualized and containerized workloads are pervasive.
+Customers demand support for each workload deployment type -
+particularly for Android workloads. The latest Celadon release allows
+developers and ISV’s to consolidate workloads under one image, leading
+to boundless opportunities to provide broad market support.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first">Where can I learn more about Celadon in VM or Celadon in Containers?</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">There are many ways users can learn more, starting with accessing release notes and
-<a class="reference external" href="https://github.com/projectCeladon">software</a>. Users can learn more by subscribing to the
+<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">There are many ways users can learn more, starting with accessing
+release notes and <a class="reference external" href="https://github.com/projectCeladon">software</a>.
+Users can learn more by subscribing to the
 <a class="reference external" href="https://lists.01.org/postorius/lists/celadon.lists.01.org">Project Celadon mailing list</a>.
-Mailing list subscribers are kept up to date on the latest Celadon releases, updates and tools. Subscribers are also invited to Project Celadon focused events, like our monthly
-<a class="reference external" href="https://01.org/projectceladon/community#technical-community-meetings">Technical Community Meetings</a>, which provide a space for discussion around Celadon technical topics.</p>
+Mailing list subscribers are kept up to date on the latest Celadon
+releases, updates and tools. Subscribers are also invited to Project
+Celadon focused events, like our monthly
+<a class="reference external" href="https://01.org/projectceladon/community#technical-community-meetings">Technical Community Meetings</a>, which provide a space for
+discussion around Celadon technical topics.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>What license(s) does Celadon use?</strong></p>
+<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>What license(s) does |C| use?</strong></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon consists of permissive and copyleft licenses such as BSD, MIT, Apache and GPL licenses. Use, reproduction and distribution of components of Celadon licensed under an open source software license are governed solely by the terms of that open source software license. Please refer and comply to the open source software license found in the source code files or repositories. Certain licenses such as Google Mobile Services or Widevine are not included in Celadon.</p>
+<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon consists of permissive and copyleft licenses such as BSD, MIT,
+Apache and GPL licenses. Use, reproduction and distribution of
+components of Celadon licensed under an open source software license are
+governed solely by the terms of that open source software license.
+Please refer and comply to the open source software license found in the
+source code files or repositories. Certain licenses such as Google
+Mobile Services or Widevine are not included in Celadon.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>What Android desserts are supported in Celadon?</strong></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">The latest Android dessert is supported as soon as Google publicly releases the dessert. Please see the <a class="reference internal" href="release-notes.html#release-notes"><span class="std std-ref">Release Notes</span></a> for the latest supported desserts.</p>
+<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">The latest Android dessert is supported as soon as Google publicly
+releases the dessert. Please see the <a class="reference internal" href="release-notes.html#release-notes"><span class="std std-ref">Release Notes</span></a> for the latest
+supported desserts.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>Will the latest Celadon work on older hardware that was previously supported?</strong></p>
+<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>Will the latest Celadon work on older hardware that was previously
+supported?</strong></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon supports a variety of reference platforms, in addition to being device
-independent. Developers have the option to use an older manifest file to
-build an image for previously supported hardware, but Celadon’s main focus
-is enabling on the latest Intel platforms. As such, support on older
-platforms may be limited.</p>
+<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon supports a variety of reference platforms, in addition to being
+device independent. Developers have the option to use an older manifest
+file to build an image for previously supported hardware, but Celadon’s main
+focus is enabling on the latest Intel platforms. As such, support on
+older platforms may be limited.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>How could I start adding software components to my own Celadon build?</strong></p>
+<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>How could I start adding software components to my own |C| build?</strong></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon follows the same practice as Android for adding software components to the build.</p>
+<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon follows the same practice as Android for adding software components
+to the build.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>I would like to contribute. Would Intel accept my contributions?</strong></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first last">Yes, we welcome contributions! Since Intel is responsible for the product management and core stack of Celadon, what ultimately is accepted is at the maintainers’ discretion. We will determine if it’s a good fit, then contributions will go through a review and verification process in order to maintain quality.</p>
+<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first last">Yes, we welcome contributions! Since Intel is responsible for the
+product management and core stack of Celadon, what ultimately is accepted is
+at the maintainers’ discretion. We will determine if it’s a good fit,
+then contributions will go through a review and verification process to
+maintain quality.</p>
 </td>
 </tr>
 </tbody>
@@ -366,7 +368,7 @@ platforms may be limited.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Feb 23, 2022.
+      Last updated on Mar 10, 2022.
 
     </p>
   </div>

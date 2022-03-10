@@ -51,33 +51,6 @@ For :abbr:`CiV (Celadon in VM)` scenario:
         the '*device/intel/mixins/mixin-update*' script to make the changes
         take effect before the build starts.
 
-For :abbr:`CiC (Celadon in Container)` scenario:
-
-    CiC shares the same kernel running in the host, we need to change the
-    SELinux mode for CiC by modifying the host kernel command line. For
-    example, on a Ubuntu host device, edit the default GRUB configuration
-    file :file:`/etc/default/grub`, and append the following option to
-    the **GRUB_CMDLINE_LINUX_DEFAULT** key:
-
-    .. code-block:: none
-
-        ...
-        GRUB_CMDLINE_LINUX_DEFAULT="androidboot.selinux=permissive"
-        ...
-
-    After updating the GRUB bootloader configuration and reboot the host
-    with the following commands, the |C| in Container will be run in
-    permissive mode by default.
-
-    .. code-block:: none
-
-        $ sudo update-grub && reboot
-
-    .. note::
-        1. The *permissive* mode is only activated in **userdebug**
-        or **eng** builds. The user builds always operate in *enforcing*
-        SELinux mode in Android.
-
 To change SELinux mode at runtime
 ---------------------------------
 
@@ -127,9 +100,6 @@ Add the initial sepolicy rules
 ------------------------------
 
 #. For :abbr:`CiV (Celadon in VM)` scenario, create a sub-folder :file:`rfkill` under the :file:`device/intel/project-celadon/sepolicy/` directory to host the sepolicy rules files.
-   For :abbr:`CiC (Celadon in Container)` scenario,
-   the :file:`rfkill` folder should be created in
-   :file:`device/intel/cic/common/sepolicy` directory.
 
 #. Introduce the previous folder to the sepolicy compiler by adding the
    following line to the board configuration overlay file.
@@ -138,12 +108,6 @@ Add the initial sepolicy rules
     .. code-block:: none
 
         BOARD_SEPOLICY_DIRS += $(INTEL_PATH_SEPOLICY)/rfkill
-
-   Or, for :abbr:`CiC (Celadon in Container)` scenario, edit the file :file:`device/intel/cic/common/BoardConfig.mk`:
-
-    .. code-block:: none
-
-        BOARD_SEPOLICY_DIRS += device/intel/cic/common/sepolicy/rfkill
 
 #. Inside the sepolicy rules folder, create an initial file
 named '*file_contexts*' with the following content. This assigns a file

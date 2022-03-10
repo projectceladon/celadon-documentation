@@ -233,25 +233,7 @@ Every Celadon build target that uses mixins should have a <code class="file docu
 file in their product board configuration directories. Instead of manually
 modifying feature settings in the product makefiles, the product
 customization and peripherals tuning are done by editing the
-<code class="file docutils literal"><span class="pre">mixins.spec</span></code> file. The following block shows the <code class="file docutils literal"><span class="pre">mixins.spec</span></code>
-of the <abbr title="Celadon in Container">CiC</abbr> lunch target:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat device/intel/project-celadon/cic/mixins.spec
-<span class="o">[</span>main<span class="o">]</span>
-mixinsdir: device/intel/mixins
-mixinsctl: <span class="nb">true</span>
-mixinsrel: <span class="nb">false</span>
-
-<span class="o">[</span>mapping<span class="o">]</span>
-product.mk: device.mk
-
-<span class="o">[</span>groups<span class="o">]</span>
-boot-arch: project-celadon<span class="o">(</span><span class="nv">uefi_arch</span><span class="o">=</span>x86_64,rpmb_simulate<span class="o">=</span>true,use_cic<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
-allow-missing-dependencies: <span class="nb">true</span>
-audio: aic
-cpu-arch: x86_64
-...
-</pre></div>
-</div>
+<code class="file docutils literal"><span class="pre">mixins.spec</span></code> file.</p>
 <p>If there are updates or changes to any mixin configuration files, you should
 re-run the <code class="file docutils literal"><span class="pre">mixin-update</span></code> script from the root of the Celadon Android
 source tree. The script searches all files named <code class="file docutils literal"><span class="pre">mixins.spec</span></code> under
@@ -347,7 +329,7 @@ included before processing the ‘<em>debug-phonedoctor</em>’ group.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Feb 23, 2022.
+      Last updated on Mar 10, 2022.
 
     </p>
   </div>

@@ -32,10 +32,8 @@ Scope of Android validation
 
 Android validation is scoped for the following:
 
-* The :abbr:`CiC (Celadon in Container)` and
-  :abbr:`CiV (Celadon in Virtual Machine)` platforms consist of
+* The :abbr:`CiV (Celadon in Virtual Machine)` platform consists of
 
-    * Comet Lake CiC Pie
     * Comet Lake CiV Android 10
 
 * Functional validation of all end-to-end defined features in JIRA\*

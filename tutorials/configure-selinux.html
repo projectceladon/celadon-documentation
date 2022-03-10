@@ -215,31 +215,6 @@ the ‘<em>device/intel/mixins/mixin-update</em>’ script to make the changes
 take effect before the build starts.</p>
 </div>
 </div></blockquote>
-<p>For <abbr title="Celadon in Container">CiC</abbr> scenario:</p>
-<blockquote>
-<div><p>CiC shares the same kernel running in the host, we need to change the
-SELinux mode for CiC by modifying the host kernel command line. For
-example, on a Ubuntu host device, edit the default GRUB configuration
-file <code class="file docutils literal"><span class="pre">/etc/default/grub</span></code>, and append the following option to
-the <strong>GRUB_CMDLINE_LINUX_DEFAULT</strong> key:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>...
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;androidboot.selinux=permissive&quot;
-...
-</pre></div>
-</div>
-<p>After updating the GRUB bootloader configuration and reboot the host
-with the following commands, the Celadon in Container will be run in
-permissive mode by default.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>$ sudo update-grub &amp;&amp; reboot
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">1. The <em>permissive</em> mode is only activated in <strong>userdebug</strong>
-or <strong>eng</strong> builds. The user builds always operate in <em>enforcing</em>
-SELinux mode in Android.</p>
-</div>
-</div></blockquote>
 </div>
 <div class="section" id="to-change-selinux-mode-at-runtime">
 <h3>To change SELinux mode at runtime</h3>
@@ -289,22 +264,13 @@ required steps to get access to the system resources.</p>
 <div class="section" id="add-the-initial-sepolicy-rules">
 <h3>Add the initial sepolicy rules</h3>
 <ol class="arabic">
-<li><p class="first">For <abbr title="Celadon in VM">CiV</abbr> scenario, create a sub-folder <code class="file docutils literal"><span class="pre">rfkill</span></code> under the <code class="file docutils literal"><span class="pre">device/intel/project-celadon/sepolicy/</span></code> directory to host the sepolicy rules files.
-For <abbr title="Celadon in Container">CiC</abbr> scenario,
-the <code class="file docutils literal"><span class="pre">rfkill</span></code> folder should be created in
-<code class="file docutils literal"><span class="pre">device/intel/cic/common/sepolicy</span></code> directory.</p>
+<li><p class="first">For <abbr title="Celadon in VM">CiV</abbr> scenario, create a sub-folder <code class="file docutils literal"><span class="pre">rfkill</span></code> under the <code class="file docutils literal"><span class="pre">device/intel/project-celadon/sepolicy/</span></code> directory to host the sepolicy rules files.</p>
 </li>
 <li><p class="first">Introduce the previous folder to the sepolicy compiler by adding the
 following line to the board configuration overlay file.
 For <abbr title="Celadon in VM">CiV</abbr> scenario, edit the file <code class="file docutils literal"><span class="pre">device/intel/mixins/groups/rfkill/true/BoardConfig.mk</span></code>:</p>
 <blockquote>
 <div><div class="highlight-none"><div class="highlight"><pre><span></span>BOARD_SEPOLICY_DIRS += $(INTEL_PATH_SEPOLICY)/rfkill
-</pre></div>
-</div>
-</div></blockquote>
-<p>Or, for <abbr title="Celadon in Container">CiC</abbr> scenario, edit the file <code class="file docutils literal"><span class="pre">device/intel/cic/common/BoardConfig.mk</span></code>:</p>
-<blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre><span></span>BOARD_SEPOLICY_DIRS += device/intel/cic/common/sepolicy/rfkill
 </pre></div>
 </div>
 </div></blockquote>
@@ -423,7 +389,7 @@ $ adb root <span class="o">&amp;&amp;</span> adb shell load_sepolicy /sdcard/pre
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Feb 23, 2022.
+      Last updated on Mar 10, 2022.
 
     </p>
   </div>

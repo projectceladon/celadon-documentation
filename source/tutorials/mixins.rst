@@ -37,7 +37,7 @@ Mixin groups
 Each mixin group represents a functional area of the system that has
 multiple radio button options from which to select for a particular product.
 Some groups may be simple :command:`true`/:command:`false` selections.
-A typical example is the option to integrate 
+A typical example is the option to integrate
 :abbr:`GMS (Google\* Mobile Services)`. Many mixin groups offer a variety of
 selections, such as the :command:`cpu-arch` mixin group, which instructs the
 system to gather configuration data relevant to the particular SoC and to
@@ -69,26 +69,7 @@ Every |C| build target that uses mixins should have a :file:`mixins.spec`
 file in their product board configuration directories. Instead of manually
 modifying feature settings in the product makefiles, the product
 customization and peripherals tuning are done by editing the
-:file:`mixins.spec` file. The following block shows the :file:`mixins.spec`
-of the :abbr:`CiC (Celadon in Container)` lunch target:
-
-.. code-block:: bash
-
-    $ cat device/intel/project-celadon/cic/mixins.spec 
-    [main]
-    mixinsdir: device/intel/mixins
-    mixinsctl: true
-    mixinsrel: false
-
-    [mapping]
-    product.mk: device.mk
-
-    [groups]
-    boot-arch: project-celadon(uefi_arch=x86_64,rpmb_simulate=true,use_cic=true)
-    allow-missing-dependencies: true
-    audio: aic
-    cpu-arch: x86_64
-    ...
+:file:`mixins.spec` file.
 
 If there are updates or changes to any mixin configuration files, you should
 re-run the :file:`mixin-update` script from the root of the |C| Android
@@ -140,14 +121,14 @@ repository after running the
 
 .. code-block:: bash
 
-    $ cat device/intel/project-celadon/caas/mixins.spec 
+    $ cat device/intel/project-celadon/caas/mixins.spec
     ...
     [groups]
     ...
     boot-arch: project-celadon(uefi_arch=x86_64,fastboot=efi,ignore_rsci=true,disable_watchdog=true,...)
     ...
 
-    $ cat device/intel/mixins/groups/boot-arch/project-celadon/files.spec 
+    $ cat device/intel/mixins/groups/boot-arch/project-celadon/files.spec
     ...
     [extrafiles]
     update_ifwi_ab.sh: "ifwi update script running in postinstall"
@@ -163,7 +144,7 @@ used to manage dependencies between mixin groups. For example:
 
 .. code-block:: bash
 
-    $ cat device/intel/mixins/groups/debug-phonedoctor/mixinfo.spec                                                 
+    $ cat device/intel/mixins/groups/debug-phonedoctor/mixinfo.spec
     [mixinfo]
     deps = debug-crashlogd
 

@@ -26,4 +26,3 @@ use cases from Edge to Cloud.
    :maxdepth: 1
 
    on-vm
-   on-container

@@ -10,12 +10,17 @@ Submit your patches
 
 |C| source code consists of multiple repositories (i.e. "**projects**"), the manifest file *.repo/manifests/default.xml* contains the information needed (i.e. "**remotes**") to fetch those repositories. It includes the following files to instruct the ``repo`` command to compose the |C| source tree:
 
-=============================  ================================================================
-include/aosp_vanilla.xml       This is vanilla AOSP code based on `refs/tags/android-10.0.0_rN`
-                               for CiV builds, and `refs/tags/android-9.0.0_rN` for CiC builds.
-include/remove-android_ia.xml  The repositories to be removed from the AOSP code
-include/bsp-celadon.xml        The BSP source code customized for |C|
-=============================  ================================================================
+.. list-table::
+   :widths: 5 10
+
+
+   * - include/aosp_vanilla.xml
+     - This is vanilla AOSP code based on
+       `refs/tags/android-10.0.0_rN` for CiV builds
+   * - include/remove-android_ia.xml
+     - The repositories to be removed from the AOSP code
+   * - include/bsp-celadon.xml
+     - The BSP source code customized for |C|
 
 To get the **remote** in order to upload code, use the following command:
 
@@ -65,9 +70,9 @@ We recommend you create commit messages in the following format when you submit 
 .. code-block:: none
 
    [CELADON] <One Line Summary>
-   
+
    <Description>
-   
+
    Tracked-On:
    Signed-off:
 

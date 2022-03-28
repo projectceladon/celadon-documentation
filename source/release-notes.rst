@@ -11,6 +11,114 @@ Release Notes
    :local:
    :depth: 1
 
+Stable Releases
+***************
+
+This is Celadon stable release for Retail Segment to be used in production
+
+.. contents::
+   :local:
+   :depth: 1
+
+CIV_02.22.01.12_A11
+===================
+
+Intended audience
+-----------------
+
+* Open Source Community who has subscribed to celadon@lists.01.org
+
+Customer support
+----------------
+
+* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+
+Introduction
+------------
+Feature Details
+---------------
+* Features supported in this release
+
+                * RTC (Real Time Clock) - Android Time keeping
+                * Alarm Virtualization
+                * Support wipe Google Factory Reset protection credentials on reset
+                * Support secure data erase on dedicated partition
+                * Use mesa i965 driver on CML and EHL
+
+        * Celadon Upstreamed fixes
+
+                * CiV suspend/resume stability
+                * Update health values for CiV battery
+                * Enable zram swap for device having <= 4G RAM
+                * Enabled GuC/HuC firmware
+                * Support EHL platform
+                * Support Sensor enable/disable build configuration
+
+Known issues
+------------
+
+* 1974128 '<https://android-review.googlesource.com/c/platform/test/suite_harness/+/1974128>`_  Temporarily skip platformPermissionPolicyIsUnaltered
+* 1800607 '<https://android-review.googlesource.com/c/platform/test/vts-testcase/kernel/+/1800607>`_  sysfs.KernelApiSysfsTest#testAndroidUSB: enforce only if file present
+* Buganizer-193114625 '<https://partnerissuetracker.corp.google.com/issues/193114625>`_ atest CtsAppTestCases/CtsAppTestCases[instant]
+* 1989169 '<https://android-review.googlesource.com/c/platform/hardware/interfaces/+/1989169>`_  Fix for VTS test CleanupConnectionsOnInitialize/0_default
+
+Where to find the release
+-------------------------
+
+* Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.01.12_A11.xml
+
+Host Kernel Release configuration
+---------------------------------
+
+* linux-intel-lts kernel
+        * Branch: https://github.com/intel/linux-intel-lts/tree/5.4/yocto
+        * SHA ID: https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.4.170-yocto-220124T222417Z
+* kernel-config
+        * Config-File: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+
+
+Reference configuration
+-----------------------
+
+* Supported hardware
+    =======================   =======
+    Platform                  Product
+    -----------------------   -------
+    Comet Lake(CML)           | NUC10FNH Intel(R) Core(TM) i7-10710U CPU
+    Elkhart Lake(EHL)         | EHL A0/EHL Bx CRB
+    Tiger Lake(TGL)           | TGL Bx RVP
+    =======================   =======
+
+* Supported software
+        * Android CIV Guest:
+                =======================   =======
+                Platform                  Product
+                -----------------------   -------
+                Android                   | Android 11
+                Kernel                    | 5.4.142 (linux-intel-lts2019-chromium)
+                AOSP                      | android-11.0.0_r39
+                =======================   =======
+
+        * Ubuntu Host:
+                =======================   =======
+                Platform                  Product
+                -----------------------   -------
+                Qemu                      | version 4.2.0
+                Ubuntu                    | 20.04 LTS (Focal Fossa)
+                Kernel_IoTG               | 5.4.170 (linux-intel-lts 5.4/yocto branch)
+                =======================   =======
+
+Validation results
+------------------
+
+Stable Releases (IoT) build running in GVT-d mode has been validated on Comet Lake(CML), Tiger Lake(TGL), and Elkhart Lake(EHL) Intel® platforms in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements
+
+.. figure:: stable-release_iot/images/Validation_Result2.png
+    :align: center
+    :width: 750px
+
+.. note:: CTS on GSI Failures are due to Google dependency and shall be resolved in Upcoming new GSI patch	
+
 Base Releases
 *************
 

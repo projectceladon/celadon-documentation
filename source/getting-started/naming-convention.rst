@@ -10,23 +10,39 @@ The naming convention of a |C| release tag is:
 
     .. code-block:: none
 
-        [Type]_[Exit Code].[Year].[Quarter].[Work Week]_A[Android Dessert]
+        [Type]_[Milestone].[Year].[Quarter].[Work Week]_A[Android Dessert]
 
     * The *[Type]* field specifies the type of the release package:
 
         - ':command:`CIV`' denotes a release for running |C| in a VM.
 
-    * The *[Exit Code]* field specifies the code of platform exit stage:
+    * The *[Milestone]* field specifies the code of platform exit stage:
 
-        - ':command:`00`' represents the release is going through the platform exit stage.
-        - ':command:`01`' represents the release reaches the platform exit criteria.
-        - ':command:`02`' and onward represent sustenancing releases. The number is increased each time a sustenancing package is released.
+    .. list-table::
+        :widths: 30 50 50
+        :header-rows: 1
 
+        * - Milestone
+          - Quality
+          - Purpose
+        * - 00
+          - Intermediate to Alpha
+          - Evaluation/Development
+        * - 01
+          - Beta
+          - Evaluation/Development
+        * - 02
+          - PV
+          - Production
+        * - 03
+          - Sustenance (ASB/Bug Fixes)
+          - Maintenance for production customer
+    
     * The *[Year]* field represents the Year when the agreed quality
       criteria were met.
     * The *[Quarter]* field represents the Quarter when the agreed quality
       criteria were met.
-    * The *[Work Week]* field represents the Work week when the agreed
+    * The *[Work Week]* field represents the Work week  when the agreed
       quality criteria were met.
     * The *[Android Dessert]* field represents the version of Android
       dessert on which the release is based.

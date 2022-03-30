@@ -14,7 +14,7 @@ Release Notes
 Stable Releases
 ***************
 
-This is Celadon stable release for Retail Segment to be used in production
+This is a Production Release for evaluation and development purposes addressing Retail, Education, Workload consolidation and Marine segments.
 
 .. contents::
    :local:

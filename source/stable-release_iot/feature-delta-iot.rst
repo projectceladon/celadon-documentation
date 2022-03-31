@@ -8,6 +8,7 @@ Here are the additional features provided by Stable Releases (IoT).
 .. contents::
     :depth: 1
     :local:
+
 * 100% Google\* conformance on Comet Lake (CML),Tiger Lake (TGL), and
   Elkhart Lake (EHL) with production ready
 * Supporting Comet Lake (CML),Tiger Lake (TGL), and Elkhart Lake (EHL)

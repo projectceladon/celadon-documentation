@@ -260,6 +260,7 @@ Guest OS setup:
 .. _creating:
 
 Creating Celadon guest image
+============================
 
 .. note::
 	This needs to be done at least once on a properly setup Ubuntu host to create the guest image for testing.
@@ -282,6 +283,7 @@ Creating Celadon guest image
 .. _launch:
 
 Launching Celadon with GVT-d
+============================
 
 .. note::
    As this is a GVT-d setup, the host display will be replaced by the Android screen.Therefore it is necessary to establish a SSH connection to host first, and then launch CIV from the SSH console.

@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How do I … &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Guides and Tutorials" href="../tutorials/tutorials.html" />
+    <link rel="prev" title="Host OS Hardening" href="host-os-hardening.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How do I …</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-support-secure-boot">How to support secure boot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-change-the-partition-size-in-c-image">How to change the partition size in Celadon image</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="getting-started.html">Getting Started</a> &raquo;</li>
+        
+      <li>How do I …</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/getting-started/how-to.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-do-i">
+<span id="how-to"></span><h1>How do I …</h1>
+<p>This page explains some configuration tasks in Celadon.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#how-to-support-secure-boot" id="id1">How to support secure boot</a></li>
+<li><a class="reference internal" href="#how-to-change-the-partition-size-in-c-image" id="id2">How to change the partition size in Celadon image</a></li>
+</ul>
+</div>
+<div class="section" id="how-to-support-secure-boot">
+<h2><a class="toc-backref" href="#id1">How to support secure boot</a></h2>
+<p>Secure boot is enabled on the BIOS of some PCs by default. It adds the BIOS
+vendor’s key and Windows* key by default. However, the default setting does
+not include the key to verify the kernelflinger. If the BIOS has enabled
+secure boot, you will get the following error message:</p>
+<div class="figure align-center">
+<img alt="../_images/authorization-fail.jpg" src="../_images/authorization-fail.jpg" />
+</div>
+<p>You’ll need a USB drive with at least 1GB of free space to perform the
+following steps to add the key used to verify the kernelflinger
+to BIOS.</p>
+<ol class="arabic">
+<li><p class="first">Download the files that comprise <em>Keytool</em> from their respective
+locations:</p>
+<ol class="arabic simple">
+<li><code class="file docutils literal"><span class="pre">KeyTool.efi</span></code> is a tool included in the <em>efitools</em> tarball.
+Download the tarball from
+<a class="reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git">https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git</a>.</li>
+<li>Download
+<a class="reference external" href="https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/DB.auth">DB.auth</a>.</li>
+<li>Download
+<a class="reference external" href="https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/KEK.auth">KEK.auth</a>.</li>
+</ol>
+</li>
+<li><p class="first">Format the USB drive to use the FAT filesystem. Put the
+<code class="file docutils literal"><span class="pre">KeyTool.efi</span></code>, <code class="file docutils literal"><span class="pre">DB.auth</span></code>, and <code class="file docutils literal"><span class="pre">KEK.auth</span></code> files on the
+USB drive.</p>
+</li>
+<li><p class="first">Disable the device secure boot.</p>
+<ol class="arabic">
+<li><p class="first">Plug in the USB drive and reboot the device.</p>
+</li>
+<li><p class="first">Press <code class="kbd docutils literal"><span class="pre">F10</span></code> to enter the Boot Menu.</p>
+</li>
+<li><p class="first">Select “UEFI : Build-in EFI Shell” and then find your USB device.</p>
+</li>
+<li><p class="first">Execute <strong class="command">KeyTool.efi</strong> and you will see the KeyTool menu.</p>
+</li>
+<li><p class="first">Select <span class="menuselection">Edit Keys</span> to replace the keys.</p>
+<div class="figure align-center">
+<img alt="../_images/keytool.jpg" src="../_images/keytool.jpg" />
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Select the <span class="menuselection">(db)</span> option and press <code class="kbd docutils literal"><span class="pre">Enter</span></code>.</p>
+<div class="figure align-center">
+<img alt="../_images/select-menu.jpg" src="../_images/select-menu.jpg" />
+</div>
+</li>
+<li><p class="first">Choose <span class="menuselection">Add New Key</span> to add the DB key.</p>
+<div class="figure align-center">
+<img alt="../_images/add-db.jpg" src="../_images/add-db.jpg" />
+</div>
+</li>
+<li><p class="first">Browse your USB drives to locate your keys and add them one at a time.</p>
+<div class="figure align-center">
+<img alt="../_images/browse-db-from-usb.jpg" src="../_images/browse-db-from-usb.jpg" />
+</div>
+<div class="figure align-center">
+<img alt="../_images/auth-key.jpg" src="../_images/auth-key.jpg" />
+</div>
+<p>Repeat the same steps and add the new key for KEK</p>
+<div class="figure align-center">
+<img alt="../_images/menu-kek.jpg" src="../_images/menu-kek.jpg" />
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="how-to-change-the-partition-size-in-c-image">
+<h2><a class="toc-backref" href="#id2">How to change the partition size in Celadon image</a></h2>
+<p>An Android system is typically comprised of multiple disk partitions. Each
+parition is associated with an <code class="file docutils literal"><span class="pre">*.img</span></code> file in the Celadon image. In
+addition, Celadon supports a whole GPT image to be flashed to the entire disk.
+Some partitions (e.g. the system partition) are huge, but some of them are
+empty. The <strong class="command">SPARSE</strong> image format is used to reduce the image size.</p>
+<p>The default partition size is defined in the following files:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>device/intel/mixins/groups/boot-arch/project-celadon/gpt.ini</td>
+</tr>
+<tr class="row-even"><td>device/intel/mixins/groups/boot-arch/project-celadon/option.spec</td>
+</tr>
+<tr class="row-odd"><td>device/intel/mixins/groups/vendor-partition/true/option.spec</td>
+</tr>
+<tr class="row-even"><td>device/intel/mixins/groups/config-partition/true/gpt.ini</td>
+</tr>
+<tr class="row-odd"><td>device/intel/mixins/groups/factory-partition/true/gpt.ini</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Modify <code class="file docutils literal"><span class="pre">device/intel/project-celadon/[lunch_target]/mixins.spec</span></code> to
+change some of the default settings.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>Changing the partition size will cause the OTA update to fail.</li>
+<li>The system partition requires at least 2560MB of disk space.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutorials/tutorials.html" class="btn btn-neutral float-right" title="Guides and Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="host-os-hardening.html" class="btn btn-neutral" title="Host OS Hardening" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Mar 31, 2022.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

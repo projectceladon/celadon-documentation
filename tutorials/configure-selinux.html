@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SELinux Configuration and Rules &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Trusty Hardware Binding on Celadon" href="security/trusty-hardware-binding.html" />
+    <link rel="prev" title="Boot CiV on Bare Metal" href="boot-civ-bare-metal.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#development">Development</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#security">Security</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SELinux Configuration and Rules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#selinux-configuration">SELinux Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-sepolicy-rules-for-a-module">Add sepolicy rules for a module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#some-useful-tools-for-selinux">Some useful tools for SELinux</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="security/trusty-hardware-binding.html">Trusty Hardware Binding on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security/trusty-enabling.html">How to Enable or Disable Trusty for Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>SELinux Configuration and Rules</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/configure-selinux.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="selinux-configuration-and-rules">
+<span id="configure-selinux"></span><h1>SELinux Configuration and Rules</h1>
+<p>Security-Enhanced Linux
+(<a class="reference external" href="https://source.android.com/security/selinux">SELinux</a>) is enabled in
+Android to enforce the Mandatory Access Control for security. SELinux
+supports two working modes: permissive and enforcing:</p>
+<ul class="simple">
+<li>In <strong>permissive</strong> mode, it only audits the operations of all domains and
+prints the AVC (Access Vector Cache) errors that violate the sepolicy
+rules, but it never blocks any operations.</li>
+<li>In <strong>enforcing</strong> mode, it prints out the AVC errors and also blocks the
+operations that violate the sepolicy rules.</li>
+</ul>
+<p>It is a good practice to set SELinux in permissive mode at the beginning of
+the development phase in order to easily bring up the system and fix any
+SELinux errors. After resolving all AVC errors, change the SELinux mode to
+enforcing mode.</p>
+<div class="section" id="selinux-configuration">
+<h2>SELinux Configuration</h2>
+<div class="section" id="to-change-selinux-in-build-time">
+<h3>To change SELinux in build time</h3>
+<p>For <abbr title="Celadon in VM">CiV</abbr> scenario:</p>
+<blockquote>
+<div><p>The SELinux operation mode is configured using <strong>mixins</strong>. Edit
+the <code class="file docutils literal"><span class="pre">mixins.spec</span></code> file in the source folder for your lunch target
+at <code class="file docutils literal"><span class="pre">device/intel/project-celadon/&lt;target-name&gt;/mixins.spec</span></code> and
+rebuild the image to take effect. Set the <code class="file docutils literal"><span class="pre">sepolicy</span></code> key to either
+<strong>permissive</strong> or <strong>enforcing</strong> to enable the corresponding SELinux mode.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>...
+project-celadon: default
+<span class="hll">sepolicy: permissive
+</span>graphics: project-celadon(gen9+=true,hwc2=true,vulkan=false,drmhwc=false,minigbm
+...
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">1. The <em>permissive</em> mode is only activated in <strong>userdebug</strong> or
+<strong>eng</strong> builds. The user builds always operate in <em>enforcing</em>
+SELinux mode in Android.
+2. After you change the <em>sepolicy</em> value in <em>mixins.spec</em>, run
+the ‘<em>device/intel/mixins/mixin-update</em>’ script to make the changes
+take effect before the build starts.</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="to-change-selinux-mode-at-runtime">
+<h3>To change SELinux mode at runtime</h3>
+<blockquote>
+<div><p>In addition to change the SELinux operaion mode statically by editting
+the configuration file during the build time, you can change the SELinux
+mode at runtime through <em>adb shell</em> commands.</p>
+<ul class="simple">
+<li>Get the current SELinux operation mode with the <code class="docutils literal"><span class="pre">getenforce</span></code> command</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ adb shell
+<span class="hll">celadon:/ $ getenforce
+</span>Permissive
+</pre></div>
+</div>
+<ul class="simple">
+<li>Set the SELinux operation mode with the <code class="docutils literal"><span class="pre">setenforce</span></code> command</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ adb shell
+celadon:/ $ su
+<span class="hll">celadon:/ <span class="c1"># setenforce 0</span>
+</span>celadon:/ <span class="c1"># getenforce</span>
+Permissive
+
+<span class="hll">celadon:/ <span class="c1"># setenforce 1</span>
+</span>celadon:/ <span class="c1"># getenforce</span>
+Enforcing
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>You must run the <code class="docutils literal"><span class="pre">setenforce</span></code> command with <em>root</em> permission.</li>
+<li>Changing the SELinux operation mode returns it to its default
+mode specified in the <em>mixins.spec</em> file after system reboots.</li>
+</ol>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="add-sepolicy-rules-for-a-module">
+<h2>Add sepolicy rules for a module</h2>
+<p>When you add a new module to Celadon, you might need to add relevant sepolicy
+rules, otherwise its operations might be blocked by SELinux. The following
+instructions take the ‘<em>rfkill</em>’ module as an example, and show you the
+required steps to get access to the system resources.</p>
+<div class="section" id="add-the-initial-sepolicy-rules">
+<h3>Add the initial sepolicy rules</h3>
+<ol class="arabic">
+<li><p class="first">For <abbr title="Celadon in VM">CiV</abbr> scenario, create a sub-folder <code class="file docutils literal"><span class="pre">rfkill</span></code> under the <code class="file docutils literal"><span class="pre">device/intel/project-celadon/sepolicy/</span></code> directory to host the sepolicy rules files.</p>
+</li>
+<li><p class="first">Introduce the previous folder to the sepolicy compiler by adding the
+following line to the board configuration overlay file.
+For <abbr title="Celadon in VM">CiV</abbr> scenario, edit the file <code class="file docutils literal"><span class="pre">device/intel/mixins/groups/rfkill/true/BoardConfig.mk</span></code>:</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>BOARD_SEPOLICY_DIRS += $(INTEL_PATH_SEPOLICY)/rfkill
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>#. Inside the sepolicy rules folder, create an initial file
+named ‘<em>file_contexts</em>’ with the following content. This assigns a file
+label for the <em>rfkill</em> executable file:</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>/vendor/bin/rfkill-init.sh      u:object_r:rfkill_exec:s0
+</pre></div>
+</div>
+</div></blockquote>
+<p>#. Create a SELinux type enforcement file <code class="file docutils literal"><span class="pre">rfkill.te</span></code> to define the
+policy type and access control for the <code class="file docutils literal"><span class="pre">rfkill</span></code> module:</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span># Define a domain that the rfkill process runs in
+<span class="hll">type rfkill, domain;
+</span># Define a file type for the rfkill executable file and assign this
+<span class="hll">file type
+</span>type rfkill_exec, exec_type, file_type, vendor_file_type;
+# Grant the permission to init process so that the init process
+<span class="hll">starts the rfkill service
+</span># from init.rc and transition to rfkill domain
+init_daemon_domain(rfkill)
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="add-the-additional-sepolicy-rules">
+<h3>Add the additional sepolicy rules</h3>
+<p>5. You seldom add only initial sepolicy rules to make a module work
+properly. Reboot the device and search any AVC errors related to
+the <em>rfkill</em> module in the system <code class="docutils literal"><span class="pre">dmesg</span></code> or <code class="docutils literal"><span class="pre">logcat</span></code> output. AVC errors
+are associated with <strong>avc:</strong> or <strong>permissive=</strong> keywords as shown in the
+following example:</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="../_images/sepolicy-rules.png" src="../_images/sepolicy-rules.png" />
+</div>
+</div></blockquote>
+<p>#. In the previous output, the key ‘<strong>scontext</strong>’ indicates which module
+generates the AVC error and the cause. You then write sepolicy rules to
+the ‘<em>.te</em>’ file associated with that module, according to the relevant
+AVC error as shown in the previous example.</p>
+</div>
+</div>
+<div class="section" id="some-useful-tools-for-selinux">
+<h2>Some useful tools for SELinux</h2>
+<ul>
+<li><dl class="first docutils">
+<dt><strong>audit2allow</strong></dt>
+<dd><p class="first"><code class="docutils literal"><span class="pre">audit2allow</span></code> is a host SELinux tool, which can be used to generate
+sepolicy rules based on the log file. It is available in
+the <em>external/SELinux/prebuilts/bin/</em> folder on the host system.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ adb shell logcat &gt; my_log.txt
+$ audit2allow -p &lt;patch_to_sepolicy&gt; -i my_log.txt -o generated_rules.txt
+</pre></div>
+</div>
+<p>Example:
+Offline method to generate sepolicy rules from build workspace:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ audit2allow out/target/product/gordon_peak/root/sepolicy -i my_log.txt -o generated_rules.txt
+</pre></div>
+</div>
+<p>OR</p>
+<p>Use the following command to extract and generate sepolicy rules from
+the running device:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ adb pull /sys/fs/selinux/policy
+$ adb logcat -b all -d <span class="p">|</span> audit2allow -p policy
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>load_policy</strong></dt>
+<dd><p class="first"><code class="docutils literal"><span class="pre">load_policy</span></code> is a tool on the Android device, which loads the
+compiled sepolicy at runtime in order to validate the modified sepolicy
+rules without making a new build. It is available in
+the <em>/system/bin/</em> folder on the target platform.</p>
+<p>To generate the precompiled sepolicy binary that is loaded with
+the <code class="docutils literal"><span class="pre">load_policy</span></code> command, go to the top-most Celadon source tree:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ make precompiled_sepolicy
+</pre></div>
+</div>
+<p>Then, push the generated binary to the Celadon device for verification:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ adb push out/target/product/&lt;target_name&gt;/vendor/etc/SELinux/precompiled_sepolicy /sdcard
+$ adb root <span class="o">&amp;&amp;</span> adb shell load_sepolicy /sdcard/precompiled_sepolicy
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="security/trusty-hardware-binding.html" class="btn btn-neutral float-right" title="Trusty Hardware Binding on Celadon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="boot-civ-bare-metal.html" class="btn btn-neutral" title="Boot CiV on Bare Metal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Mar 31, 2022.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

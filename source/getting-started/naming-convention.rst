@@ -10,7 +10,7 @@ The naming convention of a |C| release tag is:
 
     .. code-block:: none
 
-        [Type]_[Milestone].[Year].[Quarter].[Work Week]_A[Android Dessert]
+        [Type]_[Milestone].[Year].[Quarter].[Serial Number]_A[Android Dessert]
 
     * The *[Type]* field specifies the type of the release package:
 
@@ -42,8 +42,7 @@ The naming convention of a |C| release tag is:
       criteria were met.
     * The *[Quarter]* field represents the Quarter when the agreed quality
       criteria were met.
-    * The *[Work Week]* field represents the Work week  when the agreed
-      quality criteria were met.
+    * The *[Serial Number]* field represents the Build increments.
     * The *[Android Dessert]* field represents the version of Android
       dessert on which the release is based.
 

@@ -10,7 +10,7 @@ The naming convention of a |C| release tag is:
 
     .. code-block:: none
 
-        [Type]_[Milestone].[Year].[Quarter].[Work Week]_A[Android Dessert]
+        [Type]_[Milestone].[Year].[Quarter].[Serial Number]_A[Android Dessert]
 
     * The *[Type]* field specifies the type of the release package:
 
@@ -42,8 +42,7 @@ The naming convention of a |C| release tag is:
       criteria were met.
     * The *[Quarter]* field represents the Quarter when the agreed quality
       criteria were met.
-    * The *[Work Week]* field represents the Work week  when the agreed
-      quality criteria were met.
+    * The *[Serial Number]* field represents the Build increments.
     * The *[Android Dessert]* field represents the version of Android
       dessert on which the release is based.
 
@@ -53,7 +52,7 @@ The naming convention of a |C| release tag is:
     Release Tag               Comment
     -----------------------   -------
     CIV_00.19.04.51_A10       | represents an Android 10 based :abbr:`CIV (Celadon in VM)` release
-                              | which met the agreed quality criteria in 2019 Q4 WW51
+                              | which met the agreed quality criteria in 2019 Q4
     CELADON_02.20.04.51_A09   | represents the first |C| sustenance release based on Android 9
-                              | released on 2020 Q4 in ww51
+                              | released on 2020 Q4 
     =======================   =======

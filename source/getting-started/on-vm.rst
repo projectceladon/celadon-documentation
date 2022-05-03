@@ -64,7 +64,7 @@ release packages.
 
 .. code-block:: bash
 
-   $ sudo mkdir -p /opt/civ-1 && sudo chown -R $(id -u):(id -g) /opt/civ-1
+   $ sudo mkdir -p /opt/civ-1 && sudo chown -R $(id -u):$(id -g) /opt/civ-1
    $ tar zxvf caas-releasefiles-<$buildvariant>.tar.gz
    $ chmod +x scripts/setup_host.sh
 

@@ -52,7 +52,7 @@ Intel GPU SR-IOV overview
 
 An Intel GPU can isolate GPU PCIe devices to improve performance to a level that is similar to bare-metal levels. Intel GPU SR-IOV is based on SR-IOV technology, SR-IOV consists of two basic units: PF (Physical Function), which supports SR-IOV PCIe extended capability and manages entire physical devices; and VF (Virtual Function), a “lightweight” PCIe function that is a passthrough device for VMs.
 
-Refer to `this article <https://projectacrn.github.io/latest/tutorials/sriov_virtualization.html<`_ and `this video <https://videoportal.intel.com/media/GPU+VirtualizationA+SRIOV+and+Beyond/0_2a3dmpu0>`_
+Refer to `this article <https://projectacrn.github.io/latest/tutorials/sriov_virtualization.html>`_ and `this video <https://videoportal.intel.com/media/GPU+VirtualizationA+SRIOV+and+Beyond/0_2a3dmpu0>`_
 for an introduction to Intel Graphics Virtualization Technology.
 
 

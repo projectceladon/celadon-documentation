@@ -52,7 +52,7 @@ Intel GPU SR-IOV overview
 
 An Intel GPU can isolate GPU PCIe devices to improve performance to a level that is similar to bare-metal levels. Intel GPU SR-IOV is based on SR-IOV technology, SR-IOV consists of two basic units: PF (Physical Function), which supports SR-IOV PCIe extended capability and manages entire physical devices; and VF (Virtual Function), a “lightweight” PCIe function that is a passthrough device for VMs.
 
-Refer to this `article https://projectacrn.github.io/latest/tutorials/sriov_virtualization.html`_ and `video https://videoportal.intel.com/media/GPU+VirtualizationA+SRIOV+and+Beyond/0_2a3dmpu0`_
+Refer to `this article <https://projectacrn.github.io/latest/tutorials/sriov_virtualization.html<`_ and `this video <https://videoportal.intel.com/media/GPU+VirtualizationA+SRIOV+and+Beyond/0_2a3dmpu0>`_
 for an introduction to Intel Graphics Virtualization Technology.
 
 
@@ -107,7 +107,7 @@ To that end, a
 `helper script <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh>`_
 :file:`build.sh` is designed to facilitate
 the building and deploying of |C| kernel on an Ubuntu host.
-Refer to the `README`_ for detailed GVT kernel build instructions. Refer to the `README https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-chromium/README`_ for detailed SR-IOV kernel build instructions.
+Refer to the `README`_ for detailed GVT kernel build instructions. Refer to `this README <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-chromium/README>`_ for detailed SR-IOV kernel build instructions.
 
 .. _README: https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
 

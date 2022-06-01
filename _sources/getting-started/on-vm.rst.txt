@@ -8,8 +8,10 @@ This page explains what you'll need to run |C| in a virtual machine.
 Depending on your applications, you can run :abbr:`CiV (Celadon in VM)` using
 Intel® GVT-g technology, or allowing for GPU passthrough to a single
 Android\* guest VM through Intel® Virtualization Technology (Intel® VT) for
-Directed I/O (Intel® VT-d) technology, or VirtIO GPU, or pure
-software rendering.
+Directed I/O (Intel® VT-d) technology, SR-IOV (single root input/output
+virtualization) Intel VT to have a good balance of GPU sharing
+(for multiple VMs) and performance as good as bare metal, VirtIO GPU,
+or pure software rendering.
 
 .. contents::
    :local:
@@ -18,15 +20,17 @@ software rendering.
 Prerequisites
 *************
 
-* An |NUC-attr| with an eighth generation or newer |Core-attr| Processor.
+* An |NUC-attr| with an eighth generation (12th generation for SR-IOV) or newer |Core-attr| Processor.
 * Ubuntu\* 20.04 (Focal Fossa) preinstalled that runs Linux\* kernel
-  version 5.0.0 or above.
+  version 5.0.0 (5.10.100 for SR-IOV) or above.
 
   .. note::
      :abbr:`CiV (Celadon in VM)` releases have been validated on
      |NUC| model `NUC7i5DNHE`_. Releases after **April 17th 2020** are
      validated on |NUC| model `NUC10i7FNK`_ and `NUC10i7FNH`_ to
      take performance advantages of 10th Generation |Core| Processors.
+     For SR-IOV, they are validated on |NUC| model NUC12WSH with 12th generation
+     |Core| Processors.
 
 Intel GVT-d overview
 ********************
@@ -43,14 +47,23 @@ without limitations.
 Refer to this `article <https://01.org/sites/default/files/downloads/igvt-g/gvtflyer.pdf>`_
 for an introduction to Intel Graphics Virtualization Technology.
 
+Intel GPU SR-IOV overview
+*************************
+
+An Intel GPU can isolate GPU PCIe devices to improve performance to a level that is similar to bare-metal levels. Intel GPU SR-IOV is based on SR-IOV technology, SR-IOV consists of two basic units: PF (Physical Function), which supports SR-IOV PCIe extended capability and manages entire physical devices; and VF (Virtual Function), a “lightweight” PCIe function that is a passthrough device for VMs.
+
+Refer to `this article <https://projectacrn.github.io/latest/tutorials/sriov_virtualization.html>`_ and `this video <https://videoportal.intel.com/media/GPU+VirtualizationA+SRIOV+and+Beyond/0_2a3dmpu0>`_
+for an introduction to Intel Graphics Virtualization Technology.
+
+
 Prepare the host environment
 ****************************
 
-Set up QEMU and Intel GVT technology
-====================================
+Set up QEMU and Intel GVT/SR-IOV technology
+===========================================
 
 The host device that launches the virtual machine requires Ubuntu 20.04.
-To simpify the preparation works, a helper script :file:`setup_host.sh` is
+To simplify the preparation work, a helper script :file:`setup_host.sh` is
 provided. The script re-builds the :file:`OVMF.fd` firmware and
 `QEMU`_ emulator from source depending on the target graphics virtualization
 technology, and installs the required software on the installed Ubuntu
@@ -69,7 +82,7 @@ release packages.
    $ chmod +x scripts/setup_host.sh
 
 Launch the script with no argument to set up the environment for running
-CiV using Intel GVT technology:
+CiV using Intel GVT/SR-IOV technology:
 
 .. code-block:: bash
 
@@ -89,12 +102,12 @@ In addition to the AOSP common kernel, |C| also integrates several
 `staging patches <https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2019-chromium>`_
 to take advantages of high performance new Intel processors,
 so it's strongly recommended to run the |C| kernel as the host OS,
-especially running CiV on `NUC10i7FNK`_ or `NUC10i7FNH`_ |NUC| devices.
+especially running CiV on `NUC10i7FNK`_ or `NUC10i7FNH`_ (NUC12WSH for SR-IOV) |NUC| devices.
 To that end, a
 `helper script <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh>`_
 :file:`build.sh` is designed to facilitate
 the building and deploying of |C| kernel on an Ubuntu host.
-Refer to the `README`_ for detailed instructions.
+Refer to the `README`_ for detailed GVT kernel build instructions. Refer to `this README <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-chromium/README>`_ for detailed SR-IOV kernel build instructions.
 
 .. _README: https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
 
@@ -112,7 +125,7 @@ boot the CiV image with QEMU.
 
 :file:`caas-flashfiles-eng.<user>.zip`
 
-The compressed *flashfile* package contains the |C| partition images for
+The compressed *flashfiles* package contains the |C| partition images for
 running in a VM. Proceed with the following section to install these
 images to a virtual disk image in
 `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
@@ -218,7 +231,7 @@ All CiV guest configuration file (INI formated) are stored at
 
       sudo apt-get install ./vm-manager_vx.y.z_$OS_VER.deb
 
-#. Create a ini file under :file:`$HOME/.intel/.civ/civ-1.ini`. Configure it
+#. Create a ini file under :file:`$HOME/.intel/.civ/civ-1.ini` for GVT-g. Configure it
    as shown below: ::
 
      [global]
@@ -263,10 +276,63 @@ All CiV guest configuration file (INI formated) are stored at
      [extra]
      cmd=-chardev socket,id=ch0,path=/tmp/civ1-console,server,nowait,logfile=/tmp/civ1_serial.log -serial chardev:ch0
 
-#. Start the instance:
-     .. code-block:: bash
+#. Create an ini file under :file:`$HOME/.intel/.civ/civ-2.ini` for SR-IOV.
+   Configure it as shown below: ::
 
-        $ sudo vm-manager -b civ-1
+     [global]
+     name=civ-2
+     flashfiles=/home/adl/sriov/caas-flashfiles-CRe011142-r1.zip
+     adb_port=5555
+     fastboot_port=5554
+
+     [emulator]
+     path=/usr/bin/qemu-system-x86_64
+
+     [memory]
+     size=4G
+
+     [vcpu]
+     num=1
+
+     [firmware]
+     type=unified
+     path=/home/adl/caas1/OVMF.fd
+
+     [disk]
+     size=30G
+     path=/home/adl/caas1/android.qcow2
+
+     [graphics]
+     type=SRIOV
+
+     [vtpm]
+     bin_path=/usr/bin/swtpm
+     data_dir=/home/adl/caas1/vtpm0
+
+     [rpmb]
+     bin_path=/home/adl/sriov/scripts/rpmb_dev
+     data_dir=/home/adl/caas1
+
+     [aaf]
+     path=/home/adl/caas1/aaf
+
+     [extra]
+     cmd=-monitor stdio
+
+
+
+#. Start the instance:
+    for GVT-g:
+      .. code-block:: bash
+
+         $ sudo vm-manager -b civ-1
+
+    for SR-IOV:
+      .. code-block:: bash
+
+         $ sudo vm-manager -b civ-2
+
+
 
 For more details, please reference the following wiki to get started:
 `CiV VM Manager User Guide <https://github.com/projectceladon/vm_manager/wiki/User-Guide>`_.

@@ -89,6 +89,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Run Celadon in a virtual machine</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#intel-gvt-d-overview">Intel GVT-d overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#intel-gpu-sr-iov-overview">Intel GPU SR-IOV overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#prepare-the-host-environment">Prepare the host environment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#build-c-images-running-in-vm">Build Celadon images running in VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#create-a-civ-virtual-disk">Create a CiV virtual disk</a></li>
@@ -186,43 +187,48 @@
 <p>Depending on your applications, you can run <abbr title="Celadon in VM">CiV</abbr> using
 Intel® GVT-g technology, or allowing for GPU passthrough to a single
 Android* guest VM through Intel® Virtualization Technology (Intel® VT) for
-Directed I/O (Intel® VT-d) technology, or VirtIO GPU, or pure
-software rendering.</p>
+Directed I/O (Intel® VT-d) technology, SR-IOV (single root input/output
+virtualization) Intel VT to have a good balance of GPU sharing
+(for multiple VMs) and performance as good as bare metal, VirtIO GPU,
+or pure software rendering.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></li>
 <li><a class="reference internal" href="#intel-gvt-d-overview" id="id2">Intel GVT-d overview</a></li>
-<li><a class="reference internal" href="#prepare-the-host-environment" id="id3">Prepare the host environment</a><ul>
-<li><a class="reference internal" href="#set-up-qemu-and-intel-gvt-technology" id="id4">Set up QEMU and Intel GVT technology</a></li>
-<li><a class="reference internal" href="#use-c-kernel" id="id5">Use Celadon kernel</a></li>
+<li><a class="reference internal" href="#intel-gpu-sr-iov-overview" id="id3">Intel GPU SR-IOV overview</a></li>
+<li><a class="reference internal" href="#prepare-the-host-environment" id="id4">Prepare the host environment</a><ul>
+<li><a class="reference internal" href="#set-up-qemu-and-intel-gvt-sr-iov-technology" id="id5">Set up QEMU and Intel GVT/SR-IOV technology</a></li>
+<li><a class="reference internal" href="#use-c-kernel" id="id6">Use Celadon kernel</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#build-c-images-running-in-vm" id="id6">Build Celadon images running in VM</a></li>
-<li><a class="reference internal" href="#create-a-civ-virtual-disk" id="id7">Create a CiV virtual disk</a></li>
-<li><a class="reference internal" href="#boot-to-android-ui" id="id8">Boot to Android UI</a><ul>
-<li><a class="reference internal" href="#use-vm-manager" id="id9">Use vm-manager</a></li>
-<li><a class="reference internal" href="#use-start-civ-sh" id="id10">Use start_civ.sh</a></li>
-<li><a class="reference internal" href="#intel-gvt-option" id="id11">Intel GVT option</a></li>
-<li><a class="reference internal" href="#usb-pci-controller-pass-through-option" id="id12">USB PCI controller pass-through option</a></li>
+<li><a class="reference internal" href="#build-c-images-running-in-vm" id="id7">Build Celadon images running in VM</a></li>
+<li><a class="reference internal" href="#create-a-civ-virtual-disk" id="id8">Create a CiV virtual disk</a></li>
+<li><a class="reference internal" href="#boot-to-android-ui" id="id9">Boot to Android UI</a><ul>
+<li><a class="reference internal" href="#use-vm-manager" id="id10">Use vm-manager</a></li>
+<li><a class="reference internal" href="#use-start-civ-sh" id="id11">Use start_civ.sh</a></li>
+<li><a class="reference internal" href="#intel-gvt-option" id="id12">Intel GVT option</a></li>
+<li><a class="reference internal" href="#usb-pci-controller-pass-through-option" id="id13">USB PCI controller pass-through option</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#launching-with-sd-card" id="id13">Launching with SD card</a></li>
-<li><a class="reference internal" href="#audio-pass-through-option" id="id14">Audio pass-through option</a></li>
+<li><a class="reference internal" href="#launching-with-sd-card" id="id14">Launching with SD card</a></li>
+<li><a class="reference internal" href="#audio-pass-through-option" id="id15">Audio pass-through option</a></li>
 </ul>
 </div>
 <div class="section" id="prerequisites">
 <h2><a class="toc-backref" href="#id1">Prerequisites</a></h2>
 <ul>
-<li><p class="first">An Intel® NUC with an eighth generation or newer Intel® Core™ Processor.</p>
+<li><p class="first">An Intel® NUC with an eighth generation (12th generation for SR-IOV) or newer Intel® Core™ Processor.</p>
 </li>
 <li><p class="first">Ubuntu* 20.04 (Focal Fossa) preinstalled that runs Linux* kernel
-version 5.0.0 or above.</p>
+version 5.0.0 (5.10.100 for SR-IOV) or above.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><abbr title="Celadon in VM">CiV</abbr> releases have been validated on
 Intel NUC model <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5dnhe.html">NUC7i5DNHE</a>. Releases after <strong>April 17th 2020</strong> are
 validated on Intel NUC model <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnk.html">NUC10i7FNK</a> and <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnh.html">NUC10i7FNH</a> to
-take performance advantages of 10th Generation Intel Core Processors.</p>
+take performance advantages of 10th Generation Intel Core Processors.
+For SR-IOV, they are validated on Intel NUC model NUC12WSH with 12th generation
+Intel Core Processors.</p>
 </div>
 </li>
 </ul>
@@ -240,12 +246,18 @@ without limitations.</p>
 <p>Refer to this <a class="reference external" href="https://01.org/sites/default/files/downloads/igvt-g/gvtflyer.pdf">article</a>
 for an introduction to Intel Graphics Virtualization Technology.</p>
 </div>
+<div class="section" id="intel-gpu-sr-iov-overview">
+<h2><a class="toc-backref" href="#id3">Intel GPU SR-IOV overview</a></h2>
+<p>An Intel GPU can isolate GPU PCIe devices to improve performance to a level that is similar to bare-metal levels. Intel GPU SR-IOV is based on SR-IOV technology, SR-IOV consists of two basic units: PF (Physical Function), which supports SR-IOV PCIe extended capability and manages entire physical devices; and VF (Virtual Function), a “lightweight” PCIe function that is a passthrough device for VMs.</p>
+<p>Refer to <a class="reference external" href="https://projectacrn.github.io/latest/tutorials/sriov_virtualization.html">this article</a> and <a class="reference external" href="https://videoportal.intel.com/media/GPU+VirtualizationA+SRIOV+and+Beyond/0_2a3dmpu0">this video</a>
+for an introduction to Intel Graphics Virtualization Technology.</p>
+</div>
 <div class="section" id="prepare-the-host-environment">
-<h2><a class="toc-backref" href="#id3">Prepare the host environment</a></h2>
-<div class="section" id="set-up-qemu-and-intel-gvt-technology">
-<h3><a class="toc-backref" href="#id4">Set up QEMU and Intel GVT technology</a></h3>
+<h2><a class="toc-backref" href="#id4">Prepare the host environment</a></h2>
+<div class="section" id="set-up-qemu-and-intel-gvt-sr-iov-technology">
+<h3><a class="toc-backref" href="#id5">Set up QEMU and Intel GVT/SR-IOV technology</a></h3>
 <p>The host device that launches the virtual machine requires Ubuntu 20.04.
-To simpify the preparation works, a helper script <code class="file docutils literal"><span class="pre">setup_host.sh</span></code> is
+To simplify the preparation work, a helper script <code class="file docutils literal"><span class="pre">setup_host.sh</span></code> is
 provided. The script re-builds the <code class="file docutils literal"><span class="pre">OVMF.fd</span></code> firmware and
 <a class="reference external" href="https://www.qemu.org/">QEMU</a> emulator from source depending on the target graphics virtualization
 technology, and installs the required software on the installed Ubuntu
@@ -261,7 +273,7 @@ $ chmod +x scripts/setup_host.sh
 </pre></div>
 </div>
 <p>Launch the script with no argument to set up the environment for running
-CiV using Intel GVT technology:</p>
+CiV using Intel GVT/SR-IOV technology:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo -E ./scripts/setup_host.sh
 </pre></div>
 </div>
@@ -270,7 +282,7 @@ confirm the changes to the packages, it’s safe to respond <code class="kbd doc
 them.</p>
 </div>
 <div class="section" id="use-c-kernel">
-<h3><a class="toc-backref" href="#id5">Use Celadon kernel</a></h3>
+<h3><a class="toc-backref" href="#id6">Use Celadon kernel</a></h3>
 <p>The Linux kernel is extremely important on every Android device. Google*
 recommends using <a class="reference external" href="https://source.android.com/devices/architecture/kernel/android-common">AOSP common kernels</a> on Android devices to include
 features and implementations required by Android.
@@ -278,16 +290,16 @@ In addition to the AOSP common kernel, Celadon also integrates several
 <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2019-chromium">staging patches</a>
 to take advantages of high performance new Intel processors,
 so it’s strongly recommended to run the Celadon kernel as the host OS,
-especially running CiV on <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnk.html">NUC10i7FNK</a> or <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnh.html">NUC10i7FNH</a> Intel NUC devices.
+especially running CiV on <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnk.html">NUC10i7FNK</a> or <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnh.html">NUC10i7FNH</a> (NUC12WSH for SR-IOV) Intel NUC devices.
 To that end, a
 <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh">helper script</a>
 <code class="file docutils literal"><span class="pre">build.sh</span></code> is designed to facilitate
 the building and deploying of Celadon kernel on an Ubuntu host.
-Refer to the <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README">README</a> for detailed instructions.</p>
+Refer to the <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README">README</a> for detailed GVT kernel build instructions. Refer to <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-chromium/README">this README</a> for detailed SR-IOV kernel build instructions.</p>
 </div>
 </div>
 <div class="section" id="build-c-images-running-in-vm">
-<h2><a class="toc-backref" href="#id6">Build Celadon images running in VM</a></h2>
+<h2><a class="toc-backref" href="#id7">Build Celadon images running in VM</a></h2>
 <p>Refer to the <a class="reference internal" href="build-source.html#build-os-image"><span class="std std-ref">Build Celadon in VM image</span></a> section in the Getting Started Guide and
 specify <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">caas</span></code> as the lunch target to build the CiV images. The
 following CiV image types are generated at the end of the build:</p>
@@ -295,7 +307,7 @@ following CiV image types are generated at the end of the build:</p>
 <p>The GPT disk image for direct booting. Skip the next section to
 boot the CiV image with QEMU.</p>
 <p><code class="file docutils literal"><span class="pre">caas-flashfiles-eng.&lt;user&gt;.zip</span></code></p>
-<p>The compressed <em>flashfile</em> package contains the Celadon partition images for
+<p>The compressed <em>flashfiles</em> package contains the Celadon partition images for
 running in a VM. Proceed with the following section to install these
 images to a virtual disk image in
 <a class="reference external" href="https://www.linux-kvm.org/page/Qcow2">qcow2</a> format.</p>
@@ -304,7 +316,7 @@ images to a virtual disk image in
 Celadon in VM.</p>
 </div>
 <div class="section" id="create-a-civ-virtual-disk">
-<h2><a class="toc-backref" href="#id7">Create a CiV virtual disk</a></h2>
+<h2><a class="toc-backref" href="#id8">Create a CiV virtual disk</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Skip this section if you plan to boot the device directly with the
@@ -337,7 +349,7 @@ directory.</p>
 </ol>
 </div>
 <div class="section" id="boot-to-android-ui">
-<h2><a class="toc-backref" href="#id8">Boot to Android UI</a></h2>
+<h2><a class="toc-backref" href="#id9">Boot to Android UI</a></h2>
 <p>There are two ways to start a CiV instance:
 <cite>vm-manager</cite> and <cite>start_civ.sh</cite>.
 For Android-12 and later releases, please refer to
@@ -346,7 +358,7 @@ For Android-11 and previous releases, please refer to
 <a class="reference external" href="#use-start-civ-sh">start_civ.sh</a>.
 Check Release Notes here: <a class="reference external" href="https://docs.01.org/celadon/release-notes.html">https://docs.01.org/celadon/release-notes.html</a>.</p>
 <div class="section" id="use-vm-manager">
-<h3><a class="toc-backref" href="#id9">Use vm-manager</a></h3>
+<h3><a class="toc-backref" href="#id10">Use vm-manager</a></h3>
 <p>The <cite>vm-manager</cite> tool was developed to facilitate the CiV images
 booting process. It supports various options:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>vm-manager <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-i config_file_path<span class="o">]</span> <span class="o">[</span>-d vm_name<span class="o">]</span> <span class="o">[</span>-b vm_name<span class="o">]</span> <span class="o">[</span>-q vm_name<span class="o">]</span> <span class="o">[</span>-f vm_name<span class="o">]</span> <span class="o">[</span>-m vm_name<span class="o">]</span> <span class="o">[</span>-l<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span>
@@ -400,7 +412,7 @@ Install it with this command:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Create a ini file under <code class="file docutils literal"><span class="pre">$HOME/.intel/.civ/civ-1.ini</span></code>. Configure it
+<li><p class="first">Create a ini file under <code class="file docutils literal"><span class="pre">$HOME/.intel/.civ/civ-1.ini</span></code> for GVT-g. Configure it
 as shown below:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="k">global</span><span class="p">]</span>
 <span class="n">name</span><span class="o">=</span><span class="n">civ</span><span class="o">-</span><span class="mi">1</span>
@@ -446,11 +458,64 @@ as shown below:</p>
 </pre></div>
 </div>
 </li>
+<li><p class="first">Create an ini file under <code class="file docutils literal"><span class="pre">$HOME/.intel/.civ/civ-2.ini</span></code> for SR-IOV.
+Configure it as shown below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="k">global</span><span class="p">]</span>
+<span class="n">name</span><span class="o">=</span><span class="n">civ</span><span class="o">-</span><span class="mi">2</span>
+<span class="n">flashfiles</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">sriov</span><span class="o">/</span><span class="n">caas</span><span class="o">-</span><span class="n">flashfiles</span><span class="o">-</span><span class="n">CRe011142</span><span class="o">-</span><span class="n">r1</span><span class="o">.</span><span class="n">zip</span>
+<span class="n">adb_port</span><span class="o">=</span><span class="mi">5555</span>
+<span class="n">fastboot_port</span><span class="o">=</span><span class="mi">5554</span>
+
+<span class="p">[</span><span class="n">emulator</span><span class="p">]</span>
+<span class="n">path</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">qemu</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">x86_64</span>
+
+<span class="p">[</span><span class="n">memory</span><span class="p">]</span>
+<span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="n">G</span>
+
+<span class="p">[</span><span class="n">vcpu</span><span class="p">]</span>
+<span class="n">num</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="p">[</span><span class="n">firmware</span><span class="p">]</span>
+<span class="nb">type</span><span class="o">=</span><span class="n">unified</span>
+<span class="n">path</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">caas1</span><span class="o">/</span><span class="n">OVMF</span><span class="o">.</span><span class="n">fd</span>
+
+<span class="p">[</span><span class="n">disk</span><span class="p">]</span>
+<span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="n">G</span>
+<span class="n">path</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">caas1</span><span class="o">/</span><span class="n">android</span><span class="o">.</span><span class="n">qcow2</span>
+
+<span class="p">[</span><span class="n">graphics</span><span class="p">]</span>
+<span class="nb">type</span><span class="o">=</span><span class="n">SRIOV</span>
+
+<span class="p">[</span><span class="n">vtpm</span><span class="p">]</span>
+<span class="n">bin_path</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">swtpm</span>
+<span class="n">data_dir</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">caas1</span><span class="o">/</span><span class="n">vtpm0</span>
+
+<span class="p">[</span><span class="n">rpmb</span><span class="p">]</span>
+<span class="n">bin_path</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">sriov</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">rpmb_dev</span>
+<span class="n">data_dir</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">caas1</span>
+
+<span class="p">[</span><span class="n">aaf</span><span class="p">]</span>
+<span class="n">path</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">caas1</span><span class="o">/</span><span class="n">aaf</span>
+
+<span class="p">[</span><span class="n">extra</span><span class="p">]</span>
+<span class="n">cmd</span><span class="o">=-</span><span class="n">monitor</span> <span class="n">stdio</span>
+</pre></div>
+</div>
+</li>
 <li><dl class="first docutils">
 <dt>Start the instance:</dt>
+<dd><dl class="first last docutils">
+<dt>for GVT-g:</dt>
 <dd><div class="first last highlight-bash"><div class="highlight"><pre><span></span>$ sudo vm-manager -b civ-1
 </pre></div>
 </div>
+</dd>
+<dt>for SR-IOV:</dt>
+<dd><div class="first last highlight-bash"><div class="highlight"><pre><span></span>$ sudo vm-manager -b civ-2
+</pre></div>
+</div>
+</dd>
+</dl>
 </dd>
 </dl>
 </li>
@@ -459,7 +524,7 @@ as shown below:</p>
 <a class="reference external" href="https://github.com/projectceladon/vm_manager/wiki/User-Guide">CiV VM Manager User Guide</a>.</p>
 </div>
 <div class="section" id="use-start-civ-sh">
-<h3><a class="toc-backref" href="#id10">Use start_civ.sh</a></h3>
+<h3><a class="toc-backref" href="#id11">Use start_civ.sh</a></h3>
 <p>The <cite>start_civ.sh</cite> script was developed to facilitate the CiV images
 booting process. It supports the following options:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>start_civ.sh <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-m<span class="o">]</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-g<span class="o">]</span> <span class="o">[</span>-d<span class="o">]</span> <span class="o">[</span>-f<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-s<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-b<span class="o">]</span> <span class="o">[</span>-e<span class="o">]</span> <span class="o">[</span>--passthrough-pci-usb<span class="o">]</span> <span class="o">[</span>--passthrough-pci-audio<span class="o">]</span> <span class="o">[</span>--passthrough-pci-eth<span class="o">]</span> <span class="o">[</span>--passthrough-wifi<span class="o">]</span> <span class="o">[</span>--thermal-mediation<span class="o">]</span> <span class="o">[</span>--battery-mediation<span class="o">]</span> <span class="o">[</span>--guest-pm-control<span class="o">]</span> <span class="o">[</span>--guest-time-keep<span class="o">]</span>
@@ -538,7 +603,7 @@ booting process. It supports the following options:</p>
 </table>
 </div>
 <div class="section" id="intel-gvt-option">
-<h3><a class="toc-backref" href="#id11">Intel GVT option</a></h3>
+<h3><a class="toc-backref" href="#id12">Intel GVT option</a></h3>
 <p>Enter the following commands to run the script <cite>start_civ.sh</cite> with
 root permissions to facilitate booting CiV images with QEMU.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /opt/civ-1
@@ -553,7 +618,7 @@ $ sudo -E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
 </div>
 </div>
 <div class="section" id="usb-pci-controller-pass-through-option">
-<h3><a class="toc-backref" href="#id12">USB PCI controller pass-through option</a></h3>
+<h3><a class="toc-backref" href="#id13">USB PCI controller pass-through option</a></h3>
 <p>You can pass-through not only the GPU but also the USB host controller (xHCI)
 to the Android VM to attach all the connected USB devices
 (e.g. camera, USB thumb drive) to the VM.
@@ -594,7 +659,7 @@ in the Android VM:</p>
 </div>
 </div>
 <div class="section" id="launching-with-sd-card">
-<h2><a class="toc-backref" href="#id13">Launching with SD card</a></h2>
+<h2><a class="toc-backref" href="#id14">Launching with SD card</a></h2>
 <p>If your hardware platform supports SD cards through the <abbr title="Secure Digital Host Controller Interface">SDHCI</abbr> controller, you can enable
 SDHCI mediation by adding <strong class="command">-b &lt;sdcard block device&gt;</strong> option
 argument while invoking the <cite>start_civ.sh</cite> script if the SD card is present
@@ -617,7 +682,7 @@ with the SD card options, or the SD card won’t be operational.</li>
 </div>
 </div>
 <div class="section" id="audio-pass-through-option">
-<h2><a class="toc-backref" href="#id14">Audio pass-through option</a></h2>
+<h2><a class="toc-backref" href="#id15">Audio pass-through option</a></h2>
 <p>The audio controller can be passed through to the guest
 by adding <strong class="command">--passthrough-pci-audio</strong> argument while invoking the
 <cite>start_civ.sh</cite> script, the host then has no control over it.</p>
@@ -668,7 +733,7 @@ command:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Apr 07, 2022.
+      Last updated on Jun 01, 2022.
 
     </p>
   </div>

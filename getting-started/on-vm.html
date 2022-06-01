@@ -187,8 +187,8 @@
 <p>Depending on your applications, you can run <abbr title="Celadon in VM">CiV</abbr> using
 Intel® GVT-g technology, or allowing for GPU passthrough to a single
 Android* guest VM through Intel® Virtualization Technology (Intel® VT) for
-Directed I/O (Intel® VT-d) technology, SR-IOV (single root input/output
-virtualization) Intel VT to have a good balance of GPU sharing
+Directed I/O (Intel® VT-d) technology, or SR-IOV (single root input/output
+virtualization) Intel VT to have a balance of GPU sharing
 (for multiple VMs) and performance as good as bare metal, VirtIO GPU,
 or pure software rendering.</p>
 <div class="contents local topic" id="contents">
@@ -250,7 +250,7 @@ for an introduction to Intel Graphics Virtualization Technology.</p>
 <h2><a class="toc-backref" href="#id3">Intel GPU SR-IOV overview</a></h2>
 <p>An Intel GPU can isolate GPU PCIe devices to improve performance to a level that is similar to bare-metal levels. Intel GPU SR-IOV is based on SR-IOV technology, SR-IOV consists of two basic units: PF (Physical Function), which supports SR-IOV PCIe extended capability and manages entire physical devices; and VF (Virtual Function), a “lightweight” PCIe function that is a passthrough device for VMs.</p>
 <p>Refer to <a class="reference external" href="https://projectacrn.github.io/latest/tutorials/sriov_virtualization.html">this article</a> and <a class="reference external" href="https://videoportal.intel.com/media/GPU+VirtualizationA+SRIOV+and+Beyond/0_2a3dmpu0">this video</a>
-for an introduction to Intel Graphics Virtualization Technology.</p>
+for an introduction to SR-IOV Technology.</p>
 </div>
 <div class="section" id="prepare-the-host-environment">
 <h2><a class="toc-backref" href="#id4">Prepare the host environment</a></h2>

@@ -8,8 +8,8 @@ This page explains what you'll need to run |C| in a virtual machine.
 Depending on your applications, you can run :abbr:`CiV (Celadon in VM)` using
 Intel® GVT-g technology, or allowing for GPU passthrough to a single
 Android\* guest VM through Intel® Virtualization Technology (Intel® VT) for
-Directed I/O (Intel® VT-d) technology, SR-IOV (single root input/output
-virtualization) Intel VT to have a good balance of GPU sharing
+Directed I/O (Intel® VT-d) technology, or SR-IOV (single root input/output
+virtualization) Intel VT to have a balance of GPU sharing
 (for multiple VMs) and performance as good as bare metal, VirtIO GPU,
 or pure software rendering.
 
@@ -53,11 +53,12 @@ Intel GPU SR-IOV overview
 An Intel GPU can isolate GPU PCIe devices to improve performance to a level that is similar to bare-metal levels. Intel GPU SR-IOV is based on SR-IOV technology, SR-IOV consists of two basic units: PF (Physical Function), which supports SR-IOV PCIe extended capability and manages entire physical devices; and VF (Virtual Function), a “lightweight” PCIe function that is a passthrough device for VMs.
 
 Refer to `this article <https://projectacrn.github.io/latest/tutorials/sriov_virtualization.html>`_ and `this video <https://videoportal.intel.com/media/GPU+VirtualizationA+SRIOV+and+Beyond/0_2a3dmpu0>`_
-for an introduction to Intel Graphics Virtualization Technology.
+for an introduction to SR-IOV Technology.
 
 
 Prepare the host environment
 ****************************
+
 
 Set up QEMU and Intel GVT/SR-IOV technology
 ===========================================

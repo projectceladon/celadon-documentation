@@ -104,13 +104,14 @@ In addition to the AOSP common kernel, |C| also integrates several
 to take advantages of high performance new Intel processors,
 so it's strongly recommended to run the |C| kernel as the host OS,
 especially running CiV on `NUC10i7FNK`_ or `NUC10i7FNH`_ (NUC12WSH for SR-IOV) |NUC| devices.
-To that end, a
-`helper script <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh>`_
-:file:`build.sh` is designed to facilitate
-the building and deploying of |C| kernel on an Ubuntu host.
-Refer to the `README`_ for detailed GVT kernel build instructions. Refer to `this README <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-chromium/README>`_ for detailed SR-IOV kernel build instructions.
+To that end, a helper script :file:`build.sh` is designed to facilitate
+building and deploying the |C| kernel on an Ubuntu host.
+Refer to the
+`README <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-chromium/README>`_
+for detailed GVT kernel build instructions. Refer to
+`this README <https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-yocto/README>`_
+for detailed SR-IOV kernel build instructions.
 
-.. _README: https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README
 
 Build |C| images running in VM
 ******************************

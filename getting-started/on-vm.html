@@ -291,11 +291,13 @@ In addition to the AOSP common kernel, Celadon also integrates several
 to take advantages of high performance new Intel processors,
 so it’s strongly recommended to run the Celadon kernel as the host OS,
 especially running CiV on <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnk.html">NUC10i7FNK</a> or <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc10i7fnh.html">NUC10i7FNH</a> (NUC12WSH for SR-IOV) Intel NUC devices.
-To that end, a
-<a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/build.sh">helper script</a>
-<code class="file docutils literal"><span class="pre">build.sh</span></code> is designed to facilitate
-the building and deploying of Celadon kernel on an Ubuntu host.
-Refer to the <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2019-chromium/README">README</a> for detailed GVT kernel build instructions. Refer to <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-chromium/README">this README</a> for detailed SR-IOV kernel build instructions.</p>
+To that end, a helper script <code class="file docutils literal"><span class="pre">build.sh</span></code> is designed to facilitate
+building and deploying the Celadon kernel on an Ubuntu host.
+Refer to the
+<a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-chromium/README">README</a>
+for detailed GVT kernel build instructions. Refer to
+<a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/blob/master/host/kernel/lts2020-yocto/README">this README</a>
+for detailed SR-IOV kernel build instructions.</p>
 </div>
 </div>
 <div class="section" id="build-c-images-running-in-vm">
@@ -733,7 +735,7 @@ command:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jun 01, 2022.
+      Last updated on Jun 03, 2022.
 
     </p>
   </div>

@@ -196,7 +196,7 @@ New in this release
 
 Known issues
 ------------
-* 
+* Unable to set and change the lock screen sometimes after couple of mins of usage
 * 
 
 Where to find the release

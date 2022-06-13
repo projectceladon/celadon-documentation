@@ -157,7 +157,7 @@ New in this release
     * Tearing prevention
     * Virtualized Display – KMSRO/ Zero copy
     * Switch displays between guests
-    * 8k resolution support?
+    * 8k resolution support
     * HDMI Audio
     * SoF HDA mediation solution
     * Virtual TPM2.0

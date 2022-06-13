@@ -149,7 +149,7 @@ New in this release
 -------------------
 
  * New features
-    * Android 12 with latest AOSP release tag (android-12.0.0_r26)
+    * Android 12 with latest AOSP release tag (android-12.0.0_r28)
     * Integrated VM Manager to configure CIV replacing start_civ.sh
         * This changes launch steps for CIV - please refer https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
 
@@ -282,9 +282,9 @@ Reference configuration
 
  * Supported software
 
-     * AOSP Version - android-12.0.0_r26
-     * NUC11PAQI7 Host Kernel - -5.10.82-cvhb
-     * NUC11PAQI7 Guest kernel - -5.10.91-cvhb
+     * AOSP Version - android-12.0.0_r28
+     * NUC11PAQI7 Host Kernel - -5.10.110-cvhb
+     * NUC11PAQI7 Guest kernel - -5.10.110-cvhb
 
 
 Acronyms and terms

@@ -270,7 +270,7 @@ Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 USB                            OK       Keyboard , Mouse , Pen drive
 Display                        OK
-Touch and Gesture              OK
+Touch and Gesture              OK 
 =============================  =======  ========
 
 

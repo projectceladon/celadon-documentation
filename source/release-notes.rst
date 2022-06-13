@@ -152,7 +152,7 @@ New in this release
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)
     * Integrated VM Manager to configure CIV replacing start_civ.sh
         * This changes launch steps for CIV - please refer https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
-
+    
  * Includes Android 12 main features:
     * Celadon supports Android 12 with API level 31 and FCM target level 6
     * Boot control HAL upgraded to V1.2
@@ -196,8 +196,10 @@ New in this release
 
 Known issues
 ------------
-* Unable to set and change the lock screen sometimes after couple of mins of usage
-* 
+* Unable to set and change the lock screen sometimes after couple of minutes of usage
+* Volume control doesn't work with 3.5mm Headset button
+* Unable to seek properly on recorded video
+* HDMI audio is lost after adb reboot
 
 Where to find the release
 -------------------------
@@ -261,7 +263,6 @@ BT                             OK        Bluetooth is working
 Audio Playback                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
-Display /Touch and Gesture     OK
 Security                       OK
 Boot                           OK       Boots on QEMU 6.0.0
 Ethernet                       OK

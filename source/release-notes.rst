@@ -196,13 +196,14 @@ New in this release
 
 Known issues
 ------------
-* There are WIP features in all components for full feature completions, This release tests only basic sanity of components.
+* 
+* 
 
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.22.01.04_A12.xml
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.22.01.04_A12
+* Manifest Link : 
+* Binary Link : 
 
 
 How to install this release

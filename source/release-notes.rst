@@ -269,8 +269,8 @@ Image Flash                    OK
 Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 USB                            OK       Keyboard , Mouse , Pen drive
-Display /Touch and Gesture     OK
-
+Display                        OK
+Touch and Gesture              OK
 =============================  =======  ========
 
 

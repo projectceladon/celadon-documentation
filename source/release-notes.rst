@@ -129,8 +129,8 @@ Base Releases
 CIV_00.22.02.21_A12
 ===================
 * This is a Pre Production Binary Release for evaluation and development
-  purposes . This release is
-  supported on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_ Celadon in VM.
+  purposes . This release enables support for 12th GEN Core and it has 
+  been tested on Alder Lake RVP [Celadon in VM].
 
 Intended audience
 -----------------
@@ -253,7 +253,7 @@ How to install this release
 Validation results
 ------------------
 
-This build has been validated on |NUC| Kit `NUC11PAQI7  <https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html>`_  in the following function domains:
+This build has been validated on Alder Lake RVP in the following function domains:
 
 =============================  =======  ========
 Component                      Results  Comments
@@ -280,7 +280,7 @@ Reference configuration
 
  * Supported hardware
 
-     * Product - NUC11PAQI7
+     * Product -  Alder Lake RVP
 
  * Supported software
 

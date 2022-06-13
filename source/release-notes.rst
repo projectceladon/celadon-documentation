@@ -150,8 +150,36 @@ New in this release
 
  * New features
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)
-    * Enabled with SRIOV https://docs.01.org/celadon/getting-started/on-vm.html#set-up-qemu-and-intel-gvt-sr-iov-technology 
-    
+    * Enabled with SRIOV https://docs.01.org/celadon/getting-started/on-vm.html#set-up-qemu-and-intel-gvt-sr-iov-technology
+    * Enabled Virgl
+    * Enabled SRIOV (Single Root I/O Virtualization)
+    * Switch between h/w accelerated graphics and s/w graphics 
+    * Enabled Virtio-gpu
+    * Tearing prevention
+    * Virtualized Display – KMSRO/ Zero copy
+    * Switch displays between guests
+    * 8k resolution support?
+    * HDMI Audio
+    * SoF HDA mediation solution
+    * Virtual TPM2.0
+    * Trusty KeyMint support
+    * File based Encryption
+    * VP9 h/w accelerated
+    * Prime buffer sharing
+    * Media Codec 2.0 h/w path
+    * Super image > 4G
+    * bootconfig support 
+    * WPA3 support
+    * WiFi 802.11.ax Support
+    * Browse Internet (IPv6)
+    * WiFi Direct
+    * WiFi Control from Android in Virtual Machine
+    * Bluetooth Control from Android in Virtual Machine
+    * ISH Enabled 
+    * Support Control Plant – VM Manager
+    * Switch USB touch screen between guest OSes
+    * Incremental FS, F2FS support
+
  * Includes Android 12 main features:
     *Integrated VM Manager to configure CIV replacing start_civ.sh
         * This changes launch steps for CIV - please refer https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager

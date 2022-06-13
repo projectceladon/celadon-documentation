@@ -150,10 +150,11 @@ New in this release
 
  * New features
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)
-    * Integrated VM Manager to configure CIV replacing start_civ.sh
-        * This changes launch steps for CIV - please refer https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
+    * Enabled with SRIOV https://docs.01.org/celadon/getting-started/on-vm.html#set-up-qemu-and-intel-gvt-sr-iov-technology 
     
  * Includes Android 12 main features:
+    *Integrated VM Manager to configure CIV replacing start_civ.sh
+        * This changes launch steps for CIV - please refer https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
     * Celadon supports Android 12 with API level 31 and FCM target level 6
     * Boot control HAL upgraded to V1.2
     * Audio HAL upgraded to V7.0
@@ -182,7 +183,7 @@ New in this release
     * New platform features for Mainline Module
     * Improvements to bandwidth estimation APIs in connectivity and introduced principle of 5G slicing
     * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
-    * Bluetooth side, BLE audio introduced, NFC API/UX improved for payment enhancement.
+    * Bluetooth side, BT classic and BLE introduced
     * Activity Detection, CHRE, Bluesky, FLP & RTT related changes
     * Major changes in window management and introduced Display grouping and emphasis for multi-display context
     * pKVM (Protected KVM) code compatibility available, Celadon won’t support it.
@@ -200,6 +201,7 @@ Known issues
 * Volume control doesn't work with 3.5mm Headset button
 * Unable to seek properly on recorded video
 * HDMI audio is lost after adb reboot
+* Limitation on Alderlake RVP--> Suspend-resume functionality is not applicable on ADL RVP  
 
 Where to find the release
 -------------------------

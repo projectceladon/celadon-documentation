@@ -150,7 +150,6 @@ New in this release
 
  * New features
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)
-    * Enabled with SRIOV https://docs.01.org/celadon/getting-started/on-vm.html#set-up-qemu-and-intel-gvt-sr-iov-technology
     * Enabled Virgl
     * Enabled SRIOV (Single Root I/O Virtualization)
     * Switch between h/w accelerated graphics and s/w graphics 

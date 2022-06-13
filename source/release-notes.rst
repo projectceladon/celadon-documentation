@@ -263,12 +263,13 @@ Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
 Display /Touch and Gesture     OK
 Security                       OK
-Boot                           OK       Boots on QEMU 4.2.0
+Boot                           OK       Boots on QEMU 6.0.0
 Ethernet                       OK
 Image Flash                    OK
 Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 USB                            OK       Keyboard , Mouse , Pen drive
+Display /Touch and Gesture     OK
 
 =============================  =======  ========
 

@@ -171,9 +171,6 @@ New in this release
     * bootconfig support 
     * WPA3 support
     * WiFi 802.11.ax Support
-    * Browse Internet (IPv6)
-    * WiFi Direct
-    * WiFi Control from Android in Virtual Machine
     * Bluetooth Control from Android in Virtual Machine
     * ISH Enabled 
     * Support Control Plant – VM Manager
@@ -186,6 +183,9 @@ New in this release
     * Celadon supports Android 12 with API level 31 and FCM target level 6
     * Boot control HAL upgraded to V1.2
     * Audio HAL upgraded to V7.0
+    * Browse Internet (IPv6)
+    * WiFi Direct
+    * WiFi Control from Android in Virtual Machine
     * Basic sanity test passed for all components *
     * Bug fixes, customizations and optimizations for x86
     * SE Policy updated for API level 31

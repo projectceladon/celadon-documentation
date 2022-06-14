@@ -233,8 +233,8 @@ Known issues
 Where to find the release
 -------------------------
 
-* Manifest Link : 
-* Binary Link : 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.22.02.21_A12.xml
+* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.22.02.21_A12
 
 
 How to install this release

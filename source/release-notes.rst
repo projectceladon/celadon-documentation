@@ -14,7 +14,8 @@ Release Notes
 Stable Releases
 ***************
 
-This is a Production Release for evaluation and development purposes addressing Retail, Education, Workload consolidation and Marine segments.
+This is a Production Release for evaluation and development purposes addressing
+Retail, Education, Workload consolidation and Marine segments.
 
 .. contents::
    :local:
@@ -31,7 +32,8 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using :
+  https://lists.01.org/postorius/lists/celadon.lists.01.org/
 
 Introduction
 ------------
@@ -111,13 +113,16 @@ Reference configuration
 Validation results
 ------------------
 
-Stable Releases (IoT) build running in GVT-d mode has been validated on Comet Lake(CML), Tiger Lake(TGL), and Elkhart Lake(EHL) Intel® platforms in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements
+Stable Releases (IoT) build running in GVT-d mode has been validated on Comet
+Lake(CML), Tiger Lake(TGL), and Elkhart Lake(EHL) Intel® platforms in the
+following function domains. Validation cycles are performed on GMS user-signed
+widevine enabled image as required by Google certification requirements.
 
 .. figure:: stable-release_iot/images/Validation_Result2.png
     :align: center
     :width: 750px
 
-.. note:: CTS on GSI Failures are due to Google dependency and shall be resolved in Upcoming new GSI patch	
+.. note:: CTS on GSI Failures are due to Google dependency and shall be resolved in Upcoming new GSI patch.
 
 Base Releases
 *************
@@ -129,7 +134,7 @@ Base Releases
 CIV_00.22.02.21_A12
 ===================
 * This is a Pre Production Binary Release for evaluation and development
-  purposes . This release enables support for 12th GEN Core and it has 
+  purposes . This release enables support for 12th GEN Core and it has
   been tested on Alder Lake RVP [Celadon in VM].
 
 Intended audience
@@ -152,7 +157,7 @@ New in this release
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)
     * Enabled Virgl
     * Enabled SRIOV (Single Root I/O Virtualization)
-    * Switch between h/w accelerated graphics and s/w graphics 
+    * Switch between h/w accelerated graphics and s/w graphics
     * Enabled Virtio-gpu
     * Tearing prevention
     * Virtualized Display – KMSRO/ Zero copy
@@ -167,18 +172,19 @@ New in this release
     * Prime buffer sharing
     * Media Codec 2.0 h/w path
     * Super image > 4G
-    * bootconfig support 
+    * bootconfig support
     * WPA3 support
     * WiFi 802.11.ax Support
     * Bluetooth Control from Android in Virtual Machine
-    * ISH Enabled 
+    * ISH Enabled
     * Support Control Plant – VM Manager
     * Switch USB touch screen between guest OSes
     * Incremental FS, F2FS support
 
  * Includes Android 12 main features:
-    *Integrated VM Manager to configure CIV replacing start_civ.sh
-        * This changes launch steps for CIV - please refer https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
+    * Integrated VM Manager to configure CIV replacing start_civ.sh
+        * This changes launch steps for CIV - please refer to
+          https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
     * Celadon supports Android 12 with API level 31 and FCM target level 6
     * Boot control HAL upgraded to V1.2
     * Audio HAL upgraded to V7.0
@@ -191,19 +197,28 @@ New in this release
     * AIDL libs updated
     * Health HAL is optimized to adapt the new changes for S Dessert
     * Graphics introduced scheduling plans,
-    * Graphics: Surface flinger caching, GPU memory accounting, profiling and GPU scheduling
-    * Accessibility, System UI and backup & restore features updated with minor modifications
+    * Graphics: Surface flinger caching, GPU memory accounting, profiling and
+      GPU scheduling
+    * Accessibility, System UI and backup & restore features updated with minor
+      modifications
     * FUSE passthrough introduced to improve IO performance
-    * IncFS updated with Better Monitoring Support, virtio-9p support, fs-verity support
+    * IncFS updated with Better Monitoring Support, virtio-9p support, fs-verity
+      support
     * Enabled NNAPI updatability in Machine Learning
     * New platform features for Mainline Module
-    * Incremental: new Android 12+ feature that could reduce initial downloads of app
+    * Incremental: new Android 12+ feature that could reduce initial downloads
+      of app
     * Approximate location access and privacy related updates
-    * New Storage Features like Storage management API changes, New directory for voice recordings, Media management access, App storage access and Extended file access support.
+    * New Storage Features like Storage management API changes, New directory
+      for voice recordings, Media management access, App storage access and
+      Extended file access support.
     * Memory accounting updates
-    * Framework introduced changes in foreground service, Gamepad – Input device features, Haptic related vibrator changes
-    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio along with audio HAL v7.0
-    * Media transcoding, media extractor related changes and improved quality in encoded video
+    * Framework introduced changes in foreground service, Gamepad – Input device
+      features, Haptic related vibrator changes
+    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio
+      along with audio HAL v7.0
+    * Media transcoding, media extractor related changes and improved quality in
+      encoded video
     * AVIF image support, Easier blurs, color filters, and other effects
     * CameraX vendor extension support
     * Enabled NNAPI updatability in Machine Learning
@@ -224,11 +239,13 @@ New in this release
 
 Known issues
 ------------
-* Unable to set and change the lock screen sometimes after couple of minutes of usage
+* Unable to set and change the lock screen sometimes after couple of minutes
+  of usage
 * Volume control doesn't work with 3.5mm Headset button
 * Unable to seek properly on recorded video
 * HDMI audio is lost after adb reboot
-* Limitation on Alderlake RVP--> Suspend-resume functionality is not applicable on ADL RVP  
+* Limitation on Alderlake RVP--> Suspend-resume functionality is not applicable
+  on ADL RVP
 
 Where to find the release
 -------------------------

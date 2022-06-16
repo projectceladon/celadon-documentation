@@ -267,7 +267,7 @@ package(<cite>caas-releasefiles-&lt;$buildvariant&gt;.tar.gz</cite>)
 from: <a class="reference external" href="https://github.com/projectceladon/celadon-binary">celadon-binary</a>
 Meanwhile, you can also refer to <a class="reference internal" href="build-source.html#build-os-image"><span class="std std-ref">Build Celadon in VM image</span></a> section to build
 release packages.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo mkdir -p /opt/civ-1 <span class="o">&amp;&amp;</span> sudo chown -R <span class="k">$(</span>id -u<span class="k">)</span>:<span class="o">(</span>id -g<span class="o">)</span> /opt/civ-1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo mkdir -p /opt/civ-1 <span class="o">&amp;&amp;</span> sudo chown -R <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> /opt/civ-1
 $ tar zxvf caas-releasefiles-&lt;<span class="nv">$buildvariant</span>&gt;.tar.gz
 $ chmod +x scripts/setup_host.sh
 </pre></div>
@@ -735,7 +735,7 @@ command:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jun 03, 2022.
+      Last updated on Jun 16, 2022.
 
     </p>
   </div>

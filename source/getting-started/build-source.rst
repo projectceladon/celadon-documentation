@@ -60,9 +60,12 @@ Set up the development environment
              libssl-dev bc bsdmainutils gettext python3-mako \
              libelf-dev sbsigntool dosfstools mtools efitools \
              python3-pystache git-lfs python3 flex clang libncurses5 \
-             fakeroot ncurses-dev xz-utils
+             fakeroot ncurses-dev xz-utils python3-pip ninja-build \
+             cryptsetup-bin
 
-      $ sudo apt install cryptsetup-bin
+      $ sudo pip3 install meson==0.59.2
+      $ sudo pip3 install mako>=0.8.0
+
 
 
 Build |C| in VM with Android 12

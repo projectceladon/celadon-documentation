@@ -15,6 +15,7 @@ Development
    dbc
    widevine-integration
    boot-civ-bare-metal
+   enabling-sensors-in-celadon
 
 Security
 --------

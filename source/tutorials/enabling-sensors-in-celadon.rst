@@ -24,7 +24,7 @@ IIO-based sensor devices available on host OS. The current
 implementation of the mediation HAL is based on Android Sensor HAL 2.0.
 Figure 1 illustrates the block diagram of sensors implementation in CiV.
 
-.. figure:: /images/fig1-block-diagram-sensors.png
+.. figure:: images/fig1-block-diagram-sensors.png
    :width: 6.50000in
    :height: 3.08056in
 
@@ -120,7 +120,7 @@ Connect to CiV using adb and run ``$dumpsys sensorservice`` to check the
 list of supported sensors and their data in Android. Figure 2 shows an
 example of the output to verify sensors from the host OS.
 
-.. figure:: /images/fig2-verify-sensors-output.png
+.. figure:: images/fig2-verify-sensors-output.png
    :width: 5.54861in
    :height: 3.37600in
 
@@ -128,7 +128,7 @@ example of the output to verify sensors from the host OS.
 
 Here is a snapshot of Accelerometer data in dumpsys output.
 
-.. figure:: /images/fig3-accelerometer-data-example.png
+.. figure:: images/fig3-accelerometer-data-example.png
    :width: 5.62429in
    :height: 0.96532in
 
@@ -137,7 +137,7 @@ Here is a snapshot of Accelerometer data in dumpsys output.
 Figure 4 shows an example of the sensor data reading from the
 third-party Sensors Toolbox Android app.
 
-.. figure:: /images/fig4-sensor-data-example.png
+.. figure:: images/fig4-sensor-data-example.png
    :width: 5.24168in
    :height: 6.57226in
 

@@ -16,6 +16,7 @@ Development
    widevine-integration
    boot-civ-bare-metal
    enabling-sensors-in-celadon
+   boot-civ-f2fs
 
 Security
 --------

@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Boot CIV with Flash Friendly File System &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SELinux Configuration and Rules" href="configure-selinux.html" />
+    <link rel="prev" title="Enabling Sensors in Celadon" href="enabling-sensors-in-celadon.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mixins.html">Mixins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android* Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-sensors-in-celadon.html">Enabling Sensors in Celadon</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Boot CIV with Flash Friendly File System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#steps-to-enable-f2fs-in-the-kernel">Steps to enable F2FS in the kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#steps-to-enable-f2fs-in-celadon">Steps to enable F2FS in Celadon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#steps-to-verify-f2fs-boot-in-celadon">Steps to verify F2FS boot in Celadon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#storage-block-diagram-in-civ">Storage block diagram in CIV</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>Boot CIV with Flash Friendly File System</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/boot-civ-f2fs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="boot-civ-with-flash-friendly-file-system">
+<span id="boot-civ-f2fs"></span><h1>Boot CIV with Flash Friendly File System</h1>
+<p><abbr title="F2FS">Flash Friendly File System</abbr> is a file system specially created for
+flash memory. The motive of it was to build a file system that takes
+into account the characteristics of NAND flash memory-based storage, which is
+widely used in computer systems ranging from mobile devices to servers.
+Flexible IO tester benchmarking in Celadon has shown that F2FS has
+outperformed <strong class="program">EXT4</strong> in random read with 25% improvement and random write
+with 11% improvement. Celadon has the support to mount data partitions
+with F2FS but <strong class="program">EXT4</strong> remains the default.</p>
+<div class="section" id="steps-to-enable-f2fs-in-the-kernel">
+<h2>Steps to enable F2FS in the kernel</h2>
+<ol class="arabic">
+<li><p class="first">The following kernel configs need to be enabled to configure F2FS in
+the kernel:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">CONFIG_F2FS_FS</span><span class="o">=</span>y
+<span class="nv">CONFIG_F2FS_STAT_FS</span><span class="o">=</span>y
+<span class="nv">CONFIG_F2FS_FS_XATTR</span><span class="o">=</span>y
+<span class="nv">CONFIG_F2FS_FS_POSIX_ACL</span><span class="o">=</span>y
+<span class="nv">CONFIG_F2FS_FS_SECURITY</span><span class="o">=</span>y
+</pre></div>
+</div>
+</li>
+<li><p class="first">Execute the command shown below in an <strong class="command">adb</strong> shell during runtime to
+check if F2FS is enabled in the kernel:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /proc/filesystems <span class="p">|</span> grep f2fs
+        f2fs
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="steps-to-enable-f2fs-in-celadon">
+<h2>Steps to enable F2FS in Celadon</h2>
+<ol class="arabic">
+<li><p class="first">To enable F2FS explicitly, update the config file
+<code class="docutils literal"><span class="pre">device/intel/project-celadon/$&lt;lunch-target&gt;/mixins.spec</span></code>&nbsp;in the
+device config project as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">groups</span><span class="p">]</span>
+
+<span class="o">..</span>
+
+<span class="n">disk</span><span class="o">-</span><span class="n">bus</span><span class="p">:</span> <span class="n">auto</span>
+
+<span class="n">boot</span><span class="o">-</span><span class="n">arch</span><span class="p">:</span>
+<span class="n">project</span><span class="o">-</span><span class="n">celadon</span><span class="p">(</span><span class="n">uefi</span>\<span class="n">_arch</span><span class="o">=</span><span class="n">x86</span>\<span class="n">_64</span><span class="p">,</span><span class="n">fastboot</span><span class="o">=</span><span class="n">efi</span><span class="p">,</span><span class="n">ignore</span>\<span class="n">_rsci</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">disable</span>\<span class="n">_watchdog</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">watchdog</span>\<span class="n">_parameters</span><span class="o">=</span><span class="mi">10</span>
+<span class="mi">30</span><span class="p">,</span><span class="n">verity</span>\<span class="n">_warning</span><span class="o">=</span><span class="n">false</span><span class="p">,</span><span class="n">txe</span>\<span class="n">_bind</span>\<span class="n">_root</span>\<span class="n">_of</span>\<span class="n">_trust</span><span class="o">=</span><span class="n">false</span><span class="p">,</span><span class="n">bootloader</span>\<span class="n">_block</span>\<span class="n">_size</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span><span class="n">verity</span>\<span class="n">_mode</span><span class="o">=</span><span class="n">false</span><span class="p">,</span><span class="n">disk</span>\<span class="n">_encryption</span><span class="o">=</span><span class="n">false</span><span class="p">,</span><span class="n">file</span>\<span class="n">_encryption</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">metadata</span>\<span class="n">_encryption</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">fsverity</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="n">caas</span><span class="p">,</span><span class="n">ignore</span>\<span class="n">_not</span>\<span class="n">_applicable</span>\<span class="n">_reset</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="bp">self</span>\<span class="n">_usb</span>\<span class="n">_device</span>\<span class="n">_mode</span>\<span class="n">_protocol</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">usb</span>\<span class="n">_storage</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">live</span>\<span class="n">_boot</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">userdata</span>\<span class="n">_checkpoint</span><span class="o">=</span><span class="n">false</span><span class="p">,</span><span class="n">data</span>\<span class="n">_use</span>\<span class="n">_f2fs</span><span class="o">=</span><span class="n">true</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following parameter has been added within the brackets in the previous
+configuration setting:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span>\<span class="n">_use</span>\<span class="n">_f2fs</span> <span class="p">:</span> <span class="n">optional</span>
+<span class="n">This</span> <span class="n">flag</span> <span class="n">defines</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">data</span> <span class="n">partition</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">mounted</span>
+<span class="k">with</span> <span class="n">F2FS</span><span class="o">.</span>
+
+<span class="n">DEFAULT</span><span class="p">:</span> <span class="n">false</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Revert the patch shown below by updating the flashfiles mixin group
+<code class="docutils literal"><span class="pre">device/intel/groups/flashfiles</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">2786</span><span class="n">ca9cf496d31743674c4273dda9d5ce9958ca</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Tian</span> <span class="n">Baofeng</span> <span class="o">&lt;</span><span class="n">baofeng</span><span class="o">.</span><span class="n">tian</span><span class="nd">@intel</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span> <span class="n">Thu</span> <span class="n">Aug</span> <span class="mi">8</span> <span class="mi">14</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">31</span> <span class="mi">2019</span> <span class="o">+</span><span class="mi">0800</span>
+
+   <span class="n">flashfiles</span><span class="p">:</span> <span class="nb">format</span> <span class="n">data</span> <span class="n">partition</span> <span class="n">to</span> <span class="n">f2fs</span> <span class="n">filesystem</span>
+
+   <span class="n">After</span> <span class="n">enabling</span> <span class="n">F2FS</span> <span class="n">filesystem</span> <span class="ow">in</span> <span class="n">data</span> <span class="n">partition</span><span class="p">,</span> <span class="n">OS</span>
+   <span class="n">can</span> <span class="ow">not</span> <span class="n">boot</span> <span class="n">to</span> <span class="n">UI</span> <span class="n">due</span> <span class="n">to</span> <span class="n">userdata</span> <span class="n">partition</span> <span class="n">mounting</span> <span class="n">failure</span>
+   <span class="k">with</span> <span class="n">F2FS</span> <span class="n">filesystem</span> <span class="nb">format</span><span class="o">.</span>
+   <span class="n">This</span> <span class="n">patch</span> <span class="n">changed</span> <span class="n">flash</span> <span class="n">json</span> <span class="n">file</span> <span class="n">configuration</span> <span class="n">to</span> <span class="n">make</span>
+   <span class="n">data</span> <span class="n">partition</span> <span class="n">being</span> <span class="n">formatted</span> <span class="n">to</span> <span class="n">F2FS</span> <span class="n">when</span> <span class="n">flashfiles</span> <span class="n">package</span>
+   <span class="n">being</span> <span class="n">flashed</span><span class="o">.</span>
+
+   <span class="n">Change</span><span class="o">-</span><span class="n">Id</span><span class="p">:</span> <span class="n">I24b4c6815d13e6ffed7d66a52e876306ae37fbbd</span>
+   <span class="n">Tracked</span><span class="o">-</span><span class="n">On</span><span class="p">:</span> <span class="n">OAM</span><span class="o">-</span><span class="mi">84632</span>
+   <span class="n">Signed</span><span class="o">-</span><span class="n">off</span><span class="o">-</span><span class="n">by</span><span class="p">:</span> <span class="n">Tian</span><span class="p">,</span> <span class="n">Baofeng</span> <span class="o">&lt;</span><span class="n">baofeng</span><span class="o">.</span><span class="n">tian</span><span class="nd">@intel</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+   <span class="n">Signed</span><span class="o">-</span><span class="n">off</span><span class="o">-</span><span class="n">by</span><span class="p">:</span> <span class="n">Duan</span><span class="p">,</span> <span class="n">YayongX</span> <span class="o">&lt;</span><span class="n">yayongx</span><span class="o">.</span><span class="n">duan</span><span class="nd">@intel</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+
+   <span class="n">Reviewed</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="mi">677387</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>After the mixin configuration is changed, run
+the&nbsp;<strong>mixin-update</strong>&nbsp;script before re-building the image to apply the
+changes to the project device configuration. Follow the instructions
+in&nbsp;<a class="reference external" href="https://docs.01.org/celadon/getting-started/build-source.html#build-from-source">Build Celadon From
+Source</a>&nbsp;Guide
+to rebuild the Celadon images.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ device/intel/mixins/mixin-update
+</pre></div>
+</div>
+</div>
+<div class="section" id="steps-to-verify-f2fs-boot-in-celadon">
+<h2>Steps to verify F2FS boot in Celadon</h2>
+<ol class="arabic">
+<li><p class="first">After Celadon has booted, run the command shown below in an <strong class="command">adb</strong> shell
+to check that the data partition has been mounted with F2FS.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mount <span class="p">|</span> grep data
+
+/dev/block/dm-8 on /data <span class="nb">type</span> f2fs
+<span class="o">(</span>rw,lazytime,seclabel,nosuid,nodev,noatime,background_gc<span class="o">=</span>on,discard,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,extent_cache,mode<span class="o">=</span>adaptive,active_logs<span class="o">=</span><span class="m">6</span>,alloc_mode<span class="o">=</span>default,checkpoint_merge,fsync_mode<span class="o">=</span>posix<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="storage-block-diagram-in-civ">
+<h2>Storage block diagram in CIV</h2>
+<p>Figure 1 below shows the layers involved in virtualization of the
+storage stack. It shows the component involved in each layer of the
+storage virtualization stack. Broadly application layer holds on the
+Android/Guest OS along with the backing HALs, filesystem and block
+layers. QEMU provides the format and protocol layers, VFS &amp; block layer
+of the Host/Ubuntu OS interact with the real hardware.</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../_images/boot-civ-f2fs-storage-block-diagram.png"><img alt="../_images/boot-civ-f2fs-storage-block-diagram.png" src="../_images/boot-civ-f2fs-storage-block-diagram.png" style="width: 4.87500in; height: 4.73958in;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Storage block diagram</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configure-selinux.html" class="btn btn-neutral float-right" title="SELinux Configuration and Rules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="enabling-sensors-in-celadon.html" class="btn btn-neutral" title="Enabling Sensors in Celadon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Jul 18, 2022.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

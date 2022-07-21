@@ -225,8 +225,7 @@ the GitHub project reference is
 add sensors information in <code class="file docutils literal"><span class="pre">mixins.spec</span></code> as shown below:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">$device</span>/intel/project-celadon/<span class="k">$(</span>lunch_target<span class="k">)</span>/mixins.spec
 
-<span class="sb">`</span>sensors &lt;http://inlubt0232.iind.intel.com:8080/source/s?defs<span class="o">=</span>sensors<span class="p">&amp;</span><span class="nv">project</span><span class="o">=</span>CELADON_R_MRO_STABLE&gt;<span class="sb">`</span>__:
-<span class="sb">`</span>mediation &lt;http://inlubt0232.iind.intel.com:8080/source/s?defs<span class="o">=</span>mediation<span class="p">&amp;</span><span class="nv">project</span><span class="o">=</span>CELADON_R_MRO_STABLE&gt;<span class="sb">`</span>__ <span class="o">(</span><span class="nv">enable_sensor_list</span><span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+sensors: mediation<span class="o">(</span><span class="nv">enable_sensor_list</span><span class="o">=</span><span class="nb">true</span><span class="o">)</span>
 </pre></div>
 </div>
 <p>The sepolicy configuration for the sensor mediation HAL is present in</p>
@@ -237,15 +236,14 @@ add sensors information in <code class="file docutils literal"><span class="pre"
 <div class="section" id="disabling-sensors">
 <h2>Disabling sensors</h2>
 <p>To disable sensors in CiV, assign <strong>false</strong> to the <strong>sensors</strong> filed in
-your lunch target’s mixins.spec.</p>
+your lunch target’s <code class="file docutils literal"><span class="pre">mixins.spec</span></code>.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">$device</span>/intel/project-celadon/<span class="k">$(</span>lunch_target<span class="k">)</span>/mixins. spec
 
-<span class="sb">`</span>sensors &lt;http://inlubt0232.iind.intel.com:8080/source/s?defs<span class="o">=</span>sensors<span class="p">&amp;</span><span class="nv">project</span><span class="o">=</span>CELADON_R_MRO_STABLE&gt;<span class="sb">`</span>__:
-<span class="nb">false</span>
+sensors: <span class="nb">false</span>
 </pre></div>
 </div>
-<p>Run the following command to update the mixin changes:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$./ <span class="sb">`</span>device &lt;http://inlubt0232.iind.intel.com:8080/source/xref/CELADON_R_MRO_STABLE/device/&gt;<span class="sb">`</span>__/<span class="sb">`</span>intel &lt;http://inlubt0232.iind.intel.com:8080/source/xref/CELADON_R_MRO_STABLE/device/intel/&gt;<span class="sb">`</span>__/mixins/mixin-update
+<p>Run the following command to update mixin changes:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$./device/intel/mixins/mixin-update
 </pre></div>
 </div>
 </div>
@@ -314,7 +312,7 @@ third-party Sensors Toolbox Android app.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jul 18, 2022.
+      Last updated on Jul 21, 2022.
 
     </p>
   </div>

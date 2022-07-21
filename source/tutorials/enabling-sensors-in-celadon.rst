@@ -58,8 +58,7 @@ add sensors information in :file:`mixins.spec` as shown below:
 
    $device/intel/project-celadon/$(lunch_target)/mixins.spec
 
-   `sensors <http://inlubt0232.iind.intel.com:8080/source/s?defs=sensors&project=CELADON_R_MRO_STABLE>`__:
-   `mediation <http://inlubt0232.iind.intel.com:8080/source/s?defs=mediation&project=CELADON_R_MRO_STABLE>`__ (enable_sensor_list=true)
+   sensors: mediation(enable_sensor_list=true)
 
 The sepolicy configuration for the sensor mediation HAL is present in
 
@@ -71,20 +70,19 @@ Disabling sensors
 *****************
 
 To disable sensors in CiV, assign **false** to the **sensors** filed in
-your lunch target’s mixins.spec.
+your lunch target’s :file:`mixins.spec`.
 
 .. code-block:: bash
 
    $device/intel/project-celadon/$(lunch_target)/mixins. spec
 
-   `sensors <http://inlubt0232.iind.intel.com:8080/source/s?defs=sensors&project=CELADON_R_MRO_STABLE>`__:
-   false
+   sensors: false
 
-Run the following command to update the mixin changes:
+Run the following command to update mixin changes:
 
 .. code-block:: bash
 
-   $./ `device <http://inlubt0232.iind.intel.com:8080/source/xref/CELADON_R_MRO_STABLE/device/>`__/`intel <http://inlubt0232.iind.intel.com:8080/source/xref/CELADON_R_MRO_STABLE/device/intel/>`__/mixins/mixin-update
+   $./device/intel/mixins/mixin-update
 
 Starting the IIO daemon
 ***********************

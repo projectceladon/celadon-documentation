@@ -239,19 +239,13 @@ New in this release
 
 Known issues
 ------------
-* Unable to set and change the lock screen sometimes after couple of minutes
-  of usage
-* Volume control doesn't work with 3.5mm Headset button
-* Unable to seek properly on recorded video
-* HDMI audio is lost after adb reboot
-* Limitation on Alderlake RVP--> Suspend-resume functionality is not applicable
-  on ADL RVP
+* 
 
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.22.02.21_A12.xml
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.22.02.21_A12
+* Manifest Link : 
+* Binary Link : 
 
 
 How to install this release
@@ -330,9 +324,9 @@ Reference configuration
 
  * Supported software
 
-     * AOSP Version - android-12.0.0_r28
-     * NUC11PAQI7 Host Kernel - -5.10.110-cvhb
-     * NUC11PAQI7 Guest kernel - -5.10.110-cvhb
+     * AOSP Version - 
+     * NUC11PAQI7 Host Kernel - -5.10.118-cvhb
+     * NUC11PAQI7 Guest kernel - -5.10.118-cvhb
 
 
 Acronyms and terms

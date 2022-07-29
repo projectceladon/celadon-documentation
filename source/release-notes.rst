@@ -154,7 +154,9 @@ New in this release
 -------------------
 
  * New features
-    * Android 12 with latest AOSP release tag (android-12.0.0_r28)
+    * Android XX with latest AOSP release tag (XX)
+
+ * Includes Android 12 main features:
     * Enabled Virgl
     * Enabled SRIOV (Single Root I/O Virtualization)
     * Switch between h/w accelerated graphics and s/w graphics
@@ -180,8 +182,6 @@ New in this release
     * Support Control Plant – VM Manager
     * Switch USB touch screen between guest OSes
     * Incremental FS, F2FS support
-
- * Includes Android 12 main features:
     * Integrated VM Manager to configure CIV replacing start_civ.sh
         * This changes launch steps for CIV - please refer to
           https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager

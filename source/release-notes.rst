@@ -131,7 +131,7 @@ Base Releases
    :local:
    :depth: 1
 
-CIV_00.22.03.32_A13
+CIV_00.22.03.34_A13
 ===================
 * This is a Pre Production Binary Release for evaluation and development
   purposes . This release enables support for 12th GEN Core and it has

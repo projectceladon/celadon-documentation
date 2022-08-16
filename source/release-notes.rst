@@ -138,7 +138,7 @@ CIV_00.22.03.34_A13
   been tested on Alder Lake RVP [Celadon in VM].
   
 This is the First Android 13 Official Release for Celadon in VM
-============================================================================
+--------------------------------------------------------------------
 
 Intended audience
 -----------------

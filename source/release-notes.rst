@@ -138,9 +138,6 @@ CIV_00.22.03.34_A13
 * This is a Pre Production Manifest Release for evaluation and development
   purposes . This release supports 11th and 12th GEN Core [Celadon in VM].
   
-This is the First Celadon in VM release with Android 13
--------------------------------------------------------
-
 Intended audience
 -----------------
 

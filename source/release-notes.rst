@@ -157,7 +157,6 @@ New in this release
 
  * Highlights
     * This is the First Celadon in VM Release based on Android 13
-    -------------------------------------------------------------
     * API level upgraded to 33
     * FCM Target level upgraded to 7
     * All the features of Android 13 provided with Intel BSP including HAL changes 

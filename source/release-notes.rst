@@ -27,7 +27,8 @@ CIV_02.22.01.12_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to celadon@lists.01.org 
+* Any user who wants to explore Celadon in VM 
 
 Customer support
 ----------------

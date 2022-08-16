@@ -136,8 +136,9 @@ CIV_00.22.03.34_A13
 * This is a Pre Production Manifest Release for evaluation and development
   purposes . This release enables support for 12th GEN Core and it has
   been tested on Alder Lake RVP [Celadon in VM].
-* This is the First Android 13 Official Release for Celadon in VM
------------------------------------------------------------------
+  
+This is the First Android 13 Official Release for Celadon in VM
+============================================================================
 
 Intended audience
 -----------------
@@ -155,7 +156,7 @@ Introduction
 New in this release
 -------------------
 
- * New features
+ * Highlights
     * Android 13 OS based release 
     * API level upgraded to 33
     * FCM Target level upgraded to 7

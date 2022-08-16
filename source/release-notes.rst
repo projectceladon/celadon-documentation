@@ -134,12 +134,12 @@ Base Releases
 
 CIV_00.22.03.34_A13
 ===================
+* We are glad to announce that the Celadon Project now supports Android 13 within a day of Google PV. We wish the Celadon community to start working with Android 13     and provide us feedback on what more would you like to see in the Celadon project.
 * This is a Pre Production Manifest Release for evaluation and development
-  purposes . This release enables support for 12th GEN Core and it has
-  been tested on Alder Lake RVP [Celadon in VM].
+  purposes . This release supports 11th and 12th GEN Core [Celadon in VM].
   
-This is the First Android 13 Official Release for Celadon in VM
---------------------------------------------------------------------
+This is the First Celadon in VM release with Android 13
+-------------------------------------------------------
 
 Intended audience
 -----------------
@@ -159,11 +159,11 @@ New in this release
 -------------------
 
  * Highlights
-    * Android 13 OS based release 
+    * Android 13 based CIV release 
     * API level upgraded to 33
     * FCM Target level upgraded to 7
     * All the features of Android 13 provided with Intel BSP including HAL changes 
-    * Linked to Android 13 Google Public document --> https://source.android.com/docs/setup/start/android-13-release
+    * Android 13 with latest AOSP manifest (android-13.0.0_r1)
     
  * Major HAL Upgrades
     * Audio HAL upgraded to 7.1
@@ -340,6 +340,7 @@ Helpful hints / related documents
   should use their own keys to sign their release images
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
+* Linked to Android 13 Google Public document --> https://source.android.com/docs/setup/start/android-13-release
 
 CIV_00.22.02.21_A12
 ===================

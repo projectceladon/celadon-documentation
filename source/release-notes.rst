@@ -133,9 +133,10 @@ Base Releases
 
 CIV_00.22.03.34_A13
 ===================
-* This is a Pre Production Binary Release for evaluation and development
+* This is a Pre Production Manifest Release for evaluation and development
   purposes . This release enables support for 12th GEN Core and it has
   been tested on Alder Lake RVP [Celadon in VM].
+* This is the First Android 13 Official Release for Celadon in VM
 
 Intended audience
 -----------------
@@ -154,13 +155,24 @@ New in this release
 -------------------
 
  * New features
-    * Android XX with latest AOSP release tag (XX)
-
- * Includes Android 12 main features:
-    * Enabled Virgl
-    * Enabled SRIOV (Single Root I/O Virtualization)
+    * Android 13 OS based release 
+    * API level upgraded to 33
+    * FCM Target level upgraded to 7
+    * All the features of Android 13 provided with Intel BSP including HAL changes 
+    * Linked to Android 13 Google Public document --> https://source.android.com/docs/setup/start/android-13-release
+    
+  * Major HAL Upgrades  
+    * Audio HAL upgraded to 7.1
+    * Trusty KeyMint support AIDL Version 2.0
+    * Health HAL upgraded to AIDL 1.0
+    * WIFI Supplicant and Hostapd upgraded to AIDL 1.0 
+    * SE Policy updated for API level 33
+ 
+ * Celadon features:
+    * Virgl Support
+    * SRIOV (Single Root I/O Virtualization) Support
     * Switch between h/w accelerated graphics and s/w graphics
-    * Enabled Virtio-gpu
+    * Virtio-gpu Support
     * Tearing prevention
     * Virtualized Display – KMSRO/ Zero copy
     * Switch displays between guests
@@ -185,67 +197,46 @@ New in this release
     * Integrated VM Manager to configure CIV replacing start_civ.sh
         * This changes launch steps for CIV - please refer to
           https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
-    * Celadon supports Android 12 with API level 31 and FCM target level 6
-    * Boot control HAL upgraded to V1.2
-    * Audio HAL upgraded to V7.0
+    * Boot control HAL V1.2
     * Browse Internet (IPv6)
     * WiFi Direct
     * WiFi Control from Android in Virtual Machine
-    * Basic sanity test passed for all components *
     * Bug fixes, customizations and optimizations for x86
-    * SE Policy updated for API level 31
-    * AIDL libs updated
-    * Health HAL is optimized to adapt the new changes for S Dessert
-    * Graphics introduced scheduling plans,
+    * Graphics introduced scheduling plans 
     * Graphics: Surface flinger caching, GPU memory accounting, profiling and
-      GPU scheduling
+      GPU scheduling 
     * Accessibility, System UI and backup & restore features updated with minor
       modifications
-    * FUSE passthrough introduced to improve IO performance
+    * FUSE passthrough introduced to improve IO performance in Android S
     * IncFS updated with Better Monitoring Support, virtio-9p support, fs-verity
       support
     * Enabled NNAPI updatability in Machine Learning
     * New platform features for Mainline Module
-    * Incremental: new Android 12+ feature that could reduce initial downloads
-      of app
     * Approximate location access and privacy related updates
-    * New Storage Features like Storage management API changes, New directory
-      for voice recordings, Media management access, App storage access and
-      Extended file access support.
     * Memory accounting updates
-    * Framework introduced changes in foreground service, Gamepad – Input device
-      features, Haptic related vibrator changes
-    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio
-      along with audio HAL v7.0
-    * Media transcoding, media extractor related changes and improved quality in
-      encoded video
+    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio optimised in Android S 
+    * Media transcoding, media extractor related changes and improved quality in encoded video
     * AVIF image support, Easier blurs, color filters, and other effects
     * CameraX vendor extension support
     * Enabled NNAPI updatability in Machine Learning
-    * New platform features for Mainline Module
-    * Improvements to bandwidth estimation APIs in connectivity and introduced principle of 5G slicing
-    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
+    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization 
     * Bluetooth side, BT classic and BLE introduced
     * Activity Detection, CHRE, Bluesky, FLP & RTT related changes
     * Major changes in window management and introduced Display grouping and emphasis for multi-display context
     * pKVM (Protected KVM) code compatibility available, Celadon won’t support it.
-    * Rich Haptic experience – Actuator effects, audio-coupled haptic, Enriched image supported notifications, rounded corner APIs etc.
     * Picture in Picture (PiP) improvements, Immersive mode improvements for gesture navigation, Rich content insertion and Recents URL sharing
     * Provide apps direct access to tombstone traces
-    * Android 12 release from Google shall be referred from the below links
-         * Release Notes: https://source.android.com/setup/start/android-12-release
-         * Blog : https://android-developers.googleblog.com/2021/10/android-12-is-live-in-aosp.html
 
 
 Known issues
 ------------
-* 
+* NA
 
 Where to find the release
 -------------------------
 
-* Manifest Link : 
-* Binary Link : 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.22.03.34_A13.xml
+* Binary Link : NA
 
 
 How to install this release

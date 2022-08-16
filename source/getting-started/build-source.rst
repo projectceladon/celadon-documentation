@@ -66,7 +66,7 @@ Set up the development environment
       $ sudo pip3 install meson==0.59.2
       $ sudo pip3 install mako==0.8.0
 
-
+..comment
 
 Build |C| in VM with Android 12
 *******************************

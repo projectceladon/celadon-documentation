@@ -135,7 +135,7 @@ Base Releases
 CIV_00.22.03.34_A13
 ===================
 * We are glad to announce that the Celadon Project now supports Android 13 within a day of Google PV. We wish the Celadon community to start working with Android 13     and provide us feedback on what more would you like to see in the Celadon project.
-* This is a Pre Production Manifest Release for evaluation and development purposes.This release cannot be used for production purposes. This release supports 11th    and 12th GEN Core [Celadon in VM].
+* This is a Pre Production Manifest Release for evaluation and development purposes. The release cannot be used for production purposes. This release supports 11th    and 12th GEN Core [Celadon in VM].
   
 Intended audience
 -----------------

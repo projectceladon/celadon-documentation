@@ -161,7 +161,7 @@ New in this release
     * All the features of Android 13 provided with Intel BSP including HAL changes 
     * Linked to Android 13 Google Public document --> https://source.android.com/docs/setup/start/android-13-release
     
-  * Major HAL Upgrades  
+  * Major HAL Upgrades
     * Audio HAL upgraded to 7.1
     * Trusty KeyMint support AIDL Version 2.0
     * Health HAL upgraded to AIDL 1.0

@@ -61,10 +61,10 @@ Set up the development environment
              libelf-dev sbsigntool dosfstools mtools efitools \
              python3-pystache git-lfs python3 flex clang libncurses5 \
              fakeroot ncurses-dev xz-utils python3-pip ninja-build \
-             cryptsetup-bin
+             cryptsetup-bin cutils cmake pkg-config
 
       $ sudo pip3 install meson==0.59.2
-      $ sudo pip3 install mako>=0.8.0
+      $ sudo pip3 install mako==0.8.0
 
 
 

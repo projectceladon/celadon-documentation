@@ -67,7 +67,7 @@ Set up the development environment
       $ sudo pip3 install mako==0.8.0
 
 
-Build |C| in VM with Android 12
+Build |C| in VM with Android 13
 *******************************
 
 Download the source
@@ -89,14 +89,19 @@ Download the source
        $ cd civ
        $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 
-   Note, the last :command:`repo init` command pulls the latest development
-   CiV source code based on *Android 12* from the master branch.
-   To continue working on the *Android 11* based CiV source code,
+   Note, the below :command:`repo init` command pulls the latest development
+   CiV source code based on *Android 13 (T Dessert)* from the master branch.
+
+   .. code-block:: bash
+
+       $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
+
+   To continue working on the *Android 12 (S Dessert)* based CiV source code,
    use the following manifest instead:
 
    .. code-block:: bash
 
-       $ repo init -u https://github.com/projectceladon/manifest  -b celadon/r/mr0/stable -m default.xml
+       $ repo init -u https://github.com/projectceladon/manifest -b celadon/s/mr0/stable
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time

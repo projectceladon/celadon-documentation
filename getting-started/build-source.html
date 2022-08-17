@@ -90,7 +90,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Build Celadon From Source</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#set-up-the-development-environment">Set up the development environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-c-in-vm-with-android-12">Build Celadon in VM with Android 12</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-c-in-vm-with-android-13">Build Celadon in VM with Android 13</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#download-the-source">Download the source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#build-c-in-vm-image">Build Celadon in VM image</a></li>
 </ul>
@@ -182,7 +182,7 @@ download source code, and build Celadon from source.</p>
 <ul class="simple">
 <li><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></li>
 <li><a class="reference internal" href="#set-up-the-development-environment" id="id2">Set up the development environment</a></li>
-<li><a class="reference internal" href="#build-c-in-vm-with-android-12" id="id3">Build Celadon in VM with Android 12</a></li>
+<li><a class="reference internal" href="#build-c-in-vm-with-android-13" id="id3">Build Celadon in VM with Android 13</a></li>
 </ul>
 </div>
 <div class="section" id="prerequisites">
@@ -242,8 +242,8 @@ $ sudo pip3 install <span class="nv">mako</span><span class="o">==</span><span c
 </li>
 </ol>
 </div>
-<div class="section" id="build-c-in-vm-with-android-12">
-<h2><a class="toc-backref" href="#id3">Build Celadon in VM with Android 12</a></h2>
+<div class="section" id="build-c-in-vm-with-android-13">
+<h2><a class="toc-backref" href="#id3">Build Celadon in VM with Android 13</a></h2>
 <div class="section" id="download-the-source">
 <h3>Download the source</h3>
 <ol class="arabic">
@@ -262,11 +262,14 @@ $ <span class="nb">cd</span> civ
 $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 </pre></div>
 </div>
-<p>Note, the last <strong class="command">repo init</strong> command pulls the latest development
-CiV source code based on <em>Android 12</em> from the master branch.
-To continue working on the <em>Android 11</em> based CiV source code,
+<p>Note, the below <strong class="command">repo init</strong> command pulls the latest development
+CiV source code based on <em>Android 13 (T Dessert)</em> from the master branch.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
+</pre></div>
+</div>
+<p>To continue working on the <em>Android 12 (S Dessert)</em> based CiV source code,
 use the following manifest instead:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ repo init -u https://github.com/projectceladon/manifest  -b celadon/r/mr0/stable -m default.xml
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ repo init -u https://github.com/projectceladon/manifest -b celadon/s/mr0/stable
 </pre></div>
 </div>
 </li>

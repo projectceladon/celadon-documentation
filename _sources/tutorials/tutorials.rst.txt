@@ -17,6 +17,7 @@ Development
    boot-civ-bare-metal
    enabling-sensors-in-celadon
    boot-civ-f2fs
+   concurrent-camera-access
 
 Security
 --------

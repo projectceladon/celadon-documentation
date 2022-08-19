@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Concurrent Camera Access in CiV &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SELinux Configuration and Rules" href="configure-selinux.html" />
+    <link rel="prev" title="Boot CIV with Flash Friendly File System" href="boot-civ-f2fs.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mixins.html">Mixins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android* Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-sensors-in-celadon.html">Enabling Sensors in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-f2fs.html">Boot CIV with Flash Friendly File System</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Concurrent Camera Access in CiV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#camera-mediation-overview">Camera mediation overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#camera-mediation-support-in-civ">Camera mediation support in CiV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-camera-mediation-in-civ">Enabling camera mediation in CIV:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#known-issues">Known Issues:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>Concurrent Camera Access in CiV</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/concurrent-camera-access.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="concurrent-camera-access-in-civ">
+<span id="concurrent-camera-access"></span><h1>Concurrent Camera Access in CiV</h1>
+<p>This tutorial explains a camera mediation solution.</p>
+<div class="section" id="camera-mediation-overview">
+<h2>Camera mediation overview</h2>
+<p>To overcome the camera sensor hardware resource limitation of only one
+application being able to use the camera at a time, we’ve developed a
+camera sharing solution. With this solution, the preview data is shared
+and available to the host OS and a guest OS in a secure manner.</p>
+</div>
+<div class="section" id="camera-mediation-support-in-civ">
+<h2>Camera mediation support in CiV</h2>
+<p>We provide a virtual camera service to enable multiple v4l2loopback
+virtual nodes. These nodes are created during device bootup, and all
+these nodes are available and capable of streaming data in MJPEG or YUV
+format. These nodes can be used by multiple host applications as well as
+multiple guest OSes for simultaneous camera operations.</p>
+<p>We provide a host camera service that runs in the user space of Ubuntu
+and enables an interface between the v4l2looback device nodes and the
+guest via vsock.</p>
+<p>The camera vhal on the guest is a generic virtual HAL developed to
+interact with the host camera service to get camera data and provide the
+camera content to the existing camera services in Android OS.</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../_images/fig1-block-diagram-camera-mediation-CiV.png"><img alt="../_images/fig1-block-diagram-camera-mediation-CiV.png" src="../_images/fig1-block-diagram-camera-mediation-CiV.png" style="width: 6.49167in; height: 3.44167in;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Block diagram of camera mediation in CiV</span></p>
+</div>
+<p>Figure 2 below is a screenshot of the host and guest camera applications
+sharing the same camera resource simultaneously.</p>
+<p><strong class="program">ffplay</strong> is the host application using the virtual camera node
+<code class="file docutils literal"><span class="pre">/dev/video6</span></code>.</p>
+<p>AOSP on an Intel platform is the Celadon in virtual machine running on
+the guest OS, using the virtual camera node <code class="file docutils literal"><span class="pre">/dev/video7</span></code>.</p>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="../_images/fig2-concurrent-camera-access.png"><img alt="../_images/fig2-concurrent-camera-access.png" src="../_images/fig2-concurrent-camera-access.png" style="width: 6.49306in; height: 3.01389in;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: Concurrent camera access on host and guest OS</span></p>
+</div>
+</div>
+<div class="section" id="enabling-camera-mediation-in-civ">
+<h2>Enabling camera mediation in CIV:</h2>
+<ol class="arabic">
+<li><p class="first">Run the setup host script to install the host camera server and Intel
+virtual camera service.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo -E ./scripts/setup_host.sh
+</pre></div>
+</div>
+<p>After a successful execution of setup, two host virtual nodes are
+generated: <code class="file docutils literal"><span class="pre">/dev/video6</span></code> and <code class="file docutils literal"><span class="pre">/dev/video7</span></code></p>
+</li>
+<li><p class="first">Set the maximum supported resolution for the video0 node using the
+following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo v4l2-ctl -d /dev/video0
+--set-fmt-video<span class="o">=</span><span class="nv">width</span><span class="o">=</span><span class="m">1920</span>,height<span class="o">=</span><span class="m">1080</span>,pixelformat<span class="o">=</span>MJPG
+</pre></div>
+</div>
+</li>
+<li><p class="first">To know your camera’s supported resolution and format, run the
+following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo v4l2-ctl -d /dev/video0 --list-formats-ext
+</pre></div>
+</div>
+</li>
+<li><p class="first">Modify the <code class="file docutils literal"><span class="pre">~/.intel/.civ/instance.ini</span></code> file by adding:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">camera_med</span><span class="o">=</span>y
+</pre></div>
+</div>
+</li>
+<li><p class="first">Before starting Android, make sure virtual device nodes <code class="file docutils literal"><span class="pre">/dev/video6</span></code>
+and <code class="file docutils literal"><span class="pre">/dev/video7</span></code> are present with host OS. If not, re-run this
+command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo –E ./scripts/setup<span class="se">\_</span>host.sh
+</pre></div>
+</div>
+</li>
+<li><p class="first">Launch Android using <strong class="command">vm-manager -b instance</strong>. This starts the host
+camera service.</p>
+</li>
+</ol>
+<div class="section" id="camera-usb-passthrough-limitation">
+<h3>Camera USB passthrough limitation</h3>
+<p>The camera sensor is a hardware resource that can be used by only one
+application at a time; in a virtualized environment, only one running OS
+can use the camera.</p>
+<p>If there are cases where image processing or IA operations need to be
+done on the data before rendering the image, then the developer/consumer
+must intercept preview data for such operations.</p>
+<p>This problem exists even with a virtualization environment as the camera
+can be used only on the host or in one of the guest OSes. With this
+limitation, it’s hard to make the best use of virtualization.</p>
+</div>
+</div>
+<div class="section" id="known-issues">
+<h2>Known Issues:</h2>
+<ol class="loweralpha simple">
+<li>The camera service implementation is only for a single camera.</li>
+<li>Camera hot plug is not supported.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configure-selinux.html" class="btn btn-neutral float-right" title="SELinux Configuration and Rules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="boot-civ-f2fs.html" class="btn btn-neutral" title="Boot CIV with Flash Friendly File System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Aug 19, 2022.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

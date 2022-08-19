@@ -230,7 +230,7 @@ New in this release
 
 Known issues
 ------------
-* NA
+* SRIOV is not working properly -Analysis WIP
 
 Where to find the release
 -------------------------

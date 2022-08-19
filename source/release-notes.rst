@@ -156,7 +156,7 @@ New in this release
 -------------------
 
  * New features
-
+    * Camera mediation
 
  * Existing Features
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)

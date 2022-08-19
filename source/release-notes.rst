@@ -143,6 +143,7 @@ Intended audience
 -----------------
 
 * Open Source Community who has subscribed to celadon@lists.01.org
+* Any user who wants to explore Celadon in VM
 
 Customer support
 ----------------

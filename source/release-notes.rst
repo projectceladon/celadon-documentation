@@ -156,6 +156,9 @@ New in this release
 -------------------
 
  * New features
+
+
+ * Existing Features
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)
     * Enabled Virgl
     * Enabled SRIOV (Single Root I/O Virtualization)
@@ -182,8 +185,6 @@ New in this release
     * Support Control Plant – VM Manager
     * Switch USB touch screen between guest OSes
     * Incremental FS, F2FS support
-
- * Includes Android 12 main features:
     * Integrated VM Manager to configure CIV replacing start_civ.sh
         * This changes launch steps for CIV - please refer to
           https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
@@ -353,6 +354,7 @@ Helpful hints / related documents
   should use their own keys to sign their release images
 * Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
+
 CIV_00.22.03.34_A13
 ===================
 * We are glad to announce that the Celadon Project now supports Android 13 within a day of Google PV. We wish the Celadon community to start working with Android 13     and provide us feedback on what more would you like to see in the Celadon project.

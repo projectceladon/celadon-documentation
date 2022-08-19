@@ -250,6 +250,7 @@ Known issues
 * Audio doesn't route to USB Headset when usb camera is connected.[Need to reconnect usb headset to recover]
 * HDMI audio is lost after adb reboot
 * Volume control doesn't work with 3.5mm Headset button
+* Thumbnail image is not shown after image capture in multi camera application
 
 
 Where to find the release

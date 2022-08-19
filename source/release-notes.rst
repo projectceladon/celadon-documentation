@@ -243,7 +243,7 @@ New in this release
 Known issues
 ------------
 * Device going to offline (failed to reboot) while running cts tests
-* Geekbench 2nd run expose may cause cfi flow 
+* Geekbench 2nd run expose may cause cfi flaw
 * CLANG and HTML5 multicore scaling w.r.t. LiV when cores are > 6-8
 * Unable to set & change the lock screen(Pin/pattern/Password)
 * AOSP Front Camera Preview is not mirror

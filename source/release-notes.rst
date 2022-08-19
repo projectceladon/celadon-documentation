@@ -242,7 +242,7 @@ New in this release
 
 Known issues
 ------------
-* Adb - device going offline 
+* Device going to offline (failed to reboot) while running cts tests
 * CLANG and HTML5 multicore scaling w.r.t. LiV when cores are > 6-8
 * Control Flow Integration in kernel not enabled
 

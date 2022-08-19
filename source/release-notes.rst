@@ -243,8 +243,13 @@ New in this release
 Known issues
 ------------
 * Device going to offline (failed to reboot) while running cts tests
+* Geekbench 2nd run expose may cause cfi flow 
 * CLANG and HTML5 multicore scaling w.r.t. LiV when cores are > 6-8
-* Control Flow Integration in kernel not enabled
+* Unable to set & change the lock screen(Pin/pattern/Password)
+* AOSP Front Camera Preview is not mirror
+* Audio doesn't route to USB Headset when usb camera is connected.[Need to reconnect usb headset to recover]
+* HDMI audio is lost after adb reboot
+* Volume control doesn't work with 3.5mm Headset button
 
 
 Where to find the release

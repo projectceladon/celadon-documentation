@@ -242,13 +242,10 @@ New in this release
 
 Known issues
 ------------
-* Unable to set and change the lock screen sometimes after couple of minutes
-  of usage
-* Volume control doesn't work with 3.5mm Headset button
-* Unable to seek properly on recorded video
-* HDMI audio is lost after adb reboot
-* Limitation on Alderlake RVP--> Suspend-resume functionality is not applicable
-  on ADL RVP
+* Adb - device going offline 
+* CLANG and HTML5 multicore scaling w.r.t. LiV when cores are > 6-8
+* Control Flow Integration in kernel not enabled
+
 
 Where to find the release
 -------------------------

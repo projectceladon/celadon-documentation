@@ -365,6 +365,7 @@ New in this release
 
  * New features
     * Camera mediation
+    * 
 
  * Existing Features
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)
@@ -450,15 +451,10 @@ New in this release
 
 Known issues
 ------------
-* Device going to offline (failed to reboot) while running cts tests
-* Geekbench 2nd run expose may cause cfi flaw
+* Device going to offline while running cts tests (Recoverable through sudo kill -9 process-id)
+* Cfi flaw seen in subsequent compute workload
 * CLANG and HTML5 multicore scaling w.r.t. LiV when cores are > 6-8
-* Unable to set & change the lock screen(Pin/pattern/Password)
-* AOSP Front Camera Preview is not mirror
 * HDMI audio is lost after adb reboot
-* Volume control doesn't work with 3.5mm Headset button
-* Thumbnail image is not shown after image capture in multi camera application
-
 
 Where to find the release
 -------------------------

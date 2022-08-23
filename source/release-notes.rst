@@ -365,7 +365,6 @@ New in this release
 
  * New features
     * Camera sharing
-    * IPC communication for Android in Virtual Machine / Container
     * Widevine API version 16 Support
     * Simultaneous Displays Support
     * Data sharing between Host and Guest

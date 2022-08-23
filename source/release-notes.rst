@@ -364,8 +364,16 @@ New in this release
 -------------------
 
  * New features
-    * Camera mediation
-    * 
+    * Camera sharing
+    * IPC communication for Android in Virtual Machine / Container
+    * Widevine API version 16 Support
+    * Simultaneous Displays Support
+    * Data sharing between Host and Guest
+    * Remove root permission for android in container or virtual machine
+    * Memory Balloon
+    * Power S3 Suspend/Resume of the CiV Guest OS - standalone
+    * Support Virtual A/B OTA on Celadon
+    * Sound open firmware HDA passthrough solution for Android in VM
 
  * Existing Features
     * Android 12 with latest AOSP release tag (android-12.0.0_r28)

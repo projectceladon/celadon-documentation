@@ -2409,6 +2409,15 @@ Helpful Hints / Links
 
 
 
+
+Deprecated Releases
+*******************
+
+.. contents::
+   :local:
+   :depth: 1
+
+
 CIV_01.20.01.12_A10
 ======================
 
@@ -2524,15 +2533,6 @@ Helpful hints/links
 * Manifest Link :https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.20.01.12_A10.xml
 * Binary Link :https://github.com/projectceladon/celadon-binary/blob/master/CIV_01.20.01.12_A10/caas-flashfiles-eng.build.zip
 * If you plan to use Celadon in your product, please replace all the test keys under device/intel/build/testkeys/ with your product key.
-
-
-Deprecated Releases
-*******************
-
-.. contents::
-   :local:
-   :depth: 1
-
 
 
 CIV_00.20.03.39_A10

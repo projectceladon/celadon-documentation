@@ -542,7 +542,7 @@ Reference configuration
 
  * Supported hardware
 
-     * Product 
+     * Product - Alder Lake RVP
 
  * Supported software
 

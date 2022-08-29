@@ -466,7 +466,7 @@ Known issues
 Where to find the release
 -------------------------
 
-* Manifest Link : 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.22.03.32_A12.xml
 * Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_01.22.03.32_A12
 
 

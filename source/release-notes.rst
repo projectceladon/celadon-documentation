@@ -342,8 +342,7 @@ Helpful hints / related documents
 
 CIV_01.22.03.32_A12
 ===================
-* This is a Pre Production Binary Release for evaluation and development
-  purposes . This release enables support for 12th GEN Core and it has
+* This is a Production Binary Release for evaluation and development purposes. This release enables support for 12th GEN Core and it has
   been tested on Alder Lake RVP [Celadon in VM].
 
 Intended audience

@@ -4,26 +4,32 @@ Enabling USB Audio Class 3.0 audio in |C|
 #########################################
 
 Introduction
-------------
+************
 
-There has been an increasing trend of adopting USB digital audio among hardware manufacturers. Even Google has done away with the 3.5mm radio jack in its latest `Pixel 2 <https://www.android.com/phones/google-pixel-2/>`_ phone series. This is because USB digital audio will considerably increase the music quality and also eliminate the need for a separate audio jack, making the form factors thinner. The Android Compatibility Definition Document (CDD) version 9.0 mandates that the devices without the 3.5mm audio jack must implement the USB Audio Class [1]_ [2]_. The only major drawback with the USB digital audio is its higher power consumption relative to analog audio. To address this issue, USB-IF has come up with a new specification - USB Audio Class 3.0 specification, which primarily focuses on optimizing power consumption over USB audio.
+There has been an increasing trend of adopting USB digital audio among hardware manufacturers. Even Google has done away with the 3.5mm radio jack in its latest `Pixel 2 <https://www.android.com/phones/google-pixel-2/>`_ phone series. This is because USB digital audio will considerably increase the music quality and also eliminate the need for a separate audio jack, making the form factors thinner. The Android Compatibility Definition Document (CDD) version 9.0 mandates that the devices without the 3.5mm audio jack must implement the USB Audio Class [1]_ [2]_. The only major drawback with the USB digital audio is its higher power consumption relative to analog audio. To address this issue, USB-IF has come up with a new specification - USB Audio Class 3.0 specification (UAC3), which primarily focuses on optimizing power consumption over USB audio.
 
 USB Audio Class 3.0 specification (UAC3)
-----------------------------------------
+****************************************
 
 `USB Audio Class Specification 3.0 <https://www.usb.org/sites/default/files/USB_Audio_v3.0.zip>`_ was released by USB-IF with an aim to provide power-saving features and support new codec types and data formats for consumer audio applications. Some of its salient features are:
 
-#. Support for LPM (Link Power Management) L1 mode
-#. Support for new power domains where we can selectively turn off certain components to save power
-#. New cluster descriptors, high capability descriptors and class-specific descriptors
-#. Support for BADD (Basic Audio Device Definition) profiles
+#. Support for LPM (link power management) L1 mode
+#. Support for new power domains where we can selectively turn off certain
+   components to save power
+#. New cluster descriptors, high capability descriptors and class-specific
+   descriptors
+#. Support for basic audio device definition (BADD) profiles
 #. Support for new codecs and data formats
 
-BADD (Basic Audio Device Definition) is a subset of USB Audio Class 3.0 specification and it is strongly recommended to have the BADD configuration implemented in the audio devices that are compliant with USB Audio Class 3.0 specification. BADD defines three types of audio functions:
+:abbr:`BADD (basic audio device definition)` is a subset of
+:abbr:`UAC3 (USB Audio Class 3.0 specification)` and it is strongly
+recommended to have the BADD configuration implemented in the audio devices
+that are compliant with :abbr:`UAC3 (USB Audio Class 3.0 specification)`.
+BADD defines three types of audio functions:
 
-#. Basic Audio Output function (BAOF)
-#. Basic Audio Input Function (BAIF)
-#. Basic Audio I/O function (BAIOF)
+#. Basic audio output function (BAOF)
+#. Basic audio input function (BAIF)
+#. Basic audio I/O function (BAIOF)
 
 It includes the following profiles:
 
@@ -32,13 +38,20 @@ It includes the following profiles:
 * Speaker
 * Microphone
 * Headset
-* Headset adapter and
+* Headset adapter
 * Speakerphone
 
-Enabling USB Audio Class 3.0 configuration in |C|
--------------------------------------------------
+Enabling UAC3 configuration in |C|
+==================================
 
-In order to maintain backward-compatibility with older host software which may not support UAC3, the specification mandates that the first configuration in the audio device should be compatible with either UAC1 (USB Audio Class 1.0) or UAC2 (USB Audio Class 2.0). The next configuration will be a BADD-compliant configuration. Selecting this configuration will enable the system to save power by leveraging the new power domains and LPM (Link Power Management) L1 capability of the audio device. Support for this configuration is available in |C|. Make sure that the following patches are there in your build:
+To maintain backward-compatibility with older host software which may not
+support UAC3, the specification mandates that the first configuration in the
+audio device should be compatible with either UAC1 (USB Audio Class 1.0) or
+UAC2 (USB Audio Class 2.0). The next configuration will be a BADD-compliant
+configuration. Selecting this configuration will enable the system to save
+power by leveraging the new power domains and LPM (link power management)
+L1 capability of the audio device. Support for this configuration is
+available in |C|. Make sure that the following patches are in your build:
 
 1. Patch to add support for USB Audio Class 3.0
 
@@ -149,10 +162,15 @@ In order to maintain backward-compatibility with older host software which may n
        Signed-off-by: Saranya Gopal <saranya.gopal@intel.com>
        Reviewed-by: Felipe Balbi <felipe.balbi@linux.intel.com>
 
-Enabling LPM in XHCI (eXtensible Host Controller Interface)
------------------------------------------------------------
+Enabling LPM in extensible host controller interface (XHCI)
+===========================================================
 
-XHCI is capable of supporting hardware LPM in modern Intel platforms. For example, the following *sysfs* entry confirms that the hardware USB port **3-1** is capable of supporting hardware LPM, you can get the port information for your system from the audio device enumeration logs in the ``dmesg`` output.
+:abbr:`XHCI (extensible host controller interface)` is capable of supporting
+hardware :abbr:`LPM (link power management)`
+in modern Intel® architecture platforms. For example, the following *sysfs*
+entry confirms that the hardware USB port **3-1** is capable of supporting
+hardware LPM, you can get the port information for your system from the
+audio device enumeration logs in the ``dmesg`` output.
 
 .. code-block:: bash
 
@@ -161,7 +179,8 @@ XHCI is capable of supporting hardware LPM in modern Intel platforms. For exampl
 
 If the output value is **disabled**, you could enable LPM by writing **1** to the entry. The transition into LPM L1 mode can be confirmed through protocol traces.
 
-The following snapshot shows Lecroy traces of LPM transaction on an Intel Kaby Lake platform with a UAC3-compliant audio device:
+The following snapshot shows Lecroy traces of LPM transaction on a Kaby Lake
+platform with a UAC3-compliant audio device:
 
 .. figure:: images/uac3-usb-protocol-trace.png
     :align: center
@@ -169,7 +188,7 @@ The following snapshot shows Lecroy traces of LPM transaction on an Intel Kaby L
 Here, the LPM L1 residency is 252 us. The service interval in this configuration is 1 ms. The USB host is required to request LPM/L1 state after servicing the device in each service interval. In our case, the device was entering LPM L1 with around 250 us L1 residency during every 1 ms service interval.
 
 Conclusion
-----------
+**********
 
 We have enabled **USB Audio Class 3.0** in |C| which helps us to leverage the power-saving features of USB digital audio. In future, USB audio power can be further optimized by offloading USB audio to an offload-engine, thereby allowing the processor to go into deeper sleep states.
 

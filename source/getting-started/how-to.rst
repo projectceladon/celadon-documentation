@@ -13,7 +13,7 @@ How to support secure boot
 **************************
 
 Secure boot is enabled on the BIOS of some PCs by default. It adds the BIOS
-vendor's key and Windows\* key by default. However, the default setting does
+vendor's key and Windows key by default. However, the default setting does
 not include the key to verify the kernelflinger. If the BIOS has enabled
 secure boot, you will get the following error message:
 
@@ -27,11 +27,11 @@ to BIOS.
 #. Download the files that comprise *Keytool* from their respective
    locations:
 
-   #. :file:`KeyTool.efi` is a tool included in the *efitools* tarball. 
+   #. :file:`KeyTool.efi` is a tool included in the *efitools* tarball.
       Download the tarball from
       https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git.
 
-   #. Download 
+   #. Download
       `DB.auth <https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/DB.auth>`_.
 
    #. Download
@@ -41,10 +41,10 @@ to BIOS.
    :file:`KeyTool.efi`, :file:`DB.auth`, and :file:`KEK.auth` files on the
    USB drive.
 
-#. Disable the device secure boot. 
+#. Disable the device secure boot.
 
    #. Plug in the USB drive and reboot the device.
-   #. Press :kbd:`F10` to enter the Boot Menu. 
+   #. Press :kbd:`F10` to enter the Boot Menu.
    #. Select "UEFI : Build-in EFI Shell" and then find your USB device.
    #. Execute :command:`KeyTool.efi` and you will see the KeyTool menu.
    #. Select :menuselection:`Edit Keys` to replace the keys.

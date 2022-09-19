@@ -1,7 +1,7 @@
 .. _debug-android-host:
 
-Making the Android* Host Debuggable - ADB for x86 Android Solutions
-###################################################################
+Making the Android Host Debuggable - ADB for x86 Android Solutions
+##################################################################
 
 This tutorial provides an overview of the :abbr:`DBC (USB Debug Class)`
 infrastructure followed by the steps to enable the feature on |C| and
@@ -16,7 +16,7 @@ Description
 ***********
 
 The Android host ecosystem consists of new applications like Android
-Automotive, Chromebook*, or gateways running on |NUC|-like systems. A
+Automotive, Chromebook, or gateways running on |NUC|-like systems. A
 significant challenge with these Android host solutions is the lack of USB
 Device mode because most of x86 platforms are USB host systems. The DBC
 addresses this issue and allows a :abbr:`DUT (Device Under Test)` with
@@ -28,7 +28,7 @@ DBC Overview
 ************
 
 The :abbr:`xDBC (USB Debug Capability)` provides the :abbr:`xHCI (Extensible
-Host Controller Interface)`. The Universal Serial Bus is a host-controlled
+Host Controller Interface)`. The universal serial bus is a host-controlled
 bus. The Host Controller is the hardware that manages the USB bus and USB
 host ports. It initiates and manages all USB transfers. The xHCI is a
 register-level interface providing a mechanism that allows the
@@ -48,14 +48,14 @@ device presented by the debug target can be used by the debug host for
 low-level system debugging of the target.
 
 GitHub PRs to enable adb over DbC for |C| KBL NUC
--------------------------------------------------
+=================================================
 
 #. `Kernel and adb changes <https://github.com/projectceladon/vendor-intel-utils/pull/291>`_
 #. `Adding android property to switch between adb over DWC and DBC <https://github.com/projectceladon/device-androidia-mixins/pull/274>`_
 #. `Adding sepolicy to access DbC RAW device node <https://github.com/projectceladon/device-androidia/pull/416>`_
 
 Steps to enable ADB over DbC support in Host Machine
-----------------------------------------------------
+====================================================
 
 #. Add the following permission to the udev rule
    :file:`/etc/udev/rules.d/51-android.rules` (create the file if it does
@@ -96,31 +96,31 @@ Steps to enable ADB over DbC support in Host Machine
 
 #. The :command:`adb` command installed by the Android SDK does not support
    ADB over DbC, you should use the :command:`adb` command built from the |C|
-   source tree. The ADB over DbC enabled :command:`adb` command is avaiable
+   source tree. The ADB over DbC-enabled :command:`adb` command is avaiable
    in the :file:`out/host/linux-x86/bin/` folder after the build.
 
 Steps to enable ADB over DbC support on |NUC| BLKNUC7iDNHE system
------------------------------------------------------------------
+=================================================================
 
 #. Check the Android property value
-   :command:`persist.vendor.sys.usb.adbover` with the following command. The
-   default value is :command:`dwc`, represents normal ADB over USB (DWC).
+   :envvar:`persist.vendor.sys.usb.adbover` with the following command. The
+   default value is :envvar:`dwc`, which represents normal ADB over USB (DWC).
 
     .. code-block:: bash
 
         root@intel:~# getprop persist.vendor.sys.usb.adbover
         dwc
 
-#. Reset the property value to :command:`dbc`, then reboot the target system.
+#. Reset the property value to :envvar:`dbc`, then reboot the target system.
 
     .. code-block:: bash
 
         root@intel:~# setprop persist.vendor.sys.usb.adbover dbc
 
 Connect the Target to the Host System
--------------------------------------
+=====================================
 
-Plug the debug Target to the Host system using a `USB Type-A to Type-A (3.0)
+Plug the debug Target into the Host system using a `USB Type-A to Type-A (3.0)
 SuperSpeed Debug cable <https://www.datapro.net/products/usb-3-0-super-speed-
 -a-debugging-cable.html>`_.
 A USB 2.0 Type-A to Type-A cable does not work in this case.
@@ -150,8 +150,8 @@ Host. This can be confirmed with the following command:
    :envvar:`Driver` should be *usbfs* (i.e. :envvar:`Driver=usbfs`) in the
    previous command output.
 
-ADB Detection in Host Machine
------------------------------
+ADB detection in Host Machine
+=============================
 
     .. code-block:: bash
 
@@ -162,7 +162,7 @@ ADB Detection in Host Machine
         DW1724778700007 device
 
 Steps to switch back to normal ADB over USB (DWC)
--------------------------------------------------
+=================================================
 
 #. Check the Android property value :envvar:`persist.vendor.sys.usb.adbover`
    with the following command.
@@ -185,16 +185,16 @@ ADB over DbC throughput test result
 - Achieved 27.0 MB/s (1073741824 bytes in 37.860s) for pushing 1GB file.
 
 Conclusion
-----------
+**********
 
-DbC is ideal choice for platforms that don't have USB device controller IP
-and require debugging support. If a platform uses dedicated USB device
+DbC is an ideal choice for platforms that don't have a USB device controller IP
+and require debugging support. If a platform uses a dedicated USB device
 controller for just debugging support, it can be replaced with DbC. DbC is
 a dependable debugging solution, which is critical for early platform bring-
 up where there is limited BIOS support etc.
 
 References
-----------
+**********
 
 DBC CAP Blog
 

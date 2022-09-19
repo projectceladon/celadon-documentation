@@ -91,13 +91,11 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Enabling USB Audio Class 3.0 audio in Celadon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#usb-audio-class-3-0-specification-uac3">USB Audio Class 3.0 specification (UAC3)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enabling-usb-audio-class-3-0-configuration-in-c">Enabling USB Audio Class 3.0 configuration in Celadon</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enabling-lpm-in-xhci-extensible-host-controller-interface">Enabling LPM in XHCI (eXtensible Host Controller Interface)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android* Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android Host Debuggable - ADB for x86 Android Solutions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="enabling-sensors-in-celadon.html">Enabling Sensors in Celadon</a></li>
@@ -183,23 +181,29 @@
 <span id="enable-uac3"></span><h1>Enabling USB Audio Class 3.0 audio in Celadon</h1>
 <div class="section" id="introduction">
 <h2>Introduction</h2>
-<p>There has been an increasing trend of adopting USB digital audio among hardware manufacturers. Even Google has done away with the 3.5mm radio jack in its latest <a class="reference external" href="https://www.android.com/phones/google-pixel-2/">Pixel 2</a> phone series. This is because USB digital audio will considerably increase the music quality and also eliminate the need for a separate audio jack, making the form factors thinner. The Android Compatibility Definition Document (CDD) version 9.0 mandates that the devices without the 3.5mm audio jack must implement the USB Audio Class <a class="footnote-reference" href="#id3" id="id1">[1]</a> <a class="footnote-reference" href="#id4" id="id2">[2]</a>. The only major drawback with the USB digital audio is its higher power consumption relative to analog audio. To address this issue, USB-IF has come up with a new specification - USB Audio Class 3.0 specification, which primarily focuses on optimizing power consumption over USB audio.</p>
+<p>There has been an increasing trend of adopting USB digital audio among hardware manufacturers. Even Google has done away with the 3.5mm radio jack in its latest <a class="reference external" href="https://www.android.com/phones/google-pixel-2/">Pixel 2</a> phone series. This is because USB digital audio will considerably increase the music quality and also eliminate the need for a separate audio jack, making the form factors thinner. The Android Compatibility Definition Document (CDD) version 9.0 mandates that the devices without the 3.5mm audio jack must implement the USB Audio Class <a class="footnote-reference" href="#id3" id="id1">[1]</a> <a class="footnote-reference" href="#id4" id="id2">[2]</a>. The only major drawback with the USB digital audio is its higher power consumption relative to analog audio. To address this issue, USB-IF has come up with a new specification - USB Audio Class 3.0 specification (UAC3), which primarily focuses on optimizing power consumption over USB audio.</p>
 </div>
 <div class="section" id="usb-audio-class-3-0-specification-uac3">
 <h2>USB Audio Class 3.0 specification (UAC3)</h2>
 <p><a class="reference external" href="https://www.usb.org/sites/default/files/USB_Audio_v3.0.zip">USB Audio Class Specification 3.0</a> was released by USB-IF with an aim to provide power-saving features and support new codec types and data formats for consumer audio applications. Some of its salient features are:</p>
 <ol class="arabic simple">
-<li>Support for LPM (Link Power Management) L1 mode</li>
-<li>Support for new power domains where we can selectively turn off certain components to save power</li>
-<li>New cluster descriptors, high capability descriptors and class-specific descriptors</li>
-<li>Support for BADD (Basic Audio Device Definition) profiles</li>
+<li>Support for LPM (link power management) L1 mode</li>
+<li>Support for new power domains where we can selectively turn off certain
+components to save power</li>
+<li>New cluster descriptors, high capability descriptors and class-specific
+descriptors</li>
+<li>Support for basic audio device definition (BADD) profiles</li>
 <li>Support for new codecs and data formats</li>
 </ol>
-<p>BADD (Basic Audio Device Definition) is a subset of USB Audio Class 3.0 specification and it is strongly recommended to have the BADD configuration implemented in the audio devices that are compliant with USB Audio Class 3.0 specification. BADD defines three types of audio functions:</p>
+<p><abbr title="basic audio device definition">BADD</abbr> is a subset of
+<abbr title="USB Audio Class 3.0 specification">UAC3</abbr> and it is strongly
+recommended to have the BADD configuration implemented in the audio devices
+that are compliant with <abbr title="USB Audio Class 3.0 specification">UAC3</abbr>.
+BADD defines three types of audio functions:</p>
 <ol class="arabic simple">
-<li>Basic Audio Output function (BAOF)</li>
-<li>Basic Audio Input Function (BAIF)</li>
-<li>Basic Audio I/O function (BAIOF)</li>
+<li>Basic audio output function (BAOF)</li>
+<li>Basic audio input function (BAIF)</li>
+<li>Basic audio I/O function (BAIOF)</li>
 </ol>
 <p>It includes the following profiles:</p>
 <ul class="simple">
@@ -208,13 +212,19 @@
 <li>Speaker</li>
 <li>Microphone</li>
 <li>Headset</li>
-<li>Headset adapter and</li>
+<li>Headset adapter</li>
 <li>Speakerphone</li>
 </ul>
-</div>
-<div class="section" id="enabling-usb-audio-class-3-0-configuration-in-c">
-<h2>Enabling USB Audio Class 3.0 configuration in Celadon</h2>
-<p>In order to maintain backward-compatibility with older host software which may not support UAC3, the specification mandates that the first configuration in the audio device should be compatible with either UAC1 (USB Audio Class 1.0) or UAC2 (USB Audio Class 2.0). The next configuration will be a BADD-compliant configuration. Selecting this configuration will enable the system to save power by leveraging the new power domains and LPM (Link Power Management) L1 capability of the audio device. Support for this configuration is available in Celadon. Make sure that the following patches are there in your build:</p>
+<div class="section" id="enabling-uac3-configuration-in-c">
+<h3>Enabling UAC3 configuration in Celadon</h3>
+<p>To maintain backward-compatibility with older host software which may not
+support UAC3, the specification mandates that the first configuration in the
+audio device should be compatible with either UAC1 (USB Audio Class 1.0) or
+UAC2 (USB Audio Class 2.0). The next configuration will be a BADD-compliant
+configuration. Selecting this configuration will enable the system to save
+power by leveraging the new power domains and LPM (link power management)
+L1 capability of the audio device. Support for this configuration is
+available in Celadon. Make sure that the following patches are in your build:</p>
 <ol class="arabic simple">
 <li>Patch to add support for USB Audio Class 3.0</li>
 </ol>
@@ -325,19 +335,26 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="enabling-lpm-in-xhci-extensible-host-controller-interface">
-<h2>Enabling LPM in XHCI (eXtensible Host Controller Interface)</h2>
-<p>XHCI is capable of supporting hardware LPM in modern Intel platforms. For example, the following <em>sysfs</em> entry confirms that the hardware USB port <strong>3-1</strong> is capable of supporting hardware LPM, you can get the port information for your system from the audio device enumeration logs in the <code class="docutils literal"><span class="pre">dmesg</span></code> output.</p>
+<div class="section" id="enabling-lpm-in-extensible-host-controller-interface-xhci">
+<h3>Enabling LPM in extensible host controller interface (XHCI)</h3>
+<p><abbr title="extensible host controller interface">XHCI</abbr> is capable of supporting
+hardware <abbr title="link power management">LPM</abbr>
+in modern Intel® architecture platforms. For example, the following <em>sysfs</em>
+entry confirms that the hardware USB port <strong>3-1</strong> is capable of supporting
+hardware LPM, you can get the port information for your system from the
+audio device enumeration logs in the <code class="docutils literal"><span class="pre">dmesg</span></code> output.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /sys/bus/usb/devices/3-1/power/usb2_hardware_lpm
 enabled
 </pre></div>
 </div>
 <p>If the output value is <strong>disabled</strong>, you could enable LPM by writing <strong>1</strong> to the entry. The transition into LPM L1 mode can be confirmed through protocol traces.</p>
-<p>The following snapshot shows Lecroy traces of LPM transaction on an Intel Kaby Lake platform with a UAC3-compliant audio device:</p>
+<p>The following snapshot shows Lecroy traces of LPM transaction on a Kaby Lake
+platform with a UAC3-compliant audio device:</p>
 <div class="figure align-center">
 <img alt="../_images/uac3-usb-protocol-trace.png" src="../_images/uac3-usb-protocol-trace.png" />
 </div>
 <p>Here, the LPM L1 residency is 252 us. The service interval in this configuration is 1 ms. The USB host is required to request LPM/L1 state after servicing the device in each service interval. In our case, the device was entering LPM L1 with around 250 us L1 residency during every 1 ms service interval.</p>
+</div>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion</h2>
@@ -378,7 +395,7 @@ enabled
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Aug 19, 2022.
+      Last updated on Sep 19, 2022.
 
     </p>
   </div>

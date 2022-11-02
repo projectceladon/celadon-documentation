@@ -1,4 +1,4 @@
-.. Celadon Project documentation master file.
+ .. Celadon Project documentation master file.
 
 |C| Project - Documentation
 ###########################

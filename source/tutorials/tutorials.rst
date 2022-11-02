@@ -18,6 +18,7 @@ Development
    enabling-sensors-in-celadon
    boot-civ-f2fs
    concurrent-camera-access
+   enabling-nnhal-in-celadon
 
 Security
 --------

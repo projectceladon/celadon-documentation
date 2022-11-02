@@ -19,6 +19,7 @@ Development
    boot-civ-f2fs
    concurrent-camera-access
    enabling-nnhal-in-celadon
+   build-intel-android-apps
 
 Security
 --------

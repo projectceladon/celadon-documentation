@@ -20,6 +20,7 @@ Development
    concurrent-camera-access
    enabling-nnhal-in-celadon
    build-intel-android-apps
+   thermal-mediation
 
 Security
 --------

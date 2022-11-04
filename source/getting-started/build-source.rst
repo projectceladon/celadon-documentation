@@ -148,7 +148,8 @@ Build |C| in VM image
          The *-j $(nproc)* argument instructs the builder to compile the source
          code with parallel tasks. The generated kernelflinger executables
          .ZIP file
-         (:file:`out/target/product/caas/caas-flashfiles-eng.${USER}.zip`)
+         (:file:`out/target/product/caas/caas-flashfiles-eng.${USER}.zip`
+         and :file:`out/target/product/caas/caas-flashfiles-eng.${USER}.iso.zip`)
          is available after the build. You can refer to :ref:`caas-on-vm`
          section to prepare the host environment and boot the CiV image with QEMU.
 

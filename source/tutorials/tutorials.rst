@@ -21,6 +21,7 @@ Development
    enabling-nnhal-in-celadon
    build-intel-android-apps
    thermal-mediation
+   wireless-connectivity
 
 Security
 --------

@@ -132,7 +132,19 @@ running in a VM. Proceed with the following section to install these
 images to a virtual disk image in
 `qcow2 <https://www.linux-kvm.org/page/Qcow2>`_ format.
 
+:file:`caas-flashfile-eng.<user>.iso.zip`
+
+:file:`cass-flashfile-eng.<user>.iso.zip` is an ISO format bootable image that can be
+burned to a bootable CD/DVD or cloned to USB pendrive. It is used to install Caas images
+in VM and BM (Bare Metal). It is independent on a UEFI Shell.
+:file:`cass-flashfiles-eng.<user>.zip` image flashing dependents on BIOS UEFI shell. For
+|C| in VM solution, it always works because VMM (like QEMU) can provide a UEFI Shell.
+But for Celadon in a bare mental solution, it doesn't work because some devices don't
+have a built-in UEFI Shell. So we need provide a new solution to flash Caas images to such devices.
+
 :file:`caas-releasefiles-<$buildvariant>.tar.gz`
+
+:file:`caas-releasefile-<$buildvariant>.iso.tar.gz`
 
 The release tar ball contains all required flashfiles/scrips for running
 |C| in VM.
@@ -154,6 +166,14 @@ a *qcow2* formatted virtual disk.
 
         $ cd /opt/civ-1
         $ sudo ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.zip
+
+   If you are using an iso image, run the following commands:
+
+    .. code-block:: bash
+
+        $ cd /opt/civ-1
+        $ sudo ./scripts/start_flash_usb.sh caas-flashfiles-eng.<user>.iso.zip
+
 
 #. By running the :file:`start_flash_usb.sh` script, a QEMU window will pop
    up, it will drop to the built-in UEFI Shell, and start flashing the
@@ -239,6 +259,8 @@ All CiV guest configuration file (INI formated) are stored at
      [global]
      name=civ-1
      flashfiles=/opt/civ-1/caas-flashfiles-CR0000317.zip
+     # flashfiles=/opt/civ-1/caas-flashfiles-CR0000317.iso.zip #use iso image
+
      adb_port=5555
      fastboot_port=5554
 

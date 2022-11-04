@@ -76,18 +76,22 @@ below to passthrough the interfaces to guest.
 
 #. Record the PCI address of the network controller and USB controller.
 
-   .. figure:: images/cs005-images/cs005-ex1.png
-      :width: 6.50000in
-      :height: 0.52778in
+   .. code-block:: bash
 
-    <Example 1>
+      0000:00:14.0 USB controller: Intel Corporation Device 51ed (rev 01)
+      0000:00:14.2 RAM memory: Intel Corporation Device 51ef (rev 01)
+      0000:00:14.3 Network controller: Intel Corporation Device 51f0 (rev 01)
+
+   <Example 1>
 
 #. Add these PCI addresses in :file:`~/.intel/.civ/civ-1.ini`, under
    the passthrough section.
 
-   .. figure:: images/cs005-images/cs005-ex2.png
-      :width: 6.50000in
-      :height: 0.47292in
+   .. code-block:: bash
+
+      [passthrough]
+      #specified the PCI id here if you want to passthrough it to guest, separate them with comma
+      passthrough_pci=0000:00:14.3,0000:00:14.0
 
     <Example 2>
 

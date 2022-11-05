@@ -233,10 +233,10 @@ $ sudo apt-get install openjdk-8-jdk git ccache automake <span class="se">\</spa
        libelf-dev sbsigntool dosfstools mtools efitools <span class="se">\</span>
        python3-pystache git-lfs python3 flex clang libncurses5 <span class="se">\</span>
        fakeroot ncurses-dev xz-utils python3-pip ninja-build <span class="se">\</span>
-       cryptsetup-bin cutils cmake pkg-config
+       cryptsetup-bin cutils cmake pkg-config xorriso mtools
 
 $ sudo pip3 install <span class="nv">meson</span><span class="o">==</span><span class="m">0</span>.59.2
-$ sudo pip3 install <span class="nv">mako</span><span class="o">==</span><span class="m">0</span>.8.0
+$ sudo pip3 install <span class="nv">mako</span><span class="o">==</span><span class="m">1</span>.1.0
 </pre></div>
 </div>
 </li>
@@ -314,7 +314,8 @@ $ make flashfiles -j <span class="k">$(</span>nproc<span class="k">)</span>
 <p class="last">The <em>-j $(nproc)</em> argument instructs the builder to compile the source
 code with parallel tasks. The generated kernelflinger executables
 .ZIP file
-(<code class="file docutils literal"><span class="pre">out/target/product/caas/caas-flashfiles-eng.$</span><em><span class="pre">USER</span></em><span class="pre">.zip</span></code>)
+(<code class="file docutils literal"><span class="pre">out/target/product/caas/caas-flashfiles-eng.$</span><em><span class="pre">USER</span></em><span class="pre">.zip</span></code>
+and <code class="file docutils literal"><span class="pre">out/target/product/caas/caas-flashfiles-eng.$</span><em><span class="pre">USER</span></em><span class="pre">.iso.zip</span></code>)
 is available after the build. You can refer to <a class="reference internal" href="on-vm.html#caas-on-vm"><span class="std std-ref">Run Celadon in a virtual machine</span></a>
 section to prepare the host environment and boot the CiV image with QEMU.</p>
 </div>
@@ -345,7 +346,7 @@ section to prepare the host environment and boot the CiV image with QEMU.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Sep 19, 2022.
+      Last updated on Nov 04, 2022.
 
     </p>
   </div>

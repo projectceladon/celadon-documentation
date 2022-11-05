@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Wireless Connectivity in Celadon &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SELinux Configuration and Rules" href="configure-selinux.html" />
+    <link rel="prev" title="cs004: Thermal Mediation in Celadon" href="thermal-mediation.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mixins.html">Mixins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-sensors-in-celadon.html">Enabling Sensors in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-f2fs.html">Boot CIV with Flash Friendly File System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrent-camera-access.html">Concurrent Camera Access in CiV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-nnhal-in-celadon.html">Enabling Neural Networks Hardware Abstraction Layer in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build-intel-android-apps.html">Building Intel Platform-Friendly Android Apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">cs004: Thermal Mediation in Celadon</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Wireless Connectivity in Celadon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#celadon-guide-for-bluetooth">Celadon guide for Bluetooth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-bluetooth-in-civ">Enabling Bluetooth in CiV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#debugging-tips">Debugging tips</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#celadon-guide-for-wi-fi">Celadon guide for Wi-Fi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>Wireless Connectivity in Celadon</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/wireless-connectivity.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wireless-connectivity-in-celadon">
+<span id="wireless-connectivity"></span><h1>Wireless Connectivity in Celadon</h1>
+<p>This section explains the connectivity module of Celadon, which contains
+details about Bluetooth and Wi-Fi wireless technologies and usage in
+Celadon.</p>
+<p>Connectivity module interaction is different depending on the Celadon
+use case such as bare metal, CiV Linux desktop applications to provide
+Android application support, or Celadon in VM. With CiV, the guest
+Android instance takes complete control of the host Bluetooth/Wi-Fi
+hardware, which is known to be the passthrough solution for CiV. This
+section explains the Bluetooth/Wi-Fi bare metal solution and the CiV
+solution, with passthrough mode.</p>
+<div class="section" id="celadon-guide-for-bluetooth">
+<h2>Celadon guide for Bluetooth</h2>
+<p>This section explains Bluetooth usage in Celadon.</p>
+<div class="section" id="bluetooth-overview">
+<h3>Bluetooth overview</h3>
+<p>Bluetooth is wireless communication technology that has existed since
+the early 2000s. Using this, we can transmit data over distances ranging
+from 10-100 meters. It has many applications in real world scenarios,
+such as music streaming (A2DP), call audio streaming (HFP), and object
+exchange (OBEX).</p>
+<p>In Android, Bluetooth support is implemented in Android frameworks and
+the Linux Kernel. The framework contains the Fluoride stack. The Linux
+kernel has the core protocol implementations of RFCOMM, BNEP, HCI, and
+SCO.</p>
+<p>For releases of Android, from T onwards, Bluetooth has been moved from
+the mainline and is delivered as an apex package. It also introduces
+implementations of various LE audio profiles specific to unicast support
+only.</p>
+</div>
+<div class="section" id="bluetooth-usage-in-civ">
+<h3>Bluetooth usage in CiV</h3>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-f1-bt-android.png"><img alt="../_images/cs005-f1-bt-android.png" src="../_images/cs005-f1-bt-android.png" style="width: 4.04167in; height: 4.33224in;" /></a>
+</div>
+<p>Figure 1: Bluetooth Android Stack and Host Interaction Architecture</p>
+<p>Bluetooth support has been integrated into recent Intel Wi-Fi chips. In
+ADL, the Network Interface Card (NIC) used is AX211, which has an
+integrated Bluetooth driver and supports Bluetooth Version&nbsp;5.3. In Tiger
+Lake and Alder&nbsp;Lake NUCs, Bluetooth is loaded as a USB interface.</p>
+<p>Celadon (Android) runs on top of the host OS (Ubuntu). The host kernel
+loads Bluetooth as a USB interface (hci0). Android cannot use this
+interface directly as the host has loaded it and using it. So, Android
+Bluetooth will not work. Figure 1 explains the Celadon in VM architecture
+with respect to Bluetooth.</p>
+</div>
+</div>
+<div class="section" id="enabling-bluetooth-in-civ">
+<h2>Enabling Bluetooth in CiV</h2>
+<p>To make Bluetooth work in Android, we need to manually bring down the
+Bluetooth USB interface (hci0) and then passthrough the hci0 interface
+to the guest (Android). Here we need to additionally passthrough the
+network controller with Bluetooth integrated inside it. Follow the steps
+below to passthrough the interfaces to guest.</p>
+<ol class="arabic">
+<li><p class="first">Execute this command on the host:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#&gt; lspci</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Record the PCI address of the network controller and USB controller.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="m">0000</span>:00:14.0 USB controller: Intel Corporation Device 51ed <span class="o">(</span>rev <span class="m">01</span><span class="o">)</span>
+<span class="m">0000</span>:00:14.2 RAM memory: Intel Corporation Device 51ef <span class="o">(</span>rev <span class="m">01</span><span class="o">)</span>
+<span class="m">0000</span>:00:14.3 Network controller: Intel Corporation Device 51f0 <span class="o">(</span>rev <span class="m">01</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>&lt;Example 1&gt;</p>
+</li>
+<li><p class="first">Add these PCI addresses in <code class="file docutils literal"><span class="pre">~/.intel/.civ/civ-1.ini</span></code>, under
+the passthrough section.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>  <span class="o">[</span>passthrough<span class="o">]</span>
+  <span class="c1">#specified the PCI id here if you want to passthrough it to guest, separate them with comma</span>
+  <span class="nv">passthrough_pci</span><span class="o">=</span><span class="m">0000</span>:00:14.3,0000:00:14.0
+
+&lt;Example <span class="m">2</span>&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check the Bluetooth USB interface name; in our example, it is hci0.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-ex3.png"><img alt="../_images/cs005-ex3.png" src="../_images/cs005-ex3.png" style="width: 4.32996in; height: 2.37500in;" /></a>
+</div>
+<p>&lt;Example 3&gt;</p>
+</li>
+<li><p class="first">Set the Bluetooth USB interface (hci0) interface down on host.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-ex4.png"><img alt="../_images/cs005-ex4.png" src="../_images/cs005-ex4.png" style="width: 4.35417in; height: 1.62630in;" /></a>
+</div>
+<p>&lt;Example 4&gt;</p>
+</li>
+<li><p class="first">Launch CiV using vm-manager.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#&gt; sudo vm-manager -b civ-1</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>You can see Bluetooth is turned on in Android (CiV).</p>
+</div>
+<div class="section" id="debugging-tips">
+<h2>Debugging tips</h2>
+<p>If audio over Bluetooth (A2DP) is not working, follow the steps below
+to make it work.</p>
+<ol class="arabic">
+<li><p class="first">Record the audio controller PCI address.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-ex5.png"><img alt="../_images/cs005-ex5.png" src="../_images/cs005-ex5.png" style="width: 6.50000in; height: 0.20625in;" /></a>
+</div>
+<p>&lt;Example 5&gt;</p>
+</li>
+<li><p class="first">Add it in <code class="file docutils literal"><span class="pre">~/.intel/.civ/civ-1.ini</span></code>, under passthrough section.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-ex6.png"><img alt="../_images/cs005-ex6.png" src="../_images/cs005-ex6.png" style="width: 6.50000in; height: 0.45903in;" /></a>
+</div>
+<p>&lt;Example 6&gt;</p>
+</li>
+<li><p class="first">Launch CiV using vm-manager</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#&gt; sudo vm-manager -b civ-1</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Check this link for efficient debugging.
+<a class="reference external" href="https://source.android.com/docs/core/connect/bluetooth/verifying_debugging">https://source.android.com/docs/core/connect/bluetooth/verifying_debugging</a></p>
+</div>
+<div class="section" id="celadon-guide-for-wi-fi">
+<h2>Celadon guide for Wi-Fi</h2>
+<p>This section introduces the basics of Wi-Fi architecture in Android and
+its usage in Celadon in BM and VM.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-f2-android-wi-fi-arch.png"><img alt="../_images/cs005-f2-android-wi-fi-arch.png" src="../_images/cs005-f2-android-wi-fi-arch.png" style="width: 6.30888in; height: 5.00877in;" /></a>
+</div>
+<p>Figure 2: Android Wi-Fi architecture</p>
+<p>Figure 2 details the Wi-Fi architectural flow in the Android stack and
+is taken from
+<a class="reference external" href="https://source.android.com/docs/core/connect/wifi-overview">https://source.android.com/docs/core/connect/wifi-overview</a>. The same
+architectural flow is used in Celadon, whereas the “vendor
+implementations and driver” and “Interfaces” layers vary from vendor to
+vendor. A major part of the Wi-Fi stack implementation resides in the
+kernel. The wpa-supplicant and hostapd modules in userspace manage the
+stack usage through various netlink commands via nl80211 socket. Figure
+2 depicts the control flow.</p>
+<p>The complete guest-to-host communication for interacting with the phyX
+interface over PCi passthrough mode is shown in the Figure 2. From the
+Wi-Fi HAL layer, communication passes to the Wi-Fi drivers via
+wpa_supplicant and hostapd through the nl80211 net-link socket, as
+shown in Figure 3.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-f3-comm-passes.png"><img alt="../_images/cs005-f3-comm-passes.png" src="../_images/cs005-f3-comm-passes.png" style="width: 4.46667in; height: 6.46667in;" /></a>
+</div>
+<p>Figure 3: Communication passes to the Wi-Fi drivers</p>
+<p>As soon as the vm-manager detects it, Wi-Fi is set to passthrough. The
+virtio client on the guest kernel communicates to the KVM running on the
+host kernel to set the control passthrough via VFIO PCI to the physical
+interface.</p>
+<div class="section" id="wi-fi-enablement-in-civ">
+<h3>Wi-Fi enablement in CiV</h3>
+<p>The PCI passthrough information is retrieved from the vm-manager .ini
+file placed under <code class="file docutils literal"><span class="pre">*~/.intel/.civ/&lt;vm-name&gt;.ini*</span></code>. In this .ini
+file, the PCi addresses mentioned under <code class="docutils literal"><span class="pre">pci_passthrough</span></code> are considered
+to be passthrough technologies to the host (unless they are of same iommu
+group).</p>
+<div class="section" id="get-pci-address-of-wi-fi">
+<h4>Get PCI address of Wi-Fi</h4>
+<p>Run the <strong class="command">lspci</strong> command shown below to request the verbose output
+of all the devices connected over the PCI bus.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">$lspci</span> -vvxxx
+</pre></div>
+</div>
+<p>From the output of the <strong class="command">lspci</strong> command, parse the PCI ID that
+connects to the Network Controller. In this example, it is “0000:00:14.3”
+that runs the kernel module. <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">iwlwifi</span></code> is the Intel driver for Wi-Fi.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-ex7.png"><img alt="../_images/cs005-ex7.png" src="../_images/cs005-ex7.png" style="width: 5.68333in; height: 1.50903in;" /></a>
+</div>
+<p>&lt;Example 7&gt;</p>
+<p>Now edit the .ini file located in the <code class="docutils literal"><span class="pre">pci_passthrough</span></code> section, and add
+the entry shown above to set Wi-Fi as PCI passthrough. In the example
+shown below, the passthrough option is added for both Bluetooth and
+Wi-Fi.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-ex8.png"><img alt="../_images/cs005-ex8.png" src="../_images/cs005-ex8.png" style="width: 5.71667in; height: 0.51181in;" /></a>
+</div>
+<p>&lt;Example 8&gt;</p>
+<p>Save the file. Then launch the vm-manager by executing the command
+below.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo vm-manager -b &lt;vm-name&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h4>Debugging tips</h4>
+<p>If Wi-Fi does not come up after adding the correct PCI passthrough
+option, use the tips below to debug your configuration.</p>
+<ul>
+<li><p class="first">The passthrough options provided could be within the same iommu
+group. To prevent this, check the host prior to adding the PCI
+passthrough option in the .ini file. Check the <cite>dmesg</cite> output on the
+host with the filter shown below to check the iommu group.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ dmesg <span class="p">|</span> grep “IOMMU”
+</pre></div>
+</div>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-ex9.png"><img alt="../_images/cs005-ex9.png" src="../_images/cs005-ex9.png" style="width: 4.65000in; height: 3.08311in;" /></a>
+</div>
+<p>&lt;Example 9&gt;</p>
+<p>In the sample output, devices in the same iommu group can’t be made
+passthrough together.</p>
+</li>
+<li><p class="first">Firmware load failure. To check if the problem is being caused by a
+firmware download failure, run <strong class="command">dmesg | grep iwl</strong> to filter the
+dmesg and check the below log for firmware download
+status.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cs005-ex10.png"><img alt="../_images/cs005-ex10.png" src="../_images/cs005-ex10.png" style="width: 5.25000in; height: 0.20136in;" /></a>
+</div>
+<p>&lt;Example 10&gt;</p>
+</li>
+<li><p class="first">In case the expected firmware version download fails, it should fall
+back to the default firmware version and successfully load the
+firmware.</p>
+</li>
+<li><p class="first">In case the firmware load itself fails, it won’t proceed for driver
+initialization and the phy interface will not be generated. If the
+issue still persists, download the correct firmware from the git
+repo:</p>
+<p><a class="reference external" href="https://kernel.googlesource.com/pub/scm/linux/kernel/git/firmware/linux-firmware">https://kernel.googlesource.com/pub/scm/linux/kernel/git/firmware/linux-firmware</a></p>
+</li>
+<li><p class="first">To get detailed Wi-Fi driver information, use the commands shown
+below:</p>
+<ul class="simple">
+<li><strong class="command">lspci</strong> with –v or -kkk option</li>
+<li><strong class="command">iwconfig</strong> (to check the iwd daemon configuration)</li>
+<li><strong class="command">lshw -C network</strong> (check the NIC ownership)</li>
+<li><strong class="command">iw list</strong> for driver and controller supported features</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configure-selinux.html" class="btn btn-neutral float-right" title="SELinux Configuration and Rules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="thermal-mediation.html" class="btn btn-neutral" title="cs004: Thermal Mediation in Celadon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Nov 04, 2022.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

@@ -61,10 +61,10 @@ Set up the development environment
              libelf-dev sbsigntool dosfstools mtools efitools \
              python3-pystache git-lfs python3 flex clang libncurses5 \
              fakeroot ncurses-dev xz-utils python3-pip ninja-build \
-             cryptsetup-bin cutils cmake pkg-config
+             cryptsetup-bin cutils cmake pkg-config xorriso mtools
 
       $ sudo pip3 install meson==0.59.2
-      $ sudo pip3 install mako==0.8.0
+      $ sudo pip3 install mako==1.1.0
 
 
 Build |C| in VM with Android 13
@@ -148,7 +148,8 @@ Build |C| in VM image
          The *-j $(nproc)* argument instructs the builder to compile the source
          code with parallel tasks. The generated kernelflinger executables
          .ZIP file
-         (:file:`out/target/product/caas/caas-flashfiles-eng.${USER}.zip`)
+         (:file:`out/target/product/caas/caas-flashfiles-eng.${USER}.zip`
+         and :file:`out/target/product/caas/caas-flashfiles-eng.${USER}.iso.zip`)
          is available after the build. You can refer to :ref:`caas-on-vm`
          section to prepare the host environment and boot the CiV image with QEMU.
 

@@ -1,7 +1,7 @@
 .. _thermal-mediation:
 
-cs004: Thermal Mediation in Celadon
-###################################
+Thermal Mediation in Celadon
+############################
 
 What is a thermal daemon?
 *************************
@@ -82,7 +82,7 @@ To validate the thermal values in CIV, use this command:
 
 .. code-block:: bash
 
-   **adb shell dumpsys thermalservice**
+   adb shell dumpsys thermalservice
 
 .. figure:: images/cs004-results-adb-shell-dumpsys.png
    :width: 5.00000in

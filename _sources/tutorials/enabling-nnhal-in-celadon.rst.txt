@@ -87,9 +87,9 @@ the following steps:
 
 #. Initialize the Android 12 repo using:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   repo init -u https://github.com/projectceladon/manifest -b celadon/s/mr0/stable
+      repo init -u https://github.com/projectceladon/manifest -b celadon/s/mr0/stable
 
 #. Apply the following patch to the repo (:file:`.repo/manifests/`) for
    including the NN HAL dependencies:
@@ -97,9 +97,9 @@ the following steps:
 
 #. Sync the Android12 source using:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   repo sync -c
+      repo sync -c
 
 #. Apply the following patch to :file:`vendor/intel/utils` to specify android
    build rules for the dependencies:

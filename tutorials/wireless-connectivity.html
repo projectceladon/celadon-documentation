@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SELinux Configuration and Rules" href="configure-selinux.html" />
-    <link rel="prev" title="cs004: Thermal Mediation in Celadon" href="thermal-mediation.html" /> 
+    <link rel="prev" title="Thermal Mediation in Celadon" href="thermal-mediation.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -98,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="concurrent-camera-access.html">Concurrent Camera Access in CiV</a></li>
 <li class="toctree-l3"><a class="reference internal" href="enabling-nnhal-in-celadon.html">Enabling Neural Networks Hardware Abstraction Layer in Celadon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="build-intel-android-apps.html">Building Intel Platform-Friendly Android Apps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">cs004: Thermal Mediation in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">Thermal Mediation in Celadon</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Wireless Connectivity in Celadon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#celadon-guide-for-bluetooth">Celadon guide for Bluetooth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#enabling-bluetooth-in-civ">Enabling Bluetooth in CiV</a></li>
@@ -249,15 +249,12 @@ below to passthrough the interfaces to guest.</p>
 <span class="m">0000</span>:00:14.3 Network controller: Intel Corporation Device 51f0 <span class="o">(</span>rev <span class="m">01</span><span class="o">)</span>
 </pre></div>
 </div>
-<p>&lt;Example 1&gt;</p>
 </li>
 <li><p class="first">Add these PCI addresses in <code class="file docutils literal"><span class="pre">~/.intel/.civ/civ-1.ini</span></code>, under
 the passthrough section.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>  <span class="o">[</span>passthrough<span class="o">]</span>
-  <span class="c1">#specified the PCI id here if you want to passthrough it to guest, separate them with comma</span>
-  <span class="nv">passthrough_pci</span><span class="o">=</span><span class="m">0000</span>:00:14.3,0000:00:14.0
-
-&lt;Example <span class="m">2</span>&gt;
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>passthrough<span class="o">]</span>
+<span class="c1">#specified the PCI id here if you want to passthrough it to guest, separate them with comma</span>
+<span class="nv">passthrough_pci</span><span class="o">=</span><span class="m">0000</span>:00:14.3,0000:00:14.0
 </pre></div>
 </div>
 </li>
@@ -265,13 +262,11 @@ the passthrough section.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/cs005-ex3.png"><img alt="../_images/cs005-ex3.png" src="../_images/cs005-ex3.png" style="width: 4.32996in; height: 2.37500in;" /></a>
 </div>
-<p>&lt;Example 3&gt;</p>
 </li>
 <li><p class="first">Set the Bluetooth USB interface (hci0) interface down on host.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/cs005-ex4.png"><img alt="../_images/cs005-ex4.png" src="../_images/cs005-ex4.png" style="width: 4.35417in; height: 1.62630in;" /></a>
 </div>
-<p>&lt;Example 4&gt;</p>
 </li>
 <li><p class="first">Launch CiV using vm-manager.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#&gt; sudo vm-manager -b civ-1</span>
@@ -290,13 +285,11 @@ to make it work.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/cs005-ex5.png"><img alt="../_images/cs005-ex5.png" src="../_images/cs005-ex5.png" style="width: 6.50000in; height: 0.20625in;" /></a>
 </div>
-<p>&lt;Example 5&gt;</p>
 </li>
 <li><p class="first">Add it in <code class="file docutils literal"><span class="pre">~/.intel/.civ/civ-1.ini</span></code>, under passthrough section.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/cs005-ex6.png"><img alt="../_images/cs005-ex6.png" src="../_images/cs005-ex6.png" style="width: 6.50000in; height: 0.45903in;" /></a>
 </div>
-<p>&lt;Example 6&gt;</p>
 </li>
 <li><p class="first">Launch CiV using vm-manager</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#&gt; sudo vm-manager -b civ-1</span>
@@ -357,7 +350,6 @@ that runs the kernel module. <span class="target" id="index-0"></span><code clas
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/cs005-ex7.png"><img alt="../_images/cs005-ex7.png" src="../_images/cs005-ex7.png" style="width: 5.68333in; height: 1.50903in;" /></a>
 </div>
-<p>&lt;Example 7&gt;</p>
 <p>Now edit the .ini file located in the <code class="docutils literal"><span class="pre">pci_passthrough</span></code> section, and add
 the entry shown above to set Wi-Fi as PCI passthrough. In the example
 shown below, the passthrough option is added for both Bluetooth and
@@ -365,7 +357,6 @@ Wi-Fi.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/cs005-ex8.png"><img alt="../_images/cs005-ex8.png" src="../_images/cs005-ex8.png" style="width: 5.71667in; height: 0.51181in;" /></a>
 </div>
-<p>&lt;Example 8&gt;</p>
 <p>Save the file. Then launch the vm-manager by executing the command
 below.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo vm-manager -b &lt;vm-name&gt;
@@ -387,7 +378,6 @@ host with the filter shown below to check the iommu group.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/cs005-ex9.png"><img alt="../_images/cs005-ex9.png" src="../_images/cs005-ex9.png" style="width: 4.65000in; height: 3.08311in;" /></a>
 </div>
-<p>&lt;Example 9&gt;</p>
 <p>In the sample output, devices in the same iommu group can’t be made
 passthrough together.</p>
 </li>
@@ -398,7 +388,6 @@ status.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/cs005-ex10.png"><img alt="../_images/cs005-ex10.png" src="../_images/cs005-ex10.png" style="width: 5.25000in; height: 0.20136in;" /></a>
 </div>
-<p>&lt;Example 10&gt;</p>
 </li>
 <li><p class="first">In case the expected firmware version download fails, it should fall
 back to the default firmware version and successfully load the
@@ -436,7 +425,7 @@ below:</p>
         <a href="configure-selinux.html" class="btn btn-neutral float-right" title="SELinux Configuration and Rules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="thermal-mediation.html" class="btn btn-neutral" title="cs004: Thermal Mediation in Celadon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="thermal-mediation.html" class="btn btn-neutral" title="Thermal Mediation in Celadon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -446,7 +435,7 @@ below:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Nov 04, 2022.
+      Last updated on Nov 07, 2022.
 
     </p>
   </div>

@@ -104,7 +104,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="build-intel-android-apps.html">Building Intel Platform-Friendly Android Apps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">cs004: Thermal Mediation in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">Thermal Mediation in Celadon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wireless-connectivity.html">Wireless Connectivity in Celadon</a></li>
 </ul>
 </li>
@@ -247,22 +247,21 @@ performance on Intel CPUs:</p>
 <h2>Enable and build NN HAL</h2>
 <p>To enable NN HAL and its dependencies in the Android 12 build, perform
 the following steps:</p>
-<ol class="arabic simple">
-<li>Initialize the Android 12 repo using:</li>
-</ol>
+<ol class="arabic">
+<li><p class="first">Initialize the Android 12 repo using:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>repo init -u https://github.com/projectceladon/manifest -b celadon/s/mr0/stable
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li>Apply the following patch to the repo (<code class="file docutils literal"><span class="pre">.repo/manifests/</span></code>) for
+</li>
+<li><p class="first">Apply the following patch to the repo (<code class="file docutils literal"><span class="pre">.repo/manifests/</span></code>) for
 including the NN HAL dependencies:
-<a class="reference external" href="https://patch-diff.githubusercontent.com/raw/projectceladon/manifest/pull/295.patch">https://patch-diff.githubusercontent.com/raw/projectceladon/manifest/pull/295.patch</a></li>
-<li>Sync the Android12 source using:</li>
-</ol>
+<a class="reference external" href="https://patch-diff.githubusercontent.com/raw/projectceladon/manifest/pull/295.patch">https://patch-diff.githubusercontent.com/raw/projectceladon/manifest/pull/295.patch</a></p>
+</li>
+<li><p class="first">Sync the Android12 source using:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>repo sync -c
 </pre></div>
 </div>
-<ol class="arabic">
+</li>
 <li><p class="first">Apply the following patch to <code class="file docutils literal"><span class="pre">vendor/intel/utils</span></code> to specify android
 build rules for the dependencies:
 <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/pull/1617.patch">https://github.com/projectceladon/vendor-intel-utils/pull/1617.patch</a></p>
@@ -340,7 +339,7 @@ below:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Nov 04, 2022.
+      Last updated on Nov 07, 2022.
 
     </p>
   </div>

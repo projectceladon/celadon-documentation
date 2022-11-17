@@ -117,8 +117,8 @@ Execute a sample usecase
 ************************
 
 Sync the tflite ``object_detection`` example below and build it using
-Android Studio (instructions available in the same link):
-https://github.com/tensorflow/examples/tree/ff5a76bdef0934719b784690616d2987d065519a/lite/examples/object_detection/android
+Android Studio. The instructions are available
+`in this link <https://github.com/tensorflow/examples/tree/ff5a76bdef0934719b784690616d2987d065519a/lite/examples/object_detection/android>`_ .
 
 Since the NN API switch’s visibility is disabled in this version’s
 layout, the following line has to be removed from

@@ -205,7 +205,7 @@ booting process. It supports various options:
 
 .. code-block:: bash
 
-    vm-manager [-c] [-i config_file_path] [-d vm_name] [-b vm_name] [-q vm_name] [-f vm_name] [-m vm_name] [-l] [-v] [-h]
+    vm-manager [-c] [-d vm_name] [-b vm_name] [-q vm_name] [-f vm_name] [-u vm_name] [--get-cid vm_name] [-l] [-v] [-h]
 
 .. list-table::
    :widths: 35 78
@@ -213,9 +213,6 @@ booting process. It supports various options:
 
    * - :kbd:`-c`
      - Create a new CiV guest configuration
-
-   * - :kbd:`-i`
-     - Import a CiV guest from existing config file
 
    * - :kbd:`-d`
      - Delete a CiV guest
@@ -232,11 +229,23 @@ booting process. It supports various options:
    * - :kbd:`-u`
      - Update an existing CiV guest
 
+   * - :kbd:`--get-cid`
+     - Get cid of a guest
+
    * - :kbd:`-l`
      - List existing CiV guest
 
    * - :kbd:`-v`
      - Show CiV vm-manager version
+
+   * - :kbd:`--start-server`
+     - Start host server
+
+   * - :kbd:`--stop-server`
+     - Stop host server
+
+   * - :kbd:`--daemon`
+     - start server as a daemon
 
    * - :kbd:`-h`
      - Show this help message
@@ -261,9 +270,6 @@ All CiV guest configuration file (INI formated) are stored at
      flashfiles=/opt/civ-1/caas-flashfiles-CR0000317.zip
      # flashfiles=/opt/civ-1/caas-flashfiles-CR0000317.iso.zip #use iso image
 
-     adb_port=5555
-     fastboot_port=5554
-
      [emulator]
      path=/usr/bin/qemu-system-x86_64
 
@@ -286,6 +292,10 @@ All CiV guest configuration file (INI formated) are stored at
      gvtg_version=i915-GVTg_V5_4
      vgpu_uuid=1fc89c23-e8a6-47a9-83be-ec23d6f4bb17
 
+     [net]
+     adb_port=5555
+     fastboot_port=5554
+
      [vtpm]
      bin_path=/usr/bin/swtpm
      data_dir=/opt/civ-1/vtpm0
@@ -298,7 +308,7 @@ All CiV guest configuration file (INI formated) are stored at
      path=/opt/civ-1/scripts/aaf
 
      [extra]
-     cmd=-chardev socket,id=ch0,path=/tmp/civ1-console,server,nowait,logfile=/tmp/civ1_serial.log -serial chardev:ch0
+     cmd=-chardev socket,id=charserial0,path=/tmp/civ-console,server=on,wait=off,logfile=/tmp/civ-1_serial.log -serial chardev:charserial0
 
 #. Create an ini file under :file:`$HOME/.intel/.civ/civ-2.ini` for SR-IOV.
    Configure it as shown below: ::
@@ -306,8 +316,6 @@ All CiV guest configuration file (INI formated) are stored at
      [global]
      name=civ-2
      flashfiles=/home/adl/sriov/caas-flashfiles-CRe011142-r1.zip
-     adb_port=5555
-     fastboot_port=5554
 
      [emulator]
      path=/usr/bin/qemu-system-x86_64
@@ -328,6 +336,10 @@ All CiV guest configuration file (INI formated) are stored at
 
      [graphics]
      type=SRIOV
+
+     [net]
+     adb_port=5555
+     fastboot_port=5554
 
      [vtpm]
      bin_path=/usr/bin/swtpm

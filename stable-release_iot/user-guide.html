@@ -202,14 +202,14 @@
 $ sudo apt install libjson-c-dev
 </pre></div>
 </div>
-<p>Manifest Link: <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.01.12_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.01.12_A11.xml</a></p>
+<p>Manifest Link: <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml</a></p>
 <p>Steps to sync to this release:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Init with the default manifest</span>
 $ repo init -u https://github.com/projectceladon/manifest.git
 
 <span class="c1"># Copy the CIV manifest and use it</span>
-$ cp &lt;<span class="nb">source</span> path&gt;/CIV_02.22.01.12_A11.xml .repo/manifests/
-$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_02.22.01.12_A11.xml
+$ cp &lt;<span class="nb">source</span> path&gt;/CIV_03.22.03.37_A11.xml .repo/manifests/
+$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_03.22.03.37_A11.xml
 <span class="c1">#NOTE : Manifest tag will change according to the latest release</span>
 
 <span class="c1"># Sync the code</span>
@@ -276,7 +276,7 @@ $ git clone https://github.com/intel/linux-intel-lts.git -b <span class="m">5</s
 $ <span class="nb">cd</span> linux-intel-lts
 
 <span class="c1"># Checkout to  specific commit (Refer to release notes for SHA ID)</span>
-$ git checkout lts-v5.4.170-yocto-220124T222417Z
+$ git checkout lts-v5.4.209-yocto-220817T175100Z
 
 <span class="c1"># copy kernel config</span>
 $ <span class="nb">cd</span> &lt;<span class="nb">source</span> path&gt;
@@ -289,9 +289,9 @@ $ make <span class="nv">ARCH</span><span class="o">=</span>x86_64 -j16 <span cla
 
 <span class="c1"># To find output files</span>
 $ find .. -name <span class="s2">&quot;*.deb&quot;</span>
-../linux-libc-dev_5.4.170-lts2019-iotg-1_amd64.deb
-../linux-headers-5.4.170-lts2019-iotg_5.4.143-lts2019-iotg-1_amd64.deb
-../linux-image-5.4.170-lts2019-iotg_5.4.143-lts2019-iotg-1_amd64.deb
+../linux-libc-dev_5.4.209-lts2019-iotg-1_amd64.deb
+../linux-headers-5.4.209-lts2019-iotg_5.4.209-lts2019-iotg-1_amd64.deb
+../linux-image-5.4.209-lts2019-iotg_5.4.209-lts2019-iotg-1_amd64.deb
 
 <span class="c1"># Copy built .deb packages to use during Installing Ubuntu host kernel</span>
 $ <span class="nb">cd</span> ..
@@ -406,7 +406,7 @@ $ sudo dpkg -i *.deb
 <span class="c1">#set GRUB to default boot to install kernel</span>
 <span class="nv">$sudo</span> vi /etc/default/grub
 <span class="c1">#change GRUB_DEFAULT line like below to default to</span>
-<span class="nv">GRUB_DEFAULT</span><span class="o">=</span><span class="s1">&#39;Advanced options for Ubuntu&gt;Ubuntu, with Linux 5.4.170-lts2019-iotg&#39;</span>
+<span class="nv">GRUB_DEFAULT</span><span class="o">=</span><span class="s1">&#39;Advanced options for Ubuntu&gt;Ubuntu, with Linux 5.4.209-lts2019-iotg&#39;</span>
 
 <span class="c1">#Ubdate GRUB to take in above changes</span>
 $ sudo update-grub
@@ -418,7 +418,7 @@ $ sudo reboot now
 </ul>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Check kernel id after reboot</span>
 $ uname -r
-<span class="m">5</span>.4.170-lts2019-iotg
+<span class="m">5</span>.4.209-lts2019-iotg
 </pre></div>
 </div>
 </div>
@@ -705,7 +705,7 @@ should use their own keys to sign their release images</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Nov 17, 2022.
+      Last updated on Nov 23, 2022.
 
     </p>
   </div>

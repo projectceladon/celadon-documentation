@@ -26,7 +26,7 @@ Follow the development environment set up instructions in
 	# Install additional development package
 	$ sudo apt install libjson-c-dev
 
-Manifest Link: Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml
+Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml
 
 
 Steps to sync to this release:

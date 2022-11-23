@@ -21,6 +21,83 @@ Retail, Education, Workload consolidation and Marine segments.
    :local:
    :depth: 1
 
+CIV_03.22.03.37_A11
+===================
+
+Intended audience
+-----------------
+
+* Celadon open Source Community
+
+Introduction
+------------
+Feature Details
+---------------
+* Celadon Upstreamed fixes in this release
+
+                * AOSP Version upgraded to r_46
+		* Chromium Guest Kernel upgraded to 5.4.150
+		* Security Patch & ASB updated to “September'22”
+
+Known issues
+------------
+-Nil- [ All known issues from previoues Release are fixed in this release ]
+
+Where to find the release
+-------------------------
+
+* Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml
+
+Host Kernel Release configuration
+---------------------------------
+
+* linux-intel-lts kernel
+        * Branch: https://github.com/intel/linux-intel-lts/tree/5.4/yocto
+        * SHA ID: https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.4.209-yocto-220817T175100Z
+* kernel-config
+        * Config-File: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+
+
+Reference configuration
+-----------------------
+
+* Supported hardware
+    =======================   =======
+    Platform                  Product
+    -----------------------   -------
+    Comet Lake(CML)           | NUC10FNH Intel(R) Core(TM) i7-10710U CPU
+    Elkhart Lake(EHL)         | EHL A0/EHL Bx CRB
+    Tiger Lake(TGL)           | TGL Bx RVP
+    =======================   =======
+
+* Supported software
+        * Android CIV Guest:
+                =======================   =======
+                Platform                  Product
+                -----------------------   -------
+                Android                   | Android 11
+                Kernel                    | 5.4.150 (linux-intel-lts2019-chromium)
+                AOSP                      | android-11.0.0_r46
+                =======================   =======
+
+        * Ubuntu Host:
+                =======================   =======
+                Platform                  Product
+                -----------------------   -------
+                Qemu                      | version 4.2.0
+                Ubuntu                    | 20.04 LTS (Focal Fossa)
+                Kernel_IoTG               | 5.4.209 (linux-intel-lts 5.4/yocto branch)
+                =======================   =======
+
+Validation results
+------------------
+
+Stable Releases (IoT) are validated with GVT-d mode on Comet Lake(CML), Tiger Lake(TGL), and Elkhart Lake(EHL) Intel® platforms in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements
+
+.. figure:: stable-release_iot/images/sep22_Validation_Result2.png
+    :align: right
+    :width: 750px
+
 CIV_02.22.01.12_A11
 ===================
 

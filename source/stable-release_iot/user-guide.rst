@@ -26,7 +26,7 @@ Follow the development environment set up instructions in
 	# Install additional development package
 	$ sudo apt install libjson-c-dev
 
-Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.01.12_A11.xml
+Manifest Link: Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml
 
 
 Steps to sync to this release:
@@ -37,9 +37,9 @@ Steps to sync to this release:
 	$ repo init -u https://github.com/projectceladon/manifest.git
 
 	# Copy the CIV manifest and use it
-	$ cp <source path>/CIV_02.22.01.12_A11.xml .repo/manifests/
-	$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_02.22.01.12_A11.xml
-	#NOTE : Manifest tag will change according to the latest release
+	$ cp <source path>/CIV_03.22.03.37_A11.xml .repo/manifests/
+	$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_03.22.03.37_A11.xml
+        #NOTE : Manifest tag will change according to the latest release
 
 	# Sync the code
 	$ repo sync -c -q -j${nproc}
@@ -112,7 +112,7 @@ Host kernel build steps
 	$ cd linux-intel-lts
 
 	# Checkout to  specific commit (Refer to release notes for SHA ID)
-	$ git checkout lts-v5.4.170-yocto-220124T222417Z
+	$ git checkout lts-v5.4.209-yocto-220817T175100Z
 
 	# copy kernel config
 	$ cd <source path>
@@ -125,9 +125,9 @@ Host kernel build steps
 
         # To find output files
 	$ find .. -name "*.deb"
-	../linux-libc-dev_5.4.170-lts2019-iotg-1_amd64.deb
-	../linux-headers-5.4.170-lts2019-iotg_5.4.143-lts2019-iotg-1_amd64.deb
-	../linux-image-5.4.170-lts2019-iotg_5.4.143-lts2019-iotg-1_amd64.deb
+        ../linux-libc-dev_5.4.209-lts2019-iotg-1_amd64.deb
+	../linux-headers-5.4.209-lts2019-iotg_5.4.209-lts2019-iotg-1_amd64.deb
+	../linux-image-5.4.209-lts2019-iotg_5.4.209-lts2019-iotg-1_amd64.deb
 
 	# Copy built .deb packages to use during Installing Ubuntu host kernel
 	$ cd ..
@@ -220,7 +220,7 @@ Installing Ubuntu host kernel
     #set GRUB to default boot to install kernel
     $sudo vi /etc/default/grub
     #change GRUB_DEFAULT line like below to default to
-    GRUB_DEFAULT='Advanced options for Ubuntu>Ubuntu, with Linux 5.4.170-lts2019-iotg'
+    GRUB_DEFAULT='Advanced options for Ubuntu>Ubuntu, with Linux 5.4.209-lts2019-iotg'
 
     #Ubdate GRUB to take in above changes
     $ sudo update-grub
@@ -232,7 +232,7 @@ Installing Ubuntu host kernel
 
         # Check kernel id after reboot
         $ uname -r
-        5.4.170-lts2019-iotg
+        5.4.209-lts2019-iotg
 
 
 Run Celadon host setup

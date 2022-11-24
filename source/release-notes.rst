@@ -104,7 +104,7 @@ CIV_02.22.01.12_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
 
 
 Customer support
@@ -194,7 +194,8 @@ Validation results
 Stable Releases (IoT) build running in GVT-d mode has been validated on Comet
 Lake(CML), Tiger Lake(TGL), and Elkhart Lake(EHL) Intel® platforms in the
 following function domains. Validation cycles are performed on GMS user-signed
-widevine enabled image as required by Google certification requirements.
+widevine enabled imag
+e as required by Google certification requirements.
 
 .. figure:: stable-release_iot/images/Validation_Result2.png
     :align: center
@@ -219,7 +220,7 @@ CIV_00.22.03.34_A13
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
 * Any user who wants to explore Celadon in VM 
 
 Customer support
@@ -425,7 +426,7 @@ CIV_01.22.03.32_A12
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
 * Any user who wants to explore Celadon in VM
 
 Customer support
@@ -653,7 +654,7 @@ CIV_00.22.02.21_A12
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
 
 Customer support
 ----------------
@@ -874,7 +875,7 @@ CIV_00.22.01.04_A12
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
 
 Customer support
 ----------------
@@ -1055,7 +1056,7 @@ CIV_00.21.03.41_A12
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
 
 Customer support
 ----------------
@@ -1241,7 +1242,7 @@ CIV_01.21.03.39_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
 
 Customer support
 ----------------
@@ -1485,7 +1486,7 @@ CIV_00.21.02.27_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
 
 Customer support
 ----------------
@@ -1715,7 +1716,7 @@ CIV_00.21.02.25_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.01.org
+* Open Source Community who has subscribed to cceladon@lists.linuxfoundation.org 
 
 Customer support
 ----------------

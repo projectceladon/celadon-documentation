@@ -32,8 +32,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using :
-  https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -116,8 +115,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using :
-  https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -232,7 +230,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -438,7 +436,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -665,7 +663,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -886,7 +884,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -1067,7 +1065,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -1253,7 +1251,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -1497,7 +1495,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -1727,7 +1725,7 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.01.org/postorius/lists/celadon.lists.01.org/
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------

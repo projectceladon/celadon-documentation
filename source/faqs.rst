@@ -101,7 +101,7 @@ Frequently Asked Questions
     There are many ways users can learn more, starting with accessing
     release notes and `software <https://github.com/projectCeladon>`_.
     Users can learn more by subscribing to the
-    `Project Celadon mailing list <https://lists.01.org/postorius/lists/celadon.lists.01.org>`_.
+    `Project Celadon mailing list <https://lists.linuxfoundation.org/mailman/listinfo/celadon>`_.
     Mailing list subscribers are kept up to date on the latest Celadon
     releases, updates and tools. Subscribers are also invited to Project
     Celadon focused events, like our monthly

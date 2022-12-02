@@ -65,4 +65,5 @@ System functional testing is executed in a cumulative manner. The weekly
 functional test suite is focused on features moved to the verify state and is
 validated on weekly releases.
 
-Defects reporting can be done by sending an email to: celadon@lists.01.org
+Defects reporting can be done by sending an email to:
+celadon@lists.linuxfoundation.org

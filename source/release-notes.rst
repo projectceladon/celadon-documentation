@@ -219,7 +219,7 @@ Base Releases
 
 CIV_00.22.04.48_A13
 ==================
-* This is a Production Release for evaluation and development purposes. The release cannot be used for production purposes. This release supports 11th and 12th GEN Core [Celadon in VM].
+* This is a Production Release for evaluation and development purpose. This release supports 11th and 12th GEN Core [Celadon in VM].
   
 Intended audience
 -----------------
@@ -238,21 +238,27 @@ Introduction
 New in this release
 -------------------
 
- * Highlights
-    * This is the First Celadon in VM Release based on Android 13
+ * Highlights/New Features
+    * Storage-AOSP : F2FS (Flash Friendly File System) support on User Space 
+    * Android 13 with latest AOSP manifest (android-13.0.0_r12)
+    * AIDL for HAL
+    * Support F2FS
+    * Deqp level - vulkan
+    * Deqp level - open gles
+    * Support BPF
+    * Kernel support
+    * Support FUSE BPF
+    * Virtual VABc
+    * KeyMint HAL 2.0
+ 
+ * Celadon features:
     * API level upgraded to 33
     * FCM Target level upgraded to 7
-    * All the features of Android 13 provided with Intel BSP including HAL changes 
-    * Android 13 with latest AOSP manifest (android-13.0.0_r1)
-    
- * Major HAL Upgrades
     * Audio HAL upgraded to 7.1
     * Trusty KeyMint support AIDL Version 2.0
     * Health HAL upgraded to AIDL 1.0
     * WIFI Supplicant and Hostapd upgraded to AIDL 1.0 
     * SE Policy updated for API level 33
- 
- * Celadon features:
     * Virgl Support
     * SRIOV (Single Root I/O Virtualization) Support
     * Switch between h/w accelerated graphics and s/w graphics
@@ -395,13 +401,13 @@ Reference configuration
 
  * Supported hardware
 
-     * Product -  Alder Lake RVP
+     * Product -  Alder Lake [NUC12WSHi7]
 
  * Supported software
 
-     * AOSP Version - android-13.0.0_r1
-     * NUC11PAQI7 Host Kernel - -5.10.118-cvhb
-     * NUC11PAQI7 Guest kernel - -5.10.118-cvhb
+     * AOSP Version - android-13.0.0_r12
+     * NUC11PAQI7 Host Kernel - 5.15.74-cvhb
+     * NUC11PAQI7 Guest kernel - 5.15.74-cvhb
 
 
 Acronyms and terms

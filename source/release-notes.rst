@@ -396,7 +396,7 @@ Audio Playback                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, 
 Adb connect over WIFI          OK
 Adb connect over Ethernet      OK
 Security                       OK
-Boot                           OK       Boots on QEMU 6.0.0
+Boot                           OK       Boots on QEMU 7.0.0
 Ethernet                       OK
 Image Flash                    OK
 Web browsing                   OK

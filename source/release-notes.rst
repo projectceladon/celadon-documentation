@@ -320,13 +320,13 @@ New in this release
 
 Known issues
 ------------
-* SRIOV is not working properly -Analysis WIP
+* 
 
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.22.03.34_A13.xml
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.22.03.34_A13
+* Manifest Link : 
+* Binary Link : 
 
 
 How to install this release

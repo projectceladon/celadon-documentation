@@ -359,10 +359,10 @@ How to install this release
 
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
-    * cd patches/kernel/lts2020-chromium
+    * cd patches/kernel/lts2021-chromium
     * ./build_weekly.sh
     * Deb files will be generated in
-      patches/kernel/lts2019-chromium/host_kernel
+      patches/kernel/lts2021-chromium/host_kernel
     * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
 

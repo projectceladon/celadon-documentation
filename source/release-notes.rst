@@ -328,7 +328,6 @@ Known issues
 * Audio doesn't route to USB Headset when usb camera is connected.[Need to reconnect usb headset to recover]
 * Unable to play AAC_ELD 16KHz recorded audio file
 * Front Camera Preview is not mirror
-* System display is not alerted to the user when there is an incoming invite to chat in sleep mode
 * Green lines are observed on screen during Zoom Call.
 
 

@@ -320,7 +320,18 @@ New in this release
 
 Known issues
 ------------
-* 
+* Kernel hardening configurations not enabled in linux-intel-lts2021
+* Wi-Fi is disconnecting when device is in suspend state
+* UserDataCheckpoint(userdata_checkpoint=false) is disabled in mixins.spec due to reboot issue on first time boot after flashing
+* HDMI audio is lost after adb reboot
+* Unable to run VTS for most of the modules, DUT display goes to black screen
+* MultiCamera Video resolution swapped
+* Audio doesn't route to USB Headset when usb camera is connected.[Need to reconnect usb headset to recover]
+* Unable to play AAC_ELD 16KHz recorded audio file
+* Front Camera Preview is not mirror
+* System display is not alerted to the user when there is an incoming invite to chat in sleep mode
+* Green lines are observed on screen during Zoom Call.
+
 
 Where to find the release
 -------------------------

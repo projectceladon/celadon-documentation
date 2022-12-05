@@ -243,8 +243,7 @@ New in this release
     * Android 13 with latest AOSP manifest (android-13.0.0_r12)
     * AIDL for HAL
     * Support F2FS
-    * Deqp level - vulkan
-    * Deqp level - open gles
+    * Support vulkan and open gles
     * Support BPF
     * Kernel support
     * Support FUSE BPF

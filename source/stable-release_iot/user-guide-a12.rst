@@ -10,7 +10,7 @@ Recommended system requirements for Host:
 
 * CPU: 4 cores or more
 * RAM: 8 GB or more
-* Hard-Disk: 250 GB
+* Hard-Disk: 500 GB
 
 How to install this release
 ***************************
@@ -138,34 +138,32 @@ DUT setup
 
 Hardware details:
 
-* HW Comet Lake (CML) NUC DUT details
-	* NUC10FNH |Core-attr| i7-10710U CPU
-	* BIOS Version FNCML357.0039.2020.0312.1734
-* HW Elkhart Lake (EHL) CRB DUT details
-	* For EHL A0 CRB, please ensure using BIOS version
-	  EHLSFWI1.R00.2233.A07.2006180202 or later
-	* For EHL Bx CRB, any BIOS version would do.
-* HW Tiger Lake (TGL) RVP DUT details
-	* TGL BX RVP
-	* BIOS Version TGL1FUI1.R00.3412.A03.2010150719 and beyond
+* HW Alder Lake (CML) NUC DUT details
+	* For ADL RVP DDR5 C1 CPU
+	* BIOS Version ADLSFWI1.R00.3225.B00.2205270548
 
 BIOS setting:
 
-* Intel® Virtualization Technology (Intel® VT)
+* Intel®(VMX) Virtualization Technology (Intel® VT)
 
-  * Settings: Security -> Security Features -> Intel
-    Virtualization Technology: Enabled
+  * Settings: Intel Advance Menu-> CPU Configurations 
+    Intel (VMX) Virtualization: Enabled
 
 * Intel® Virtualization Technology (Intel® VT) for
-  Directed I/O (Intel® VT-d) TBU
 
-  * Settings: Security -> Security Features -> Intel VT
-    for Directed I/O(VT-d): Enabled
+  * Settings: Intel Advance Menu-> System Agent (SA) Configuration 
+    VT-d: Enabled
 
-* Secure Boot
-        * Boot -> Secure Boot: Disabled
+* SRIOV Enable
 
+  * Settings: Intel Advance Menu-> System Agent (SA) Configuration -
+    Graphics Configuration: Enabled
+    
+* Intel(R) TCC Mode
 
+  * Settings: Intel Advance Menu-> Intel(R) Time Coordinated Computing
+    TCC: Disabled
+   
 .. note::
 	The menu structure may differ due to BIOS differences
 
@@ -174,7 +172,7 @@ Host setup
 
 Prerequisites:
 
-* Install Ubuntu 20.04 LTS
+* Install Ubuntu 22.04 LTS
 * If operating behind a corporate firewall, setup the proxy settings
 * Disable Automatic suspend in host: Settings -> Power -> Suspend &
   Power Button -> Automatic suspend -> Off.
@@ -187,24 +185,25 @@ Setup Ubuntu host:
             # Change directory
 	$ cd ~
 
-	# Stop unattended upgrades services and edit /etc/apt/apt.conf.d/20auto-upgrades to as below.
-	$ sudo systemctl stop unattended-upgrades.service
-	$ sudo systemctl disable unattended-upgrades.service
-	$ sudo systemctl mask unattended-upgrades.service
-	$ sudo vi /etc/apt/apt.conf.d/20auto-upgrades
-	APT::Periodic::Update-Package-Lists "0";
-	APT::Periodic::Download-Upgradeable-Packages "0";
-	APT::Periodic::AutocleanInterval "0";
-	APT::Periodic::Unattended-Upgrade "0";
+	# Please use these commands to update and upgrade the Ubuntu with the latest software packages.
+	$ sudo apt -y update
+	$ sudo apt -y upgrade
 
 	# Reboot the system
 	$ sudo reboot now
 
 	# Copy the artifact
+	$ cd <workspace>
+	$ cp <source path>/ubuntu_kvm_multios_scripts.zip .
 	$ cp <source path>/caas-releasefiles-userdebug.tar.gz .
 
 	# Extract files
+	$ unzip sriov_patches.zip
+	$ unzip -jo ubuntu_kvm_multios_scripts.zip
 	$ tar xzvf caas-releasefiles-userdebug.tar.gz
+	
+	Make all the script file executable
+	$ chmod +x <workspace>/*.sh
 
 Installing Ubuntu host kernel
 *****************************
@@ -220,7 +219,7 @@ Installing Ubuntu host kernel
     #set GRUB to default boot to install kernel
     $sudo vi /etc/default/grub
     #change GRUB_DEFAULT line like below to default to
-    GRUB_DEFAULT='Advanced options for Ubuntu>Ubuntu, with Linux 5.4.209-lts2019-iotg'
+    GRUB_DEFAULT='Advanced options for Ubuntu>Ubuntu, with Linux 5.15.71-lts2021-iotg'
 
     #Ubdate GRUB to take in above changes
     $ sudo update-grub

@@ -1,5 +1,3 @@
-. _feature-delta-iot:
-
 Feature Delta Offered by Stable Releases (IoT)
 ##############################################
 

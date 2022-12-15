@@ -21,71 +21,7 @@ Celadon build steps
 Follow the development environment set up instructions in
 `<https://docs.01.org/celadon/getting-started/build-source.html#set-up-the-development-environment>`_ for |C| build host setup.
 
-.. code-block:: bash
-
-	# Install additional development package
-	$ sudo apt install libjson-c-dev
-
-Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml
-
-
-Steps to sync to this release:
-
-.. code-block:: bash
-
-	# Init with the default manifest
-	$ repo init -u https://github.com/projectceladon/manifest.git
-
-	# Copy the CIV manifest and use it
-	$ cp <source path>/CIV_03.22.03.37_A11.xml .repo/manifests/
-	$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_03.22.03.37_A11.xml
-        #NOTE : Manifest tag will change according to the latest release
-
-	# Sync the code
-	$ repo sync -c -q -j${nproc}
-
-Step to generate the Android\* Image:
-
-.. code-block:: bash
-
-	# Perform the environment setup from directory where repo is initialized
-	$ source build/envsetup.sh
-
-	# Select userdebug variant
-	$ lunch caas-userdebug
-
-	# Start the build
-	# To enable avx optimizations for CML/EHL, BUILD_CPU_ARCH=kabylake could be
-	appended to the make command.
-	# Without this flag, default architecture is silvermont which exercises sse4.1 features.
-	$ make flashfiles -j $(nproc)
-
-
-	# Build output (CIV flashfiles)
-	$ find out/target/product/caas/ -name caas-flashfiles-*.zip
-	out/target/product/caas/caas-flashfiles-xxxxx.zip
-
-    # Ensure below host scripts and patches are available post build
-
-    # Host scripts
-	$ find out/target/product/caas/scripts -type d
-	out/target/product/caas/scripts
-	out/target/product/caas/scripts/sof_audio
-
-
-	# Host patches
-	$ find vendor/intel/utils/host -type d
-	vendor/intel/utils/host
-	vendor/intel/utils/host/ovmf
-	vendor/intel/utils/host/qemu
-	vendor/intel/utils/host/kernel
-	vendor/intel/utils/host/kernel/lts2019-yocto
-	vendor/intel/utils/host/kernel/lts2019-chromium
-	vendor/intel/utils/host/lg
-	$ find vendor/intel/utils_vertical/host -type d
-	vendor/intel/utils_vertical/host
-	vendor/intel/utils_vertical/host/qemu
-
+Manifest Link: [YET TO UPDATE THE FINAL MANIFEST] https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml
 
 Prerequisites and host kernel build steps:
 
@@ -106,13 +42,13 @@ Host kernel build steps
 
 	# Sync kernel
 	# Note that this will pick up the latest on the branch
-	$ git clone https://github.com/intel/linux-intel-lts.git -b 5.4/yocto
+	$ git clone https://github.com/intel/linux-intel-lts.git
 
 	# Change directory
 	$ cd linux-intel-lts
 
 	# Checkout to  specific commit (Refer to release notes for SHA ID)
-	$ git checkout lts-v5.4.209-yocto-220817T175100Z
+	$ git checkout lts-v5.15.71-adl-linux-221121T044440Z
 
 	# copy kernel config
 	$ cd <source path>
@@ -121,13 +57,14 @@ Host kernel build steps
 	$ echo ""| make ARCH=x86_64 olddefconfig
 
 	# Make kernel debian package
-	$ make ARCH=x86_64 -j16 LOCALVERSION=-lts2019-iotg bindeb-pkg
+	$ make ARCH=x86_64 -j16 LOCALVERSION=-lts2021-iotg bindeb-pkg
 
         # To find output files
 	$ find .. -name "*.deb"
-        ../linux-libc-dev_5.4.209-lts2019-iotg-1_amd64.deb
-	../linux-headers-5.4.209-lts2019-iotg_5.4.209-lts2019-iotg-1_amd64.deb
-	../linux-image-5.4.209-lts2019-iotg_5.4.209-lts2019-iotg-1_amd64.deb
+        ../linux-image-5.15.71-lts2021-iotg-dbg_5.15.71-lts2021-iotg-1_amd64.deb
+	../linux-headers-5.15.71-lts2021-iotg_5.15.71-lts2021-iotg-1_amd64.deb
+	../linux-image-5.15.71-lts2021-iotg_5.15.71-lts2021-iotg-1_amd64.deb
+	../linux-libc-dev_5.15.71-lts2021-iotg-1_amd64.deb
 
 	# Copy built .deb packages to use during Installing Ubuntu host kernel
 	$ cd ..
@@ -141,6 +78,10 @@ Hardware details:
 * HW Alder Lake (CML) NUC DUT details
 	* For ADL RVP DDR5 C1 CPU
 	* BIOS Version ADLSFWI1.R00.3225.B00.2205270548
+
+.. note::	
+	Every type of Guest VM configuration has a minimum required number of assigned cores/vCPUs and failure. 
+	Not meeting minimum cores requirement will result in degraded performance
 
 BIOS setting:
 
@@ -173,11 +114,22 @@ Host setup
 Prerequisites:
 
 * Install Ubuntu 22.04 LTS
+	Download and install the Ubuntu 22.04 LTS from the official Ubuntu websiteu: https://www.releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso 
 * If operating behind a corporate firewall, setup the proxy settings
 * Disable Automatic suspend in host: Settings -> Power -> Suspend &
   Power Button -> Automatic suspend -> Off.
 
+Installation Scripts Required:
+
+* sriov_patches.zip 
+* ubuntu_kvm_multios_scripts.zip 
+* From release package ADL-N_KVM_MultiOS_Beta.zip link:
+https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=738824&s=Newest
+
 Setup Ubuntu host:
+
+* Set the default download server to “Main server” in “Software & Updates” GUI
+* Go to Applications and launch “Software & Updates”, and in “Ubuntu Software” tab, select Download from: “Main server”
 
 .. code-block:: bash
 
@@ -194,6 +146,7 @@ Setup Ubuntu host:
 
 	# Copy the artifact
 	$ cd <workspace>
+	$ cp <source path>/sriov_patches.zip .
 	$ cp <source path>/ubuntu_kvm_multios_scripts.zip .
 	$ cp <source path>/caas-releasefiles-userdebug.tar.gz .
 
@@ -202,314 +155,237 @@ Setup Ubuntu host:
 	$ unzip -jo ubuntu_kvm_multios_scripts.zip
 	$ tar xzvf caas-releasefiles-userdebug.tar.gz
 	
-	Make all the script file executable
+	# Make all the script file executable
 	$ chmod +x <workspace>/*.sh
+	
+	# This will install kernel and firmware, and update grub
+    # If prompted, answer y to go ahead with changes
+	$ sudo ./sriov_setup_kernel.sh
+	
+	# After rebooting, check that the kernel is the installed version.
+	$ uname -r
+		5.15.71-lts2021-iotg
 
-Installing Ubuntu host kernel
-*****************************
-
-.. code-block:: bash
-
-    # Copy the deb files generated from build kernel instructions
-    $ cp <source path>/*.deb .
-
-    # Install the deb files
-    $ sudo dpkg -i *.deb
-
-    #set GRUB to default boot to install kernel
-    $sudo vi /etc/default/grub
-    #change GRUB_DEFAULT line like below to default to
-    GRUB_DEFAULT='Advanced options for Ubuntu>Ubuntu, with Linux 5.15.71-lts2021-iotg'
-
-    #Ubdate GRUB to take in above changes
-    $ sudo update-grub
-    $ sudo reboot now
-
-* After reboot completes, select to use IOTG kernel release in Ubuntu menu as per build kernel instructions
+Setup the Host OS for SRIOV
+***************************
+* Perform the setup for Ubuntu OS. The script is unzipped into ‘/home/$USER/’ directory
 
 .. code-block:: bash
+	# If prompted, answer y to go ahead with changes
+	$ sudo ./sriov_setup_ubuntu.sh
 
-        # Check kernel id after reboot
-        $ uname -r
-        5.4.209-lts2019-iotg
+	# Check if Host OS is running in SR-IOV PF mode
+	$ dmesg | grep SR-IOV
+		i915 0000:00:02.0: Running in SR-IOV PF mode 
+	# Check Host OS GuC and HuC Firmware Version
+	$ dmesg | grep GuC
+		i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
+		i915 0000:00:02.0: [drm] GuC submission enabled
+	$ dmesg | grep HuC
+		i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3 
+		i915 0000:00:02.0: [drm] HuC authenticated
 
+	# Disable suspend and hibernate service
+	$ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
-Run Celadon host setup
+	# Reboot Ubuntu host
+	$ sudo reboot now
+
+.. note::
+	If need to run any reliability or benchmark test, please run the commands below to disable auto suspend and hibernate on Ubuntu host
+
+Android Guest VM Setup
 **********************
+Follow the development environment set up instructions in
+`<https://docs.01.org/celadon/getting-started/build-source.html#set-up-the-development-environment>`_ for |C| build host setup.
+
+Users of Celadon-in-VM (CIV) release must ensure that Celadon platform host OS hardening measures are in place to ensure that the host OS could be treated as part of the secure computing base. This is essential to ensuring CIV security could be trusted in CIV operations.
+
+For Celadon Host OS hardening recommendations see:
+https://github.com/projectceladon/celadon-documentation/blob/master/source/getting-started/host-os-hardening.rst
+
+Celadon Source Requirements:
+
+* CIV_0X.XX.XX.XX_A11.xml
+
+From release package link: 
+https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=738824&s=Newest 
+
+Build Celadon from Source :
+.. code-block:: bash
+	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
+	$ sudo ln -s /usr/bin/python3 /usr/bin/python
+	
+Steps to sync to this release:
 
 .. code-block:: bash
 
+	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
+	$ sudo ln -s /usr/bin/python3 /usr/bin/python
+
+	# Init with the default manifest
+	$ repo init -u https://github.com/projectceladon/manifest.git
+
+	# Copy the CIV manifest and use it
+	$ cp <source path>/CIV_0X.XX.XX.XX_A11.xml .repo/manifests/
+	$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_0X.XX.XX.XX_A11.xml
+        #NOTE : Manifest tag will change according to the latest release
+
+	# Sync the code
+	$ repo sync -c -q -j${nproc}
+
+Step to generate the Android-CIV\* Image:
+
+.. code-block:: bash
+
+	# Perform the environment setup from directory where repo is initialized
+	$ source build/envsetup.sh
+
+	# Select userdebug variant
+	$ lunch caas-userdebug
+
+	# Start the build
+	# To enable avx optimizations for CML/EHL, BUILD_CPU_ARCH=kabylake could be
+	appended to the make command.
+	# Without this flag, default architecture is silvermont which exercises sse4.1 features.
+	$ make flashfiles BASE_LTS2020_YOCTO_KERNEL=true -j $(nproc) 
+
+
+	# Build output (CIV flashfiles)
+	$ find out/target/product/caas/ -name caas-flashfiles-*.zip
+	out/target/product/caas/caas-flashfiles-xxxxx.zip
+
+    # Copy the packaged caas-releasefiles-userdebug.tar.gz file to ADL target
+
+Add Celadon Guest VM Support to ADL Host OS
+
+Change to the ADL target directory and copy caas-releasefiles-userdebug.tar.gz to the target director
+.. code-block:: bash
+
+
+	# Copy the artifact
+	$ cp caas-releasefiles-userdebug.tar.gz <working_dir>
+
+	# Extract files
+	$ cd <working_dir>
+	$ tar xzvf caas-releasefiles-userdebug.tar.gz 
+	
 	# Prepare setup_host.sh
 	$ chmod +x ./scripts/setup_host.sh
 	# Update the host
-	# If prompted, answer y to go ahead with changes
-	# Note: CiV guest autostart service could also be auto created during setup
-	  (details see section "Auto start of CiV")
-	# Setup option 1 example:
-	# GVT-d setup without CIV guest autostart service creation
-	$ sudo -E ./scripts/setup_host.sh -u headless
-	# Setup option 2 example:
-	# GVT-d setup with CIV autostart service with desired CiV guest startup options.
-	$ sudo -E ./scripts/setup_host.sh -u headless --auto-start "-m 4G -c 4 -g GVT-d --passthrough-pci-usb --passthrough-pci-wifi --battery-mediation --passthrough-pwr-vol-button --guest-pm-control --guest-time-keep --allow-suspend"
+	# If prompted, answer ‘Y’ for all options to go ahead with changes
+	$ sudo -E ./scripts/setup_host.sh 
 
+Create Android VM Image:
 
-Guest OS setup:
-***************
-
-.. _creating:
-
-Creating Celadon guest image
-============================
-
-.. note::
-	This needs to be done at least once on a properly setup Ubuntu host to create the guest image for testing.
+Create Android CIV image for running as VM in ADL target
 
 .. code-block:: bash
 
 	# Change directory
 	$ cd ~
-
-	# Generate Celadon guest image from caas-flashfiles.
-	# the script and flashfiles have already been extracted from caas-releasefiles-userdebug.tar.gz earlier
-	# wait for "Flashing is completed" msg from script.
+	# Generate CIV disk image from caas-flashfiles.
+	# The script and flashfiles have already been extracted from caas-releasefiles-userdebug.tar.gz
+	# Wait for "Flashing is completed" msg from script.
 	$ sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-xxxxx.zip --display-off
 
-	# Note:
-	# if you want to flash guest image to dedicated partition (required for using Android secure data erase feature).
-	# please use below command where partition is the partition device name. Eg. /dev/sda3
-	$ sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-xxxxx.zip -d <partition> --display-off
+Running Android* 12 
+********************
 
-.. _launch:
+This section describes the steps to run Android 12, Yocto, Windows 10 and Ubuntu Guest VMs on the ADL-N platform
 
-Launching Celadon with GVT-d
-============================
+* VM Launch
+	Launch Celadon Android Guest VM
+
+.. code-block:: bash
+	# Launch the Android CIV Guest VM
+	$ cd ~
+	$ sudo vm-manager -b civ-sriov
+	
+Guest VM Configuration Options
+
+Change Guest VM Memory and Number of CPUs
+	For Android 12 Guest VM only, edit the memory and vcpu sections of the configuration ini file at <workspace>/.intel/.civ/civ-sriov.ini.
+	
+	Enable USB Devices in Guest VM
+	[memory]
+	size=4G
+
+	[vcpu]
+	num=4G
 
 .. note::
-   As this is a GVT-d setup, the host display will be replaced by the Android screen.Therefore it is necessary to establish a SSH connection to host first, and then launch CIV from the SSH console.
+	A passthrough device option can only be used once, because a device can be passthrough to only 1 guest VM at a time
+	For Android 12 guest VM, the passthrough is defined in the configuration ini file.
+
+Android 12 guest VM USB device passthrough:
+
+This section describes the steps to run Android 12, Yocto, Windows 10 and Ubuntu Guest VMs on the ADL-N platform.
 
 .. code-block:: bash
 
-	# Before launching CIV, Ubuntu host must be in console login for GVT-d
-	# If you see that Ubuntu host has booted up into graphical login, perform the following to reboot to console login.
-	# Otherwise you can skip this step
-	$ sudo systemctl set-default multi-user.target
-	$ sudo reboot now
+	# Find the PCI ID of the USB device
+	$ $ lspci -nn -D | grep USB
+		0000:00:14.0 USB controller [0c03]: Intel Corporation Device [8086:7ae0] (rev 11)
+		0000:00:14.1 USB controller [0c03]: Intel Corporation Device [8086:7ae1] (rev 11)
+		0000:05:00.0 USB controller [0c03]: Intel Corporation Thunderbolt 4 NHI [Maple Ridge 4C 2020] [8086:1137]
+		0000:07:00.0 USB controller [0c03]: Intel Corporation Thunderbolt 4 USB Controller [Maple Ridge 4C 2020] [8086:1138]
 
-	# If already in console login, run the script to start CIV in GVT-d mode
-	# the script start_civ.sh has already been extracted from caas-releasefiles-userdebug.tar.gz earlier
-	$ cd ~
-	$ sudo -E ./scripts/start_civ.sh -g GVT-d
-
-	# if you want to boot guest image flashed in dedicated partition (required for using Android secure data erase feature).
-	# please use below command where <partition> is the guest image partition device name. Eg. /dev/sda3
-	$ sudo -E ./scripts/start_civ.sh -g GVT-d -d <partition>
+	# Edit the passthrough section of the configuration ini file at <workspace>/.intel/.civ
+	#[passthrough]
+	#specified the PCI id here if you want to passthrough it to guest, separate them with comma
+	$ passthrough_pci=0000:00:14.0,0000:00:14.1,0000:05:00.0,0000:07:00.0,
 
 
-To debug the guest, connect to the guest console from another shell:
+Enable PCIe Wi-Fi Adapter Device in Guest VM:
 
 .. code-block:: bash
+	$ lspci -nn -D | grep Wi-Fi
+	0000:02:00.0 Network controller [0280]: Intel Corporation Wi-Fi 6 AX210/AX211/AX411 160MHz [8086:2725] (rev 1a)
+	# Then edit the passthrough section of the configuration ini file at <workspace>/.intel/.civ.
+	
+.. note::
+	A passthrough device option can only be used once, because a device can be passthrough to only 1 guest VM at a time
+	For Android 12 guest VM, find the PCI ID of the Wi-Fi device
 
-	# Connect to Celadon guest console.
-	$ cd ~
-	$ sudo socat unix-connect:./kernel-console stdio
-
-Enable keyboard and mouse
-*************************
-
-You can enable a keyboard and mouse either via USB host passthrough option or add
-the extend command to ``start_civ.sh``. Via add extend command parameter of
-``start_civ.sh`` to pass through selective devices
+Enable logging for Android 12 Guest VM:
 
 .. code-block:: bash
+	# Edit the extra section of the configuration ini file at <workspace>/.intel/.civ.
+	[extra]
+	cmd=-chardev socket,id=ch0,path=/tmp/civ1-console,server=on,wait=off,logfile=/tmp/civ1_serial.log -serial chardev:ch0
+	
+	[passthrough]
+	#specified the PCI id here if you want to passthrough it to guest, separate them with comma
+	passthrough_pci=0000:02:00.0
 
-	# Retrieve the vendorid and productid
-	# In this example, 046d is vendor id, c06a is product id
-	$ lsusb
+	# Connect to Android 12 Guest VM console for any debugging
+	# Connect to Celadon guest console
+	$ sudo socat unix-connect:/tmp/civ1-console stdio
 
-	# Bus 004 Device 003: ID 046d:c06a Logitech, Inc. USB Optical Mouse
-	# Add extend command when start guest
-	$ sudo -E ./scripts/start_civ.sh -g GVT-d -e "-device usb-host,vendorid=0x046d,productid=0xc06a"
+Launch Guest VM on Single Display and Full Screen Mode:
 
-Via USB host passthrough parameter of ``start_civ.sh``:
-
-.. code-block:: bash
-
-	# Note: all connected USB devices will be passthrough to Android with USB host passthrough option
-	$ sudo -E ./scripts/start_civ.sh -g GVT-d --passthrough-pci-usb
-
-Change guest VM memory and number of CPUs:
-The default script is setup for 1 cpu and 2G ram when no addition memory/cpu
-options specified. Below example shows guest start configuration for 4 cores,
-4G ram.
+For Android 12 guest VM, edit the extra section of the configuration ini file at <workspace>/.intel/.civ
 
 .. code-block:: bash
+	# different according to the use cases.
+	[extra]
+	cmd=-full-screen
 
-	# Add -m option to specify 4G of memory
-	# Add -c option to specify 4 cpu cores for guest VM
-	$ sudo -E ./scripts/start_civ.sh -m 4G -c 4 -g GVT-d
+.. note::
+	The amount of memory and cores allocated might be different according to each platform. 
+	And the combination of multiple Guest VMs and multiple displays might be 
 
 
-Optional: Below is a sample script for providing maximum ram and number of cpu
-settings to guest VM automatically based on hardware platform available if so
-desired.
+Shutdown VMs and System
 
-.. code-block:: bash
-
-	# Change to auto detect and configure max ram and cpu for guest based on hardware platform
-	$ sudo -E ./scripts/start_civ.sh -m $(($(free -m | awk '{ if ($1 == "Mem:") { print $2 }}')-2048))M -c $(nproc --all) -g GVT-d
-
-Device passthrough options for launching CiV (Passthrough Device features)
-
-* GPU host partition USB host wifi audio power and volume buttons BT
-  ethernet thermal battery sd card partition ``/dev/mmcblk0p1``
-
-* Validate Comet Lake (CML), Tiger Lake (TGL), and Elkhart Lake (EHL)
-  platforms passthrough command:
+Shutdown Android VM via Android ADB connection
 
 .. code-block:: bash
-
-   sudo -E ./scripts/start_civ.sh -m 4G -c 4 -g GVT-d -d /dev/sdXX --passthrough-pci-usb --passthrough-pci-wifi --passthrough-pci-audio --passthrough-pwr-vol-button --battery-mediation --thermal-mediation --guest-pm-control --guest-time-keep --external-wakeup-mode --allow-suspend -b /dev/mmcblk0p1
-
-#. The guest image must be created with a dedicated host partition by using the
-   ``-d <guest-image partition device>`` option, where
-   <guest-image partition device> is the block partition device name such
-   as ``/dev/sda3``. See earlier sections `Creating Celadon guest image`_  and
-   `Launching Celadon with GVT-d`_  for required
-   setup. This setup is required to enable support for Android secure data erase
-   feature. When the ``-d <partition>`` option is used with ``start_civ.sh``,
-   the host side utility ``secure_erase_daemon`` will also be run. This daemon
-   performs secure erase of the userdata section in the host partition during
-   Android wipe data process triggered by factory reset or recovery wipe data
-   operations. The Recovery UI/recovery.log will show "SECURE ERASE SUCCESS" upon
-   success or "Secure Erase failed, format directly" on failure if secure erase of
-   partition is not supported by hardware block device.
-
-#. The ``--passthrough-pci-usb USB`` host passthrough also passes through the
-   BT adapter connected via USB.
-
-#. Ethernet lan is in same IOMMU group as audio for CML/EHL/TGL, so when using
-   the ``--passthrough-pci-audio`` host lan will not be usable since lan is passed
-   through also automatically.
-
-#. An SD card must be inserted before starting the Android guest for the SD card
-   mediation option ``-b /dev/mmcblk0p1``.
-
-#. The ``--battery-mediation`` option is required for battery mediation to VM.
-
-#. The ``--thermal-mediation`` option is required for thermal mediation to VM.
-
-#. The ``--guest-pm-control`` option is required for power management of the host
-   by the guest. Also refer to :ref:`supplement` for suspend/resume via power key.
-
-#. The ``--guest-time-keep`` option is for synchronization of VM time settings
-   back to the host platform. Please ensure time synchronization services on
-   Ubuntu host have been disabled first when using this option, eg. via
-   ``sudo timedatectl set-ntp off``. The ``Guest RTC alarm sync to host`` feature
-   is enabled by default when --guest-time-keep option is used. When used together
-   with --guest-pm-control, this feature will allow Android to set alarms to wake
-   the host (and Android guest) from suspend state upon alarm expiry. If you use
-   the --guest-time-keep and --guest-pm-control options, please also enable
-   the --external-wakeup-mode option. it will help to avoid synchronization issue
-   during suspend/resume.
-
-#. The ``--external-wakeup-mode`` option is to disable Qemu internal timeout
-   alarm for suspend/resume and use host RTC timer instead. This option should
-   be used together with the ``--guest-time-keep`` and ``--guest-pm-control``
-   options.
-
-#. The ``--passthrough-pwr-vol-button`` option is for passing physical
-   hardware power and volume button press (if present) and virtual key presses
-   to VM via sendkey utility. See :ref:`supplement` for more details
-   on what is provided by this option.
-
-#. The ``--allow-suspend`` option is for allowing Android to enter suspend when
-   idle.
-
-#. In case the options ``--passthrough-pci-usb``, ``--passthrough-pci-wifi``,
-   and ``--guest-pm-control`` are all used together, as well as the
-   ``Auto start of CiV`` feature is enabled, we recommended to make the changes
-   shown below in the Host to make WiFi and Bluetooth to be more stable.
-
-* Add ``GRUB_CMDLINE_LINUX=modprobe.blacklist=xhci_pci modprobe.blacklist=xhci_hcd modprobe.blacklist=iwlwifi`` to ``/etc/default/grub`` file
-
-* Modify ``start_civ.sh``
-
-
-.. code-block:: bash
-
-	# In function set_pt_wifi(), delete
-	# local WIFI_PCI=$(lshw -C network |grep -i "description: wireless interface" -A5 |grep "bus info" |grep -o "....:..:....")
-	# Use below line instead
-	# local WIFI_PCI=$(lspci -D |grep -i -E "Network controller.* Wireless|Network controller.* Wi-Fi" | grep -o "....:..:..\..")
-
-Auto starting CiV (using GVT-d)
-*******************************
-
-The Android CiV guest can be made to start automatically as a service on host
-system boot and be the default configuration after setup. One way to implement
-this solution is shown below. Here it is assumed that CiV has been installed to
-``/home/<user>`` directory, where <user> is the ubuntu host username.
-Modify ExecStart accordingly for the options desired for CiV guest startup.
-
-.. code-block:: bash
-
-	$ sudo vim /etc/systemd/system/civ.service
-
-	# update file civ.service with below changes
-	[Unit]
-	Description=CiV Auto Start
-
-	[Service]
-	Type=forking
-
-	TimeoutSec=infinity
-	WorkingDirectory=/home/<user>
-	ExecStart=/bin/bash -E /home/<user>/scripts/start_civ.sh -g GVT-d --passthrough-pci-usb --passthrough-pci-wifi --passthrough-pci-audio --passthrough-pwr-vol-button --battery-mediation --thermal-mediation --guest-pm-control --guest-time-keep --allow-suspend
-
-	[Install]
-	WantedBy=multi-user.target
-
-	# Reload daemon and start civ service
-	$ sudo systemctl daemon-reload
-	$ sudo systemctl start civ
-
-	# Enable auto start of CiV at every reboot of host CPU
-	$ sudo systemctl enable civ
-
-.. _supplement:
-
-Supplementary guide for power and volume key support
-****************************************************
-
-Power and volume key support for guest VM.
-
-#. Start Android with pwr/vol button passthrough option
-
-.. code-block:: bash
-
-	$ sudo -E ./scripts/start_civ.sh -g GVT-d --passthrough-pwr-vol-button --allow-suspend
-
-#. Send the following adb command to enable Developer options
-
-.. code-block:: bash
-
-	$ adb shell settings put global development_settings_enabled 1
-
-
-#. Disable “Stay awake” setting within the Developer options (Settings -> System -> Developer options)
-
-#. Use below commands to test set volume and power button at host or press physical buttons if present
-
-.. code-block:: bash
-
-	# Volume Functionality:
-	./sendkey --vm 0 --volume up => Increases volume in CIV
-	./sendkey --vm 0 --volume down => decreases volume in CIV
-
-	# Power Functionality:
-	./sendkey --vm 0 --power 0 => Suspend/Resume in CIV
-	./sendkey --vm 0 --power 5 => long press of power key for 5 seconds. Displays power options in android.
-
+	# Connect via ADB from remote machine via host machine IP
+	$ adb connect xxx.xxx.xxx.xxx
+	# shutdown Android
+	$ adb reboot -p
 
 Acronyms and terms
 ******************
@@ -518,11 +394,7 @@ Acronyms and terms
 
 * CIV - Celadon in Virtual Machine
 
-* CML: COMET LAKE
-
-* TGL: TIGER LAKE
-
-* EHL: ELKHART LAKE
+* ADL: ALDER LAKE
 
 * GVT-d : Intel® Graphics Virtualization Technology -g (Intel® GVT-g): virtual
   graphics processing unit (vGPU) (multiple VMs to one physical GPU)
@@ -535,5 +407,4 @@ Helpful hints / related documents
 * The release of this project will be signed by test keys; it's only a
   reference for our customer and we are not responsible for this. Customers
   should use their own keys to sign their release images
-* Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
-
+* Build Celadon in VM  https://projectceladon.github.io/celadon-documentation/getting-started/build-source.html

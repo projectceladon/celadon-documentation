@@ -119,7 +119,7 @@ Step to generate the Android-CIV\* Image:
 	$ find out/target/product/caas/ -name caas-flashfiles-*.zip
 	out/target/product/caas/caas-releasefiles-xxxxx.zip
 
-    # Copy the packaged caas-releasefiles-userdebug.tar.gz file to ADL target
+    	# Copy the packaged caas-releasefiles-userdebug.tar.gz file to ADL target
 
 Add Celadon Guest VM Support to ADL Host OS
 
@@ -245,6 +245,8 @@ Perform the setup for Ubuntu OS. The script is unzipped into ‘/home/$USER/’ 
 	If need to run any reliability or benchmark test, 
 	please run the commands below to disable auto suspend and hibernate on Ubuntu host
 	
+.. code-block:: bash
+
 	# Disable suspend and hibernate service
 	$ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
@@ -284,7 +286,7 @@ Create Android CIV image for running as VM in ADL target
 	# Generate CIV disk image from caas-flashfiles.
 	# The script and flashfiles have already been extracted from caas-releasefiles-userdebug.tar.gz
 	# Wait for "Flashing is completed" msg from script.
-	$ sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-xxxxx.zip --display-off
+	$ sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-xxxxx.zip  (Use --display-off if flashing remotely)
 
 Running Android* 12 
 ********************
@@ -295,6 +297,7 @@ This section describes the steps to run Android 12, Yocto, Windows 10 and Ubuntu
 Launch Celadon Android Guest VM
 
 .. code-block:: bash
+
 	# Launch the Android CIV Guest VM
 	$ cd ~
 	$ sudo vm-manager -b civ-sriov
@@ -305,6 +308,7 @@ Change Guest VM Memory and Number of CPUs:
 For Android 12 Guest VM only, edit the memory and vcpu sections of the configuration ini file at <workspace>/.intel/.civ/civ-sriov.ini.
 
 .. code-block:: bash
+
 	# Enable USB Devices in Guest VM
 	# [memory]
 	# size=4G
@@ -339,6 +343,7 @@ Enable PCIe Wi-Fi Adapter Device in Guest VM:
 This section describes to enable PCIe
 
 .. code-block:: bash
+
 	$ lspci -nn -D | grep Wi-Fi
 	0000:02:00.0 Network controller [0280]: Intel Corporation Wi-Fi 6 AX210/AX211/AX411 160MHz [8086:2725] (rev 1a)
 	# Then edit the passthrough section of the configuration ini file at <workspace>/.intel/.civ.
@@ -351,6 +356,7 @@ Enable logging for Android 12 Guest VM:
 This section describes to debug logging
 
 .. code-block:: bash
+
 	# Edit the extra section of the configuration ini file at <workspace>/.intel/.civ.
 	[extra]
 	cmd=-chardev socket,id=ch0,path=/tmp/civ1-console,server=on,wait=off,logfile=/tmp/civ1_serial.log -serial chardev:ch0
@@ -367,6 +373,7 @@ Launch Guest VM on Single Display and Full Screen Mode:
 For Android 12 guest VM, edit the extra section of the configuration ini file at <workspace>/.intel/.civ
 
 .. code-block:: bash
+
 	# different according to the use cases.
 	[extra]
 	cmd=-full-screen
@@ -380,6 +387,7 @@ Shutdown VMs and System:
 Shutdown Android VM via Android ADB connection
 
 .. code-block:: bash
+
 	# Connect via ADB from remote machine via host machine IP
 	$ adb connect xxx.xxx.xxx.xxx
 	# shutdown Android

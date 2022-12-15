@@ -212,9 +212,10 @@ Celadon Source Requirements:
 * CIV_0X.XX.XX.XX_A11.xml
 
 From release package link: 
-https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=738824&s=Newest 
+https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=757435&s=Newest 
 
 Build Celadon from Source :
+
 .. code-block:: bash
 	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
 	$ sudo ln -s /usr/bin/python3 /usr/bin/python

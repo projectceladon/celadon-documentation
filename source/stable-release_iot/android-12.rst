@@ -5,7 +5,7 @@ Android 12 Stable Releases IoT
 
 Android 12 Stable Releases (IoT) is an Internet of Things (IoT) overlay on top of |C|. The
 Stable Releases (IoT) release provides users with an extensive set of features on
-Alder Lake (ADL) platforms with a single Baseline/Image of Andoird 12
+Alder Lake (ADL) platforms with a single Baseline/Image of Android 12
 
 .. toctree::
    :maxdepth: 2

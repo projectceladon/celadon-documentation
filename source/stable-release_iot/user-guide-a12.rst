@@ -75,7 +75,7 @@ DUT setup
 
 Hardware details:
 
-* HW Alder Lake (CML) NUC DUT details
+* HW Alder Lake (ADL) DUT details
 	* For ADL RVP DDR5 C1 CPU
 	* BIOS Version ADLSFWI1.R00.3225.B00.2205270548
 
@@ -124,12 +124,15 @@ Installation Scripts Required:
 * sriov_patches.zip 
 * ubuntu_kvm_multios_scripts.zip 
 From release package ADL link:
-https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=738824&s=Newest
+https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=757435&s=Newest
 
 Setup Ubuntu host:
 
 * Set the default download server to “Main server” in “Software & Updates” GUI
 * Go to Applications and launch “Software & Updates”, and in “Ubuntu Software” tab, select Download from: “Main server”
+
+.. note::
+	SRIOV related content available under NDA
 
 .. code-block:: bash
 
@@ -398,6 +401,8 @@ Acronyms and terms
 
 * GVT-d : Intel® Graphics Virtualization Technology -g (Intel® GVT-g): virtual
   graphics processing unit (vGPU) (multiple VMs to one physical GPU)
+  
+* SR-IOV: Single Root IO Virtualization
 
 Helpful hints / related documents
 *********************************

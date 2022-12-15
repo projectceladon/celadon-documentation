@@ -21,7 +21,7 @@ Celadon build steps
 Follow the development environment set up instructions in
 `<https://docs.01.org/celadon/getting-started/build-source.html#set-up-the-development-environment>`_ for |C| build host setup.
 
-Manifest Link: [YET TO UPDATE THE FINAL MANIFEST] https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml
+Manifest Link: [YET TO UPDATE THE FINAL MANIFEST] https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_XX.XX.XX.XX_A12.xml
 
 Prerequisites and host kernel build steps:
 
@@ -50,8 +50,6 @@ Host kernel build steps
 	# Checkout to  specific commit (Refer to release notes for SHA ID)
 	$ git checkout lts-v5.15.71-adl-linux-221121T044440Z
 
-	# copy kernel config
-	$ cd <source path>
 	$ wget https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
 	$ cp x86_64_defconfig .config
 	$ echo ""| make ARCH=x86_64 olddefconfig
@@ -70,6 +68,63 @@ Host kernel build steps
 	$ cd ..
 	$ cp *.deb <target path>
 
+For Celadon Host OS hardening recommendations see:
+https://github.com/projectceladon/celadon-documentation/blob/master/source/getting-started/host-os-hardening.rst
+
+Celadon Source Requirements:
+
+* CIV_0X.XX.XX.XX_A11.xml
+
+Build Celadon from Source :
+
+.. code-block:: bash
+	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
+	$ sudo ln -s /usr/bin/python3 /usr/bin/python
+	
+Steps to sync to this release:
+
+.. code-block:: bash
+
+	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
+	$ sudo ln -s /usr/bin/python3 /usr/bin/python
+
+	# Init with the default manifest
+	$ repo init -u https://github.com/projectceladon/manifest.git
+
+	# Copy the CIV manifest and use it
+	$ cp <source path>/CIV_0X.XX.XX.XX_A11.xml .repo/manifests/
+	$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_0X.XX.XX.XX_A11.xml
+        #NOTE : Manifest tag will change according to the latest release
+
+	# Sync the code
+	$ repo sync -c -q -j${nproc}
+	$ repo for all -c git lfs pull 
+
+Step to generate the Android-CIV\* Image:
+
+.. code-block:: bash
+
+	# Perform the environment setup from directory where repo is initialized
+	$ source build/envsetup.sh
+
+	# Select userdebug variant
+	$ lunch caas-userdebug
+
+	# Start the build
+	# Without this flag, default architecture is silvermont which exercises sse4.1 features.
+	$ make flashfiles BASE_LTS2020_YOCTO_KERNEL=true -j $(nproc) 
+
+
+	# Build output (CIV flashfiles)
+	$ find out/target/product/caas/ -name caas-flashfiles-*.zip
+	out/target/product/caas/caas-releasefiles-xxxxx.zip
+
+    # Copy the packaged caas-releasefiles-userdebug.tar.gz file to ADL target
+
+Add Celadon Guest VM Support to ADL Host OS
+
+Change to the ADL target directory and copy caas-releasefiles-userdebug.tar.gz to the target director
+
 DUT setup
 *********
 
@@ -80,7 +135,7 @@ Hardware details:
 	* BIOS Version ADLSFWI1.R00.3225.B00.2205270548
 
 .. note::	
-	Every type of Guest VM configuration has a minimum required number of assigned cores/vCPUs and failure. 
+	Every type of Guest VM configuration has a minimum required number of assigned cores/vCPUs. 
 	Not meeting minimum cores requirement will result in degraded performance
 
 BIOS setting:
@@ -116,8 +171,6 @@ Prerequisites:
 * Install Ubuntu 22.04 LTS
 	Download and install the Ubuntu 22.04 LTS from the official Ubuntu websiteu: https://www.releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso 
 * If operating behind a corporate firewall, setup the proxy settings
-* Disable Automatic suspend in host: Settings -> Power -> Suspend &
-  Power Button -> Automatic suspend -> Off.
 
 Installation Scripts Required:
 
@@ -137,7 +190,7 @@ Setup Ubuntu host:
 .. code-block:: bash
 
 	# Reboot into the Ubuntu host image
-            # Change directory
+        # Change directory
 	$ cd ~
 
 	# Please use these commands to update and upgrade the Ubuntu with the latest software packages.
@@ -162,16 +215,16 @@ Setup Ubuntu host:
 	$ chmod +x <workspace>/*.sh
 	
 	# This will install kernel and firmware, and update grub
-    # If prompted, answer y to go ahead with changes
+    	# If prompted, answer y to go ahead with changes
 	$ sudo ./sriov_setup_kernel.sh
 	
 	# After rebooting, check that the kernel is the installed version.
 	$ uname -r
-		5.15.71-lts2021-iotg
+	5.15.71-lts2021-iotg
 
 Setup the Host OS for SRIOV
-***************************
-* Perform the setup for Ubuntu OS. The script is unzipped into ‘/home/$USER/’ directory
+****************************
+Perform the setup for Ubuntu OS. The script is unzipped into ‘/home/$USER/’ directory
 
 .. code-block:: bash
 	# If prompted, answer y to go ahead with changes
@@ -187,15 +240,16 @@ Setup the Host OS for SRIOV
 	$ dmesg | grep HuC
 		i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3 
 		i915 0000:00:02.0: [drm] HuC authenticated
-
+		
+.. note::
+	If need to run any reliability or benchmark test, 
+	please run the commands below to disable auto suspend and hibernate on Ubuntu host
+	
 	# Disable suspend and hibernate service
 	$ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
 	# Reboot Ubuntu host
 	$ sudo reboot now
-
-.. note::
-	If need to run any reliability or benchmark test, please run the commands below to disable auto suspend and hibernate on Ubuntu host
 
 Android Guest VM Setup
 **********************
@@ -204,68 +258,7 @@ Follow the development environment set up instructions in
 
 Users of Celadon-in-VM (CIV) release must ensure that Celadon platform host OS hardening measures are in place to ensure that the host OS could be treated as part of the secure computing base. This is essential to ensuring CIV security could be trusted in CIV operations.
 
-For Celadon Host OS hardening recommendations see:
-https://github.com/projectceladon/celadon-documentation/blob/master/source/getting-started/host-os-hardening.rst
-
-Celadon Source Requirements:
-
-* CIV_0X.XX.XX.XX_A11.xml
-
-From release package link: 
-https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=757435&s=Newest 
-
-Build Celadon from Source :
-
 .. code-block:: bash
-	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
-	$ sudo ln -s /usr/bin/python3 /usr/bin/python
-	
-Steps to sync to this release:
-
-.. code-block:: bash
-
-	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
-	$ sudo ln -s /usr/bin/python3 /usr/bin/python
-
-	# Init with the default manifest
-	$ repo init -u https://github.com/projectceladon/manifest.git
-
-	# Copy the CIV manifest and use it
-	$ cp <source path>/CIV_0X.XX.XX.XX_A11.xml .repo/manifests/
-	$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_0X.XX.XX.XX_A11.xml
-        #NOTE : Manifest tag will change according to the latest release
-
-	# Sync the code
-	$ repo sync -c -q -j${nproc}
-
-Step to generate the Android-CIV\* Image:
-
-.. code-block:: bash
-
-	# Perform the environment setup from directory where repo is initialized
-	$ source build/envsetup.sh
-
-	# Select userdebug variant
-	$ lunch caas-userdebug
-
-	# Start the build
-	# To enable avx optimizations for CML/EHL, BUILD_CPU_ARCH=kabylake could be
-	appended to the make command.
-	# Without this flag, default architecture is silvermont which exercises sse4.1 features.
-	$ make flashfiles BASE_LTS2020_YOCTO_KERNEL=true -j $(nproc) 
-
-
-	# Build output (CIV flashfiles)
-	$ find out/target/product/caas/ -name caas-flashfiles-*.zip
-	out/target/product/caas/caas-flashfiles-xxxxx.zip
-
-    # Copy the packaged caas-releasefiles-userdebug.tar.gz file to ADL target
-
-Add Celadon Guest VM Support to ADL Host OS
-
-Change to the ADL target directory and copy caas-releasefiles-userdebug.tar.gz to the target director
-.. code-block:: bash
-
 
 	# Copy the artifact
 	$ cp caas-releasefiles-userdebug.tar.gz <working_dir>
@@ -299,7 +292,7 @@ Running Android* 12
 This section describes the steps to run Android 12, Yocto, Windows 10 and Ubuntu Guest VMs on the ADL-N platform
 
 * VM Launch
-	Launch Celadon Android Guest VM
+Launch Celadon Android Guest VM
 
 .. code-block:: bash
 	# Launch the Android CIV Guest VM
@@ -308,15 +301,16 @@ This section describes the steps to run Android 12, Yocto, Windows 10 and Ubuntu
 	
 Guest VM Configuration Options
 
-Change Guest VM Memory and Number of CPUs
-	For Android 12 Guest VM only, edit the memory and vcpu sections of the configuration ini file at <workspace>/.intel/.civ/civ-sriov.ini.
-	
-	Enable USB Devices in Guest VM
-	[memory]
-	size=4G
+Change Guest VM Memory and Number of CPUs:
+For Android 12 Guest VM only, edit the memory and vcpu sections of the configuration ini file at <workspace>/.intel/.civ/civ-sriov.ini.
 
-	[vcpu]
-	num=4G
+.. code-block:: bash
+	# Enable USB Devices in Guest VM
+	# [memory]
+	# size=4G
+
+	# [vcpu]
+	# num=4G
 
 .. note::
 	A passthrough device option can only be used once, because a device can be passthrough to only 1 guest VM at a time
@@ -324,7 +318,7 @@ Change Guest VM Memory and Number of CPUs
 
 Android 12 guest VM USB device passthrough:
 
-This section describes the steps to run Android 12, Yocto, Windows 10 and Ubuntu Guest VMs on the ADL-N platform.
+This section describes the steps to run Android 12, ADL platform.
 
 .. code-block:: bash
 
@@ -342,6 +336,7 @@ This section describes the steps to run Android 12, Yocto, Windows 10 and Ubuntu
 
 
 Enable PCIe Wi-Fi Adapter Device in Guest VM:
+This section describes to enable PCIe
 
 .. code-block:: bash
 	$ lspci -nn -D | grep Wi-Fi
@@ -353,6 +348,7 @@ Enable PCIe Wi-Fi Adapter Device in Guest VM:
 	For Android 12 guest VM, find the PCI ID of the Wi-Fi device
 
 Enable logging for Android 12 Guest VM:
+This section describes to debug logging
 
 .. code-block:: bash
 	# Edit the extra section of the configuration ini file at <workspace>/.intel/.civ.
@@ -368,7 +364,6 @@ Enable logging for Android 12 Guest VM:
 	$ sudo socat unix-connect:/tmp/civ1-console stdio
 
 Launch Guest VM on Single Display and Full Screen Mode:
-
 For Android 12 guest VM, edit the extra section of the configuration ini file at <workspace>/.intel/.civ
 
 .. code-block:: bash
@@ -381,8 +376,7 @@ For Android 12 guest VM, edit the extra section of the configuration ini file at
 	And the combination of multiple Guest VMs and multiple displays might be 
 
 
-Shutdown VMs and System
-
+Shutdown VMs and System:
 Shutdown Android VM via Android ADB connection
 
 .. code-block:: bash

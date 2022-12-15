@@ -123,7 +123,7 @@ Installation Scripts Required:
 
 * sriov_patches.zip 
 * ubuntu_kvm_multios_scripts.zip 
-* From release package ADL-N_KVM_MultiOS_Beta.zip link:
+From release package ADL link:
 https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=738824&s=Newest
 
 Setup Ubuntu host:

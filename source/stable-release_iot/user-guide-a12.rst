@@ -21,7 +21,7 @@ Celadon build steps
 Follow the development environment set up instructions in
 `<https://docs.01.org/celadon/getting-started/build-source.html#set-up-the-development-environment>`_ for |C| build host setup.
 
-Manifest Link: [YET TO UPDATE THE FINAL MANIFEST] https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_XX.XX.XX.XX_A12.xml
+Manifest Link: [YET TO UPDATE THE FINAL MANIFEST] https://github.com/projectceladon/manifest/blob/dfffe458de15b10107e7b791819a8d5305b85304/stable-build/CIV_02.22.04.50_A12.xml
 
 Prerequisites and host kernel build steps:
 
@@ -73,7 +73,7 @@ https://github.com/projectceladon/celadon-documentation/blob/master/source/getti
 
 Celadon Source Requirements:
 
-* CIV_0X.XX.XX.XX_A11.xml
+* CIV_02.22.04.50_A12.xml
 
 Build Celadon from Source :
 
@@ -92,8 +92,8 @@ Steps to sync to this release:
 	$ repo init -u https://github.com/projectceladon/manifest.git
 
 	# Copy the CIV manifest and use it
-	$ cp <source path>/CIV_0X.XX.XX.XX_A11.xml .repo/manifests/
-	$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_0X.XX.XX.XX_A11.xml
+	$ cp <source path>/CIV_02.22.04.50_A12.xml .repo/manifests/
+	$ repo init -u https://github.com/projectceladon/manifest.git -m CIV_02.22.04.50_A12.xml
         #NOTE : Manifest tag will change according to the latest release
 
 	# Sync the code

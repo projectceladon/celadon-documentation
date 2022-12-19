@@ -1,5 +1,3 @@
-.. _feature-delta-iot:
-
 Feature Delta Offered by Stable Releases (IoT)
 ##############################################
 
@@ -9,12 +7,10 @@ Here are the additional features provided by Stable Releases (IoT).
     :depth: 1
     :local:
 
-* 100% Google\* conformance on Comet Lake (CML),Tiger Lake (TGL), and
-  Elkhart Lake (EHL) with production ready
-* Supporting Comet Lake (CML),Tiger Lake (TGL), and Elkhart Lake (EHL)
-  on single baseline and Single Image
-* IoT configuration support GVT-d mode with 100% conformance
-* IoT configuration support GVT-g with no conformance
+* 99.97% Google\* conformance on Alder Lake (ADL)platform with production ready
+* Supporting Alder Lake (ADL) on single baseline and Single Image
+* IoT configuration support SRIOV mode with 99.97% conformance
+* Vm-Manager support to launch Android
 
 Real-time clock (RTC) and alarm virtualization
 **********************************************

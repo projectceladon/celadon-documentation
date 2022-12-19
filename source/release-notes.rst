@@ -21,6 +21,91 @@ Retail, Education, Workload consolidation and Marine segments.
    :local:
    :depth: 1
 
+CIV_02.22.04.50_A12
+===================
+
+Intended audience
+-----------------
+
+* Celadon Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
+
+Customer support
+----------------
+
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
+
+Introduction
+------------
+Feature Details
+---------------
+* Celadon Upstreamed fixes in this release
+
+		* 1st Stable Release from Celadon_IoT for  Android 12
+                * 99.97% Google* conformance on Alder Lake (ADL)platform with production ready
+		* Supporting Alder Lake (ADL) on single baseline and Single Image
+		* IoT configuration support SRIOV mode with 99.97% conformance
+		* Vm-Manager support to launch Android
+Known issues
+------------
+* VP9 hardware codec not supported in ADL-S platform
+* CTS module VtsHalMediaC2V1_0TargetVideoDecTest has regression
+* Android Settings screen not scrolling properly
+* Device going to junk/frozen screen for playing media file (video) with hardware codec(c2.intel.hevc.decoder), needs VM kill and launch to recover.
+* Ethernet tethering option in Settings is active even when no Ethernet connected
+* With UserData CheckPoint enabled build, device reboots on 1st time boot after flashing
+
+Where to find the release
+-------------------------
+
+* Manifest Link: [Draft]  https://github.com/projectceladon/manifest/blob/dfffe458de15b10107e7b791819a8d5305b85304/stable-build/CIV_02.22.04.50_A12.xml
+
+Host Kernel Release configuration
+---------------------------------
+
+* linux-intel-lts kernel
+        * Branch: https://github.com/intel/linux-intel-lts
+        * SHA ID: https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.15.71-adl-linux-221121T044440Z
+* kernel-config
+        * Config-File: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+
+Reference configuration
+-----------------------
+
+* Supported hardware
+    =======================   =======
+    Platform                  Product
+    -----------------------   -------
+    Alder Lake(ADL)           | ADL RVP DDR5 C1 CPU 12th Gen Intel(R) Core(TM) i9-12900E
+    =======================   =======
+
+* Supported software
+        * Android CIV Guest:
+                =======================   =======
+                Platform                  Product
+                -----------------------   -------
+                Android                   | Android 12
+                Kernel                    | 5.10.145 (lts-v5.10.145-civ-android-221027T031053Z)
+                AOSP                      | android-12.0.0_r28
+                =======================   =======
+
+        * Ubuntu Host:
+                =======================   =======
+                Platform                  Product
+                -----------------------   -------
+                Qemu                      | version 7.1.0
+                Ubuntu                    | 22.04 LTS (Jammy Jellyfish)
+                Kernel_IoTG               | 5.15.71 (lts-v5.15.71-adl-linux-221121T044440Z)
+		=======================   =======
+
+Validation results
+------------------
+
+Stable Releases (IoT) are validated with SR-IOV mode on Alder Lake(ADL)Intel® platform in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements
+
+.. figure:: stable-release_iot/images/sep22_Validation_Result2.png
+    :align: right
+    :width: 750px
+
 CIV_03.22.03.37_A11
 ===================
 
@@ -60,7 +145,7 @@ Host Kernel Release configuration
         * Branch: https://github.com/intel/linux-intel-lts/tree/5.4/yocto
         * SHA ID: https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.4.209-yocto-220817T175100Z
 * kernel-config
-        * Config-File: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+        * Config-File: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/android/r/x86_64_defconfig
 
 
 Reference configuration

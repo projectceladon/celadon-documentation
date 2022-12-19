@@ -37,6 +37,7 @@ Prerequisites
 	$ sudo apt install -y git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison rsync kmod cpio
 
 Host kernel build steps
+=======================
 
 .. code-block:: bash
 
@@ -71,22 +72,22 @@ Host kernel build steps
 For Celadon Host OS hardening recommendations see:
 https://github.com/projectceladon/celadon-documentation/blob/master/source/getting-started/host-os-hardening.rst
 
+
+Build Celadon from Source 
+=========================
+
 Celadon Source Requirements:
 
 * CIV_02.22.04.50_A12.xml
 
-Build Celadon from Source :
-
 .. code-block:: bash
+
 	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
 	$ sudo ln -s /usr/bin/python3 /usr/bin/python
 	
 Steps to sync to this release:
 
 .. code-block:: bash
-
-	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
-	$ sudo ln -s /usr/bin/python3 /usr/bin/python
 
 	# Init with the default manifest
 	$ repo init -u https://github.com/projectceladon/manifest.git
@@ -111,17 +112,13 @@ Step to generate the Android-CIV\* Image:
 	$ lunch caas-userdebug
 
 	# Start the build
-	# Without this flag, default architecture is silvermont which exercises sse4.1 features.
 	$ make flashfiles BASE_LTS2020_YOCTO_KERNEL=true -j $(nproc) 
 
 
 	# Build output (CIV flashfiles)
-	$ find out/target/product/caas/ -name caas-flashfiles-*.zip
+	$ find out/target/product/caas/ -name caas-releasefiles-*.zip
 	out/target/product/caas/caas-releasefiles-xxxxx.zip
 
-    	# Copy the packaged caas-releasefiles-userdebug.tar.gz file to ADL target
-
-Add Celadon Guest VM Support to ADL Host OS
 
 Change to the ADL target directory and copy caas-releasefiles-userdebug.tar.gz to the target director
 
@@ -168,8 +165,9 @@ Host setup
 
 Prerequisites:
 
-* Install Ubuntu 22.04 LTS
-	Download and install the Ubuntu 22.04 LTS from the official Ubuntu websiteu: https://www.releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso 
+Install Ubuntu 22.04 LTS:
+
+* Download and install the Ubuntu 22.04 LTS from the official Ubuntu website: https://www.releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso 
 * If operating behind a corporate firewall, setup the proxy settings
 
 Installation Scripts Required:
@@ -227,6 +225,7 @@ Setup the Host OS for SRIOV
 Perform the setup for Ubuntu OS. The script is unzipped into ‘/home/$USER/’ directory
 
 .. code-block:: bash
+
 	# If prompted, answer y to go ahead with changes
 	$ sudo ./sriov_setup_ubuntu.sh
 
@@ -275,8 +274,8 @@ Users of Celadon-in-VM (CIV) release must ensure that Celadon platform host OS h
 	# If prompted, answer ‘Y’ for all options to go ahead with changes
 	$ sudo -E ./scripts/setup_host.sh 
 
-Create Android VM Image:
-
+Create Android VM Image
+=======================
 Create Android CIV image for running as VM in ADL target
 
 .. code-block:: bash
@@ -286,12 +285,12 @@ Create Android CIV image for running as VM in ADL target
 	# Generate CIV disk image from caas-flashfiles.
 	# The script and flashfiles have already been extracted from caas-releasefiles-userdebug.tar.gz
 	# Wait for "Flashing is completed" msg from script.
-	$ sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-xxxxx.zip  (Use --display-off if flashing remotely)
+	$ sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-xxxxx.zip --display-off
 
 Running Android* 12 
 ********************
 
-This section describes the steps to run Android 12, Yocto, Windows 10 and Ubuntu Guest VMs on the ADL-N platform
+This section describes the steps to run Android 12 VM on the ADL platform
 
 * VM Launch
 Launch Celadon Android Guest VM
@@ -303,8 +302,11 @@ Launch Celadon Android Guest VM
 	$ sudo vm-manager -b civ-sriov
 	
 Guest VM Configuration Options
+******************************
 
-Change Guest VM Memory and Number of CPUs:
+Android 12 Guest VM Memory and Number of CPUs
+=============================================
+
 For Android 12 Guest VM only, edit the memory and vcpu sections of the configuration ini file at <workspace>/.intel/.civ/civ-sriov.ini.
 
 .. code-block:: bash
@@ -320,7 +322,8 @@ For Android 12 Guest VM only, edit the memory and vcpu sections of the configura
 	A passthrough device option can only be used once, because a device can be passthrough to only 1 guest VM at a time
 	For Android 12 guest VM, the passthrough is defined in the configuration ini file.
 
-Android 12 guest VM USB device passthrough:
+Android 12 guest VM USB device passthrough
+==========================================
 
 This section describes the steps to run Android 12, ADL platform.
 
@@ -335,11 +338,14 @@ This section describes the steps to run Android 12, ADL platform.
 
 	# Edit the passthrough section of the configuration ini file at <workspace>/.intel/.civ
 	#[passthrough]
-	#specified the PCI id here if you want to passthrough it to guest, separate them with comma
-	$ passthrough_pci=0000:00:14.0,0000:00:14.1,0000:05:00.0,0000:07:00.0,
+	# specified the PCI id here if you want to passthrough it to guest, separate them with comma
+        $ passthrough_pci=0000:00:14.0,0000:00:14.1,0000:05:00.0,0000:07:00.0,
 
 
-Enable PCIe Wi-Fi Adapter Device in Guest VM:
+
+Enable PCIe Wi-Fi Adapter Device in Guest VM
+============================================
+
 This section describes to enable PCIe
 
 .. code-block:: bash
@@ -352,7 +358,9 @@ This section describes to enable PCIe
 	A passthrough device option can only be used once, because a device can be passthrough to only 1 guest VM at a time
 	For Android 12 guest VM, find the PCI ID of the Wi-Fi device
 
-Enable logging for Android 12 Guest VM:
+Enable logging for Android 12 Guest VM
+======================================
+
 This section describes to debug logging
 
 .. code-block:: bash
@@ -369,7 +377,9 @@ This section describes to debug logging
 	# Connect to Celadon guest console
 	$ sudo socat unix-connect:/tmp/civ1-console stdio
 
-Launch Guest VM on Single Display and Full Screen Mode:
+Launch Guest VM on Single Display and Full Screen Mode
+======================================================
+
 For Android 12 guest VM, edit the extra section of the configuration ini file at <workspace>/.intel/.civ
 
 .. code-block:: bash
@@ -379,11 +389,11 @@ For Android 12 guest VM, edit the extra section of the configuration ini file at
 	cmd=-full-screen
 
 .. note::
-	The amount of memory and cores allocated might be different according to each platform. 
-	And the combination of multiple Guest VMs and multiple displays might be 
+	The amount of memory and cores allocated might be different according to each platform.  
 
+Shutdown VMs and System
+=======================
 
-Shutdown VMs and System:
 Shutdown Android VM via Android ADB connection
 
 .. code-block:: bash

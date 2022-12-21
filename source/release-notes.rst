@@ -243,7 +243,7 @@ New in this release
     * AIDL for HAL
     * Support vulkan and open gles
     * Support BPF
-    * Kernel support
+    * Kernel support (5.15.74)
     * Support FUSE BPF
     * Virtual VABc
     * KeyMint HAL 2.0

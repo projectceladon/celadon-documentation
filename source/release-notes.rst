@@ -239,10 +239,8 @@ New in this release
 -------------------
 
  * Highlights/New Features
-    * Storage-AOSP : F2FS (Flash Friendly File System) support on User Space 
     * Android 13 with latest AOSP manifest (android-13.0.0_r12)
     * AIDL for HAL
-    * Support F2FS
     * Support vulkan and open gles
     * Support BPF
     * Kernel support
@@ -279,10 +277,8 @@ New in this release
     * WPA3 support
     * WiFi 802.11.ax Support
     * Bluetooth Control from Android in Virtual Machine
-    * ISH Enabled
     * Support Control Plant – VM Manager
     * Switch USB touch screen between guest OSes
-    * Incremental FS, F2FS support
     * Integrated VM Manager to configure CIV replacing start_civ.sh
         * This changes launch steps for CIV - please refer to
           https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager

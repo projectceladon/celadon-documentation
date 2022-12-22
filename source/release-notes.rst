@@ -324,7 +324,7 @@ Where to find the release
 -------------------------
 
 * Manifest Link : 
-* Binary Link : 
+* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.22.04.48_A13
 
 
 How to install this release

@@ -27,7 +27,7 @@ CIV_03.22.03.37_A11
 Intended audience
 -----------------
 
-* Celadon Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
+* Celadon Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
 
 Customer support
 ----------------
@@ -109,7 +109,7 @@ CIV_02.22.01.12_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
 
 
 Customer support
@@ -218,14 +218,14 @@ Base Releases
 
 
 CIV_00.22.04.48_A13
-==================
+===================
 * This is a Production Release for evaluation and development purpose. This release supports 12th GEN Core [Celadon in VM].
-  
+
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
-* Any user who wants to explore Celadon in VM 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
+* Any user who wants to explore Celadon in VM
 
 Customer support
 ----------------
@@ -247,14 +247,14 @@ New in this release
     * Support FUSE BPF
     * Virtual VABc
     * KeyMint HAL 2.0
- 
+
  * Celadon features:
     * API level upgraded to 33
     * FCM Target level upgraded to 7
     * Audio HAL upgraded to 7.1
     * Trusty KeyMint support AIDL Version 2.0
     * Health HAL upgraded to AIDL 1.0
-    * WIFI Supplicant and Hostapd upgraded to AIDL 1.0 
+    * WIFI Supplicant and Hostapd upgraded to AIDL 1.0
     * SE Policy updated for API level 33
     * Virgl Support
     * SRIOV (Single Root I/O Virtualization) Support
@@ -287,9 +287,9 @@ New in this release
     * WiFi Direct
     * WiFi Control from Android in Virtual Machine
     * Bug fixes, customizations and optimizations for x86
-    * Graphics introduced scheduling plans 
+    * Graphics introduced scheduling plans
     * Graphics: Surface flinger caching, GPU memory accounting, profiling and
-      GPU scheduling 
+      GPU scheduling
     * Accessibility, System UI and backup & restore features updated with minor
       modifications
     * FUSE passthrough introduced to improve IO performance in Android S
@@ -299,12 +299,12 @@ New in this release
     * New platform features for Mainline Module
     * Approximate location access and privacy related updates
     * Memory accounting updates
-    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio optimised in Android S 
+    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio optimised in Android S
     * Media transcoding, media extractor related changes and improved quality in encoded video
     * AVIF image support, Easier blurs, color filters, and other effects
     * CameraX vendor extension support
     * Enabled NNAPI updatability in Machine Learning
-    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization 
+    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
     * Bluetooth side, BT classic and BLE introduced
     * Activity Detection, CHRE, Bluesky, FLP & RTT related changes
     * Major changes in window management and introduced Display grouping and emphasis for multi-display context
@@ -390,7 +390,7 @@ Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 USB                            OK       Keyboard , Mouse , Pen drive
 Display                        OK
-Touch and Gesture              OK 
+Touch and Gesture              OK
 =============================  =======  ========
 
 
@@ -430,12 +430,12 @@ CIV_00.22.03.34_A13
 ===================
 * We are glad to announce that the Celadon Project now supports Android 13 within a day of Google PV. We wish the Celadon community to start working with Android 13     and provide us feedback on what more would you like to see in the Celadon project.
 * This is a Pre Production Manifest Release for evaluation and development purposes. The release cannot be used for production purposes. This release supports 11th    and 12th GEN Core [Celadon in VM].
-  
+
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
-* Any user who wants to explore Celadon in VM 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
+* Any user who wants to explore Celadon in VM
 
 Customer support
 ----------------
@@ -452,16 +452,16 @@ New in this release
     * This is the First Celadon in VM Release based on Android 13
     * API level upgraded to 33
     * FCM Target level upgraded to 7
-    * All the features of Android 13 provided with Intel BSP including HAL changes 
+    * All the features of Android 13 provided with Intel BSP including HAL changes
     * Android 13 with latest AOSP manifest (android-13.0.0_r1)
-    
+
  * Major HAL Upgrades
     * Audio HAL upgraded to 7.1
     * Trusty KeyMint support AIDL Version 2.0
     * Health HAL upgraded to AIDL 1.0
-    * WIFI Supplicant and Hostapd upgraded to AIDL 1.0 
+    * WIFI Supplicant and Hostapd upgraded to AIDL 1.0
     * SE Policy updated for API level 33
- 
+
  * Celadon features:
     * Virgl Support
     * SRIOV (Single Root I/O Virtualization) Support
@@ -496,9 +496,9 @@ New in this release
     * WiFi Direct
     * WiFi Control from Android in Virtual Machine
     * Bug fixes, customizations and optimizations for x86
-    * Graphics introduced scheduling plans 
+    * Graphics introduced scheduling plans
     * Graphics: Surface flinger caching, GPU memory accounting, profiling and
-      GPU scheduling 
+      GPU scheduling
     * Accessibility, System UI and backup & restore features updated with minor
       modifications
     * FUSE passthrough introduced to improve IO performance in Android S
@@ -508,12 +508,12 @@ New in this release
     * New platform features for Mainline Module
     * Approximate location access and privacy related updates
     * Memory accounting updates
-    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio optimised in Android S 
+    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio optimised in Android S
     * Media transcoding, media extractor related changes and improved quality in encoded video
     * AVIF image support, Easier blurs, color filters, and other effects
     * CameraX vendor extension support
     * Enabled NNAPI updatability in Machine Learning
-    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization 
+    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
     * Bluetooth side, BT classic and BLE introduced
     * Activity Detection, CHRE, Bluesky, FLP & RTT related changes
     * Major changes in window management and introduced Display grouping and emphasis for multi-display context
@@ -596,7 +596,7 @@ Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 USB                            OK       Keyboard , Mouse , Pen drive
 Display                        OK
-Touch and Gesture              OK 
+Touch and Gesture              OK
 =============================  =======  ========
 
 
@@ -640,7 +640,7 @@ CIV_01.22.03.32_A12
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
 * Any user who wants to explore Celadon in VM
 
 Customer support
@@ -824,7 +824,7 @@ Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 USB                            OK       Keyboard , Mouse , Pen drive
 Display                        OK
-Touch and Gesture              OK 
+Touch and Gesture              OK
 =============================  =======  ========
 
 
@@ -868,7 +868,7 @@ CIV_00.22.02.21_A12
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
 
 Customer support
 ----------------
@@ -1045,7 +1045,7 @@ Web browsing                   OK
 Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
 USB                            OK       Keyboard , Mouse , Pen drive
 Display                        OK
-Touch and Gesture              OK 
+Touch and Gesture              OK
 =============================  =======  ========
 
 
@@ -1089,7 +1089,7 @@ CIV_00.22.01.04_A12
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
 
 Customer support
 ----------------
@@ -1270,7 +1270,7 @@ CIV_00.21.03.41_A12
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
 
 Customer support
 ----------------
@@ -1456,7 +1456,7 @@ CIV_01.21.03.39_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
 
 Customer support
 ----------------
@@ -1700,7 +1700,7 @@ CIV_00.21.02.27_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org 
+* Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
 
 Customer support
 ----------------
@@ -1930,7 +1930,7 @@ CIV_00.21.02.25_A11
 Intended audience
 -----------------
 
-* Open Source Community who has subscribed to cceladon@lists.linuxfoundation.org 
+* Open Source Community who has subscribed to cceladon@lists.linuxfoundation.org
 
 Customer support
 ----------------

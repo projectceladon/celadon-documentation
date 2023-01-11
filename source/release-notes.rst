@@ -21,6 +21,109 @@ Retail, Education, Workload consolidation and Marine segments.
    :local:
    :depth: 1
 
+CIV_02.22.04.50_A12
+===================
+
+Intended audience
+-----------------
+
+* Celadon Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
+
+Customer support
+----------------
+
+* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
+
+Introduction
+------------
+Feature Details
+---------------
+* Celadon Upstreamed fixes in this release
+
+		* 1st Stable Release from Celadon_IoT for  Android 12
+                * This release supports Alder Lake-S (ADL-S)
+		* IoT configuration support SRIOV mode with 99.97% conformance on Alder Lake (ADL)platform with production ready
+		* Vm-Manager support to launch Android
+
+Release Constraint list
+-----------------------
+* VP9 hardware codec is not enabled in the current release due to hardware constraint
+* Sensor support is not enabled in current release due to hardware constraint.
+* The current QEMU release doesn’t support RGBA8888 color format which impact RGBA8888 usage on Android guest os application
+* USB accessory mode is not supported in the current release.
+* MAC randomization feature is not supported in the current release.
+* Partner modules aren’t integrated within the current GMS package.
+* NN API is not supported in the current release.
+* Hardware doesn’t have inbuilt cameras, only usb external camera is supported.
+
+Known issues
+------------
+* Ethernet tethering option in Settings menu is active even when no USB Ethernet Adaptor connected
+* System touch can’t accurately point the location
+* With UserData CheckPoint feature enabled, device reboots after 1st time boot while flashing is done
+* Windows freeform feature has been partially backported from Android T
+
+Open Issue List
+---------------
+* 16019209010	VtsHalMediaC2V1_0TargetVideoDecTest module
+* 16017487117	x86_64 CtsMediaTestCases failures
+* 16017342135	STS CtsSecurityTestCases failing
+* 16018517871	CtsMediaV2TestCases failures related to HEVC profilelevel
+* 16017974748	Failures are observed with x86_64 CtsDeqpTestCases module
+
+Where to find the release
+-------------------------
+
+* Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.04.50_A12.xml
+
+Host Kernel Release configuration
+---------------------------------
+
+* linux-intel-lts kernel
+        * Branch: https://github.com/intel/linux-intel-lts
+        * SHA ID: https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.15.71-adl-linux-221121T044440Z
+* kernel-config
+        * Config-File: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+
+Reference configuration
+-----------------------
+
+* Supported hardware
+    =======================   =======
+    Platform                  Product
+    -----------------------   -------
+    Alder Lake(ADL)           | ADL RVP DDR5 C1 CPU 12th Gen Intel(R) Core(TM) i9-12900E
+    Network Interface Card    | Intel® Wireless-AC 9260 5th Generation Intel802.11ac, Dual Band, 2x2Wi-Fi + Bluetooth®5.1
+    =======================   =======
+
+* Supported software
+        * Android CIV Guest:
+                =======================   =======
+                Platform                  Product
+                -----------------------   -------
+                Android                   | Android 12
+                Kernel                    | 5.10.145 (lts-v5.10.145-civ-android-221027T031053Z)
+                AOSP                      | android-12.0.0_r28
+                =======================   =======
+
+        * Ubuntu Host:
+                =======================   =======
+                Platform                  Product
+                -----------------------   -------
+                Qemu                      | version 7.1.0
+                Ubuntu                    | 22.04 LTS (Jammy Jellyfish)
+                Kernel_IoTG               | 5.15.71 (lts-v5.15.71-adl-linux-221121T044440Z)
+		=======================   =======
+
+Validation results
+------------------
+
+Stable Releases (IoT) are validated with SR-IOV mode on Alder Lake(ADL)Intel® platform in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements
+
+.. figure:: stable-release_iot/images/Q422-A12_Validation_Result.png
+    :align: right
+    :width: 750px
+
 CIV_03.22.03.37_A11
 ===================
 
@@ -60,7 +163,7 @@ Host Kernel Release configuration
         * Branch: https://github.com/intel/linux-intel-lts/tree/5.4/yocto
         * SHA ID: https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.4.209-yocto-220817T175100Z
 * kernel-config
-        * Config-File: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+        * Config-File: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/android/r/x86_64_defconfig
 
 
 Reference configuration

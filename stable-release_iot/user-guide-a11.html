@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release Notes" href="../release-notes.html" />
-    <link rel="prev" title="Feature Delta Offered by Stable Releases (IoT)" href="feature-delta-iot.html" /> 
+    <link rel="prev" title="Feature Delta Offered by Stable Releases (IoT)" href="feature-delta-iot-a11.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -87,27 +87,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="stable-release_iot.html">Stable Releases IoT</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="feature-delta-iot.html">Feature Delta Offered by Stable Releases (IoT)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">User Guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-install-this-release">How to install this release</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#celadon-build-steps">Celadon build steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android-12.html">Android 12 Stable Releases IoT</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="android-11.html">Android 11 Stable Releases IoT</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="feature-delta-iot-a11.html">Feature Delta Offered by Stable Releases (IoT)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-install-this-release">How to install this release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dut-setup">DUT setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#host-setup">Host setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-ubuntu-host-kernel">Installing Ubuntu host kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-celadon-host-setup">Run Celadon host setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#guest-os-setup">Guest OS setup:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-keyboard-and-mouse">Enable keyboard and mouse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#auto-starting-civ-using-gvt-d">Auto starting CiV (using GVT-d)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supplementary-guide-for-power-and-volume-key-support">Supplementary guide for power and volume key support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#acronyms-and-terms">Acronyms and terms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#helpful-hints-related-documents">Helpful hints / related documents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#dut-setup">DUT setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#host-setup">Host setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installing-ubuntu-host-kernel">Installing Ubuntu host kernel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-celadon-host-setup">Run Celadon host setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#guest-os-setup">Guest OS setup:</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#creating-celadon-guest-image">Creating Celadon guest image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#launching-celadon-with-gvt-d">Launching Celadon with GVT-d</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#enable-keyboard-and-mouse">Enable keyboard and mouse</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#auto-starting-civ-using-gvt-d">Auto starting CiV (using GVT-d)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#supplementary-guide-for-power-and-volume-key-support">Supplementary guide for power and volume key support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#acronyms-and-terms">Acronyms and terms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#helpful-hints-related-documents">Helpful hints / related documents</a></li>
 </ul>
 </li>
 </ul>
@@ -162,13 +159,15 @@
         
           <li><a href="stable-release_iot.html">Stable Releases IoT</a> &raquo;</li>
         
+          <li><a href="android-11.html">Android 11 Stable Releases IoT</a> &raquo;</li>
+        
       <li>User Guide</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/stable-release_iot/user-guide.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/stable-release_iot/user-guide-a11.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -280,7 +279,7 @@ $ git checkout lts-v5.4.209-yocto-220817T175100Z
 
 <span class="c1"># copy kernel config</span>
 $ <span class="nb">cd</span> &lt;<span class="nb">source</span> path&gt;
-$ wget https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+$ wget https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/android/r/x86_64_defconfig
 $ cp x86_64_defconfig .config
 $ <span class="nb">echo</span> <span class="s2">&quot;&quot;</span><span class="p">|</span> make <span class="nv">ARCH</span><span class="o">=</span>x86_64 olddefconfig
 
@@ -695,7 +694,7 @@ should use their own keys to sign their release images</li>
         <a href="../release-notes.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="feature-delta-iot.html" class="btn btn-neutral" title="Feature Delta Offered by Stable Releases (IoT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="feature-delta-iot-a11.html" class="btn btn-neutral" title="Feature Delta Offered by Stable Releases (IoT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -705,7 +704,7 @@ should use their own keys to sign their release images</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 05, 2023.
+      Last updated on Jan 17, 2023.
 
     </p>
   </div>

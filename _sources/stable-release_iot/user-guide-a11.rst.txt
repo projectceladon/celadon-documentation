@@ -116,7 +116,7 @@ Host kernel build steps
 
 	# copy kernel config
 	$ cd <source path>
-	$ wget https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+	$ wget https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/android/r/x86_64_defconfig
 	$ cp x86_64_defconfig .config
 	$ echo ""| make ARCH=x86_64 olddefconfig
 

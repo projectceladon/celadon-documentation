@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Run Project Celadon on Intel® architectures &mdash; Documentation for the Celadon Project</title>
+  <title>Android 11 Stable Releases IoT &mdash; Documentation for the Celadon Project</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Run Celadon in a virtual machine" href="on-vm.html" />
-    <link rel="prev" title="Getting Started" href="getting-started.html" /> 
+    <link rel="next" title="Feature Delta Offered by Stable Releases (IoT)" href="feature-delta-iot-a11.html" />
+    <link rel="prev" title="User Guide" href="user-guide-a12.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,21 +84,17 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Run Project Celadon on Intel® architectures</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="on-vm.html">Run Celadon in a virtual machine</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how-to.html">How do I …</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="stable-release_iot.html">Stable Releases IoT</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="android-12.html">Android 12 Stable Releases IoT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Android 11 Stable Releases IoT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="feature-delta-iot-a11.html">Feature Delta Offered by Stable Releases (IoT)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide-a11.html">User Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
@@ -147,15 +143,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="getting-started.html">Getting Started</a> &raquo;</li>
+          <li><a href="stable-release_iot.html">Stable Releases IoT</a> &raquo;</li>
         
-      <li>Run Project Celadon on Intel® architectures</li>
+      <li>Android 11 Stable Releases IoT</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/getting-started/as-service.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/stable-release_iot/android-11.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -168,30 +164,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="run-project-c-on-intel-architectures">
-<span id="run-as-service"></span><h1>Run Project Celadon on Intel® architectures</h1>
-<p>The following diagrams illustrate the overall Celadon software architecture.
-Celadon is designed to be fully compliant with Google* Android* compatibility definitions,
-ensuring affinity and security of applications running on the stack.
-The <em>Auto Adaptation Framework</em> (<strong>AAF</strong>) is the key component that makes Celadon unique.
-It automatically detects and binds system kernel drivers, and loads
-the <abbr title="Hardware Abstraction Layer">HAL</abbr> modules and configurations
-for a variety of devices exposed on Intel platforms.
-Therefore, whether running Android applications in virtual machines (VMs)
-or containers, they are all served by a single Celadon image with a unified
-architecture, accelerating development of broad workload consolidation
-use cases from Edge to Cloud.</p>
-<div class="figure align-center">
-<img alt="../_images/civ-arch.png" src="../_images/civ-arch.png" />
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><abbr title="Celadon in VM">CiV</abbr> is currently under early development. This is an
-early Pre-Production CiV release for evaluation and development purposes.</p>
-</div>
+  <div class="section" id="android-11-stable-releases-iot">
+<span id="android-11"></span><h1>Android 11 Stable Releases IoT</h1>
+<p>Android 11 Stable Releases (IoT) is an Internet of Things (IoT) overlay on top of Celadon. The
+Stable Releases (IoT) release provides users with an extensive set of features on
+Comet Lake (CML), Tiger Lake (TGL), and Elkhart Lake (EHL) platforms with a single
+Baseline/Image of Android 11</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="on-vm.html">Run Celadon in a virtual machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature-delta-iot-a11.html">Feature Delta Offered by Stable Releases (IoT)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="feature-delta-iot-a11.html#real-time-clock-rtc-and-alarm-virtualization">Real-time clock (RTC) and alarm virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature-delta-iot-a11.html#secure-data-erase">Secure data erase</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide-a11.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#how-to-install-this-release">How to install this release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#dut-setup">DUT setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#host-setup">Host setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#installing-ubuntu-host-kernel">Installing Ubuntu host kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#run-celadon-host-setup">Run Celadon host setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#guest-os-setup">Guest OS setup:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#enable-keyboard-and-mouse">Enable keyboard and mouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#auto-starting-civ-using-gvt-d">Auto starting CiV (using GVT-d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#supplementary-guide-for-power-and-volume-key-support">Supplementary guide for power and volume key support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#acronyms-and-terms">Acronyms and terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide-a11.html#helpful-hints-related-documents">Helpful hints / related documents</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -204,10 +204,10 @@ early Pre-Production CiV release for evaluation and development purposes.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="on-vm.html" class="btn btn-neutral float-right" title="Run Celadon in a virtual machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="feature-delta-iot-a11.html" class="btn btn-neutral float-right" title="Feature Delta Offered by Stable Releases (IoT)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="getting-started.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="user-guide-a12.html" class="btn btn-neutral" title="User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

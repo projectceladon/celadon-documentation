@@ -1,4 +1,4 @@
-.. _user-guide:
+.. _user-guide-a12:
 
 User Guide
 ##########
@@ -27,7 +27,7 @@ Prerequisites and host kernel build steps:
 
 Prerequisites
 
-* Install Ubuntu\* 18.04 LTS
+* Install Ubuntu 18.04 LTS
 * If operating behind a corporate firewall, setup the proxy
   settings
 * Install the following packages
@@ -42,7 +42,7 @@ Host kernel build steps
 Requirement:
 
 * x86_64_defconfig [Make sure downloaded file is not html]
-Defconfig_link: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
+  Defconfig_link: https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig
 
 .. code-block:: bash
 
@@ -77,7 +77,7 @@ For Celadon Host OS hardening recommendations see:
 https://github.com/projectceladon/celadon-documentation/blob/master/source/getting-started/host-os-hardening.rst
 
 
-Build Celadon from Source 
+Build Celadon from Source
 =========================
 
 Celadon Source Requirements:
@@ -88,7 +88,7 @@ Celadon Source Requirements:
 
 	# Create symbolic link for Python if not already exists in ‘/usr/bin’ directory
 	$ sudo ln -s /usr/bin/python3 /usr/bin/python
-	
+
 Steps to sync to this release:
 
 .. code-block:: bash
@@ -105,7 +105,7 @@ Steps to sync to this release:
 
 	# Sync the code
 	$ repo sync -c -q -j${nproc}
-	$ repo for all -c git lfs pull 
+	$ repo for all -c git lfs pull
 
 Step to generate the Android-CIV\* Image:
 
@@ -118,7 +118,7 @@ Step to generate the Android-CIV\* Image:
 	$ lunch caas-userdebug
 
 	# Start the build
-	$ make flashfiles BASE_LTS2020_YOCTO_KERNEL=true -j $(nproc) 
+	$ make flashfiles BASE_LTS2020_YOCTO_KERNEL=true -j $(nproc)
 
 
 	# Build output (CIV flashfiles)
@@ -137,32 +137,32 @@ Hardware details:
 	* For ADL RVP DDR5 C1 CPU
 	* BIOS Version ADLSFWI1.R00.3225.B00.2205270548
 
-.. note::	
-	Every type of Guest VM configuration has a minimum required number of assigned cores/vCPUs. 
+.. note::
+	Every type of Guest VM configuration has a minimum required number of assigned cores/vCPUs.
 	Not meeting minimum cores requirement will result in degraded performance
 
 BIOS setting:
 
 * Intel®(VMX) Virtualization Technology (Intel® VT)
 
-  * Settings: Intel Advance Menu-> CPU Configurations 
+  * Settings: Intel Advance Menu-> CPU Configurations
     Intel (VMX) Virtualization: Enabled
 
 * Intel® Virtualization Technology (Intel® VT) for
 
-  * Settings: Intel Advance Menu-> System Agent (SA) Configuration 
+  * Settings: Intel Advance Menu-> System Agent (SA) Configuration
     VT-d: Enabled
 
 * SRIOV Enable
 
   * Settings: Intel Advance Menu-> System Agent (SA) Configuration -
     Graphics Configuration: Enabled
-    
+
 * Intel(R) TCC Mode
 
   * Settings: Intel Advance Menu-> Intel(R) Time Coordinated Computing
     TCC: Disabled
-   
+
 .. note::
 	The menu structure may differ due to BIOS differences
 
@@ -173,20 +173,23 @@ Prerequisites:
 
 Install Ubuntu 22.04 LTS:
 
-* Download and install the Ubuntu 22.04 LTS from the official Ubuntu website: https://www.releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso 
+* Download and install the Ubuntu 22.04 LTS from the official Ubuntu
+  website: https://www.releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso
 * If operating behind a corporate firewall, setup the proxy settings
 
 Installation Scripts Required:
 
-* sriov_patches.zip 
-* ubuntu_kvm_multios_scripts.zip 
-From release package ADL link:
-https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=757435&s=Newest
+* sriov_patches.zip
+* ubuntu_kvm_multios_scripts.zip
+  From release package ADL link:
+  https://www.intel.com/content/www/us/en/secure/design/confidential/software-kits/kit-details.html?kitId=757435&s=Newest
 
 Setup Ubuntu host:
 
-* Set the default download server to “Main server” in “Software & Updates” GUI
-* Go to Applications and launch “Software & Updates”, and in “Ubuntu Software” tab, select Download from: “Main server”
+* Set the default download server to “Main server” in “Software & Updates”
+  GUI
+* Go to Applications and launch “Software & Updates”, and in “Ubuntu
+  Software” tab, select Download from: “Main server”
 
 .. note::
 	SRIOV related content available under NDA
@@ -212,13 +215,13 @@ Setup Ubuntu host:
 	# Extract files
 	$ unzip sriov_patches.zip
 	$ unzip -jo ubuntu_kvm_multios_scripts.zip
-	
-	
+
+
 	# This will install kernel and firmware, and update grub
         # Copy .deb package generated in Host kernel build steps above
     	# If prompted, answer y to go ahead with changes
 	$ sudo ./sriov_setup_kernel.sh
-	
+
 	# After rebooting, check that the kernel is the installed version.
         $ uname -r
 	5.15.71-lts2021-iotg
@@ -234,19 +237,19 @@ Perform the setup for Ubuntu OS. Please unzip to ``<workspace>`` directory
 
 	# Check if Host OS is running in SR-IOV PF mode
 	$ dmesg | grep SR-IOV
-		i915 0000:00:02.0: Running in SR-IOV PF mode 
+		i915 0000:00:02.0: Running in SR-IOV PF mode
 	# Check Host OS GuC and HuC Firmware Version
 	$ dmesg | grep GuC
 		i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
 		i915 0000:00:02.0: [drm] GuC submission enabled
 	$ dmesg | grep HuC
-		i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3 
+		i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3
 		i915 0000:00:02.0: [drm] HuC authenticated
-		
+
 .. note::
-	If need to run any reliability or benchmark test, 
+	If need to run any reliability or benchmark test,
 	please run the commands below to disable auto suspend and hibernate on Ubuntu host
-	
+
 .. code-block:: bash
 
 	# Disable suspend and hibernate service
@@ -269,16 +272,17 @@ Users of Celadon-in-VM (CIV) release must ensure that Celadon platform host OS h
 
 	# Extract files
 	$ cd <workspace>
-	$ tar xzvf caas-releasefiles-userdebug.tar.gz 
-	
+	$ tar xzvf caas-releasefiles-userdebug.tar.gz
+
 	# Prepare setup_host.sh
 	$ chmod +x ./scripts/setup_host.sh
 	# Update the host
 	# If prompted, answer ‘Y’ for all options to go ahead with changes
-	$ sudo -E ./scripts/setup_host.sh 
+	$ sudo -E ./scripts/setup_host.sh
 
 Create Android VM Image
 =======================
+
 Create Android CIV image for running as VM in ADL target
 
 .. code-block:: bash
@@ -290,19 +294,19 @@ Create Android CIV image for running as VM in ADL target
 	# Wait for "Flashing is completed" msg from script.
 	$ sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-<xxxxx>.zip --display-off
 
-Running Android* 12 
-********************
+Running Android 12
+******************
 
 This section describes the steps to run Android 12 VM on the ADL platform
 
 * VM Launch
-Launch Celadon Android Guest VM
+  Launch Celadon Android Guest VM
 
 .. code-block:: bash
 
 	# Launch the Android CIV Guest VM
 	$ sudo vm-manager -b civ-sriov
-	
+
 Guest VM Configuration Options
 ******************************
 
@@ -353,7 +357,7 @@ This section describes steps to enable PCIe
 	$ lspci -nn -D | grep Wi-Fi
 	0000:02:00.0 Network controller [0280]: Intel Corporation Wi-Fi 6 AX210/AX211/AX411 160MHz [8086:2725] (rev 1a)
 	# Then edit the passthrough section of the configuration ini file at /home/<user>/.intel/.civ.
-	
+
 .. note::
 	A passthrough device option can only be used once, because a device can be passthrough to only 1 guest VM at a time
 	For Android 12 guest VM, find the PCI ID of the Wi-Fi device
@@ -368,7 +372,7 @@ This section describes steps to enable debug logging
 	# Edit the extra section of the configuration ini file at /home/<user>/.intel/.civ.
 	[extra]
 	cmd=-chardev socket,id=ch0,path=/tmp/civ1-console,server=on,wait=off,logfile=/tmp/civ1_serial.log -serial chardev:ch0
-	
+
 	[passthrough]
 	#specified the PCI id here if you want to passthrough it to guest, separate them with comma
 	passthrough_pci=0000:02:00.0
@@ -389,7 +393,8 @@ Edit the extra section of the configuration ini file at /home/<user>/.intel/.civ
 	cmd=-full-screen
 
 .. note::
-	The amount of memory and cores allocated might be different according to each platform.  
+	The amount of memory and cores allocated might be different according to
+	each platform.
 
 Shutdown VMs and System
 =======================
@@ -412,9 +417,9 @@ Acronyms and terms
 
 * ADL: ALDER LAKE
 
-* GVT-d : Intel® Graphics Virtualization Technology -g (Intel® GVT-g): virtual
-  graphics processing unit (vGPU) (multiple VMs to one physical GPU)
-  
+* GVT-d : Intel® Graphics Virtualization Technology -g (Intel® GVT-g):
+  virtual graphics processing unit (vGPU) (multiple VMs to one physical GPU)
+
 * SR-IOV: Single Root IO Virtualization
 
 Helpful hints / related documents

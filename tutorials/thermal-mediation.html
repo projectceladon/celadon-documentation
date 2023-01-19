@@ -103,6 +103,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#why-is-the-thermal-mediation-solution-required">Why is the thermal mediation solution required?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-enable-thermal-mediation-for-an-android-guest">How to enable thermal mediation for an Android guest?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#validating-thermal-values-in-civ">Validating thermal values in CIV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thermal-support-in-platform-bios">Thermal Support in Platform BIOS</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="wireless-connectivity.html">Wireless Connectivity in Celadon</a></li>
@@ -262,6 +263,33 @@ ex: <span class="nv">thermal_med</span><span class="o">=</span>/home/intel/civ/s
 <a class="reference internal image-reference" href="../_images/cs004-results-adb-shell-dumpsys.png"><img alt="../_images/cs004-results-adb-shell-dumpsys.png" src="../_images/cs004-results-adb-shell-dumpsys.png" style="width: 5.00000in; height: 3.20833in;" /></a>
 </div>
 </div>
+<div class="section" id="thermal-support-in-platform-bios">
+<h2>Thermal Support in Platform BIOS</h2>
+<p>In PC-like platforms, the HW is booted initially with BIOS FW. BIOS
+FW boots and loads the OS for user operations. The BIOS in modern
+PCs is implemented using UEFI (unified extensible firmware
+interface) and supports ACPI (advanced configuration and power
+interface). ACPI passes all the system information to the OS by
+means of ACPI tables. The ACPI specification are at
+<a class="reference external" href="https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html">https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html</a></p>
+<p>ACPI defines interfaces that allow OSPM to be proactive in its
+system cooling policies. With operating system power management
+(OSPM) in control of the operating environment, cooling decisions
+can be made based on the system’s application load, the user’s
+preference towards performance or energy conservation, and thermal
+heuristics. Graceful shutdown of devices or the entire system at
+critical heat levels becomes possible as well.</p>
+<p>It supports thermal zones, cooling policies, fan devices, and
+thermal objects for managing the system. <strong>Please ensure that the
+platform UEFI/BIOS supports the following thermal objects and
+interfaces</strong>:</p>
+<p>Fan Devices:
+<a class="reference external" href="https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/fan-device.html%20">https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/fan-device.html</a></p>
+<p>Thermal Objects:
+<a class="reference external" href="https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/thermal-objects.html">https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/thermal-objects.html</a></p>
+<p>Detailed examples of implementation is provided here:
+<a class="reference external" href="https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/thermal-zone-examples.html">https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/thermal-zone-examples.html</a></p>
+</div>
 </div>
 
 
@@ -285,7 +313,7 @@ ex: <span class="nv">thermal_med</span><span class="o">=</span>/home/intel/civ/s
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 17, 2023.
+      Last updated on Jan 19, 2023.
 
     </p>
   </div>

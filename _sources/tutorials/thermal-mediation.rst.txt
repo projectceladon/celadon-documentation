@@ -87,3 +87,36 @@ To validate the thermal values in CIV, use this command:
 .. figure:: images/cs004-results-adb-shell-dumpsys.png
    :width: 5.00000in
    :height: 3.20833in
+
+Thermal Support in Platform BIOS
+********************************
+
+In PC-like platforms, the HW is booted initially with BIOS FW. BIOS
+FW boots and loads the OS for user operations. The BIOS in modern
+PCs is implemented using UEFI (unified extensible firmware
+interface) and supports ACPI (advanced configuration and power
+interface). ACPI passes all the system information to the OS by
+means of ACPI tables. The ACPI specification are at
+https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html
+
+ACPI defines interfaces that allow OSPM to be proactive in its
+system cooling policies. With operating system power management
+(OSPM) in control of the operating environment, cooling decisions
+can be made based on the system’s application load, the user’s
+preference towards performance or energy conservation, and thermal
+heuristics. Graceful shutdown of devices or the entire system at
+critical heat levels becomes possible as well. 
+
+It supports thermal zones, cooling policies, fan devices, and
+thermal objects for managing the system. **Please ensure that the
+platform UEFI/BIOS supports the following thermal objects and
+interfaces**:
+
+Fan Devices:
+`https://uefi.org/htmlspecs/ACPI\_Spec\_6\_4\_html/11\_Thermal\_Management/fan-device.html <https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/fan-device.html%20>`__
+
+Thermal Objects:
+https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/thermal-objects.html
+
+Detailed examples of implementation is provided here:
+https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/11_Thermal_Management/thermal-zone-examples.html

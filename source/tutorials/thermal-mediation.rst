@@ -105,7 +105,7 @@ system cooling policies. With operating system power management
 can be made based on the system’s application load, the user’s
 preference towards performance or energy conservation, and thermal
 heuristics. Graceful shutdown of devices or the entire system at
-critical heat levels becomes possible as well. 
+critical heat levels also becomes possible. 
 
 It supports thermal zones, cooling policies, fan devices, and
 thermal objects for managing the system. **Please ensure that the

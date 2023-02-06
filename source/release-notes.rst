@@ -125,10 +125,12 @@ Stable Releases (IoT) are validated with SR-IOV mode on Alder Lake(ADL)Intel® p
     :width: 500px
 
 .. note::
-        Above validation results are with release manifest + below cherrypicked patches/PR's 
+        Above validation results are with release manifest + below cherrypicked
+        patches/PR's
         PR list: PR#9, PR#10, PR#11, PR#16, PR#17, PR#19 [Can be found in below link]
         https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged
-        *CTS on GSI failures are subset of CTS failures, so overall failures count is 39.
+        *CTS on GSI failures are subset of CTS failures, so overall failures count
+        is 39.*
 
 CIV_03.22.03.37_A11
 ===================

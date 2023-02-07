@@ -65,7 +65,7 @@ Known issues
 
 Open Issue List
 ---------------
-* 16019209010	VtsHalMediaC2V1_0TargetVideoDecTest module
+* :sup:`#`\16019209010	VtsHalMediaC2V1_0TargetVideoDecTest module
 * 16017487117	x86_64 CtsMediaTestCases failures
 * 16017342135	STS CtsSecurityTestCases failing
 * 16018517871	CtsMediaV2TestCases failures related to HEVC profilelevel
@@ -75,6 +75,9 @@ Where to find the release
 -------------------------
 
 * Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.04.50_A12.xml
+* :sup:`#`\PRs fixing this issue in repo : https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged 
+  [PR#9, PR#10, PR#11, PR#16, PR#17, PR#19]
+* Below validation results are with release manifest + cherrypicked PR's
 
 Host Kernel Release configuration
 ---------------------------------
@@ -125,12 +128,9 @@ Stable Releases (IoT) are validated with SR-IOV mode on Alder Lake(ADL)Intel® p
     :width: 500px
 
 .. note::
-        Above validation results are with release manifest + below cherrypicked
-        patches/PR's
-        PR list: PR#9, PR#10, PR#11, PR#16, PR#17, PR#19 [Can be found in below link]
-        https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged
-        *CTS on GSI failures are subset of CTS failures, so overall failures count
-        is 39.*
+
+        :sup:`*`\CTS on GSI failures are subset of CTS failures, so overall failures count 
+        is 39.
 
 CIV_03.22.03.37_A11
 ===================

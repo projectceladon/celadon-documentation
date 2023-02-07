@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Making the Android Host Debuggable - ADB for x86 Android Solutions" href="dbc.html" />
@@ -186,30 +188,29 @@
 <h2>Debugging using gdb</h2>
 <p>GNU Debugger (<em>gdb</em>) is the most popular debugger for debug C/C++ programs on UNIX systems. You could follow below procedures to tap into a running program, and exercise control over the program to stop execution at a certain point, step through the program one line at a time, and examine variables when problems occur.</p>
 <ol class="arabic">
-<li><p class="first">If your development host does not have <em>gdb</em> installed, enter the following commands to install <em>gdb</em> tool on your Ubuntu development workstation:</p>
+<li><p>If your development host does not have <em>gdb</em> installed, enter the following commands to install <em>gdb</em> tool on your Ubuntu development workstation:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo apt-get update
-$ sudo apt-get install gdb
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gdb
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">A <a class="reference external" href="https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/celadon_gdb.sh">celadon_gdb.sh</a> script is developed to establish a connection from the local <em>gdb</em> program to the <em>gdbserver</em> program running on the Celadon target device. Since the debugging process requires the program symbol tables and some shared libraries in the Celadon build tree, you need to download and save the script in the top-most Celadon source directory before initializing the build variables and selecting the Celadon build target.</p>
+<li><p>A <a class="reference external" href="https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/celadon_gdb.sh">celadon_gdb.sh</a> script is developed to establish a connection from the local <em>gdb</em> program to the <em>gdbserver</em> program running on the Celadon target device. Since the debugging process requires the program symbol tables and some shared libraries in the Celadon build tree, you need to download and save the script in the top-most Celadon source directory before initializing the build variables and selecting the Celadon build target.</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> celadon
-$ curl -O https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/celadon_gdb.sh
-$ chmod +x celadon_gdb.sh
-$ <span class="nb">source</span> build/envsetup.sh
-$ lunch celadon-userdebug
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>celadon
+$<span class="w"> </span>curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/celadon_gdb.sh
+$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>celadon_gdb.sh
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>build/envsetup.sh
+$<span class="w"> </span>lunch<span class="w"> </span>celadon-userdebug
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Reference the <a class="reference internal" href="../getting-started/build-source.html#build-from-source"><span class="std std-ref">Build Celadon From Source</span></a> section in the Getting Started Guide to build the Celadon installer image.</p>
-</li>
-<li><p class="first">After booting up the Intel NUC, set up an <em>adb</em> connection from the development host to the Intel NUC over Ethernet with the following commands prior the debugging process:</p>
+<li><p>Reference the <a class="reference internal" href="../getting-started/build-source.html#build-from-source"><span class="std std-ref">Build Celadon From Source</span></a> section in the Getting Started Guide to build the Celadon installer image.</p></li>
+<li><p>After booting up the Intel NUC, set up an <em>adb</em> connection from the development host to the Intel NUC over Ethernet with the following commands prior the debugging process:</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre><span></span>$ adb kill-server
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ adb kill-server
 # Replace the following IP addresses with yours
 $ adb connect 192.168.1.107
 * daemon not running. starting it now on port 5037 *
@@ -219,9 +220,9 @@ connected to 192.168.1.107:5555
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Restart the <em>adb</em> daemon in privileged mode and re-connects to the Intel NUC:</p>
+<li><p>Restart the <em>adb</em> daemon in privileged mode and re-connects to the Intel NUC:</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre><span></span>$ adb root
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ adb root
 restarting adbd as root
 $ adb connect 192.168.1.107
 * daemon not running. starting it now on port 5037 *
@@ -231,9 +232,9 @@ connected to 192.168.1.107:5555
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Let’s say you want to debug the wireless supplicant daemon <em>wpa_supplicant</em>, you can invoke the <strong>celadon_gdb.sh</strong> script with the following command to tap into the running <em>WPA_supplicant</em> daemon, and start debugging the program.</p>
+<li><p>Let’s say you want to debug the wireless supplicant daemon <em>wpa_supplicant</em>, you can invoke the <strong>celadon_gdb.sh</strong> script with the following command to tap into the running <em>WPA_supplicant</em> daemon, and start debugging the program.</p>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre><span></span>$ ./celadon_gdb.sh  wpa_supplicant
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ./celadon_gdb.sh  wpa_supplicant
 3207
 Attached; pid = 3207
 Listening on port 6000
@@ -283,7 +284,7 @@ Remote debugging from host 127.0.0.1
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -313,6 +314,7 @@ Remote debugging from host 127.0.0.1
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

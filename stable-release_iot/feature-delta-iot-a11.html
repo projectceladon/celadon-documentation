@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="User Guide" href="user-guide-a11.html" />
@@ -175,17 +177,17 @@
 <p>Here are the additional features provided by Stable Releases (IoT).</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#real-time-clock-rtc-and-alarm-virtualization" id="id5">Real-time clock (RTC) and alarm virtualization</a></li>
-<li><a class="reference internal" href="#secure-data-erase" id="id6">Secure data erase</a></li>
+<li><p><a class="reference internal" href="#real-time-clock-rtc-and-alarm-virtualization" id="id5">Real-time clock (RTC) and alarm virtualization</a></p></li>
+<li><p><a class="reference internal" href="#secure-data-erase" id="id6">Secure data erase</a></p></li>
 </ul>
 </div>
 <ul class="simple">
-<li>100% Google* conformance on Comet Lake (CML),Tiger Lake (TGL), and
-Elkhart Lake (EHL) with production ready</li>
-<li>Supporting Comet Lake (CML),Tiger Lake (TGL), and Elkhart Lake (EHL)
-on single baseline and Single Image</li>
-<li>IoT configuration support GVT-d mode with 100% conformance</li>
-<li>IoT configuration support GVT-g with no conformance</li>
+<li><p>100% Google* conformance on Comet Lake (CML),Tiger Lake (TGL), and
+Elkhart Lake (EHL) with production ready</p></li>
+<li><p>Supporting Comet Lake (CML),Tiger Lake (TGL), and Elkhart Lake (EHL)
+on single baseline and Single Image</p></li>
+<li><p>IoT configuration support GVT-d mode with 100% conformance</p></li>
+<li><p>IoT configuration support GVT-g with no conformance</p></li>
 </ul>
 <div class="section" id="real-time-clock-rtc-and-alarm-virtualization">
 <h2><a class="toc-backref" href="#id5">Real-time clock (RTC) and alarm virtualization</a></h2>
@@ -231,7 +233,7 @@ secure erase feature, when it is supported in hardware to erase data
 partition and only finally fall back to byte-by-byte override 0 when not
 supported during Android recovery/wipe data process.</p>
 <ol class="arabic">
-<li><p class="first">Guest virtual disk image file enhancement</p>
+<li><p>Guest virtual disk image file enhancement</p>
 <p>In CiV, all Android required partitions are resided in the same
 guest virtual disk image file in host.</p>
 <p>To support the enhancements to add secure data partition erase via
@@ -247,9 +249,9 @@ parameters as a separate emulated disk for secure data erase.</p>
 illustrates the changes in CiV guest image file in the host</span></p>
 </div>
 <ol class="arabic" start="2">
-<li><p class="first">Secure data erase enhancement</p>
+<li><p>Secure data erase enhancement</p>
 <p>In AOSP for data partition erase, this is performed by recovery tool
-when “–wipe-data” is written to <code class="docutils literal"><span class="pre">/cache/recovery/command</span></code>. In generic
+when “–wipe-data” is written to <code class="docutils literal notranslate"><span class="pre">/cache/recovery/command</span></code>. In generic
 AOSP data partition will have a secure partition wipe if it has
 encryption keys for the volume before any reformatting of the
 partition.</p>
@@ -259,8 +261,8 @@ recovery tool and host side daemon application is added to add data
 partition secure erase prior to Android reformat of data partition.</p>
 <p>The host side daemon application is added to perform secure data
 partition wipe using hardware controller supported erase mechanism
-such as via <code class="docutils literal"><span class="pre">BLKSECDISCARD/BLKDISCARD</span></code> command if supported before
-falling back to <code class="docutils literal"><span class="pre">BLKZEROOUT</span></code> commands if none of the former are
+such as via <code class="docutils literal notranslate"><span class="pre">BLKSECDISCARD/BLKDISCARD</span></code> command if supported before
+falling back to <code class="docutils literal notranslate"><span class="pre">BLKZEROOUT</span></code> commands if none of the former are
 supported.</p>
 </li>
 </ol>
@@ -292,7 +294,7 @@ supported.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -322,6 +324,7 @@ supported.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Software Debugging Tips on Celadon" href="software-debug-tips.html" />
@@ -185,19 +187,19 @@
 <span id="enable-uac3"></span><h1>Enabling USB Audio Class 3.0 audio in Celadon</h1>
 <div class="section" id="introduction">
 <h2>Introduction</h2>
-<p>There has been an increasing trend of adopting USB digital audio among hardware manufacturers. Even Google has done away with the 3.5mm radio jack in its latest <a class="reference external" href="https://www.android.com/phones/google-pixel-2/">Pixel 2</a> phone series. This is because USB digital audio will considerably increase the music quality and also eliminate the need for a separate audio jack, making the form factors thinner. The Android Compatibility Definition Document (CDD) version 9.0 mandates that the devices without the 3.5mm audio jack must implement the USB Audio Class <a class="footnote-reference" href="#id3" id="id1">[1]</a> <a class="footnote-reference" href="#id4" id="id2">[2]</a>. The only major drawback with the USB digital audio is its higher power consumption relative to analog audio. To address this issue, USB-IF has come up with a new specification - USB Audio Class 3.0 specification (UAC3), which primarily focuses on optimizing power consumption over USB audio.</p>
+<p>There has been an increasing trend of adopting USB digital audio among hardware manufacturers. Even Google has done away with the 3.5mm radio jack in its latest <a class="reference external" href="https://www.android.com/phones/google-pixel-2/">Pixel 2</a> phone series. This is because USB digital audio will considerably increase the music quality and also eliminate the need for a separate audio jack, making the form factors thinner. The Android Compatibility Definition Document (CDD) version 9.0 mandates that the devices without the 3.5mm audio jack must implement the USB Audio Class <a class="footnote-reference brackets" href="#id3" id="id1">1</a> <a class="footnote-reference brackets" href="#id4" id="id2">2</a>. The only major drawback with the USB digital audio is its higher power consumption relative to analog audio. To address this issue, USB-IF has come up with a new specification - USB Audio Class 3.0 specification (UAC3), which primarily focuses on optimizing power consumption over USB audio.</p>
 </div>
 <div class="section" id="usb-audio-class-3-0-specification-uac3">
 <h2>USB Audio Class 3.0 specification (UAC3)</h2>
 <p><a class="reference external" href="https://www.usb.org/sites/default/files/USB_Audio_v3.0.zip">USB Audio Class Specification 3.0</a> was released by USB-IF with an aim to provide power-saving features and support new codec types and data formats for consumer audio applications. Some of its salient features are:</p>
 <ol class="arabic simple">
-<li>Support for LPM (link power management) L1 mode</li>
-<li>Support for new power domains where we can selectively turn off certain
-components to save power</li>
-<li>New cluster descriptors, high capability descriptors and class-specific
-descriptors</li>
-<li>Support for basic audio device definition (BADD) profiles</li>
-<li>Support for new codecs and data formats</li>
+<li><p>Support for LPM (link power management) L1 mode</p></li>
+<li><p>Support for new power domains where we can selectively turn off certain
+components to save power</p></li>
+<li><p>New cluster descriptors, high capability descriptors and class-specific
+descriptors</p></li>
+<li><p>Support for basic audio device definition (BADD) profiles</p></li>
+<li><p>Support for new codecs and data formats</p></li>
 </ol>
 <p><abbr title="basic audio device definition">BADD</abbr> is a subset of
 <abbr title="USB Audio Class 3.0 specification">UAC3</abbr> and it is strongly
@@ -205,19 +207,19 @@ recommended to have the BADD configuration implemented in the audio devices
 that are compliant with <abbr title="USB Audio Class 3.0 specification">UAC3</abbr>.
 BADD defines three types of audio functions:</p>
 <ol class="arabic simple">
-<li>Basic audio output function (BAOF)</li>
-<li>Basic audio input function (BAIF)</li>
-<li>Basic audio I/O function (BAIOF)</li>
+<li><p>Basic audio output function (BAOF)</p></li>
+<li><p>Basic audio input function (BAIF)</p></li>
+<li><p>Basic audio I/O function (BAIOF)</p></li>
 </ol>
 <p>It includes the following profiles:</p>
 <ul class="simple">
-<li>Generic I/O</li>
-<li>Headphone</li>
-<li>Speaker</li>
-<li>Microphone</li>
-<li>Headset</li>
-<li>Headset adapter</li>
-<li>Speakerphone</li>
+<li><p>Generic I/O</p></li>
+<li><p>Headphone</p></li>
+<li><p>Speaker</p></li>
+<li><p>Microphone</p></li>
+<li><p>Headset</p></li>
+<li><p>Headset adapter</p></li>
+<li><p>Speakerphone</p></li>
 </ul>
 <div class="section" id="enabling-uac3-configuration-in-c">
 <h3>Enabling UAC3 configuration in Celadon</h3>
@@ -230,9 +232,9 @@ power by leveraging the new power domains and LPM (link power management)
 L1 capability of the audio device. Support for this configuration is
 available in Celadon. Make sure that the following patches are in your build:</p>
 <ol class="arabic simple">
-<li>Patch to add support for USB Audio Class 3.0</li>
+<li><p>Patch to add support for USB Audio Class 3.0</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">commit 9a2fe9b801f585baccf8352d82839dcd54b300cf</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 9a2fe9b801f585baccf8352d82839dcd54b300cf</span>
 <span class="go">Author: Ruslan Bilovol &lt;ruslan.bilovol@gmail.com&gt;</span>
 <span class="go">Date:   Wed Mar 21 02:03:59 2018 +0200</span>
 
@@ -266,9 +268,9 @@ available in Celadon. Make sure that the following patches are in your build:</p
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Patch to add support for BADD profiles</li>
+<li><p>Patch to add support for BADD profiles</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">commit 17156f23e93c0f59e06dd2aaffd06221341caaee</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 17156f23e93c0f59e06dd2aaffd06221341caaee</span>
 <span class="go">Author: Ruslan Bilovol &lt;ruslan.bilovol@gmail.com&gt;</span>
 <span class="go">Date:   Fri May 4 04:24:04 2018 +0300</span>
 
@@ -294,9 +296,9 @@ available in Celadon. Make sure that the following patches are in your build:</p
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>Other patches adding additional features for UAC3:</li>
+<li><p>Other patches adding additional features for UAC3:</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ALSA: usb-audio: Operate UAC3 Power Domains in PCM callbacks</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ALSA: usb-audio: Operate UAC3 Power Domains in PCM callbacks</span>
 <span class="go">ALSA: usb-audio: Add UAC3 Power Domains to suspend/resume</span>
 <span class="go">ALSA: usb-audio: Unify virtual type units type to UAC3 values</span>
 <span class="go">ALSA: usb-audio: Add support for Processing Units in UAC3</span>
@@ -310,9 +312,9 @@ available in Celadon. Make sure that the following patches are in your build:</p
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li>Selecting UAC3 configuration for audio:</li>
+<li><p>Selecting UAC3 configuration for audio:</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">commit 084d710fc377bf1d32d67c000590d9d1ab37d375</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 084d710fc377bf1d32d67c000590d9d1ab37d375</span>
 <span class="go">Author: Saranya Gopal &lt;saranya.gopal@intel.com&gt;</span>
 <span class="go">Date:   Wed Sep 12 01:03:57 2018 +0530</span>
 
@@ -346,8 +348,8 @@ hardware <abbr title="link power management">LPM</abbr>
 in modern Intel® architecture platforms. For example, the following <em>sysfs</em>
 entry confirms that the hardware USB port <strong>3-1</strong> is capable of supporting
 hardware LPM, you can get the port information for your system from the
-audio device enumeration logs in the <code class="docutils literal"><span class="pre">dmesg</span></code> output.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /sys/bus/usb/devices/3-1/power/usb2_hardware_lpm
+audio device enumeration logs in the <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> output.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>/sys/bus/usb/devices/3-1/power/usb2_hardware_lpm
 enabled
 </pre></div>
 </div>
@@ -363,18 +365,14 @@ platform with a UAC3-compliant audio device:</p>
 <div class="section" id="conclusion">
 <h2>Conclusion</h2>
 <p>We have enabled <strong>USB Audio Class 3.0</strong> in Celadon which helps us to leverage the power-saving features of USB digital audio. In future, USB audio power can be further optimized by offloading USB audio to an offload-engine, thereby allowing the processor to go into deeper sleep states.</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Android 9 Compatibility Definition - <a class="reference external" href="https://source.android.com/compatibility/android-cdd#5_10_professional_audio">Professional Audio</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Android 9 Compatibility Definition - <a class="reference external" href="https://source.android.com/compatibility/android-cdd#7_8_audio">Audio</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Android 9 Compatibility Definition - <a class="reference external" href="https://source.android.com/compatibility/android-cdd#5_10_professional_audio">Professional Audio</a></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Android 9 Compatibility Definition - <a class="reference external" href="https://source.android.com/compatibility/android-cdd#7_8_audio">Audio</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -399,7 +397,7 @@ platform with a UAC3-compliant audio device:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -429,6 +427,7 @@ platform with a UAC3-compliant audio device:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

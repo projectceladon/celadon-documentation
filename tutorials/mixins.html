@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Enabling USB Audio Class 3.0 audio in Celadon" href="enabling-uac3.html" />
@@ -202,7 +204,7 @@ features and characteristics. Thus, configuration directives for functional
 areas are grouped together and can be reused. Each group provides radio-
 button-like selection options among features, and a product must choose at
 least one option for each group. A script
-<code class="file docutils literal"><span class="pre">device/intel/mixins/mixin-update</span></code> then updates all the build targets
+<code class="file docutils literal notranslate"><span class="pre">device/intel/mixins/mixin-update</span></code> then updates all the build targets
 with this data whenever it’s changed.</p>
 </div>
 <div class="section" id="usage">
@@ -218,96 +220,96 @@ selections, such as the <strong class="command">cpu-arch</strong> mixin group, w
 system to gather configuration data relevant to the particular SoC and to
 generate the configuration for the target product.</p>
 <p>Each mixin group has a subdirectory in the base mixin directory at
-<code class="file docutils literal"><span class="pre">device/intel/mixins/groups/</span></code>. The path to the base mixin directory is
-specified in <code class="file docutils literal"><span class="pre">mixins.spec</span></code> in each product directory:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ls device/intel/mixins/groups/
-aaf                         boot-arch         debug-coredump      debug-usb-config    ethernet           gptbuild      memtrack           pstore            touch             vndk
-abota-fw                    bugreport         debug-crashlogd     debugfs             evs                graphics      midi               public-libraries  treble            wlan
-acpi-partition              camera-ext        debug-dvc_desc      default-drm         factory-partition  hdcpd         navigationbar      rfkill            trusty
-acpio-partition             codec2            debug-kernel        device-specific     factory-scripts    health        net                sepolicy          usb
-allow-missing-dependencies  codecs            debug-lmdump        device-type         filesystem_config  houdini       neuralnetworks     serialport        usb-audio-init
-art-config                  config-partition  debug-log-watch     dexpreopt           firmware           intel_prop    odm-partition      slot-ab           usb-gadget
-atrace                      cpu-arch          debug-npk           disk-bus            firststage-mount   kernel        ota-upgrade        storage           usb-init
-audio                       cpuset            debug-phonedoctor   disk-encryption     flashfiles         lights        power              <span class="nb">suspend</span>           usb-otg-switch
-avb                         dalvik-heap       debug-tools         display-density     fota               load_modules  product-partition  swap              variants
-bluetooth                   dbc               debug-unresponsive  dynamic-partitions  googleservice      media         psdapp             thermal           vendor-partition
+<code class="file docutils literal notranslate"><span class="pre">device/intel/mixins/groups/</span></code>. The path to the base mixin directory is
+specified in <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> in each product directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>device/intel/mixins/groups/
+aaf<span class="w">                         </span>boot-arch<span class="w">         </span>debug-coredump<span class="w">      </span>debug-usb-config<span class="w">    </span>ethernet<span class="w">           </span>gptbuild<span class="w">      </span>memtrack<span class="w">           </span>pstore<span class="w">            </span>touch<span class="w">             </span>vndk
+abota-fw<span class="w">                    </span>bugreport<span class="w">         </span>debug-crashlogd<span class="w">     </span>debugfs<span class="w">             </span>evs<span class="w">                </span>graphics<span class="w">      </span>midi<span class="w">               </span>public-libraries<span class="w">  </span>treble<span class="w">            </span>wlan
+acpi-partition<span class="w">              </span>camera-ext<span class="w">        </span>debug-dvc_desc<span class="w">      </span>default-drm<span class="w">         </span>factory-partition<span class="w">  </span>hdcpd<span class="w">         </span>navigationbar<span class="w">      </span>rfkill<span class="w">            </span>trusty
+acpio-partition<span class="w">             </span>codec2<span class="w">            </span>debug-kernel<span class="w">        </span>device-specific<span class="w">     </span>factory-scripts<span class="w">    </span>health<span class="w">        </span>net<span class="w">                </span>sepolicy<span class="w">          </span>usb
+allow-missing-dependencies<span class="w">  </span>codecs<span class="w">            </span>debug-lmdump<span class="w">        </span>device-type<span class="w">         </span>filesystem_config<span class="w">  </span>houdini<span class="w">       </span>neuralnetworks<span class="w">     </span>serialport<span class="w">        </span>usb-audio-init
+art-config<span class="w">                  </span>config-partition<span class="w">  </span>debug-log-watch<span class="w">     </span>dexpreopt<span class="w">           </span>firmware<span class="w">           </span>intel_prop<span class="w">    </span>odm-partition<span class="w">      </span>slot-ab<span class="w">           </span>usb-gadget
+atrace<span class="w">                      </span>cpu-arch<span class="w">          </span>debug-npk<span class="w">           </span>disk-bus<span class="w">            </span>firststage-mount<span class="w">   </span>kernel<span class="w">        </span>ota-upgrade<span class="w">        </span>storage<span class="w">           </span>usb-init
+audio<span class="w">                       </span>cpuset<span class="w">            </span>debug-phonedoctor<span class="w">   </span>disk-encryption<span class="w">     </span>flashfiles<span class="w">         </span>lights<span class="w">        </span>power<span class="w">              </span><span class="nb">suspend</span><span class="w">           </span>usb-otg-switch
+avb<span class="w">                         </span>dalvik-heap<span class="w">       </span>debug-tools<span class="w">         </span>display-density<span class="w">     </span>fota<span class="w">               </span>load_modules<span class="w">  </span>product-partition<span class="w">  </span>swap<span class="w">              </span>variants
+bluetooth<span class="w">                   </span>dbc<span class="w">               </span>debug-unresponsive<span class="w">  </span>dynamic-partitions<span class="w">  </span>googleservice<span class="w">      </span>media<span class="w">         </span>psdapp<span class="w">             </span>thermal<span class="w">           </span>vendor-partition
 </pre></div>
 </div>
 </div>
 <div class="section" id="mixins-spec">
 <h3>mixins.spec</h3>
 <p>A mixin spec file is a text file that describes the product configurations.
-Every Celadon build target that uses mixins should have a <code class="file docutils literal"><span class="pre">mixins.spec</span></code>
+Every Celadon build target that uses mixins should have a <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code>
 file in their product board configuration directories. Instead of manually
 modifying feature settings in the product makefiles, the product
 customization and peripherals tuning are done by editing the
-<code class="file docutils literal"><span class="pre">mixins.spec</span></code> file.</p>
+<code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> file.</p>
 <p>If there are updates or changes to any mixin configuration files, you should
-re-run the <code class="file docutils literal"><span class="pre">mixin-update</span></code> script from the root of the Celadon Android
-source tree. The script searches all files named <code class="file docutils literal"><span class="pre">mixins.spec</span></code> under
-the <code class="file docutils literal"><span class="pre">device/intel/</span></code> directory and generates the makefiles
-(e.g. <code class="file docutils literal"><span class="pre">AndroidBoard.mk</span></code>, <code class="file docutils literal"><span class="pre">BoardConfig.mk</span></code>, <code class="file docutils literal"><span class="pre">device.mk</span></code>,
-<code class="file docutils literal"><span class="pre">init.rc</span></code>, etc.) required for building Android in individual product
+re-run the <code class="file docutils literal notranslate"><span class="pre">mixin-update</span></code> script from the root of the Celadon Android
+source tree. The script searches all files named <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> under
+the <code class="file docutils literal notranslate"><span class="pre">device/intel/</span></code> directory and generates the makefiles
+(e.g. <code class="file docutils literal notranslate"><span class="pre">AndroidBoard.mk</span></code>, <code class="file docutils literal notranslate"><span class="pre">BoardConfig.mk</span></code>, <code class="file docutils literal notranslate"><span class="pre">device.mk</span></code>,
+<code class="file docutils literal notranslate"><span class="pre">init.rc</span></code>, etc.) required for building Android in individual product
 directories.</p>
 </div>
 <div class="section" id="option-spec">
 <h3>option.spec</h3>
-<p>The <code class="file docutils literal"><span class="pre">option.spec</span></code> file, if it is present in an option subdirectory of
+<p>The <code class="file docutils literal notranslate"><span class="pre">option.spec</span></code> file, if it is present in an option subdirectory of
 a mixin group, specifies metadata for that option of a particular group.
 This file is used to set arguments to a default value if the value is not
-provided in <code class="file docutils literal"><span class="pre">mixins.spec</span></code>. For example, a ‘<strong class="command">efi</strong>’ option is
+provided in <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code>. For example, a ‘<strong class="command">efi</strong>’ option is
 available for the ‘<strong class="command">boot-arch</strong>’ mixin group:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ls device/intel/mixins/groups/boot-arch/efi:
-AndroidBoard.mk  fstab    init.rc           option.spec
-BoardConfig.mk   gpt.ini  init.recovery.rc  product.mk
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>device/intel/mixins/groups/boot-arch/efi:
+AndroidBoard.mk<span class="w">  </span>fstab<span class="w">    </span>init.rc<span class="w">           </span>option.spec
+BoardConfig.mk<span class="w">   </span>gpt.ini<span class="w">  </span>init.recovery.rc<span class="w">  </span>product.mk
 </pre></div>
 </div>
-<p>The configuration fragments such as <code class="file docutils literal"><span class="pre">AndroidBoard.mk</span></code> and
-<code class="file docutils literal"><span class="pre">BoardConfig.mk</span></code> included in the previous option directory are applied
+<p>The configuration fragments such as <code class="file docutils literal notranslate"><span class="pre">AndroidBoard.mk</span></code> and
+<code class="file docutils literal notranslate"><span class="pre">BoardConfig.mk</span></code> included in the previous option directory are applied
 to the product configuration files if the option ‘<strong class="command">efi</strong>’ is
-specified in the product mixin spec file <code class="file docutils literal"><span class="pre">mixins.spec</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>...
-boot-arch: efi<span class="o">(</span><span class="nv">uefi_arch</span><span class="o">=</span>x86_64,fastboot<span class="o">=</span>efi,acpi_permissive<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+specified in the product mixin spec file <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
+boot-arch:<span class="w"> </span>efi<span class="o">(</span><span class="nv">uefi_arch</span><span class="o">=</span>x86_64,fastboot<span class="o">=</span>efi,acpi_permissive<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
 ...
 </pre></div>
 </div>
 </div>
 <div class="section" id="files-spec">
 <h3>files.spec</h3>
-<p>The <code class="file docutils literal"><span class="pre">files.spec</span></code> file is used to specify additional files that will be
-copied to <code class="file docutils literal"><span class="pre">device/intel/&lt;lunch-target&gt;/extra_files/&lt;mixin-group&gt;/</span></code>
+<p>The <code class="file docutils literal notranslate"><span class="pre">files.spec</span></code> file is used to specify additional files that will be
+copied to <code class="file docutils literal notranslate"><span class="pre">device/intel/&lt;lunch-target&gt;/extra_files/&lt;mixin-group&gt;/</span></code>
 before building Celadon images. This configuration file should be placed in an
-option subdirectory of a group. The files listed in <code class="file docutils literal"><span class="pre">files.spec</span></code> will be copied into the target product repo if this group is selected.
-For example, the <code class="file docutils literal"><span class="pre">mixins.spec</span></code> of the <abbr title="Celadon in VM">CiV</abbr>
+option subdirectory of a group. The files listed in <code class="file docutils literal notranslate"><span class="pre">files.spec</span></code> will be copied into the target product repo if this group is selected.
+For example, the <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> of the <abbr title="Celadon in VM">CiV</abbr>
 lunch target specifies the <strong class="command">project-celadon</strong> option for the
 <strong class="command">boot-arch</strong> group. As a result, the UEFI firmware startup file
-<code class="file docutils literal"><span class="pre">startup.nsh</span></code> listed in <code class="file docutils literal"><span class="pre">files.spec</span></code> is copied to the CiV source
+<code class="file docutils literal notranslate"><span class="pre">startup.nsh</span></code> listed in <code class="file docutils literal notranslate"><span class="pre">files.spec</span></code> is copied to the CiV source
 repository after running the
-<code class="file docutils literal"><span class="pre">device/intel/mixins/mixin-update</span></code> script:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat device/intel/project-celadon/caas/mixins.spec
+<code class="file docutils literal notranslate"><span class="pre">device/intel/mixins/mixin-update</span></code> script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>device/intel/project-celadon/caas/mixins.spec
 ...
 <span class="o">[</span>groups<span class="o">]</span>
 ...
-boot-arch: project-celadon<span class="o">(</span><span class="nv">uefi_arch</span><span class="o">=</span>x86_64,fastboot<span class="o">=</span>efi,ignore_rsci<span class="o">=</span>true,disable_watchdog<span class="o">=</span>true,...<span class="o">)</span>
+boot-arch:<span class="w"> </span>project-celadon<span class="o">(</span><span class="nv">uefi_arch</span><span class="o">=</span>x86_64,fastboot<span class="o">=</span>efi,ignore_rsci<span class="o">=</span>true,disable_watchdog<span class="o">=</span>true,...<span class="o">)</span>
 ...
 
-$ cat device/intel/mixins/groups/boot-arch/project-celadon/files.spec
+$<span class="w"> </span>cat<span class="w"> </span>device/intel/mixins/groups/boot-arch/project-celadon/files.spec
 ...
 <span class="o">[</span>extrafiles<span class="o">]</span>
-update_ifwi_ab.sh: <span class="s2">&quot;ifwi update script running in postinstall&quot;</span>
-startup.nsh: <span class="s2">&quot;Auto installer start&quot;</span>
+update_ifwi_ab.sh:<span class="w"> </span><span class="s2">&quot;ifwi update script running in postinstall&quot;</span>
+startup.nsh:<span class="w"> </span><span class="s2">&quot;Auto installer start&quot;</span>
 ...
 </pre></div>
 </div>
 </div>
 <div class="section" id="mixinfo-spec">
 <h3>mixinfo.spec</h3>
-<p>The <code class="file docutils literal"><span class="pre">mixinfo.spec</span></code> file is an optional file in a mixin group
+<p>The <code class="file docutils literal notranslate"><span class="pre">mixinfo.spec</span></code> file is an optional file in a mixin group
 directory, which defines metadata for a particular group. It is currently
 used to manage dependencies between mixin groups. For example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat device/intel/mixins/groups/debug-phonedoctor/mixinfo.spec
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>device/intel/mixins/groups/debug-phonedoctor/mixinfo.spec
 <span class="o">[</span>mixinfo<span class="o">]</span>
-<span class="nv">deps</span> <span class="o">=</span> debug-crashlogd
+<span class="nv">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>debug-crashlogd
 </pre></div>
 </div>
 <p>Running a mixin update ensures the mixin group ‘<em>debug-crashlogd</em>’ is
@@ -337,7 +339,7 @@ included before processing the ‘<em>debug-phonedoctor</em>’ group.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -367,6 +369,7 @@ included before processing the ‘<em>debug-phonedoctor</em>’ group.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

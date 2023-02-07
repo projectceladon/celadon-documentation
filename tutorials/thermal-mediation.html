@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Wireless Connectivity in Celadon" href="wireless-connectivity.html" />
@@ -210,26 +212,24 @@ driver Y is activated.</p>
 temperature values from the host machine. To address this issue, the
 thermal mediation solution was developed.</p>
 <p>The architectural diagram of thermal mediation is shown in Figure 1:</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/cs004-thermal-mediation-architecture.png"><img alt="../_images/cs004-thermal-mediation-architecture.png" src="../_images/cs004-thermal-mediation-architecture.png" style="width: 6.10877in; height: 4.16146in;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Thermal Mediation Architecture</span></p>
 </div>
 <ul>
-<li><p class="first"><strong>thermal HAL-VirtIO VSOCK client.</strong> The thermal HAL-VirtIO VSOCK
+<li><p><strong>thermal HAL-VirtIO VSOCK client.</strong> The thermal HAL-VirtIO VSOCK
 client is a customized version of the thermal HAL. It helps
 connect, read, and transfer thermal values to the Android framework
-from the <strong>thermal VirtIO VSOCK utility</strong> running on the host.</p>
-</li>
-<li><p class="first"><strong>thermal VirtIO VSOCK utility.</strong> The thermal VirtIO VSOCK utility
+from the <strong>thermal VirtIO VSOCK utility</strong> running on the host.</p></li>
+<li><p><strong>thermal VirtIO VSOCK utility.</strong> The thermal VirtIO VSOCK utility
 helps read values from the thermal zone and transfer to the
-<strong>thermal HAL-VirtIO VSOCK client.</strong></p>
-</li>
-<li><p class="first"><strong>thermald configuration XML.</strong> The thermal daemon allows you to
+<strong>thermal HAL-VirtIO VSOCK client.</strong></p></li>
+<li><p><strong>thermald configuration XML.</strong> The thermal daemon allows you to
 change this relationship or add a new one via a thermal
-configuration file (<code class="file docutils literal"><span class="pre">thermal-conf.xml</span></code>)</p>
+configuration file (<code class="file docutils literal notranslate"><span class="pre">thermal-conf.xml</span></code>)</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For more details on thermal configuration XML, refer to
+<p class="admonition-title">Note</p>
+<p>For more details on thermal configuration XML, refer to
 <a class="reference external" href="https://manpages.ubuntu.com/manpages/bionic/man5/thermal-conf.xml.5.html">thermal-conf.xml</a></p>
 </div>
 </li>
@@ -237,17 +237,17 @@ configuration file (<code class="file docutils literal"><span class="pre">therma
 </div>
 <div class="section" id="how-to-enable-thermal-mediation-for-an-android-guest">
 <h2>How to enable thermal mediation for an Android guest?</h2>
-<p>To use thermal mediation, configure the <code class="file docutils literal"><span class="pre">.ini</span></code> file of the guest.</p>
+<p>To use thermal mediation, configure the <code class="file docutils literal notranslate"><span class="pre">.ini</span></code> file of the guest.</p>
 <ul>
-<li><p class="first"><strong>Path.</strong></p>
-<p><code class="file docutils literal"><span class="pre">&lt;home</span> <span class="pre">path&gt;/.intel/.civ/&lt;guest</span> <span class="pre">ini</span> <span class="pre">file&gt;</span></code></p>
+<li><p><strong>Path.</strong></p>
+<p><code class="file docutils literal notranslate"><span class="pre">&lt;home</span> <span class="pre">path&gt;/.intel/.civ/&lt;guest</span> <span class="pre">ini</span> <span class="pre">file&gt;</span></code></p>
 </li>
-<li><p class="first"><strong>Configuration.</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>mediation<span class="o">]</span>
+<li><p><strong>Configuration.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>mediation<span class="o">]</span>
 
-<span class="nv">thermal_med</span> <span class="o">=</span>&lt;path of thermsys&gt;
+<span class="nv">thermal_med</span><span class="w"> </span><span class="o">=</span>&lt;path<span class="w"> </span>of<span class="w"> </span>thermsys&gt;
 
-ex: <span class="nv">thermal_med</span><span class="o">=</span>/home/intel/civ/scripts/thermsys
+ex:<span class="w"> </span><span class="nv">thermal_med</span><span class="o">=</span>/home/intel/civ/scripts/thermsys
 </pre></div>
 </div>
 </li>
@@ -256,10 +256,10 @@ ex: <span class="nv">thermal_med</span><span class="o">=</span>/home/intel/civ/s
 <div class="section" id="validating-thermal-values-in-civ">
 <h2>Validating thermal values in CIV</h2>
 <p>To validate the thermal values in CIV, use this command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>adb shell dumpsys thermalservice
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>shell<span class="w"> </span>dumpsys<span class="w"> </span>thermalservice
 </pre></div>
 </div>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs004-results-adb-shell-dumpsys.png"><img alt="../_images/cs004-results-adb-shell-dumpsys.png" src="../_images/cs004-results-adb-shell-dumpsys.png" style="width: 5.00000in; height: 3.20833in;" /></a>
 </div>
 </div>
@@ -278,7 +278,7 @@ system cooling policies. With operating system power management
 can be made based on the system’s application load, the user’s
 preference towards performance or energy conservation, and thermal
 heuristics. Graceful shutdown of devices or the entire system at
-critical heat levels becomes possible as well.</p>
+critical heat levels also becomes possible.</p>
 <p>It supports thermal zones, cooling policies, fan devices, and
 thermal objects for managing the system. <strong>Please ensure that the
 platform UEFI/BIOS supports the following thermal objects and
@@ -313,7 +313,7 @@ interfaces</strong>:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -343,6 +343,7 @@ interfaces</strong>:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="How do I …" href="how-to.html" />
@@ -172,28 +174,29 @@ perform necessary security hardening and customization to make sure it can
 be treated as the <abbr title="Trusted Computing Base">TCB</abbr> of Celadon. We recommend
 you harden the OS from the below side (not limited):</p>
 <ol class="arabic simple">
-<li>OS integrity protection<ol class="loweralpha">
-<li><strong>Enable secure boot</strong>. To ensure starting verification from the
+<li><p>OS integrity protection</p>
+<ol class="loweralpha simple">
+<li><p><strong>Enable secure boot</strong>. To ensure starting verification from the
 hardware
 back root of trust from the <abbr title="Trusted Platform Module">TPM</abbr> and
-go all the way up to the system kernel.</li>
-<li><strong>User space file protection</strong>. The host OS should leverage DM-verity,
+go all the way up to the system kernel.</p></li>
+<li><p><strong>User space file protection</strong>. The host OS should leverage DM-verity,
 IMA/EVM, or any other solution to ensure the user space system file
-integrity to avoid a broken trust boot chain to Android*.</li>
-<li><strong>Malicious software prevention</strong>. The host OS should provide a
+integrity to avoid a broken trust boot chain to Android*.</p></li>
+<li><p><strong>Malicious software prevention</strong>. The host OS should provide a
 solution to prevent installation of any malicious software that could
 break the verified boot chain and prevent a performance run-time
-attack on the VM/container.</li>
+attack on the VM/container.</p></li>
 </ol>
 </li>
-<li>Data encryption: TPM-backed <abbr title="Full Disk Encryption">FDE</abbr> or
+<li><p>Data encryption: TPM-backed <abbr title="Full Disk Encryption">FDE</abbr> or
 <abbr title="File-Based Encryption">FBE</abbr>. Hardware-backed data encryption is
 required to protect the host data file confidentiality of the VM and
-container.</li>
-<li>Access control. Both DAC and MAC solution are required to protect the
+container.</p></li>
+<li><p>Access control. Both DAC and MAC solution are required to protect the
 isolation of the VM and container. SELinux is used to harden the access
 to critical files. Some host operating systems don’t support SELinux. In
-this case, use AppArmor* or other equivalent technology.</li>
+this case, use AppArmor* or other equivalent technology.</p></li>
 </ol>
 </div>
 
@@ -218,7 +221,7 @@ this case, use AppArmor* or other equivalent technology.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -248,6 +251,7 @@ this case, use AppArmor* or other equivalent technology.</li>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Stable Releases IoT" href="../stable-release_iot/stable-release_iot.html" />
@@ -177,10 +179,10 @@
 (PnP) test suite and provides details for running the tests.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#introduction" id="id19">Introduction</a></li>
-<li><a class="reference internal" href="#test-setup" id="id20">Test setup</a></li>
-<li><a class="reference internal" href="#test-tools" id="id21">Test tools</a></li>
-<li><a class="reference internal" href="#test-suite" id="id22">Test suite</a></li>
+<li><p><a class="reference internal" href="#introduction" id="id19">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#test-setup" id="id20">Test setup</a></p></li>
+<li><p><a class="reference internal" href="#test-tools" id="id21">Test tools</a></p></li>
+<li><p><a class="reference internal" href="#test-suite" id="id22">Test suite</a></p></li>
 </ul>
 </div>
 <div class="section" id="introduction">
@@ -194,12 +196,12 @@ scenario.</p>
 <p>Due to the different types of deployment models, there are two supported
 modes for measuring performance and power on Celadon:</p>
 <ul class="simple">
-<li><strong>Single-OS mode</strong>: only one Celadon instance is launched. When deployed on a
+<li><p><strong>Single-OS mode</strong>: only one Celadon instance is launched. When deployed on a
 host OS, no concurrent host OS workloads are issued, except the required
-device emulation loads.</li>
-<li><strong>Multi-OS mode</strong>: multiple Celadon instances are launched and running
+device emulation loads.</p></li>
+<li><p><strong>Multi-OS mode</strong>: multiple Celadon instances are launched and running
 identical workloads. No loads other than the required device emulation
-tasks are issued in the host OS.</li>
+tasks are issued in the host OS.</p></li>
 </ul>
 <p>The Celadon power and performance measurement workloads cover the general purpose
 usage scenario for Edge devices, as well as scenarios for visual
@@ -211,122 +213,122 @@ OSes are running concurrently. In the multi-OS profile, hardware
 capabilities are shared among multiple instances and the acceptable user
 experience of each instance is the key indicator to deliver. Refer to the
 following table for more information about the test workloads.</p>
-<table border="1" class="docutils" id="id15">
+<table class="docutils align-default" id="id15">
 <caption><span class="caption-text">Celadon Power and Performance Test Suite</span></caption>
 <colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Category</th>
-<th class="head"><abbr title="eliminate disadvantage &amp; build advantage of Intel® architecture on Android ecosystem against competitor">Celadon PnP Test Name</abbr></th>
-<th class="head">Unit</th>
-<th class="head">Description</th>
-<th class="head"><abbr title="platform: BM/VM/Container">Single-OS</abbr></th>
-<th class="head"><abbr title="platform: VM/Container">Multi-OS</abbr></th>
-<th class="head">Usage Scenario</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p><abbr title="eliminate disadvantage &amp; build advantage of Intel® architecture on Android ecosystem against competitor">Celadon PnP Test Name</abbr></p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p><abbr title="platform: BM/VM/Container">Single-OS</abbr></p></th>
+<th class="head"><p><abbr title="platform: VM/Container">Multi-OS</abbr></p></th>
+<th class="head"><p>Usage Scenario</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Video &amp; Camera</td>
-<td>H.264 3840x2160 60fps Playback</td>
-<td>fps</td>
-<td><div class="first last line-block">
+<tbody>
+<tr class="row-even"><td><p>Video &amp; Camera</p></td>
+<td><p>H.264 3840x2160 60fps Playback</p></td>
+<td><p>fps</p></td>
+<td><div class="line-block">
 <div class="line">Accelerated high resolution video playback with display frame rate is reported.</div>
 </div>
 </td>
-<td>Y</td>
-<td>Y</td>
-<td>General</td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>General</p></td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>Peak 1080p H.264 Decoding FPS</td>
-<td>fps</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td></td>
+<td><p>Peak 1080p H.264 Decoding FPS</p></td>
+<td><p>fps</p></td>
+<td><div class="line-block">
 <div class="line">Peak video decoding frame rate when accelerator 100% saturated.</div>
 <div class="line">This case is designed for multi-way media processing.</div>
 </div>
 </td>
-<td>Y</td>
-<td>&#160;</td>
-<td>Visual</td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>Visual</p></td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>Peak 1080p H.264 Encoding FPS</td>
-<td>fps</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td></td>
+<td><p>Peak 1080p H.264 Encoding FPS</p></td>
+<td><p>fps</p></td>
+<td><div class="line-block">
 <div class="line">Peak video encoding frame rate when accelerator 100% saturated.</div>
 <div class="line">This case is designed for multi-way media processing.</div>
 </div>
 </td>
-<td>Y</td>
-<td>&#160;</td>
-<td>Visual</td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>Visual</p></td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>Video Conference - 1080p30 WebRTC</td>
-<td>fps</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td></td>
+<td><p>Video Conference - 1080p30 WebRTC</p></td>
+<td><p>fps</p></td>
+<td><div class="line-block">
 <div class="line">Accelerated high resolution video conference, in a loop back environment,</div>
 <div class="line">with display frame rate is reported.</div>
 </div>
 </td>
-<td>Y</td>
-<td>&#160;</td>
-<td>Visual</td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>Visual</p></td>
 </tr>
-<tr class="row-even"><td>Graphics</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>Graphics</p></td>
+<td><div class="line-block">
 <div class="line">GFXBench5.0 Manhattan 3.1</div>
 <div class="line">Benchmark Off Screen</div>
 </div>
 </td>
-<td>score</td>
-<td><div class="first last line-block">
+<td><p>score</p></td>
+<td><div class="line-block">
 <div class="line">Industrial synthesized GPU benchmark, with scores reported.</div>
 </div>
 </td>
-<td>Y</td>
-<td>&#160;</td>
-<td>General</td>
+<td><p>Y</p></td>
+<td></td>
+<td><p>General</p></td>
 </tr>
-<tr class="row-odd"><td>Runtime</td>
-<td>Geekbench Multi Core</td>
-<td>score</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>Runtime</p></td>
+<td><p>Geekbench Multi Core</p></td>
+<td><p>score</p></td>
+<td><div class="line-block">
 <div class="line">Industrial synthesized CPU benchmark, with scores reported.</div>
 </div>
 </td>
-<td>Y</td>
-<td>Y</td>
-<td>General</td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>General</p></td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>Antutu v6.3.3</td>
-<td>score</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td></td>
+<td><p>Antutu v6.3.3</p></td>
+<td><p>score</p></td>
+<td><div class="line-block">
 <div class="line">Industrial synthesized system benchmark, with scores reported.</div>
 </div>
 </td>
-<td>Y</td>
-<td>Y</td>
-<td>General</td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>General</p></td>
 </tr>
-<tr class="row-odd"><td>User Experience</td>
-<td>Touch Display Latency</td>
-<td>ms</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>User Experience</p></td>
+<td><p>Touch Display Latency</p></td>
+<td><p>ms</p></td>
+<td><div class="line-block">
 <div class="line">Latency from touch/mouse events to UI response</div>
 </div>
 </td>
-<td>Y</td>
-<td>Y</td>
-<td>General</td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>General</p></td>
 </tr>
 </tbody>
 </table>
@@ -337,12 +339,12 @@ following table for more information about the test workloads.</p>
 connected to a host machine running Ubuntu 18.04. The host machine uses
 <abbr title="Android Debug Bridge">ADB</abbr> to download test workloads to and collect
 logs from the DUT. For single-OS on a bare metal device, enter
-command <code class="docutils literal"><span class="pre">adb</span></code> through the USB cable or Ethernet link. For single-OS on
+command <code class="docutils literal notranslate"><span class="pre">adb</span></code> through the USB cable or Ethernet link. For single-OS on
 virtualization or containerization platform, the host OS is directly used as the host machine, and connects to the DUT via
-<code class="docutils literal"><span class="pre">adb</span></code> over the virtual Ethernet link.</p>
+<code class="docutils literal notranslate"><span class="pre">adb</span></code> over the virtual Ethernet link.</p>
 <p>A multi-OS configuration that is based on virtualization or containerization
 uses the host OS as the host machine for testing and connecting to multiple
-DUT via <code class="docutils literal"><span class="pre">adb</span></code> over the Ethernet link. Refer to the following feature for
+DUT via <code class="docutils literal notranslate"><span class="pre">adb</span></code> over the Ethernet link. Refer to the following feature for
 details.</p>
 <div class="figure align-center" id="id16">
 <img alt="../_images/test-setup.png" src="../_images/test-setup.png" />
@@ -404,34 +406,34 @@ can implement log-based methods to obtain approximate results.</p>
 consumption in various scenarios.</p>
 <p>For example:</p>
 <ul class="simple">
-<li>System idle scenario, where the system is not in use during the
+<li><p>System idle scenario, where the system is not in use during the
 collection time. It’s expected to reduce its energy usage as low
 as possible. Set a longer collection period (e.g. several minutes) to
-allow the system to enter deep sleep states.</li>
-<li>Active workload, such as video or audio playback. Launch the test
+allow the system to enter deep sleep states.</p></li>
+<li><p>Active workload, such as video or audio playback. Launch the test
 programs and start collecting data for a predetermined time period, or
 manually stop the data collection. Use the <strong class="command">help</strong> command to
-learn various options to start/stop the data collection.</li>
+learn various options to start/stop the data collection.</p></li>
 </ul>
 <p>Our recommended testing method is:</p>
 <ol class="arabic">
-<li><p class="first">Push the Intel SoC Watch package to the DUT.</p>
+<li><p>Push the Intel SoC Watch package to the DUT.</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ adb push socPowerTool /data/
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>adb<span class="w"> </span>push<span class="w"> </span>socPowerTool<span class="w"> </span>/data/
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Run the <code class="docutils literal"><span class="pre">socPowerTool</span></code> command and specify a collection time period
-(e.g. 1800 seconds) in the <code class="docutils literal"><span class="pre">adb</span></code> shell.</p>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">socPowerTool</span></code> command and specify a collection time period
+(e.g. 1800 seconds) in the <code class="docutils literal notranslate"><span class="pre">adb</span></code> shell.</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb shell
-<span class="gp">celadon:/ #</span> /data/socPowerTool --get_power_once <span class="m">1800</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>adb<span class="w"> </span>shell
+<span class="gp">celadon:/ # </span>/data/socPowerTool<span class="w"> </span>--get_power_once<span class="w"> </span><span class="m">1800</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">The system returns the average power consumption during the specified
+<li><p>The system returns the average power consumption during the specified
 time period.</p>
 <blockquote>
 <div><div class="figure align-center">
@@ -439,10 +441,10 @@ time period.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Learn more about the additional data that can be collected on the DUT by
+<li><p>Learn more about the additional data that can be collected on the DUT by
 entering the <strong class="command">help</strong> command.</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">celadon:/ #</span> /data/socPowerTool -h
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">celadon:/ # </span>/data/socPowerTool<span class="w"> </span>-h
 </pre></div>
 </div>
 </div></blockquote>
@@ -462,19 +464,19 @@ clip using an HSC.</p>
 <div class="section" id="environment-setup">
 <h4>Environment setup</h4>
 <ol class="arabic simple">
-<li>The device is in a stable state and is not running any
-other applications.</li>
-<li>Set up the HSC environment.</li>
+<li><p>The device is in a stable state and is not running any
+other applications.</p></li>
+<li><p>Set up the HSC environment.</p></li>
 </ol>
 </div>
 <div class="section" id="measurement-steps">
 <h4>Measurement steps</h4>
 <ol class="arabic simple">
-<li>Download the H.264 3840x2160 60fps video source and push it to the
-device.</li>
-<li>Play the video using the Gallery application or another video playback
-application.</li>
-<li>Calculate the FPS using the HSC.</li>
+<li><p>Download the H.264 3840x2160 60fps video source and push it to the
+device.</p></li>
+<li><p>Play the video using the Gallery application or another video playback
+application.</p></li>
+<li><p>Calculate the FPS using the HSC.</p></li>
 </ol>
 </div>
 </div>
@@ -482,31 +484,31 @@ application.</li>
 <h3>Peak 1080p H.264 decoding FPS</h3>
 <p>This KPI measures the capability of parallel multiway decoding using an
 Intel® Media SDK sample. For example, this could be built with the command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ make -j8 <span class="nv">BOARD_HAVE_MEDIASDK_OPEN_SOURCE</span><span class="o">=</span><span class="nb">true</span> sample_decode
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>-j8<span class="w"> </span><span class="nv">BOARD_HAVE_MEDIASDK_OPEN_SOURCE</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>sample_decode
 </pre></div>
 </div>
-<p>The output is located in the <code class="file docutils literal"><span class="pre">out/target/product/cel_kbl/vendor/bin</span></code>
+<p>The output is located in the <code class="file docutils literal notranslate"><span class="pre">out/target/product/cel_kbl/vendor/bin</span></code>
 folder.</p>
 <div class="section" id="id1">
 <h4>Environment setup</h4>
 <ol class="arabic simple">
-<li>The device is in a stable state and is not running any
-other applications.</li>
-<li>Compile or download the decoder sample file.</li>
-<li>Download or create an H.264 testing video clip (FFmpeg can be used).</li>
+<li><p>The device is in a stable state and is not running any
+other applications.</p></li>
+<li><p>Compile or download the decoder sample file.</p></li>
+<li><p>Download or create an H.264 testing video clip (FFmpeg can be used).</p></li>
 </ol>
 </div>
 <div class="section" id="id2">
 <h4>Measurement steps</h4>
 <ol class="arabic simple">
-<li>Push the H.264 video clip and the compiled decoder sample binary file
-to the test device.</li>
-<li>Set the decoder binary file executable and execute the decoder
+<li><p>Push the H.264 video clip and the compiled decoder sample binary file
+to the test device.</p></li>
+<li><p>Set the decoder binary file executable and execute the decoder
 sample binary file to get FPS. Since the single decoder program may
 not fully utilize all of the decoding engine’s capability on many
 platforms, create a script to run multiple instances (e.g. 4)
 of the decoding program in parallel to fully saturate the decoding
-hardware, and aggregate the reported FPS numbers as the final result.</li>
+hardware, and aggregate the reported FPS numbers as the final result.</p></li>
 </ol>
 </div>
 </div>
@@ -514,20 +516,20 @@ hardware, and aggregate the reported FPS numbers as the final result.</li>
 <h3>Peak 1080p H.264 encoding FPS</h3>
 <p>This KPI measures the capability of parallel multiway encoding using an
 Intel Media SDK sample. This could be built using the command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ make -j8 <span class="nv">BOARD_HAVE_MEDIASDK_OPEN_SOURCE</span><span class="o">=</span><span class="nb">true</span> sample_encode
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>-j8<span class="w"> </span><span class="nv">BOARD_HAVE_MEDIASDK_OPEN_SOURCE</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>sample_encode
 </pre></div>
 </div>
-<p>The output is located in the <code class="file docutils literal"><span class="pre">out/target/product/cel_kbl/vendor/bin</span></code>
+<p>The output is located in the <code class="file docutils literal notranslate"><span class="pre">out/target/product/cel_kbl/vendor/bin</span></code>
 folder.</p>
 <div class="section" id="id3">
 <h4>Environment setup</h4>
 <ol class="arabic simple">
-<li>The device is in a stable state and is not running any
-other applications.</li>
-<li>Compile or download the encoder sample file.</li>
-<li><dl class="first docutils">
-<dt>Download or create a 1080p testing YUV video clip (FFmpeg can be used)</dt>
-<dd>.</dd>
+<li><p>The device is in a stable state and is not running any
+other applications.</p></li>
+<li><p>Compile or download the encoder sample file.</p></li>
+<li><dl class="simple">
+<dt>Download or create a 1080p testing YUV video clip (FFmpeg can be used)</dt><dd><p>.</p>
+</dd>
 </dl>
 </li>
 </ol>
@@ -535,15 +537,15 @@ other applications.</li>
 <div class="section" id="id4">
 <h4>Measurement steps</h4>
 <ol class="arabic simple">
-<li>Push the YUV video clip and the compiled encoder sample binary file
-to the test device.</li>
-<li>Set the encoder binary file executable, and execute the encoder
+<li><p>Push the YUV video clip and the compiled encoder sample binary file
+to the test device.</p></li>
+<li><p>Set the encoder binary file executable, and execute the encoder
 sample binary file to get FPS. Since the single encoder program may
 not fully utilize all of the encoding engine’s capability on many
 platforms, it’s recommended to create a script to run multiple
 instances (e.g. 4) of the encoding programs in parallel to fully
 saturate the encoding hardware, and aggregate the reported FPS
-numbers as the final result.</li>
+numbers as the final result.</p></li>
 </ol>
 </div>
 </div>
@@ -553,17 +555,17 @@ numbers as the final result.</li>
 <div class="section" id="id5">
 <h4>Environment setup</h4>
 <ol class="arabic simple">
-<li>The device is in a stable state and is not running any other
-applications.</li>
-<li>Set up the HSC environment.</li>
+<li><p>The device is in a stable state and is not running any other
+applications.</p></li>
+<li><p>Set up the HSC environment.</p></li>
 </ol>
 </div>
 <div class="section" id="id6">
 <h4>Measurement steps</h4>
 <ol class="arabic simple">
-<li>Open a browser and go to <code class="file docutils literal"><span class="pre">https://apprtc.appspot.com</span></code></li>
-<li>Click <code class="kbd docutils literal"><span class="pre">Join</span></code> to enter a room.</li>
-<li>Calculate FPS using HSC.</li>
+<li><p>Open a browser and go to <code class="file docutils literal notranslate"><span class="pre">https://apprtc.appspot.com</span></code></p></li>
+<li><p>Click <kbd class="kbd docutils literal notranslate">Join</kbd> to enter a room.</p></li>
+<li><p>Calculate FPS using HSC.</p></li>
 </ol>
 </div>
 </div>
@@ -574,18 +576,18 @@ applications.</li>
 <div class="section" id="id7">
 <h4>Environment setup</h4>
 <ol class="arabic simple">
-<li>The device is in a stable state and is not running any other
-applications.</li>
+<li><p>The device is in a stable state and is not running any other
+applications.</p></li>
 </ol>
 </div>
 <div class="section" id="id8">
 <h4>Measurement steps</h4>
 <ol class="arabic simple">
-<li>Download the GFXBench benchmark application from the Google Play
-store and install it.</li>
-<li>Launch the GFXBench GL benchmark application and select
-<code class="kbd docutils literal"><span class="pre">Manhattan</span> <span class="pre">3.1</span> <span class="pre">Benchmark</span> <span class="pre">Off</span> <span class="pre">Screen</span></code> to run.</li>
-<li>Get the result.</li>
+<li><p>Download the GFXBench benchmark application from the Google Play
+store and install it.</p></li>
+<li><p>Launch the GFXBench GL benchmark application and select
+<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Manhattan</kbd> <kbd class="kbd docutils literal notranslate">3.1</kbd> <kbd class="kbd docutils literal notranslate">Benchmark</kbd> <kbd class="kbd docutils literal notranslate">Off</kbd> <kbd class="kbd docutils literal notranslate">Screen</kbd></kbd> to run.</p></li>
+<li><p>Get the result.</p></li>
 </ol>
 </div>
 </div>
@@ -596,16 +598,16 @@ store and install it.</li>
 <div class="section" id="id9">
 <h4>Environment setup</h4>
 <ol class="arabic simple">
-<li>The device is in a stable state and is not running any other
-applications.</li>
+<li><p>The device is in a stable state and is not running any other
+applications.</p></li>
 </ol>
 </div>
 <div class="section" id="id10">
 <h4>Measurement steps</h4>
 <ol class="arabic simple">
-<li>Download the Geekbench app from the Google Play store and install it.</li>
-<li>Launch the Geekbench app and run it.</li>
-<li>Get the result.</li>
+<li><p>Download the Geekbench app from the Google Play store and install it.</p></li>
+<li><p>Launch the Geekbench app and run it.</p></li>
+<li><p>Get the result.</p></li>
 </ol>
 </div>
 </div>
@@ -616,17 +618,17 @@ applications.</li>
 <div class="section" id="id11">
 <h4>Environment setup</h4>
 <ol class="arabic simple">
-<li>The device is in a stable state and is not running any other
-applications.</li>
+<li><p>The device is in a stable state and is not running any other
+applications.</p></li>
 </ol>
 </div>
 <div class="section" id="id12">
 <h4>Measurement steps</h4>
 <ol class="arabic simple">
-<li>Download the Antutu application from
-<a class="reference external" href="https://antutu-benchmark.en.uptodown.com/android/download/1462551">Antutu6.3.3</a> and install it.</li>
-<li>Launch the Antutu app and start testing.</li>
-<li>Record the score.</li>
+<li><p>Download the Antutu application from
+<a class="reference external" href="https://antutu-benchmark.en.uptodown.com/android/download/1462551">Antutu6.3.3</a> and install it.</p></li>
+<li><p>Launch the Antutu app and start testing.</p></li>
+<li><p>Record the score.</p></li>
 </ol>
 </div>
 </div>
@@ -637,20 +639,20 @@ screen update using HSC.</p>
 <div class="section" id="id13">
 <h4>Environment setup</h4>
 <ol class="arabic simple">
-<li>The device is in a stable state and is not running any other
-applications.</li>
-<li>Find a screen view that will be changed immediately when a user
-touches the screen.</li>
-<li>Set up the HSC environment.</li>
+<li><p>The device is in a stable state and is not running any other
+applications.</p></li>
+<li><p>Find a screen view that will be changed immediately when a user
+touches the screen.</p></li>
+<li><p>Set up the HSC environment.</p></li>
 </ol>
 </div>
 <div class="section" id="id14">
 <h4>Measurement steps</h4>
 <ol class="arabic simple">
-<li>Open the screen view.</li>
-<li>Open the HSC and start the capture.</li>
-<li>Use your finger to tap the screen and wait for the screen to change.</li>
-<li>Calculate the latency based on the picture that is captured by theHSC.</li>
+<li><p>Open the screen view.</p></li>
+<li><p>Open the HSC and start the capture.</p></li>
+<li><p>Use your finger to tap the screen and wait for the screen to change.</p></li>
+<li><p>Calculate the latency based on the picture that is captured by theHSC.</p></li>
 </ol>
 </div>
 </div>
@@ -678,7 +680,7 @@ touches the screen.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -708,6 +710,7 @@ touches the screen.</li>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

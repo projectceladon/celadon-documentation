@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Thermal Mediation in Celadon" href="thermal-mediation.html" />
@@ -205,26 +207,26 @@ also fell 11% year-on-year. But we’re also seeing the boundaries of
 Android app services expand into new markets, such as cloud, edge, and
 desktop clients:</p>
 <ul class="simple">
-<li>In the cloud, Android applications begin to serve cloud games, office
-cloud phones, cloud testing, and other scenarios.</li>
-<li>IoT devices also provide a convenient interactive experience based on
+<li><p>In the cloud, Android applications begin to serve cloud games, office
+cloud phones, cloud testing, and other scenarios.</p></li>
+<li><p>IoT devices also provide a convenient interactive experience based on
 Android, such as car entertainment systems, retail vending machines,
-etc.;</li>
-<li>On the computer client side, software and hardware manufacturers such
+etc.;</p></li>
+<li><p>On the computer client side, software and hardware manufacturers such
 as Microsoft (Windows 11 WSA), Google (Chrome OS ARCVM and Google
 Play Games on PC), and Huawei (mobile application engine) have
 announced the launch of Android-based mobile application ecological
-support solutions.</li>
+support solutions.</p></li>
 </ul>
 <p>In the above solutions, there are many Android systems running on Intel®
 architecture platforms. Intel continues to invest in software
 development in the Android ecosystem:</p>
 <ul class="simple">
-<li>Open-sourced Intel Android system-Celadon
-(<a class="reference external" href="https://01.org/projectceladon">https://01.org/projectceladon</a>）</li>
-<li>Android Cloud Gaming Solutions</li>
-<li>Intel binary translator solution - Intel® Bridge Technology (Intel®
-BT)</li>
+<li><p>Open-sourced Intel Android system-Celadon
+(<a class="reference external" href="https://01.org/projectceladon">https://01.org/projectceladon</a>）</p></li>
+<li><p>Android Cloud Gaming Solutions</p></li>
+<li><p>Intel binary translator solution - Intel® Bridge Technology (Intel®
+BT)</p></li>
 </ul>
 <p>Supporting Intel-based Android devices provides Android application
 developers with a wider range of application scenarios and platforms. In
@@ -244,27 +246,27 @@ example.</p>
 <p>For self-developed native code, add the following configuration during
 building:</p>
 <ul>
-<li><p class="first">Build with Android Studio and Gradle</p>
+<li><p>Build with Android Studio and Gradle</p>
 <p>When an Android Studio project uses Gradle as the underlying build
 system, to build native code simply requires adding x86_64 to the
 ndk.abiFilters setting in the app’s “build.gradle” file, e.g.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>ndk.abiFilters <span class="s1">&#39;armeabi-v7a&#39;</span>,<span class="s1">&#39;arm64-v8a&#39;</span>,<span class="s1">&#39;x86&#39;</span>,**<span class="s1">&#39;x86_64&#39;</span>**
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ndk.abiFilters<span class="w"> </span><span class="s1">&#39;armeabi-v7a&#39;</span>,<span class="s1">&#39;arm64-v8a&#39;</span>,<span class="s1">&#39;x86&#39;</span>,**<span class="s1">&#39;x86_64&#39;</span>**
 </pre></div>
 </div>
 </li>
-<li><p class="first">Build Native code with CMake:</p>
+<li><p>Build Native code with CMake:</p>
 <p>You can build x86_64 ABI by passing ‘x86_64’ to the
 “-DANDROID_ABI” parameter:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>:: Command Line
-&gt; cmake -DANDROID_ABI<span class="o">=</span>x86_64 …
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>::<span class="w"> </span>Command<span class="w"> </span>Line
+&gt;<span class="w"> </span>cmake<span class="w"> </span>-DANDROID_ABI<span class="o">=</span>x86_64<span class="w"> </span>…
 </pre></div>
 </div>
 </li>
-<li><p class="first">Build with ndk-build</p>
+<li><p>Build with ndk-build</p>
 <p>If your application was built with ndk-build, the “Application.mk”
 file can be modified using the APP_ABI variable to build with
 x86_64 ABI:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>APP_ABI :<span class="o">=</span> armeabi-v7a arm64-v8a x86 **x86_64**
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>APP_ABI<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>armeabi-v7a<span class="w"> </span>arm64-v8a<span class="w"> </span>x86<span class="w"> </span>**x86_64**
 </pre></div>
 </div>
 </li>
@@ -277,19 +279,19 @@ Android environment. You can check the version of Unity in the Version
 drop-down box in the upper left corner of the Unity manual
 (<a class="reference external" href="https://docs.unity3d.com/2019.4/Documentation/Manual/android-ChromeOS-building-your-application.html">LINK</a>).
 According to this document, the supported Unity versions are:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="100%" />
+<col style="width: 100%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>2022.2, 2022.1, 2021.3, 2021.2, 2021.1, 2020.3, 2019.4</td>
+<tbody>
+<tr class="row-odd"><td><p>2022.2, 2022.1, 2021.3, 2021.2, 2021.1, 2020.3, 2019.4</p></td>
 </tr>
 </tbody>
 </table>
 <p>In the above corresponding version, switch to the Android compilation
 platform first, and then select the x86_64 option in the Project
 Settings page:</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/cs003-f1-enable-x86-64-unity-settings.png"><img alt="../_images/cs003-f1-enable-x86-64-unity-settings.png" src="../_images/cs003-f1-enable-x86-64-unity-settings.png" style="width: 5.00000in; height: 2.75000in;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Enable x86_64 in Unity Settings</span></p>
 </div>
@@ -299,21 +301,21 @@ for PC, you can refer to
 to test by deploying the application to the Google Play emulator. You
 can also optimize the emulator as follows:</p>
 <ul class="simple">
-<li>Adjust the UI according to the running effect.</li>
-<li>Use the Input SDK Unity package to adapt mouse and keyboard.</li>
-<li>Remove ads and embedded site views.</li>
-<li>Remove permission dialog.</li>
-<li>Adjust texture compression format to DXT or ASTC for better fit on
-desktop.</li>
-<li>Adjust Graphics Quality in Project Settings.</li>
+<li><p>Adjust the UI according to the running effect.</p></li>
+<li><p>Use the Input SDK Unity package to adapt mouse and keyboard.</p></li>
+<li><p>Remove ads and embedded site views.</p></li>
+<li><p>Remove permission dialog.</p></li>
+<li><p>Adjust texture compression format to DXT or ASTC for better fit on
+desktop.</p></li>
+<li><p>Adjust Graphics Quality in Project Settings.</p></li>
 </ul>
 <p>If the SDK or library used does not have x86_64 and only supports arm
 ABI, try one of the following solutions:</p>
 <ul class="simple">
-<li>Contact the corresponding vendor</li>
-<li>Check its code source to know if there is an x86 or x86_64 ABI
-release</li>
-<li>Choose an alternative library solution.</li>
+<li><p>Contact the corresponding vendor</p></li>
+<li><p>Check its code source to know if there is an x86 or x86_64 ABI
+release</p></li>
+<li><p>Choose an alternative library solution.</p></li>
 </ul>
 <p>If you still can’t get the support of the corresponding ABI, you can
 continue to release support based on the arm ABI. Intel provides a
@@ -328,14 +330,14 @@ executed on Intel platforms through Intel BT in most cases, but to get
 excellent performance and compatibility, you need to be aware of the
 following limitations:</p>
 <ul class="simple">
-<li>Avoid relying on Intel BT to run JIT applications to achieve stable
+<li><p>Avoid relying on Intel BT to run JIT applications to achieve stable
 performance, and try to use the built-in WebView of the Android
-system for components such as browsers.</li>
-<li>Apps and SDKs should avoid using non-public or non-standard system
-APIs.</li>
-<li>Avoid the behavior of hooking the system Linker/Loader.</li>
-<li>Avoid mixing arm/x86 libraries at the same time.</li>
-<li>Do not support multiple accounts.</li>
+system for components such as browsers.</p></li>
+<li><p>Apps and SDKs should avoid using non-public or non-standard system
+APIs.</p></li>
+<li><p>Avoid the behavior of hooking the system Linker/Loader.</p></li>
+<li><p>Avoid mixing arm/x86 libraries at the same time.</p></li>
+<li><p>Do not support multiple accounts.</p></li>
 </ul>
 <p>If there is a specific Intel processor-based software and hardware
 platform that needs to be supported, we recommend that you first check
@@ -374,24 +376,24 @@ laptop displays and conference system smart screens. Google,
 Microsoft, and other manufacturers also promote the support of
 large-screen devices. Here, we summarize the support points:</p>
 <ul class="simple">
-<li>To support screens of various sizes, especially large screens
+<li><p>To support screens of various sizes, especially large screens
 (landscape), application developers should design
 responsive/adaptive layouts that provide a great user experience on
-various devices.</li>
-<li>Support PC-specific interactive devices – such as touchpads, mice
+various devices.</p></li>
+<li><p>Support PC-specific interactive devices – such as touchpads, mice
 (including right button and scroll wheel, etc.), keyboards
-(including key combinations), styluses, gamepads, etc.</li>
-<li>Apps should not rely on features such as app widgets, live
+(including key combinations), styluses, gamepads, etc.</p></li>
+<li><p>Apps should not rely on features such as app widgets, live
 wallpapers, and app launchers. In many cases, a separate Launcher
-cannot be assumed.</li>
-<li>We recommend you set the Android APK Target API level to 24+
+cannot be assumed.</p></li>
+<li><p>We recommend you set the Android APK Target API level to 24+
 (Android 7+) free-form Windows and Drag-drop support, use ViewModel
-to save window size state.</li>
-<li>Don’t rely on Bluetooth or other networks. Do support virtual
-network cards and WiFi.</li>
-<li>Adapt the App layout to show and hide the status bar.</li>
-<li>Camera support; if the app provides a camera preview, check the
-orientation and aspect ratio of the preview on large screens.</li>
+to save window size state.</p></li>
+<li><p>Don’t rely on Bluetooth or other networks. Do support virtual
+network cards and WiFi.</p></li>
+<li><p>Adapt the App layout to show and hide the status bar.</p></li>
+<li><p>Camera support; if the app provides a camera preview, check the
+orientation and aspect ratio of the preview on large screens.</p></li>
 </ul>
 </div>
 <div class="section" id="application-test">
@@ -401,21 +403,19 @@ as possible during application testing. At present, it should be
 relatively easy to find corresponding devices in the market. For
 example:</p>
 <ul>
-<li><p class="first">Android SDK embedded Android Virtual device (AVD): You can easily
+<li><p>Android SDK embedded Android Virtual device (AVD): You can easily
 create x86_64 ABI virtual devices and test your native x86_64
 supported applications on Intel processor-based development
 machines. For details, refer to:
-<a class="reference external" href="https://developer.android.com/studio/run/managing-avds">https://developer.android.com/studio/run/managing-avds</a></p>
-</li>
-<li><p class="first">Microsoft’s WSA: WSA is already available in the US and other regions
+<a class="reference external" href="https://developer.android.com/studio/run/managing-avds">https://developer.android.com/studio/run/managing-avds</a></p></li>
+<li><p>Microsoft’s WSA: WSA is already available in the US and other regions
 and can run Android applications on the Windows 11 operating system
 and WSA-supported hardware platforms.</p>
 <p>To setup WSA and install the app, please refer to the following link:
 <a class="reference external" href="https://docs.microsoft.com/en-us/windows/android/wsa/">https://docs.microsoft.com/en-us/windows/android/wsa/</a></p>
 </li>
-<li><p class="first">We are looking for partners to build a cloud-based x86 Android test
-environment, and we will notify you as soon as it is completed.</p>
-</li>
+<li><p>We are looking for partners to build a cloud-based x86 Android test
+environment, and we will notify you as soon as it is completed.</p></li>
 </ul>
 </div>
 <div class="section" id="application-release">
@@ -440,26 +440,26 @@ only, we recommend you test it on WSA or a Chromebook based on Intel
 processors. If hardening is required, use a hardening solution that
 supports Intel platform adaptation. If you have any questions and
 suggestions, we welcome feedback through the Celadon community.</p>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs003-f2-contact-us.png"><img alt="../_images/cs003-f2-contact-us.png" src="../_images/cs003-f2-contact-us.png" style="width: 5.00000in; height: 1.70833in;" /></a>
 </div>
 </div>
 <div class="section" id="references">
 <h2>References</h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.microsoft.com/en-us/windows/android/wsa/">https://docs.microsoft.com/en-us/windows/android/wsa/</a></li>
-<li><a class="reference external" href="https://developer.android.com/chrome-os/intro">https://developer.android.com/chrome-os/intro</a></li>
-<li><a class="reference external" href="https://chromeos.dev/en/posts/desktop-avd-in-android-studio">https://chromeos.dev/en/posts/desktop-avd-in-android-studio</a></li>
-<li><a class="reference external" href="https://developer.android.com/large-screens">https://developer.android.com/large-screens</a></li>
-<li><a class="reference external" href="https://developer.android.com/games/optimize/64-bit">https://developer.android.com/games/optimize/64-bit</a></li>
-<li><a class="reference external" href="https://www.gsma.com/mobileeconomy/wp-content/uploads/2021/02/GSMA_MobileEconomy2021_China_Ch-1.pdf">https://www.gsma.com/mobileeconomy/wp-content/uploads/2021/02/GSMA_MobileEconomy2021_China_Ch-1.pdf</a></li>
-<li><a class="reference external" href="https://mybuild.microsoft.com/zh-CN/sessions/241d43b6-130d-4e83-a263-22c94872ff24?source=https://mybuild.microsoft.com/zh-CN/theme/create-next-gen-experience-at-scale-with-windows?f=%255B%257B%2522name%2522%253A%2522%25E5%2585%25A8%25E7%2590%2583%2522%252C%2522facetName%2522%253A%2522event%2522%257D%255D&amp;p=2&amp;t=%257B%2522from%2522%253A%25222022-05-24T00%253A00%253A00%252B08%253A00%2522%252C%2522to%2522%253A%25222022-05-26T23%253A59%253A00%252B08%253A00%2522%257D">将 Android 应用引入 Windows
-(microsoft.com)</a></li>
-<li><a class="reference external" href="https://developer.android.com/games/playgames/pc-compatibility">https://developer.android.com/games/playgames/pc-compatibility</a></li>
-<li><a class="reference external" href="https://codelabs.developers.google.com/android-google-play-games-unity-quickstart#0">https://codelabs.developers.google.com/android-google-play-games-unity-quickstart#0</a></li>
-<li><a class="reference external" href="https://www.analysys.cn/article/detail/20020032">2020手游模拟器市场综合分析-易观分析
-(analysys.cn)</a></li>
-<li><a class="reference external" href="https://blogs.windows.com/windowsdeveloper/2022/07/14/windows-subsystem-for-android/">https://blogs.windows.com/windowsdeveloper/2022/07/14/windows-subsystem-for-android/</a></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/android/wsa/">https://docs.microsoft.com/en-us/windows/android/wsa/</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/chrome-os/intro">https://developer.android.com/chrome-os/intro</a></p></li>
+<li><p><a class="reference external" href="https://chromeos.dev/en/posts/desktop-avd-in-android-studio">https://chromeos.dev/en/posts/desktop-avd-in-android-studio</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/large-screens">https://developer.android.com/large-screens</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/games/optimize/64-bit">https://developer.android.com/games/optimize/64-bit</a></p></li>
+<li><p><a class="reference external" href="https://www.gsma.com/mobileeconomy/wp-content/uploads/2021/02/GSMA_MobileEconomy2021_China_Ch-1.pdf">https://www.gsma.com/mobileeconomy/wp-content/uploads/2021/02/GSMA_MobileEconomy2021_China_Ch-1.pdf</a></p></li>
+<li><p><a class="reference external" href="https://mybuild.microsoft.com/zh-CN/sessions/241d43b6-130d-4e83-a263-22c94872ff24?source=https://mybuild.microsoft.com/zh-CN/theme/create-next-gen-experience-at-scale-with-windows?f=%255B%257B%2522name%2522%253A%2522%25E5%2585%25A8%25E7%2590%2583%2522%252C%2522facetName%2522%253A%2522event%2522%257D%255D&amp;p=2&amp;t=%257B%2522from%2522%253A%25222022-05-24T00%253A00%253A00%252B08%253A00%2522%252C%2522to%2522%253A%25222022-05-26T23%253A59%253A00%252B08%253A00%2522%257D">将 Android 应用引入 Windows
+(microsoft.com)</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/games/playgames/pc-compatibility">https://developer.android.com/games/playgames/pc-compatibility</a></p></li>
+<li><p><a class="reference external" href="https://codelabs.developers.google.com/android-google-play-games-unity-quickstart#0">https://codelabs.developers.google.com/android-google-play-games-unity-quickstart#0</a></p></li>
+<li><p><a class="reference external" href="https://www.analysys.cn/article/detail/20020032">2020手游模拟器市场综合分析-易观分析
+(analysys.cn)</a></p></li>
+<li><p><a class="reference external" href="https://blogs.windows.com/windowsdeveloper/2022/07/14/windows-subsystem-for-android/">https://blogs.windows.com/windowsdeveloper/2022/07/14/windows-subsystem-for-android/</a></p></li>
 </ul>
 </div>
 </div>
@@ -485,7 +485,7 @@ suggestions, we welcome feedback through the Celadon community.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -515,6 +515,7 @@ suggestions, we welcome feedback through the Celadon community.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

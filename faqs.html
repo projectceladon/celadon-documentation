@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="References" href="references.html" /> 
@@ -155,14 +157,12 @@
             
   <div class="section" id="frequently-asked-questions">
 <span id="faqs"></span><h1>Frequently Asked Questions</h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first">What is the new Project Celadon release?</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">The new Project Celadon release refers to the source code that makes up
+<dl class="field-list">
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>What is the new Project Celadon release?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>The new Project Celadon release refers to the source code that makes up
 the September 2019 Project Celadon Release (<strong>20-Sept-2019</strong>), and each
 release since. While Project Celadon had long supported Android* on bare
 metal deployments using Intel® Architecture, there was no support for
@@ -173,74 +173,74 @@ Intel® architectures. Celadon source code can be used across a variety of
 Intel hardware, including
 <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html">Intel® NUC Kit NUC6CAYH</a>.
 Please check out <a class="reference internal" href="release-notes.html#release-notes"><span class="std std-ref">Release Notes</span></a> for all the latest detailed release features.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first">Why might developers and independent software vendors want to use Celadon
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>Why might developers and independent software vendors want to use Celadon
 in VM?</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">The new Project Celadon packaging still only takes one step to install,
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>The new Project Celadon packaging still only takes one step to install,
 and in addition to gaining VM and container support for Android on
 Intel® Architecture, developers and
 <abbr title="Independent Software Vendors">ISVs</abbr> will continue
 experiencing:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Open platform enabling helping developers speed time to market
-across a variety of infrastructures</li>
-<li>Compliance with the Android Compatibility Test Suite (CTS),
+<li><p>Open platform enabling helping developers speed time to market
+across a variety of infrastructures</p></li>
+<li><p>Compliance with the Android Compatibility Test Suite (CTS),
 as well as
 <a class="reference external" href="https://01.org/projectceladon/documentation/tutorials/test-strategy">additional test suites</a>
-on leading platforms and configurations</li>
-<li>Functionality across a
+on leading platforms and configurations</p></li>
+<li><p>Functionality across a
 <a class="reference internal" href="getting-started/as-service.html#run-as-service"><span class="std std-ref">variety of Intel hardware</span></a>,
-including <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html">Intel® NUC Kit NUC6CAYH</a></li>
-<li>Rich vertical solution configurations allowing for ease of
-scalability and extensibility across market segments</li>
+including <a class="reference external" href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html">Intel® NUC Kit NUC6CAYH</a></p></li>
+<li><p>Rich vertical solution configurations allowing for ease of
+scalability and extensibility across market segments</p></li>
 </ul>
 </div></blockquote>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Celadon in VM</th>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Celadon in VM</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><div class="first last line-block">
+<tbody>
+<tr class="row-even"><td><div class="line-block">
 <div class="line">Operating</div>
 <div class="line">System</div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">Virtualized Celadon deployments include Celadon running</div>
 <div class="line">as a guest operating system in a virtual machine, in a</div>
 <div class="line">virtualized environment.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-odd"><td><div class="line-block">
 <div class="line">Security</div>
 <div class="line">&amp; Isolation</div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">Running Celadon in a virtualized environment provides a</div>
 <div class="line">stronger separation between guest VMs and host VM, leading</div>
 <div class="line">to superior component isolation  vs containerized deployments.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><div class="first last line-block">
+<tr class="row-even"><td><div class="line-block">
 <div class="line">Resource</div>
 <div class="line">Consumption</div>
 <div class="line">&amp; Density</div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">Virtualized Celadon deployments run at moderate densities;</div>
 <div class="line">less than containerized deployments, but more than bare</div>
 <div class="line">metal deployments.</div>
@@ -249,29 +249,29 @@ scalability and extensibility across market segments</li>
 </tr>
 </tbody>
 </table>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first">Can Celadon still be run on bare metal?</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Intel supports VM and Container configurations for Celadon. Users can potentially
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>Can Celadon still be run on bare metal?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>Intel supports VM and Container configurations for Celadon. Users can potentially
 take the opensource Celadon project and run in different configurations including
 Native.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Users should be aware that test suites provided by Google may not
+<p class="admonition-title">Note</p>
+<p>Users should be aware that test suites provided by Google may not
 pass with 100% scoring if deploying Celadon on bare metal systems.
 While Celadon in VM deployments are supported by <a class="reference external" href="https://www.android.com/gms/">Google Mobile Services (GMS)</a>, Celadon on bare metal does not have
 GMS support. Dedicated use cases like retail, client, education and
 gaming do not need GMS. If there is a need for GMS while running
 Celadon on bare metal, direct communication with Google will be necessary.</p>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first">What are some example use cases and workload/applications that benefit from the new Celadon releases?</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first"><a class="reference external" href="https://01.org/projectceladon/digital-signage-solutions-android-intel-architectures">Digital Signage</a>
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>What are some example use cases and workload/applications that benefit from the new Celadon releases?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p><a class="reference external" href="https://01.org/projectceladon/digital-signage-solutions-android-intel-architectures">Digital Signage</a>
 and Secure Payment solutions are ideal for virtualized deployments, due
 to the high security and scalability virtualized deployments provide.
 With Celadon in VM, however, developers and ISVs can continue utilizing
@@ -282,12 +282,12 @@ Customers demand support for each workload deployment type -
 particularly for Android workloads. The latest Celadon release allows
 developers and ISV’s to consolidate workloads under one image, leading
 to boundless opportunities to provide broad market support.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first">Where can I learn more about Celadon in VM or Celadon in Containers?</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">There are many ways users can learn more, starting with accessing
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>Where can I learn more about Celadon in VM or Celadon in Containers?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>There are many ways users can learn more, starting with accessing
 release notes and <a class="reference external" href="https://github.com/projectCeladon">software</a>.
 Users can learn more by subscribing to the
 <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">Project Celadon mailing list</a>.
@@ -296,58 +296,56 @@ releases, updates and tools. Subscribers are also invited to Project
 Celadon focused events, like our monthly
 <a class="reference external" href="https://01.org/projectceladon/community#technical-community-meetings">Technical Community Meetings</a>, which provide a space for
 discussion around Celadon technical topics.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>What license(s) does |C| use?</strong></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon consists of permissive and copyleft licenses such as BSD, MIT,
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p><strong>What license(s) does |C| use?</strong></p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>Celadon consists of permissive and copyleft licenses such as BSD, MIT,
 Apache and GPL licenses. Use, reproduction and distribution of
 components of Celadon licensed under an open source software license are
 governed solely by the terms of that open source software license.
 Please refer and comply to the open source software license found in the
 source code files or repositories. Certain licenses such as Google
 Mobile Services or Widevine are not included in Celadon.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>What Android desserts are supported in Celadon?</strong></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">The latest Android dessert is supported as soon as Google publicly
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p><strong>What Android desserts are supported in Celadon?</strong></p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>The latest Android dessert is supported as soon as Google publicly
 releases the dessert. Please see the <a class="reference internal" href="release-notes.html#release-notes"><span class="std std-ref">Release Notes</span></a> for the latest
 supported desserts.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>Will the latest Celadon work on older hardware that was previously
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p><strong>Will the latest Celadon work on older hardware that was previously
 supported?</strong></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon supports a variety of reference platforms, in addition to being
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>Celadon supports a variety of reference platforms, in addition to being
 device independent. Developers have the option to use an older manifest
 file to build an image for previously supported hardware, but Celadon’s main
 focus is enabling on the latest Intel platforms. As such, support on
 older platforms may be limited.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>How could I start adding software components to my own |C| build?</strong></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first">Celadon follows the same practice as Android for adding software components
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p><strong>How could I start adding software components to my own |C| build?</strong></p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>Celadon follows the same practice as Android for adding software components
 to the build.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Q:</th><td class="field-body"><p class="first"><strong>I would like to contribute. Would Intel accept my contributions?</strong></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">A:</th><td class="field-body"><p class="first last">Yes, we welcome contributions! Since Intel is responsible for the
+</dd>
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p><strong>I would like to contribute. Would Intel accept my contributions?</strong></p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>Yes, we welcome contributions! Since Intel is responsible for the
 product management and core stack of Celadon, what ultimately is accepted is
 at the maintainers’ discretion. We will determine if it’s a good fit,
 then contributions will go through a review and verification process to
 maintain quality.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </div>
 
 
@@ -369,7 +367,7 @@ maintain quality.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -399,6 +397,7 @@ maintain quality.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>

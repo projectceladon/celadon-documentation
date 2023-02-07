@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SELinux Configuration and Rules" href="configure-selinux.html" />
@@ -215,14 +217,14 @@ only.</p>
 </div>
 <div class="section" id="bluetooth-usage-in-civ">
 <h3>Bluetooth usage in CiV</h3>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-f1-bt-android.png"><img alt="../_images/cs005-f1-bt-android.png" src="../_images/cs005-f1-bt-android.png" style="width: 4.04167in; height: 4.33224in;" /></a>
 </div>
 <p>Figure 1: Bluetooth Android Stack and Host Interaction Architecture</p>
 <p>Bluetooth support has been integrated into recent Intel Wi-Fi chips. In
 ADL, the Network Interface Card (NIC) used is AX211, which has an
-integrated Bluetooth driver and supports Bluetooth Version&nbsp;5.3. In Tiger
-Lake and Alder&nbsp;Lake NUCs, Bluetooth is loaded as a USB interface.</p>
+integrated Bluetooth driver and supports Bluetooth Version 5.3. In Tiger
+Lake and Alder Lake NUCs, Bluetooth is loaded as a USB interface.</p>
 <p>Celadon (Android) runs on top of the host OS (Ubuntu). The host kernel
 loads Bluetooth as a USB interface (hci0). Android cannot use this
 interface directly as the host has loaded it and using it. So, Android
@@ -238,38 +240,38 @@ to the guest (Android). Here we need to additionally passthrough the
 network controller with Bluetooth integrated inside it. Follow the steps
 below to passthrough the interfaces to guest.</p>
 <ol class="arabic">
-<li><p class="first">Execute this command on the host:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#&gt; lspci</span>
+<li><p>Execute this command on the host:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; lspci</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Record the PCI address of the network controller and USB controller.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="m">0000</span>:00:14.0 USB controller: Intel Corporation Device 51ed <span class="o">(</span>rev <span class="m">01</span><span class="o">)</span>
-<span class="m">0000</span>:00:14.2 RAM memory: Intel Corporation Device 51ef <span class="o">(</span>rev <span class="m">01</span><span class="o">)</span>
-<span class="m">0000</span>:00:14.3 Network controller: Intel Corporation Device 51f0 <span class="o">(</span>rev <span class="m">01</span><span class="o">)</span>
+<li><p>Record the PCI address of the network controller and USB controller.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0000</span>:00:14.0<span class="w"> </span>USB<span class="w"> </span>controller:<span class="w"> </span>Intel<span class="w"> </span>Corporation<span class="w"> </span>Device<span class="w"> </span>51ed<span class="w"> </span><span class="o">(</span>rev<span class="w"> </span><span class="m">01</span><span class="o">)</span>
+<span class="m">0000</span>:00:14.2<span class="w"> </span>RAM<span class="w"> </span>memory:<span class="w"> </span>Intel<span class="w"> </span>Corporation<span class="w"> </span>Device<span class="w"> </span>51ef<span class="w"> </span><span class="o">(</span>rev<span class="w"> </span><span class="m">01</span><span class="o">)</span>
+<span class="m">0000</span>:00:14.3<span class="w"> </span>Network<span class="w"> </span>controller:<span class="w"> </span>Intel<span class="w"> </span>Corporation<span class="w"> </span>Device<span class="w"> </span>51f0<span class="w"> </span><span class="o">(</span>rev<span class="w"> </span><span class="m">01</span><span class="o">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Add these PCI addresses in <code class="file docutils literal"><span class="pre">~/.intel/.civ/civ-1.ini</span></code>, under
+<li><p>Add these PCI addresses in <code class="file docutils literal notranslate"><span class="pre">~/.intel/.civ/civ-1.ini</span></code>, under
 the passthrough section.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>passthrough<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>passthrough<span class="o">]</span>
 <span class="c1">#specified the PCI id here if you want to passthrough it to guest, separate them with comma</span>
 <span class="nv">passthrough_pci</span><span class="o">=</span><span class="m">0000</span>:00:14.3,0000:00:14.0
 </pre></div>
 </div>
 </li>
-<li><p class="first">Check the Bluetooth USB interface name; in our example, it is hci0.</p>
-<div class="figure">
+<li><p>Check the Bluetooth USB interface name; in our example, it is hci0.</p>
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-ex3.png"><img alt="../_images/cs005-ex3.png" src="../_images/cs005-ex3.png" style="width: 4.32996in; height: 2.37500in;" /></a>
 </div>
 </li>
-<li><p class="first">Set the Bluetooth USB interface (hci0) interface down on host.</p>
-<div class="figure">
+<li><p>Set the Bluetooth USB interface (hci0) interface down on host.</p>
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-ex4.png"><img alt="../_images/cs005-ex4.png" src="../_images/cs005-ex4.png" style="width: 4.35417in; height: 1.62630in;" /></a>
 </div>
 </li>
-<li><p class="first">Launch CiV using vm-manager.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#&gt; sudo vm-manager -b civ-1</span>
+<li><p>Launch CiV using vm-manager.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; sudo vm-manager -b civ-1</span>
 </pre></div>
 </div>
 </li>
@@ -281,18 +283,18 @@ the passthrough section.</p>
 <p>If audio over Bluetooth (A2DP) is not working, follow the steps below
 to make it work.</p>
 <ol class="arabic">
-<li><p class="first">Record the audio controller PCI address.</p>
-<div class="figure">
+<li><p>Record the audio controller PCI address.</p>
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-ex5.png"><img alt="../_images/cs005-ex5.png" src="../_images/cs005-ex5.png" style="width: 6.50000in; height: 0.20625in;" /></a>
 </div>
 </li>
-<li><p class="first">Add it in <code class="file docutils literal"><span class="pre">~/.intel/.civ/civ-1.ini</span></code>, under passthrough section.</p>
-<div class="figure">
+<li><p>Add it in <code class="file docutils literal notranslate"><span class="pre">~/.intel/.civ/civ-1.ini</span></code>, under passthrough section.</p>
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-ex6.png"><img alt="../_images/cs005-ex6.png" src="../_images/cs005-ex6.png" style="width: 6.50000in; height: 0.45903in;" /></a>
 </div>
 </li>
-<li><p class="first">Launch CiV using vm-manager</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#&gt; sudo vm-manager -b civ-1</span>
+<li><p>Launch CiV using vm-manager</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; sudo vm-manager -b civ-1</span>
 </pre></div>
 </div>
 </li>
@@ -304,7 +306,7 @@ to make it work.</p>
 <h2>Celadon guide for Wi-Fi</h2>
 <p>This section introduces the basics of Wi-Fi architecture in Android and
 its usage in Celadon in BM and VM.</p>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-f2-android-wi-fi-arch.png"><img alt="../_images/cs005-f2-android-wi-fi-arch.png" src="../_images/cs005-f2-android-wi-fi-arch.png" style="width: 6.30888in; height: 5.00877in;" /></a>
 </div>
 <p>Figure 2: Android Wi-Fi architecture</p>
@@ -322,7 +324,7 @@ interface over PCi passthrough mode is shown in the Figure 2. From the
 Wi-Fi HAL layer, communication passes to the Wi-Fi drivers via
 wpa_supplicant and hostapd through the nl80211 net-link socket, as
 shown in Figure 3.</p>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-f3-comm-passes.png"><img alt="../_images/cs005-f3-comm-passes.png" src="../_images/cs005-f3-comm-passes.png" style="width: 4.46667in; height: 6.46667in;" /></a>
 </div>
 <p>Figure 3: Communication passes to the Wi-Fi drivers</p>
@@ -333,33 +335,33 @@ interface.</p>
 <div class="section" id="wi-fi-enablement-in-civ">
 <h3>Wi-Fi enablement in CiV</h3>
 <p>The PCI passthrough information is retrieved from the vm-manager .ini
-file placed under <code class="file docutils literal"><span class="pre">*~/.intel/.civ/&lt;vm-name&gt;.ini*</span></code>. In this .ini
-file, the PCi addresses mentioned under <code class="docutils literal"><span class="pre">pci_passthrough</span></code> are considered
+file placed under <code class="file docutils literal notranslate"><span class="pre">*~/.intel/.civ/&lt;vm-name&gt;.ini*</span></code>. In this .ini
+file, the PCi addresses mentioned under <code class="docutils literal notranslate"><span class="pre">pci_passthrough</span></code> are considered
 to be passthrough technologies to the host (unless they are of same iommu
 group).</p>
 <div class="section" id="get-pci-address-of-wi-fi">
 <h4>Get PCI address of Wi-Fi</h4>
 <p>Run the <strong class="command">lspci</strong> command shown below to request the verbose output
 of all the devices connected over the PCI bus.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">$lspci</span> -vvxxx
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$lspci</span><span class="w"> </span>-vvxxx
 </pre></div>
 </div>
 <p>From the output of the <strong class="command">lspci</strong> command, parse the PCI ID that
 connects to the Network Controller. In this example, it is “0000:00:14.3”
-that runs the kernel module. <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">iwlwifi</span></code> is the Intel driver for Wi-Fi.</p>
-<div class="figure">
+that runs the kernel module. <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">iwlwifi</span></code> is the Intel driver for Wi-Fi.</p>
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-ex7.png"><img alt="../_images/cs005-ex7.png" src="../_images/cs005-ex7.png" style="width: 5.68333in; height: 1.50903in;" /></a>
 </div>
-<p>Now edit the .ini file located in the <code class="docutils literal"><span class="pre">pci_passthrough</span></code> section, and add
+<p>Now edit the .ini file located in the <code class="docutils literal notranslate"><span class="pre">pci_passthrough</span></code> section, and add
 the entry shown above to set Wi-Fi as PCI passthrough. In the example
 shown below, the passthrough option is added for both Bluetooth and
 Wi-Fi.</p>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-ex8.png"><img alt="../_images/cs005-ex8.png" src="../_images/cs005-ex8.png" style="width: 5.71667in; height: 0.51181in;" /></a>
 </div>
 <p>Save the file. Then launch the vm-manager by executing the command
 below.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo vm-manager -b &lt;vm-name&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>vm-manager<span class="w"> </span>-b<span class="w"> </span>&lt;vm-name&gt;
 </pre></div>
 </div>
 </div>
@@ -368,44 +370,43 @@ below.</p>
 <p>If Wi-Fi does not come up after adding the correct PCI passthrough
 option, use the tips below to debug your configuration.</p>
 <ul>
-<li><p class="first">The passthrough options provided could be within the same iommu
+<li><p>The passthrough options provided could be within the same iommu
 group. To prevent this, check the host prior to adding the PCI
 passthrough option in the .ini file. Check the <cite>dmesg</cite> output on the
 host with the filter shown below to check the iommu group.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ dmesg <span class="p">|</span> grep “IOMMU”
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>“IOMMU”
 </pre></div>
 </div>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-ex9.png"><img alt="../_images/cs005-ex9.png" src="../_images/cs005-ex9.png" style="width: 4.65000in; height: 3.08311in;" /></a>
 </div>
 <p>In the sample output, devices in the same iommu group can’t be made
 passthrough together.</p>
 </li>
-<li><p class="first">Firmware load failure. To check if the problem is being caused by a
+<li><p>Firmware load failure. To check if the problem is being caused by a
 firmware download failure, run <strong class="command">dmesg | grep iwl</strong> to filter the
 dmesg and check the below log for firmware download
 status.</p>
-<div class="figure">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/cs005-ex10.png"><img alt="../_images/cs005-ex10.png" src="../_images/cs005-ex10.png" style="width: 5.25000in; height: 0.20136in;" /></a>
 </div>
 </li>
-<li><p class="first">In case the expected firmware version download fails, it should fall
+<li><p>In case the expected firmware version download fails, it should fall
 back to the default firmware version and successfully load the
-firmware.</p>
-</li>
-<li><p class="first">In case the firmware load itself fails, it won’t proceed for driver
+firmware.</p></li>
+<li><p>In case the firmware load itself fails, it won’t proceed for driver
 initialization and the phy interface will not be generated. If the
 issue still persists, download the correct firmware from the git
 repo:</p>
 <p><a class="reference external" href="https://kernel.googlesource.com/pub/scm/linux/kernel/git/firmware/linux-firmware">https://kernel.googlesource.com/pub/scm/linux/kernel/git/firmware/linux-firmware</a></p>
 </li>
-<li><p class="first">To get detailed Wi-Fi driver information, use the commands shown
+<li><p>To get detailed Wi-Fi driver information, use the commands shown
 below:</p>
 <ul class="simple">
-<li><strong class="command">lspci</strong> with –v or -kkk option</li>
-<li><strong class="command">iwconfig</strong> (to check the iwd daemon configuration)</li>
-<li><strong class="command">lshw -C network</strong> (check the NIC ownership)</li>
-<li><strong class="command">iw list</strong> for driver and controller supported features</li>
+<li><p><strong class="command">lspci</strong> with –v or -kkk option</p></li>
+<li><p><strong class="command">iwconfig</strong> (to check the iwd daemon configuration)</p></li>
+<li><p><strong class="command">lshw -C network</strong> (check the NIC ownership)</p></li>
+<li><p><strong class="command">iw list</strong> for driver and controller supported features</p></li>
 </ul>
 </li>
 </ul>
@@ -435,7 +436,7 @@ below:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -465,6 +466,7 @@ below:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

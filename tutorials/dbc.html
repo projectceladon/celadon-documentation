@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Widevine* L3 Integration Guide" href="widevine-integration.html" />
@@ -189,18 +191,19 @@ infrastructure followed by the steps to enable the feature on Celadon and
 seamlessly run <strong class="command">adb</strong> over a USB Type-A port.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#description" id="id1">Description</a></li>
-<li><a class="reference internal" href="#dbc-overview" id="id2">DBC Overview</a><ul>
-<li><a class="reference internal" href="#github-prs-to-enable-adb-over-dbc-for-c-kbl-nuc" id="id3">GitHub PRs to enable adb over DbC for Celadon KBL NUC</a></li>
-<li><a class="reference internal" href="#steps-to-enable-adb-over-dbc-support-in-host-machine" id="id4">Steps to enable ADB over DbC support in Host Machine</a></li>
-<li><a class="reference internal" href="#steps-to-enable-adb-over-dbc-support-on-nuc-blknuc7idnhe-system" id="id5">Steps to enable ADB over DbC support on Intel NUC BLKNUC7iDNHE system</a></li>
-<li><a class="reference internal" href="#connect-the-target-to-the-host-system" id="id6">Connect the Target to the Host System</a></li>
-<li><a class="reference internal" href="#adb-detection-in-host-machine" id="id7">ADB detection in Host Machine</a></li>
-<li><a class="reference internal" href="#steps-to-switch-back-to-normal-adb-over-usb-dwc" id="id8">Steps to switch back to normal ADB over USB (DWC)</a></li>
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#dbc-overview" id="id2">DBC Overview</a></p>
+<ul>
+<li><p><a class="reference internal" href="#github-prs-to-enable-adb-over-dbc-for-c-kbl-nuc" id="id3">GitHub PRs to enable adb over DbC for Celadon KBL NUC</a></p></li>
+<li><p><a class="reference internal" href="#steps-to-enable-adb-over-dbc-support-in-host-machine" id="id4">Steps to enable ADB over DbC support in Host Machine</a></p></li>
+<li><p><a class="reference internal" href="#steps-to-enable-adb-over-dbc-support-on-nuc-blknuc7idnhe-system" id="id5">Steps to enable ADB over DbC support on Intel NUC BLKNUC7iDNHE system</a></p></li>
+<li><p><a class="reference internal" href="#connect-the-target-to-the-host-system" id="id6">Connect the Target to the Host System</a></p></li>
+<li><p><a class="reference internal" href="#adb-detection-in-host-machine" id="id7">ADB detection in Host Machine</a></p></li>
+<li><p><a class="reference internal" href="#steps-to-switch-back-to-normal-adb-over-usb-dwc" id="id8">Steps to switch back to normal ADB over USB (DWC)</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#conclusion" id="id9">Conclusion</a></li>
-<li><a class="reference internal" href="#references" id="id10">References</a></li>
+<li><p><a class="reference internal" href="#conclusion" id="id9">Conclusion</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id10">References</a></p></li>
 </ul>
 </div>
 <div class="section" id="description">
@@ -234,79 +237,78 @@ low-level system debugging of the target.</p>
 <div class="section" id="github-prs-to-enable-adb-over-dbc-for-c-kbl-nuc">
 <h3><a class="toc-backref" href="#id3">GitHub PRs to enable adb over DbC for Celadon KBL NUC</a></h3>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/pull/291">Kernel and adb changes</a></li>
-<li><a class="reference external" href="https://github.com/projectceladon/device-androidia-mixins/pull/274">Adding android property to switch between adb over DWC and DBC</a></li>
-<li><a class="reference external" href="https://github.com/projectceladon/device-androidia/pull/416">Adding sepolicy to access DbC RAW device node</a></li>
+<li><p><a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/pull/291">Kernel and adb changes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/projectceladon/device-androidia-mixins/pull/274">Adding android property to switch between adb over DWC and DBC</a></p></li>
+<li><p><a class="reference external" href="https://github.com/projectceladon/device-androidia/pull/416">Adding sepolicy to access DbC RAW device node</a></p></li>
 </ol>
 </div>
 <div class="section" id="steps-to-enable-adb-over-dbc-support-in-host-machine">
 <h3><a class="toc-backref" href="#id4">Steps to enable ADB over DbC support in Host Machine</a></h3>
 <ol class="arabic">
-<li><p class="first">Add the following permission to the udev rule
-<code class="file docutils literal"><span class="pre">/etc/udev/rules.d/51-android.rules</span></code> (create the file if it does
+<li><p>Add the following permission to the udev rule
+<code class="file docutils literal notranslate"><span class="pre">/etc/udev/rules.d/51-android.rules</span></code> (create the file if it does
 not exist):</p>
 <blockquote>
-<div><div class="highlight-text"><div class="highlight"><pre><span></span>#DBC
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#DBC
 SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;1d6b&quot;, ATTRS{idProduct}==&quot;0010&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;, SYMLINK+=&quot;android%n&quot;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Reboot the host system, or run the following commands with root
+<li><p>Reboot the host system, or run the following commands with root
 permission to take effect:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# udevadm control --reload-rules
-root@intel:~# udevadm trigger
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
+root@intel:~#<span class="w"> </span>udevadm<span class="w"> </span>trigger
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Rename or remove the kernel module <strong class="command">usb_debug.ko</strong> in the host
+<li><p>Rename or remove the kernel module <strong class="command">usb_debug.ko</strong> in the host
 system if any:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# <span class="nb">cd</span> /lib/modules/<span class="k">$(</span>uname -r<span class="k">)</span>/kernel/drivers/usb/serial/ <span class="o">&amp;&amp;</span> mv usb_debug.ko usbdebug
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/lib/modules/<span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span>/kernel/drivers/usb/serial/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>usb_debug.ko<span class="w"> </span>usbdebug
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Check if the <strong class="command">usb_debug</strong> driver module is loaded to the kernel
+<li><p>Check if the <strong class="command">usb_debug</strong> driver module is loaded to the kernel
 with the following command:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# lsmod <span class="p">|</span> grep usb_debug
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span>lsmod<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>usb_debug
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Unload the <strong class="command">usb_debug</strong> driver module if it is loaded:</p>
+<li><p>Unload the <strong class="command">usb_debug</strong> driver module if it is loaded:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# rmmod usb_debug
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span>rmmod<span class="w"> </span>usb_debug
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">The <strong class="command">adb</strong> command installed by the Android SDK does not support
+<li><p>The <strong class="command">adb</strong> command installed by the Android SDK does not support
 ADB over DbC, you should use the <strong class="command">adb</strong> command built from the Celadon
 source tree. The ADB over DbC-enabled <strong class="command">adb</strong> command is avaiable
-in the <code class="file docutils literal"><span class="pre">out/host/linux-x86/bin/</span></code> folder after the build.</p>
-</li>
+in the <code class="file docutils literal notranslate"><span class="pre">out/host/linux-x86/bin/</span></code> folder after the build.</p></li>
 </ol>
 </div>
 <div class="section" id="steps-to-enable-adb-over-dbc-support-on-nuc-blknuc7idnhe-system">
 <h3><a class="toc-backref" href="#id5">Steps to enable ADB over DbC support on Intel NUC BLKNUC7iDNHE system</a></h3>
 <ol class="arabic">
-<li><p class="first">Check the Android property value
-<span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">persist.vendor.sys.usb.adbover</span></code> with the following command. The
-default value is <span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal"><span class="pre">dwc</span></code>, which represents normal ADB over USB (DWC).</p>
+<li><p>Check the Android property value
+<span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">persist.vendor.sys.usb.adbover</span></code> with the following command. The
+default value is <span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">dwc</span></code>, which represents normal ADB over USB (DWC).</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# getprop persist.vendor.sys.usb.adbover
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span>getprop<span class="w"> </span>persist.vendor.sys.usb.adbover
 dwc
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Reset the property value to <span class="target" id="index-2"></span><code class="xref std std-envvar docutils literal"><span class="pre">dbc</span></code>, then reboot the target system.</p>
+<li><p>Reset the property value to <span class="target" id="index-2"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">dbc</span></code>, then reboot the target system.</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# setprop persist.vendor.sys.usb.adbover dbc
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span>setprop<span class="w"> </span>persist.vendor.sys.usb.adbover<span class="w"> </span>dbc
 </pre></div>
 </div>
 </div></blockquote>
@@ -321,39 +323,39 @@ A USB 2.0 Type-A to Type-A cable does not work in this case.</p>
 <p>At this point the target should have enumerated as a Debug Device on the
 Host. This can be confirmed with the following command:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# lsusb -t
-/:  Bus <span class="m">02</span>.Port <span class="m">1</span>: Dev <span class="m">1</span>, <span class="nv">Class</span><span class="o">=</span>root_hub, <span class="nv">Driver</span><span class="o">=</span>xhci-hcd/10p, 5000M
-    <span class="p">|</span>__ Port <span class="m">4</span>: Dev <span class="m">31</span>, If <span class="m">0</span>, <span class="nv">Class</span><span class="o">=</span>Diagnostic, <span class="nv">Driver</span><span class="o">=</span>usbfs, 5000M
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span>lsusb<span class="w"> </span>-t
+/:<span class="w">  </span>Bus<span class="w"> </span><span class="m">02</span>.Port<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Dev<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="nv">Class</span><span class="o">=</span>root_hub,<span class="w"> </span><span class="nv">Driver</span><span class="o">=</span>xhci-hcd/10p,<span class="w"> </span>5000M
+<span class="w">    </span><span class="p">|</span>__<span class="w"> </span>Port<span class="w"> </span><span class="m">4</span>:<span class="w"> </span>Dev<span class="w"> </span><span class="m">31</span>,<span class="w"> </span>If<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="nv">Class</span><span class="o">=</span>Diagnostic,<span class="w"> </span><span class="nv">Driver</span><span class="o">=</span>usbfs,<span class="w"> </span>5000M
 
-root@intel:~# cat /sys/kernel/debug/usb/devices
-T:  <span class="nv">Bus</span><span class="o">=</span><span class="m">02</span> <span class="nv">Lev</span><span class="o">=</span><span class="m">01</span> <span class="nv">Prnt</span><span class="o">=</span><span class="m">01</span> <span class="nv">Port</span><span class="o">=</span><span class="m">03</span> <span class="nv">Cnt</span><span class="o">=</span><span class="m">01</span> Dev#<span class="o">=</span> <span class="m">31</span> <span class="nv">Spd</span><span class="o">=</span><span class="m">5000</span> <span class="nv">MxCh</span><span class="o">=</span> <span class="m">0</span>
-D:  <span class="nv">Ver</span><span class="o">=</span> <span class="m">3</span>.00 <span class="nv">Cls</span><span class="o">=</span><span class="m">00</span><span class="o">(</span>&gt;ifc <span class="o">)</span> <span class="nv">Sub</span><span class="o">=</span><span class="m">00</span> <span class="nv">Prot</span><span class="o">=</span><span class="m">00</span> <span class="nv">MxPS</span><span class="o">=</span> <span class="m">9</span> <span class="c1">#Cfgs=  1</span>
-P:  <span class="nv">Vendor</span><span class="o">=</span>1d6b <span class="nv">ProdID</span><span class="o">=</span><span class="m">0010</span> <span class="nv">Rev</span><span class="o">=</span> <span class="m">0</span>.10
-S:  <span class="nv">Manufacturer</span><span class="o">=</span>Linux Foundation
-S:  <span class="nv">Product</span><span class="o">=</span>Linux USB Debug Target
-S:  <span class="nv">SerialNumber</span><span class="o">=</span>DW1724778700007
-C:* <span class="c1">#Ifs= 1 Cfg#= 1 Atr=c0 MxPwr=  0mA</span>
-I:* If#<span class="o">=</span> <span class="m">0</span> <span class="nv">Alt</span><span class="o">=</span> <span class="m">0</span> <span class="c1">#EPs= 2 Cls=dc(unk. ) Sub=02 Prot=01 Driver=usbfs</span>
-E:  <span class="nv">Ad</span><span class="o">=</span><span class="m">01</span><span class="o">(</span>I<span class="o">)</span> <span class="nv">Atr</span><span class="o">=</span><span class="m">02</span><span class="o">(</span>Bulk<span class="o">)</span> <span class="nv">MxPS</span><span class="o">=</span><span class="m">1024</span> <span class="nv">Ivl</span><span class="o">=</span>0ms
-E:  <span class="nv">Ad</span><span class="o">=</span><span class="m">81</span><span class="o">(</span>I<span class="o">)</span> <span class="nv">Atr</span><span class="o">=</span><span class="m">02</span><span class="o">(</span>Bulk<span class="o">)</span> <span class="nv">MxPS</span><span class="o">=</span><span class="m">1024</span> <span class="nv">Ivl</span><span class="o">=</span>0ms
+root@intel:~#<span class="w"> </span>cat<span class="w"> </span>/sys/kernel/debug/usb/devices
+T:<span class="w">  </span><span class="nv">Bus</span><span class="o">=</span><span class="m">02</span><span class="w"> </span><span class="nv">Lev</span><span class="o">=</span><span class="m">01</span><span class="w"> </span><span class="nv">Prnt</span><span class="o">=</span><span class="m">01</span><span class="w"> </span><span class="nv">Port</span><span class="o">=</span><span class="m">03</span><span class="w"> </span><span class="nv">Cnt</span><span class="o">=</span><span class="m">01</span><span class="w"> </span>Dev#<span class="o">=</span><span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="nv">Spd</span><span class="o">=</span><span class="m">5000</span><span class="w"> </span><span class="nv">MxCh</span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+D:<span class="w">  </span><span class="nv">Ver</span><span class="o">=</span><span class="w"> </span><span class="m">3</span>.00<span class="w"> </span><span class="nv">Cls</span><span class="o">=</span><span class="m">00</span><span class="o">(</span>&gt;ifc<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nv">Sub</span><span class="o">=</span><span class="m">00</span><span class="w"> </span><span class="nv">Prot</span><span class="o">=</span><span class="m">00</span><span class="w"> </span><span class="nv">MxPS</span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="c1">#Cfgs=  1</span>
+P:<span class="w">  </span><span class="nv">Vendor</span><span class="o">=</span>1d6b<span class="w"> </span><span class="nv">ProdID</span><span class="o">=</span><span class="m">0010</span><span class="w"> </span><span class="nv">Rev</span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.10
+S:<span class="w">  </span><span class="nv">Manufacturer</span><span class="o">=</span>Linux<span class="w"> </span>Foundation
+S:<span class="w">  </span><span class="nv">Product</span><span class="o">=</span>Linux<span class="w"> </span>USB<span class="w"> </span>Debug<span class="w"> </span>Target
+S:<span class="w">  </span><span class="nv">SerialNumber</span><span class="o">=</span>DW1724778700007
+C:*<span class="w"> </span><span class="c1">#Ifs= 1 Cfg#= 1 Atr=c0 MxPwr=  0mA</span>
+I:*<span class="w"> </span>If#<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">Alt</span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="c1">#EPs= 2 Cls=dc(unk. ) Sub=02 Prot=01 Driver=usbfs</span>
+E:<span class="w">  </span><span class="nv">Ad</span><span class="o">=</span><span class="m">01</span><span class="o">(</span>I<span class="o">)</span><span class="w"> </span><span class="nv">Atr</span><span class="o">=</span><span class="m">02</span><span class="o">(</span>Bulk<span class="o">)</span><span class="w"> </span><span class="nv">MxPS</span><span class="o">=</span><span class="m">1024</span><span class="w"> </span><span class="nv">Ivl</span><span class="o">=</span>0ms
+E:<span class="w">  </span><span class="nv">Ad</span><span class="o">=</span><span class="m">81</span><span class="o">(</span>I<span class="o">)</span><span class="w"> </span><span class="nv">Atr</span><span class="o">=</span><span class="m">02</span><span class="o">(</span>Bulk<span class="o">)</span><span class="w"> </span><span class="nv">MxPS</span><span class="o">=</span><span class="m">1024</span><span class="w"> </span><span class="nv">Ivl</span><span class="o">=</span>0ms
 </pre></div>
 </div>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><span class="target" id="index-3"></span><code class="xref std std-envvar docutils literal"><span class="pre">Speed</span></code> should be <em>5000</em> (i.e. <span class="target" id="index-4"></span><code class="xref std std-envvar docutils literal"><span class="pre">Spd=5000</span></code>) and
-<span class="target" id="index-5"></span><code class="xref std std-envvar docutils literal"><span class="pre">Driver</span></code> should be <em>usbfs</em> (i.e. <span class="target" id="index-6"></span><code class="xref std std-envvar docutils literal"><span class="pre">Driver=usbfs</span></code>) in the
+<p class="admonition-title">Note</p>
+<p><span class="target" id="index-3"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">Speed</span></code> should be <em>5000</em> (i.e. <span class="target" id="index-4"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">Spd=5000</span></code>) and
+<span class="target" id="index-5"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">Driver</span></code> should be <em>usbfs</em> (i.e. <span class="target" id="index-6"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">Driver=usbfs</span></code>) in the
 previous command output.</p>
 </div>
 </div>
 <div class="section" id="adb-detection-in-host-machine">
 <h3><a class="toc-backref" href="#id7">ADB detection in Host Machine</a></h3>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:/home/prabhatc/Desktop# ./adb devices
-List of devices attached
-* daemon not running. starting it now on port <span class="m">5037</span> *
-* daemon started successfully *
-DW1724778700007 device
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:/home/prabhatc/Desktop#<span class="w"> </span>./adb<span class="w"> </span>devices
+List<span class="w"> </span>of<span class="w"> </span>devices<span class="w"> </span>attached
+*<span class="w"> </span>daemon<span class="w"> </span>not<span class="w"> </span>running.<span class="w"> </span>starting<span class="w"> </span>it<span class="w"> </span>now<span class="w"> </span>on<span class="w"> </span>port<span class="w"> </span><span class="m">5037</span><span class="w"> </span>*
+*<span class="w"> </span>daemon<span class="w"> </span>started<span class="w"> </span>successfully<span class="w"> </span>*
+DW1724778700007<span class="w"> </span>device
 </pre></div>
 </div>
 </div></blockquote>
@@ -361,18 +363,18 @@ DW1724778700007 device
 <div class="section" id="steps-to-switch-back-to-normal-adb-over-usb-dwc">
 <h3><a class="toc-backref" href="#id8">Steps to switch back to normal ADB over USB (DWC)</a></h3>
 <ol class="arabic">
-<li><p class="first">Check the Android property value <span class="target" id="index-7"></span><code class="xref std std-envvar docutils literal"><span class="pre">persist.vendor.sys.usb.adbover</span></code>
+<li><p>Check the Android property value <span class="target" id="index-7"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">persist.vendor.sys.usb.adbover</span></code>
 with the following command.</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# getprop persist.vendor.sys.usb.adbover
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span>getprop<span class="w"> </span>persist.vendor.sys.usb.adbover
 dbc
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Reset the property value to <span class="target" id="index-8"></span><code class="xref std std-envvar docutils literal"><span class="pre">dwc</span></code>, then reboot the target system.</p>
+<li><p>Reset the property value to <span class="target" id="index-8"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">dwc</span></code>, then reboot the target system.</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>root@intel:~# setprop persist.vendor.sys.usb.adbover dwc
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@intel:~#<span class="w"> </span>setprop<span class="w"> </span>persist.vendor.sys.usb.adbover<span class="w"> </span>dwc
 </pre></div>
 </div>
 </div></blockquote>
@@ -381,8 +383,8 @@ dbc
 <div class="section" id="adb-over-dbc-throughput-test-result">
 <h4>ADB over DbC throughput test result</h4>
 <ul class="simple">
-<li>Achieved 28.0 MB/s (1073741824 bytes in 36.528s) for pulling 1GB file.</li>
-<li>Achieved 27.0 MB/s (1073741824 bytes in 37.860s) for pushing 1GB file.</li>
+<li><p>Achieved 28.0 MB/s (1073741824 bytes in 36.528s) for pulling 1GB file.</p></li>
+<li><p>Achieved 27.0 MB/s (1073741824 bytes in 37.860s) for pushing 1GB file.</p></li>
 </ul>
 </div>
 </div>
@@ -399,10 +401,12 @@ up where there is limited BIOS support etc.</p>
 <h2><a class="toc-backref" href="#id10">References</a></h2>
 <p>DBC CAP Blog</p>
 <blockquote>
-<div><a class="reference external" href="https://www.kernel.org/doc/html/v5.0/driver-api/usb/usb3-debug-port.html">https://www.kernel.org/doc/html/v5.0/driver-api/usb/usb3-debug-port.html</a></div></blockquote>
+<div><p><a class="reference external" href="https://www.kernel.org/doc/html/v5.0/driver-api/usb/usb3-debug-port.html">https://www.kernel.org/doc/html/v5.0/driver-api/usb/usb3-debug-port.html</a></p>
+</div></blockquote>
 <p>XHCI Spec</p>
 <blockquote>
-<div><a class="reference external" href="https://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/extensible-host-controler-interface-usb-xhci.pdf">https://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/extensible-host-controler-interface-usb-xhci.pdf</a></div></blockquote>
+<div><p><a class="reference external" href="https://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/extensible-host-controler-interface-usb-xhci.pdf">https://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/extensible-host-controler-interface-usb-xhci.pdf</a></p>
+</div></blockquote>
 </div>
 </div>
 
@@ -427,7 +431,7 @@ up where there is limited BIOS support etc.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -457,6 +461,7 @@ up where there is limited BIOS support etc.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

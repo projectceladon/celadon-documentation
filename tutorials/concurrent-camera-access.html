@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Enabling Neural Networks Hardware Abstraction Layer in Celadon" href="enabling-nnhal-in-celadon.html" />
@@ -205,17 +207,17 @@ guest via vsock.</p>
 <p>The camera vhal on the guest is a generic virtual HAL developed to
 interact with the host camera service to get camera data and provide the
 camera content to the existing camera services in Android OS.</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/fig1-block-diagram-camera-mediation-CiV.png"><img alt="../_images/fig1-block-diagram-camera-mediation-CiV.png" src="../_images/fig1-block-diagram-camera-mediation-CiV.png" style="width: 6.49167in; height: 3.44167in;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Block diagram of camera mediation in CiV</span></p>
 </div>
 <p>Figure 2 below is a screenshot of the host and guest camera applications
 sharing the same camera resource simultaneously.</p>
 <p><strong class="program">ffplay</strong> is the host application using the virtual camera node
-<code class="file docutils literal"><span class="pre">/dev/video6</span></code>.</p>
+<code class="file docutils literal notranslate"><span class="pre">/dev/video6</span></code>.</p>
 <p>AOSP on an Intel platform is the Celadon in virtual machine running on
-the guest OS, using the virtual camera node <code class="file docutils literal"><span class="pre">/dev/video7</span></code>.</p>
-<div class="figure" id="id2">
+the guest OS, using the virtual camera node <code class="file docutils literal notranslate"><span class="pre">/dev/video7</span></code>.</p>
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/fig2-concurrent-camera-access.png"><img alt="../_images/fig2-concurrent-camera-access.png" src="../_images/fig2-concurrent-camera-access.png" style="width: 6.49306in; height: 3.01389in;" /></a>
 <p class="caption"><span class="caption-text">Figure 2: Concurrent camera access on host and guest OS</span></p>
 </div>
@@ -223,42 +225,41 @@ the guest OS, using the virtual camera node <code class="file docutils literal">
 <div class="section" id="enabling-camera-mediation-in-civ">
 <h2>Enabling camera mediation in CIV:</h2>
 <ol class="arabic">
-<li><p class="first">Run the setup host script to install the host camera server and Intel
+<li><p>Run the setup host script to install the host camera server and Intel
 virtual camera service.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo -E ./scripts/setup_host.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-E<span class="w"> </span>./scripts/setup_host.sh
 </pre></div>
 </div>
 <p>After a successful execution of setup, two host virtual nodes are
-generated: <code class="file docutils literal"><span class="pre">/dev/video6</span></code> and <code class="file docutils literal"><span class="pre">/dev/video7</span></code></p>
+generated: <code class="file docutils literal notranslate"><span class="pre">/dev/video6</span></code> and <code class="file docutils literal notranslate"><span class="pre">/dev/video7</span></code></p>
 </li>
-<li><p class="first">Set the maximum supported resolution for the video0 node using the
+<li><p>Set the maximum supported resolution for the video0 node using the
 following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo v4l2-ctl -d /dev/video0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>v4l2-ctl<span class="w"> </span>-d<span class="w"> </span>/dev/video0
 --set-fmt-video<span class="o">=</span><span class="nv">width</span><span class="o">=</span><span class="m">1920</span>,height<span class="o">=</span><span class="m">1080</span>,pixelformat<span class="o">=</span>MJPG
 </pre></div>
 </div>
 </li>
-<li><p class="first">To know your camera’s supported resolution and format, run the
+<li><p>To know your camera’s supported resolution and format, run the
 following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo v4l2-ctl -d /dev/video0 --list-formats-ext
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>v4l2-ctl<span class="w"> </span>-d<span class="w"> </span>/dev/video0<span class="w"> </span>--list-formats-ext
 </pre></div>
 </div>
 </li>
-<li><p class="first">Modify the <code class="file docutils literal"><span class="pre">~/.intel/.civ/instance.ini</span></code> file by adding:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">camera_med</span><span class="o">=</span>y
+<li><p>Modify the <code class="file docutils literal notranslate"><span class="pre">~/.intel/.civ/instance.ini</span></code> file by adding:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">camera_med</span><span class="o">=</span>y
 </pre></div>
 </div>
 </li>
-<li><p class="first">Before starting Android, make sure virtual device nodes <code class="file docutils literal"><span class="pre">/dev/video6</span></code>
-and <code class="file docutils literal"><span class="pre">/dev/video7</span></code> are present with host OS. If not, re-run this
+<li><p>Before starting Android, make sure virtual device nodes <code class="file docutils literal notranslate"><span class="pre">/dev/video6</span></code>
+and <code class="file docutils literal notranslate"><span class="pre">/dev/video7</span></code> are present with host OS. If not, re-run this
 command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo –E ./scripts/setup<span class="se">\_</span>host.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>–E<span class="w"> </span>./scripts/setup<span class="se">\_</span>host.sh
 </pre></div>
 </div>
 </li>
-<li><p class="first">Launch Android using <strong class="command">vm-manager -b instance</strong>. This starts the host
-camera service.</p>
-</li>
+<li><p>Launch Android using <strong class="command">vm-manager -b instance</strong>. This starts the host
+camera service.</p></li>
 </ol>
 <div class="section" id="camera-usb-passthrough-limitation">
 <h3>Camera USB passthrough limitation</h3>
@@ -276,8 +277,8 @@ limitation, it’s hard to make the best use of virtualization.</p>
 <div class="section" id="known-issues">
 <h2>Known Issues:</h2>
 <ol class="loweralpha simple">
-<li>The camera service implementation is only for a single camera.</li>
-<li>Camera hot plug is not supported.</li>
+<li><p>The camera service implementation is only for a single camera.</p></li>
+<li><p>Camera hot plug is not supported.</p></li>
 </ol>
 </div>
 </div>
@@ -303,7 +304,7 @@ limitation, it’s hard to make the best use of virtualization.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -333,6 +334,7 @@ limitation, it’s hard to make the best use of virtualization.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

@@ -27,6 +27,8 @@
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Concurrent Camera Access in CiV" href="concurrent-camera-access.html" />
@@ -195,9 +197,9 @@ with F2FS but <strong class="program">EXT4</strong> remains the default.</p>
 <div class="section" id="steps-to-enable-f2fs-in-the-kernel">
 <h2>Steps to enable F2FS in the kernel</h2>
 <ol class="arabic">
-<li><p class="first">The following kernel configs need to be enabled to configure F2FS in
+<li><p>The following kernel configs need to be enabled to configure F2FS in
 the kernel:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">CONFIG_F2FS_FS</span><span class="o">=</span>y
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONFIG_F2FS_FS</span><span class="o">=</span>y
 <span class="nv">CONFIG_F2FS_STAT_FS</span><span class="o">=</span>y
 <span class="nv">CONFIG_F2FS_FS_XATTR</span><span class="o">=</span>y
 <span class="nv">CONFIG_F2FS_FS_POSIX_ACL</span><span class="o">=</span>y
@@ -205,10 +207,10 @@ the kernel:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Execute the command shown below in an <strong class="command">adb</strong> shell during runtime to
+<li><p>Execute the command shown below in an <strong class="command">adb</strong> shell during runtime to
 check if F2FS is enabled in the kernel:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /proc/filesystems <span class="p">|</span> grep f2fs
-        f2fs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>/proc/filesystems<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>f2fs
+<span class="w">        </span>f2fs
 </pre></div>
 </div>
 </li>
@@ -217,10 +219,10 @@ check if F2FS is enabled in the kernel:</p>
 <div class="section" id="steps-to-enable-f2fs-in-celadon">
 <h2>Steps to enable F2FS in Celadon</h2>
 <ol class="arabic">
-<li><p class="first">To enable F2FS explicitly, update the config file
-<code class="docutils literal"><span class="pre">device/intel/project-celadon/$&lt;lunch-target&gt;/mixins.spec</span></code>&nbsp;in the
+<li><p>To enable F2FS explicitly, update the config file
+<code class="docutils literal notranslate"><span class="pre">device/intel/project-celadon/$&lt;lunch-target&gt;/mixins.spec</span></code> in the
 device config project as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">groups</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">groups</span><span class="p">]</span>
 
 <span class="o">..</span>
 
@@ -233,7 +235,7 @@ device config project as follows:</p>
 </div>
 <p>The following parameter has been added within the brackets in the previous
 configuration setting:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span>\<span class="n">_use</span>\<span class="n">_f2fs</span> <span class="p">:</span> <span class="n">optional</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>\<span class="n">_use</span>\<span class="n">_f2fs</span> <span class="p">:</span> <span class="n">optional</span>
 <span class="n">This</span> <span class="n">flag</span> <span class="n">defines</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">data</span> <span class="n">partition</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">mounted</span>
 <span class="k">with</span> <span class="n">F2FS</span><span class="o">.</span>
 
@@ -241,9 +243,9 @@ configuration setting:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Revert the patch shown below by updating the flashfiles mixin group
-<code class="docutils literal"><span class="pre">device/intel/groups/flashfiles</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">2786</span><span class="n">ca9cf496d31743674c4273dda9d5ce9958ca</span>
+<li><p>Revert the patch shown below by updating the flashfiles mixin group
+<code class="docutils literal notranslate"><span class="pre">device/intel/groups/flashfiles</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">2786</span><span class="n">ca9cf496d31743674c4273dda9d5ce9958ca</span>
 <span class="n">Author</span><span class="p">:</span> <span class="n">Tian</span> <span class="n">Baofeng</span> <span class="o">&lt;</span><span class="n">baofeng</span><span class="o">.</span><span class="n">tian</span><span class="nd">@intel</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
 <span class="n">Date</span><span class="p">:</span> <span class="n">Thu</span> <span class="n">Aug</span> <span class="mi">8</span> <span class="mi">14</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">31</span> <span class="mi">2019</span> <span class="o">+</span><span class="mi">0800</span>
 
@@ -267,23 +269,23 @@ configuration setting:</p>
 </li>
 </ol>
 <p>After the mixin configuration is changed, run
-the&nbsp;<strong>mixin-update</strong>&nbsp;script before re-building the image to apply the
+the <strong>mixin-update</strong> script before re-building the image to apply the
 changes to the project device configuration. Follow the instructions
-in&nbsp;<a class="reference external" href="https://docs.01.org/celadon/getting-started/build-source.html#build-from-source">Build Celadon From
-Source</a>&nbsp;Guide
+in <a class="reference external" href="https://docs.01.org/celadon/getting-started/build-source.html#build-from-source">Build Celadon From
+Source</a> Guide
 to rebuild the Celadon images.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ device/intel/mixins/mixin-update
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>device/intel/mixins/mixin-update
 </pre></div>
 </div>
 </div>
 <div class="section" id="steps-to-verify-f2fs-boot-in-celadon">
 <h2>Steps to verify F2FS boot in Celadon</h2>
 <ol class="arabic">
-<li><p class="first">After Celadon has booted, run the command shown below in an <strong class="command">adb</strong> shell
+<li><p>After Celadon has booted, run the command shown below in an <strong class="command">adb</strong> shell
 to check that the data partition has been mounted with F2FS.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mount <span class="p">|</span> grep data
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mount<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>data
 
-/dev/block/dm-8 on /data <span class="nb">type</span> f2fs
+/dev/block/dm-8<span class="w"> </span>on<span class="w"> </span>/data<span class="w"> </span><span class="nb">type</span><span class="w"> </span>f2fs
 <span class="o">(</span>rw,lazytime,seclabel,nosuid,nodev,noatime,background_gc<span class="o">=</span>on,discard,no_heap,user_xattr,inline_xattr,acl,inline_data,inline_dentry,flush_merge,extent_cache,mode<span class="o">=</span>adaptive,active_logs<span class="o">=</span><span class="m">6</span>,alloc_mode<span class="o">=</span>default,checkpoint_merge,fsync_mode<span class="o">=</span>posix<span class="o">)</span>
 </pre></div>
 </div>
@@ -298,7 +300,7 @@ storage virtualization stack. Broadly application layer holds on the
 Android/Guest OS along with the backing HALs, filesystem and block
 layers. QEMU provides the format and protocol layers, VFS &amp; block layer
 of the Host/Ubuntu OS interact with the real hardware.</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/boot-civ-f2fs-storage-block-diagram.png"><img alt="../_images/boot-civ-f2fs-storage-block-diagram.png" src="../_images/boot-civ-f2fs-storage-block-diagram.png" style="width: 4.87500in; height: 4.73958in;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Storage block diagram</span></p>
 </div>
@@ -326,7 +328,7 @@ of the Host/Ubuntu OS interact with the real hardware.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
-      Last updated on Jan 19, 2023.
+      Last updated on Feb 07, 2023.
 
     </p>
   </div>
@@ -356,6 +358,7 @@ of the Host/Ubuntu OS interact with the real hardware.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>

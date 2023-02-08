@@ -75,7 +75,7 @@ Where to find the release
 -------------------------
 
 * Manifest Link: https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.04.50_A12.xml
-* :sup:`#`\PRs fixing this issue in repo : https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged 
+* :sup:`#`\PRs fixing this issue in repo : https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged
   [PR#9, PR#10, PR#11, PR#16, PR#17, PR#19]
 * Below validation results are with release manifest + cherrypicked PR's
 
@@ -124,12 +124,12 @@ Validation results
 Stable Releases (IoT) are validated with SR-IOV mode on Alder Lake(ADL)Intel® platform in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements
 
 .. figure:: stable-release_iot/images/Q422-2-A12_Validation_Result.png
-    :align: right
+    :align: center
     :width: 500px
 
 .. note::
 
-        :sup:`*`\CTS on GSI failures are subset of CTS failures, so overall failures count 
+        :sup:`*`\CTS on GSI failures are subset of CTS failures, so overall failures count
         is 39.
 
 CIV_03.22.03.37_A11

@@ -553,7 +553,8 @@ Retail, Education, Workload consolidation and Marine segments.</p>
 <div class="section" id="customer-support">
 <h4>Customer support</h4>
 <ul class="simple">
-<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+<li><p>subscribe/unsubscribe celadon mailing list using :
+<a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
 </ul>
 </div>
 <div class="section" id="introduction">
@@ -564,11 +565,23 @@ Retail, Education, Workload consolidation and Marine segments.</p>
 <ul>
 <li><p>Celadon Upstreamed fixes in this release</p>
 <blockquote>
+<div><blockquote>
 <div><ul class="simple">
-<li><p>1st Stable Release from Celadon_IoT for  Android 12</p></li>
-<li><p>This release supports Alder Lake-S (ADL-S)</p></li>
-<li><p>IoT configuration support SRIOV mode with 99.97% conformance on Alder Lake (ADL)platform with production ready</p></li>
+<li><p>First stable release from Celadon_IoT for Android 12</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>This release supports Alder Lake-S (ADL-S)</dt><dd><ul>
+<li><p>IoT configuration supports SRIOV mode with 99.97% conformance on Alder Lake (ADL</p></li>
+</ul>
+</dd>
+<dt>platform with production ready</dt><dd><ul>
 <li><p>Vm-Manager support to launch Android</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </div></blockquote>
 </li>
@@ -741,14 +754,21 @@ Retail, Education, Workload consolidation and Marine segments.</p>
 </div>
 <div class="section" id="validation-results">
 <h4>Validation results</h4>
-<p>Stable Releases (IoT) are validated with SR-IOV mode on Alder Lake(ADL)Intel® platform in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements</p>
-<div class="figure align-center">
+<p>Stable Releases (IoT) are validated with SR-IOV mode on an Alder Lake (ADL)
+platform in the following function domains. Validation cycles are performed on
+a GMS user-signed, widevine-enabled image, as required by google certification
+requirements</p>
+<div class="figure align-default">
 <a class="reference internal image-reference" href="_images/Q422-2-A12_Validation_Result.png"><img alt="_images/Q422-2-A12_Validation_Result.png" src="_images/Q422-2-A12_Validation_Result.png" style="width: 500px;" /></a>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><sup>*</sup>CTS on GSI failures are subset of CTS failures, so overall failures count
-is 39.</p>
+<p>Above validation results are with release manifest + below cherrypicked
+patches/PR’s PR list: PR#9, PR#10, PR#11, PR#16, PR#17, and PR#19.
+(This can be found at the following link:
+<a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged">https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged</a>)</p>
+<p>*CTS on GSI failures are a subset of CTS failures, so the overall failures
+count is 39.</p>
 </div>
 </div>
 </div>

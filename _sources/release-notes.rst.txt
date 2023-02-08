@@ -32,7 +32,8 @@ Intended audience
 Customer support
 ----------------
 
-* subscribe/unsubscribe celadon mailing list using : https://lists.linuxfoundation.org/mailman/listinfo/celadon
+* subscribe/unsubscribe celadon mailing list using :
+  https://lists.linuxfoundation.org/mailman/listinfo/celadon
 
 Introduction
 ------------
@@ -40,10 +41,13 @@ Feature Details
 ---------------
 * Celadon Upstreamed fixes in this release
 
-		* 1st Stable Release from Celadon_IoT for  Android 12
-                * This release supports Alder Lake-S (ADL-S)
-		* IoT configuration support SRIOV mode with 99.97% conformance on Alder Lake (ADL)platform with production ready
-		* Vm-Manager support to launch Android
+	* First stable release from Celadon_IoT for Android 12
+
+    * This release supports Alder Lake-S (ADL-S)
+	* IoT configuration supports SRIOV mode with 99.97% conformance on Alder Lake (ADL
+      platform with production ready
+	* Vm-Manager support to launch Android
+
 
 Release Constraint list
 -----------------------
@@ -121,16 +125,24 @@ Reference configuration
 Validation results
 ------------------
 
-Stable Releases (IoT) are validated with SR-IOV mode on Alder Lake(ADL)Intel® platform in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements
+Stable Releases (IoT) are validated with SR-IOV mode on an Alder Lake (ADL)
+platform in the following function domains. Validation cycles are performed on
+a GMS user-signed, widevine-enabled image, as required by google certification
+requirements
 
 .. figure:: stable-release_iot/images/Q422-2-A12_Validation_Result.png
-    :align: center
     :width: 500px
 
 .. note::
 
-        :sup:`*`\CTS on GSI failures are subset of CTS failures, so overall failures count
-        is 39.
+   Above validation results are with release manifest + below cherrypicked
+   patches/PR’s PR list: PR#9, PR#10, PR#11, PR#16, PR#17, and PR#19.
+   (This can be found at the following link:
+   https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged)
+
+   \*CTS on GSI failures are a subset of CTS failures, so the overall failures
+   count is 39.
+
 
 CIV_03.22.03.37_A11
 ===================

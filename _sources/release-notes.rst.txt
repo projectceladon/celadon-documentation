@@ -37,20 +37,22 @@ Customer support
 
 Introduction
 ------------
+
 Feature Details
----------------
-* Celadon Upstreamed fixes in this release
+~~~~~~~~~~~~~~~
 
-	* First stable release from Celadon_IoT for Android 12
+Celadon upstreamed fixes in this release:
 
-    * This release supports Alder Lake-S (ADL-S)
-	* IoT configuration supports SRIOV mode with 99.97% conformance on Alder Lake (ADL
-      platform with production ready
-	* Vm-Manager support to launch Android
+* First stable release from Celadon_IoT for Android 12
+* This release supports Alder Lake-S (ADL-S)
+* IoT configuration supports SRIOV mode with 99.97% conformance on Alder Lake (ADL)
+  platform with production ready
+* Vm-Manager support to launch Android
 
 
 Release Constraint list
 -----------------------
+
 * VP9 hardware codec is not enabled in the current release due to hardware constraint
 * Sensor support is not enabled in current release due to hardware constraint.
 * The current QEMU release doesn’t support RGBA8888 color format which impact RGBA8888 usage on Android guest os application
@@ -134,11 +136,6 @@ requirements
     :width: 500px
 
 .. note::
-
-   Above validation results are with release manifest + below cherrypicked
-   patches/PR’s PR list: PR#9, PR#10, PR#11, PR#16, PR#17, and PR#19.
-   (This can be found at the following link:
-   https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged)
 
    \*CTS on GSI failures are a subset of CTS failures, so the overall failures
    count is 39.

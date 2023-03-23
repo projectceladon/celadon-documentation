@@ -130,7 +130,9 @@ Validation results
 Stable Releases (IoT) are validated with SR-IOV mode on an Alder Lake (ADL)
 platform in the following function domains. Validation cycles are performed on
 a GMS user-signed, widevine-enabled image, as required by google certification
-requirements
+requirements.
+
+Below validation results are with Alder Lake-S (ADL-S) RVP platform.
 
 .. figure:: stable-release_iot/images/Q422-2-A12_Validation_Result.png
     :width: 500px

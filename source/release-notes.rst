@@ -5,7 +5,8 @@ Release Notes
 
 .. note::
 
-    Refer to :ref:`release-naming-convention` to decode the the release tags of the following |C| releases.
+    Refer to :ref:`release-naming-convention` to decode the release tags of
+    the following |C| releases.
 
 .. contents::
    :local:
@@ -14,8 +15,8 @@ Release Notes
 Stable Releases
 ***************
 
-This is a Production Release for evaluation and development purposes addressing
-Retail, Education, Workload consolidation and Marine segments.
+This is a Production Release for evaluation and development purposes
+addressing Retail, Education, Workload consolidation and Marine segments.
 
 .. contents::
    :local:
@@ -45,7 +46,8 @@ Celadon upstreamed fixes in this release:
 
 * First stable release from Celadon_IoT for Android 12
 * This release supports Alder Lake-S (ADL-S)
-* IoT configuration supports SRIOV mode with 99.97% conformance on Alder Lake (ADL)
+* IoT configuration supports SRIOV mode with 99.97% conformance on
+  Alder Lake (ADL)
   platform with production ready
 * Vm-Manager support to launch Android
 

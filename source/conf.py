@@ -295,4 +295,4 @@ texinfo_documents = [
 # 28 Mar 2023: Old version had next line enabled. This option deprecated since v3.5.0.
 # html_add_permalinks = ""
 # 28 Mar 2023: New option html_permalinks is enabled below.
-html_permalinks = ""
+html_permalinks = False

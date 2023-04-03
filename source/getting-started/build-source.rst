@@ -65,6 +65,16 @@ Set up the development environment
 
       $ sudo pip3 install meson==0.59.2
       $ sudo pip3 install mako==1.1.0
+      $ sudo su
+
+      $ cd /usr/local/
+
+      $ wget https://github.com/KhronosGroup/glslang/releases/download/SDK-candidate-26-Jul-2020/glslang-master-linux-Release.zip && \
+
+      $ unzip glslang-master-linux-Release.zip bin/glslangValidator && \
+
+      $ rm glslang-master-linux-Release.zip
+
 
 
 Build |C| in VM with Android 13

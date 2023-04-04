@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enabling Neural Networks Hardware Abstraction Layer in Celadon &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Building Intel Platform-Friendly Android Apps" href="build-intel-android-apps.html" />
+    <link rel="prev" title="Concurrent Camera Access in CiV" href="concurrent-camera-access.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mixins.html">Mixins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-sensors-in-celadon.html">Enabling Sensors in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-f2fs.html">Boot CIV with Flash Friendly File System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrent-camera-access.html">Concurrent Camera Access in CiV</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Enabling Neural Networks Hardware Abstraction Layer in Celadon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#neural-networks-hardware-abstraction-layer-overview">Neural networks hardware abstraction layer overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nn-hal-implementation-details">NN HAL implementation details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-and-build-nn-hal">Enable and build NN HAL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execute-a-sample-usecase">Execute a sample usecase</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="build-intel-android-apps.html">Building Intel Platform-Friendly Android Apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">Thermal Mediation in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wireless-connectivity.html">Wireless Connectivity in Celadon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>Enabling Neural Networks Hardware Abstraction Layer in Celadon</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/enabling-nnhal-in-celadon.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="enabling-neural-networks-hardware-abstraction-layer-in-celadon">
+<span id="enabling-nnhal-in-celadon"></span><h1>Enabling Neural Networks Hardware Abstraction Layer in Celadon</h1>
+<p>This tutorial explains neural networks usage in project Celadon.</p>
+<section id="neural-networks-hardware-abstraction-layer-overview">
+<h2>Neural networks hardware abstraction layer overview</h2>
+<p>Android provides a neural networks API (NN API) for running
+computationally intensive operations for machine learning on Android
+devices:</p>
+<p><a class="reference external" href="https://developer.android.com/ndk/guides/neuralnetworks">https://developer.android.com/ndk/guides/neuralnetworks</a></p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/cs002-f1-system-arch-Android-neural-networks.png"><img alt="../_images/cs002-f1-system-arch-Android-neural-networks.png" src="../_images/cs002-f1-system-arch-Android-neural-networks.png" style="width: 6.37500in; height: 5.40000in;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 1: System architecture for Android Neural Networks API (Source:
+<a class="reference external" href="https://developer.android.com/ndk/guides/neuralnetworks#runtime">https://developer.android.com/ndk/guides/neuralnetworks#runtime</a>)</span></p>
+</figcaption>
+</figure>
+<p>Celadon’s neural networks hardware abstraction layer (NN HAL) is the
+vendor implementation of the NN API driver interface
+(<a class="reference external" href="https://source.android.com/devices/neural-networks">https://source.android.com/devices/neural-networks</a>) specified by the HAL
+definition files <code class="file docutils literal notranslate"><span class="pre">hardware/interfaces/neuralnetworks</span></code>.</p>
+<p>This implementation is achieved using the OpenVINO™ Toolkit (2021.4)
+components, which provide optimized solutions for AI inference on Intel
+hardware.</p>
+</section>
+<section id="nn-hal-implementation-details">
+<h2>NN HAL implementation details</h2>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/cs002-f2-arch-for-celadon-nn-hal.png"><img alt="../_images/cs002-f2-arch-for-celadon-nn-hal.png" src="../_images/cs002-f2-arch-for-celadon-nn-hal.png" style="width: 7.67265in; height: 4.17569in;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 2: Architecture for Celadon NN-HAL Implementation</span></p>
+</figcaption>
+</figure>
+<p>The two main steps for AI inferencing using NN API are
+compilation/translation and execution/inference.</p>
+<section id="model-compilation-translation">
+<h3>Model compilation/translation</h3>
+<p>At model compilation time, the NN API framework sends the model to NN
+HAL using <code class="docutils literal notranslate"><span class="pre">IDevice::getSupportedOperations*</span></code>. NN HAL returns an array of
+booleans indicating which operations of the model are supported. Based
+on the response, the framework instructs NN HAL to prepare to execute a
+subset of the model by calling <code class="docutils literal notranslate"><span class="pre">IDevice::prepareModel*</span></code>, which should
+return an <code class="docutils literal notranslate"><span class="pre">IPreparedModel</span></code> handle.</p>
+<p>To use OpenVINO Toolkit’s InferenceEngine, we need a model in IR format:</p>
+<p><a class="reference external" href="https://docs.openvino.ai/2021.4/openvino_docs_MO_DG_IR_and_opsets.html#intermediate-representation-used-in-openvino">https://docs.openvino.ai/2021.4/openvino_docs_MO_DG_IR_and_opsets.html#intermediate-representation-used-in-openvino</a></p>
+<p>The NgraphNetworkCreator along with other sub-components within
+<code class="file docutils literal notranslate"><span class="pre">nn-hal/ngraph_creator</span></code>, implements ngraph conversion of each NN API
+operation, and finally generates an <code class="docutils literal notranslate"><span class="pre">ngraph::Function</span></code> out of the NN API
+model:
+<a class="reference external" href="https://docs.openvino.ai/2021.4/openvino_docs_nGraph_DG_DevGuide.html">https://docs.openvino.ai/2021.4/openvino_docs_nGraph_DG_DevGuide.html</a></p>
+<p>This <code class="docutils literal notranslate"><span class="pre">ngraph::Function</span></code> is further used to create an
+<code class="docutils literal notranslate"><span class="pre">InferenceEngine::CNNNetwork</span></code> object, which can be loaded to the
+corresponding plugin for inference.</p>
+</section>
+<section id="execution-inference">
+<h3>Execution/Inference</h3>
+<p>During execution, the NN API framework calls one of
+<code class="docutils literal notranslate"><span class="pre">IPreparedModel::execute*</span></code> APIs to NN HAL with a Request parameter,
+which lists the input and output operands used for the execution. NN
+HAL converts the input and output operands into formats expected by
+<code class="docutils literal notranslate"><span class="pre">InferenceEngine</span></code> and then uses one of the plugins to do the
+inference. Currently, we use the oneDNN plugin which helps improve
+performance on Intel CPUs:</p>
+<p><a class="reference external" href="https://oneapi-src.github.io/oneDNN/">https://oneapi-src.github.io/oneDNN/</a></p>
+</section>
+</section>
+<section id="enable-and-build-nn-hal">
+<h2>Enable and build NN HAL</h2>
+<p>To enable NN HAL and its dependencies in the Android 12 build, perform
+the following steps:</p>
+<ol class="arabic">
+<li><p>Initialize the Android 12 repo using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>repo<span class="w"> </span>init<span class="w"> </span>-u<span class="w"> </span>https://github.com/projectceladon/manifest<span class="w"> </span>-b<span class="w"> </span>celadon/s/mr0/stable
+</pre></div>
+</div>
+</li>
+<li><p>Apply the following patch to the repo (<code class="file docutils literal notranslate"><span class="pre">.repo/manifests/</span></code>) for
+including the NN HAL dependencies:
+<a class="reference external" href="https://patch-diff.githubusercontent.com/raw/projectceladon/manifest/pull/295.patch">https://patch-diff.githubusercontent.com/raw/projectceladon/manifest/pull/295.patch</a></p></li>
+<li><p>Sync the Android12 source using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>repo<span class="w"> </span>sync<span class="w"> </span>-c
+</pre></div>
+</div>
+</li>
+<li><p>Apply the following patch to <code class="file docutils literal notranslate"><span class="pre">vendor/intel/utils</span></code> to specify android
+build rules for the dependencies:
+<a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/pull/1617.patch">https://github.com/projectceladon/vendor-intel-utils/pull/1617.patch</a></p></li>
+<li><p>Enable neuralnetworks at
+mixins(<code class="file docutils literal notranslate"><span class="pre">device/intel/project-celadon/caas/mixins.spec</span></code>):
+| “neuralnetworks: true”</p></li>
+<li><p>Run the following to update the mixin changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$./device/intel/mixins/mixin-update
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="execute-a-sample-usecase">
+<h2>Execute a sample usecase</h2>
+<p>Sync the tflite <code class="docutils literal notranslate"><span class="pre">object_detection</span></code> example below and build it using
+Android Studio. The instructions are available
+<a class="reference external" href="https://github.com/tensorflow/examples/tree/ff5a76bdef0934719b784690616d2987d065519a/lite/examples/object_detection/android">in this link</a> .</p>
+<p>Since the NN API switch’s visibility is disabled in this version’s
+layout, the following line has to be removed from
+<code class="file docutils literal notranslate"><span class="pre">res/layout/tfe_od_layout_bottom_sheet.xml</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;!--<span class="w"> </span>*TODO<span class="o">(</span>b/112541284<span class="o">)</span>:<span class="w"> </span>Unhide<span class="w"> </span>when<span class="w"> </span>new<span class="w"> </span>NNAPI<span class="w"> </span>delegate<span class="w"> </span>is<span class="w"> </span>used.*<span class="w"> </span>--&gt;
+&lt;LinearLayout
+android:layout<span class="se">\_</span>width<span class="o">=</span><span class="s2">&quot;match\_parent&quot;</span>
+android:layout<span class="se">\_</span>height<span class="o">=</span><span class="s2">&quot;wrap\_content&quot;</span>
+android:orientation<span class="o">=</span><span class="s2">&quot;horizontal&quot;</span>
+<span class="o">[</span>STRIKEOUT:android:visibility<span class="o">=</span><span class="s2">&quot;gone&quot;</span><span class="o">]</span>&gt;
+</pre></div>
+</div>
+<p>Notice the improvement in the inference time in the sample execution
+below:</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/cs002-f3-inference-without-nn-api.png"><img alt="../_images/cs002-f3-inference-without-nn-api.png" src="../_images/cs002-f3-inference-without-nn-api.png" style="width: 4.08194in; height: 6.83542in;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 3: Inference without NN API</span></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/cs002-f4-inference-using-nn-api.png"><img alt="../_images/cs002-f4-inference-using-nn-api.png" src="../_images/cs002-f4-inference-using-nn-api.png" style="width: 4.09514in; height: 6.83542in;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 4: Inference using NN API</span></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sample app source code does have some minor issues such as:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The TFLITE-NNAPI toggle button works only the first time after</dt><dd><p>opening app</p>
+</dd>
+</dl>
+</li>
+<li><p>Only portrait mode is supported.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="build-intel-android-apps.html" class="btn btn-neutral float-right" title="Building Intel Platform-Friendly Android Apps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="concurrent-camera-access.html" class="btn btn-neutral" title="Concurrent Camera Access in CiV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Apr 04, 2023.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

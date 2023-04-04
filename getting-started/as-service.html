@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Run Project Celadon on Intel® architectures &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Run Celadon in a virtual machine" href="on-vm.html" />
+    <link rel="prev" title="Getting Started" href="getting-started.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run Project Celadon on Intel® architectures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="on-vm.html">Run Celadon in a virtual machine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source.html">Build Celadon From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to.html">How do I …</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="getting-started.html">Getting Started</a> &raquo;</li>
+        
+      <li>Run Project Celadon on Intel® architectures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/getting-started/as-service.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="run-project-c-on-intel-architectures">
+<span id="run-as-service"></span><h1>Run Project Celadon on Intel® architectures</h1>
+<p>The following diagrams illustrate the overall Celadon software architecture.
+Celadon is designed to be fully compliant with Google* Android* compatibility definitions,
+ensuring affinity and security of applications running on the stack.
+The <em>Auto Adaptation Framework</em> (<strong>AAF</strong>) is the key component that makes Celadon unique.
+It automatically detects and binds system kernel drivers, and loads
+the <abbr title="Hardware Abstraction Layer">HAL</abbr> modules and configurations
+for a variety of devices exposed on Intel platforms.
+Therefore, whether running Android applications in virtual machines (VMs)
+or containers, they are all served by a single Celadon image with a unified
+architecture, accelerating development of broad workload consolidation
+use cases from Edge to Cloud.</p>
+<figure class="align-center">
+<img alt="../_images/civ-arch.png" src="../_images/civ-arch.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><abbr title="Celadon in VM">CiV</abbr> is currently under early development. This is an
+early Pre-Production CiV release for evaluation and development purposes.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="on-vm.html">Run Celadon in a virtual machine</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="on-vm.html" class="btn btn-neutral float-right" title="Run Celadon in a virtual machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting-started.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Apr 04, 2023.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

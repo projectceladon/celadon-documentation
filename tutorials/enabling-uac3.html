@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enabling USB Audio Class 3.0 audio in Celadon &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Software Debugging Tips on Celadon" href="software-debug-tips.html" />
+    <link rel="prev" title="Mixins" href="mixins.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mixins.html">Mixins</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Enabling USB Audio Class 3.0 audio in Celadon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usb-audio-class-3-0-specification-uac3">USB Audio Class 3.0 specification (UAC3)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-sensors-in-celadon.html">Enabling Sensors in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-f2fs.html">Boot CIV with Flash Friendly File System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrent-camera-access.html">Concurrent Camera Access in CiV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-nnhal-in-celadon.html">Enabling Neural Networks Hardware Abstraction Layer in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build-intel-android-apps.html">Building Intel Platform-Friendly Android Apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">Thermal Mediation in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wireless-connectivity.html">Wireless Connectivity in Celadon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tutorials.html">Guides and Tutorials</a> &raquo;</li>
+        
+      <li>Enabling USB Audio Class 3.0 audio in Celadon</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/enabling-uac3.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="enabling-usb-audio-class-3-0-audio-in-c">
+<span id="enable-uac3"></span><h1>Enabling USB Audio Class 3.0 audio in Celadon</h1>
+<section id="introduction">
+<h2>Introduction</h2>
+<p>There has been an increasing trend of adopting USB digital audio among hardware manufacturers. Even Google has done away with the 3.5mm radio jack in its latest <a class="reference external" href="https://www.android.com/phones/google-pixel-2/">Pixel 2</a> phone series. This is because USB digital audio will considerably increase the music quality and also eliminate the need for a separate audio jack, making the form factors thinner. The Android Compatibility Definition Document (CDD) version 9.0 mandates that the devices without the 3.5mm audio jack must implement the USB Audio Class <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. The only major drawback with the USB digital audio is its higher power consumption relative to analog audio. To address this issue, USB-IF has come up with a new specification - USB Audio Class 3.0 specification (UAC3), which primarily focuses on optimizing power consumption over USB audio.</p>
+</section>
+<section id="usb-audio-class-3-0-specification-uac3">
+<h2>USB Audio Class 3.0 specification (UAC3)</h2>
+<p><a class="reference external" href="https://www.usb.org/sites/default/files/USB_Audio_v3.0.zip">USB Audio Class Specification 3.0</a> was released by USB-IF with an aim to provide power-saving features and support new codec types and data formats for consumer audio applications. Some of its salient features are:</p>
+<ol class="arabic simple">
+<li><p>Support for LPM (link power management) L1 mode</p></li>
+<li><p>Support for new power domains where we can selectively turn off certain
+components to save power</p></li>
+<li><p>New cluster descriptors, high capability descriptors and class-specific
+descriptors</p></li>
+<li><p>Support for basic audio device definition (BADD) profiles</p></li>
+<li><p>Support for new codecs and data formats</p></li>
+</ol>
+<p><abbr title="basic audio device definition">BADD</abbr> is a subset of
+<abbr title="USB Audio Class 3.0 specification">UAC3</abbr> and it is strongly
+recommended to have the BADD configuration implemented in the audio devices
+that are compliant with <abbr title="USB Audio Class 3.0 specification">UAC3</abbr>.
+BADD defines three types of audio functions:</p>
+<ol class="arabic simple">
+<li><p>Basic audio output function (BAOF)</p></li>
+<li><p>Basic audio input function (BAIF)</p></li>
+<li><p>Basic audio I/O function (BAIOF)</p></li>
+</ol>
+<p>It includes the following profiles:</p>
+<ul class="simple">
+<li><p>Generic I/O</p></li>
+<li><p>Headphone</p></li>
+<li><p>Speaker</p></li>
+<li><p>Microphone</p></li>
+<li><p>Headset</p></li>
+<li><p>Headset adapter</p></li>
+<li><p>Speakerphone</p></li>
+</ul>
+<section id="enabling-uac3-configuration-in-c">
+<h3>Enabling UAC3 configuration in Celadon</h3>
+<p>To maintain backward-compatibility with older host software which may not
+support UAC3, the specification mandates that the first configuration in the
+audio device should be compatible with either UAC1 (USB Audio Class 1.0) or
+UAC2 (USB Audio Class 2.0). The next configuration will be a BADD-compliant
+configuration. Selecting this configuration will enable the system to save
+power by leveraging the new power domains and LPM (link power management)
+L1 capability of the audio device. Support for this configuration is
+available in Celadon. Make sure that the following patches are in your build:</p>
+<ol class="arabic simple">
+<li><p>Patch to add support for USB Audio Class 3.0</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 9a2fe9b801f585baccf8352d82839dcd54b300cf</span>
+<span class="go">Author: Ruslan Bilovol &lt;ruslan.bilovol@gmail.com&gt;</span>
+<span class="go">Date:   Wed Mar 21 02:03:59 2018 +0200</span>
+
+<span class="go">    ALSA: usb: initial USB Audio Device Class 3.0 support</span>
+
+<span class="go">    Recently released USB Audio Class 3.0 specification</span>
+<span class="go">    introduces many significant changes comparing to</span>
+<span class="go">    previous versions, like</span>
+<span class="go">     - new Power Domains, support for LPM/L1</span>
+<span class="go">     - new Cluster descriptor</span>
+<span class="go">     - changed layout of all class-specific descriptors</span>
+<span class="go">     - new High Capability descriptors</span>
+<span class="go">     - New class-specific String descriptors</span>
+<span class="go">     - new and removed units</span>
+<span class="go">     - additional sources for interrupts</span>
+<span class="go">     - removed Type II Audio Data Formats</span>
+<span class="go">     - ... and many other things (check spec)</span>
+
+<span class="go">    It also provides backward compatibility through</span>
+<span class="go">    multiple configurations, as well as requires</span>
+<span class="go">    mandatory support for BADD (Basic Audio Device</span>
+<span class="go">    Definition) on each ADC3.0 compliant device</span>
+
+<span class="go">    This patch adds initial support of UAC3 specification</span>
+<span class="go">    that is enough for Generic I/O Profile (BAOF, BAIF)</span>
+<span class="go">    device support from BADD document.</span>
+
+<span class="go">    Signed-off-by: Ruslan Bilovol &lt;ruslan.bilovol@gmail.com&gt;</span>
+<span class="go">    Reviewed-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;</span>
+<span class="go">    Signed-off-by: Takashi Iwai &lt;tiwai@suse.de&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Patch to add support for BADD profiles</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 17156f23e93c0f59e06dd2aaffd06221341caaee</span>
+<span class="go">Author: Ruslan Bilovol &lt;ruslan.bilovol@gmail.com&gt;</span>
+<span class="go">Date:   Fri May 4 04:24:04 2018 +0300</span>
+
+<span class="go">    ALSA: usb: add UAC3 BADD profiles support</span>
+
+<span class="go">    Recently released USB Audio Class 3.0 specification</span>
+<span class="go">    contains BADD (Basic Audio Device Definition) document</span>
+<span class="go">    which describes pre-defined UAC3 configurations.</span>
+
+<span class="go">    BADD support is mandatory for UAC3 devices, it should be</span>
+<span class="go">    implemented as a separate USB device configuration.</span>
+<span class="go">    As per BADD document, class-specific descriptors</span>
+<span class="go">    shall not be included in the Deviceâ&lt;80&gt;&lt;99&gt;s Configuration</span>
+<span class="go">    descriptor (&quot;inferred&quot;), but host can guess them</span>
+<span class="go">    from BADD profile number, number of endpoints and</span>
+<span class="go">    their max packed sizes.</span>
+
+<span class="go">    This patch adds support of all BADD profiles from the spec</span>
+
+<span class="go">    Signed-off-by: Ruslan Bilovol &lt;ruslan.bilovol@gmail.com&gt;</span>
+<span class="go">    Tested-by: Jorge Sanjuan &lt;jorge.sanjuan@codethink.co.uk&gt;</span>
+<span class="go">    Signed-off-by: Takashi Iwai &lt;tiwai@suse.de&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Other patches adding additional features for UAC3:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ALSA: usb-audio: Operate UAC3 Power Domains in PCM callbacks</span>
+<span class="go">ALSA: usb-audio: Add UAC3 Power Domains to suspend/resume</span>
+<span class="go">ALSA: usb-audio: Unify virtual type units type to UAC3 values</span>
+<span class="go">ALSA: usb-audio: Add support for Processing Units in UAC3</span>
+<span class="go">ALSA: usb-audio: Add support for Selector Units in UAC3</span>
+<span class="go">ALSA: usb-audio: Add insertion control for UAC3 BADD</span>
+<span class="go">ALSA: usb-audio: UAC3: Parse Input Terminal number of channels.</span>
+<span class="go">ALSA: usb-audio: UAC3 Add support for connector insertion.</span>
+<span class="go">ALSA: usb-audio: UAC3. Add support for mixer unit.</span>
+<span class="go">ALSA: usb-audio: Use Class Specific EP for UAC3 devices.</span>
+<span class="go">ALSA: usb-audio: Add sanity checks in UAC3 clock parsers</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Selecting UAC3 configuration for audio:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 084d710fc377bf1d32d67c000590d9d1ab37d375</span>
+<span class="go">Author: Saranya Gopal &lt;saranya.gopal@intel.com&gt;</span>
+<span class="go">Date:   Wed Sep 12 01:03:57 2018 +0530</span>
+
+<span class="go">    usbcore: Select UAC3 configuration for audio if present</span>
+
+<span class="go">    USB audio class 3.0 specification introduced many significant</span>
+<span class="go">    changes like</span>
+<span class="go">     - new power domains, support for LPM/L1</span>
+<span class="go">     - new cluster descriptor</span>
+<span class="go">     - new high capability and class-specific string descriptors</span>
+<span class="go">     - BADD profiles</span>
+<span class="go">     - ... and many other things (check spec from link below:</span>
+<span class="go">    http://www.usb.org/developers/docs/devclass_docs/USB_Audio_v3.0.zip)</span>
+
+<span class="go">    Now that UAC3 is supported in linux, choose UAC3</span>
+<span class="go">    configuration for audio if the device supports it.</span>
+<span class="go">    Selecting this configuration will enable the system to</span>
+<span class="go">    save power by leveraging the new power domains and LPM L1</span>
+<span class="go">    capability and also support new codec types and data formats</span>
+<span class="go">    for consumer audio applications.</span>
+
+<span class="go">    Signed-off-by: Saranya Gopal &lt;saranya.gopal@intel.com&gt;</span>
+<span class="go">    Reviewed-by: Felipe Balbi &lt;felipe.balbi@linux.intel.com&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="enabling-lpm-in-extensible-host-controller-interface-xhci">
+<h3>Enabling LPM in extensible host controller interface (XHCI)</h3>
+<p><abbr title="extensible host controller interface">XHCI</abbr> is capable of supporting
+hardware <abbr title="link power management">LPM</abbr>
+in modern Intel® architecture platforms. For example, the following <em>sysfs</em>
+entry confirms that the hardware USB port <strong>3-1</strong> is capable of supporting
+hardware LPM, you can get the port information for your system from the
+audio device enumeration logs in the <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> output.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>/sys/bus/usb/devices/3-1/power/usb2_hardware_lpm
+enabled
+</pre></div>
+</div>
+<p>If the output value is <strong>disabled</strong>, you could enable LPM by writing <strong>1</strong> to the entry. The transition into LPM L1 mode can be confirmed through protocol traces.</p>
+<p>The following snapshot shows Lecroy traces of LPM transaction on a Kaby Lake
+platform with a UAC3-compliant audio device:</p>
+<figure class="align-center">
+<img alt="../_images/uac3-usb-protocol-trace.png" src="../_images/uac3-usb-protocol-trace.png" />
+</figure>
+<p>Here, the LPM L1 residency is 252 us. The service interval in this configuration is 1 ms. The USB host is required to request LPM/L1 state after servicing the device in each service interval. In our case, the device was entering LPM L1 with around 250 us L1 residency during every 1 ms service interval.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>We have enabled <strong>USB Audio Class 3.0</strong> in Celadon which helps us to leverage the power-saving features of USB digital audio. In future, USB audio power can be further optimized by offloading USB audio to an offload-engine, thereby allowing the processor to go into deeper sleep states.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Android 9 Compatibility Definition - <a class="reference external" href="https://source.android.com/compatibility/android-cdd#5_10_professional_audio">Professional Audio</a></p>
+</aside>
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Android 9 Compatibility Definition - <a class="reference external" href="https://source.android.com/compatibility/android-cdd#7_8_audio">Audio</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="software-debug-tips.html" class="btn btn-neutral float-right" title="Software Debugging Tips on Celadon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mixins.html" class="btn btn-neutral" title="Mixins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Apr 04, 2023.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

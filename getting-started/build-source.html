@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Build Celadon From Source &mdash; Documentation for the Celadon Project</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Run Celadon on Intel Platforms" href="on-bm.html" />
+    <link rel="prev" title="Release Naming Convention" href="naming-convention.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Celadon Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="getting-started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="as-service.html">Run Project Celadon on Intel® architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-convention.html">Release Naming Convention</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Build Celadon From Source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-the-development-environment">Set up the development environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-c-in-vm-with-android-13">Build Celadon in VM with Android 13</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#download-the-source">Download the source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-c-in-vm-image">Build Celadon in VM image</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="on-bm.html">Run Celadon on Intel Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="submit-patch.html">Submit your patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="host-os-hardening.html">Host OS Hardening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to.html">How do I …</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="getting-started.html">Getting Started</a> &raquo;</li>
+        
+      <li>Build Celadon From Source</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/getting-started/build-source.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="build-c-from-source">
+<span id="build-from-source"></span><h1>Build Celadon From Source</h1>
+<p>This page explains the prerequisites and steps to set up your environment,
+download source code, and build Celadon from source.</p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#set-up-the-development-environment" id="id2">Set up the development environment</a></p></li>
+<li><p><a class="reference internal" href="#build-c-in-vm-with-android-13" id="id3">Build Celadon in VM with Android 13</a></p></li>
+</ul>
+</nav>
+<section id="prerequisites">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Prerequisites</a></h2>
+<ul class="simple">
+<li><p>A 64-bit development workstation running Ubuntu* 18.04 (Bionic Beaver)
+operating system.</p></li>
+<li><p>One of the supported versions of python*, either 2.7 or 3.5.6, with
+python 2.7 as the default.</p></li>
+<li><p>Around 350GB of free disk space on your workstation is required to
+checkout the source code and to store the build artifacts.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Although Android* is typically built with a GNU/Linux* or macOS*
+operating system, we recommend you build Celadon images on Ubuntu* 18.04.
+For setup instructions using other operating systems, refer to the
+<a class="reference external" href="https://source.android.com/setup/build/initializing">Establishing a Build Environment</a> section on the AOSP website.</p></li>
+<li><p>Also, note the <a class="reference external" href="https://source.android.com/setup/build/requirements">Android prerequisites</a> for build.</p></li>
+</ol>
+</div>
+</section>
+<section id="set-up-the-development-environment">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Set up the development environment</a></h2>
+<p>Celadon and Android source code consist of multiple Git* repositories. The
+<strong class="command">repo</strong> tool makes it easier to work with those repositories.</p>
+<ol class="arabic">
+<li><p>Create a local <code class="file docutils literal notranslate"><span class="pre">bin/</span></code> directory, download the <strong class="command">repo</strong> tool
+to that directory, and make the binary executable with the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/bin
+$<span class="w"> </span>curl<span class="w"> </span>https://storage.googleapis.com/git-repo-downloads/repo<span class="w"> </span>&gt;<span class="w">  </span>~/bin/repo
+$<span class="w"> </span>chmod<span class="w"> </span>a+x<span class="w"> </span>~/bin/repo
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>~/bin:<span class="nv">$PATH</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install the following required packages on your 64-bit Ubuntu 18.04 LTS
+development workstation prior to the compilation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>openjdk-8-jdk<span class="w"> </span>git<span class="w"> </span>ccache<span class="w"> </span>automake<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>lzop<span class="w"> </span>bison<span class="w"> </span>gperf<span class="w"> </span>build-essential<span class="w"> </span>zip<span class="w"> </span>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>zlib1g-dev<span class="w"> </span>g++-multilib<span class="w"> </span>python3-networkx<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>libxml2-utils<span class="w"> </span>bzip2<span class="w"> </span>libbz2-dev<span class="w"> </span>libbz2-1.0<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>libghc-bzlib-dev<span class="w"> </span>squashfs-tools<span class="w"> </span>pngcrush<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>schedtool<span class="w"> </span>dpkg-dev<span class="w"> </span>liblz4-tool<span class="w"> </span>make<span class="w"> </span>optipng<span class="w"> </span>maven<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>libssl-dev<span class="w"> </span>bc<span class="w"> </span>bsdmainutils<span class="w"> </span>gettext<span class="w"> </span>python3-mako<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>libelf-dev<span class="w"> </span>sbsigntool<span class="w"> </span>dosfstools<span class="w"> </span>mtools<span class="w"> </span>efitools<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>python3-pystache<span class="w"> </span>git-lfs<span class="w"> </span>python3<span class="w"> </span>flex<span class="w"> </span>clang<span class="w"> </span>libncurses5<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>fakeroot<span class="w"> </span>ncurses-dev<span class="w"> </span>xz-utils<span class="w"> </span>python3-pip<span class="w"> </span>ninja-build<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>cryptsetup-bin<span class="w"> </span>cutils<span class="w"> </span>cmake<span class="w"> </span>pkg-config<span class="w"> </span>xorriso<span class="w"> </span>mtools
+
+$<span class="w"> </span>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">meson</span><span class="o">==</span><span class="m">0</span>.59.2
+$<span class="w"> </span>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">mako</span><span class="o">==</span><span class="m">1</span>.1.0
+$<span class="w"> </span>sudo<span class="w"> </span>su
+
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/local/
+
+$<span class="w"> </span>wget<span class="w"> </span>https://github.com/KhronosGroup/glslang/releases/download/SDK-candidate-26-Jul-2020/glslang-master-linux-Release.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+
+$<span class="w"> </span>unzip<span class="w"> </span>glslang-master-linux-Release.zip<span class="w"> </span>bin/glslangValidator<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+
+$<span class="w"> </span>rm<span class="w"> </span>glslang-master-linux-Release.zip
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="build-c-in-vm-with-android-13">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Build Celadon in VM with Android 13</a></h2>
+<section id="download-the-source">
+<h3>Download the source</h3>
+<ol class="arabic">
+<li><p>Enter the following commands to create an empty directory to hold the
+Celadon source files and serve as the working directory, and to bring down the
+latest version of <strong class="command">repo</strong> tool, including its most recent fixes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The URL specifies the manifest that refers to various repositories
+used by Celadon, which are placed within the working directory. For now, a
+<code class="file docutils literal notranslate"><span class="pre">.repo/</span></code> folder is created to store the manifest and the metadata of
+the source repositories.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>civ
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>civ
+$<span class="w"> </span>repo<span class="w"> </span>init<span class="w"> </span>-u<span class="w"> </span>https://github.com/projectceladon/manifest<span class="w"> </span>-b<span class="w"> </span>master<span class="w"> </span>-m<span class="w"> </span>default.xml
+</pre></div>
+</div>
+<p>Note, the below <strong class="command">repo init</strong> command pulls the latest development
+CiV source code based on <em>Android 13 (T Dessert)</em> from the master branch.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>repo<span class="w"> </span>init<span class="w"> </span>-u<span class="w"> </span>https://github.com/projectceladon/manifest<span class="w"> </span>-b<span class="w"> </span>master<span class="w"> </span>-m<span class="w"> </span>default.xml
+</pre></div>
+</div>
+<p>To continue working on the <em>Android 12 (S Dessert)</em> based CiV source code,
+use the following manifest instead:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>repo<span class="w"> </span>init<span class="w"> </span>-u<span class="w"> </span>https://github.com/projectceladon/manifest<span class="w"> </span>-b<span class="w"> </span>celadon/s/mr0/stable
+</pre></div>
+</div>
+</li>
+<li><p>Enter the following command to pull down the Celadon Android source tree to
+your working directory. The <strong class="command">repo sync</strong> operation might take time
+depending on your Internet download speed. Refer to the
+<a class="reference external" href="https://source.android.com/setup/build/downloading">Downloading the Source</a>
+section of the AOSP website for tips to download the source behind a
+proxy.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>repo<span class="w"> </span>sync<span class="w"> </span>-c
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="build-c-in-vm-image">
+<span id="build-os-image"></span><h3>Build Celadon in VM image</h3>
+<ol class="arabic">
+<li><p>Optionally, delete existing output of any previous build with the
+following command in the top-most Celadon source directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>clobber
+</pre></div>
+</div>
+</li>
+<li><p>Enter the following command to initialize the build variables with the
+<code class="file docutils literal notranslate"><span class="pre">envsetup.sh</span></code> script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>build/envsetup.sh
+</pre></div>
+</div>
+</li>
+<li><p>Specify your Celadon lunch target using the <strong class="command">lunch</strong> command. You can
+run <strong class="command">lunch</strong> with no arguments to choose different build
+variants, and select a lunch target from a list of available options.
+For example, the following commands configure the build system to
+build the installer files for Celadon in VM images:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>lunch<span class="w"> </span>caas-userdebug
+$<span class="w"> </span>make<span class="w"> </span>flashfiles<span class="w"> </span>-j<span class="w"> </span><span class="k">$(</span>nproc<span class="k">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>-j $(nproc)</em> argument instructs the builder to compile the source
+code with parallel tasks. The generated kernelflinger executables
+.ZIP file
+(<code class="file docutils literal notranslate"><span class="pre">out/target/product/caas/caas-flashfiles-eng.$</span><em><span class="pre">USER</span></em><span class="pre">.zip</span></code>
+and <code class="file docutils literal notranslate"><span class="pre">out/target/product/caas/caas-flashfiles-eng.$</span><em><span class="pre">USER</span></em><span class="pre">.iso.zip</span></code>)
+is available after the build. You can refer to <a class="reference internal" href="on-vm.html#caas-on-vm"><span class="std std-ref">Run Celadon in a virtual machine</span></a>
+section to prepare the host environment and boot the CiV image with QEMU.</p>
+</div>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="on-bm.html" class="btn btn-neutral float-right" title="Run Celadon on Intel Platforms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="naming-convention.html" class="btn btn-neutral" title="Release Naming Convention" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      Last updated on Apr 04, 2023.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

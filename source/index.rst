@@ -12,6 +12,3 @@
    release-notes
    references
    faqs
-
-
-Added this line to test html regeneration.

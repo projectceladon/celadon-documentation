@@ -449,8 +449,7 @@ New in this release
 Known issues
 ------------
 
-* HDMI audio is lost after adb reboot.
-* Video thumbnails are not loaded properly in Gallery app.
+* HDMI audio is not functional after adb reboot as the HDMI PCM cards are not listed by the drive
 
 
 Where to find the release

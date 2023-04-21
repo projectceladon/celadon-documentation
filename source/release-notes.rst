@@ -362,7 +362,7 @@ New in this release
 -------------------
 
  * Highlights/New Features
-    * Android 13 with latest AOSP manifest (android-13.0.0_r38)
+    * Android 13 with latest AOSP manifest (android-13.0.0_r30)
     * Power S3 Suspend/Resume of the CiV Guest OS on Screen Timeout
     * Fallback support on Client for inference through NN HAL
     * Support IOMMU

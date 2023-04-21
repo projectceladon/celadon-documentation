@@ -372,6 +372,7 @@ New in this release
     * Set up static ip and proxy
     * Support EROFS
     * Support F2FS
+    * Multi-pane feature for large screen devices
 
  * Celadon features:
     * AIDL for HAL

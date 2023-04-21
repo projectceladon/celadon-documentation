@@ -362,7 +362,10 @@ New in this release
 -------------------
 
  * Highlights/New Features
-    * Android 13 with latest AOSP manifest (android-13.0.0_r12)
+    * Android 13 with latest AOSP manifest (android-13.0.0_r38)
+
+
+ * Celadon features:
     * AIDL for HAL
     * Support vulkan and open gles
     * Support BPF
@@ -370,8 +373,6 @@ New in this release
     * Support FUSE BPF
     * Virtual VABc
     * KeyMint HAL 2.0
-
- * Celadon features:
     * API level upgraded to 33
     * FCM Target level upgraded to 7
     * Audio HAL upgraded to 7.1

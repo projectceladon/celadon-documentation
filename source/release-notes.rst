@@ -528,8 +528,8 @@ Reference configuration
  * Supported software
 
      * AOSP Version - android-13.0.0_r38
-     * NUC11PAQI7 Host Kernel - 5.15.78-cvhb
-     * NUC11PAQI7 Guest kernel - 5.15.78-cvhb
+     * Host Kernel - 5.15.78-cvhb
+     * Guest kernel - 5.15.78-cvhb
 
 
 Acronyms and terms

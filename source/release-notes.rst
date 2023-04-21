@@ -372,13 +372,13 @@ New in this release
     * Support EROFS
     * Support F2FS
     * Multi-pane feature for large screen devices
+    * Kernel support (5.15.78)
 
  * Celadon features:
     * AIDL for HAL
     * Battery percentage for Android in Virtual Machine / Container
     * Support vulkan and open gles
     * Support BPF
-    * Kernel support (5.15.74)
     * Support FUSE BPF
     * Virtual VABc
     * KeyMint HAL 2.0

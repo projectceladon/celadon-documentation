@@ -449,14 +449,13 @@ New in this release
 Known issues
 ------------
 
-* HDMI audio is not functional after adb reboot as the HDMI PCM cards are not listed by the driver
-* Unable to play AAC_ELD 16KHz recorded audio file
-* Failed to record audio via 3.5mm headset.
+* HDMI audio is not functional after adb reboot as the HDMI PCM cards are not listed by the driver.
+* Unable to play AAC_ELD 16KHz recorded audio file ,same behavior as pixel.
 * Delay observed in audio routing ( 3~4secs) from HDMI to USB Headset.
-* Audio doesn't route to USB Headset when usb camera is connected.[Need to reconnect usb headset to recover]
-* Audio doesn't record from 3.5mm Headset during video recording.
-* Front Camera Preview is not mirror
-* Device doesn't go to suspend with [vcpu] num=16
+* Audio doesn't route to USB Headset when usb camera is connected.[Need to reconnect usb headset to recover] as the last connected USB device is considered as the priority - Same behavior as pixel.
+* Audio doesn't record from 3.5mm Headset when USB camera is connected while video recording as it picks the USB mic.
+* Front Camera Preview is not mirror.
+* Device doesn't go to suspend with [vcpu] num=16.
 
 
 Where to find the release

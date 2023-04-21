@@ -367,7 +367,6 @@ New in this release
     * Fallback support on Client for inference through NN HAL
     * Support IOMMU
     * Configurable Application Windows
-    * Battery percentage for Android in Virtual Machine / Container
     * Display Dynamic Refresh Rate
     * Set up static ip and proxy
     * Support EROFS
@@ -376,6 +375,7 @@ New in this release
 
  * Celadon features:
     * AIDL for HAL
+    * Battery percentage for Android in Virtual Machine / Container
     * Support vulkan and open gles
     * Support BPF
     * Kernel support (5.15.74)

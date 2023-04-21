@@ -456,6 +456,10 @@ Known issues
 * Audio doesn't record from 3.5mm Headset when USB camera is connected while video recording as it picks the USB mic.
 * Front Camera Preview is not mirror.
 * Device doesn't go to suspend with [vcpu] num=16.
+* Display doesn't turn off on 1st attempt with input keyevent 26
+* Display of the DUT is turning off even if the "stay awake" option is enabled
+* "Android boot-up logo" appears during display On/Off.
+* Orientation of Android Settings changes to Portrait when select from recent tab
 
 
 Where to find the release

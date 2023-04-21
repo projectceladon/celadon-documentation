@@ -457,7 +457,6 @@ Known issues
 * Audio doesn't record from 3.5mm Headset during video recording.
 * Front Camera Preview is not mirror
 * Device doesn't go to suspend with [vcpu] num=16
-* Garbage / screen tear is observed intermittently while YouTube video playback
 
 
 Where to find the release

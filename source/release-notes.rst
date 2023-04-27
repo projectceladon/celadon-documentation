@@ -564,7 +564,7 @@ Helpful hints / related documents
 * The release of this project will be signed by test keys, it's only a
   reference for our customer and we are not responsible for this. Customers
   should use their own keys to sign their release images
-* Build Celadon in VM  https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image
+* Build Celadon in VM  https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
 * Linked to Android 13 Google Public document --> https://source.android.com/docs/setup/start/android-13-release
 

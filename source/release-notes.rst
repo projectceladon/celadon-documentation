@@ -367,7 +367,6 @@ New in this release
     * Fallback support on Client for inference through NN HAL
     * Support IOMMU
     * Configurable Application Windows
-    * Display Dynamic Refresh Rate
     * Set up static ip and proxy
     * Support EROFS
     * Support F2FS

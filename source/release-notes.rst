@@ -342,7 +342,7 @@ Base Releases
 
 CIV_01.23.02.15_A13
 ===================
-* This is a Production Release for evaluation and development purpose. This release supports 12th GEN Core [Celadon in VM].
+* This is a Release for evaluation and development purpose. This release supports 12th GEN Core [Celadon in VM].
 
 Intended audience
 -----------------

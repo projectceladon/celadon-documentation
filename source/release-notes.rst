@@ -364,7 +364,7 @@ New in this release
  * Highlights/New Features
     * Android 13 with latest AOSP manifest (android-13.0.0_r30)
     * Power S3 Suspend/Resume of the CiV Guest OS on Screen Timeout
-    * Fallback support on Client for inference through NN HAL
+    * CPU Inferencing through NN HAL enabled
     * Support IOMMU
     * Configurable Application Windows
     * Set up static ip and proxy
@@ -372,6 +372,10 @@ New in this release
     * Support F2FS
     * Multi-pane feature for large screen devices
     * Kernel support (5.15.78)
+    * SRIOV (Single Root I/O Virtualization) Support
+    * Virtualized Display – KMSRO/ Zero copy
+    * 8k resolution support
+
 
  * Celadon features:
     * AIDL framework for HALs
@@ -389,13 +393,9 @@ New in this release
     * WIFI Supplicant and Hostapd upgraded to AIDL 1.0
     * SE Policy updated for API level 33
     * Virgl Support
-    * SRIOV (Single Root I/O Virtualization) Support
     * Switch between h/w accelerated graphics and s/w graphics
     * Virtio-gpu Support
     * Tearing prevention
-    * Virtualized Display – KMSRO/ Zero copy
-    * Switch displays between guests
-    * 8k resolution support
     * HDMI Audio
     * SoF HDA mediation solution
     * Virtual TPM2.0
@@ -435,7 +435,6 @@ New in this release
     * Media transcoding, media extractor related changes and improved quality in encoded video
     * AVIF image support, Easier blurs, color filters, and other effects
     * CameraX vendor extension support
-    * Enabled NNAPI updatability in Machine Learning
     * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
     * Bluetooth side, BT classic and BLE introduced
     * Activity Detection, CHRE, Bluesky, FLP & RTT related changes

@@ -432,7 +432,6 @@ New in this release
     * New platform features for Mainline Module
     * Approximate location access and privacy related updates
     * Memory accounting updates
-    * Media side, Audio supports BLE audio, Haptics generator, Multi-channel audio optimised in Android S
     * Media transcoding, media extractor related changes and improved quality in encoded video
     * AVIF image support, Easier blurs, color filters, and other effects
     * CameraX vendor extension support

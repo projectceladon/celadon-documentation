@@ -372,7 +372,7 @@ New in this release
     * Support F2FS
     * Multi-pane feature for large screen devices
     * Kernel support chromium (5.15.78)
-    * Kernel support yocto (5.15.71)
+    * Kernel support SRIOV (5.15.71)
        * SRIOV (Single Root I/O Virtualization) Support
        * Virtualized Display – KMSRO/ Zero copy
        * 8k resolution support
@@ -494,7 +494,7 @@ How to install this release
        * cd patches/kernel/lts2021-chromium
        * ./build_weekly.sh
        * Deb files will be generated in patches/kernel/lts2021-chromium/host_kernel
-    * To build Yocto kernel
+    * To build SRIOV supported kernel
        * cd patches/kernel/linux-intel-lts2021
        * ./build_weekly.sh
        * Deb files will be generated in patches/kernel/linux-intel-lts2021/host_kernel

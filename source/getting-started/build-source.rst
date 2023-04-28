@@ -154,6 +154,15 @@ Build |C| in VM image
        $ lunch caas-userdebug
        $ make flashfiles -j $(nproc)
 
+   If you want to build locally with the 8k and SRIOV supported kernel,
+   add ``BASE_LINUX_INTEL_LTS2021_KERNEL=true`` to the 
+   :command:`make` command.
+
+   .. code-block:: bash
+
+       $ make flashfiles BASE_LINUX_INTEL_LTS2021_KERNEL=true  -j $(nproc)
+
+
    .. note::
          The *-j $(nproc)* argument instructs the builder to compile the source
          code with parallel tasks. The generated kernelflinger executables

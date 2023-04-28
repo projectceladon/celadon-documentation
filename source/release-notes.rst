@@ -481,6 +481,9 @@ How to install this release
    * source build/envsetup.sh
    * lunch caas-userdebug
    * make flashfiles -jN
+   * Note : If developer wants to build locally with the 8k and SRIOV supported kernel, BASE_LINUX_INTEL_LTS2021_KERNEL=true needs to be used in make command.
+      * $ make flashfiles BASE_LINUX_INTEL_LTS2021_KERNEL=true  -j $(nproc)
+
 
 * Steps To build the host kernel for this manifest
 

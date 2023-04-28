@@ -492,7 +492,6 @@ How to install this release
       patches/kernel/lts2021-chromium/host_kernel
     * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
-
         * sudo vim /etc/default/grub
         * Comment out GRUB_TIMEOUT_STYLE=hidden
           #GRUB_TIMEOUT_STYLE=hidden

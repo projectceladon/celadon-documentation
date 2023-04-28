@@ -543,8 +543,8 @@ Reference configuration
  * Supported software
 
      * AOSP Version - android-13.0.0_r30
-     * Host Kernel - 5.15.78-cvhb
-     * Guest kernel - 5.15.78-cvhb
+     * Host Kernel for GVT-d - 5.15.78-cvhb
+     * Guest kernel for GVT-d - 5.15.78-cvhb
 
 
 Acronyms and terms

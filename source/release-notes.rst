@@ -371,10 +371,11 @@ New in this release
     * Support EROFS
     * Support F2FS
     * Multi-pane feature for large screen devices
-    * Kernel support (5.15.78)
-    * SRIOV (Single Root I/O Virtualization) Support
-    * Virtualized Display – KMSRO/ Zero copy
-    * 8k resolution support
+    * Kernel support chromium (5.15.78)
+    * Kernel support yocto (5.15.71)
+       *  SRIOV (Single Root I/O Virtualization) Support
+       * Virtualized Display – KMSRO/ Zero copy
+       * 8k resolution support
 
 
  * Celadon features:

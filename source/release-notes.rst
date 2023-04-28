@@ -373,7 +373,7 @@ New in this release
     * Multi-pane feature for large screen devices
     * Kernel support chromium (5.15.78)
     * Kernel support yocto (5.15.71)
-       *  SRIOV (Single Root I/O Virtualization) Support
+       * SRIOV (Single Root I/O Virtualization) Support
        * Virtualized Display – KMSRO/ Zero copy
        * 8k resolution support
 
@@ -552,6 +552,8 @@ Reference configuration
      * AOSP Version - android-13.0.0_r30
      * Host Kernel for GVT-d - 5.15.78-cvhb
      * Guest kernel for GVT-d - 5.15.78-cvhb
+     * Host Kernel for SRIOV - 5.15.71-vhb
+     * Guest kernel for SRIOV - 5.15.71-vhb
 
 
 Acronyms and terms

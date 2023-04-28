@@ -490,10 +490,14 @@ How to install this release
 
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
-    * cd patches/kernel/lts2021-chromium
-    * ./build_weekly.sh
-    * Deb files will be generated in
-      patches/kernel/lts2021-chromium/host_kernel
+    * To build Chromium kernel
+       * cd patches/kernel/lts2021-chromium
+       * ./build_weekly.sh
+       * Deb files will be generated in patches/kernel/lts2021-chromium/host_kernel
+    * To build Yocto kernel
+       * cd patches/kernel/linux-intel-lts2021
+       * ./build_weekly.sh
+       * Deb files will be generated in patches/kernel/linux-intel-lts2021/host_kernel
     * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub

@@ -437,10 +437,7 @@ New in this release
     * CameraX vendor extension support
     * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
     * Bluetooth side, BT classic and BLE introduced
-    * Activity Detection, CHRE, Bluesky, FLP & RTT related changes
-    * Major changes in window management and introduced Display grouping and emphasis for multi-display context
     * pKVM (Protected KVM) code compatibility available, Celadon won’t support it.
-    * Picture in Picture (PiP) improvements, Immersive mode improvements for gesture navigation, Rich content insertion and Recents URL sharing
     * Provide apps direct access to tombstone traces
 
 

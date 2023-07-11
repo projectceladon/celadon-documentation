@@ -69,6 +69,20 @@ Flashing a CIV image as bare metal
 
 5. It can auto flash and boot up after the flashing is successful.
 
+Steps to collect serial logs on bare metal for debugging boot issues
+******************************************************************************
+
+.. note::
+	Device's with debug port only will support serial log collection
+
+1. Connect SUT to Ubuntu machine via micro USB port on board to USB type-A port on Ubuntu machine.
+
+2. If minicom is not already installed, install minicom on Ubuntu:$ sudo apt install minicom
+
+3. Run "sudo minicom -D /dev/ttyUSB0" (default baud rate 115200 it uses) 
+   Please make sure ttyUSB0 is available, or use relevant ttyUSBx.
+   Logs will be printed on screen during target device reboot.
+
 Sanity Results
 **************
 

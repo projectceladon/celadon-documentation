@@ -444,25 +444,14 @@ New in this release
 Known issues
 ------------
 
-* HDMI audio is not functional after adb reboot as the HDMI PCM cards are not listed by the driver.
-* Unable to play AAC_ELD 16KHz recorded audio file ,same behavior as pixel.
-* Delay observed in audio routing ( 3~4secs) from HDMI to USB Headset.
-* Audio doesn't route to USB Headset when usb camera is connected. 
-  [WA] Need to reconnect usb headset to recover - Same behavior as pixel.
-* Audio doesn't record from 3.5mm Headset when USB camera is connected while video recording as it picks the USB mic.
-* Front Camera Preview is not mirror.
-* Device doesn't go to suspend with [vcpu] num=16.
-* Display doesn't turn off on 1st attempt with input keyevent 26
-* Display of the DUT is turning off even if the "stay awake" option is enabled
-* "Android boot-up logo" appears during display On/Off.
-* Orientation of Android Settings changes to Portrait when select from recent tab
+* 
 
 
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.23.02.15_A13.xml
-* Binary link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_01.23.02.15_A13
+* Manifest Link : 
+* Binary link : 
 
 How to install this release
 ---------------------------

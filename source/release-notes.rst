@@ -340,6 +340,9 @@ Base Releases
    :local:
    :depth: 1
 
+CIV_00.23.04.40_A14
+===================
+
 CIV_01.23.02.15_A13
 ===================
 * This is a Release for evaluation and development purpose. This release supports 12th GEN Core [Celadon in VM].

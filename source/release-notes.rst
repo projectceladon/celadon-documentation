@@ -531,15 +531,13 @@ Reference configuration
 
  * Supported hardware
 
-     * Product -  Alder Lake [NUC12WSHi7]
+     * Product -  RPL NUC []
 
  * Supported software
 
-     * AOSP Version - android-13.0.0_r30
-     * Host Kernel for GVT-d - 5.15.78-cvhb
-     * Guest kernel for GVT-d - 5.15.78-cvhb
-     * Host Kernel for SRIOV - 5.15.71-vhb
-     * Guest kernel for SRIOV - 5.15.71-vhb
+     * AOSP Version - 
+     * Host Kernel for GVT-d - 
+     * Guest kernel for GVT-d - 
 
 
 Acronyms and terms
@@ -559,6 +557,7 @@ Helpful hints / related documents
 * Build Celadon in VM  https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
 * Linked to Android 13 Google Public document --> https://source.android.com/docs/setup/start/android-13-release
+
 CIV_01.23.02.15_A13
 ===================
 * This is a Release for evaluation and development purpose. This release supports 12th GEN Core [Celadon in VM].

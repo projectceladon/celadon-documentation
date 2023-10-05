@@ -377,7 +377,7 @@ New in this release
     * Vendor APEX
     * Storage & updatability – EROFS and OTA performance addressed.
     * Binder and Android IDL (AIDL)
-    * ~99% of all HAL interfaces are converted to AIDL or deprecated (one exception), Partners required to use AIDL, Full-er AIDL  feature parity
+    * HAL interfaces are converted to AIDL (~99%) or deprecated (one exception)
     * Multigenerational LRU (MGLRU) is a rework related change
     * Audio: Dynamic soundbar mode
     * Multiple USB audio device routing updates

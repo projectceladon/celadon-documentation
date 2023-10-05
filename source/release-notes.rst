@@ -366,25 +366,25 @@ New in this release
     * Android System APIs for AVF
     * Hypervisor tracing capabilities
     * Guest OS security guarantees
-    * pKVM hypercalls
-    * pKVM vendor module
     * Large Screen Enhancements
     * Adopting Scribe in App/Toolkit
     * Concurrent Displays
+    * Window manager extensions
     * Windowmanager Jetpack API to allow all applications access to functionality.
     * Full-screen intent limits
     * App Compatibility for large screens
     * Low Latency Graphics
-    * Fuse-Bpf
+    * Fuse-Bpf updates
     * Vendor APEX
     * Storage & updatability – EROFS and OTA performance addressed.
-    * Binder and Android IDL
-    * ~99% of all HAL interfaces are converted to AIDL or deprecated (one exception), Partners required to use AIDL, Full-er AIDL         * feature parity.
-    * Multigenerational LRU (MGLRU) is a rework.
+    * Binder and Android IDL (AIDL)
+    * ~99% of all HAL interfaces are converted to AIDL or deprecated (one exception), Partners required to use AIDL, Full-er AIDL   
+       feature parity.
+    * Multigenerational LRU (MGLRU) is a rework related change.
     * Audio: Dynamic soundbar mode
-    * Multiple US device routing updates
+    * Multiple USB audio device routing updates
     * Sound dose
-    * Preferred mixer attributes on USB devices
+    * Preferred audio mixer attributes on USB devices
     * Camera extensions feature
     * Reference USB camera HAL
     * Ultra HDR
@@ -393,13 +393,11 @@ New in this release
     * Qualified network service
     * Time and time zone detection updates
     * Ultra-wideband HSL interface
-    * Wi-fi vendor HAL
+    * Wi-Fi vendor HAL
     * Virtualization Wi-Fi feature updates
-    * Window manager extensions
     * Enterprise device policy resolution framework
     * Android Baseline Profile (ABP) and Vulkan implementation
     * Reduced graphics buffer memory consumption
-    * Vulkan 1.3 adoption
     * Performance boost for games
     * Capture Content for Notes
     * COMPANION_DEVICE_GLASSES role
@@ -415,66 +413,20 @@ New in this release
     * Full release notes from Google can be found at: https://source.android.com/docs/setup/about/android-14-release
 
  * Celadon features:
-    * AIDL framework for HALs
-    * Battery percentage for Android in Virtual Machine / Container
-    * Support vulkan and open gles
-    * Support BPF
-    * Support FUSE BPF
-    * Virtual VABc
-    * KeyMint HAL 2.0
-    * API level upgraded to 33
-    * FCM Target level upgraded to 7
-    * Audio HAL upgraded to 7.1
-    * Trusty KeyMint support AIDL Version 2.0
-    * Health HAL upgraded to AIDL 1.0
-    * WIFI Supplicant and Hostapd upgraded to AIDL 1.0
-    * SE Policy updated for API level 33
-    * Virgl Support
-    * Switch between h/w accelerated graphics and s/w graphics
-    * Virtio-gpu Support
-    * Tearing prevention
-    * HDMI Audio
-    * SoF HDA mediation solution
-    * Virtual TPM2.0
-    * Trusty KeyMint support
-    * File based Encryption
-    * VP9 h/w accelerated
-    * Prime buffer sharing
-    * Media Codec 2.0 h/w path
-    * Super image > 4G
-    * bootconfig support
-    * WPA3 support
-    * WiFi 802.11.ax Support
-    * Bluetooth Control from Android in Virtual Machine
-    * Support Control Plant – VM Manager
-    * Switch USB touch screen between guest OSes
-    * Integrated VM Manager to configure CIV replacing start_civ.sh
-        * This changes launch steps for CIV - please refer to
-          https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
-    * Boot control HAL V1.2
-    * Browse Internet (IPv6)
-    * WiFi Direct
-    * WiFi Control from Android in Virtual Machine
-    * Bug fixes, customizations and optimizations for x86
-    * Graphics introduced scheduling plans
-    * Graphics: Surface flinger caching, GPU memory accounting, profiling and
-      GPU scheduling
-    * Accessibility, System UI and backup & restore features updated with minor
-      modifications
-    * FUSE passthrough to improve IO performance 
-    * IncFS updated with Better Monitoring Support, virtio-9p support, fs-verity
-      support
-    * Enabled NNAPI updatability in Machine Learning
-    * New platform features for Mainline Module
-    * Approximate location access and privacy related updates
-    * Memory accounting updates
-    * Media transcoding, media extractor related changes and improved quality in encoded video
-    * AVIF image support, Easier blurs, color filters, and other effects
-    * CameraX vendor extension support
-    * Wi-Fi privacy improvements with - Non-Persistent MAC Address Randomization
-    * Bluetooth side, BT classic and BLE introduced
+    * AIDL framework updates for HALs.
+    * API level upgraded to 34
+    * FCM Target level upgraded to 8
+    * Camera provider HAL moved to AIDL V2.0
+    * Graphics composer HAL moved to composer3 AIDL V2.0
+    * Thermal HAL moved to AIDL V1.0
+    * Graphics allocator HAL moved to AIDL V2.0
+    * Boot HAL moved to AIDL V1.0
+    * WiFi HAL moved to AIDL V1.0
+    * Identity HAL moved to AIDL V5.0
+    * security keymint HAL moved to AIDL V3.0
+    * gatekeeper hal moved to AIDL V1.0
+    * Sensor HAL moved to AIDL V1.0
     * pKVM (Protected KVM) code compatibility available, Celadon won’t support it.
-    * Provide apps direct access to tombstone traces
 
 
 Known issues

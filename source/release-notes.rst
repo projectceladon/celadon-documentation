@@ -459,14 +459,14 @@ How to install this release
     * clone https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2022-chromium 
     * Go to build.sh 
     * Replace below lines in build.sh script i.e Line no 6 to line no 10
-      * git clone https://github.com/projectceladon/vendor-intel-utils.git
-      * cd vendor-intel-utils
-      * git checkout 0babae8b1d9ad42dde9580f3ef91b640ccd86b1c
-      * cd ../
-      * branch_name="main"
-      * git clone -b $branch_name https://github.com/projectceladon/linux-intel-lts2022-chromium.git
-      * cd linux-intel-lts2022-chromium
-      * git checkout ae3fc1db4d1ebf32cbe8ebda9e47653a9a149b71
+       * git clone https://github.com/projectceladon/vendor-intel-utils.git
+       * cd vendor-intel-utils
+       * git checkout 0babae8b1d9ad42dde9580f3ef91b640ccd86b1c
+       * cd ../
+       * branch_name="main"
+       * git clone -b $branch_name https://github.com/projectceladon/linux-intel-lts2022-chromium.git
+       * cd linux-intel-lts2022-chromium
+       * git checkout ae3fc1db4d1ebf32cbe8ebda9e47653a9a149b71
     * ./build.sh
     * deb files will be generated inside host_kernel folder 
     * sudo dpkg -i \*.deb

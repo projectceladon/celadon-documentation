@@ -342,7 +342,7 @@ Base Releases
 
 CIV_00.23.04.40_A14
 ===================
-* This is a Release for evaluation and development purpose. This release supports 12th GEN Core [Celadon in VM].
+* This is a Manifest Pre-Production Release for evaluation and development purpose. This release supports 13th GEN Core [Celadon in VM].
 
 Intended audience
 -----------------
@@ -361,22 +361,10 @@ Introduction
 New in this release
 -------------------
 
- * Highlights/New Features
-    * Android 13 with latest AOSP manifest (android-13.0.0_r30)
-    * Power S3 Suspend/Resume of the CiV Guest OS on Screen Timeout
-    * CPU Inferencing through NN HAL enabled
-    * Support IOMMU
-    * Configurable Application Windows
-    * Set up static ip and proxy
-    * Support EROFS
-    * Support F2FS
-    * Multi-pane feature for large screen devices
-    * Kernel support chromium (5.15.78)
-    * Kernel support SRIOV (5.15.71)
-       * SRIOV (Single Root I/O Virtualization) Support
-       * Virtualized Display – KMSRO/ Zero copy
-       * 8k resolution support
-
+ * Highlights/New Features 
+    * 
+    * 
+    * 
 
  * Celadon features:
     * AIDL framework for HALs
@@ -443,7 +431,6 @@ New in this release
 
 Known issues
 ------------
-
 * 
 
 
@@ -451,7 +438,6 @@ Where to find the release
 -------------------------
 
 * Manifest Link : 
-* Binary link : 
 
 How to install this release
 ---------------------------
@@ -511,18 +497,15 @@ Component                      Results  Comments
 =============================  =======  ========
 Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
 BT                             OK        Bluetooth is working
-Audio Playback                 OK        MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported
+Audio Playback                 OK        MP3 and MP4 formats tested
 Adb connect over WIFI          OK
-Adb connect over Ethernet      OK
 Security                       OK
-Boot                           OK       Boots on QEMU 7.0.0
-Ethernet                       OK
+Boot                           OK        Boots on QEMU 7.2.3
 Image Flash                    OK
 Web browsing                   OK
-Video playback                 OK       H264/H265/MPEG2/VP8/VP9 Video Playback
-USB                            OK       Keyboard , Mouse , Pen drive
+Video playback                 OK        MP4 tested
+USB                            OK        Keyboard , Mouse , Pen drive
 Display                        OK
-Touch and Gesture              OK
 =============================  =======  ========
 
 
@@ -556,7 +539,7 @@ Helpful hints / related documents
   should use their own keys to sign their release images
 * Build Celadon in VM  https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
-* Linked to Android 13 Google Public document --> https://source.android.com/docs/setup/start/android-13-release
+* Linked to Android 14 Google Public document --> 
 
 CIV_01.23.02.15_A13
 ===================

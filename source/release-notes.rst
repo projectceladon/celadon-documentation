@@ -436,7 +436,7 @@ Known issues
 Where to find the release
 -------------------------
 
-* Manifest Link : 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.40_A14.xml
 
 How to install this release
 ---------------------------
@@ -456,7 +456,7 @@ How to install this release
 
 * Steps To build the host kernel for this manifest
 
-    * clone https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2022-chromium 
+    * git clone https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2022-chromium 
     * Go to build.sh 
     * Replace below lines in build.sh script i.e Line no 6 to line no 10
        * git clone https://github.com/projectceladon/vendor-intel-utils.git

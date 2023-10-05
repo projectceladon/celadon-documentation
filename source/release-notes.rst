@@ -365,7 +365,6 @@ New in this release
     * Android Virtualization Framework (AVF) updates
     * Android System APIs for AVF
     * Hypervisor tracing capabilities
-    * Guest OS security guarantees
     * Large Screen Enhancements
     * Adopting Scribe in App/Toolkit
     * Concurrent Displays
@@ -378,9 +377,8 @@ New in this release
     * Vendor APEX
     * Storage & updatability – EROFS and OTA performance addressed.
     * Binder and Android IDL (AIDL)
-    * ~99% of all HAL interfaces are converted to AIDL or deprecated (one exception), Partners required to use AIDL, Full-er AIDL   
-       feature parity.
-    * Multigenerational LRU (MGLRU) is a rework related change.
+    * ~99% of all HAL interfaces are converted to AIDL or deprecated (one exception), Partners required to use AIDL, Full-er AIDL  feature parity
+    * Multigenerational LRU (MGLRU) is a rework related change
     * Audio: Dynamic soundbar mode
     * Multiple USB audio device routing updates
     * Sound dose

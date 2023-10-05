@@ -506,7 +506,7 @@ Reference configuration
 
  * Supported hardware
 
-     * Product -  RPL NUC []
+     * Product -  Raptor Lake NUC
 
  * Supported software
 

@@ -518,9 +518,9 @@ Reference configuration
 
  * Supported software
 
-     * AOSP Version - 
-     * Host Kernel for GVT-d - 
-     * Guest kernel for GVT-d - 
+     * AOSP Version - android-14.0.0_r2
+     * Host Kernel for GVT-d - 6.1.34
+     * Guest kernel for GVT-d - 6.1.34
 
 
 Acronyms and terms

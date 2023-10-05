@@ -539,7 +539,7 @@ Helpful hints / related documents
   should use their own keys to sign their release images
 * Build Celadon in VM  https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
-* Linked to Android 14 Google Public document --> 
+* Linked to Android 14 Google Public document --> https://source.android.com/docs/setup/about/android-14-release
 
 CIV_01.23.02.15_A13
 ===================

@@ -361,10 +361,58 @@ Introduction
 New in this release
 -------------------
 
- * Highlights/New Features 
-    * 
-    * 
-    * 
+ * Android 14 brings in the below major features:
+    * Android Virtualization Framework (AVF) updates
+    * Android System APIs for AVF
+    * Hypervisor tracing capabilities
+    * Guest OS security guarantees
+    * pKVM hypercalls
+    * pKVM vendor module
+    * Large Screen Enhancements
+    * Adopting Scribe in App/Toolkit
+    * Concurrent Displays
+    * Windowmanager Jetpack API to allow all applications access to functionality.
+    * Full-screen intent limits
+    * App Compatibility for large screens
+    * Low Latency Graphics
+    * Fuse-Bpf
+    * Vendor APEX
+    * Storage & updatability – EROFS and OTA performance addressed.
+    * Binder and Android IDL
+    * ~99% of all HAL interfaces are converted to AIDL or deprecated (one exception), Partners required to use AIDL, Full-er AIDL         * feature parity.
+    * Multigenerational LRU (MGLRU) is a rework.
+    * Audio: Dynamic soundbar mode
+    * Multiple US device routing updates
+    * Sound dose
+    * Preferred mixer attributes on USB devices
+    * Camera extensions feature
+    * Reference USB camera HAL
+    * Ultra HDR
+    * Wide gamut capture
+    * Connectivity: ASHA advertisements for hearing aid devices
+    * Qualified network service
+    * Time and time zone detection updates
+    * Ultra-wideband HSL interface
+    * Wi-fi vendor HAL
+    * Virtualization Wi-Fi feature updates
+    * Window manager extensions
+    * Enterprise device policy resolution framework
+    * Android Baseline Profile (ABP) and Vulkan implementation
+    * Reduced graphics buffer memory consumption
+    * Vulkan 1.3 adoption
+    * Performance boost for games
+    * Capture Content for Notes
+    * COMPANION_DEVICE_GLASSES role
+    * COMPANION_DEVICE_NEARBY_DEVICE_STREAMING role
+    * Power Manager ACQUIRE_CAUSES_WAKEUP permissions.
+    * Runtime: JDWP thread creation
+    * Runtime: OpenJDK 17 updates
+    * Filename encryption
+    * Multiple IMEIs
+    * Dynamic Code Loading (DCL),
+    * Picker choice in media permission
+    * Safe Browsing v5
+        * Full release notes from Google can be found at: https://source.android.com/docs/setup/about/android-14-release
 
  * Celadon features:
     * AIDL framework for HALs

@@ -412,7 +412,7 @@ New in this release
     * Dynamic Code Loading (DCL),
     * Picker choice in media permission
     * Safe Browsing v5
-        * Full release notes from Google can be found at: https://source.android.com/docs/setup/about/android-14-release
+    * Full release notes from Google can be found at: https://source.android.com/docs/setup/about/android-14-release
 
  * Celadon features:
     * AIDL framework for HALs

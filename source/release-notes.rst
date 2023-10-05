@@ -429,7 +429,8 @@ New in this release
 
 Known issues
 ------------
-* 
+* Intermittent screen flicker issue
+* Sometimes Multi-camera not showing 2nd camera  
 
 
 Where to find the release
@@ -452,9 +453,6 @@ How to install this release
    * source build/envsetup.sh
    * lunch caas-userdebug
    * make flashfiles -jN
-   * Note : If developer wants to build locally with the 8k and SRIOV supported kernel, BASE_LINUX_INTEL_LTS2021_KERNEL=true needs to be used in make command.
-      * $ make flashfiles BASE_LINUX_INTEL_LTS2021_KERNEL=true  -j $(nproc)
-
 
 * Steps To build the host kernel for this manifest
 
@@ -464,10 +462,6 @@ How to install this release
        * cd patches/kernel/lts2021-chromium
        * ./build_weekly.sh
        * Deb files will be generated in patches/kernel/lts2021-chromium/host_kernel
-    * To build SRIOV supported kernel
-       * cd patches/kernel/linux-intel-lts2021
-       * ./build_weekly.sh
-       * Deb files will be generated in patches/kernel/linux-intel-lts2021/host_kernel
     * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub

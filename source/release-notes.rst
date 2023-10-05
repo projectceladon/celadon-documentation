@@ -364,7 +364,6 @@ New in this release
  * Android 14 brings in the below major features:
     * Android Virtualization Framework (AVF) updates
     * Android System APIs for AVF
-    * Hypervisor tracing capabilities
     * Large Screen Enhancements
     * Adopting Scribe in App/Toolkit
     * Concurrent Displays
@@ -407,7 +406,6 @@ New in this release
     * Multiple IMEIs
     * Dynamic Code Loading (DCL),
     * Picker choice in media permission
-    * Safe Browsing v5
     * Full release notes from Google can be found at: https://source.android.com/docs/setup/about/android-14-release
 
  * Celadon features:
@@ -457,7 +455,7 @@ How to install this release
 * Steps To build the host kernel for this manifest
 
     * git clone https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2022-chromium 
-    * Go to build.sh 
+    * Go to build.sh of lts2022-chromium
     * Replace below lines in build.sh script i.e Line no 6 to line no 10
        * git clone https://github.com/projectceladon/vendor-intel-utils.git
        * cd vendor-intel-utils

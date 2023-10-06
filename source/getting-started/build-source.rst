@@ -63,8 +63,7 @@ Set up the development environment
              fakeroot ncurses-dev xz-utils python3-pip ninja-build \
              cryptsetup-bin cutils cmake pkg-config xorriso mtools
 
-      $ sudo pip3 install meson==0.59.2
-      $ sudo pip3 install mako==1.1.0
+      $ sudo pip3 install mako==1.1.0 meson==0.60.0 dataclasses
       $ sudo su
 
       $ cd /usr/local/
@@ -77,7 +76,7 @@ Set up the development environment
 
 
 
-Build |C| in VM with Android 13
+Build |C| in VM with Android 14
 *******************************
 
 Download the source
@@ -97,21 +96,20 @@ Download the source
 
        $ mkdir civ
        $ cd civ
-       $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 
    Note, the below :command:`repo init` command pulls the latest development
-   CiV source code based on *Android 13 (T Dessert)* from the master branch.
+   CiV source code based on *Android 14* from the master branch.
 
    .. code-block:: bash
 
        $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 
-   To continue working on the *Android 12 (S Dessert)* based CiV source code,
+   To continue working on the *Android 13* based CiV source code,
    use the following manifest instead:
 
    .. code-block:: bash
 
-       $ repo init -u https://github.com/projectceladon/manifest -b celadon/s/mr0/stable
+       $ repo init -u https://github.com/projectceladon/manifest -b celadon/t/mr0/master
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time
@@ -153,15 +151,6 @@ Build |C| in VM image
 
        $ lunch caas-userdebug
        $ make flashfiles -j $(nproc)
-
-   If you want to build locally with the 8k and SRIOV supported kernel,
-   add ``BASE_LINUX_INTEL_LTS2021_KERNEL=true`` to the 
-   :command:`make` command.
-
-   .. code-block:: bash
-
-       $ make flashfiles BASE_LINUX_INTEL_LTS2021_KERNEL=true  -j $(nproc)
-
 
    .. note::
          The *-j $(nproc)* argument instructs the builder to compile the source

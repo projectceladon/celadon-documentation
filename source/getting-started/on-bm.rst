@@ -126,7 +126,7 @@ Perform the following steps to live-boot |C|.
        For example, an :file:`out/target/product/caas/caas.img` image is
        generated for the :command:`caas` lunch target.
 
-    #. The previous command creates an image file of 16GB bytes that
+    #. The previous command creates an image file of 32GB that
        contains an entire GPT disk. To change the default image size, edit
        the mixins config file
        :file:`device/intel/project-celadon/[lunch_target]/mixins.spec`
@@ -134,7 +134,7 @@ Perform the following steps to live-boot |C|.
 
        .. code-block:: none
 
-          gptbuild: true(size=16G,generate_craff=false)
+          gptbuild: true(size=32G,generate_craff=false)
 
 .. _usb-live-boot:
 

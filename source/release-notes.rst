@@ -340,6 +340,9 @@ Base Releases
    :local:
    :depth: 1
 
+CIV_00.23.04.45_A14
+===================
+
 CIV_00.23.04.40_A14
 ===================
 * This is a Pre-Production Manifest Release for evaluation and development purpose. This release supports 13th GEN Core [Celadon in VM].

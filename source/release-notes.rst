@@ -530,6 +530,8 @@ Helpful hints / related documents
 * Build Celadon in VM  https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
 * Linked to Android 14 Google Public document --> https://source.android.com/docs/setup/about/android-14-release
+
+
 CIV_00.23.04.40_A14
 ===================
 * This is a Pre-Production Manifest Release for evaluation and development purpose. This release supports 13th GEN Core [Celadon in VM].

@@ -428,7 +428,6 @@ New in this release
 Known issues
 ------------
 * Intermittent screen flicker issue
-* Sometimes Multi-camera not showing 2nd camera  
 
 
 Where to find the release

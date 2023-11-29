@@ -342,7 +342,7 @@ Base Releases
 
 CIV_00.23.04.45_A14
 ===================
-* This is a Pre-Production Manifest Release for evaluation and development purpose. This release supports 13th GEN Core [Celadon in VM].
+* This is a Pre-Production Binary Release for evaluation and development purpose. This release supports 13th GEN Core [Celadon in VM].
 
 Intended audience
 -----------------

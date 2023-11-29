@@ -434,7 +434,8 @@ Known issues
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.40_A14.xml
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.45_A14.xml
+* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.23.04.45_A14
 
 How to install this release
 ---------------------------
@@ -454,19 +455,12 @@ How to install this release
 
 * Steps To build the host kernel for this manifest
 
-    * git clone https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2022-chromium 
-    * Go to build.sh of lts2022-chromium
-    * Replace below lines in build.sh script i.e Line no 6 to line no 10
-       * git clone https://github.com/projectceladon/vendor-intel-utils.git
-       * cd vendor-intel-utils
-       * git checkout 0babae8b1d9ad42dde9580f3ef91b640ccd86b1c
-       * cd ../
-       * branch_name="main"
-       * git clone -b $branch_name https://github.com/projectceladon/linux-intel-lts2022-chromium.git
-       * cd linux-intel-lts2022-chromium
-       * git checkout ae3fc1db4d1ebf32cbe8ebda9e47653a9a149b71
-    * ./build.sh
-    * deb files will be generated inside host_kernel folder 
+    * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
+    * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
+    * To build Chromium kernel
+       * cd patches/kernel/lts2022-chromium
+       * ./build_weekly.sh
+       * Deb files will be generated in patches/kernel/lts2022-chromium/host_kernel
     * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
@@ -477,7 +471,6 @@ How to install this release
           #GRUB_TIMEOUT=-1
         * Save the file
         * sudo update-grub
-
     * sudo reboot
     * Select compiled kernel from "Advanced options for Ubuntu"
 

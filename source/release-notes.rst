@@ -427,7 +427,7 @@ New in this release
 
 Known issues
 ------------
-* Intermittent screen flicker issue on few monitors. Issue seen only in GVT-d mode. BM mode or when screen accessed via vysor or scrcpy issue is not seen. Also issue not seen after reboot. 
+* Intermittent screen flicker issue on few monitors. Issue seen only in GVT-d mode. Bare Metal mode or when screen accessed via vysor or scrcpy issue is not seen. Also issue not seen after reboot. 
 
 
 Where to find the release

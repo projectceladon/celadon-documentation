@@ -479,7 +479,7 @@ How to install this release
 Validation results
 ------------------
 
-This build has been validated on Alder Lake NUC in the following function domains:
+This build has been validated on Raptor Lake NUC in the following function domains:
 
 =============================  =======  ========
 Component                      Results  Comments
@@ -669,7 +669,7 @@ How to install this release
 Validation results
 ------------------
 
-This build has been validated on Alder Lake NUC in the following function domains:
+This build has been validated on Raptor Lake NUC in the following function domains:
 
 =============================  =======  ========
 Component                      Results  Comments
@@ -868,7 +868,7 @@ How to install this release
 Validation results
 ------------------
 
-This build has been validated on Alder Lake NUC in the following function domains:
+This build has been validated on Raptor Lake NUC in the following function domains:
 
 =============================  =======  ========
 Component                      Results  Comments

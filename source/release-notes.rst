@@ -428,14 +428,13 @@ New in this release
 
 Known issues
 ------------
-* Intermittent screen flicker issue on few monitors. Issue seen only in GVT-d mode. Bare Metal mode or when screen accessed via vysor or scrcpy issue is not seen. Also issue not seen after reboot. 
 
 
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.45_A14.xml
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.23.04.45_A14
+* Manifest Link : 
+* Binary Link : 
 
 How to install this release
 ---------------------------
@@ -509,8 +508,8 @@ Reference configuration
  * Supported software
 
      * AOSP Version - android-14.0.0_r2
-     * Host Kernel for GVT-d - 6.1.34
-     * Guest kernel for GVT-d - 6.1.34
+     * Host Kernel for GVT-d - 6.1.61
+     * Guest kernel for GVT-d - 6.1.61
 
 
 Acronyms and terms

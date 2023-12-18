@@ -428,7 +428,7 @@ New in this release
 
 Known issues
 ------------
-
+   * The Blink issue seen in previous release is now fixed with latest kernel 6.1.61
 
 Where to find the release
 -------------------------

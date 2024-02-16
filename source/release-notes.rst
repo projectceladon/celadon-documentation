@@ -227,6 +227,10 @@ Stable Releases (IoT) are validated with GVT-d mode on Comet Lake(CML), Tiger La
     :align: center
     :width: 750px
 
+.. note:: 
+
+   \*Meets 100% compliance.
+
 CIV_02.22.01.12_A11
 ===================
 
@@ -329,8 +333,9 @@ e as required by Google certification requirements.
     :align: center
     :width: 750px
 
-.. note:: CTS on GSI Failures are due to Google dependency and shall be resolved in Upcoming new GSI patch.
+.. note:: 
 
+   \*CTS on GSI Failures are due to Google dependency and shall be resolved in Upcoming new GSI patch.
 
 
 Base Releases

@@ -1,7 +1,7 @@
 .. _base-releases-A11_2020:
 
-Android 11-2020 Base Releases
-#############################
+Android 11 [2020] Base Releases
+###############################
 
 .. contents::
    :local:

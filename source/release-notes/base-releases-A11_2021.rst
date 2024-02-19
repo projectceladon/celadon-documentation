@@ -1,6 +1,6 @@
 .. _base-releases-A11_2021:
 
-Android 11-2021 Base Releases
+Android 11 [2021] Base Releases
 #############################
 
 .. contents::

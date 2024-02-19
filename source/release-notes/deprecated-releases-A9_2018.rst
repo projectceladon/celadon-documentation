@@ -1,7 +1,7 @@
 .. _deprecated-releases-A9_2018:
 
-Android 09-2018 Deprecated Releases
-###################################
+Android 09 [2018] Deprecated Releases
+#####################################
 
 .. contents::
    :local:

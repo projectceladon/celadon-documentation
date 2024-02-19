@@ -1,7 +1,7 @@
 .. _deprecated-releases-A9_2019:
 
-Android 09-2020/19 Deprecated Releases
-######################################
+Android 09 [2019-2020] Deprecated Releases
+##########################################
 
 .. contents::
    :local:

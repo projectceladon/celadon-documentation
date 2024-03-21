@@ -4,10 +4,10 @@ on:
   push:
     branches:
         - master
-
+permissions: read-all
 jobs:
   build:
-
+    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:

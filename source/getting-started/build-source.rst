@@ -45,34 +45,28 @@ Set up the development environment
        $ chmod a+x ~/bin/repo
        $ export PATH=~/bin:$PATH
 
-#. Install the following required packages on your 64-bit Ubuntu 18.04 LTS
+#. Install the following required packages on your 64-bit Ubuntu 22.04 LTS
    development workstation prior to the compilation:
 
    .. code-block:: bash
 
       $ sudo apt-get update
-      $ sudo apt-get install openjdk-8-jdk git ccache automake \
-             lzop bison gperf build-essential zip curl \
-             zlib1g-dev g++-multilib python3-networkx \
-             libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
-             libghc-bzlib-dev squashfs-tools pngcrush \
-             schedtool dpkg-dev liblz4-tool make optipng maven \
-             libssl-dev bc bsdmainutils gettext python3-mako \
-             libelf-dev sbsigntool dosfstools mtools efitools \
-             python3-pystache git-lfs python3 flex clang libncurses5 \
-             fakeroot ncurses-dev xz-utils python3-pip ninja-build \
-             cryptsetup-bin cutils cmake pkg-config xorriso mtools
+      $ sudo apt-get install -y wget openjdk-8-jdk git ccache automake \
+         lzop bison gperf build-essential zip curl \
+         zlib1g-dev g++-multilib python3-networkx \
+         libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
+         libghc-bzlib-dev squashfs-tools pngcrush \
+         schedtool dpkg-dev liblz4-tool make optipng maven \
+         libssl-dev bc bsdmainutils gettext python3-mako \
+         libelf-dev sbsigntool dosfstools mtools efitools \
+         python3-pystache git-lfs python-is-python3 flex clang libncurses5 \
+         fakeroot ncurses-dev xz-utils cryptsetup-bin \
+         apt-transport-https ca-certificates curl lsb-release \
+         rsync vim python-six kmod \
+         software-properties-common cpio python3-pip ninja-build \
+         cutils cmake pkg-config xorriso mtools libjson-c-dev file
 
-      $ sudo pip3 install mako==1.1.0 meson==0.60.0 dataclasses
-      $ sudo su
-
-      $ cd /usr/local/
-
-      $ wget https://github.com/KhronosGroup/glslang/releases/download/SDK-candidate-26-Jul-2020/glslang-master-linux-Release.zip && \
-
-      $ unzip glslang-master-linux-Release.zip bin/glslangValidator && \
-
-      $ rm glslang-master-linux-Release.zip
+      $ sudo pip3 install meson==0.60.0 mako==1.1.0 dataclasses pycryptodome ply==3.11
 
 
 

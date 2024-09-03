@@ -13,18 +13,17 @@ download source code, and build |C| from source.
 Prerequisites
 *************
 
-* A 64-bit development workstation running Ubuntu\* 18.04 (Bionic Beaver)
+* A 64-bit development workstation running Ubuntu\* 22.04 (Jammy Jellyfish)
   operating system.
 
-* One of the supported versions of python\*, either 2.7 or 3.5.6, with
-  python 2.7 as the default.
+* Python supported version is 3.6+. This is mainly to be inline with latest repo command released by Google.
 
 * Around 350GB of free disk space on your workstation is required to
   checkout the source code and to store the build artifacts.
 
 .. note::
    #. Although Android\* is typically built with a GNU/Linux\* or macOS\*
-      operating system, we recommend you build |C| images on Ubuntu\* 18.04.
+      operating system, we recommend you build |C| images on Ubuntu\* 22.04.
       For setup instructions using other operating systems, refer to the
       `Establishing a Build Environment <https://source.android.com/setup/build/initializing>`_ section on the AOSP website.
    #. Also, note the `Android prerequisites <https://source.android.com/setup/build/requirements>`_ for build.

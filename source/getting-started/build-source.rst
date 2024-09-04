@@ -67,9 +67,7 @@ Set up the development environment
 
       $ sudo pip3 install meson==0.60.0 mako==1.1.0 dataclasses pycryptodome ply==3.11
 
-
-
-Build |C| in VM with Android 14
+Build |C| in VM with Android 15
 *******************************
 
 Download the source
@@ -91,18 +89,18 @@ Download the source
        $ cd civ
 
    Note, the below :command:`repo init` command pulls the latest development
-   CiV source code based on *Android 14* from the master branch.
+   CiV source code based on *Android 15* from the master branch.
 
    .. code-block:: bash
 
        $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 
-   To continue working on the *Android 13* based CiV source code,
+   To continue working on the *Android 14* based CiV source code,
    use the following manifest instead:
 
    .. code-block:: bash
 
-       $ repo init -u https://github.com/projectceladon/manifest -b celadon/t/mr0/master
+       $ repo init -u https://github.com/projectceladon/manifest -b celadon/u/mr0/master
 
 #. Enter the following command to pull down the |C| Android source tree to
    your working directory. The :command:`repo sync` operation might take time
@@ -116,6 +114,7 @@ Download the source
        $ repo sync -c
 
 .. _build-os-image:
+
 
 Build |C| in VM image
 =====================
@@ -141,8 +140,9 @@ Build |C| in VM image
    build the installer files for |C| in VM images:
 
    .. code-block:: bash
-
-       $ lunch caas-userdebug
+        
+       $ lunch caas-userdebug # this will be used until Android 14 
+       $ lunch caas-ap3a-userdebug # this is used for Android 15 onwards
        $ make flashfiles -j $(nproc)
 
    .. note::

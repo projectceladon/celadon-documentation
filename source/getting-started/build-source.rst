@@ -67,8 +67,9 @@ Set up the development environment
 
       $ sudo pip3 install meson==0.60.0 mako==1.1.0 dataclasses pycryptodome ply==3.11
 
-Build |C| in VM with Android 15
-*******************************
+Build |C| Celadon Android 15 Version
+************************************
+Celadon Android 15 version supports both BareMetal and CIV [Android VM]
 
 Download the source
 ===================
@@ -85,17 +86,17 @@ Download the source
 
    .. code-block:: bash
 
-       $ mkdir civ
-       $ cd civ
+       $ mkdir celadon
+       $ cd celadon
 
    Note, the below :command:`repo init` command pulls the latest development
-   CiV source code based on *Android 15* from the master branch.
+   celadon source code based on *Android 15* from the master branch.
 
    .. code-block:: bash
 
        $ repo init -u https://github.com/projectceladon/manifest -b master -m default.xml
 
-   To continue working on the *Android 14* based CiV source code,
+   To continue working on the *Android 14* based source code,
    use the following manifest instead:
 
    .. code-block:: bash
@@ -116,7 +117,7 @@ Download the source
 .. _build-os-image:
 
 
-Build |C| in VM image
+Build |C| boot image
 =====================
 
 #. Optionally, delete existing output of any previous build with the
@@ -141,8 +142,8 @@ Build |C| in VM image
 
    .. code-block:: bash
         
-       $ lunch caas-userdebug # this will be used until Android 14 
        $ lunch caas-ap3a-userdebug # this is used for Android 15 onwards
+       $ lunch caas-userdebug # this will be used until Android 14
        $ make flashfiles -j $(nproc)
 
    .. note::

@@ -61,7 +61,8 @@ New in this release
     * API level upgraded to 35
     * FCM Target level upgraded to 202404
     * All Celadon HALs upgraded to AIDL versions
-    * Audio HAL AIDL 2.0
+    * Audio core HAL AIDL V1.0
+    * Audio effects HAL AIDL V2.0
     * Camera provider HAL moved to AIDL V1.0
     * Graphics composer HAL moved to composer3 AIDL V2.0
     * Thermal HAL moved to AIDL V2.0

@@ -29,67 +29,49 @@ New in this release
 -------------------
 
  * Android 15 brings in the below major features:
-    * Android Virtualization Framework (AVF) updates
-    * Android System APIs for AVF
-    * Large Screen Enhancements
-    * Adopting Scribe in App/Toolkit
-    * Concurrent Displays
-    * Window manager extensions
-    * Windowmanager Jetpack API to allow all applications access to functionality.
-    * Full-screen intent limits
-    * App Compatibility for large screens
-    * Low Latency Graphics
-    * Fuse-Bpf updates
-    * Vendor APEX
-    * Storage & updatability – EROFS and OTA performance addressed.
-    * Binder and Android IDL (AIDL)
-    * HAL interfaces are converted to AIDL (~99%) or deprecated (one exception)
-    * Multigenerational LRU (MGLRU) is a rework related change
-    * Audio: Dynamic soundbar mode
-    * Multiple USB audio device routing updates
-    * Sound dose
-    * Preferred audio mixer attributes on USB devices
-    * Camera extensions feature
-    * Reference USB camera HAL
-    * Ultra HDR
-    * Wide gamut capture
-    * Connectivity: ASHA advertisements for hearing aid devices
-    * Qualified network service
-    * Time and time zone detection updates
-    * Ultra-wideband HSL interface
-    * Wi-Fi vendor HAL
-    * Virtualization Wi-Fi feature updates
-    * Enterprise device policy resolution framework
-    * Android Baseline Profile (ABP) and Vulkan implementation
-    * Reduced graphics buffer memory consumption
-    * Performance boost for games
-    * Capture Content for Notes
-    * COMPANION_DEVICE_GLASSES role
-    * COMPANION_DEVICE_NEARBY_DEVICE_STREAMING role
-    * Power Manager ACQUIRE_CAUSES_WAKEUP permissions.
-    * Runtime: JDWP thread creation
-    * Runtime: OpenJDK 17 updates
-    * Filename encryption
-    * Multiple IMEIs
-    * Dynamic Code Loading (DCL),
-    * Picker choice in media permission
-    * Full release notes from Google can be found at: https://source.android.com/docs/setup/about/android-14-release
+    * Enhanced large screen support 
+    * Multi-device experience 
+    * 100 % AIDL HAL compatability 
+    * API Level 35 & Target Level 202404
+    * Head tracking over LE Audio
+    * Android Automotive Power Policy
+    * Android camera feature update  
+    * Camera Low Light boost 
+    * APFV6 
+    * Support for 802.11 AZ in wifi RTT
+    * Enhancements to Android Virtualization Framework (AVF)
+    * Multi-user & Multi-display 
+    * Input method Framework enhancements 
+    * Scudo Performance improvements 
+    * AutoFDO feature 
+    * Audio HAL to AIDL
+    * Bit-perfect audio 
+    * Sterio spatialization
+    * AV1 updates
+    * Android codec database [ACD]
+    * Vulkan as GPU HAL 
+    * Virtual A/B Version 3
+    * Deprecation of VNDK 
+    * Deprecation of vendor overlay 
+    * set adjust compiler filter callback
+    * Full release notes from Google can be found at: https://source.android.com/docs/whatsnew/android-15-release
 
  * Celadon features:
-    * AIDL framework updates for HALs.
-    * API level upgraded to 34
-    * FCM Target level upgraded to 8
-    * Camera provider HAL moved to AIDL V2.0
+    * AIDL framework updates for HALs
+    * API level upgraded to 35
+    * FCM Target level upgraded to 202404
+    * All Celadon HALs upgraded to AIDL versions
+    * Audio HAL AIDL 2.0
+    * Camera provider HAL moved to AIDL V1.0
     * Graphics composer HAL moved to composer3 AIDL V2.0
-    * Thermal HAL moved to AIDL V1.0
+    * Thermal HAL moved to AIDL V2.0
     * Graphics allocator HAL moved to AIDL V2.0
     * Boot HAL moved to AIDL V1.0
-    * WiFi HAL moved to AIDL V1.0
+    * WiFi HAL moved to AIDL V2.0
     * Identity HAL moved to AIDL V5.0
     * security keymint HAL moved to AIDL V3.0
-    * gatekeeper hal moved to AIDL V1.0
-    * Sensor HAL moved to AIDL V1.0
-    * pKVM (Protected KVM) code compatibility available, Celadon won’t support it.
+    * Sensor HAL moved to AIDL V2.0
+    * pKVM (Protected KVM) code compatibility available, Celadon won’t support it
 
 
 Known issues
@@ -101,7 +83,7 @@ Known issues
 Where to find the release
 -------------------------
 
-* Manifest Link : 
+* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.24.03.36_A15.xml
 
 
 How to install this release

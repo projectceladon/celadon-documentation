@@ -67,7 +67,7 @@ Set up the development environment
 
       $ sudo pip3 install meson==0.60.0 mako==1.1.0 dataclasses pycryptodome ply==3.11
 
-Build |C| Celadon Android 15 Version
+Build |C| Android 15 Version
 ************************************
 Celadon Android 15 version supports both BareMetal and CIV [Android VM]
 

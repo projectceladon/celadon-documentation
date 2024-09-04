@@ -115,7 +115,7 @@ How to install this release
 
    * For Compilation please use Ubuntu 18.04
    * source build/envsetup.sh
-   * lunch caas-userdebug
+   * lunch caas-ap3a-userdebug
    * make flashfiles -jN
 
 * Steps To build the host kernel for this manifest

@@ -7,15 +7,15 @@ Android 15 Base Releases
    :local:
    :depth: 1
 
-CIV_00.36.03._A15.
+CIV_00.36.03._A15
 =================
-* This is a Pre-Production Binary Release for evaluation and development purpose. This release supports 13th GEN Core [Celadon in VM].
+* This is a Manifest Release for evaluation and development purpose. This release supports 14th GEN Core [BareMetal].
 
 Intended audience
 -----------------
 
 * Open Source Community who has subscribed to celadon@lists.linuxfoundation.org
-* Any user who wants to explore Celadon in VM
+* Any user who wants to explore Celadon in BareMetal
 
 Customer support
 ----------------
@@ -28,7 +28,7 @@ Introduction
 New in this release
 -------------------
 
- * Android 14 brings in the below major features:
+ * Android 15 brings in the below major features:
     * Android Virtualization Framework (AVF) updates
     * Android System APIs for AVF
     * Large Screen Enhancements
@@ -94,13 +94,15 @@ New in this release
 
 Known issues
 ------------
-   * The Blink issue seen in previous release is now fixed with latest kernel 6.1.61
+   * WIFI : When we try to connect to a network, the connection is going to save state .
+     This issue can be resolved if we connect to a network after entering password , navigate to Advance menu option , select “Static” instead of “dynamic” and re-      enter the pre populated information
+   * Video playback have glitches in them. The video skips few seconds or goes very fast for few sec and the same keeps repeating.
 
 Where to find the release
 -------------------------
 
-* Manifest Link : https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.51_A14.xml
-* Binary Link : https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.23.04.51_A14
+* Manifest Link : 
+
 
 How to install this release
 ---------------------------
@@ -113,7 +115,7 @@ How to install this release
 
 * Android build commands
 
-   * For Compilation please use Ubuntu 18.04
+   * For Compilation please use Ubuntu 22.04
    * source build/envsetup.sh
    * lunch caas-ap3a-userdebug
    * make flashfiles -jN
@@ -123,9 +125,9 @@ How to install this release
     * Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ
     * cd ~/civ && tar zxvf caas-releasefiles-userdebug.tar.gz
     * To build Chromium kernel
-       * cd patches/kernel/lts2022-chromium
+       * cd patches/kernel/lts2023-chromium
        * ./build_weekly.sh
-       * Deb files will be generated in patches/kernel/lts2022-chromium/host_kernel
+       * Deb files will be generated in patches/kernel/lts2023-chromium/host_kernel
     * sudo dpkg -i \*.deb
     * Update grub to wait indefinitely for kernel selection on boot
         * sudo vim /etc/default/grub
@@ -145,21 +147,20 @@ How to install this release
 Validation results
 ------------------
 
-This build has been validated on Raptor Lake NUC in the following function domains:
+This build has been validated on MTL NUC in the following function domains:
 
-=============================  =======  ========
-Component                      Results  Comments
-=============================  =======  ========
-Wi-Fi                          OK        Host wifi is switched to Android UI in QEMU using usb pass through
-BT                             OK        Bluetooth is working
-Audio Playback                 OK        MP3 and MP4 formats tested
-Adb connect over WIFI          OK
-Security                       OK
-Boot                           OK        Boots on QEMU 7.2.3
+=============================  =======
+Component                      Results
+=============================  =======
+Wi-Fi                          OK     
+BT                             OK     
+Audio Playback                 OK  
+ADB                            OK
+Boot                           OK     
 Image Flash                    OK
 Web browsing                   OK
-Video playback                 OK        MP4 tested
-USB                            OK        Keyboard , Mouse , Pen drive
+Video playback                 OK     
+USB                            OK  
 Display                        OK
 =============================  =======  ========
 
@@ -169,19 +170,18 @@ Reference configuration
 
  * Supported hardware
 
-     * Product -  Raptor Lake [RPL] NUC 
+     * Product -  MTL NUC 
 
  * Supported software
 
-     * AOSP Version - android-14.0.0_r2
-     * Host Kernel for GVT-d - 6.1.61
-     * Guest kernel for GVT-d - 6.1.61
-
+     * AOSP Version - android-15.0.0_r1
+     * Kernel Version - 6.6.41
 
 Acronyms and terms
 ------------------
 
-* CIV - Celadon in Virtual Machine
+* BM  - Bare Metal
+* CIV - Celadon In Virtual Machine 
 
 
 Helpful hints / related documents
@@ -194,5 +194,4 @@ Helpful hints / related documents
   should use their own keys to sign their release images
 * Build Celadon in VM  https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm
 * Flash Steps : https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager
-* Linked to Android 14 Google Public document --> https://source.android.com/docs/setup/about/android-14-release
-
+* Linked to Android 15 Google Public document --> https://source.android.com/docs/whatsnew/android-15-release

@@ -7,7 +7,7 @@ Android 15 Base Releases
    :local:
    :depth: 1
 
-CIV_00.36.03._A15
+CIV_00.24.03.36_A15
 =================
 * This is a Manifest Release for evaluation and development purpose. This release supports 14th GEN Core [BareMetal].
 

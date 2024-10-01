@@ -61,7 +61,7 @@ Set up the development environment
          python3-pystache git-lfs python-is-python3 flex clang libncurses5 \
          fakeroot ncurses-dev xz-utils cryptsetup-bin \
          apt-transport-https ca-certificates curl lsb-release \
-         rsync vim python-six kmod \
+         rsync vim python-six kmod glslang-tools \
          software-properties-common cpio python3-pip ninja-build \
          cutils cmake pkg-config xorriso mtools libjson-c-dev file
 

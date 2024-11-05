@@ -67,6 +67,18 @@ Set up the development environment
 
       $ sudo pip3 install meson==0.60.0 mako==1.1.0 dataclasses pycryptodome ply==3.11
 
+      # OneAPI Integration support has been added 
+      # but it has dependencies which need to be installed in build environment
+
+      $ wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB  \
+         | gpg --dearmor | tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null && \
+         echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" \
+         | tee /etc/apt/sources.list.d/oneAPI.list  
+      $sudo apt-get update && \
+         sudo apt-get install -y intel-oneapi-ipp-devel-2021.10 \
+         intel-oneapi-mkl-devel-2021.1.1 intel-oneapi-ipp-devel-32bit-2021.10 \
+         intel-oneapi-mkl-devel-32bit-2021.1.1 
+
 Build |C| Android 15 Version
 ************************************
 Celadon Android 15 version supports both BareMetal and CIV [Android VM]

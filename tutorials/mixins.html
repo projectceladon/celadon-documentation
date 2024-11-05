@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mixins &mdash; Documentation for the Celadon Project</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Enabling USB Audio Class 3.0 audio in Celadon" href="enabling-uac3.html" />
+    <link rel="prev" title="Guides and Tutorials" href="tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celadon Project
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mixins</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-bare-metal.html">Boot CiV on Bare Metal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-sensors-in-celadon.html">Enabling Sensors in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-f2fs.html">Boot CIV with Flash Friendly File System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrent-camera-access.html">Concurrent Camera Access in CiV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-nnhal-in-celadon.html">Enabling Neural Networks Hardware Abstraction Layer in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build-intel-android-apps.html">Building Intel Platform-Friendly Android Apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">Thermal Mediation in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wireless-connectivity.html">Wireless Connectivity in Celadon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tutorials.html">Guides and Tutorials</a></li>
+      <li class="breadcrumb-item active">Mixins</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/mixins.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mixins">
+<span id="id1"></span><h1>Mixins</h1>
+<section id="overview">
+<h2>Overview</h2>
+<p>Traditionally, Android* has been designed to have a unique <em>lunch</em> target
+for each enabled device, and each lunch target has a product source code
+directory associated with it. To enable Android on a variety of Intel x86-
+based boards across many CPU types at once, any given device needs to be
+tuned for specific peripherals and software features. With completely
+independent lunch targets and product directories, a great deal of
+configuration data was copied and pasted among build targets spread across
+many configuration file types. In addition, any changes to the configuration
+data must be propagated to those copies in the product directories, which
+significantly increases the maintenance cost. To mitigate the effort, Celadon
+introduces a multiple-inheritance system to generate product-definition
+features based on a <strong>mixin</strong> model.</p>
+<p>Mixins are placed in groups; each group represents a functional area
+on the system, such as audio, Wi-Fi*, or boot parameters among other
+features and characteristics. Thus, configuration directives for functional
+areas are grouped together and can be reused. Each group provides radio-
+button-like selection options among features, and a product must choose at
+least one option for each group. A script
+<code class="file docutils literal notranslate"><span class="pre">device/intel/mixins/mixin-update</span></code> then updates all the build targets
+with this data whenever it’s changed.</p>
+</section>
+<section id="usage">
+<h2>Usage</h2>
+<section id="mixin-groups">
+<h3>Mixin groups</h3>
+<p>Each mixin group represents a functional area of the system that has
+multiple radio button options from which to select for a particular product.
+Some groups may be simple <strong class="command">true</strong>/<strong class="command">false</strong> selections.
+A typical example is the option to integrate
+<abbr title="Google* Mobile Services">GMS</abbr>. Many mixin groups offer a variety of
+selections, such as the <strong class="command">cpu-arch</strong> mixin group, which instructs the
+system to gather configuration data relevant to the particular SoC and to
+generate the configuration for the target product.</p>
+<p>Each mixin group has a subdirectory in the base mixin directory at
+<code class="file docutils literal notranslate"><span class="pre">device/intel/mixins/groups/</span></code>. The path to the base mixin directory is
+specified in <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> in each product directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls device/intel/mixins/groups/
+aaf                         boot-arch         debug-coredump      debug-usb-config    ethernet           gptbuild      memtrack           pstore            touch             vndk
+abota-fw                    bugreport         debug-crashlogd     debugfs             evs                graphics      midi               public-libraries  treble            wlan
+acpi-partition              camera-ext        debug-dvc_desc      default-drm         factory-partition  hdcpd         navigationbar      rfkill            trusty
+acpio-partition             codec2            debug-kernel        device-specific     factory-scripts    health        net                sepolicy          usb
+allow-missing-dependencies  codecs            debug-lmdump        device-type         filesystem_config  houdini       neuralnetworks     serialport        usb-audio-init
+art-config                  config-partition  debug-log-watch     dexpreopt           firmware           intel_prop    odm-partition      slot-ab           usb-gadget
+atrace                      cpu-arch          debug-npk           disk-bus            firststage-mount   kernel        ota-upgrade        storage           usb-init
+audio                       cpuset            debug-phonedoctor   disk-encryption     flashfiles         lights        power              <span class="nb">suspend</span>           usb-otg-switch
+avb                         dalvik-heap       debug-tools         display-density     fota               load_modules  product-partition  swap              variants
+bluetooth                   dbc               debug-unresponsive  dynamic-partitions  googleservice      media         psdapp             thermal           vendor-partition
+</pre></div>
+</div>
+</section>
+<section id="mixins-spec">
+<h3>mixins.spec</h3>
+<p>A mixin spec file is a text file that describes the product configurations.
+Every Celadon build target that uses mixins should have a <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code>
+file in their product board configuration directories. Instead of manually
+modifying feature settings in the product makefiles, the product
+customization and peripherals tuning are done by editing the
+<code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> file.</p>
+<p>If there are updates or changes to any mixin configuration files, you should
+re-run the <code class="file docutils literal notranslate"><span class="pre">mixin-update</span></code> script from the root of the Celadon Android
+source tree. The script searches all files named <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> under
+the <code class="file docutils literal notranslate"><span class="pre">device/intel/</span></code> directory and generates the makefiles
+(e.g. <code class="file docutils literal notranslate"><span class="pre">AndroidBoard.mk</span></code>, <code class="file docutils literal notranslate"><span class="pre">BoardConfig.mk</span></code>, <code class="file docutils literal notranslate"><span class="pre">device.mk</span></code>,
+<code class="file docutils literal notranslate"><span class="pre">init.rc</span></code>, etc.) required for building Android in individual product
+directories.</p>
+</section>
+<section id="option-spec">
+<h3>option.spec</h3>
+<p>The <code class="file docutils literal notranslate"><span class="pre">option.spec</span></code> file, if it is present in an option subdirectory of
+a mixin group, specifies metadata for that option of a particular group.
+This file is used to set arguments to a default value if the value is not
+provided in <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code>. For example, a ‘<strong class="command">efi</strong>’ option is
+available for the ‘<strong class="command">boot-arch</strong>’ mixin group:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls device/intel/mixins/groups/boot-arch/efi:
+AndroidBoard.mk  fstab    init.rc           option.spec
+BoardConfig.mk   gpt.ini  init.recovery.rc  product.mk
+</pre></div>
+</div>
+<p>The configuration fragments such as <code class="file docutils literal notranslate"><span class="pre">AndroidBoard.mk</span></code> and
+<code class="file docutils literal notranslate"><span class="pre">BoardConfig.mk</span></code> included in the previous option directory are applied
+to the product configuration files if the option ‘<strong class="command">efi</strong>’ is
+specified in the product mixin spec file <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
+boot-arch: efi<span class="o">(</span><span class="nv">uefi_arch</span><span class="o">=</span>x86_64,fastboot<span class="o">=</span>efi,acpi_permissive<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+...
+</pre></div>
+</div>
+</section>
+<section id="files-spec">
+<h3>files.spec</h3>
+<p>The <code class="file docutils literal notranslate"><span class="pre">files.spec</span></code> file is used to specify additional files that will be
+copied to <code class="file docutils literal notranslate"><span class="pre">device/intel/&lt;lunch-target&gt;/extra_files/&lt;mixin-group&gt;/</span></code>
+before building Celadon images. This configuration file should be placed in an
+option subdirectory of a group. The files listed in <code class="file docutils literal notranslate"><span class="pre">files.spec</span></code> will be copied into the target product repo if this group is selected.
+For example, the <code class="file docutils literal notranslate"><span class="pre">mixins.spec</span></code> of the <abbr title="Celadon in VM">CiV</abbr>
+lunch target specifies the <strong class="command">project-celadon</strong> option for the
+<strong class="command">boot-arch</strong> group. As a result, the UEFI firmware startup file
+<code class="file docutils literal notranslate"><span class="pre">startup.nsh</span></code> listed in <code class="file docutils literal notranslate"><span class="pre">files.spec</span></code> is copied to the CiV source
+repository after running the
+<code class="file docutils literal notranslate"><span class="pre">device/intel/mixins/mixin-update</span></code> script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat device/intel/project-celadon/caas/mixins.spec
+...
+<span class="o">[</span>groups<span class="o">]</span>
+...
+boot-arch: project-celadon<span class="o">(</span><span class="nv">uefi_arch</span><span class="o">=</span>x86_64,fastboot<span class="o">=</span>efi,ignore_rsci<span class="o">=</span>true,disable_watchdog<span class="o">=</span>true,...<span class="o">)</span>
+...
+
+$ cat device/intel/mixins/groups/boot-arch/project-celadon/files.spec
+...
+<span class="o">[</span>extrafiles<span class="o">]</span>
+update_ifwi_ab.sh: <span class="s2">&quot;ifwi update script running in postinstall&quot;</span>
+startup.nsh: <span class="s2">&quot;Auto installer start&quot;</span>
+...
+</pre></div>
+</div>
+</section>
+<section id="mixinfo-spec">
+<h3>mixinfo.spec</h3>
+<p>The <code class="file docutils literal notranslate"><span class="pre">mixinfo.spec</span></code> file is an optional file in a mixin group
+directory, which defines metadata for a particular group. It is currently
+used to manage dependencies between mixin groups. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat device/intel/mixins/groups/debug-phonedoctor/mixinfo.spec
+<span class="o">[</span>mixinfo<span class="o">]</span>
+<span class="nv">deps</span> <span class="o">=</span> debug-crashlogd
+</pre></div>
+</div>
+<p>Running a mixin update ensures the mixin group ‘<em>debug-crashlogd</em>’ is
+included before processing the ‘<em>debug-phonedoctor</em>’ group.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorials.html" class="btn btn-neutral float-left" title="Guides and Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="enabling-uac3.html" class="btn btn-neutral float-right" title="Enabling USB Audio Class 3.0 audio in Celadon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      <span class="lastupdated">Last updated on Nov 05, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

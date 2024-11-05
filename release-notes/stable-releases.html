@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stable Releases &mdash; Documentation for the Celadon Project</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Base Releases" href="base-releases.html" />
+    <link rel="prev" title="Release Notes" href="release-notes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celadon Project
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="release-notes.html">Release Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Stable Releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#civ-02-22-04-50-a12">CIV_02.22.04.50_A12</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#intended-audience">Intended audience</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#customer-support">Customer support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#release-constraint-list">Release Constraint list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#known-issues">Known issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-issue-list">Open Issue List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#where-to-find-the-release">Where to find the release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#host-kernel-release-configuration">Host Kernel Release configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference-configuration">Reference configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#validation-results">Validation results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#civ-03-22-03-37-a11">CIV_03.22.03.37_A11</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Intended audience</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Customer support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Feature Details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Known issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Where to find the release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Host Kernel Release configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Reference configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Validation results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#civ-02-22-01-12-a11">CIV_02.22.01.12_A11</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Intended audience</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Customer support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Feature Details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Known issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Where to find the release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">Host Kernel Release configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Reference configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Validation results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="base-releases.html">Base Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated-releases.html">Deprecated Releases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="release-notes.html">Release Notes</a></li>
+      <li class="breadcrumb-item active">Stable Releases</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/release-notes/stable-releases.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="stable-releases">
+<span id="id1"></span><h1>Stable Releases</h1>
+<p>This is a Production Release for evaluation and development purposes
+addressing Retail, Education, Workload consolidation and Marine segments.</p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#civ-02-22-04-50-a12" id="id20">CIV_02.22.04.50_A12</a></p></li>
+<li><p><a class="reference internal" href="#civ-03-22-03-37-a11" id="id21">CIV_03.22.03.37_A11</a></p></li>
+<li><p><a class="reference internal" href="#civ-02-22-01-12-a11" id="id22">CIV_02.22.01.12_A11</a></p></li>
+</ul>
+</nav>
+<section id="civ-02-22-04-50-a12">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">CIV_02.22.04.50_A12</a></h2>
+<section id="intended-audience">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Celadon Open Source Community who has subscribed to <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+</ul>
+</section>
+<section id="customer-support">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using :
+<a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="introduction">
+<h3>Introduction</h3>
+<section id="feature-details">
+<h4>Feature Details</h4>
+<p>Celadon upstreamed fixes in this release:</p>
+<ul class="simple">
+<li><p>First stable release from Celadon_IoT for Android 12</p></li>
+<li><p>This release supports Alder Lake-S (ADL-S)</p></li>
+<li><p>IoT configuration supports SRIOV mode with 99.97% conformance on
+Alder Lake (ADL)
+platform with production ready</p></li>
+<li><p>Vm-Manager support to launch Android</p></li>
+</ul>
+</section>
+</section>
+<section id="release-constraint-list">
+<h3>Release Constraint list</h3>
+<ul class="simple">
+<li><p>VP9 hardware codec is not enabled in the current release due to hardware constraint</p></li>
+<li><p>Sensor support is not enabled in current release due to hardware constraint.</p></li>
+<li><p>The current QEMU release doesn’t support RGBA8888 color format which impact RGBA8888 usage on Android guest os application</p></li>
+<li><p>USB accessory mode is not supported in the current release.</p></li>
+<li><p>MAC randomization feature is not supported in the current release.</p></li>
+<li><p>Partner modules aren’t integrated within the current GMS package.</p></li>
+<li><p>NN API is not supported in the current release.</p></li>
+<li><p>Hardware doesn’t have inbuilt cameras, only usb external camera is supported.</p></li>
+</ul>
+</section>
+<section id="known-issues">
+<h3>Known issues</h3>
+<ul class="simple">
+<li><p>Ethernet tethering option in Settings menu is active even when no USB Ethernet Adaptor connected</p></li>
+<li><p>System touch can’t accurately point the location</p></li>
+<li><p>With UserData CheckPoint feature enabled, device reboots after 1st time boot while flashing is done</p></li>
+<li><p>Windows freeform feature has been partially backported from Android T</p></li>
+</ul>
+</section>
+<section id="open-issue-list">
+<h3>Open Issue List</h3>
+<ul class="simple">
+<li><p><sup>#</sup>16019209010  VtsHalMediaC2V1_0TargetVideoDecTest module</p></li>
+<li><p>16017487117   x86_64 CtsMediaTestCases failures</p></li>
+<li><p>16017342135   STS CtsSecurityTestCases failing</p></li>
+<li><p>16018517871   CtsMediaV2TestCases failures related to HEVC profilelevel</p></li>
+<li><p>16017974748   Failures are observed with x86_64 CtsDeqpTestCases module</p></li>
+</ul>
+</section>
+<section id="where-to-find-the-release">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link: <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.04.50_A12.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.04.50_A12.xml</a></p></li>
+<li><p><sup>#</sup>PRs fixing this issue in repo : <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged">https://github.com/projectceladon/vendor-intel-utils-vertical-iot/pulls?q=is%3Apr+is%3Amerged</a>
+[PR#9, PR#10, PR#11, PR#16, PR#17, PR#19]</p></li>
+<li><p>Below validation results are with release manifest + cherrypicked PR’s</p></li>
+</ul>
+</section>
+<section id="host-kernel-release-configuration">
+<h3>Host Kernel Release configuration</h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>linux-intel-lts kernel</dt><dd><ul>
+<li><p>Branch: <a class="reference external" href="https://github.com/intel/linux-intel-lts">https://github.com/intel/linux-intel-lts</a></p></li>
+<li><p>SHA ID: <a class="reference external" href="https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.15.71-adl-linux-221121T044440Z">https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.15.71-adl-linux-221121T044440Z</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>kernel-config</dt><dd><ul>
+<li><p>Config-File: <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig">https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="reference-configuration">
+<h3>Reference configuration</h3>
+<ul>
+<li><dl>
+<dt>Supported hardware</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Alder Lake(ADL)</p></td>
+<td><div class="line-block">
+<div class="line">ADL RVP DDR5 C1 CPU 12th Gen Intel(R) Core(TM) i9-12900E</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Network Interface Card</p></td>
+<td><div class="line-block">
+<div class="line">Intel® Wireless-AC 9260 5th Generation Intel802.11ac, Dual Band, 2x2Wi-Fi + Bluetooth®5.1</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Supported software</dt><dd><ul>
+<li><dl>
+<dt>Android CIV Guest:</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Android</p></td>
+<td><div class="line-block">
+<div class="line">Android 12</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Kernel</p></td>
+<td><div class="line-block">
+<div class="line">5.10.145 (lts-v5.10.145-civ-android-221027T031053Z)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>AOSP</p></td>
+<td><div class="line-block">
+<div class="line">android-12.0.0_r28</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Ubuntu Host:</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Qemu</p></td>
+<td><div class="line-block">
+<div class="line">version 7.1.0</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Ubuntu</p></td>
+<td><div class="line-block">
+<div class="line">22.04 LTS (Jammy Jellyfish)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Kernel_IoTG</p></td>
+<td><div class="line-block">
+<div class="line">5.15.71 (lts-v5.15.71-adl-linux-221121T044440Z)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="validation-results">
+<h3>Validation results</h3>
+<p>Stable Releases (IoT) are validated with SR-IOV mode on an Alder Lake (ADL)
+platform in the following function domains. Validation cycles are performed on
+a GMS user-signed, widevine-enabled image, as required by google certification
+requirements.</p>
+<p>Below validation results are with Alder Lake-S (ADL-S) RVP platform.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/Q422-2-A12_Validation_Result.png"><img alt="../_images/Q422-2-A12_Validation_Result.png" src="../_images/Q422-2-A12_Validation_Result.png" style="width: 500px;" /></a>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>*CTS on GSI failures are a subset of CTS failures, so the overall failures
+count is 39.</p>
+</div>
+</section>
+</section>
+<section id="civ-03-22-03-37-a11">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">CIV_03.22.03.37_A11</a></h2>
+<section id="id2">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Celadon Open Source Community who has subscribed to <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Introduction</h3>
+</section>
+<section id="id5">
+<h3>Feature Details</h3>
+<ul>
+<li><p>Celadon Upstreamed fixes in this release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AOSP Version upgraded to r_46</p></li>
+<li><p>Chromium Guest Kernel upgraded to 5.4.150</p></li>
+<li><p>Security Patch &amp; ASB updated to “September’22”</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h3>Known issues</h3>
+<p>-Nil- [ All known issues from previoues Release are fixed in this release ]</p>
+</section>
+<section id="id7">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link: <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_03.22.03.37_A11.xml</a></p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Host Kernel Release configuration</h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>linux-intel-lts kernel</dt><dd><ul>
+<li><p>Branch: <a class="reference external" href="https://github.com/intel/linux-intel-lts/tree/5.4/yocto">https://github.com/intel/linux-intel-lts/tree/5.4/yocto</a></p></li>
+<li><p>SHA ID: <a class="reference external" href="https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.4.209-yocto-220817T175100Z">https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.4.209-yocto-220817T175100Z</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>kernel-config</dt><dd><ul>
+<li><p>Config-File: <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/android/r/x86_64_defconfig">https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/android/r/x86_64_defconfig</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id9">
+<h3>Reference configuration</h3>
+<ul>
+<li><dl>
+<dt>Supported hardware</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Comet Lake(CML)</p></td>
+<td><div class="line-block">
+<div class="line">NUC10FNH Intel(R) Core(TM) i7-10710U CPU</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Elkhart Lake(EHL)</p></td>
+<td><div class="line-block">
+<div class="line">EHL A0/EHL Bx CRB</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Tiger Lake(TGL)</p></td>
+<td><div class="line-block">
+<div class="line">TGL Bx RVP</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Supported software</dt><dd><ul>
+<li><dl>
+<dt>Android CIV Guest:</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Android</p></td>
+<td><div class="line-block">
+<div class="line">Android 11</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Kernel</p></td>
+<td><div class="line-block">
+<div class="line">5.4.150 (linux-intel-lts2019-chromium)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>AOSP</p></td>
+<td><div class="line-block">
+<div class="line">android-11.0.0_r46</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Ubuntu Host:</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Qemu</p></td>
+<td><div class="line-block">
+<div class="line">version 4.2.0</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Ubuntu</p></td>
+<td><div class="line-block">
+<div class="line">20.04 LTS (Focal Fossa)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Kernel_IoTG</p></td>
+<td><div class="line-block">
+<div class="line">5.4.209 (linux-intel-lts 5.4/yocto branch)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id10">
+<h3>Validation results</h3>
+<p>Stable Releases (IoT) are validated with GVT-d mode on Comet Lake(CML), Tiger Lake(TGL), and Elkhart Lake(EHL) Intel® platforms in the following function domains. Validation cycles are performed on GMS user signed widevine enabled image as required by google certification requirements</p>
+<figure class="align-right">
+<a class="reference internal image-reference" href="../_images/sep22_Validation_Result2.png"><img alt="../_images/sep22_Validation_Result2.png" src="../_images/sep22_Validation_Result2.png" style="width: 750px;" /></a>
+</figure>
+</section>
+</section>
+<section id="civ-02-22-01-12-a11">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">CIV_02.22.01.12_A11</a></h2>
+<section id="id11">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Open Source Community who has subscribed to <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>Introduction</h3>
+</section>
+<section id="id14">
+<h3>Feature Details</h3>
+<ul>
+<li><p>Features supported in this release</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>RTC (Real Time Clock) - Android Time keeping</p></li>
+<li><p>Alarm Virtualization</p></li>
+<li><p>Support wipe Google Factory Reset protection credentials on reset</p></li>
+<li><p>Support secure data erase on dedicated partition</p></li>
+<li><p>Use mesa i965 driver on CML and EHL</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p>Celadon Upstreamed fixes</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CiV suspend/resume stability</p></li>
+<li><p>Update health values for CiV battery</p></li>
+<li><p>Enable zram swap for device having &lt;= 4G RAM</p></li>
+<li><p>Enabled GuC/HuC firmware</p></li>
+<li><p>Support EHL platform</p></li>
+<li><p>Support Sensor enable/disable build configuration</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id15">
+<h3>Known issues</h3>
+<ul class="simple">
+<li><p>1974128 ‘&lt;<a class="reference external" href="https://android-review.googlesource.com/c/platform/test/suite_harness/+/1974128">https://android-review.googlesource.com/c/platform/test/suite_harness/+/1974128</a>&gt;`_  Temporarily skip platformPermissionPolicyIsUnaltered</p></li>
+<li><p>1800607 ‘&lt;<a class="reference external" href="https://android-review.googlesource.com/c/platform/test/vts-testcase/kernel/+/1800607">https://android-review.googlesource.com/c/platform/test/vts-testcase/kernel/+/1800607</a>&gt;`_  sysfs.KernelApiSysfsTest#testAndroidUSB: enforce only if file present</p></li>
+<li><p>Buganizer-193114625 ‘&lt;<a class="reference external" href="https://partnerissuetracker.corp.google.com/issues/193114625">https://partnerissuetracker.corp.google.com/issues/193114625</a>&gt;`_ atest CtsAppTestCases/CtsAppTestCases[instant]</p></li>
+<li><p>1989169 ‘&lt;<a class="reference external" href="https://android-review.googlesource.com/c/platform/hardware/interfaces/+/1989169">https://android-review.googlesource.com/c/platform/hardware/interfaces/+/1989169</a>&gt;`_  Fix for VTS test CleanupConnectionsOnInitialize/0_default</p></li>
+</ul>
+</section>
+<section id="id16">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link: <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.01.12_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_02.22.01.12_A11.xml</a></p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>Host Kernel Release configuration</h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>linux-intel-lts kernel</dt><dd><ul>
+<li><p>Branch: <a class="reference external" href="https://github.com/intel/linux-intel-lts/tree/5.4/yocto">https://github.com/intel/linux-intel-lts/tree/5.4/yocto</a></p></li>
+<li><p>SHA ID: <a class="reference external" href="https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.4.170-yocto-220124T222417Z">https://github.com/intel/linux-intel-lts/releases/tag/lts-v5.4.170-yocto-220124T222417Z</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>kernel-config</dt><dd><ul>
+<li><p>Config-File: <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig">https://github.com/projectceladon/vendor-intel-utils-vertical-iot/blob/main/x86_64_defconfig</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id18">
+<h3>Reference configuration</h3>
+<ul>
+<li><dl>
+<dt>Supported hardware</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Comet Lake(CML)</p></td>
+<td><div class="line-block">
+<div class="line">NUC10FNH Intel(R) Core(TM) i7-10710U CPU</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Elkhart Lake(EHL)</p></td>
+<td><div class="line-block">
+<div class="line">EHL A0/EHL Bx CRB</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Tiger Lake(TGL)</p></td>
+<td><div class="line-block">
+<div class="line">TGL Bx RVP</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Supported software</dt><dd><ul>
+<li><dl>
+<dt>Android CIV Guest:</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Android</p></td>
+<td><div class="line-block">
+<div class="line">Android 11</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Kernel</p></td>
+<td><div class="line-block">
+<div class="line">5.4.142 (linux-intel-lts2019-chromium)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>AOSP</p></td>
+<td><div class="line-block">
+<div class="line">android-11.0.0_r39</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Ubuntu Host:</dt><dd><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Product</p></td>
+</tr>
+<tr class="row-even"><td><p>Qemu</p></td>
+<td><div class="line-block">
+<div class="line">version 4.2.0</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Ubuntu</p></td>
+<td><div class="line-block">
+<div class="line">20.04 LTS (Focal Fossa)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Kernel_IoTG</p></td>
+<td><div class="line-block">
+<div class="line">5.4.170 (linux-intel-lts 5.4/yocto branch)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id19">
+<h3>Validation results</h3>
+<p>Stable Releases (IoT) build running in GVT-d mode has been validated on Comet
+Lake(CML), Tiger Lake(TGL), and Elkhart Lake(EHL) Intel® platforms in the
+following function domains. Validation cycles are performed on GMS user-signed
+widevine enabled imag
+e as required by Google certification requirements.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Validation_Result2.png"><img alt="../_images/Validation_Result2.png" src="../_images/Validation_Result2.png" style="width: 750px;" /></a>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CTS on GSI Failures are due to Google dependency and shall be resolved in Upcoming new GSI patch.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="release-notes.html" class="btn btn-neutral float-left" title="Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="base-releases.html" class="btn btn-neutral float-right" title="Base Releases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      <span class="lastupdated">Last updated on Nov 05, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

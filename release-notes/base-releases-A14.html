@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android 14 Base Releases &mdash; Documentation for the Celadon Project</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Android 13 Base Releases" href="base-releases-A13.html" />
+    <link rel="prev" title="Android 15 Base Releases" href="base-releases-A15.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celadon Project
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="release-notes.html">Release Notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="stable-releases.html">Stable Releases</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="base-releases.html">Base Releases</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A15.html">Android 15 Base Releases</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Android 14 Base Releases</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#civ-00-23-04-51-a14">CIV_00.23.04.51_A14</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#civ-00-23-04-45-a14">CIV_00.23.04.45_A14</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#civ-00-23-04-40-a14">CIV_00.23.04.40_A14</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A13.html">Android 13 Base Releases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A12.html">Android 12 Base Releases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A11_2021.html">Android 11 [2021] Base Releases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A11_2020.html">Android 11 [2020] Base Releases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated-releases.html">Deprecated Releases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="release-notes.html">Release Notes</a></li>
+          <li class="breadcrumb-item"><a href="base-releases.html">Base Releases</a></li>
+      <li class="breadcrumb-item active">Android 14 Base Releases</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/release-notes/base-releases-A14.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="android-14-base-releases">
+<span id="base-releases-a14"></span><h1>Android 14 Base Releases</h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#civ-00-23-04-51-a14" id="id23">CIV_00.23.04.51_A14</a></p></li>
+<li><p><a class="reference internal" href="#civ-00-23-04-45-a14" id="id24">CIV_00.23.04.45_A14</a></p></li>
+<li><p><a class="reference internal" href="#civ-00-23-04-40-a14" id="id25">CIV_00.23.04.40_A14</a></p></li>
+</ul>
+</nav>
+<section id="civ-00-23-04-51-a14">
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">CIV_00.23.04.51_A14</a></h2>
+<ul class="simple">
+<li><p>This is a Pre-Production Binary Release for evaluation and development purpose. This release supports 13th GEN &amp; 14th GEN  Core [Celadon in VM].</p></li>
+</ul>
+<section id="intended-audience">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Open Source Community who has subscribed to <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+<li><p>Any user who wants to explore Celadon in VM</p></li>
+</ul>
+</section>
+<section id="customer-support">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="introduction">
+<h3>Introduction</h3>
+</section>
+<section id="new-in-this-release">
+<h3>New in this release</h3>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Android 14 brings in the below major features:</dt><dd><ul>
+<li><p>Android Virtualization Framework (AVF) updates</p></li>
+<li><p>Android System APIs for AVF</p></li>
+<li><p>Large Screen Enhancements</p></li>
+<li><p>Adopting Scribe in App/Toolkit</p></li>
+<li><p>Concurrent Displays</p></li>
+<li><p>Window manager extensions</p></li>
+<li><p>Windowmanager Jetpack API to allow all applications access to functionality.</p></li>
+<li><p>Full-screen intent limits</p></li>
+<li><p>App Compatibility for large screens</p></li>
+<li><p>Low Latency Graphics</p></li>
+<li><p>Fuse-Bpf updates</p></li>
+<li><p>Vendor APEX</p></li>
+<li><p>Storage &amp; updatability – EROFS and OTA performance addressed.</p></li>
+<li><p>Binder and Android IDL (AIDL)</p></li>
+<li><p>HAL interfaces are converted to AIDL (~99%) or deprecated (one exception)</p></li>
+<li><p>Multigenerational LRU (MGLRU) is a rework related change</p></li>
+<li><p>Audio: Dynamic soundbar mode</p></li>
+<li><p>Multiple USB audio device routing updates</p></li>
+<li><p>Sound dose</p></li>
+<li><p>Preferred audio mixer attributes on USB devices</p></li>
+<li><p>Camera extensions feature</p></li>
+<li><p>Reference USB camera HAL</p></li>
+<li><p>Ultra HDR</p></li>
+<li><p>Wide gamut capture</p></li>
+<li><p>Connectivity: ASHA advertisements for hearing aid devices</p></li>
+<li><p>Qualified network service</p></li>
+<li><p>Time and time zone detection updates</p></li>
+<li><p>Ultra-wideband HSL interface</p></li>
+<li><p>Wi-Fi vendor HAL</p></li>
+<li><p>Virtualization Wi-Fi feature updates</p></li>
+<li><p>Enterprise device policy resolution framework</p></li>
+<li><p>Android Baseline Profile (ABP) and Vulkan implementation</p></li>
+<li><p>Reduced graphics buffer memory consumption</p></li>
+<li><p>Performance boost for games</p></li>
+<li><p>Capture Content for Notes</p></li>
+<li><p>COMPANION_DEVICE_GLASSES role</p></li>
+<li><p>COMPANION_DEVICE_NEARBY_DEVICE_STREAMING role</p></li>
+<li><p>Power Manager ACQUIRE_CAUSES_WAKEUP permissions.</p></li>
+<li><p>Runtime: JDWP thread creation</p></li>
+<li><p>Runtime: OpenJDK 17 updates</p></li>
+<li><p>Filename encryption</p></li>
+<li><p>Multiple IMEIs</p></li>
+<li><p>Dynamic Code Loading (DCL),</p></li>
+<li><p>Picker choice in media permission</p></li>
+<li><p>Full release notes from Google can be found at: <a class="reference external" href="https://source.android.com/docs/setup/about/android-14-release">https://source.android.com/docs/setup/about/android-14-release</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Celadon features:</dt><dd><ul>
+<li><p>AIDL framework updates for HALs.</p></li>
+<li><p>API level upgraded to 34</p></li>
+<li><p>FCM Target level upgraded to 8</p></li>
+<li><p>Camera provider HAL moved to AIDL V2.0</p></li>
+<li><p>Graphics composer HAL moved to composer3 AIDL V2.0</p></li>
+<li><p>Thermal HAL moved to AIDL V1.0</p></li>
+<li><p>Graphics allocator HAL moved to AIDL V2.0</p></li>
+<li><p>Boot HAL moved to AIDL V1.0</p></li>
+<li><p>WiFi HAL moved to AIDL V1.0</p></li>
+<li><p>Identity HAL moved to AIDL V5.0</p></li>
+<li><p>security keymint HAL moved to AIDL V3.0</p></li>
+<li><p>gatekeeper hal moved to AIDL V1.0</p></li>
+<li><p>Sensor HAL moved to AIDL V1.0</p></li>
+<li><p>pKVM (Protected KVM) code compatibility available, Celadon won’t support it.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="known-issues">
+<h3>Known issues</h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>The Blink issue seen in previous release is now fixed with latest kernel 6.1.61</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="where-to-find-the-release">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link : <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.51_A14.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.51_A14.xml</a></p></li>
+<li><p>Binary Link : <a class="reference external" href="https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.23.04.51_A14">https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.23.04.51_A14</a></p></li>
+</ul>
+</section>
+<section id="how-to-install-this-release">
+<h3>How to install this release</h3>
+<ul>
+<li><p>Steps to sync to this release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest">https://github.com/projectceladon/manifest</a> -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml</p></li>
+<li><p>NOTE : Manifest tag will change according to the latest release</p></li>
+<li><p>repo sync -c -q -j${nproc}</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Android build commands</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For Compilation please use Ubuntu 18.04</p></li>
+<li><p>source build/envsetup.sh</p></li>
+<li><p>lunch caas-userdebug</p></li>
+<li><p>make flashfiles -jN</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Steps To build the host kernel for this manifest</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ</p></li>
+<li><p>cd ~/civ &amp;&amp; tar zxvf caas-releasefiles-userdebug.tar.gz</p></li>
+<li><dl class="simple">
+<dt>To build Chromium kernel</dt><dd><ul>
+<li><p>cd patches/kernel/lts2022-chromium</p></li>
+<li><p>./build_weekly.sh</p></li>
+<li><p>Deb files will be generated in patches/kernel/lts2022-chromium/host_kernel</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>sudo dpkg -i *.deb</p></li>
+<li><dl class="simple">
+<dt>Update grub to wait indefinitely for kernel selection on boot</dt><dd><ul>
+<li><p>sudo vim /etc/default/grub</p></li>
+<li><p>Comment out GRUB_TIMEOUT_STYLE=hidden
+#GRUB_TIMEOUT_STYLE=hidden</p></li>
+<li><p>Uncomment the following line and modify grub timeout to -1 for
+indefinite wait or 5 for 5secs wait
+#GRUB_TIMEOUT=-1</p></li>
+<li><p>Save the file</p></li>
+<li><p>sudo update-grub</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>sudo reboot</p></li>
+<li><p>Select compiled kernel from “Advanced options for Ubuntu”</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Flash and run steps</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager">https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="validation-results">
+<h3>Validation results</h3>
+<p>This build has been validated on Raptor Lake NUC in the following function domains:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Results</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wi-Fi</p></td>
+<td><p>OK</p></td>
+<td><p>Host wifi is switched to Android UI in QEMU using usb pass through</p></td>
+</tr>
+<tr class="row-odd"><td><p>BT</p></td>
+<td><p>OK</p></td>
+<td><p>Bluetooth is working</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio Playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP3 and MP4 formats tested</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adb connect over WIFI</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Security</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Boot</p></td>
+<td><p>OK</p></td>
+<td><p>Boots on QEMU 7.2.3</p></td>
+</tr>
+<tr class="row-even"><td><p>Image Flash</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Web browsing</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Video playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP4 tested</p></td>
+</tr>
+<tr class="row-odd"><td><p>USB</p></td>
+<td><p>OK</p></td>
+<td><p>Keyboard , Mouse , Pen drive</p></td>
+</tr>
+<tr class="row-even"><td><p>Display</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reference-configuration">
+<h3>Reference configuration</h3>
+<blockquote>
+<div><ul>
+<li><p>Supported hardware</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Product -  Raptor Lake [RPL] NUC</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Supported software</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AOSP Version - android-14.0.0_r2</p></li>
+<li><p>Host Kernel for GVT-d - 6.1.61</p></li>
+<li><p>Guest kernel for GVT-d - 6.1.61</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="acronyms-and-terms">
+<h3>Acronyms and terms</h3>
+<ul class="simple">
+<li><p>CIV - Celadon in Virtual Machine</p></li>
+</ul>
+</section>
+<section id="helpful-hints-related-documents">
+<h3>Helpful hints / related documents</h3>
+<ul class="simple">
+<li><p>If you plan to use Celadon in product, please replace all the test keys
+under device/intel/build/testkeys/ with your product key.</p></li>
+<li><p>The release of this project will be signed by test keys, it’s only a
+reference for our customer and we are not responsible for this. Customers
+should use their own keys to sign their release images</p></li>
+<li><p>Build Celadon in VM  <a class="reference external" href="https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm">https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm</a></p></li>
+<li><p>Flash Steps : <a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager">https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager</a></p></li>
+<li><p>Linked to Android 14 Google Public document –&gt; <a class="reference external" href="https://source.android.com/docs/setup/about/android-14-release">https://source.android.com/docs/setup/about/android-14-release</a></p></li>
+</ul>
+</section>
+</section>
+<section id="civ-00-23-04-45-a14">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">CIV_00.23.04.45_A14</a></h2>
+<ul class="simple">
+<li><p>This is a Pre-Production Binary Release for evaluation and development purpose. This release supports 13th GEN Core [Celadon in VM].</p></li>
+</ul>
+<section id="id1">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Open Source Community who has subscribed to <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+<li><p>Any user who wants to explore Celadon in VM</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Introduction</h3>
+</section>
+<section id="id4">
+<h3>New in this release</h3>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Android 14 brings in the below major features:</dt><dd><ul>
+<li><p>Android Virtualization Framework (AVF) updates</p></li>
+<li><p>Android System APIs for AVF</p></li>
+<li><p>Large Screen Enhancements</p></li>
+<li><p>Adopting Scribe in App/Toolkit</p></li>
+<li><p>Concurrent Displays</p></li>
+<li><p>Window manager extensions</p></li>
+<li><p>Windowmanager Jetpack API to allow all applications access to functionality.</p></li>
+<li><p>Full-screen intent limits</p></li>
+<li><p>App Compatibility for large screens</p></li>
+<li><p>Low Latency Graphics</p></li>
+<li><p>Fuse-Bpf updates</p></li>
+<li><p>Vendor APEX</p></li>
+<li><p>Storage &amp; updatability – EROFS and OTA performance addressed.</p></li>
+<li><p>Binder and Android IDL (AIDL)</p></li>
+<li><p>HAL interfaces are converted to AIDL (~99%) or deprecated (one exception)</p></li>
+<li><p>Multigenerational LRU (MGLRU) is a rework related change</p></li>
+<li><p>Audio: Dynamic soundbar mode</p></li>
+<li><p>Multiple USB audio device routing updates</p></li>
+<li><p>Sound dose</p></li>
+<li><p>Preferred audio mixer attributes on USB devices</p></li>
+<li><p>Camera extensions feature</p></li>
+<li><p>Reference USB camera HAL</p></li>
+<li><p>Ultra HDR</p></li>
+<li><p>Wide gamut capture</p></li>
+<li><p>Connectivity: ASHA advertisements for hearing aid devices</p></li>
+<li><p>Qualified network service</p></li>
+<li><p>Time and time zone detection updates</p></li>
+<li><p>Ultra-wideband HSL interface</p></li>
+<li><p>Wi-Fi vendor HAL</p></li>
+<li><p>Virtualization Wi-Fi feature updates</p></li>
+<li><p>Enterprise device policy resolution framework</p></li>
+<li><p>Android Baseline Profile (ABP) and Vulkan implementation</p></li>
+<li><p>Reduced graphics buffer memory consumption</p></li>
+<li><p>Performance boost for games</p></li>
+<li><p>Capture Content for Notes</p></li>
+<li><p>COMPANION_DEVICE_GLASSES role</p></li>
+<li><p>COMPANION_DEVICE_NEARBY_DEVICE_STREAMING role</p></li>
+<li><p>Power Manager ACQUIRE_CAUSES_WAKEUP permissions.</p></li>
+<li><p>Runtime: JDWP thread creation</p></li>
+<li><p>Runtime: OpenJDK 17 updates</p></li>
+<li><p>Filename encryption</p></li>
+<li><p>Multiple IMEIs</p></li>
+<li><p>Dynamic Code Loading (DCL),</p></li>
+<li><p>Picker choice in media permission</p></li>
+<li><p>Full release notes from Google can be found at: <a class="reference external" href="https://source.android.com/docs/setup/about/android-14-release">https://source.android.com/docs/setup/about/android-14-release</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Celadon features:</dt><dd><ul>
+<li><p>AIDL framework updates for HALs.</p></li>
+<li><p>API level upgraded to 34</p></li>
+<li><p>FCM Target level upgraded to 8</p></li>
+<li><p>Camera provider HAL moved to AIDL V2.0</p></li>
+<li><p>Graphics composer HAL moved to composer3 AIDL V2.0</p></li>
+<li><p>Thermal HAL moved to AIDL V1.0</p></li>
+<li><p>Graphics allocator HAL moved to AIDL V2.0</p></li>
+<li><p>Boot HAL moved to AIDL V1.0</p></li>
+<li><p>WiFi HAL moved to AIDL V1.0</p></li>
+<li><p>Identity HAL moved to AIDL V5.0</p></li>
+<li><p>security keymint HAL moved to AIDL V3.0</p></li>
+<li><p>gatekeeper hal moved to AIDL V1.0</p></li>
+<li><p>Sensor HAL moved to AIDL V1.0</p></li>
+<li><p>pKVM (Protected KVM) code compatibility available, Celadon won’t support it.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id5">
+<h3>Known issues</h3>
+<ul class="simple">
+<li><p>Intermittent screen flicker issue on few monitors. Issue seen only in GVT-d mode. Bare Metal mode or when screen accessed via vysor or scrcpy issue is not seen. Also issue not seen after reboot.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link : <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.45_A14.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.45_A14.xml</a></p></li>
+<li><p>Binary Link : <a class="reference external" href="https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.23.04.45_A14">https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.23.04.45_A14</a></p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>How to install this release</h3>
+<ul>
+<li><p>Steps to sync to this release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest">https://github.com/projectceladon/manifest</a> -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml</p></li>
+<li><p>NOTE : Manifest tag will change according to the latest release</p></li>
+<li><p>repo sync -c -q -j${nproc}</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Android build commands</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For Compilation please use Ubuntu 18.04</p></li>
+<li><p>source build/envsetup.sh</p></li>
+<li><p>lunch caas-userdebug</p></li>
+<li><p>make flashfiles -jN</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Steps To build the host kernel for this manifest</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ</p></li>
+<li><p>cd ~/civ &amp;&amp; tar zxvf caas-releasefiles-userdebug.tar.gz</p></li>
+<li><dl class="simple">
+<dt>To build Chromium kernel</dt><dd><ul>
+<li><p>cd patches/kernel/lts2022-chromium</p></li>
+<li><p>./build_weekly.sh</p></li>
+<li><p>Deb files will be generated in patches/kernel/lts2022-chromium/host_kernel</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>sudo dpkg -i *.deb</p></li>
+<li><dl class="simple">
+<dt>Update grub to wait indefinitely for kernel selection on boot</dt><dd><ul>
+<li><p>sudo vim /etc/default/grub</p></li>
+<li><p>Comment out GRUB_TIMEOUT_STYLE=hidden
+#GRUB_TIMEOUT_STYLE=hidden</p></li>
+<li><p>Uncomment the following line and modify grub timeout to -1 for
+indefinite wait or 5 for 5secs wait
+#GRUB_TIMEOUT=-1</p></li>
+<li><p>Save the file</p></li>
+<li><p>sudo update-grub</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>sudo reboot</p></li>
+<li><p>Select compiled kernel from “Advanced options for Ubuntu”</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Flash and run steps</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager">https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id8">
+<h3>Validation results</h3>
+<p>This build has been validated on Raptor Lake NUC in the following function domains:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Results</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wi-Fi</p></td>
+<td><p>OK</p></td>
+<td><p>Host wifi is switched to Android UI in QEMU using usb pass through</p></td>
+</tr>
+<tr class="row-odd"><td><p>BT</p></td>
+<td><p>OK</p></td>
+<td><p>Bluetooth is working</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio Playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP3 and MP4 formats tested</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adb connect over WIFI</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Security</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Boot</p></td>
+<td><p>OK</p></td>
+<td><p>Boots on QEMU 7.2.3</p></td>
+</tr>
+<tr class="row-even"><td><p>Image Flash</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Web browsing</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Video playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP4 tested</p></td>
+</tr>
+<tr class="row-odd"><td><p>USB</p></td>
+<td><p>OK</p></td>
+<td><p>Keyboard , Mouse , Pen drive</p></td>
+</tr>
+<tr class="row-even"><td><p>Display</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h3>Reference configuration</h3>
+<blockquote>
+<div><ul>
+<li><p>Supported hardware</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Product -  Raptor Lake [RPL] NUC</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Supported software</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AOSP Version - android-14.0.0_r2</p></li>
+<li><p>Host Kernel for GVT-d - 6.1.34</p></li>
+<li><p>Guest kernel for GVT-d - 6.1.34</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id10">
+<h3>Acronyms and terms</h3>
+<ul class="simple">
+<li><p>CIV - Celadon in Virtual Machine</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>Helpful hints / related documents</h3>
+<ul class="simple">
+<li><p>If you plan to use Celadon in product, please replace all the test keys
+under device/intel/build/testkeys/ with your product key.</p></li>
+<li><p>The release of this project will be signed by test keys, it’s only a
+reference for our customer and we are not responsible for this. Customers
+should use their own keys to sign their release images</p></li>
+<li><p>Build Celadon in VM  <a class="reference external" href="https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm">https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm</a></p></li>
+<li><p>Flash Steps : <a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager">https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager</a></p></li>
+<li><p>Linked to Android 14 Google Public document –&gt; <a class="reference external" href="https://source.android.com/docs/setup/about/android-14-release">https://source.android.com/docs/setup/about/android-14-release</a></p></li>
+</ul>
+</section>
+</section>
+<section id="civ-00-23-04-40-a14">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">CIV_00.23.04.40_A14</a></h2>
+<ul class="simple">
+<li><p>This is a Pre-Production Manifest Release for evaluation and development purpose. This release supports 13th GEN Core [Celadon in VM].</p></li>
+</ul>
+<section id="id12">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Open Source Community who has subscribed to <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+<li><p>Any user who wants to explore Celadon in VM</p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Introduction</h3>
+</section>
+<section id="id15">
+<h3>New in this release</h3>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Android 14 brings in the below major features:</dt><dd><ul>
+<li><p>Android Virtualization Framework (AVF) updates</p></li>
+<li><p>Android System APIs for AVF</p></li>
+<li><p>Large Screen Enhancements</p></li>
+<li><p>Adopting Scribe in App/Toolkit</p></li>
+<li><p>Concurrent Displays</p></li>
+<li><p>Window manager extensions</p></li>
+<li><p>Windowmanager Jetpack API to allow all applications access to functionality.</p></li>
+<li><p>Full-screen intent limits</p></li>
+<li><p>App Compatibility for large screens</p></li>
+<li><p>Low Latency Graphics</p></li>
+<li><p>Fuse-Bpf updates</p></li>
+<li><p>Vendor APEX</p></li>
+<li><p>Storage &amp; updatability – EROFS and OTA performance addressed.</p></li>
+<li><p>Binder and Android IDL (AIDL)</p></li>
+<li><p>HAL interfaces are converted to AIDL (~99%) or deprecated (one exception)</p></li>
+<li><p>Multigenerational LRU (MGLRU) is a rework related change</p></li>
+<li><p>Audio: Dynamic soundbar mode</p></li>
+<li><p>Multiple USB audio device routing updates</p></li>
+<li><p>Sound dose</p></li>
+<li><p>Preferred audio mixer attributes on USB devices</p></li>
+<li><p>Camera extensions feature</p></li>
+<li><p>Reference USB camera HAL</p></li>
+<li><p>Ultra HDR</p></li>
+<li><p>Wide gamut capture</p></li>
+<li><p>Connectivity: ASHA advertisements for hearing aid devices</p></li>
+<li><p>Qualified network service</p></li>
+<li><p>Time and time zone detection updates</p></li>
+<li><p>Ultra-wideband HSL interface</p></li>
+<li><p>Wi-Fi vendor HAL</p></li>
+<li><p>Virtualization Wi-Fi feature updates</p></li>
+<li><p>Enterprise device policy resolution framework</p></li>
+<li><p>Android Baseline Profile (ABP) and Vulkan implementation</p></li>
+<li><p>Reduced graphics buffer memory consumption</p></li>
+<li><p>Performance boost for games</p></li>
+<li><p>Capture Content for Notes</p></li>
+<li><p>COMPANION_DEVICE_GLASSES role</p></li>
+<li><p>COMPANION_DEVICE_NEARBY_DEVICE_STREAMING role</p></li>
+<li><p>Power Manager ACQUIRE_CAUSES_WAKEUP permissions.</p></li>
+<li><p>Runtime: JDWP thread creation</p></li>
+<li><p>Runtime: OpenJDK 17 updates</p></li>
+<li><p>Filename encryption</p></li>
+<li><p>Multiple IMEIs</p></li>
+<li><p>Dynamic Code Loading (DCL),</p></li>
+<li><p>Picker choice in media permission</p></li>
+<li><p>Full release notes from Google can be found at: <a class="reference external" href="https://source.android.com/docs/setup/about/android-14-release">https://source.android.com/docs/setup/about/android-14-release</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Celadon features:</dt><dd><ul>
+<li><p>AIDL framework updates for HALs.</p></li>
+<li><p>API level upgraded to 34</p></li>
+<li><p>FCM Target level upgraded to 8</p></li>
+<li><p>Camera provider HAL moved to AIDL V2.0</p></li>
+<li><p>Graphics composer HAL moved to composer3 AIDL V2.0</p></li>
+<li><p>Thermal HAL moved to AIDL V1.0</p></li>
+<li><p>Graphics allocator HAL moved to AIDL V2.0</p></li>
+<li><p>Boot HAL moved to AIDL V1.0</p></li>
+<li><p>WiFi HAL moved to AIDL V1.0</p></li>
+<li><p>Identity HAL moved to AIDL V5.0</p></li>
+<li><p>security keymint HAL moved to AIDL V3.0</p></li>
+<li><p>gatekeeper hal moved to AIDL V1.0</p></li>
+<li><p>Sensor HAL moved to AIDL V1.0</p></li>
+<li><p>pKVM (Protected KVM) code compatibility available, Celadon won’t support it.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id16">
+<h3>Known issues</h3>
+<ul class="simple">
+<li><p>Intermittent screen flicker issue</p></li>
+<li><p>Sometimes Multi-camera not showing 2nd camera</p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link : <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.40_A14.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.23.04.40_A14.xml</a></p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>How to install this release</h3>
+<ul>
+<li><p>Steps to sync to this release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest">https://github.com/projectceladon/manifest</a> -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml</p></li>
+<li><p>NOTE : Manifest tag will change according to the latest release</p></li>
+<li><p>repo sync -c -q -j${nproc}</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Android build commands</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For Compilation please use Ubuntu 18.04</p></li>
+<li><p>source build/envsetup.sh</p></li>
+<li><p>lunch caas-userdebug</p></li>
+<li><p>make flashfiles -jN</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Steps To build the host kernel for this manifest</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>git clone <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2022-chromium">https://github.com/projectceladon/vendor-intel-utils/tree/master/host/kernel/lts2022-chromium</a></p></li>
+<li><p>Go to build.sh of lts2022-chromium</p></li>
+<li><dl class="simple">
+<dt>Replace below lines in build.sh script i.e Line no 6 to line no 10</dt><dd><ul>
+<li><p>git clone <a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils.git">https://github.com/projectceladon/vendor-intel-utils.git</a></p></li>
+<li><p>cd vendor-intel-utils</p></li>
+<li><p>git checkout 0babae8b1d9ad42dde9580f3ef91b640ccd86b1c</p></li>
+<li><p>cd ../</p></li>
+<li><p>branch_name=”main”</p></li>
+<li><p>git clone -b $branch_name <a class="reference external" href="https://github.com/projectceladon/linux-intel-lts2022-chromium.git">https://github.com/projectceladon/linux-intel-lts2022-chromium.git</a></p></li>
+<li><p>cd linux-intel-lts2022-chromium</p></li>
+<li><p>git checkout ae3fc1db4d1ebf32cbe8ebda9e47653a9a149b71</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>./build.sh</p></li>
+<li><p>deb files will be generated inside host_kernel folder</p></li>
+<li><p>sudo dpkg -i *.deb</p></li>
+<li><dl class="simple">
+<dt>Update grub to wait indefinitely for kernel selection on boot</dt><dd><ul>
+<li><p>sudo vim /etc/default/grub</p></li>
+<li><p>Comment out GRUB_TIMEOUT_STYLE=hidden
+#GRUB_TIMEOUT_STYLE=hidden</p></li>
+<li><p>Uncomment the following line and modify grub timeout to -1 for
+indefinite wait or 5 for 5secs wait
+#GRUB_TIMEOUT=-1</p></li>
+<li><p>Save the file</p></li>
+<li><p>sudo update-grub</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>sudo reboot</p></li>
+<li><p>Select compiled kernel from “Advanced options for Ubuntu”</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Flash and run steps</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager">https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id19">
+<h3>Validation results</h3>
+<p>This build has been validated on Raptor Lake NUC in the following function domains:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Results</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wi-Fi</p></td>
+<td><p>OK</p></td>
+<td><p>Host wifi is switched to Android UI in QEMU using usb pass through</p></td>
+</tr>
+<tr class="row-odd"><td><p>BT</p></td>
+<td><p>OK</p></td>
+<td><p>Bluetooth is working</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio Playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP3 and MP4 formats tested</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adb connect over WIFI</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Security</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Boot</p></td>
+<td><p>OK</p></td>
+<td><p>Boots on QEMU 7.2.3</p></td>
+</tr>
+<tr class="row-even"><td><p>Image Flash</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Web browsing</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Video playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP4 tested</p></td>
+</tr>
+<tr class="row-odd"><td><p>USB</p></td>
+<td><p>OK</p></td>
+<td><p>Keyboard , Mouse , Pen drive</p></td>
+</tr>
+<tr class="row-even"><td><p>Display</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id20">
+<h3>Reference configuration</h3>
+<blockquote>
+<div><ul>
+<li><p>Supported hardware</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Product -  Raptor Lake [RPL] NUC</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Supported software</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AOSP Version - android-14.0.0_r2</p></li>
+<li><p>Host Kernel for GVT-d - 6.1.34</p></li>
+<li><p>Guest kernel for GVT-d - 6.1.34</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id21">
+<h3>Acronyms and terms</h3>
+<ul class="simple">
+<li><p>CIV - Celadon in Virtual Machine</p></li>
+</ul>
+</section>
+<section id="id22">
+<h3>Helpful hints / related documents</h3>
+<ul class="simple">
+<li><p>If you plan to use Celadon in product, please replace all the test keys
+under device/intel/build/testkeys/ with your product key.</p></li>
+<li><p>The release of this project will be signed by test keys, it’s only a
+reference for our customer and we are not responsible for this. Customers
+should use their own keys to sign their release images</p></li>
+<li><p>Build Celadon in VM  <a class="reference external" href="https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm">https://projectceladon.github.io/celadon-documentation/getting-started/on-vm.html#build-c-images-running-in-vm</a></p></li>
+<li><p>Flash Steps : <a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager">https://docs.01.org/celadon/getting-started/on-vm.html#use-vm-manager</a></p></li>
+<li><p>Linked to Android 14 Google Public document –&gt; <a class="reference external" href="https://source.android.com/docs/setup/about/android-14-release">https://source.android.com/docs/setup/about/android-14-release</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="base-releases-A15.html" class="btn btn-neutral float-left" title="Android 15 Base Releases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="base-releases-A13.html" class="btn btn-neutral float-right" title="Android 13 Base Releases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      <span class="lastupdated">Last updated on Nov 05, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

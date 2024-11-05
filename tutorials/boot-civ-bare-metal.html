@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boot CiV on Bare Metal &mdash; Documentation for the Celadon Project</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Enabling Sensors in Celadon" href="enabling-sensors-in-celadon.html" />
+    <link rel="prev" title="Widevine* L3 Integration Guide" href="widevine-integration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celadon Project
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Guides and Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorials.html#development">Development</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mixins.html">Mixins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-uac3.html">Enabling USB Audio Class 3.0 audio in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-debug-tips.html">Software Debugging Tips on Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbc.html">Making the Android Host Debuggable - ADB for x86 Android Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widevine-integration.html">Widevine* L3 Integration Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Boot CiV on Bare Metal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#steps-to-sync-to-latest-head-for-bare-metal">Steps to sync to latest HEAD for bare metal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flashing-a-civ-image-as-bare-metal">Flashing a CIV image as bare metal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#steps-to-collect-serial-logs-on-bare-metal-for-debugging-boot-issues">Steps to collect serial logs on bare metal for debugging boot issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sanity-results">Sanity Results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-sensors-in-celadon.html">Enabling Sensors in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boot-civ-f2fs.html">Boot CIV with Flash Friendly File System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrent-camera-access.html">Concurrent Camera Access in CiV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enabling-nnhal-in-celadon.html">Enabling Neural Networks Hardware Abstraction Layer in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build-intel-android-apps.html">Building Intel Platform-Friendly Android Apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermal-mediation.html">Thermal Mediation in Celadon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wireless-connectivity.html">Wireless Connectivity in Celadon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#system-validation">System Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tutorials.html">Guides and Tutorials</a></li>
+      <li class="breadcrumb-item active">Boot CiV on Bare Metal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/boot-civ-bare-metal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="boot-civ-on-bare-metal">
+<span id="boot-civ-bare-metal"></span><h1>Boot CiV on Bare Metal</h1>
+<p>This article describes the steps to run a Celadon CIV image on bare
+metal using an Intel® NUC.</p>
+<section id="prerequisites">
+<h2>Prerequisites</h2>
+<ul class="simple">
+<li><p>Intel NUC model <a class="reference external" href="https://www.intel.in/content/www/in/en/products/details/nuc/kits.html">NUC11PAQI7</a></p></li>
+<li><p>Type-C cable for display</p></li>
+<li><p>USB flash drive, formatted as FAT 32</p></li>
+<li><p>USB headphone</p></li>
+<li><p>3.5mm jack headphone</p></li>
+<li><p>Bluetooth® device to test connectivity</p></li>
+<li><p>Wireless access point or hotspot to test Wi-Fi* connectivity</p></li>
+<li><p>Wi-Fi device (such as laptop, smartphone, or tablet) to test the NUC
+serving as a hotspot.</p></li>
+</ul>
+</section>
+<section id="steps-to-sync-to-latest-head-for-bare-metal">
+<h2>Steps to sync to latest HEAD for bare metal</h2>
+<p>Run the following commands to sync to the approved release and run CiV
+on bare metal.</p>
+<ol class="arabic">
+<li><p>repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest">https://github.com/projectceladon/manifest</a> -b celadon/r/mr0/stable</p></li>
+<li><p>repo sync -c -q -j${nproc}</p></li>
+<li><p>Cherry-pick the following patch:</p>
+<p><a class="reference external" href="https://github.com/projectceladon/device-androidia/pull/1285">*https://github.com/projectceladon/device-androidia/pull/1285*</a></p>
+</li>
+<li><p>This is using Yocto as the Guest Kernel.</p></li>
+</ol>
+<section id="build-steps-on-the-latest-head">
+<h3>Build steps on the latest HEAD</h3>
+<ol class="arabic simple">
+<li><p>source build/envsetup.sh</p></li>
+<li><p>lunch caas-userdebug</p></li>
+<li><p>make BASE_LTS2020_YOCTO_KERNEL=true flashfiles -JN
+this is for
+<a class="reference external" href="https://www.intel.in/content/www/in/en/products/details/nuc/kits.html">NUC11PAQI7</a> as Bare Metal.</p></li>
+</ol>
+</section>
+</section>
+<section id="flashing-a-civ-image-as-bare-metal">
+<h2>Flashing a CIV image as bare metal</h2>
+<ol class="arabic simple">
+<li><p>Unzip flashfiles zip file to U disk. ( Be sure to format the U disk
+as FAT32 mode).</p></li>
+<li><p>Insert U disk to the NUC and power on the NUC.</p></li>
+<li><p>Press F2 to go into BIOS, select Boot -&gt; Boot Priority -&gt; Internal
+UEFI Shell, and then save it.</p></li>
+<li><p>Power on again and press F10, select “UEFI : Built-in UEFI Shell”.</p></li>
+<li><p>It can auto flash and boot up after the flashing is successful.</p></li>
+</ol>
+</section>
+<section id="steps-to-collect-serial-logs-on-bare-metal-for-debugging-boot-issues">
+<h2>Steps to collect serial logs on bare metal for debugging boot issues</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Device’s with debug port only will support serial log collection</p>
+</div>
+<ol class="arabic simple">
+<li><p>Connect SUT to Ubuntu machine via micro USB port on board to USB type-A port on Ubuntu machine.</p></li>
+<li><p>If minicom is not already installed, install minicom on Ubuntu:$ sudo apt install minicom</p></li>
+<li><p>Run “sudo minicom -D /dev/ttyUSB0” (default baud rate 115200 it uses)
+Please make sure ttyUSB0 is available, or use relevant ttyUSBx.
+Logs will be printed on screen during target device reboot.</p></li>
+</ol>
+</section>
+<section id="sanity-results">
+<h2>Sanity Results</h2>
+<p>Confirm that you are able to boot as bare metal on
+<a class="reference external" href="https://www.intel.in/content/www/in/en/products/details/nuc/kits.html">NUC11PAQI7</a>
+(with a type-C cable to drive your display) by testing the following
+components:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Test these components</p></td>
+<td><p>Component type</p></td>
+<td><p>By running these commands</p></td>
+<td><p>Expected results</p></td>
+</tr>
+<tr class="row-even"><td><p>Connectivity</p></td>
+<td><p>Wi-Fi</p></td>
+<td><p>Wi-Fi basic on/off, scan, and connect. Run  <a class="reference external" href="https://www.speedtest.net/">speedtest.net</a>.</p></td>
+<td><p>Network found and connected. Ping time and network speed are acceptable for your network.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bluetooth</p></td>
+<td><p>Bluetooth turn on/off, scan, and connect</p></td>
+<td><p>Device found and connection made.</p></td>
+</tr>
+<tr class="row-even"><td><p>Media</p></td>
+<td><p>Audio (USB)</p></td>
+<td><p>Check audio output through USB headphone</p></td>
+<td><p>Sound is audible.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Media</p></td>
+<td><p>Audio (3.5mm)</p></td>
+<td><p>Check audio output through 3.5mm headphone</p></td>
+<td><p>Sound is audible.</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio</p></td>
+<td><p>sound</p></td>
+<td><p>Settings-&gt;Sound</p>
+<p>(volume adjustment)</p>
+</td>
+<td><p>Sound level has acceptable range.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADB</p></td>
+<td><p>External Storage</p></td>
+<td><ol class="arabic simple">
+<li><p>adb connect IP:5555</p></li>
+<li><p>adb root</p></li>
+<li><p>adb connect IP:5555</p></li>
+<li><p>adb push &lt;files&gt; /sdcard/</p></li>
+<li><p>adb shell</p></li>
+</ol>
+</td>
+<td><p>Contents of external device are detected.</p></td>
+</tr>
+<tr class="row-even"><td><p>USB</p></td>
+<td><p>ADB</p></td>
+<td><p>Settings -&gt; Storage</p>
+<p>(Read USB Disk)</p>
+</td>
+<td><p>Contents of the USB disk are detected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Security lock</p></td>
+<td><p>PIN/password/pattern</p></td>
+<td><p>Settings -&gt; Security</p>
+<p>Set lock screen type to PIN, then password, and finally pattern.</p>
+</td>
+<td><p>Correct PIN/password/pattern unlocks access. Incorrect PIN/password/pattern denies access.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reboot</p></td>
+<td><p>ADB over ethernet</p></td>
+<td><ol class="arabic simple">
+<li><p>adb connect IP:5555</p></li>
+<li><p>adb reboot</p></li>
+</ol>
+</td>
+<td><p>NUC reboots.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Web browsing</p></td>
+<td><p>Browsing</p></td>
+<td><p>Browsing via ethernet</p></td>
+<td><p>Websites, such as  <a class="reference external" href="http://www.intel.com">www.intel.com</a>, can be accessed.</p></td>
+</tr>
+<tr class="row-even"><td><p>Settings</p></td>
+<td><p>Enable developer options</p></td>
+<td><p>Settings -&gt; About tablet (Click the build number seven times in a row)</p>
+<p>Settings -&gt; System -&gt; Advanced</p>
+</td>
+<td><p>Developer options added to Settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Playback</p></td>
+<td><p>Video playback</p></td>
+<td><ol class="arabic simple">
+<li><p>Push video clip to device sdcard directory and then reboot.</p></li>
+<li><p>adb connect IP:5555</p></li>
+<li><p>adb push &lt;video files&gt; /sdcard</p></li>
+<li><p>adb reboot</p></li>
+<li><p>play video with Photos App</p></li>
+</ol>
+</td>
+<td><p>Video plays well.</p></td>
+</tr>
+<tr class="row-even"><td><p>Type C port</p></td>
+<td><p>Verify type C port</p></td>
+<td><p>Can be verified by Type-C display cable</p></td>
+<td><p>Video display has appropriate level of quality.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reconnect</p></td>
+<td><p>WI-FI</p></td>
+<td><p>Connect to WI-FI, then reboot.</p>
+<p>WI-FI should reconnect after reboot.</p>
+</td>
+<td><p>Wi-Fi reconnects automatically.</p></td>
+</tr>
+<tr class="row-even"><td><p>Hotspot</p></td>
+<td><p>Wi-Fi hotspot</p></td>
+<td><p>Settings-&gt; Network-&gt;Hotspot</p></td>
+<td><p>NUC hotspot found and connected. Ping time and network speed are acceptable for your network.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Display</p></td>
+<td><p>HDMI display</p></td>
+<td><p>With a type C port, the display works correctly.</p>
+<p>On NUC with one HDMI port, the display works correctly.</p>
+</td>
+<td><p>Video displays correctly.</p></td>
+</tr>
+<tr class="row-even"><td><p>Factory reset</p></td>
+<td></td>
+<td><p>Settings-&gt; System-&gt;Advanced-&gt;Reset Options-&gt;Erase all data</p></td>
+<td><p>System resets.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="widevine-integration.html" class="btn btn-neutral float-left" title="Widevine* L3 Integration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="enabling-sensors-in-celadon.html" class="btn btn-neutral float-right" title="Enabling Sensors in Celadon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      <span class="lastupdated">Last updated on Nov 05, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

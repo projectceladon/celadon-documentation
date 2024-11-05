@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android 11 [2021] Base Releases &mdash; Documentation for the Celadon Project</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Android 11 [2020] Base Releases" href="base-releases-A11_2020.html" />
+    <link rel="prev" title="Android 12 Base Releases" href="base-releases-A12.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celadon Project
+          </a>
+              <div class="version">
+                0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stable-release_iot/stable-release_iot.html">Stable Releases IoT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="release-notes.html">Release Notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="stable-releases.html">Stable Releases</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="base-releases.html">Base Releases</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A15.html">Android 15 Base Releases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A14.html">Android 14 Base Releases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A13.html">Android 13 Base Releases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A12.html">Android 12 Base Releases</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Android 11 [2021] Base Releases</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#civ-01-21-03-39-a11">CIV_01.21.03.39_A11</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#civ-00-21-02-27-a11">CIV_00.21.02.27_A11</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#civ-00-21-02-25-a11">CIV_00.21.02.25_A11</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#civ-00-21-01-12-a11">CIV_00.21.01.12_A11</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="base-releases-A11_2020.html">Android 11 [2020] Base Releases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated-releases.html">Deprecated Releases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Celadon Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="release-notes.html">Release Notes</a></li>
+          <li class="breadcrumb-item"><a href="base-releases.html">Base Releases</a></li>
+      <li class="breadcrumb-item active">Android 11 [2021] Base Releases</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/release-notes/base-releases-A11_2021.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="android-11-2021-base-releases">
+<span id="base-releases-a11-2021"></span><h1>Android 11 [2021] Base Releases</h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#civ-01-21-03-39-a11" id="id32">CIV_01.21.03.39_A11</a></p></li>
+<li><p><a class="reference internal" href="#civ-00-21-02-27-a11" id="id33">CIV_00.21.02.27_A11</a></p></li>
+<li><p><a class="reference internal" href="#civ-00-21-02-25-a11" id="id34">CIV_00.21.02.25_A11</a></p></li>
+<li><p><a class="reference internal" href="#civ-00-21-01-12-a11" id="id35">CIV_00.21.01.12_A11</a></p></li>
+</ul>
+</nav>
+<section id="civ-01-21-03-39-a11">
+<h2><a class="toc-backref" href="#id32" role="doc-backlink">CIV_01.21.03.39_A11</a></h2>
+<ul class="simple">
+<li><p>This is a Production Binary Release for evaluation and development
+purposes . This release is
+supported on Intel NUC Kit <a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html">NUC11PAQI7</a> Celadon in VM.</p></li>
+</ul>
+<section id="intended-audience">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Open Source Community who has subscribed to <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+</ul>
+</section>
+<section id="customer-support">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="introduction">
+<h3>Introduction</h3>
+</section>
+<section id="new-in-this-release">
+<h3>New in this release</h3>
+<blockquote>
+<div><ul>
+<li><dl class="simple">
+<dt>New features</dt><dd><ul class="simple">
+<li><p>Power Management - Suspend/Resume - Stability</p></li>
+<li><p>Intel Sensor Hub</p></li>
+<li><p>Config WLAN</p></li>
+<li><p>Audio HDA Mediation</p></li>
+<li><p>Compliance production targets achieved</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Existing features</dt><dd><ul>
+<li><p>This release uses start_civ.sh to launch Link -<a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh">https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh</a></p></li>
+<li><p>AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats</p></li>
+<li><p>Power Management - Suspend/Resume</p></li>
+<li><p>Local Video Playback with Widevine DRM - Level 3</p></li>
+<li><p>External USB Camera</p></li>
+<li><p>API Level 30 &amp; FCM target Level 5</p></li>
+<li><p>Other Changes that came as part of API level Up</p>
+<ul class="simple">
+<li><p>AIDL for Power and Light HALs</p></li>
+<li><p>Audio &amp; Audio effects HAL 6.0</p></li>
+<li><p>Health HAL 2.1</p></li>
+<li><p>Boot HAL upgraded to 1.1</p></li>
+</ul>
+</li>
+<li><p>Upgraded Mainline modules</p></li>
+<li><p>Soft restart</p></li>
+<li><p>Updatable APEX</p></li>
+<li><p>Config store HAL deprecated</p></li>
+<li><p>Graphics Memory Allocator (Gralloc) 4.0</p></li>
+<li><p>HWC 2.4 support for Display</p></li>
+<li><p>Trusty Hardware Seed binding</p></li>
+<li><p>Power Management - Suspend,Resume</p></li>
+<li><p>Android* key Input Manager Framework is implemented for Power &amp;
+Volume buttons</p></li>
+<li><p>Integrated Sensor Hub Enablement for Android Supported Sensors</p></li>
+<li><p>Android Thermal HAL and Thermal Manager Service</p></li>
+<li><p>BZIP2 performance improvements</p></li>
+<li><p>Bluetooth Control from Android in VM</p></li>
+<li><p>HDMI Audio Output Support</p></li>
+<li><p>Virtio-gpu Support</p></li>
+<li><p>SDHCI mediation enabled and supported SD card</p>
+<ul class="simple">
+<li><p>CIV launch script for SD Card: sudo -E ./scripts/start_civ.sh -d GVT-d -b /dev/mmcblk0p1 –passthrough-pci-usb</p></li>
+</ul>
+</li>
+<li><p>Graphics GVT-d support</p></li>
+<li><p>HDMI and DP display support</p></li>
+<li><p>Mass Storage USB 2.0 and 3.x devices is supported</p></li>
+<li><p>Adb over WIFI and Ethernet is supported</p></li>
+<li><p>Audio playback over USB Headset, 3.5mm and HDMI are supported</p></li>
+<li><p>Setting Proxy for Wireless Network</p></li>
+<li><p>Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2</p></li>
+<li><p>Ethernet works fine with Ethernet to USB converter</p></li>
+<li><p>Wifi Control from Android in VM using usb passthrough</p></li>
+<li><p>To passthrough USB host controller in NUC11PAQI7, run the CIV launch
+script like this: sudo E ./scripts/start_civ.sh -g GVT-d –passthrough-pci-usb</p></li>
+<li><p>Power Management - Shutdown and Reboot</p></li>
+<li><p>Android Time keeping with Host OS</p></li>
+<li><p>Product Information to Guest OS</p></li>
+<li><p>ODM partition for vendor customizations</p></li>
+<li><p>Only logitech C922 pro stream webcam is supported for all camera
+related testing</p></li>
+<li><p>HW Video Codecs support on celadon</p>
+<blockquote>
+<div><p><strong>Decoder</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AVC High profile &#64; Level 5.1 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)</p></li>
+<li><p>HEVC Main and Main 10 profile &#64; Level 5 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)(Main 10
+with BT2020 and ST2084 information is not supported)</p></li>
+<li><p>VP9 profile 0 &#64; Level 5 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)</p></li>
+<li><p>Vp8 8 bits <a class="reference external" href="mailto:1080p&#37;&#52;&#48;60fps">1080p<span>&#64;</span>60fps</a></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Encoder</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AVC High profile &#64; level 4.1 (<a class="reference external" href="mailto:1080P&#37;&#52;&#48;30fps">1080P<span>&#64;</span>30fps</a>)</p></li>
+<li><p>HEVC Main profile &#64; Level 4 (<a class="reference external" href="mailto:1080P&#37;&#52;&#48;30fps">1080P<span>&#64;</span>30fps</a>)</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2,
+VORBIS, OPUS, MIDI, FLAC, PCM/WAV</p></li>
+<li><p>Generic storage HAL supported</p></li>
+<li><p>SATA emulation is supported</p></li>
+<li><p>9pfs based file transfer</p></li>
+<li><p>Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
+Keymaster 3.0</p>
+<blockquote>
+<div><ul>
+<li><p>User guide:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SELinux Configuration and Rules</p></li>
+<li><p>How to Enable or Disable Trusty for Debugging</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Changes to existing features</dt><dd><ul class="simple">
+<li><p>Dynamic routing to HDMI audio devices</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Unsupported or discontinued features</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="known-issues">
+<h3>Known issues</h3>
+<ul class="simple">
+<li><p>Android UI Flicker when booted with eDP Display</p></li>
+<li><p>Blank screen is displayed while video playback
+[Configuration : GLrenderer-Virtio] &amp; [GLrenderer-Softpipe]</p></li>
+<li><p>Camera Preview Flickers while using MultiCamera application</p></li>
+<li><p>IPV6 network does not work for usb2ethernet converter in recovery mode</p></li>
+<li><p>Modification of  time zone when “Use network-provided time” should be disabled</p></li>
+</ul>
+</section>
+<section id="where-to-find-the-release">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link : <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.21.03.39_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_01.21.03.39_A11.xml</a></p></li>
+<li><p>Binary Link : <a class="reference external" href="https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.03.39_A11">https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.03.39_A11</a></p></li>
+</ul>
+</section>
+<section id="system-requirements">
+<h3>System Requirements</h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Recommended system requirements for Host:</dt><dd><ul>
+<li><p>CPU:  4 cores or more</p></li>
+<li><p>RAM:  8 GB or more</p></li>
+<li><p>Hard-Disk: 250 GB [Desired]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="how-to-install-this-release">
+<h3>How to install this release</h3>
+<ul>
+<li><p>Steps to sync to this release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest">https://github.com/projectceladon/manifest</a> -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml</p></li>
+<li><p>NOTE : Manifest tag will change according to the latest release</p></li>
+<li><p>repo sync -c -q -j${nproc}</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Android build commands</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For Compilation please use Ubuntu 18.04</p></li>
+<li><p>source build/envsetup.sh</p></li>
+<li><p>lunch caas-userdebug</p></li>
+<li><p>make flashfiles -jN</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Steps To build the host kernel for this manifest</p>
+<blockquote>
+<div><ul>
+<li><p>Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ</p></li>
+<li><p>cd ~/civ &amp;&amp; tar zxvf caas-releasefiles-userdebug.tar.gz</p></li>
+<li><p>cd patches/kernel/lts2019-chromium</p></li>
+<li><p>./build_weekly.sh</p></li>
+<li><p>Deb files will be generated in
+patches/kernel/lts2019-chromium/host_kernel</p></li>
+<li><p>sudo dpkg -i *.deb</p></li>
+<li><p>Update grub to wait indefinitely for kernel selection on boot</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>sudo vim /etc/default/grub</p></li>
+<li><p>Comment out GRUB_TIMEOUT_STYLE=hidden
+#GRUB_TIMEOUT_STYLE=hidden</p></li>
+<li><p>Uncomment the following line and modify grub timeout to -1 for
+indefinite wait or 5 for 5secs wait
+#GRUB_TIMEOUT=-1</p></li>
+<li><p>Save the file</p></li>
+<li><p>sudo update-grub</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>sudo reboot</p></li>
+<li><p>Select compiled kernel from “Advanced options for Ubuntu”</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Flash and run steps</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download flash-files [<a class="reference external" href="https://github.com/projectceladon/celadon-binary">https://github.com/projectceladon/celadon-binary</a>]</p></li>
+<li><p>Untar &lt;flash-files&gt;</p></li>
+<li><p>sudo -E ./scripts/setup_host -u headless</p></li>
+<li><p>sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.&lt;user&gt;.zip –display-off</p></li>
+<li><p>sudo -E ./scripts/start_civ.sh -g GVT-d</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="validation-results">
+<h3>Validation results</h3>
+<p>Celadon build has been validated on Intel NUC Kit <a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html">NUC11PAQI7</a>  in the following function domains:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Results</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wi-Fi</p></td>
+<td><p>OK</p></td>
+<td><p>Host wifi is switched to Android UI in QEMU using usb pass through</p></td>
+</tr>
+<tr class="row-odd"><td><p>BT</p></td>
+<td><p>OK</p></td>
+<td><p>Bluetooth is working</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio Playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adb connect over WIFI</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Adb connect over Ethernet</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Display /Touch and Gesture</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Security</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Boot</p></td>
+<td><p>OK</p></td>
+<td><p>Boots on QEMU 4.2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Ethernet</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Image Flash</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Web browsing</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Video playback</p></td>
+<td><p>OK</p></td>
+<td><p>H264/H265/MPEG2/VP8/VP9 Video Playback</p></td>
+</tr>
+<tr class="row-even"><td><p>USB</p></td>
+<td><p>OK</p></td>
+<td><p>Keyboard , Mouse , Pen drive</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reference-configuration">
+<h3>Reference configuration</h3>
+<blockquote>
+<div><ul>
+<li><p>Supported hardware</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Product - NUC11PAQI7</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Supported software</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AOSP Version - android-11.0.0_r39</p></li>
+<li><p>NUC11PAQI7 Host Kernel - -5.4.142-cvhb</p></li>
+<li><p>NUC11PAQI7 Guest kernel - -5.4.142-cvhb</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="acronyms-and-terms">
+<h3>Acronyms and terms</h3>
+<ul class="simple">
+<li><p>CIV - Celadon in Virtual Machine</p></li>
+</ul>
+</section>
+<section id="helpful-hints-related-documents">
+<h3>Helpful hints / related documents</h3>
+<ul class="simple">
+<li><p>If you plan to use Celadon in product, please replace all the test keys
+under device/intel/build/testkeys/ with your product key.</p></li>
+<li><p>The release of this project will be signed by test keys, it’s only a
+reference for our customer and we are not responsible for this. Customers
+should use their own keys to sign their release images</p></li>
+<li><p>Build Celadon in VM  <a class="reference external" href="https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image">https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image</a></p></li>
+<li><p>Flash Steps : <a class="reference external" href="https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm">https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm</a></p></li>
+</ul>
+</section>
+</section>
+<section id="civ-00-21-02-27-a11">
+<h2><a class="toc-backref" href="#id33" role="doc-backlink">CIV_00.21.02.27_A11</a></h2>
+<ul class="simple">
+<li><p>This is a Pre-Production Binary Release for evaluation and development
+purposes and it cannot be used for production purposes. This release is
+supported on Intel NUC Kit <a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html">NUC11PAQI7</a> Celadon in VM.</p></li>
+</ul>
+<section id="id3">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Open Source Community who has subscribed to <a class="reference external" href="mailto:celadon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">celadon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Introduction</h3>
+</section>
+<section id="id6">
+<h3>New in this release</h3>
+<blockquote>
+<div><ul>
+<li><p>New features</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats</p></li>
+<li><p>Power Management - Suspend/Resume</p></li>
+<li><p>Local Video Playback with Widevine DRM - Level 3</p></li>
+<li><p>External USB Camera</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl>
+<dt>Existing features</dt><dd><ul>
+<li><p>This release uses start_civ.sh to launch Link -<a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh">https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh</a></p></li>
+<li><p>API Level 30 &amp; FCM target Level 5</p></li>
+<li><p>Other Changes that came as part of API level Up</p>
+<ul class="simple">
+<li><p>AIDL for Power and Light HALs</p></li>
+<li><p>Audio &amp; Audio effects HAL 6.0</p></li>
+<li><p>Health HAL 2.1</p></li>
+<li><p>Boot HAL upgraded to 1.1</p></li>
+</ul>
+</li>
+<li><p>Upgraded Mainline modules</p></li>
+<li><p>Soft restart</p></li>
+<li><p>Updatable APEX</p></li>
+<li><p>Config store HAL deprecated</p></li>
+<li><p>Graphics Memory Allocator (Gralloc) 4.0</p></li>
+<li><p>HWC 2.4 support for Display</p></li>
+<li><p>Trusty Hardware Seed binding</p></li>
+<li><p>Power Management - Suspend,Resume</p></li>
+<li><p>Android* key Input Manager Framework is implemented for Power &amp;
+Volume buttons</p></li>
+<li><p>Integrated Sensor Hub Enablement for Android Supported Sensors</p></li>
+<li><p>Android Thermal HAL and Thermal Manager Service</p></li>
+<li><p>BZIP2 performance improvements</p></li>
+<li><p>Bluetooth Control from Android in VM</p></li>
+<li><p>HDMI Audio Output Support</p></li>
+<li><p>Virtio-gpu Support</p></li>
+<li><p>SDHCI mediation enabled and supported SD card</p>
+<ul class="simple">
+<li><p>CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh –sdonly</p></li>
+</ul>
+</li>
+<li><p>Graphics GVT-d support</p></li>
+<li><p>HDMI and DP display support</p></li>
+<li><p>Mass Storage USB 2.0 and 3.x devices is supported</p></li>
+<li><p>Adb over WIFI and Ethernet is supported</p></li>
+<li><p>Audio playback over USB Headset, 3.5mm and HDMI are supported</p></li>
+<li><p>Setting Proxy for Wireless Network</p></li>
+<li><p>Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2</p></li>
+<li><p>Ethernet works fine with Ethernet to USB converter</p></li>
+<li><p>Wifi Control from Android in VM using usb passthrough</p></li>
+<li><p>To passthrough USB host controller in NUC11PAQI7, run the CIV launch
+script like this: sudo E ./scripts/start_civ.sh -g GVT-d –passthrough-pci-usb</p></li>
+<li><p>Power Management - Shutdown and Reboot</p></li>
+<li><p>Android Time keeping with Host OS</p></li>
+<li><p>Product Information to Guest OS</p></li>
+<li><p>ODM partition for vendor customizations</p></li>
+<li><p>Only logitech C922 pro stream webcam is supported for all camera
+related testing</p></li>
+<li><p>HW Video Codecs support on celadon</p>
+<blockquote>
+<div><p><strong>Decoder</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AVC High profile &#64; Level 5.1 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)</p></li>
+<li><p>HEVC Main and Main 10 profile &#64; Level 5 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)(Main 10
+with BT2020 and ST2084 information is not supported)</p></li>
+<li><p>VP9 profile 0 &#64; Level 5 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)</p></li>
+<li><p>Vp8 8 bits <a class="reference external" href="mailto:1080p&#37;&#52;&#48;60fps">1080p<span>&#64;</span>60fps</a></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Encoder</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AVC High profile &#64; level 4.1 (<a class="reference external" href="mailto:1080P&#37;&#52;&#48;30fps">1080P<span>&#64;</span>30fps</a>)</p></li>
+<li><p>HEVC Main profile &#64; Level 4 (<a class="reference external" href="mailto:1080P&#37;&#52;&#48;30fps">1080P<span>&#64;</span>30fps</a>)</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2,
+VORBIS, OPUS, MIDI, FLAC, PCM/WAV</p></li>
+<li><p>Generic storage HAL supported</p></li>
+<li><p>SATA emulation is supported</p></li>
+<li><p>9pfs based file transfer</p></li>
+<li><p>Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
+Keymaster 3.0</p>
+<blockquote>
+<div><ul>
+<li><p>User guide:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SELinux Configuration and Rules</p></li>
+<li><p>How to Enable or Disable Trusty for Debugging</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Changes to existing features</p></li>
+<li><p>Unsupported or discontinued features</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id7">
+<h3>Known issues</h3>
+<ul class="simple">
+<li><p>Android UI Flicker when booted with eDP Display</p></li>
+<li><p>Blank screen is displayed while video playback
+[Configuration : GLrenderer-Virtio] &amp; [GLrenderer-Softpipe]</p></li>
+<li><p>Camera Preview Flickers while using MultiCamera application</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link : <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.02.27_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.02.27_A11.xml</a></p></li>
+<li><p>Binary Link : <a class="reference external" href="https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.02.27_A11">https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.02.27_A11</a></p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>How to install this release</h3>
+<ul>
+<li><p>Steps to sync to this release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest">https://github.com/projectceladon/manifest</a> -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml</p></li>
+<li><p>NOTE : Manifest tag will change according to the latest release</p></li>
+<li><p>repo sync -c -q -j${nproc}</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Android build commands</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For Compilation please use Ubuntu 18.04</p></li>
+<li><p>source build/envsetup.sh</p></li>
+<li><p>lunch caas-userdebug</p></li>
+<li><p>make flashfiles -jN</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Steps To build the host kernel for this manifest</p>
+<blockquote>
+<div><ul>
+<li><p>Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ</p></li>
+<li><p>cd ~/civ &amp;&amp; tar zxvf caas-releasefiles-userdebug.tar.gz</p></li>
+<li><p>cd patches/kernel/lts2019-chromium</p></li>
+<li><p>./build_weekly.sh</p></li>
+<li><p>Deb files will be generated in
+patches/kernel/lts2019-chromium/host_kernel</p></li>
+<li><p>sudo dpkg -i *.deb</p></li>
+<li><p>Update grub to wait indefinitely for kernel selection on boot</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>sudo vim /etc/default/grub</p></li>
+<li><p>Comment out GRUB_TIMEOUT_STYLE=hidden
+#GRUB_TIMEOUT_STYLE=hidden</p></li>
+<li><p>Uncomment the following line and modify grub timeout to -1 for
+indefinite wait or 5 for 5secs wait
+#GRUB_TIMEOUT=-1</p></li>
+<li><p>Save the file</p></li>
+<li><p>sudo update-grub</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>sudo reboot</p></li>
+<li><p>Select compiled kernel from “Advanced options for Ubuntu”</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Flash and run steps</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download flash-files [<a class="reference external" href="https://github.com/projectceladon/celadon-binary">https://github.com/projectceladon/celadon-binary</a>]</p></li>
+<li><p>Untar &lt;flash-files&gt;</p></li>
+<li><p>sudo -E ./scripts/setup_host -u headless</p></li>
+<li><p>sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.&lt;user&gt;.zip –display-off</p></li>
+<li><p>sudo -E ./scripts/start_civ.sh -g GVT-d</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id10">
+<h3>Validation results</h3>
+<p>Celadon build has been validated on Intel NUC Kit <a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html">NUC11PAQI7</a>  in the following function domains:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Results</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wi-Fi</p></td>
+<td><p>OK</p></td>
+<td><p>Host wifi is switched to Android UI in QEMU using usb pass through</p></td>
+</tr>
+<tr class="row-odd"><td><p>BT</p></td>
+<td><p>OK</p></td>
+<td><p>Bluetooth is working</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio Playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adb connect over WIFI</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Adb connect over Ethernet</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Display /Touch and Gesture</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Security</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Boot</p></td>
+<td><p>OK</p></td>
+<td><p>Boots on QEMU 4.2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Ethernet</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Image Flash</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Web browsing</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Video playback</p></td>
+<td><p>OK</p></td>
+<td><p>H264/H265/MPEG2/VP8/VP9 Video Playback</p></td>
+</tr>
+<tr class="row-even"><td><p>USB</p></td>
+<td><p>OK</p></td>
+<td><p>Keyboard , Mouse , Pen drive</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id12">
+<h3>Reference configuration</h3>
+<blockquote>
+<div><ul>
+<li><p>Supported hardware</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Product - NUC11PAQI7</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Supported software</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AOSP Version - android-11.0.0_r38</p></li>
+<li><p>NUC11PAQI7 Host Kernel - -5.4.121-cvhb</p></li>
+<li><p>NUC11PAQI7 Guest kernel - -5.4.121-cvhb</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id13">
+<h3>Acronyms and terms</h3>
+<ul class="simple">
+<li><p>CIV - Celadon in Virtual Machine</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Helpful hints / related documents</h3>
+<ul class="simple">
+<li><p>If you plan to use Celadon in product, please replace all the test keys
+under device/intel/build/testkeys/ with your product key.</p></li>
+<li><p>The release of this project will be signed by test keys, it’s only a
+reference for our customer and we are not responsible for this. Customers
+should use their own keys to sign their release images</p></li>
+<li><p>Build Celadon in VM  <a class="reference external" href="https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image">https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image</a></p></li>
+<li><p>Flash Steps : <a class="reference external" href="https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm">https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm</a></p></li>
+</ul>
+</section>
+</section>
+<section id="civ-00-21-02-25-a11">
+<h2><a class="toc-backref" href="#id34" role="doc-backlink">CIV_00.21.02.25_A11</a></h2>
+<ul class="simple">
+<li><p>This is a Pre-Production Manifest Release for evaluation and development
+purposes and it cannot be used for production purposes. This release is
+supported on Intel NUC Kit <a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html">NUC11PAQI7</a> Celadon in VM.</p></li>
+</ul>
+<section id="id16">
+<h3>Intended audience</h3>
+<ul class="simple">
+<li><p>Open Source Community who has subscribed to <a class="reference external" href="mailto:cceladon&#37;&#52;&#48;lists&#46;linuxfoundation&#46;org">cceladon<span>&#64;</span>lists<span>&#46;</span>linuxfoundation<span>&#46;</span>org</a></p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>Customer support</h3>
+<ul class="simple">
+<li><p>subscribe/unsubscribe celadon mailing list using : <a class="reference external" href="https://lists.linuxfoundation.org/mailman/listinfo/celadon">https://lists.linuxfoundation.org/mailman/listinfo/celadon</a></p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>Introduction</h3>
+</section>
+<section id="id19">
+<h3>New in this release</h3>
+<blockquote>
+<div><ul>
+<li><p>New features</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats</p></li>
+<li><p>Power Management - Suspend/Resume</p></li>
+<li><p>Local Video Playback with Widevine DRM - Level 3</p></li>
+<li><p>External USB Camera</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl>
+<dt>Existing features</dt><dd><ul>
+<li><p>This release uses start_civ.sh to launch Link -<a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh">https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh</a></p></li>
+<li><p>API Level 30 &amp; FCM target Level 5</p></li>
+<li><p>Other Changes that came as part of API level Up</p>
+<ul class="simple">
+<li><p>AIDL for Power and Light HALs</p></li>
+<li><p>Audio &amp; Audio effects HAL 6.0</p></li>
+<li><p>Health HAL 2.1</p></li>
+<li><p>Boot HAL upgraded to 1.1</p></li>
+</ul>
+</li>
+<li><p>Upgraded Mainline modules</p></li>
+<li><p>Soft restart</p></li>
+<li><p>Updatable APEX</p></li>
+<li><p>Config store HAL deprecated</p></li>
+<li><p>Graphics Memory Allocator (Gralloc) 4.0</p></li>
+<li><p>HWC 2.4 support for Display</p></li>
+<li><p>Trusty Hardware Seed binding</p></li>
+<li><p>Power Management - Suspend,Resume</p></li>
+<li><p>Android key Input Manager Framework is implemented for Power and
+Volume buttons</p></li>
+<li><p>Integrated Sensor Hub Enablement for Android Supported Sensors</p></li>
+<li><p>Android Thermal HAL and Thermal Manager Service</p></li>
+<li><p>BZIP2 performance improvements</p></li>
+<li><p>Bluetooth Control from Android in VM</p></li>
+<li><p>HDMI Audio Output Support</p></li>
+<li><p>Virtio-gpu Support</p></li>
+<li><p>SDHCI mediation enabled and supported SD card</p>
+<ul class="simple">
+<li><p>CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh –sdonly</p></li>
+</ul>
+</li>
+<li><p>Graphics GVT-d support</p></li>
+<li><p>HDMI and DP display support</p></li>
+<li><p>Mass Storage USB 2.0 and 3.x devices is supported</p></li>
+<li><p>Adb over WIFI and Ethernet is supported</p></li>
+<li><p>Audio playback over USB Headset, 3.5mm and HDMI are supported</p></li>
+<li><p>Setting Proxy for Wireless Network</p></li>
+<li><p>Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2</p></li>
+<li><p>Ethernet works fine with Ethernet to USB converter</p></li>
+<li><p>Wifi Control from Android in VM using usb passthrough</p></li>
+<li><p>To passthrough USB host controller in NUC11PAQI7, run the CIV launch script like this: sudo E ./scripts/start_civ.sh -g GVT-d –passthrough-pci-usb</p></li>
+<li><p>Power Management - Shutdown and Reboot</p></li>
+<li><p>Android Time keeping with Host OS</p></li>
+<li><p>Product Information to Guest OS</p></li>
+<li><p>ODM partition for vendor customizations</p></li>
+<li><p>Only logitech C922 pro stream webcam is supported for all camera related testing</p></li>
+<li><p>HW Video Codecs support on celadon</p>
+<blockquote>
+<div><p><strong>Decoder</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AVC High profile &#64; Level 5.1 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)</p></li>
+<li><p>HEVC Main and Main 10 profile &#64; Level 5 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)
+(Main 10 with BT2020 and ST2084 information is not supported)</p></li>
+<li><p>VP9 profile 0 &#64; Level 5 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)</p></li>
+<li><p>Vp8 8 bits <a class="reference external" href="mailto:1080p&#37;&#52;&#48;60fps">1080p<span>&#64;</span>60fps</a></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Encoder</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AVC High profile &#64; level 4.1 (<a class="reference external" href="mailto:1080P&#37;&#52;&#48;30fps">1080P<span>&#64;</span>30fps</a>)</p></li>
+<li><p>HEVC Main profile &#64; Level 4 (<a class="reference external" href="mailto:1080P&#37;&#52;&#48;30fps">1080P<span>&#64;</span>30fps</a>)</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2,
+VORBIS, OPUS, MIDI, FLAC, PCM/WAV</p></li>
+<li><p>Generic storage HAL supported</p></li>
+<li><p>SATA emulation is supported</p></li>
+<li><p>9pfs based file transfer</p></li>
+<li><p>Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
+Keymaster 3.0</p>
+<blockquote>
+<div><ul>
+<li><p>User guide:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SELinux Configuration and Rules</p></li>
+<li><p>How to Enable or Disable Trusty for Debugging</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Changes to existing features</p></li>
+<li><p>Unsupported or discontinued features</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id20">
+<h3>Known issues</h3>
+<ul class="simple">
+<li><p>Android UI Flicker when booted with eDP Display</p></li>
+<li><p>Blank screen is displayed while video playback
+[Configuration : GLrenderer-Virtio] &amp; [GLrenderer-Softpipe]</p></li>
+<li><p>Camera Preview Flickers while using MultiCamera application</p></li>
+</ul>
+</section>
+<section id="id21">
+<h3>Where to find the release</h3>
+<ul class="simple">
+<li><p>Manifest Link : <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.02.25_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.02.25_A11.xml</a></p></li>
+</ul>
+</section>
+<section id="id22">
+<h3>How to install this release</h3>
+<ul>
+<li><p>Steps to sync to this release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>repo init -u <a class="reference external" href="https://github.com/projectceladon/manifest">https://github.com/projectceladon/manifest</a> -b master -m stable-build/CIV_XX.XX.XX.XX_AXX.xml</p></li>
+<li><p>NOTE : Manifest tag will change according to the latest release</p></li>
+<li><p>repo sync -c -q -j${nproc}</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Android build commands</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For Compilation please use Ubuntu 18.04</p></li>
+<li><p>source build/envsetup.sh</p></li>
+<li><p>lunch caas-userdebug</p></li>
+<li><p>make flashfiles -jN</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Steps To build the host kernel for this manifest</p>
+<blockquote>
+<div><ul>
+<li><p>Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ</p></li>
+<li><p>cd ~/civ &amp;&amp; tar zxvf caas-releasefiles-userdebug.tar.gz</p></li>
+<li><p>cd patches/kernel/lts2019-chromium</p></li>
+<li><p>./build_weekly.sh</p></li>
+<li><p>Deb files will be generated in
+patches/kernel/lts2019-chromium/host_kernel</p></li>
+<li><p>sudo dpkg -i *.deb</p></li>
+<li><p>Update grub to wait indefinitely for kernel selection on boot</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>sudo vim /etc/default/grub</p></li>
+<li><p>Comment out GRUB_TIMEOUT_STYLE=hidden
+#GRUB_TIMEOUT_STYLE=hidden</p></li>
+<li><p>Uncomment following line and modify grub timeout to -1 for
+indefinite wait or 5 for 5secs wait
+#GRUB_TIMEOUT=-1</p></li>
+<li><p>Save the file</p></li>
+<li><p>sudo update-grub</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>sudo reboot</p></li>
+<li><p>Select compiled kernel from “Advanced options for Ubuntu”</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Flash and run steps</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download flash-files [<a class="reference external" href="https://github.com/projectceladon/celadon-binary">https://github.com/projectceladon/celadon-binary</a>]</p></li>
+<li><p>Untar &lt;flash-files&gt;</p></li>
+<li><p>sudo -E ./scripts/setup_host -u headless</p></li>
+<li><p>sudo -E ./scripts/start_flash_usb.sh caas-flashfiles-eng.&lt;user&gt;.zip –display-off</p></li>
+<li><p>sudo -E ./scripts/start_civ.sh -g GVT-d</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id23">
+<h3>Validation results</h3>
+<p>Celadon build has been validated on Intel NUC Kit <a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html">NUC11PAQI7</a>  in the following function domains:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Results</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wi-Fi</p></td>
+<td><p>OK</p></td>
+<td><p>Host wifi is switched to Android UI in QEMU using usb pass through</p></td>
+</tr>
+<tr class="row-odd"><td><p>BT</p></td>
+<td><p>OK</p></td>
+<td><p>Bluetooth is working</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio Playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adb connect over WIFI</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Adb connect over Ethernet</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Display /Touch and Gesture</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Security</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Boot</p></td>
+<td><p>OK</p></td>
+<td><p>Boots on QEMU 4.2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Ethernet</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Image Flash</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Web browsing</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Video playback</p></td>
+<td><p>OK</p></td>
+<td><p>H264/H265/MPEG2/VP8/VP9 Video Playback</p></td>
+</tr>
+<tr class="row-even"><td><p>USB</p></td>
+<td><p>OK</p></td>
+<td><p>Keyboard , Mouse , Pen drive</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id25">
+<h3>Reference configuration</h3>
+<blockquote>
+<div><ul>
+<li><p>Supported hardware</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Product - NUC11PAQI7</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Supported software</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AOSP Version - android-11.0.0_r37</p></li>
+<li><p>NUC11PAQI7 Host Kernel - -5.4.121-cvhb</p></li>
+<li><p>NUC11PAQI7 Guest kernel - -5.4.121-cvhb</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id26">
+<h3>Acronyms and terms</h3>
+<ul class="simple">
+<li><p>CIV - Celadon in Virtual Machine</p></li>
+</ul>
+</section>
+<section id="id27">
+<h3>Helpful hints / Related documents</h3>
+<ul class="simple">
+<li><p>If you plan to use Celadon in product, please replace all the test keys
+under device/intel/build/testkeys/ with your product key.</p></li>
+<li><p>The release of this project will be signed by test keys, it’s only a
+reference for our customer and we are not responsible for this. Customers
+should use their own keys to sign their release images</p></li>
+<li><p>Build Celadon in VM  <a class="reference external" href="https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image">https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image</a></p></li>
+<li><p>Flash Steps : <a class="reference external" href="https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm">https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm</a></p></li>
+</ul>
+</section>
+</section>
+<section id="civ-00-21-01-12-a11">
+<h2><a class="toc-backref" href="#id35" role="doc-backlink">CIV_00.21.01.12_A11</a></h2>
+<ul class="simple">
+<li><p>This is a Pre-Production Release for evaluation and development purposes and it cannot be used for production purposes. This release is supported on Intel NUC Kit <a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html">NUC11PAQI7</a> Celadon in VM.</p></li>
+</ul>
+<section id="new-features">
+<h3>New features</h3>
+<ul class="simple">
+<li><p>Supports Intel Core 11th Gen</p></li>
+<li><p>ADB over DbC support</p></li>
+<li><p>Widevine Ready for NUC11PAQI7</p></li>
+<li><p>WFA Security- Enhanced Open (OWE) support</p></li>
+</ul>
+</section>
+<section id="existing-features">
+<h3>Existing Features</h3>
+<ul class="simple">
+<li><p>This release uses start_civ.sh to launch Link -<a class="reference external" href="https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh">https://docs.01.org/celadon/getting-started/on-vm.html?highlight=start_civ#use-start-civ-sh</a></p></li>
+<li><p>API Level 30 &amp; FCM target Level 5</p></li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p>Other Changes that came as part of API level Up</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AIDL for Power and Light HALs</p></li>
+<li><p>Audio &amp; Audio effects HAL 6.0</p></li>
+<li><p>Health HAL 2.1</p></li>
+<li><p>Boot HAL upgraded to 1.1</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p>Upgraded Mainline modules</p></li>
+<li><p>Soft restart</p></li>
+<li><p>Updatable APEX</p></li>
+<li><p>Config store HAL deprecated</p></li>
+<li><p>Graphics Memory Allocator (Gralloc) 4.0</p></li>
+<li><p>HWC 2.4 support for Display</p></li>
+<li><p>Trusty Hardware Seed binding</p></li>
+<li><p>Power Management - Suspend,Resume</p></li>
+<li><p>Android key Input Manager Framework is implemented for Power and
+Volume buttons</p></li>
+<li><p>Integrated Sensor Hub Enablement for Android Supported Sensors</p></li>
+<li><p>Android Thermal HAL and Thermal Manager Service</p></li>
+<li><p>BZIP2 performance improvements</p></li>
+<li><p>Bluetooth Control from Android in VM</p></li>
+<li><p>HDMI Audio Output Support</p></li>
+<li><p>Virtio-gpu Support</p></li>
+<li><p>SDHCI mediation enabled and supported SD card</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CIV launch script for SD Card: sudo -E ./scripts/start_android_qcow2.sh –sdonly</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Graphics GVT-d support</p></li>
+<li><p>HDMI and DP display support</p></li>
+<li><p>Mass Storage USB 2.0 and 3.x devices is supported</p></li>
+<li><p>Adb over WIFI and Ethernet is supported</p></li>
+<li><p>Audio playback over USB Headset, 3.5mm and HDMI are supported</p></li>
+<li><p>Setting Proxy for Wireless Network</p></li>
+<li><p>Wi-Fi 802.11 a/b/g/n/ac/ax and Bluetooth 4.2</p></li>
+<li><p>Ethernet works fine with Ethernet to USB converter</p></li>
+<li><p>Wifi Control from Android in VM using usb passthrough</p></li>
+<li><p>To passthrough USB host controller in NUC11PAQI7, run the CIV launch
+script like this: sudo E ./scripts/start_civ.sh -g GVT-d –passthrough-pci-usb</p></li>
+<li><p>Power Management - Shutdown and Reboot</p></li>
+<li><p>Android Time keeping with Host OS</p></li>
+<li><p>Product Information to Guest OS</p></li>
+<li><p>ODM partition for vendor customizations</p></li>
+<li><p>Only logitech C922 pro stream webcam is supported for all camera related
+testing</p></li>
+<li><p>HW Video Codecs support on celadon</p>
+<p><strong>Decoder</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AVC High profile &#64; Level 5.1 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)</p></li>
+<li><p>HEVC Main and Main 10 profile &#64; Level 5 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)
+(Main 10 with BT2020 and ST2084 information is not supported)</p></li>
+<li><p>VP9 profile 0 &#64; Level 5 (<a class="reference external" href="mailto:4k&#37;&#52;&#48;30fps">4k<span>&#64;</span>30fps</a>)</p></li>
+<li><p>Vp8 8 bits <a class="reference external" href="mailto:1080p&#37;&#52;&#48;60fps">1080p<span>&#64;</span>60fps</a></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Encoder</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AVC High profile &#64; level 4.1 (<a class="reference external" href="mailto:1080P&#37;&#52;&#48;30fps">1080P<span>&#64;</span>30fps</a>)</p></li>
+<li><p>HEVC Main profile &#64; Level 4 (<a class="reference external" href="mailto:1080P&#37;&#52;&#48;30fps">1080P<span>&#64;</span>30fps</a>)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Audio decoders supported: MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS,
+OPUS, MIDI, FLAC, PCM/WAV</p></li>
+<li><p>Generic storage HAL supported</p></li>
+<li><p>SATA emulation is supported</p></li>
+<li><p>9pfs based file transfer</p></li>
+<li><p>Security SELinux enforcing, Trusty TEE, File Based Encryption, Trusty,
+Keymaster 3.0</p>
+<blockquote>
+<div><ul>
+<li><p>User guide:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SELinux Configuration and Rules</p></li>
+<li><p>How to Enable or Disable Trusty for Debugging</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="important-remarks">
+<h3>Important remarks</h3>
+<ul>
+<li><p>For CaaS-CIV</p>
+<ul>
+<li><p>Recommended system requirements for Host</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CPU:  4 cores or more</p></li>
+<li><p>RAM: 4GB or more</p></li>
+<li><p>Disk:  40GB or more</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Recommended configuration for CPU cores &amp; Memory allocated to Guest VM</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CPU: [default 1 core]</p></li>
+<li><p>RAM: [default 2GB]</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id29">
+<h3>Known issues</h3>
+<ul>
+<li><p>After recording the video in MultiCamera, it can be successfully played in
+MUltiCamera, but the playback in photos app fails</p></li>
+<li><p>Android is not Booting UI after “adb reboot” when connected with eDP
+Display</p></li>
+<li><p>Possible Buffer overflow with strncat in hcitools</p></li>
+<li><p>Camera Preview Flickers</p></li>
+<li><p>CFI failure seen during suspend/resume , This is merged on Latest HEAD</p></li>
+<li><p>Android UI is flickering sometimes</p></li>
+<li><p>Android UI doesn’t launch in Mosaic mode</p></li>
+<li><p>Captured Photo shows Black in ImageView.[AOSP Camera]</p></li>
+<li><p>ADB goes offline after performing adb root/remount operation , this issue
+is fixed on the latest HEAD</p></li>
+<li><p>Direct LAN to NUC11PAQI7 ethernet port is not working in this release</p>
+<blockquote>
+<div><ul>
+<li><p>The fix patch for Direct LAN to NUC11PAQI7 ethernet port issue is as below - it is merged on the latest HEAD</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/projectceladon/device-androidia-mixins/pull/1086">https://github.com/projectceladon/device-androidia-mixins/pull/1086</a> # 2021-03-30 # Add support for Ethernet Controller I225-V</p></li>
+<li><p><a class="reference external" href="https://github.com/projectceladon/vendor-intel-utils/pull/1071">https://github.com/projectceladon/vendor-intel-utils/pull/1071</a> # 2021-03-30 # Enable config for Ethernet Controller I225-LM/I225-V support</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Android UI Flicker when booted with eDP Display</p></li>
+</ul>
+</section>
+<section id="id30">
+<h3>Validation results</h3>
+<p>Celadon build has been validated on Intel NUC Kit <a class="reference external" href="https://www.intel.in/content/www/in/en/products/boards-kits/nuc/kits/nuc11paqi7.html">NUC11PAQI7</a>  in the following function domains:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Results</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wi-Fi</p></td>
+<td><p>OK</p></td>
+<td><p>Host wifi is switched to Android UI in QEMU using usb pass through</p></td>
+</tr>
+<tr class="row-odd"><td><p>BT</p></td>
+<td><p>OK</p></td>
+<td><p>Bluetooth is working</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio Playback</p></td>
+<td><p>OK</p></td>
+<td><p>MP3, AAC-LC, AAC-ELD, HEAAC, HEAAC-V2, VORBIS, OPUS, FLAC, PCM/WAV formats supported</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adb connect over WIFI</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Adb connect over Ethernet</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Display /Touch and Gesture</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Security</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Boot</p></td>
+<td><p>OK</p></td>
+<td><p>Boots on QEMU 4.2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Ethernet</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Image Flash</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Web browsing</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Video playback</p></td>
+<td><p>OK</p></td>
+<td><p>H264/H265/MPEG2/VP8/VP9 Video Playback</p></td>
+</tr>
+<tr class="row-even"><td><p>USB</p></td>
+<td><p>OK</p></td>
+<td><p>Keyboard , Mouse , Pen drive</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tools-configuration">
+<h3>Tools/Configuration</h3>
+<ul class="simple">
+<li><p>QEMU Version 4.2.0</p></li>
+<li><p>Host Ubuntu 20.04</p></li>
+<li><p>Host Kernel Version 5.4.76 [Build kernel from the tar ball of this release
+-Steps Below under hints section]</p></li>
+<li><p>Guest kernel 5.4.76</p></li>
+</ul>
+</section>
+<section id="helpful-hints-links">
+<h3>Helpful Hints / Links</h3>
+<ul>
+<li><p>Build Celadon in VM  <a class="reference external" href="https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image">https://01.org/projectceladon/documentation/getting-started/build-source#build-os-image</a></p></li>
+<li><p>Flash Steps : <a class="reference external" href="https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm">https://01.org/projectceladon/documentation/getting-started/on-vm#build-c-images-running-in-vm</a></p></li>
+<li><p>Manifest Link : <a class="reference external" href="https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml">https://github.com/projectceladon/manifest/blob/master/stable-build/CIV_00.21.01.12_A11.xml</a></p></li>
+<li><p>Binary Link : <a class="reference external" href="https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A11">https://github.com/projectceladon/celadon-binary/tree/master/CIV_00.21.01.12_A11</a></p></li>
+<li><p>If you plan to use Celadon in product, please replace all the test keys
+under device/intel/build/testkeys/ with your product key.</p>
+<ul class="simple">
+<li><p>The release of this project will be signed by test keys, it’s only a
+reference for our customer and we are not responsible for this. Customers
+should  use their own keys to sign their release images</p></li>
+</ul>
+</li>
+<li><p>Steps To build the host kernel for this Manifest</p>
+<blockquote>
+<div><ul>
+<li><p>Download  caas-releasefiles-userdebug.tar.gz and put it under ~/civ</p></li>
+<li><p>cd ~/civ &amp;&amp; tar zxvf caas-releasefiles-userdebug.tar.gz</p></li>
+<li><p>cd patches/kernel/lts2019-chromium</p></li>
+<li><p>./build_weekly.sh</p></li>
+<li><p>Deb files will be generated in patches/kernel/lts2019-chromium/host_kernel</p></li>
+<li><p>sudo dpkg -i *.deb</p></li>
+<li><p>Update grub to wait indefinitely for kernel selection on boot</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>sudo vim /etc/default/grub</p></li>
+<li><p>Comment out GRUB_TIMEOUT_STYLE=hidden
+#GRUB_TIMEOUT_STYLE=hidden</p></li>
+<li><p>Uncomment following line and modify grub timeout to -1 for
+indefinite wait or 5 for 5secs wait
+#GRUB_TIMEOUT=-1</p></li>
+<li><p>Save the file</p></li>
+<li><p>sudo update-grub</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>sudo reboot</p></li>
+<li><p>Select compiled kernel from “Advanced options for Ubuntu”</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="base-releases-A12.html" class="btn btn-neutral float-left" title="Android 12 Base Releases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="base-releases-A11_2020.html" class="btn btn-neutral float-right" title="Android 11 [2020] Base Releases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, BSD, MIT, Apache and GPL licenses.
+      <span class="lastupdated">Last updated on Nov 05, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

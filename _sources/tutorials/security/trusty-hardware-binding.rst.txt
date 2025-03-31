@@ -1,0 +1,10 @@
+.. _trusty-hardware-binding:
+
+Trusty Hardware Binding on |C|
+##############################
+
+A **Trusted Execution Environment** (**TEE**) is a secure area inside the main processor, the code loaded into this isolated environment can run in parallel with the Operating System (OS). Most importantly, the code and data loaded in the TEE are protected with respect to confidentiality and integrity, in comparison to the Rich Execution Environment (REE) in classic systems, as it uses both hardware and software to protect the data and code in the TEE.
+
+In Android, **Trusty** is the secure OS that provides a TEE for Android. The Trusty OS runs on the same processor as the Android OS, it has access to the full power of the memory and processor, but Trusty is completely isolated from the rest of the system by both hardware and software, that protects it from malicious apps installed by the user and potential vulnerabilities discovered in Android. In addition, the `Android Compatibility Definition Document (CDD) <https://source.android.com/compatibility/9/android-9-cdd.html>`_ specifies keys and credentials requirements which requires a hardware-backed isolated execution environment for keystore implementation.
+
+|C| is the open source Android software reference stack for Intel x86 platforms, and Trusty is available on Intel x86 platforms using Intel Virtualization Technology, refer to the `Trusty-IA <https://01.org/trusty-ia>`_ project for more detailed implementation. **Trusted Platform Module** (**TPM**) provides a non-volatile storage that can be used to host the secrets and a proper policy to make sure the secrets can't be accessed by untrusted entities, and |C| implements the hardware bindings on TPM. Refer to `Celadon Trusty Hardware Binding Developer Guide  <https://raw.githubusercontent.com/projectceladon/celadon-documentation/master/blob/docs/Celadon%20Trusty%20Hardware%20Binding%20Developer%20Guide.pdf>`_ for the requirement overview, Root of Trust sources, security guidelines, as well as the integration guide for TPM based hardware binding for Trusty in |C| on Intel platforms.

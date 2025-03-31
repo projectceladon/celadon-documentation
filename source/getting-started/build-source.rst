@@ -153,9 +153,8 @@ Build |C| boot image
    build the installer files for |C| in VM images:
 
    .. code-block:: bash
-        
-       $ lunch caas-ap3a-userdebug # this is used for Android 15 onwards
-       $ lunch caas-userdebug # this will be used until Android 14
+         
+       $ lunch caas-userdebug
        $ make flashfiles -j $(nproc)
 
    .. note::
